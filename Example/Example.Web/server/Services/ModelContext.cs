@@ -1,8 +1,8 @@
 ﻿using Aetheros.OneM2M.Api;
 using Aetheros.OneM2M.Binding;
 
-using GridNet.IoT.Types;
-using GridNet.IoT.Web.React.server.Utils;
+using Example.Types;
+using Example.Web.Server.Utils;
 
 using Microsoft.Extensions.Options;
 
@@ -13,7 +13,7 @@ using System.Linq;
 using System.Reactive.Linq;
 using System.Threading.Tasks;
 
-namespace GridNet.IoT.Web.React.server.Services
+namespace Example.Web.Server.Services
 {
 	public class MyApplication
 	{

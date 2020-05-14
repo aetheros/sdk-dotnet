@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace GridNet.IoT.Web.React.server.Utils
+namespace Example.Web.Server.Utils
 {
 	public static class MiscExtensions
 	{

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GridNet.IoT.Web.React.server.Services
+namespace Example.Web.Server.Services
 {
 	[Serializable]
 	public class WebOptions

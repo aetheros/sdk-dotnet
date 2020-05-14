@@ -1,8 +1,8 @@
-﻿using GridNet.IoT.Types;
+﻿using Example.Types;
 
 using System.Threading.Tasks;
 
-namespace GridNet.IoT.Web.React.server.Services
+namespace Example.Web.Server.Services
 {
 	public class EventsService
 	{

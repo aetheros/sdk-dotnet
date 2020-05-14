@@ -1,6 +1,5 @@
-﻿using Aetheros.OneM2M.Binding;
-
-using GridNet.Bootstrap;
+﻿using Aetheros.OneM2M.Api.Registration;
+using Aetheros.OneM2M.Binding;
 
 using System;
 using System.Collections.Concurrent;
@@ -14,8 +13,6 @@ using System.Reactive.Linq;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
-
-using static Aetheros.OneM2M.Api.Connection;
 
 namespace Aetheros.OneM2M.Api
 {
@@ -107,7 +104,7 @@ namespace Aetheros.OneM2M.Api
 			{
 				return (await GetPrimitiveAsync(name)).Container;
 			}
-			catch (HttpStatusException e)
+			catch (Connection.HttpStatusException e)
 			{
 				if (e.StatusCode != HttpStatusCode.NotFound)
 					throw;
@@ -152,7 +149,7 @@ namespace Aetheros.OneM2M.Api
 					.Select(rc => rc.ContentInstance?.GetContent<T>())
 					.ToListAsync()).LastOrDefault();
 			}
-			catch (HttpStatusException e)
+			catch (Connection.HttpStatusException e)
 			{
 				if (e.StatusCode != HttpStatusCode.NotFound)
 					throw;
@@ -281,7 +278,7 @@ namespace Aetheros.OneM2M.Api
 					{
 						Request = new CertificateSigningRequest
 						{
-							Application = new GridNet.Bootstrap.Application
+							Application = new Aetheros.OneM2M.Api.Registration.Application
 							{
 								AeId = ae.AE_ID,
 								TokenId = tokenId
@@ -300,7 +297,9 @@ namespace Aetheros.OneM2M.Api
 					using (var httpSigningResponse = await client.PostJsonAsync(csrUri, signingRequest))
 						signingResponse = await httpSigningResponse.DeserializeAsync<CertificateSigningResponseBody>();
 
-					var certificateText = signingResponse.Response.X509Certificate;
+					var certificateText = signingResponse.Response?.X509Certificate;
+					if (certificateText == null)
+						throw new InvalidDataException("CertificateSigningResponse does not contain a certificate");
 					var signedCert = GridNetUtils.CreateX509Certificate(certificateText);
 
 					var confirmationRequest = new ConfirmationRequestBody
@@ -320,13 +319,13 @@ namespace Aetheros.OneM2M.Api
 					using (var httpConfirmationResponse = await client.PostJsonAsync(ccrUri, confirmationRequest))
 					{
 						var confirmationResponse = await httpConfirmationResponse.DeserializeAsync<ConfirmationResponseBody>();
+						if (confirmationResponse.Response == null)
+							throw new InvalidDataException("Invalid ConfirmationResponse");
 						Debug.Assert(confirmationResponse.Response.Status == CertificateSigningStatus.Accepted);
 					}
 
 					using (var pubPrivEphemeral = signedCert.CopyWithPrivateKey(privateKey))
-					{
 						await File.WriteAllBytesAsync(m2mConfig.CertificateFilename, pubPrivEphemeral.Export(X509ContentType.Cert));
-					}
 
 					con = new Connection(m2mConfig.M2MUrl, signedCert);
 				}

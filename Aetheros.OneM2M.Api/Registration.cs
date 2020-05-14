@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GridNet.Bootstrap
+namespace Aetheros.OneM2M.Api.Registration
 {
 	using Newtonsoft.Json;
 
@@ -24,7 +24,7 @@ namespace GridNet.Bootstrap
 	{
 		[JsonProperty("pnm2m:signreq")]
 		[XmlElement("signreq")]
-		public CertificateSigningRequest Request { get; set; }
+		public CertificateSigningRequest? Request { get; set; }
 	}
 
 	[Serializable]
@@ -35,11 +35,11 @@ namespace GridNet.Bootstrap
 	{
 		[JsonProperty("device")]
 		[XmlElement("device")]
-		public Application Application { get; set; }
+		public Application? Application { get; set; }
 
 		[JsonProperty("xcsr")]
 		[XmlElement("xcsr")]
-		public string X509Request { get; set; }
+		public string? X509Request { get; set; }
 	}
 
 
@@ -51,7 +51,7 @@ namespace GridNet.Bootstrap
 	{
 		[JsonProperty("pnm2m:signresp")]
 		[XmlElement("signresp")]
-		public CertificateSigningResponse Response { get; set; }
+		public CertificateSigningResponse? Response { get; set; }
 	}
 
 	[Serializable]
@@ -62,11 +62,11 @@ namespace GridNet.Bootstrap
 	{
 		[JsonProperty("confirmtxnid")]
 		[XmlElement("confirmtxnid")]
-		public string TransactionId { get; set; }
+		public string? TransactionId { get; set; }
 
 		[JsonProperty("clientcert")]
 		[XmlElement("clientcert")]
-		public string X509Certificate { get; set; }
+		public string? X509Certificate { get; set; }
 
 		[JsonProperty("status")]
 		[XmlElement("status")]
@@ -81,11 +81,11 @@ namespace GridNet.Bootstrap
 	{
 		[JsonProperty("wanaddr")]
 		[XmlElement("wanaddr")]
-		public string AeId { get; set; }
+		public string? AeId { get; set; }
 
 		[JsonProperty("tokenid")]
 		[XmlElement("tokenid")]
-		public string TokenId { get; set; }
+		public string? TokenId { get; set; }
 	}
 
 
@@ -98,7 +98,7 @@ namespace GridNet.Bootstrap
 	{
 		[JsonProperty("pnm2m:confirmreq")]
 		[XmlElement("confirmreq")]
-		public ConfirmationRequest Request { get; set; }
+		public ConfirmationRequest? Request { get; set; }
 	}
 
 	[Serializable]
@@ -109,15 +109,15 @@ namespace GridNet.Bootstrap
 	{
 		[JsonProperty("certhash")]
 		[XmlElement("certhash")]
-		public string CertificateHash { get; set; }
+		public string? CertificateHash { get; set; }
 
 		[JsonProperty("certid")]
 		[XmlElement("certid")]
-		public CertificateId CertificateId { get; set; }
+		public CertificateId? CertificateId { get; set; }
 
 		[JsonProperty("txnid")]
 		[XmlElement("txnid")]
-		public string TransactionId { get; set; }
+		public string? TransactionId { get; set; }
 	}
 
 	[Serializable]
@@ -128,11 +128,11 @@ namespace GridNet.Bootstrap
 	{
 		[JsonProperty("issuer")]
 		[XmlElement("issuer")]
-		public string Issuer { get; set; }
+		public string? Issuer { get; set; }
 
 		[JsonProperty("serial")]
 		[XmlElement("serial")]
-		public string SerialNumber { get; set; }
+		public string? SerialNumber { get; set; }
 	}
 
 
@@ -145,7 +145,7 @@ namespace GridNet.Bootstrap
 	{
 		[JsonProperty("pnm2m:confirmresp")]
 		[XmlElement("confirmresp")]
-		public ConfirmationResponse Response { get; set; }
+		public ConfirmationResponse? Response { get; set; }
 	}
 
 	[Serializable]
@@ -156,11 +156,11 @@ namespace GridNet.Bootstrap
 	{
 		[JsonProperty("cacertpem")]
 		[XmlElement("cacertpem")]
-		public string Certificate { get; set; }
+		public string? Certificate { get; set; }
 
 		[JsonProperty("newtokenid")]
 		[XmlElement("newtokenid")]
-		public string NewTokenId { get; set; }
+		public string? NewTokenId { get; set; }
 
 		[JsonProperty("status")]
 		[XmlElement("status")]
@@ -168,6 +168,6 @@ namespace GridNet.Bootstrap
 
 		[JsonProperty("certid")]
 		[XmlElement("certid")]
-		public CertificateId CertificateId { get; set; }
+		public CertificateId? CertificateId { get; set; }
 	}
 }

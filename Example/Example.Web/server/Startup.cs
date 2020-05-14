@@ -10,10 +10,10 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using DotNetify;
 using DotNetify.Security;
-using GridNet.IoT.Web.React.server.Services;
+using Example.Web.Server.Services;
 using Microsoft.Extensions.Configuration;
 
-namespace dotnetify_react_template
+namespace Example.Web.Server
 {
 	public class Startup
 	{

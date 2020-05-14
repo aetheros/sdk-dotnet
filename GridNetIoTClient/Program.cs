@@ -1,8 +1,6 @@
 ﻿using Aetheros.OneM2M.Api;
 using Aetheros.OneM2M.Binding;
-
-using GridNet.IoT.Types;
-
+using Example.Types;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;

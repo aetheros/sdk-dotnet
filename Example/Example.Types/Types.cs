@@ -6,7 +6,7 @@ using System.Runtime.Serialization;
 
 using Newtonsoft.Json;
 
-namespace GridNet.IoT.Types
+namespace Example.Types
 {
 	[JsonObject("info")]
 	public class Info

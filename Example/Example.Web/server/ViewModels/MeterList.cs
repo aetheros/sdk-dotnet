@@ -4,12 +4,12 @@ using System.Linq;
 using System.Reactive.Linq;
 using DotNetify;
 using DotNetify.Security;
-using GridNet.IoT.Types;
-using GridNet.IoT.Web.React.server.Services;
-using GridNet.IoT.Web.React.server.Utils;
-using GridNet.IoT.Web.React.server.ViewModels;
+using Example.Types;
+using Example.Web.Server.Services;
+using Example.Web.Server.Utils;
+using Example.Web.Server.ViewModels;
 
-namespace GridNet.IoT.Web
+namespace Example.Web.Server.ViewModels
 {
 	[Authorize]
 	public class MeterList : BaseVM

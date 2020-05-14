@@ -5,11 +5,11 @@ using System.Reactive.Linq;
 using System.Threading.Tasks;
 using DotNetify;
 using DotNetify.Routing;
-using GridNet.IoT.Types;
-using GridNet.IoT.Web.React.server.Services;
-using GridNet.IoT.Web.React.server.Utils;
+using Example.Types;
+using Example.Web.Server.Services;
+using Example.Web.Server.Utils;
 
-namespace GridNet.IoT.Web.React.server.ViewModels
+namespace Example.Web.Server.ViewModels
 {
 	public class MeterDashboard : BaseVM, IRoutable
 	{
@@ -84,7 +84,7 @@ namespace GridNet.IoT.Web.React.server.ViewModels
 
 			(this).OnRouted((sender, e) =>
 			{
-				MeterId = e?.From?.Replace($"{dotnetify_react_template.AppLayout.MeterDashboardPath}/", "");
+				MeterId = e?.From?.Replace($"{AppLayout.MeterDashboardPath}/", "");
 				var meter = _meterService.GetMeter(MeterId);
 
 				var context = _meterService.GetContext();

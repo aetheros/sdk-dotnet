@@ -1,15 +1,15 @@
 ﻿using DotNetify;
 using DotNetify.Routing;
-using GridNet.IoT.Types;
-using GridNet.IoT.Web.React.server.Services;
-using GridNet.IoT.Web.React.server.Utils;
+using Example.Types;
+using Example.Web.Server.Services;
+using Example.Web.Server.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reactive.Linq;
 using System.Threading.Tasks;
 
-namespace GridNet.IoT.Web.React.server.ViewModels
+namespace Example.Web.Server.ViewModels
 {
 	public class MeterListRow : IRoutable
 	{

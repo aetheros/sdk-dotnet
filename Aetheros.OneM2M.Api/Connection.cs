@@ -1,7 +1,13 @@
-﻿using System;
+﻿using Aetheros.OneM2M.Binding;
+
+using Microsoft.AspNetCore.Http;
+
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+
+using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
-using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -16,17 +22,9 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-using GridNet.OneM2M.Types;
-
-using Microsoft.AspNetCore.Http;
-
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using static GridNet.IoT.Api.OneM2MConnection;
-
-namespace GridNet.IoT.Api
+namespace Aetheros.OneM2M.Api
 {
-	public class OneM2MConnection
+	public class Connection
 	{
 		public interface IConfig
 		{
@@ -54,7 +52,7 @@ namespace GridNet.IoT.Api
 
 		public static JsonSerializer Serializer { get; }
 
-		static OneM2MConnection()
+		static Connection()
 		{
 			JsonSettings.Converters.Add(new Newtonsoft.Json.Converters.IsoDateTimeConverter
 			{
@@ -68,13 +66,13 @@ namespace GridNet.IoT.Api
 			Serializer = JsonSerializer.CreateDefault(JsonSettings);
 		}
 
-		public OneM2MConnection(IConfig config)
+		public Connection(IConfig config)
 			: this(config.M2MUrl, config.CertificateFilename) { }
 
-		public OneM2MConnection(Uri m2mUrl, string certificateFilename)
+		public Connection(Uri m2mUrl, string certificateFilename)
 			: this(m2mUrl, GridNetUtils.LoadCertificate(certificateFilename)) { }
 
-		public OneM2MConnection(Uri m2mUrl, X509Certificate? certificate = null)
+		public Connection(Uri m2mUrl, X509Certificate? certificate = null)
 		{
 			_iotApiUrl = m2mUrl;
 
@@ -117,7 +115,7 @@ namespace GridNet.IoT.Api
 				{
 					FilterUsage = FilterUsage.Discovery,
 					ResourceType = new[] { ResourceType.AE },
-					Attribute = OneM2MConnection.GetAttributes<AE>(_ => _.App_ID == appId),
+					Attribute = Connection.GetAttributes<AE>(_ => _.App_ID == appId),
 				}
 			});
 
@@ -193,7 +191,7 @@ namespace GridNet.IoT.Api
 		}
 
 		public static T? DeserializeJson<T>(string str)
-			where T : class => JsonConvert.DeserializeObject<T>(str, OneM2MConnection.JsonSettings);
+			where T : class => JsonConvert.DeserializeObject<T>(str, Connection.JsonSettings);
 
 
 		internal HttpRequestMessage GetRequest(RequestPrimitive body)
@@ -337,7 +335,7 @@ namespace GridNet.IoT.Api
 			return httpRequestMessage;
 		}
 
-		public static ICollection<GridNet.OneM2M.Types.Attribute> GetAttributes<T>(params Expression<Func<T, object>>[] expressions) =>
+		public static ICollection<Aetheros.OneM2M.Binding.Attribute> GetAttributes<T>(params Expression<Func<T, object>>[] expressions) =>
 			expressions.Select(expr =>
 			{
 				var body = expr.Body;
@@ -358,7 +356,7 @@ namespace GridNet.IoT.Api
 				var compiledExpression = rightLambda.Compile();
 				var result = compiledExpression.DynamicInvoke();
 
-				return new GridNet.OneM2M.Types.Attribute
+				return new Aetheros.OneM2M.Binding.Attribute
 				{
 					Name = memberName,
 					Value = result,
@@ -395,7 +393,7 @@ namespace GridNet.IoT.Api
 			if (notification == null)
 				return null;
 
-			var serializer = JsonSerializer.CreateDefault(OneM2MConnection.JsonSettings);
+			var serializer = JsonSerializer.CreateDefault(Connection.JsonSettings);
 			var representation = ((Newtonsoft.Json.Linq.JObject) notification.NotificationEvent.Representation).ToObject<PrimitiveContent>(serializer);
 
 			var request = notification.NotificationEvent.PrimitiveRepresentation = new RequestPrimitive
@@ -514,7 +512,7 @@ namespace GridNet.IoT.Api
 			where T : class
 		{
 			var json = @this.Content as JObject;
-			return json?.ToObject<T>(OneM2MConnection.Serializer);
+			return json?.ToObject<T>(Connection.Serializer);
 		}
 
 		public static async Task<T> DeserializeAsync<T>(this HttpResponseMessage response)
@@ -524,21 +522,21 @@ namespace GridNet.IoT.Api
 			var body = await response.Content.ReadAsStringAsync();
 
 			if (!response.IsSuccessStatusCode)
-				throw new HttpStatusException(response.StatusCode, response.ReasonPhrase);
+				throw new Connection.HttpStatusException(response.StatusCode, response.ReasonPhrase);
 
 			response.EnsureSuccessStatusCode();
 
 			if (string.IsNullOrWhiteSpace(body))
 				throw new InvalidDataException("An empty response was returned");
 
-			return OneM2MConnection.DeserializeJson<T>(body)
+			return Connection.DeserializeJson<T>(body)
 				?? throw new InvalidDataException($"The response did not match Type '{typeof(T).Name}'"); ;
 		}
 
 		public static async Task<HttpResponseMessage> PostJsonAsync<T>(this HttpClient @this, Uri uri, T body)
 			where T : class
 		{
-			var bodyJson = OneM2MConnection.SerializeJson(body);
+			var bodyJson = Connection.SerializeJson(body);
 			var requestBody = new StringContent(bodyJson, Encoding.UTF8, "application/json");
 
 			return await @this.PostAsync(uri, requestBody);

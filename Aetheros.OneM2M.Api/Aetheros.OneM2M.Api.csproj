@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\GridNet.OneM2M.Types\GridNet.OneM2M.Types.csproj" />
+    <ProjectReference Include="..\Aetheros.OneM2M.Binding\Aetheros.OneM2M.Binding.csproj" />
   </ItemGroup>
 
 </Project>

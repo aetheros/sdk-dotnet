@@ -1,5 +1,4 @@
-﻿using GridNet.IoT.Api;
-using System;
+﻿using System;
 
 namespace GridNet.IoT.Web.React.server.Services
 {
@@ -26,14 +25,14 @@ namespace GridNet.IoT.Web.React.server.Services
 		public Uri CAUrl { get; set; }
 
 		[Serializable]
-		public class ConnectionConfig : OneM2MConnection.IConfig
+		public class ConnectionConfig : Aetheros.OneM2M.Api.Connection.IConfig
 		{
 			public Uri M2MUrl { get; set; }
 			public string CertificateFilename { get; set; } = "cert.pfx";
 		}
 
 		[Serializable]
-		public class AppConfig : Application.IConfig
+		public class AppConfig : Aetheros.OneM2M.Api.Application.IConfig
 		{
 			public string AppId { get; set; }
 			public string AppName { get; set; }

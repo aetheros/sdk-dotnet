@@ -1,5 +1,6 @@
-﻿using System;
-using System.Buffers.Text;
+﻿using Newtonsoft.Json;
+
+using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
@@ -11,9 +12,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-using Newtonsoft.Json;
-
-namespace GridNet.IoT.Api
+namespace Aetheros.OneM2M.Api
 {
 	public static class GridNetUtils
 	{

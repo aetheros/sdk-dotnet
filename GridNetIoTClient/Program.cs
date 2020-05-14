@@ -1,23 +1,18 @@
-﻿using System;
-using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Reactive.Linq;
-using System.Security.Cryptography;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
-using GridNet.IoT.Api;
+﻿using Aetheros.OneM2M.Api;
+using Aetheros.OneM2M.Binding;
+
 using GridNet.IoT.Types;
-using GridNet.OneM2M.Types;
 
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+
+using System;
+using System.Collections.Concurrent;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reactive.Linq;
+using System.Threading.Tasks;
 
 namespace GridNet.IoT.Client
 {
@@ -41,7 +36,7 @@ namespace GridNet.IoT.Client
 
 		static readonly Uri caBaseUrl = new Uri("https://piersh-m2m.corp.grid-net.com:18091/");
 
-		class ConnectionConfig : OneM2MConnection.IConfig
+		class ConnectionConfig : Connection.IConfig
 		{
 			public Uri M2MUrl { get; set; }
 			public string CertificateFilename { get; set; }
@@ -56,7 +51,7 @@ namespace GridNet.IoT.Client
 			public Uri PrivatePoaUrl { get; set; }
 		}
 
-		static OneM2MConnection.IConfig _m2mConfig = new ConnectionConfig
+		static Connection.IConfig _m2mConfig = new ConnectionConfig
 		{
 			M2MUrl = new Uri("https://api.piersh-m2m.corp.grid-net.com/"),
 			CertificateFilename = @"../../client-cert.pfx"
@@ -73,7 +68,7 @@ namespace GridNet.IoT.Client
 
 		public static async Task Main(string[] args)
 		{
-			var con = new OneM2MConnection(_m2mConfig);
+			var con = new Connection(_m2mConfig);
 			_app = new Application(con, _appConfig.AppId, "C4bb2f056000001", _appConfig.PoaUrl);
 
 			var ciRefs = (await _app.GetPrimitiveAsync("data-cnt", new FilterCriteria
@@ -294,7 +289,7 @@ namespace GridNet.IoT.Client
 				{
 					FilterUsage = FilterUsage.Discovery,
 					ResourceType = new[] { ResourceType.AEAnnc },
-					Attribute = Api.OneM2MConnection.GetAttributes<AE>(_ => _.AppName == _appConfig.AppName),
+					Attribute = Connection.GetAttributes<AE>(_ => _.AppName == _appConfig.AppName),
 					//Attribute = Api.Api.GetAttributes<AE>(_ => _.AE_ID == aeId),
 				}
 			});
@@ -483,7 +478,7 @@ namespace GridNet.IoT.Client
 					{
 						FilterUsage = FilterUsage.Discovery,
 						ResourceType = new[] { ResourceType.AE },
-						Attribute = Api.OneM2MConnection.GetAttributes<AE>(_ => _.App_ID == _appConfig.AppId),
+						Attribute = Connection.GetAttributes<AE>(_ => _.App_ID == _appConfig.AppId),
 					}
 				});
 
@@ -498,7 +493,7 @@ namespace GridNet.IoT.Client
 						{
 							FilterUsage = FilterUsage.Discovery,
 							ResourceType = new[] { ResourceType.AE },
-							Attribute = Api.OneM2MConnection.GetAttributes<AE>(_ => _.AppName == _appConfig.AppName),
+							Attribute = Connection.GetAttributes<AE>(_ => _.AppName == _appConfig.AppName),
 						}
 					});
 					urls = responseFilterAEs.URIList;

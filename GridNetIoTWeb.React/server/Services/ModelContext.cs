@@ -1,16 +1,17 @@
-﻿using System;
+﻿using Aetheros.OneM2M.Api;
+using Aetheros.OneM2M.Binding;
+
+using GridNet.IoT.Types;
+using GridNet.IoT.Web.React.server.Utils;
+
+using Microsoft.Extensions.Options;
+
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Reactive.Linq;
 using System.Threading.Tasks;
-using GridNet.OneM2M.Types;
-using GridNet.IoT.Types;
-using GridNet.IoT.Api;
-using Microsoft.Extensions.Options;
-using static GridNet.IoT.Api.OneM2MConnection;
-using System.Net;
-using GridNet.IoT.Web.React.server.Utils;
 
 namespace GridNet.IoT.Web.React.server.Services
 {
@@ -26,7 +27,7 @@ namespace GridNet.IoT.Web.React.server.Services
 		public string CommandContainer { get; set; }
 
 
-		public Api.OneM2MConnection Api => Application.Connection;
+		public Connection Api => Application.Connection;
 	}
 
 	public partial class ModelContext
@@ -39,7 +40,7 @@ namespace GridNet.IoT.Web.React.server.Services
 		public ModelContext(IOptions<WebOptions> opts)
 		{
 			var options = opts.Value;
-			var con = new Api.OneM2MConnection(options.M2M);
+			var con = new Connection(options.M2M);
 			var ae = con.FindApplication(options.InCse, options.AE.AppId).Result;
 			var app = Application.Register(options.M2M, options.AE, options.InCse, options.CAUrl).Result;
 			//var app = new Application(con, ae.App_ID, ae.AE_ID, options.PoaUrl);
@@ -73,7 +74,7 @@ namespace GridNet.IoT.Web.React.server.Services
 			{
 				FilterUsage = FilterUsage.Discovery,
 				ResourceType = new[] { ResourceType.AE },
-				Attribute = Api.OneM2MConnection.GetAttributes<AE>(_ => _.App_ID == App.Application.AppId),
+				Attribute = Connection.GetAttributes<AE>(_ => _.App_ID == App.Application.AppId),
 			});
 
 			_deviceAEs = await responseFilterContainers.URIList

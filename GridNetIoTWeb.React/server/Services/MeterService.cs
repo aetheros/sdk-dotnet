@@ -1,11 +1,10 @@
-﻿using System;
+﻿using GridNet.IoT.Types;
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reactive.Linq;
 using System.Threading.Tasks;
-using GridNet.IoT.Types;
-using GridNet.OneM2M.Types;
-using Microsoft.Extensions.Options;
 
 namespace GridNet.IoT.Web.React.server.Services
 {

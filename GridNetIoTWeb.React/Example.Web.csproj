@@ -29,9 +29,9 @@
     <EmbeddedResource Include="server\Services\employees.json" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GridNet.OneM2M.Types\GridNet.OneM2M.Types.csproj" />
-    <ProjectReference Include="..\GridNetIoTApi\GridNet.IoT.Api.csproj" />
-    <ProjectReference Include="..\GridNetIoTTypes\GridNet.IoT.Types.csproj" />
+    <ProjectReference Include="..\Aetheros.OneM2M.Api\Aetheros.OneM2M.Api.csproj" />
+    <ProjectReference Include="..\Aetheros.OneM2M.Binding\Aetheros.OneM2M.Binding.csproj" />
+    <ProjectReference Include="..\GridNetIoTTypes\Example.Types.csproj" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="client\app.tsx" />

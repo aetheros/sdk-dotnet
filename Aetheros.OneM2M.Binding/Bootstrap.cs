@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace GridNet.Bootstrap
 {
-	using System.Collections;
-	using System.Collections.Generic;
-	using System.Collections.ObjectModel;
+	using Newtonsoft.Json;
+
 	using System.Diagnostics;
 	using System.Xml.Serialization;
-	using Newtonsoft.Json;
 
 	public enum CertificateSigningStatus
 	{

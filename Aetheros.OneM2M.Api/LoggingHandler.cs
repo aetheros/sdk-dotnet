@@ -1,14 +1,9 @@
-﻿using System;   
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Net;
+﻿using System.Diagnostics;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Text;
 using System.Threading;
 
-namespace GridNet.IoT.Api
+namespace Aetheros.OneM2M.Api
 {
     public class DebugMessageHandler : MessageProcessingHandler
     {

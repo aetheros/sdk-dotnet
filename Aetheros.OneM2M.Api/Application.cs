@@ -1,24 +1,23 @@
-﻿using System;
-using System.Collections;
+﻿using Aetheros.OneM2M.Binding;
+
+using GridNet.Bootstrap;
+
+using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Reactive.Linq;
-using System.Runtime.InteropServices.ComTypes;
+using System.Security.Cryptography;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 
-using GridNet.OneM2M.Types;
+using static Aetheros.OneM2M.Api.Connection;
 
-using static GridNet.IoT.Api.OneM2MConnection;
-using GridNet.Bootstrap;
-using System.Security.Cryptography.X509Certificates;
-using System.IO;
-using System.Security.Cryptography;
-using System.Net.Http;
-
-namespace GridNet.IoT.Api
+namespace Aetheros.OneM2M.Api
 {
 	public class Application
 	{
@@ -30,7 +29,7 @@ namespace GridNet.IoT.Api
 			public Uri PoaUrl { get; }
 		}
 
-		public OneM2MConnection Connection { get; }
+		public Connection Connection { get; }
 		public string AppId { get; }
 		public string AeId { get; }
 		//public string AeAppName { get; }
@@ -39,7 +38,7 @@ namespace GridNet.IoT.Api
 		//public string MNCse { get; set; }
 		//public string AeMnUrl { get; set; }
 
-		public Application(OneM2MConnection con, string appId, string aeId, Uri? poaUrl = null)
+		public Application(Connection con, string appId, string aeId, Uri? poaUrl = null)
 		{
 			Connection = con;
 			AppId = appId;
@@ -247,9 +246,9 @@ namespace GridNet.IoT.Api
 		}
 
 
-		public static async Task<Application> Register(OneM2MConnection.IConfig m2mConfig, IConfig appConfig, string inCse, Uri caUri)
+		public static async Task<Application> Register(Connection.IConfig m2mConfig, IConfig appConfig, string inCse, Uri caUri)
 		{
-			var con = new OneM2MConnection(m2mConfig);
+			var con = new Connection(m2mConfig);
 
 			var ae = await con.FindApplication(inCse, appConfig.AppId) ?? await con.RegisterApplication(appConfig, inCse);
 			if (ae == null)
@@ -282,7 +281,7 @@ namespace GridNet.IoT.Api
 					{
 						Request = new CertificateSigningRequest
 						{
-							Application = new Bootstrap.Application
+							Application = new GridNet.Bootstrap.Application
 							{
 								AeId = ae.AE_ID,
 								TokenId = tokenId
@@ -329,7 +328,7 @@ namespace GridNet.IoT.Api
 						await File.WriteAllBytesAsync(m2mConfig.CertificateFilename, pubPrivEphemeral.Export(X509ContentType.Cert));
 					}
 
-					con = new OneM2MConnection(m2mConfig.M2MUrl, signedCert);
+					con = new Connection(m2mConfig.M2MUrl, signedCert);
 				}
 			}
 

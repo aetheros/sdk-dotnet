@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+
+	  <IlcGenerateCompleteTypeMetadata>false</IlcGenerateCompleteTypeMetadata>
+	  <IlcGenerateStackTraceData>false</IlcGenerateStackTraceData>
+	  <IlcOptimizationPreference>Size</IlcOptimizationPreference>
+	  <IlcFoldIdenticalMethodBodies>true</IlcFoldIdenticalMethodBodies>
+   	<PublishWithAspNetCoreTargetManifest>false</PublishWithAspNetCoreTargetManifest>
+
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <LangVersion>latest</LangVersion>
+	  <GenerateFullPaths>true</GenerateFullPaths>
+	  <AssemblyName>GridNet.IoT.Client</AssemblyName>
+	  <RootNamespace>GridNet.IoT.Client</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.HostFiltering" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Hosting" Version="2.2.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Server.IISIntegration" Version="2.2.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel.Core" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.CommandLine" Version="3.1.3" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.3" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="3.1.3" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Configuration" Version="3.1.3" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="3.1.3" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.1.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="System.Reactive.Linq" Version="4.4.1" />
+  	<RdXmlFile Include=".\rd.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GridNet.OneM2M.Types\GridNet.OneM2M.Types.csproj" />
+    <ProjectReference Include="..\GridNetIoTApi\GridNet.IoT.Api.csproj" />
+    <ProjectReference Include="..\GridNetIoTTypes\GridNet.IoT.Types.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "GridNet.IoT.Client": {
+      "commandName": "Project",
+      "workingDirectory": "."
+    }
+  }
+}

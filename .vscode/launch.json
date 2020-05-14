@@ -1,0 +1,102 @@
+{
+	// Use IntelliSense to find out which attributes exist for C# debugging
+	// Use hover for the description of the existing attributes
+	// For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md
+	"version": "0.2.0",
+	"configurations": [
+
+		{
+			"name": "GridNetIoTWeb",
+			"type": "coreclr",
+			"request": "launch",
+			"preLaunchTask": "build",
+			"logging": {
+				"engineLogging": false,
+				"moduleLoad": false,
+			},
+			"program": "${workspaceFolder}/GridNetIoTWeb/bin/Debug/netcoreapp2.1/GridNetIoTWeb.dll",
+			"args": [],
+			"cwd": "${workspaceFolder}/GridNetIoTWeb",
+			"stopAtEntry": false,
+			"launchBrowser": {
+				"enabled": true,
+				"args": "${auto-detect-url}",
+				"windows": {
+					"command": "cmd.exe",
+					"args": "/C start ${auto-detect-url}"
+				},
+				"osx": {
+					"command": "open"
+				},
+				"linux": {
+					"command": "xdg-open"
+				}
+			},
+			"env": {
+				"ASPNETCORE_ENVIRONMENT": "Development"
+			},
+			"sourceFileMap": {
+				"/Views": "${workspaceFolder}/Views"
+			}
+		},
+
+		{
+			"name": "GridNetIoTWeb.React",
+			"type": "coreclr",
+			"request": "launch",
+			"preLaunchTask": "build",
+			"logging": {
+				"engineLogging": false,
+				"moduleLoad": false,
+			},
+			"program": "${workspaceFolder}/GridNetIoTWeb.React/bin/Debug/netcoreapp2.1/GridNetIoTWeb.React.dll",
+			"args": [],
+			"cwd": "${workspaceFolder}/GridNetIoTWeb.React",
+			"stopAtEntry": false,
+			"launchBrowser": {
+				"enabled": true,
+				"args": "${auto-detect-url}",
+				"windows": {
+					"command": "cmd.exe",
+					"args": "/C start ${auto-detect-url}"
+				},
+				"osx": {
+					"command": "open"
+				},
+				"linux": {
+					"command": "xdg-open"
+				}
+			},
+			"env": {
+				"ASPNETCORE_ENVIRONMENT": "Development"
+			},
+			"sourceFileMap": {
+				"/Views": "${workspaceFolder}/Views"
+			}
+		},
+		{
+			"name": "GridNetIoTClient",
+			"type": "coreclr",
+			"request": "launch",
+			"preLaunchTask": "build",
+			// If you have changed target frameworks, make sure to update the program path.
+			"program": "${workspaceFolder}/GridNetIoTClient/bin/Debug/netcoreapp2.1/GridNetIoTClient.dll",
+			"args": [],
+			"cwd": "${workspaceFolder}/GridNetIoTClient",
+			// For more information about the 'console' field, see https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md#console-terminal-window
+			"console": "internalConsole",
+			"stopAtEntry": false,
+			"logging": {
+				"engineLogging": false,
+				"moduleLoad": false
+			},
+			"internalConsoleOptions": "openOnSessionStart"
+		},
+		{
+			"name": ".NET Core Attach",
+			"type": "coreclr",
+			"request": "attach",
+			"processId": "${command:pickProcess}"
+		},
+	]
+}

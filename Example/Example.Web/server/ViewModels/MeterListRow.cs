@@ -1,13 +1,4 @@
-﻿using DotNetify;
-using DotNetify.Routing;
-using Example.Types;
-using Example.Web.Server.Services;
-using Example.Web.Server.Utils;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reactive.Linq;
-using System.Threading.Tasks;
+﻿using DotNetify.Routing;
 
 namespace Example.Web.Server.ViewModels
 {

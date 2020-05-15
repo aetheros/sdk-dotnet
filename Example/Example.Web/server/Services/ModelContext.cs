@@ -26,7 +26,6 @@ namespace Example.Web.Server.Services
 		public string ConfigContainer { get; set; }
 		public string CommandContainer { get; set; }
 
-
 		public Connection Api => Application.Connection;
 	}
 
@@ -40,13 +39,9 @@ namespace Example.Web.Server.Services
 		public ModelContext(IOptions<WebOptions> opts)
 		{
 			var options = opts.Value;
-			var con = new Connection(options.M2M);
-			var ae = con.FindApplication(options.InCse, options.AE.AppId).Result;
-			var app = Application.Register(options.M2M, options.AE, options.InCse, options.CAUrl).Result;
-			//var app = new Application(con, ae.App_ID, ae.AE_ID, options.PoaUrl);
-			//if (app == null)
-			//	app = api.RegisterApplication(options.InCse, credentialId, options.AE.AppId, options.PoaUrl);
-			//app.PoaUrl = options.PoaUrl;
+			var con = new HttpConnection(options.M2M);
+			//var ae = con.FindApplication(options.InCse, options.AE.AppId).Result;
+			var app = Application.RegisterAsync(options.M2M, options.AE, options.InCse, options.CAUrl).Result;
 
 			this.App = new MyApplication
 			{
@@ -79,7 +74,7 @@ namespace Example.Web.Server.Services
 
 			_deviceAEs = await responseFilterContainers.URIList
 				.ToAsyncEnumerable()
-				.SelectAsync(async url => await App.Application.GetPrimitiveAsync(url))
+				.SelectAwait(async url => await App.Application.GetPrimitiveAsync(url))
 				.Select(rc => rc.AE)
 				.ToListAsync();
 		}
@@ -166,9 +161,9 @@ namespace Example.Web.Server.Services
 				await dataRefs
 				.Reverse()
 				.ToAsyncEnumerable()
-				.SelectAsync(async url => await App.Application.GetPrimitiveAsync(url))
+				.SelectAwait(async url => await App.Application.GetPrimitiveAsync(url))
 				.Select(rc => rc.ContentInstance?.GetContent<Data>())
-				.Where(d => d.Summations.Any())
+				.Where(d => d.Summations.Count > 0)
 				.Where(d => d.Summations.First().ReadTime > cutoffTime)
 				.Reverse()
 				.ToListAsync();
@@ -193,9 +188,9 @@ namespace Example.Web.Server.Services
 				await eventRefs
 				.Reverse()
 				.ToAsyncEnumerable()
-				.SelectAsync(async url => await App.Application.GetPrimitiveAsync(url))
+				.SelectAwait(async url => await App.Application.GetPrimitiveAsync(url))
 				.Select(rc => rc.ContentInstance?.GetContent<Events>())
-				.Where(d => d.MeterEvents.Any())
+				.Where(d => d.MeterEvents.Count > 0)
 				.Reverse()
 				.ToListAsync();
 

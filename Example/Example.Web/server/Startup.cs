@@ -1,17 +1,20 @@
-﻿using System;
-using System.IO;
-using System.Text;
+﻿using DotNetify;
+using DotNetify.Security;
+
+using Example.Web.Server.Services;
+
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.SpaServices.Webpack;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
-using DotNetify;
-using DotNetify.Security;
-using Example.Web.Server.Services;
-using Microsoft.Extensions.Configuration;
+
+using System;
+using System.IO;
+using System.Text;
 
 namespace Example.Web.Server
 {

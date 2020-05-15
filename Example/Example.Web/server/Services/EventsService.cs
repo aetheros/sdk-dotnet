@@ -13,6 +13,6 @@ namespace Example.Web.Server.Services
 			_modelContext = modelContext;
 		}
 
-		public async Task Add(Events record) => await _modelContext.App.Application.AddContentInstance(_modelContext.App.EventsContainer, record);
+		public async Task Add(Events record) => await _modelContext.App.Application.AddContentInstanceAsync(_modelContext.App.EventsContainer, record);
 	}
 }

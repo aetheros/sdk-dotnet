@@ -2578,6 +2578,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool TracingInfoSpecified => (this.TracingInfo.Count != 0);
     }
@@ -2704,6 +2705,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AnySpecified => (this.Any.Count != 0);
     }
@@ -3334,6 +3336,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool LabelsSpecified => (this.Labels.Count != 0);
         
@@ -3350,6 +3353,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ResourceTypeSpecified => (this.ResourceType.Count != 0);
         
@@ -3442,6 +3446,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ContentTypeSpecified => (this.ContentType.Count != 0);
         
@@ -3458,6 +3463,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AttributeSpecified => (this.Attribute.Count != 0);
         
@@ -3548,6 +3554,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SemanticsFilterSpecified => (this.SemanticsFilter.Count != 0);
         
@@ -3853,6 +3860,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AnyArgSpecified => (this.AnyArg.Count != 0);
     }
@@ -3881,6 +3889,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AnyArgSpecified => (this.AnyArg.Count != 0);
     }
@@ -3933,6 +3942,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AnyArgSpecified => (this.AnyArg.Count != 0);
     }
@@ -4021,6 +4031,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AnyArgSpecified => (this.AnyArg.Count != 0);
     }
@@ -4079,6 +4090,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AnyArgSpecified => (this.AnyArg.Count != 0);
     }
@@ -4143,6 +4155,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AnyArgSpecified => (this.AnyArg.Count != 0);
     }
@@ -4189,6 +4202,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AnyArgSpecified => (this.AnyArg.Count != 0);
     }
@@ -4217,6 +4231,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ResetSpecified => (this.Reset.Count != 0);
         
@@ -4233,6 +4248,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool RebootSpecified => (this.Reboot.Count != 0);
         
@@ -4249,6 +4265,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool UploadSpecified => (this.Upload.Count != 0);
         
@@ -4265,6 +4282,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool DownloadSpecified => (this.Download.Count != 0);
         
@@ -4281,6 +4299,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SoftwareInstallSpecified => (this.SoftwareInstall.Count != 0);
         
@@ -4297,6 +4316,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SoftwareUpdateSpecified => (this.SoftwareUpdate.Count != 0);
         
@@ -4313,6 +4333,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SoftwareUninstallSpecified => (this.SoftwareUninstall.Count != 0);
     }
@@ -4404,6 +4425,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AccessControlRuleSpecified => (this.AccessControlRule.Count != 0);
     }
@@ -4475,6 +4497,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AccessControlContextsSpecified => (this.AccessControlContexts.Count != 0);
         
@@ -4542,6 +4565,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AccessControlWindowSpecified => (this.AccessControlWindow.Count != 0);
         
@@ -4588,6 +4612,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool Ipv4AddressesSpecified => (this.Ipv4Addresses.Count != 0);
         
@@ -4608,6 +4633,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool Ipv6AddressesSpecified => (this.Ipv6Addresses.Count != 0);
     }
@@ -4639,6 +4665,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool CountryCodeSpecified => (this.CountryCode.Count != 0);
         
@@ -4655,6 +4682,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool CircRegionSpecified => (this.CircRegion.Count != 0);
     }
@@ -4992,6 +5020,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool TimeOfDaySpecified => (this.TimeOfDay.Count != 0);
         
@@ -5008,6 +5037,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool LocationRegionsSpecified => (this.LocationRegions.Count != 0);
     }
@@ -5181,6 +5211,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool CertificatesSpecified => (this.Certificates.Count != 0);
         
@@ -5215,6 +5246,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ResourceIDsSpecified => (this.ResourceIDs.Count != 0);
         
@@ -5233,6 +5265,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool PrivilegesSpecified => (this.Privileges.Count != 0);
         
@@ -5251,6 +5284,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool RoleIDsSpecified => (this.RoleIDs.Count != 0);
     }
@@ -5279,6 +5313,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool PermissionSpecified => (this.Permission.Count != 0);
     }
@@ -5351,6 +5386,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AudienceSpecified => (this.Audience.Count != 0);
         
@@ -5369,6 +5405,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool PermissionsSpecified => (this.Permissions.Count != 0);
         
@@ -5473,6 +5510,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AudienceSpecified => (this.Audience.Count != 0);
     }
@@ -5643,6 +5681,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool OriginatorRoleIDsSpecified => (this.OriginatorRoleIDs.Count != 0);
         
@@ -5679,6 +5718,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool RoleIDsFromACPsSpecified => (this.RoleIDsFromACPs.Count != 0);
         
@@ -5697,6 +5737,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool TokenIDsSpecified => (this.TokenIDs.Count != 0);
     }
@@ -6073,6 +6114,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool LabelsSpecified => (this.Labels.Count != 0);
         
@@ -6155,6 +6197,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AccessControlPolicyIDsSpecified => (this.AccessControlPolicyIDs.Count != 0);
         
@@ -6177,6 +6220,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool DynamicAuthorizationConsultationIDsSpecified => (this.DynamicAuthorizationConsultationIDs.Count != 0);
     }
@@ -6235,6 +6279,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AnnounceToSpecified => (this.AnnounceTo.Count != 0);
         
@@ -6251,6 +6296,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AnnouncedAttributeSpecified => (this.AnnouncedAttribute.Count != 0);
     }
@@ -6318,6 +6364,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool DynamicAuthorizationConsultationIDsSpecified => (this.DynamicAuthorizationConsultationIDs.Count != 0);
     }
@@ -6357,6 +6404,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AnnounceToSpecified => (this.AnnounceTo.Count != 0);
         
@@ -6373,6 +6421,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AnnouncedAttributeSpecified => (this.AnnouncedAttribute.Count != 0);
     }
@@ -6507,6 +6556,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ObjectIDsSpecified => (this.ObjectIDs.Count != 0);
         
@@ -6523,6 +6573,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ObjectPathsSpecified => (this.ObjectPaths.Count != 0);
         
@@ -6605,6 +6656,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ObjectIDsSpecified => (this.ObjectIDs.Count != 0);
         
@@ -6621,6 +6673,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ObjectPathsSpecified => (this.ObjectPaths.Count != 0);
         
@@ -6789,6 +6842,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool LabelsSpecified => (this.Labels.Count != 0);
         
@@ -6805,6 +6859,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AccessControlPolicyIDsSpecified => (this.AccessControlPolicyIDs.Count != 0);
         
@@ -6858,6 +6913,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool DynamicAuthorizationConsultationIDsSpecified => (this.DynamicAuthorizationConsultationIDs.Count != 0);
         
@@ -6874,6 +6930,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AnnounceToSpecified => (this.AnnounceTo.Count != 0);
         
@@ -6890,6 +6947,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AnnouncedAttributeSpecified => (this.AnnouncedAttribute.Count != 0);
         
@@ -7082,6 +7140,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool LabelsSpecified => (this.Labels.Count != 0);
         
@@ -7147,6 +7206,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool DynamicAuthorizationConsultationIDsSpecified => (this.DynamicAuthorizationConsultationIDs.Count != 0);
         
@@ -7600,6 +7660,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool OperationMonitorSpecified => (this.OperationMonitor.Count != 0);
         
@@ -7616,6 +7677,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AttributeSpecified => (this.Attribute.Count != 0);
         
@@ -7632,6 +7694,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool NotificationEventTypeSpecified => (this.NotificationEventType.Count != 0);
         
@@ -7868,6 +7931,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ResponsePrimitiveSpecified => (this.ResponsePrimitive.Count != 0);
     }
@@ -8083,6 +8147,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AssignedTokenIdentifiersSpecified => (this.AssignedTokenIdentifiers.Count != 0);
         
@@ -8101,6 +8166,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool TokenReqInfoSpecified => (this.TokenReqInfo.Count != 0);
     }
@@ -8130,6 +8196,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
     }
@@ -8159,6 +8226,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool NotificationSpecified => (this.Notification.Count != 0);
     }
@@ -8316,6 +8384,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool NotificationEventTypeSpecified => (this.NotificationEventType.Count != 0);
     }
@@ -8551,6 +8620,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool TokensSpecified => (this.Tokens.Count != 0);
     }
@@ -8581,6 +8651,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool GrantedPrivilegesSpecified => (this.GrantedPrivileges.Count != 0);
         
@@ -8621,6 +8692,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool URIListSpecified => (this.URIList.Count != 0);
         
@@ -8651,6 +8723,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ResourceRefListSpecified => (this.ResourceRefList.Count != 0);
         
@@ -8695,6 +8768,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -8711,6 +8785,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
     }
@@ -9016,6 +9091,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -9032,6 +9108,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ScheduleSpecified => (this.Schedule.Count != 0);
         
@@ -9048,6 +9125,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool NotificationTargetMgmtPolicyRefSpecified => (this.NotificationTargetMgmtPolicyRef.Count != 0);
     }
@@ -9077,6 +9155,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool NotificationTargetURISpecified => (this.NotificationTargetURI.Count != 0);
         
@@ -9099,6 +9178,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -9115,6 +9195,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
     }
@@ -9147,6 +9228,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ScheduleElementSpecified => (this.ScheduleElement.Count != 0);
     }
@@ -9192,6 +9274,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -9208,6 +9291,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
     }
@@ -9253,6 +9337,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -9269,6 +9354,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
     }
@@ -9349,6 +9435,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool RelatedSemanticsSpecified => (this.RelatedSemantics.Count != 0);
         
@@ -9365,6 +9452,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -9381,6 +9469,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
     }
@@ -9436,6 +9525,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool RelatedSemanticsSpecified => (this.RelatedSemantics.Count != 0);
         
@@ -9452,6 +9542,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -9468,6 +9559,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
     }
@@ -9525,6 +9617,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ContentRefSpecified => (this.ContentRef.Count != 0);
         
@@ -9553,6 +9646,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -9569,6 +9663,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
     }
@@ -9661,6 +9756,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -9677,6 +9773,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
     }
@@ -9890,6 +9987,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -9906,6 +10004,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ContentInstanceSpecified => (this.ContentInstance.Count != 0);
         
@@ -9922,6 +10021,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ContainerPropertySpecified => (this.ContainerProperty.Count != 0);
         
@@ -9938,6 +10038,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
         
@@ -9954,6 +10055,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
         
@@ -9970,6 +10072,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool Sg_FlexContainerResourceSpecified => (this.Sg_FlexContainerResource.Count != 0);
     }
@@ -10239,6 +10342,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -10255,6 +10359,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ContentInstanceSpecified => (this.ContentInstance.Count != 0);
         
@@ -10271,6 +10376,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ContentInstanceAnncSpecified => (this.ContentInstanceAnnc.Count != 0);
         
@@ -10287,6 +10393,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ContainerSpecified => (this.Container.Count != 0);
         
@@ -10303,6 +10410,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ContainerAnncPropertySpecified => (this.ContainerAnncProperty.Count != 0);
         
@@ -10319,6 +10427,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
         
@@ -10335,6 +10444,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
         
@@ -10351,6 +10461,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SemanticDescriptorAnncSpecified => (this.SemanticDescriptorAnnc.Count != 0);
         
@@ -10367,6 +10478,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool Sg_FlexContainerResourceSpecified => (this.Sg_FlexContainerResource.Count != 0);
         
@@ -10383,6 +10495,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool Sg_AnnouncedFlexContainerResourceSpecified => (this.Sg_AnnouncedFlexContainerResource.Count != 0);
     }
@@ -10473,6 +10586,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool MembersAccessControlPolicyIDsSpecified => (this.MembersAccessControlPolicyIDs.Count != 0);
         
@@ -10538,6 +10652,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -10554,6 +10669,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
         
@@ -10570,6 +10686,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
     }
@@ -10716,6 +10833,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool MembersAccessControlPolicyIDsSpecified => (this.MembersAccessControlPolicyIDs.Count != 0);
         
@@ -10812,6 +10930,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -10828,6 +10947,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
         
@@ -10844,6 +10964,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
         
@@ -10860,6 +10981,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SemanticDescriptorAnncSpecified => (this.SemanticDescriptorAnnc.Count != 0);
     }
@@ -11370,6 +11492,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -11386,6 +11509,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool TimeSeriesInstanceSpecified => (this.TimeSeriesInstance.Count != 0);
         
@@ -11402,6 +11526,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
         
@@ -11418,6 +11543,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
     }
@@ -11767,6 +11893,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -11783,6 +11910,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool TimeSeriesInstanceSpecified => (this.TimeSeriesInstance.Count != 0);
         
@@ -11799,6 +11927,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool TimeSeriesInstanceAnncSpecified => (this.TimeSeriesInstanceAnnc.Count != 0);
         
@@ -11815,6 +11944,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
         
@@ -11831,6 +11961,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
         
@@ -11847,6 +11978,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SemanticDescriptorAnncSpecified => (this.SemanticDescriptorAnnc.Count != 0);
     }
@@ -12141,6 +12273,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -12157,6 +12290,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
         
@@ -12173,6 +12307,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ScheduleSpecified => (this.Schedule.Count != 0);
     }
@@ -12461,6 +12596,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool TargetNetworkSpecified => (this.TargetNetwork.Count != 0);
         
@@ -12477,6 +12613,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -12493,6 +12630,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
         
@@ -12509,6 +12647,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ScheduleAnncSpecified => (this.ScheduleAnnc.Count != 0);
     }
@@ -12556,6 +12695,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool PointOfAccessSpecified => (this.PointOfAccess.Count != 0);
         
@@ -12590,6 +12730,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ContentSerializationSpecified => (this.ContentSerialization.Count != 0);
         
@@ -12612,6 +12753,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -12628,6 +12770,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ContainerSpecified => (this.Container.Count != 0);
         
@@ -12644,6 +12787,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool GroupSpecified => (this.Group.Count != 0);
         
@@ -12660,6 +12804,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AccessControlPolicySpecified => (this.AccessControlPolicy.Count != 0);
         
@@ -12676,6 +12821,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
         
@@ -12692,6 +12838,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool PollingChannelSpecified => (this.PollingChannel.Count != 0);
         
@@ -12708,6 +12855,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ScheduleSpecified => (this.Schedule.Count != 0);
         
@@ -12724,6 +12872,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
         
@@ -12740,6 +12889,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool TimeSeriesSpecified => (this.TimeSeries.Count != 0);
         
@@ -12756,6 +12906,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool TrafficPatternSpecified => (this.TrafficPattern.Count != 0);
         
@@ -12772,6 +12923,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool Sg_FlexContainerResourceSpecified => (this.Sg_FlexContainerResource.Count != 0);
     }
@@ -12819,6 +12971,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool PointOfAccessSpecified => (this.PointOfAccess.Count != 0);
         
@@ -12884,6 +13037,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ContentSerializationSpecified => (this.ContentSerialization.Count != 0);
         
@@ -12906,6 +13060,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -12922,6 +13077,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ContainerSpecified => (this.Container.Count != 0);
         
@@ -12938,6 +13094,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ContainerAnncSpecified => (this.ContainerAnnc.Count != 0);
         
@@ -12954,6 +13111,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool GroupSpecified => (this.Group.Count != 0);
         
@@ -12970,6 +13128,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool GroupAnncSpecified => (this.GroupAnnc.Count != 0);
         
@@ -12986,6 +13145,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AccessControlPolicySpecified => (this.AccessControlPolicy.Count != 0);
         
@@ -13002,6 +13162,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AccessControlPolicyAnncSpecified => (this.AccessControlPolicyAnnc.Count != 0);
         
@@ -13018,6 +13179,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
         
@@ -13034,6 +13196,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ScheduleAnncSpecified => (this.ScheduleAnnc.Count != 0);
         
@@ -13050,6 +13213,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
         
@@ -13066,6 +13230,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool TimeSeriesSpecified => (this.TimeSeries.Count != 0);
         
@@ -13082,6 +13247,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool TimeSeriesAnncSpecified => (this.TimeSeriesAnnc.Count != 0);
         
@@ -13098,6 +13264,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool TrafficPatternAnncSpecified => (this.TrafficPatternAnnc.Count != 0);
         
@@ -13114,6 +13281,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool Sg_FlexContainerResourceSpecified => (this.Sg_FlexContainerResource.Count != 0);
         
@@ -13130,6 +13298,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool Sg_AnnouncedFlexContainerResourceSpecified => (this.Sg_AnnouncedFlexContainerResource.Count != 0);
     }
@@ -13177,6 +13346,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -13193,6 +13363,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
         
@@ -13209,6 +13380,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
     }
@@ -13238,6 +13410,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -13254,6 +13427,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
         
@@ -13270,6 +13444,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SemanticDescriptorAnncSpecified => (this.SemanticDescriptorAnnc.Count != 0);
         
@@ -13286,6 +13461,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
     }
@@ -13315,6 +13491,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -13331,6 +13508,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
         
@@ -13347,6 +13525,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
         
@@ -13363,6 +13542,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AllJoynMethodCallSpecified => (this.AllJoynMethodCall.Count != 0);
     }
@@ -13392,6 +13572,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -13408,6 +13589,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
         
@@ -13424,6 +13606,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SemanticDescriptorAnncSpecified => (this.SemanticDescriptorAnnc.Count != 0);
         
@@ -13440,6 +13623,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
         
@@ -13456,6 +13640,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AllJoynMethodCallSpecified => (this.AllJoynMethodCall.Count != 0);
         
@@ -13472,6 +13657,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AllJoynMethodCallAnncSpecified => (this.AllJoynMethodCallAnnc.Count != 0);
     }
@@ -13513,6 +13699,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -13529,6 +13716,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
         
@@ -13545,6 +13733,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
     }
@@ -13574,6 +13763,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -13590,6 +13780,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
         
@@ -13606,6 +13797,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SemanticDescriptorAnncSpecified => (this.SemanticDescriptorAnnc.Count != 0);
         
@@ -13622,6 +13814,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
     }
@@ -13657,6 +13850,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -13673,6 +13867,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
         
@@ -13689,6 +13884,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
         
@@ -13705,6 +13901,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AllJoynMethodSpecified => (this.AllJoynMethod.Count != 0);
         
@@ -13721,6 +13918,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AllJoynPropertySpecified => (this.AllJoynProperty.Count != 0);
         
@@ -13737,6 +13935,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ContainerSpecified => (this.Container.Count != 0);
     }
@@ -13772,6 +13971,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -13788,6 +13988,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
         
@@ -13804,6 +14005,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SemanticDescriptorAnncSpecified => (this.SemanticDescriptorAnnc.Count != 0);
         
@@ -13820,6 +14022,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
         
@@ -13836,6 +14039,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AllJoynMethodSpecified => (this.AllJoynMethod.Count != 0);
         
@@ -13852,6 +14056,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AllJoynMethodAnncSpecified => (this.AllJoynMethodAnnc.Count != 0);
         
@@ -13868,6 +14073,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AllJoynPropertySpecified => (this.AllJoynProperty.Count != 0);
         
@@ -13884,6 +14090,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AllJoynPropertyAnncSpecified => (this.AllJoynPropertyAnnc.Count != 0);
         
@@ -13900,6 +14107,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ContainerSpecified => (this.Container.Count != 0);
         
@@ -13916,6 +14124,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ContainerAnncSpecified => (this.ContainerAnnc.Count != 0);
     }
@@ -13957,6 +14166,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -13973,6 +14183,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
         
@@ -13989,6 +14200,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
         
@@ -14005,6 +14217,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AllJoynInterfaceSpecified => (this.AllJoynInterface.Count != 0);
     }
@@ -14077,6 +14290,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -14093,6 +14307,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
         
@@ -14109,6 +14324,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SemanticDescriptorAnncSpecified => (this.SemanticDescriptorAnnc.Count != 0);
         
@@ -14125,6 +14341,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
         
@@ -14141,6 +14358,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AllJoynInterfaceSpecified => (this.AllJoynInterface.Count != 0);
         
@@ -14157,6 +14375,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AllJoynInterfaceAnncSpecified => (this.AllJoynInterfaceAnnc.Count != 0);
     }
@@ -14223,6 +14442,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -14239,6 +14459,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
         
@@ -14255,6 +14476,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
         
@@ -14271,6 +14493,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AllJoynSvcObjectSpecified => (this.AllJoynSvcObject.Count != 0);
     }
@@ -14337,6 +14560,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -14353,6 +14577,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
         
@@ -14369,6 +14594,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SemanticDescriptorAnncSpecified => (this.SemanticDescriptorAnnc.Count != 0);
         
@@ -14385,6 +14611,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
         
@@ -14401,6 +14628,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AllJoynSvcObjectSpecified => (this.AllJoynSvcObject.Count != 0);
         
@@ -14417,6 +14645,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AllJoynSvcObjectAnncSpecified => (this.AllJoynSvcObjectAnnc.Count != 0);
     }
@@ -14550,6 +14779,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -14566,6 +14796,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
     }
@@ -14693,6 +14924,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ListOfNeighborsSpecified => (this.ListOfNeighbors.Count != 0);
         
@@ -14709,6 +14941,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -14725,6 +14958,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
     }
@@ -14766,6 +15000,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -14782,6 +15017,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
     }
@@ -14817,6 +15053,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ListOfDevicesSpecified => (this.ListOfDevices.Count != 0);
         
@@ -14833,6 +15070,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -14849,6 +15087,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
     }
@@ -14921,6 +15160,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -14937,6 +15177,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
     }
@@ -15040,6 +15281,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -15056,6 +15298,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
     }
@@ -15440,6 +15683,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool MgmtLinkSpecified => (this.MgmtLink.Count != 0);
     }
@@ -15557,6 +15801,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -15573,6 +15818,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
     }
@@ -15676,6 +15922,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -15692,6 +15939,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
     }
@@ -15751,6 +15999,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -15767,6 +16016,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
     }
@@ -15857,6 +16107,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -15873,6 +16124,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
     }
@@ -16018,6 +16270,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -16034,6 +16287,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
     }
@@ -16241,6 +16495,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -16257,6 +16512,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
     }
@@ -16328,6 +16584,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -16344,6 +16601,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
     }
@@ -16415,6 +16673,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -16431,6 +16690,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
     }
@@ -16558,6 +16818,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -16574,6 +16835,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
     }
@@ -16763,6 +17025,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -16779,6 +17042,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
     }
@@ -16820,6 +17084,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -16836,6 +17101,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
     }
@@ -16939,6 +17205,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -16955,6 +17222,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
     }
@@ -17076,6 +17344,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -17092,6 +17361,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
     }
@@ -17275,6 +17545,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -17291,6 +17562,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
     }
@@ -17332,6 +17604,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -17348,6 +17621,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool MemorySpecified => (this.Memory.Count != 0);
         
@@ -17364,6 +17638,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool BatterySpecified => (this.Battery.Count != 0);
         
@@ -17380,6 +17655,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AreaNwkInfoSpecified => (this.AreaNwkInfo.Count != 0);
         
@@ -17396,6 +17672,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AreaNwkDeviceInfoSpecified => (this.AreaNwkDeviceInfo.Count != 0);
         
@@ -17412,6 +17689,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool FirmwareSpecified => (this.Firmware.Count != 0);
         
@@ -17428,6 +17706,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SoftwareSpecified => (this.Software.Count != 0);
         
@@ -17444,6 +17723,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool DeviceInfoSpecified => (this.DeviceInfo.Count != 0);
         
@@ -17460,6 +17740,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool DeviceCapabilitySpecified => (this.DeviceCapability.Count != 0);
         
@@ -17476,6 +17757,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool RebootSpecified => (this.Reboot.Count != 0);
         
@@ -17492,6 +17774,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool EventLogSpecified => (this.EventLog.Count != 0);
         
@@ -17508,6 +17791,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool CmdhPolicySpecified => (this.CmdhPolicy.Count != 0);
         
@@ -17524,6 +17808,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ActiveCmdhPolicySpecified => (this.ActiveCmdhPolicy.Count != 0);
         
@@ -17540,6 +17825,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
         
@@ -17556,6 +17842,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
         
@@ -17572,6 +17859,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool TrafficPatternSpecified => (this.TrafficPattern.Count != 0);
     }
@@ -17613,6 +17901,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -17629,6 +17918,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool MemoryAnncSpecified => (this.MemoryAnnc.Count != 0);
         
@@ -17645,6 +17935,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool BatteryAnncSpecified => (this.BatteryAnnc.Count != 0);
         
@@ -17661,6 +17952,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AreaNwkInfoAnncSpecified => (this.AreaNwkInfoAnnc.Count != 0);
         
@@ -17677,6 +17969,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AreaNwkDeviceInfoAnncSpecified => (this.AreaNwkDeviceInfoAnnc.Count != 0);
         
@@ -17693,6 +17986,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool FirmwareAnncSpecified => (this.FirmwareAnnc.Count != 0);
         
@@ -17709,6 +18003,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SoftwareAnncSpecified => (this.SoftwareAnnc.Count != 0);
         
@@ -17725,6 +18020,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool DeviceInfoAnncSpecified => (this.DeviceInfoAnnc.Count != 0);
         
@@ -17741,6 +18037,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool DeviceCapabilityAnncSpecified => (this.DeviceCapabilityAnnc.Count != 0);
         
@@ -17757,6 +18054,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool RebootAnncSpecified => (this.RebootAnnc.Count != 0);
         
@@ -17773,6 +18071,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool EventLogAnncSpecified => (this.EventLogAnnc.Count != 0);
         
@@ -17789,6 +18088,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
         
@@ -17805,6 +18105,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
         
@@ -17821,6 +18122,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SemanticDescriptorAnncSpecified => (this.SemanticDescriptorAnnc.Count != 0);
         
@@ -17837,6 +18139,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool TrafficPatternAnncSpecified => (this.TrafficPatternAnnc.Count != 0);
     }
@@ -17970,6 +18273,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -17986,6 +18290,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
     }
@@ -18169,6 +18474,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool PointOfAccessSpecified => (this.PointOfAccess.Count != 0);
         
@@ -18300,6 +18606,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -18316,6 +18623,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool NodeAnncSpecified => (this.NodeAnnc.Count != 0);
         
@@ -18332,6 +18640,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ContainerSpecified => (this.Container.Count != 0);
         
@@ -18348,6 +18657,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ContainerAnncSpecified => (this.ContainerAnnc.Count != 0);
         
@@ -18364,6 +18674,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool GroupSpecified => (this.Group.Count != 0);
         
@@ -18380,6 +18691,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool GroupAnncSpecified => (this.GroupAnnc.Count != 0);
         
@@ -18396,6 +18708,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AccessControlPolicySpecified => (this.AccessControlPolicy.Count != 0);
         
@@ -18412,6 +18725,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AccessControlPolicyAnncSpecified => (this.AccessControlPolicyAnnc.Count != 0);
         
@@ -18428,6 +18742,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
         
@@ -18444,6 +18759,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool PollingChannelSpecified => (this.PollingChannel.Count != 0);
         
@@ -18460,6 +18776,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ScheduleSpecified => (this.Schedule.Count != 0);
         
@@ -18476,6 +18793,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool TimeSeriesSpecified => (this.TimeSeries.Count != 0);
         
@@ -18492,6 +18810,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool TimeSeriesAnncSpecified => (this.TimeSeriesAnnc.Count != 0);
         
@@ -18508,6 +18827,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool LocationPolicyAnncSpecified => (this.LocationPolicyAnnc.Count != 0);
         
@@ -18524,6 +18844,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AEAnncSpecified => (this.AEAnnc.Count != 0);
         
@@ -18540,6 +18861,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool Sg_FlexContainerResourceSpecified => (this.Sg_FlexContainerResource.Count != 0);
         
@@ -18556,6 +18878,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool Sg_AnnouncedFlexContainerResourceSpecified => (this.Sg_AnnouncedFlexContainerResource.Count != 0);
     }
@@ -18622,6 +18945,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool PointOfAccessSpecified => (this.PointOfAccess.Count != 0);
         
@@ -18699,6 +19023,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -18715,6 +19040,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool NodeAnncSpecified => (this.NodeAnnc.Count != 0);
         
@@ -18731,6 +19057,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ContainerSpecified => (this.Container.Count != 0);
         
@@ -18747,6 +19074,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ContainerAnncSpecified => (this.ContainerAnnc.Count != 0);
         
@@ -18763,6 +19091,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool GroupSpecified => (this.Group.Count != 0);
         
@@ -18779,6 +19108,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool GroupAnncSpecified => (this.GroupAnnc.Count != 0);
         
@@ -18795,6 +19125,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AccessControlPolicySpecified => (this.AccessControlPolicy.Count != 0);
         
@@ -18811,6 +19142,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AccessControlPolicyAnncSpecified => (this.AccessControlPolicyAnnc.Count != 0);
         
@@ -18827,6 +19159,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
         
@@ -18843,6 +19176,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool PollingChannelSpecified => (this.PollingChannel.Count != 0);
         
@@ -18859,6 +19193,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ScheduleAnncSpecified => (this.ScheduleAnnc.Count != 0);
         
@@ -18875,6 +19210,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool LocationPolicyAnncSpecified => (this.LocationPolicyAnnc.Count != 0);
         
@@ -18891,6 +19227,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool TimeSeriesSpecified => (this.TimeSeries.Count != 0);
         
@@ -18907,6 +19244,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool TimeSeriesAnncSpecified => (this.TimeSeriesAnnc.Count != 0);
         
@@ -18923,6 +19261,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AEAnncSpecified => (this.AEAnnc.Count != 0);
         
@@ -18939,6 +19278,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool Sg_FlexContainerResourceSpecified => (this.Sg_FlexContainerResource.Count != 0);
         
@@ -18955,6 +19295,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool Sg_AnnouncedFlexContainerResourceSpecified => (this.Sg_AnnouncedFlexContainerResource.Count != 0);
     }
@@ -19255,6 +19596,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -19271,6 +19613,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
     }
@@ -19509,6 +19852,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -19525,6 +19869,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ExecInstanceSpecified => (this.ExecInstance.Count != 0);
         
@@ -19541,6 +19886,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
     }
@@ -19767,6 +20113,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -19783,6 +20130,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
     }
@@ -19818,6 +20166,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -19834,6 +20183,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool EventConfigSpecified => (this.EventConfig.Count != 0);
         
@@ -19850,6 +20200,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
     }
@@ -19980,6 +20331,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool CollectPeriodSpecified => (this.CollectPeriod.Count != 0);
         
@@ -20002,6 +20354,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -20018,6 +20371,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
     }
@@ -20163,6 +20517,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -20179,6 +20534,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
     }
@@ -20252,6 +20608,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -20268,6 +20625,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
     }
@@ -20315,6 +20673,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool RuleLinksSpecified => (this.RuleLinks.Count != 0);
         
@@ -20331,6 +20690,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -20347,6 +20707,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
     }
@@ -20376,6 +20737,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -20392,6 +20754,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ServiceSubscribedNodeSpecified => (this.ServiceSubscribedNode.Count != 0);
         
@@ -20408,6 +20771,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
     }
@@ -20437,6 +20801,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ApplicableCredIDsSpecified => (this.ApplicableCredIDs.Count != 0);
         
@@ -20453,6 +20818,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AllowedApp_IDsSpecified => (this.AllowedApp_IDs.Count != 0);
         
@@ -20469,6 +20835,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AllowedAEsSpecified => (this.AllowedAEs.Count != 0);
         
@@ -20485,6 +20852,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -20501,6 +20869,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
     }
@@ -20574,6 +20943,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -20590,6 +20960,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
     }
@@ -20700,6 +21071,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AudienceSpecified => (this.Audience.Count != 0);
         
@@ -20728,6 +21100,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -20744,6 +21117,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
     }
@@ -20791,6 +21165,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AccessControlPolicyIDsSpecified => (this.AccessControlPolicyIDs.Count != 0);
         
@@ -20874,6 +21249,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -20890,6 +21266,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool RemoteCSESpecified => (this.RemoteCSE.Count != 0);
         
@@ -20906,6 +21283,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool RemoteCSEAnncSpecified => (this.RemoteCSEAnnc.Count != 0);
         
@@ -20922,6 +21300,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool NodeSpecified => (this.Node.Count != 0);
         
@@ -20938,6 +21317,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AESpecified => (this.AE.Count != 0);
         
@@ -20954,6 +21334,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ContainerSpecified => (this.Container.Count != 0);
         
@@ -20970,6 +21351,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool GroupSpecified => (this.Group.Count != 0);
         
@@ -20986,6 +21368,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AccessControlPolicySpecified => (this.AccessControlPolicy.Count != 0);
         
@@ -21002,6 +21385,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
         
@@ -21018,6 +21402,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool MgmtCmdSpecified => (this.MgmtCmd.Count != 0);
         
@@ -21034,6 +21419,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool LocationPolicySpecified => (this.LocationPolicy.Count != 0);
         
@@ -21050,6 +21436,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool StatsConfigSpecified => (this.StatsConfig.Count != 0);
         
@@ -21066,6 +21453,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool StatsCollectSpecified => (this.StatsCollect.Count != 0);
         
@@ -21082,6 +21470,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool RequestSpecified => (this.Request.Count != 0);
         
@@ -21098,6 +21487,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool DeliverySpecified => (this.Delivery.Count != 0);
         
@@ -21114,6 +21504,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ScheduleSpecified => (this.Schedule.Count != 0);
         
@@ -21130,6 +21521,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool M2MServiceSubscriptionProfileSpecified => (this.M2MServiceSubscriptionProfile.Count != 0);
         
@@ -21146,6 +21538,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ServiceSubscribedAppRuleSpecified => (this.ServiceSubscribedAppRule.Count != 0);
         
@@ -21162,6 +21555,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool RoleSpecified => (this.Role.Count != 0);
         
@@ -21178,6 +21572,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool TokenSpecified => (this.Token.Count != 0);
         
@@ -21194,6 +21589,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool Sg_FlexContainerResourceSpecified => (this.Sg_FlexContainerResource.Count != 0);
     }
@@ -21299,6 +21695,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool InputDataPointLinksSpecified => (this.InputDataPointLinks.Count != 0);
         
@@ -21317,6 +21714,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool OutputDataPointLinksSpecified => (this.OutputDataPointLinks.Count != 0);
         
@@ -21335,6 +21733,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool InputLinksSpecified => (this.InputLinks.Count != 0);
         
@@ -21353,6 +21752,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool OutputLinksSpecified => (this.OutputLinks.Count != 0);
         
@@ -21369,6 +21769,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -21385,6 +21786,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
         
@@ -21401,6 +21803,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
     }
@@ -21444,6 +21847,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool InputDataPointLinksSpecified => (this.InputDataPointLinks.Count != 0);
         
@@ -21462,6 +21866,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool OutputDataPointLinksSpecified => (this.OutputDataPointLinks.Count != 0);
         
@@ -21480,6 +21885,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool InputLinksSpecified => (this.InputLinks.Count != 0);
         
@@ -21498,6 +21904,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool OutputLinksSpecified => (this.OutputLinks.Count != 0);
         
@@ -21514,6 +21921,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -21530,6 +21938,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
         
@@ -21546,6 +21955,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SemanticDescriptorAnncSpecified => (this.SemanticDescriptorAnnc.Count != 0);
         
@@ -21562,6 +21972,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
     }
@@ -21603,6 +22014,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool OutputDataPointLinksSpecified => (this.OutputDataPointLinks.Count != 0);
         
@@ -21619,6 +22031,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -21635,6 +22048,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool GenericInterworkingServicePropertySpecified => (this.GenericInterworkingServiceProperty.Count != 0);
         
@@ -21651,6 +22065,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool GenericInterworkingOperationInstanceSpecified => (this.GenericInterworkingOperationInstance.Count != 0);
         
@@ -21667,6 +22082,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
         
@@ -21683,6 +22099,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
     }
@@ -21720,6 +22137,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool InputDataPointLinksSpecified => (this.InputDataPointLinks.Count != 0);
         
@@ -21738,6 +22156,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool OutputDataPointLinksSpecified => (this.OutputDataPointLinks.Count != 0);
         
@@ -21754,6 +22173,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -21770,6 +22190,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool GenericInterworkingServiceAnncPropertySpecified => (this.GenericInterworkingServiceAnncProperty.Count != 0);
         
@@ -21786,6 +22207,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool GenericInterworkingOperationInstanceAnncSpecified => (this.GenericInterworkingOperationInstanceAnnc.Count != 0);
         
@@ -21802,6 +22224,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
         
@@ -21818,6 +22241,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SemanticDescriptorAnncSpecified => (this.SemanticDescriptorAnnc.Count != 0);
         
@@ -21834,6 +22258,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
     }
@@ -21963,6 +22388,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool RoleIDsSpecified => (this.RoleIDs.Count != 0);
         
@@ -22189,6 +22615,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool LocalTokenIDsSpecified => (this.LocalTokenIDs.Count != 0);
         
@@ -22298,6 +22725,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -22314,6 +22742,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
     }
@@ -22429,6 +22858,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -22445,6 +22875,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool PolicyDeletionRulesSpecified => (this.PolicyDeletionRules.Count != 0);
         
@@ -22461,6 +22892,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
     }
@@ -22490,6 +22922,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -22506,6 +22939,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
         
@@ -22522,6 +22956,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
     }
@@ -22551,6 +22986,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -22567,6 +23003,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
         
@@ -22583,6 +23020,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SemanticDescriptorAnncSpecified => (this.SemanticDescriptorAnnc.Count != 0);
         
@@ -22599,6 +23037,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
     }
@@ -22628,6 +23067,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -22644,6 +23084,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
         
@@ -22660,6 +23101,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
         
@@ -22676,6 +23118,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AllJoynAppSpecified => (this.AllJoynApp.Count != 0);
     }
@@ -22705,6 +23148,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
         
@@ -22721,6 +23165,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
         
@@ -22737,6 +23182,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SemanticDescriptorAnncSpecified => (this.SemanticDescriptorAnnc.Count != 0);
         
@@ -22753,6 +23199,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool SubscriptionSpecified => (this.Subscription.Count != 0);
         
@@ -22769,6 +23216,7 @@ namespace Aetheros.OneM2M.Binding
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         [System.Diagnostics.DebuggerHiddenAttribute()]
         [System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
         [Newtonsoft.Json.JsonIgnoreAttribute()]
         public bool AllJoynAppAnncSpecified => (this.AllJoynAppAnnc.Count != 0);
     }

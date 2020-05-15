@@ -7,24 +7,21 @@ using Newtonsoft.Json.Linq;
 
 using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Net;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Reactive.Subjects;
 using System.Security.Cryptography;
-using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace Aetheros.OneM2M.Api
 {
-	public class Connection
+	public abstract class Connection
 	{
 		public interface IConfig
 		{
@@ -32,25 +29,20 @@ namespace Aetheros.OneM2M.Api
 			public string CertificateFilename { get; }
 		}
 
-		const string contentType = "application/vnd.onem2m-res+json";
-		const string _dateTimeFormat = "yyyyMMddTHHmmss.FFFFF";
-
-		readonly Uri _iotApiUrl;
-		readonly HttpClient _pnClient;
-
-		public X509Certificate? ClientCertificate { get; private set; }
+		private protected const string _contentType = "application/vnd.onem2m-res+json";
+		private protected const string _dateTimeFormat = "yyyyMMddTHHmmss.FFFFF";
 
 		static int _nextRequestId;
 		readonly string _requestGuid = Guid.NewGuid().ToString("N");
 		public string NextRequestId => $"{_requestGuid}/{Interlocked.Increment(ref _nextRequestId)}";
 
-		public static JsonSerializerSettings JsonSettings { get; } = new JsonSerializerSettings
+		static JsonSerializerSettings JsonSettings { get; } = new JsonSerializerSettings
 		{
 			NullValueHandling = NullValueHandling.Ignore,
 			DefaultValueHandling = DefaultValueHandling.Ignore,
 		};
 
-		public static JsonSerializer Serializer { get; }
+		internal static JsonSerializer Serializer { get; }
 
 		static Connection()
 		{
@@ -59,52 +51,12 @@ namespace Aetheros.OneM2M.Api
 				DateTimeStyles = DateTimeStyles.AssumeUniversal,
 				DateTimeFormat = _dateTimeFormat
 			});
-			JsonSettings.Converters.Add(new Newtonsoft.Json.Converters.StringEnumConverter
-			{
-			});
+			JsonSettings.Converters.Add(new Newtonsoft.Json.Converters.StringEnumConverter());
 
 			Serializer = JsonSerializer.CreateDefault(JsonSettings);
 		}
 
-		public Connection(IConfig config)
-			: this(config.M2MUrl, config.CertificateFilename) { }
-
-		public Connection(Uri m2mUrl, string certificateFilename)
-			: this(m2mUrl, GridNetUtils.LoadCertificate(certificateFilename)) { }
-
-		public Connection(Uri m2mUrl, X509Certificate? certificate = null)
-		{
-			_iotApiUrl = m2mUrl;
-
-			var handler = new HttpClientHandler
-			{
-#if false
-				//enable this code if using proxy	
-				Proxy = new System.Net.WebProxy("http://localhost.:8888")
-					{
-						BypassProxyOnLocal = false,
-					},
-#endif
-				ServerCertificateCustomValidationCallback = (message, cert, chain, errors) => true
-			};
-
-			if (certificate != null)
-			{
-				this.ClientCertificate = certificate;
-				handler.ClientCertificates.Add(certificate);
-			}
-
-#if DEBUG
-			var loggingHandler = new DebugMessageHandler(handler);
-			_pnClient = new HttpClient(loggingHandler);
-#else
-			_pnClient = new HttpClient(handler);
-#endif
-
-			_pnClient.DefaultRequestHeaders.Add("Accept", contentType);
-		}
-
-		public async Task<AE?> FindApplication(string inCse, string appId)
+		public async Task<AE?> FindApplicationAsync(string inCse, string appId)
 		{
 			var response = await GetResponseAsync(new RequestPrimitive
 			{
@@ -133,7 +85,7 @@ namespace Aetheros.OneM2M.Api
 			return response2.AE;
 		}
 
-		public async Task<AE?> RegisterApplication(Application.IConfig appConfig, string inCse)
+		public async Task<AE?> RegisterApplicationAsync(Application.IConfig appConfig, string inCse)
 		{
 			var response = await GetResponseAsync(new RequestPrimitive
 			{
@@ -164,11 +116,7 @@ namespace Aetheros.OneM2M.Api
 				FilterCriteria = filterCriteria
 			});
 
-		public async Task<ResponseContent> GetResponseAsync(RequestPrimitive body)
-		{
-			using (var request = GetRequest(body))
-				return await GetResponseAsync(request);
-		}
+		public abstract Task<ResponseContent> GetResponseAsync(RequestPrimitive body);
 
 		public class HttpStatusException : Exception
 		{
@@ -183,157 +131,8 @@ namespace Aetheros.OneM2M.Api
 			}
 		}
 
-		public async Task<ResponseContent> GetResponseAsync(HttpRequestMessage request)
-		{
-			using (var response = await _pnClient.SendAsync(request))
-				return await response.DeserializeAsync<ResponseContent>() ??
-					throw new InvalidDataException("The returned response did not match type 'ResponseContent'");
-		}
-
 		public static T? DeserializeJson<T>(string str)
 			where T : class => JsonConvert.DeserializeObject<T>(str, Connection.JsonSettings);
-
-
-		internal HttpRequestMessage GetRequest(RequestPrimitive body)
-		{
-			var args = new NameValueCollection();
-			if (body.ResultContent != null)
-				args["rcn"] = body.ResultContent.Value.ToString("d");
-
-			if (body.ResultPersistence != null)
-				args["rp"] = body.ResultPersistence;
-
-			if (body.DeliveryAggregation != null)
-				args["da"] = body.DeliveryAggregation.Value.ToString();
-
-			if (body.DiscoveryResultType != null)
-				args["drt"] = body.DiscoveryResultType.Value.ToString("d");
-
-			if (body.RoleIDs != null)
-				args.AddRange("rids", body.RoleIDs);
-
-			if (body.TokenIDs != null)
-				args["tids"] = body.TokenIDs;
-
-			if (body.LocalTokenIDs != null)
-				args.AddRange("ltids", body.LocalTokenIDs);
-
-			if (body.TokenReqIndicator != null)
-				args["tqi"] = body.TokenReqIndicator.Value.ToString();
-
-			var rt = body.ResponseType;
-			if (rt?.ResponseTypeValue != null)
-				args["rt"] = rt.ResponseTypeValue.Value.ToString("d");
-
-			HttpMethod method;
-			switch (body.Operation)
-			{
-				case Operation.Create:
-				case Operation.Notify:
-				default:
-					method = HttpMethod.Post;
-					break;
-				case Operation.Retrieve:
-					method = HttpMethod.Get;
-					break;
-				case Operation.Update:
-					method = HttpMethod.Put;
-					break;
-				case Operation.Delete:
-					method = HttpMethod.Delete;
-					break;
-			}
-
-			var fc = body.FilterCriteria;
-			if (fc != null)
-			{
-				if (fc.CreatedBefore != null) args["crb"] = fc.CreatedBefore.Value.ToString(_dateTimeFormat);
-				if (fc.CreatedAfter != null) args["cra"] = fc.CreatedAfter.Value.ToString(_dateTimeFormat);
-				if (fc.ModifiedSince != null) args["ms"] = fc.ModifiedSince.Value.ToString(_dateTimeFormat);
-				if (fc.UnmodifiedSince != null) args["us"] = fc.UnmodifiedSince.Value.ToString(_dateTimeFormat);
-				if (fc.StateTagSmaller != null) args["sts"] = fc.StateTagSmaller.ToString();
-				if (fc.StateTagBigger != null) args["stb"] = fc.StateTagBigger.ToString();
-				if (fc.ExpireBefore != null) args["exb"] = fc.ExpireBefore.Value.ToString(_dateTimeFormat);
-				if (fc.ExpireAfter != null) args["exa"] = fc.ExpireAfter.Value.ToString(_dateTimeFormat);
-				if (fc.SizeAbove != null) args["sza"] = fc.SizeAbove.ToString();
-				if (fc.SizeBelow != null) args["szb"] = fc.SizeBelow.ToString();
-				if (fc.Limit != null) args["lim"] = fc.Limit.ToString();
-				if (fc.FilterUsage != null) args["fu"] = fc.FilterUsage.Value.ToString("d");
-				if (fc.FilterOperation != null) args["fo"] = fc.FilterOperation.Value ? "1" : "0";
-				if (fc.ContentFilterSyntax != null) args["cfs"] = fc.ContentFilterSyntax.Value.ToString("d");
-				if (fc.ContentFilterQuery != null) args["cfq"] = fc.ContentFilterQuery;
-				if (fc.Level != null) args["lvl"] = fc.Level.ToString();
-				if (fc.Offset != null) args["ofst"] = fc.Offset.ToString();
-
-				if (fc.Attribute != null)
-				{
-					foreach (var attr in fc.Attribute)
-						if (attr.Value != null)
-							args.Add(attr.Name, attr.Value.ToString());
-				}
-
-				if (fc.ResourceType != null)
-					args.AddRange("ty", fc.ResourceType.Select(ty => ty.ToString("d")));
-
-				if (fc.SemanticsFilter != null)
-					args.AddRange("smf", fc.SemanticsFilter);
-
-				if (fc.Labels != null)
-					args.AddRange("lbl", fc.Labels);
-
-				if (fc.ContentType != null)
-					args.AddRange("cty", fc.ContentType);
-			}
-
-			var urlBuilder = new UriBuilder(_iotApiUrl)
-			{
-				Path = body.To,
-				Query = string.Join("&", args.AllKeys.SelectMany(args.GetValues, (k, v) => $"{k}={Uri.EscapeDataString(v)}")),
-			};
-
-			var httpRequestMessage = new HttpRequestMessage(method, urlBuilder.ToString());
-
-			var contentTypeHeader = new MediaTypeHeaderValue(contentType);
-
-			//if (method == HttpMethod.Post || method == HttpMethod.Put)
-			{
-				if (body.ResourceType != null)
-					contentTypeHeader.Parameters.Add(new NameValueHeaderValue("ty", ((int) body.ResourceType).ToString()));
-
-				if (body.PrimitiveContent != null)
-				{
-					var bodyJson = SerializeJson(body.PrimitiveContent);
-					httpRequestMessage.Content = new StringContent(bodyJson, Encoding.UTF8);
-					httpRequestMessage.Content.Headers.ContentType = contentTypeHeader;
-				}
-			}
-
-			httpRequestMessage.Headers.Add("X-M2M-Origin", body.From);
-			httpRequestMessage.Headers.Add("X-M2M-RI", body.RequestIdentifier ?? NextRequestId);
-
-			if (body.GroupRequestIdentifier != null)
-				httpRequestMessage.Headers.Add("X-M2M-GID", body.GroupRequestIdentifier);
-
-			if (body.OriginatingTimestamp != null)
-				httpRequestMessage.Headers.Add("X-M2M-OT", body.OriginatingTimestamp.Value.ToString(_dateTimeFormat));
-
-			if (body.ResultExpirationTimestamp != null)
-				httpRequestMessage.Headers.Add("X-M2M-RST", body.ResultExpirationTimestamp);
-
-			if (body.RequestExpirationTimestamp != null)
-				httpRequestMessage.Headers.Add("X-M2M-RET", body.RequestExpirationTimestamp);
-
-			if (body.OperationExecutionTime != null)
-				httpRequestMessage.Headers.Add("X-M2M-OET", body.OperationExecutionTime);
-
-			if (body.EventCategory != null)
-				httpRequestMessage.Headers.Add("X-M2M-EC", body.EventCategory);
-
-			if (body.ResponseType?.NotificationURI != null)
-				httpRequestMessage.Headers.Add("X-M2M-RTU", string.Join("&", body.ResponseType.NotificationURI));
-
-			return httpRequestMessage;
-		}
 
 		public static ICollection<Aetheros.OneM2M.Binding.Attribute> GetAttributes<T>(params Expression<Func<T, object>>[] expressions) =>
 			expressions.Select(expr =>
@@ -381,7 +180,6 @@ namespace Aetheros.OneM2M.Api
 				return ParseNotification(body, req.Headers, req.Query);
 			}
 		}
-
 
 		Notification? ParseNotification(string body, IHeaderDictionary headers, IQueryCollection query)
 		{
@@ -472,7 +270,7 @@ namespace Aetheros.OneM2M.Api
 				if (Enum.TryParse<ContentFilterSyntax>(query["cfs"].FirstOrDefault(), out ContentFilterSyntax cfs))
 					FC().ContentFilterSyntax = cfs;
 
-				if (query["cfq"].Any())
+				if (query["cfq"].Count > 0)
 					FC().ContentFilterQuery = query["cfq"].FirstOrDefault();
 
 				if (long.TryParse(query["lvl"].FirstOrDefault(), out long lvl))
@@ -505,9 +303,14 @@ namespace Aetheros.OneM2M.Api
 		public static string SerializeJson(object obj) => JsonConvert.SerializeObject(obj, Newtonsoft.Json.Formatting.Indented, JsonSettings);
 	}
 
-
 	public static class ApiExtensions
 	{
+		/// <summary>
+		/// Deserialize the <see cref="ContentInstance.Content"/> of a <see cref="ContentInstance"/>.
+		/// </summary>
+		/// <typeparam name="T">The Type of the ContentInstance's Content</typeparam>
+		/// <param name="this">The ContentInstance</param>
+		/// <returns>The content of the ContentInstance</returns>
 		public static T? GetContent<T>(this ContentInstance @this)
 			where T : class
 		{
@@ -515,10 +318,9 @@ namespace Aetheros.OneM2M.Api
 			return json?.ToObject<T>(Connection.Serializer);
 		}
 
-		public static async Task<T> DeserializeAsync<T>(this HttpResponseMessage response)
+		internal static async Task<T> DeserializeAsync<T>(this HttpResponseMessage response)
 			where T : class, new()
 		{
-			var content = response.Content;
 			var body = await response.Content.ReadAsStringAsync();
 
 			if (!response.IsSuccessStatusCode)
@@ -530,10 +332,10 @@ namespace Aetheros.OneM2M.Api
 				throw new InvalidDataException("An empty response was returned");
 
 			return Connection.DeserializeJson<T>(body)
-				?? throw new InvalidDataException($"The response did not match Type '{typeof(T).Name}'"); ;
+				?? throw new InvalidDataException($"The response did not match Type '{typeof(T).Name}'");
 		}
 
-		public static async Task<HttpResponseMessage> PostJsonAsync<T>(this HttpClient @this, Uri uri, T body)
+		internal static async Task<HttpResponseMessage> PostJsonAsync<T>(this HttpClient @this, Uri uri, T body)
 			where T : class
 		{
 			var bodyJson = Connection.SerializeJson(body);
@@ -542,9 +344,9 @@ namespace Aetheros.OneM2M.Api
 			return await @this.PostAsync(uri, requestBody);
 		}
 
-		public static string ComputeHash(this HashAlgorithm @this, string str, Encoding? encoding = null)
+		internal static string ComputeHash(this HashAlgorithm @this, string str, Encoding? encoding = null)
 		{
-			var rgbClear = (encoding ?? Encoding.UTF8).GetBytes(str);	// TODO: BOM?
+			var rgbClear = (encoding ?? Encoding.UTF8).GetBytes(str);   // TODO: BOM?
 			var rgbHash = @this.ComputeHash(rgbClear);
 			return Convert.ToBase64String(rgbHash);
 		}

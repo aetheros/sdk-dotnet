@@ -1,17 +1,18 @@
+using DotNetify;
+using DotNetify.Routing;
+using DotNetify.Security;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reactive.Linq;
-using DotNetify;
-using DotNetify.Routing;
-using DotNetify.Security;
 
 namespace Example.Web.Server
 {
 	[Authorize]
 	public class Dashboard : BaseVM, IRoutable
 	{
-		private IDisposable _subscription;
+		private readonly IDisposable _subscription;
 
 		public class Activity
 		{

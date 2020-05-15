@@ -1,13 +1,15 @@
-﻿using System;
+﻿using DotNetify;
+using DotNetify.Routing;
+
+using Example.Types;
+using Example.Web.Server.Services;
+using Example.Web.Server.Utils;
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reactive.Linq;
 using System.Threading.Tasks;
-using DotNetify;
-using DotNetify.Routing;
-using Example.Types;
-using Example.Web.Server.Services;
-using Example.Web.Server.Utils;
 
 namespace Example.Web.Server.ViewModels
 {
@@ -201,7 +203,7 @@ namespace Example.Web.Server.ViewModels
 		{
 			_meterService.AddMeterReadPolicy(new Config.MeterReadPolicy
 			{
-				name = $"{sendPolicy.ReadInterval} Read",
+				Name = $"{sendPolicy.ReadInterval} Read",
 				Start = sendPolicy.Start,
 				End = sendPolicy.End,
 				ReadInterval = sendPolicy.ReadInterval

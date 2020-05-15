@@ -1,8 +1,9 @@
+using DotNetify;
+using DotNetify.Security;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using DotNetify;
-using DotNetify.Security;
 
 namespace Example.Web.Server
 {
@@ -38,7 +39,7 @@ namespace Example.Web.Server
 			var names = fullName.Split(new char[] { ' ' }, 2);
 			var newRecord = new EmployeeModel
 			{
-				FirstName = names.First(),
+				FirstName = names.Length > 0 ? names[0] : "",
 				LastName = names.Length > 1 ? names.Last() : ""
 			};
 
@@ -122,7 +123,9 @@ namespace Example.Web.Server
 		{
 			// Use base method to check whether user has changed the SelectedPage property value by clicking a pagination button.
 			if (this.HasChanged(nameof(SelectedPage)))
+			{
 				return employees.Skip(_recordsPerPage * (SelectedPage - 1)).Take(_recordsPerPage);
+			}
 			else
 			{
 				Pages = Enumerable.Range(1, GetPageCount(employees.Count())).ToArray();

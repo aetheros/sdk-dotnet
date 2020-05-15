@@ -1,9 +1,10 @@
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
 using DotNetify;
 using DotNetify.Routing;
 using DotNetify.Security;
+
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Claims;
 
 namespace Example.Web.Server
 {

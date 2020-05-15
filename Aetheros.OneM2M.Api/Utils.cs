@@ -9,12 +9,11 @@ using System.Reactive;
 using System.Reactive.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace Aetheros.OneM2M.Api
 {
-	public static class GridNetUtils
+	internal static class AosUtils
 	{
 		public static void AddRange(this NameValueCollection @this, string key, IEnumerable<string> values)
 		{
@@ -33,15 +32,12 @@ namespace Aetheros.OneM2M.Api
 		public static TEnum? ParseNullableEnum<TEnum>(this string @this) where TEnum : struct =>
 			Enum.TryParse(@this, out TEnum value) ? (TEnum?) value : null;
 
-
 		public static X509Certificate2? LoadCertificate(string certificateFilename)
 		{
 			if (!File.Exists(certificateFilename))
 				return null;
 			return new X509Certificate2(X509Certificate.CreateFromCertFile(certificateFilename));
 		}
-
-
 
 		public static IObservable<T> AsyncFinally<T>(this IObservable<T> source, Func<Task> action) =>
 			source
@@ -62,7 +58,6 @@ namespace Aetheros.OneM2M.Api
 				})
 				.Dematerialize();
 
-
 		public static T? DeserializeObject<T>(this JsonSerializer @this, string value)
 			where T : class
 		{
@@ -73,7 +68,7 @@ namespace Aetheros.OneM2M.Api
 
 		public static string ToPemString(this CertificateRequest request, X509SignatureGenerator? generator = null)
 		{
-			var  pkcs10 = generator == null ? request.CreateSigningRequest() : request.CreateSigningRequest(generator);
+			var pkcs10 = generator == null ? request.CreateSigningRequest() : request.CreateSigningRequest(generator);
 			return "-----BEGIN CERTIFICATE REQUEST-----\r\n"
 				+ pkcs10.ToFormattedBase64String()
 				+ "-----END CERTIFICATE REQUEST-----";
@@ -86,7 +81,7 @@ namespace Aetheros.OneM2M.Api
 			for (var offset = 0; offset < base64.Length;)
 			{
 				int lineEnd = Math.Min(offset + lineLength, base64.Length);
-				builder.AppendLine(base64.Substring(offset, lineEnd - offset));
+				builder.Append(base64, offset, lineEnd - offset).AppendLine();
 				offset = lineEnd;
 			}
 			return builder.ToString();
@@ -107,10 +102,10 @@ namespace Aetheros.OneM2M.Api
 		}
 	}
 
-	public static class AsyncEnumerableExtensions
+#if false
+	static class AsyncEnumerableExtensions
 	{
 		public static IAsyncEnumerable<U> SelectAsync<T, U>(this IAsyncEnumerable<T> source, Func<T, Task<U>> fn) => new SelectAsyncEnumerable<T, U>(source, fn);
-
 
 		class SelectAsyncEnumerable<T, U> : IAsyncEnumerable<U>
 		{
@@ -142,7 +137,7 @@ namespace Aetheros.OneM2M.Api
 
 				public async ValueTask<bool> MoveNextAsync()
 				{
-					if (!await _source.MoveNextAsync())
+					if (!await _source.MoveNextAsync(_cancellationToken))
 						return false;
 					Current = await _func(_source.Current);
 					return true;
@@ -152,4 +147,5 @@ namespace Aetheros.OneM2M.Api
 			}
 		}
 	}
+#endif
 }

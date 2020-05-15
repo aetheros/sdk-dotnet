@@ -84,7 +84,7 @@ namespace Aetheros.OneM2M.Api
 			}
 		}
 
-		public async Task AddContentInstance(string key, object content) => await this.GetResponseAsync(new RequestPrimitive
+		public async Task AddContentInstanceAsync(string key, object content) => await this.GetResponseAsync(new RequestPrimitive
 		{
 			To = key,
 			Operation = Operation.Create,
@@ -104,11 +104,8 @@ namespace Aetheros.OneM2M.Api
 			{
 				return (await GetPrimitiveAsync(name)).Container;
 			}
-			catch (Connection.HttpStatusException e)
+			catch (Connection.HttpStatusException e) when (e.StatusCode == HttpStatusCode.NotFound)
 			{
-				if (e.StatusCode != HttpStatusCode.NotFound)
-					throw;
-
 				//var toUrl = /*clientAppContainer ? AeMnUrl :*/ AeUrl;
 				return (await GetResponseAsync(new RequestPrimitive
 				{
@@ -122,11 +119,11 @@ namespace Aetheros.OneM2M.Api
 							ResourceName = name
 						}
 					}
-				})).Container; 
+				})).Container;
 			}
 		}
 
-		public async Task<T?> GetLatestContentInstance<T>(string containerKey)
+		public async Task<T?> GetLatestContentInstanceAsync<T>(string containerKey)
 			where T : class
 		{
 			try
@@ -142,18 +139,15 @@ namespace Aetheros.OneM2M.Api
 
 				var rcs = ciRefs
 					.ToAsyncEnumerable()
-					.SelectAsync(async url => await GetPrimitiveAsync(url))
+					.SelectAwait(async url => await GetPrimitiveAsync(url))
 					.OrderBy(s => s.ContentInstance?.CreationTime);
 
 				return (await rcs
 					.Select(rc => rc.ContentInstance?.GetContent<T>())
 					.ToListAsync()).LastOrDefault();
 			}
-			catch (Connection.HttpStatusException e)
+			catch (Connection.HttpStatusException e) when (e.StatusCode == HttpStatusCode.NotFound)
 			{
-				if (e.StatusCode != HttpStatusCode.NotFound)
-					throw;
-
 				return null;
 			}
 		}
@@ -242,12 +236,12 @@ namespace Aetheros.OneM2M.Api
 			});
 		}
 
-
-		public static async Task<Application> Register(Connection.IConfig m2mConfig, IConfig appConfig, string inCse, Uri caUri)
+		// TODO: find a proper place for this
+		public static async Task<Application> RegisterAsync(Connection.IConfig m2mConfig, IConfig appConfig, string inCse, Uri caUri)
 		{
-			var con = new Connection(m2mConfig);
+			var con = new HttpConnection(m2mConfig);
 
-			var ae = await con.FindApplication(inCse, appConfig.AppId) ?? await con.RegisterApplication(appConfig, inCse);
+			var ae = await con.FindApplicationAsync(inCse, appConfig.AppId) ?? await con.RegisterApplicationAsync(appConfig, inCse);
 			if (ae == null)
 				throw new InvalidOperationException("Unable to register application");
 
@@ -296,11 +290,12 @@ namespace Aetheros.OneM2M.Api
 					CertificateSigningResponseBody signingResponse;
 					using (var httpSigningResponse = await client.PostJsonAsync(csrUri, signingRequest))
 						signingResponse = await httpSigningResponse.DeserializeAsync<CertificateSigningResponseBody>();
-
-					var certificateText = signingResponse.Response?.X509Certificate;
-					if (certificateText == null)
+					if (signingResponse.Response == null)
+						throw new InvalidDataException("CertificateSigningResponse does not contain a response");
+					if (signingResponse.Response.X509Certificate == null)
 						throw new InvalidDataException("CertificateSigningResponse does not contain a certificate");
-					var signedCert = GridNetUtils.CreateX509Certificate(certificateText);
+
+					var signedCert = AosUtils.CreateX509Certificate(signingResponse.Response.X509Certificate);
 
 					var confirmationRequest = new ConfirmationRequestBody
 					{
@@ -327,7 +322,7 @@ namespace Aetheros.OneM2M.Api
 					using (var pubPrivEphemeral = signedCert.CopyWithPrivateKey(privateKey))
 						await File.WriteAllBytesAsync(m2mConfig.CertificateFilename, pubPrivEphemeral.Export(X509ContentType.Cert));
 
-					con = new Connection(m2mConfig.M2MUrl, signedCert);
+					con = new HttpConnection(m2mConfig.M2MUrl, signedCert);
 				}
 			}
 

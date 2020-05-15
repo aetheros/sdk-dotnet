@@ -1,10 +1,9 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
-
-using Newtonsoft.Json;
 
 namespace Example.Types
 {
@@ -65,7 +64,7 @@ namespace Example.Types
 			public string? Id { get; set; }
 
 			[JsonProperty("name")]
-			public string? name { get; set; }
+			public string? Name { get; set; }
 
 			[JsonProperty("start")]
 			public DateTimeOffset Start { get; set; }

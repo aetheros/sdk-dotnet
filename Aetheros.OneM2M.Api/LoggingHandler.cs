@@ -5,7 +5,7 @@ using System.Threading;
 
 namespace Aetheros.OneM2M.Api
 {
-    public class DebugMessageHandler : MessageProcessingHandler
+    internal class DebugMessageHandler : MessageProcessingHandler
     {
         public DebugMessageHandler(HttpMessageHandler innerHandler)
             : base(innerHandler)
@@ -15,8 +15,10 @@ namespace Aetheros.OneM2M.Api
         void DumpHeaders(HttpHeaders headers)
         {
             foreach (var header in headers)
+            {
                 foreach (var value in header.Value)
                     Debug.WriteLine($"{header.Key}: {value}");
+            }
         }
 
         protected override HttpRequestMessage ProcessRequest(HttpRequestMessage request, CancellationToken cancellationToken)

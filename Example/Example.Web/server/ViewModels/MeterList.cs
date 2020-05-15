@@ -1,13 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reactive.Linq;
-using DotNetify;
+﻿using DotNetify;
 using DotNetify.Security;
+
 using Example.Types;
 using Example.Web.Server.Services;
 using Example.Web.Server.Utils;
-using Example.Web.Server.ViewModels;
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reactive.Linq;
 
 namespace Example.Web.Server.ViewModels
 {

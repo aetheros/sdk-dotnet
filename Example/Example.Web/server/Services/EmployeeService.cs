@@ -1,9 +1,10 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using Newtonsoft.Json;
 
 namespace Example.Web.Server
 {
@@ -27,7 +28,7 @@ namespace Example.Web.Server
 
 	public class EmployeeService : IEmployeeService
 	{
-		private List<EmployeeModel> _employees;
+		private readonly List<EmployeeModel> _employees;
 		private int _newId;
 
 		public EmployeeService()
@@ -59,7 +60,7 @@ namespace Example.Web.Server
 		private string GetEmbeddedResource(string resourceName)
 		{
 			var assembly = GetType().Assembly;
-			var name = assembly.GetManifestResourceNames().Where(i => i.EndsWith(resourceName, StringComparison.OrdinalIgnoreCase)).FirstOrDefault();
+			var name = assembly.GetManifestResourceNames().FirstOrDefault(i => i.EndsWith(resourceName, StringComparison.OrdinalIgnoreCase));
 			if (string.IsNullOrEmpty(name))
 				throw new FileNotFoundException();
 

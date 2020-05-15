@@ -27,7 +27,7 @@ module.exports = {
 		]
 	},
 	plugins: [
-		new MiniCssExtractPlugin(),
-		new UglifyJsPlugin()
+		new MiniCssExtractPlugin()
+		//new UglifyJsPlugin()
 	]
 };

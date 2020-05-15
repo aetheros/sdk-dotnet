@@ -42,6 +42,22 @@
     <TypeScriptCompile Include="client\views\AppLayout.tsx" />
     <TypeScriptCompile Include="client\views\LoginPage.tsx" />
   </ItemGroup>
+  <PropertyGroup>
+    <!-- File with mtime of last successful npm install -->
+    <NpmInstallStampFile>node_modules/.install-stamp</NpmInstallStampFile>
+  </PropertyGroup>
+  <Target Name="NpmInstall"
+    BeforeTargets="BeforeBuild"
+    Inputs="package.json"
+    Outputs="$(NpmInstallStampFile)">
+    <Exec Command="node --version" ContinueOnError="true">
+      <Output TaskParameter="ExitCode" PropertyName="ErrorCode" />
+    </Exec>
+    <Message Importance="high" Text="Running 'npm install'..." />
+    <Exec Command="npm install" />
+    <Touch Files="$(NpmInstallStampFile)" AlwaysCreate="true" />
+  </Target>
+
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">
     <!-- Ensure Node.js is installed -->
     <Exec Command="node --version" ContinueOnError="true">

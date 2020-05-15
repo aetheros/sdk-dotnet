@@ -1,0 +1,12 @@
+﻿apiRules:
+- exclude:
+      uidRegex: ^System\.Object
+      type: Type
+
+#- exclude:
+#      uidRegex: Specified$
+#      type: Member
+
+#- exclude:
+#    hasAttribute:
+        

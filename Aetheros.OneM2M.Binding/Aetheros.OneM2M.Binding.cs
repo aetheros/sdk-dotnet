@@ -8439,8 +8439,8 @@ namespace Aetheros.OneM2M.Binding
         
         /// <summary>
         /// </summary>
-        [Newtonsoft.Json.JsonPropertyAttribute("or")]
-        [System.Xml.Serialization.XmlElementAttribute("or", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="anyURI")]
+        [Newtonsoft.Json.JsonPropertyAttribute("org")]
+        [System.Xml.Serialization.XmlElementAttribute("org", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="anyURI")]
         public string Originator { get; set; }
     }
     
@@ -8457,8 +8457,8 @@ namespace Aetheros.OneM2M.Binding
         
         /// <summary>
         /// </summary>
-        [Newtonsoft.Json.JsonPropertyAttribute("or")]
-        [System.Xml.Serialization.XmlElementAttribute("or", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="anyURI")]
+        [Newtonsoft.Json.JsonPropertyAttribute("org")]
+        [System.Xml.Serialization.XmlElementAttribute("org", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="anyURI")]
         public string Originator { get; set; }
         
         /// <summary>

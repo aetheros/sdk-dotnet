@@ -222,6 +222,9 @@ namespace Aetheros.OneM2M.Binding
 
 	public partial class ResponseContent
 	{
+		[JsonIgnore]
+		[XmlIgnore]
+		public ResponseStatusCode ResponseStatusCode { get; set; }
 	}
 
 	public class NotificationContent

@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Example.Web", "Example\Exam
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Documentation", "Documentation\Documentation.csproj", "{03C0D552-C313-43CD-8DA3-DE9809634B6A}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aetheros.OneM2M.Tool", "Aetheros.OneM2M.Tool\Aetheros.OneM2M.Tool.csproj", "{D338D18B-7B53-4677-A384-F7F18B664913}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{03C0D552-C313-43CD-8DA3-DE9809634B6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03C0D552-C313-43CD-8DA3-DE9809634B6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03C0D552-C313-43CD-8DA3-DE9809634B6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D338D18B-7B53-4677-A384-F7F18B664913}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D338D18B-7B53-4677-A384-F7F18B664913}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D338D18B-7B53-4677-A384-F7F18B664913}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D338D18B-7B53-4677-A384-F7F18B664913}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

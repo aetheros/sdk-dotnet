@@ -29,7 +29,9 @@ namespace Aetheros.OneM2M.Api
 			public string CertificateFilename { get; }
 		}
 
-		private protected const string _contentType = "application/vnd.onem2m-res+json";
+		[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
+		public const string OneM2MResponseContentTYpe = "application/vnd.onem2m-res+json";
+		//[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		private protected const string _dateTimeFormat = "yyyyMMddTHHmmss.FFFFF";
 
 		static int _nextRequestId;

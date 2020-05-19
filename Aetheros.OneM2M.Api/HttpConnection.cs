@@ -49,19 +49,37 @@ namespace Aetheros.OneM2M.Api
 			}
 
 #if DEBUG
-			var loggingHandler = new DebugMessageHandler(handler);
+			var loggingHandler = new TraceMessageHandler(handler);
 			_pnClient = new HttpClient(loggingHandler);
 #else
 			_pnClient = new HttpClient(handler);
 #endif
 
-			_pnClient.DefaultRequestHeaders.Add("Accept", _contentType);
+			_pnClient.DefaultRequestHeaders.Add("Accept", OneM2MResponseContentTYpe);
 		}
 
 		public override async Task<ResponseContent> GetResponseAsync(RequestPrimitive body)
 		{
 			using (var request = GetRequest(body))
 				return await GetResponseAsync(request);
+		}
+
+		public async Task<ResponseContent> GetResponseAsync(HttpRequestMessage request)
+		{
+			using (var response = await _pnClient.SendAsync(request))
+			{
+				var responseContent = await response.DeserializeAsync<ResponseContent>() ??
+					throw new InvalidDataException("The returned response did not match type 'ResponseContent'");
+
+				if (response.Headers.TryGetValues("X-M2M-RSC", out IEnumerable<string> statusCodeHeaders))
+				{
+					var statusCodeHeader = statusCodeHeaders.FirstOrDefault();
+					if (statusCodeHeader == null && Enum.TryParse<ResponseStatusCode>(statusCodeHeader, out ResponseStatusCode statusCode))
+						responseContent.ResponseStatusCode = statusCode;
+				}
+
+				return responseContent;
+			}
 		}
 
 		internal HttpRequestMessage GetRequest(RequestPrimitive body)
@@ -154,7 +172,7 @@ namespace Aetheros.OneM2M.Api
 
 			var httpRequestMessage = new HttpRequestMessage(method, urlBuilder.ToString());
 
-			var contentTypeHeader = new MediaTypeHeaderValue(_contentType);
+			var contentTypeHeader = new MediaTypeHeaderValue(OneM2MResponseContentTYpe);
 
 			//if (method == HttpMethod.Post || method == HttpMethod.Put)
 			{
@@ -194,24 +212,6 @@ namespace Aetheros.OneM2M.Api
 				httpRequestMessage.Headers.Add("X-M2M-RTU", string.Join("&", body.ResponseType.NotificationURI));
 
 			return httpRequestMessage;
-		}
-
-		public async Task<ResponseContent> GetResponseAsync(HttpRequestMessage request)
-		{
-			using (var response = await _pnClient.SendAsync(request))
-			{
-				var responseContent = await response.DeserializeAsync<ResponseContent>() ??
-					throw new InvalidDataException("The returned response did not match type 'ResponseContent'");
-
-				if (response.Headers.TryGetValues("X-M2M-RSC", out IEnumerable<string> statusCodeHeaders))
-				{
-					var statusCodeHeader = statusCodeHeaders.FirstOrDefault();
-					if (statusCodeHeader == null && Enum.TryParse<ResponseStatusCode>(statusCodeHeader, out ResponseStatusCode statusCode))
-						responseContent.ResponseStatusCode = statusCode;
-				}
-
-				return responseContent;
-			}
 		}
 	}
 }

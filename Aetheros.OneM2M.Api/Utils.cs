@@ -13,7 +13,8 @@ using System.Threading.Tasks;
 
 namespace Aetheros.OneM2M.Api
 {
-	internal static class AosUtils
+	[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
+	public static class AosUtils
 	{
 		public static void AddRange(this NameValueCollection @this, string key, IEnumerable<string> values)
 		{

@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "GridNet.IoT.Client": {
+      "commandName": "Project",
+      "commandLineArgs": "get -c C:\\work\\gridnet\\m2msdk\\AetherosOneM2MSDK\\GridNetIoTClient\\cert.pfx --from /PN_CSE https://api.piersh-m2m.corp.grid-net.com/PN_CSE/C4bb2f056000001/data-cnt?cra=20200512T184205.58554&fu=1&ty=4",
+      "workingDirectory": "."
+    }
+  }
+}

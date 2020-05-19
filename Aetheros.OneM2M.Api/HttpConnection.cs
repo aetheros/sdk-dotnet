@@ -1,6 +1,7 @@
 ﻿using Aetheros.OneM2M.Binding;
 
 using System;
+using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
 using System.Linq;
@@ -199,8 +200,17 @@ namespace Aetheros.OneM2M.Api
 		{
 			using (var response = await _pnClient.SendAsync(request))
 			{
-				return await response.DeserializeAsync<ResponseContent>() ??
+				var responseContent = await response.DeserializeAsync<ResponseContent>() ??
 					throw new InvalidDataException("The returned response did not match type 'ResponseContent'");
+
+				if (response.Headers.TryGetValues("X-M2M-RSC", out IEnumerable<string> statusCodeHeaders))
+				{
+					var statusCodeHeader = statusCodeHeaders.FirstOrDefault();
+					if (statusCodeHeader == null && Enum.TryParse<ResponseStatusCode>(statusCodeHeader, out ResponseStatusCode statusCode))
+						responseContent.ResponseStatusCode = statusCode;
+				}
+
+				return responseContent;
 			}
 		}
 	}

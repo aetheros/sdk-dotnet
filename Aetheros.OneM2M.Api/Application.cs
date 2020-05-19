@@ -24,6 +24,7 @@ namespace Aetheros.OneM2M.Api
 			public string AppName { get; }
 			public string CredentialId { get; }
 			public Uri PoaUrl { get; }
+			public string UrlPrefix { get; }
 		}
 
 		public Connection Connection { get; }
@@ -34,8 +35,9 @@ namespace Aetheros.OneM2M.Api
 		//public string AeUrl { get; }
 		//public string MNCse { get; set; }
 		//public string AeMnUrl { get; set; }
+		public string UrlPrefix { get; set; }
 
-		public Application(Connection con, string appId, string aeId, Uri? poaUrl = null)
+		public Application(Connection con, string appId, string aeId, string urlPrefix, Uri? poaUrl = null)
 		{
 			Connection = con;
 			AppId = appId;
@@ -43,6 +45,7 @@ namespace Aetheros.OneM2M.Api
 			//AeUrl = aeUrl;
 
 			PoaUrl = poaUrl;
+			UrlPrefix = urlPrefix;
 			//AeAppName = aeAppName;
 			//MNCse = mnCse;
 
@@ -56,8 +59,11 @@ namespace Aetheros.OneM2M.Api
 
 		public async Task<ResponseContent> GetResponseAsync(RequestPrimitive body)
 		{
-			if (!body.To.StartsWith("/"))
-				body.To = $"{AeId}/{body.To}";
+			if (body.To == null)
+				body.To = $"/{UrlPrefix}{AeId}";
+			else if (!body.To.StartsWith("/"))
+				body.To = $"/{UrlPrefix}{AeId}/{body.To}";
+
 			if (body.From == null)
 				body.From = AeId;
 			return await Connection.GetResponseAsync(body);
@@ -106,11 +112,10 @@ namespace Aetheros.OneM2M.Api
 			}
 			catch (Connection.HttpStatusException e) when (e.StatusCode == HttpStatusCode.NotFound)
 			{
-				//var toUrl = /*clientAppContainer ? AeMnUrl :*/ AeUrl;
 				return (await GetResponseAsync(new RequestPrimitive
 				{
 					Operation = Operation.Create,
-					To = AeId,
+					//To = "~",
 					ResourceType = ResourceType.Container,
 					PrimitiveContent = new PrimitiveContent
 					{
@@ -241,7 +246,7 @@ namespace Aetheros.OneM2M.Api
 		{
 			var con = new HttpConnection(m2mConfig);
 
-			var ae = await con.FindApplicationAsync(inCse, appConfig.AppId) ?? await con.RegisterApplicationAsync(appConfig, inCse);
+			var ae = await con.FindApplicationAsync(inCse, appConfig.AppId) ?? await con.RegisterApplicationAsync(appConfig);
 			if (ae == null)
 				throw new InvalidOperationException("Unable to register application");
 
@@ -326,7 +331,7 @@ namespace Aetheros.OneM2M.Api
 				}
 			}
 
-			return new Application(con, appConfig.AppId, ae.AE_ID, appConfig.PoaUrl);
+			return new Application(con, appConfig.AppId, ae.AE_ID, appConfig.UrlPrefix, appConfig.PoaUrl);
 		}
 	}
 }

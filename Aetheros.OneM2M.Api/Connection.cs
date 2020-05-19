@@ -85,12 +85,12 @@ namespace Aetheros.OneM2M.Api
 			return response2.AE;
 		}
 
-		public async Task<AE?> RegisterApplicationAsync(Application.IConfig appConfig, string inCse)
+		public async Task<AE?> RegisterApplicationAsync(Application.IConfig appConfig)
 		{
 			var response = await GetResponseAsync(new RequestPrimitive
 			{
 				From = appConfig.CredentialId,
-				To = inCse,
+				To = appConfig.UrlPrefix,
 				Operation = Operation.Create,
 				ResourceType = ResourceType.AE,
 				ResultContent = ResultContent.Attributes,

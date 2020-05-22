@@ -123,6 +123,8 @@ namespace Example.Types
 		[JsonProperty("uom")]
 		public Units UOM { get; set; }
 
+		
+		[JsonObject("summations")]
 		public class Summation
 		{
 			[JsonProperty("readTime")]
@@ -132,6 +134,7 @@ namespace Example.Types
 			public double Value { get; set; }
 		}
 
+		[JsonProperty("summations")]
 		public ICollection<Summation> Summations { get; set; } = Array.Empty<Summation>();
 	}
 }

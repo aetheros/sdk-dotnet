@@ -42,11 +42,12 @@ namespace Example.Web.Server
 			services.AddTransient<ILiveDataService, MockLiveDataService>();
 			services.AddSingleton<IEmployeeService, EmployeeService>();
 
-			services.AddSingleton<MeterService, MeterService>();
+			services.AddSingleton<MeterService>();
 			services.AddSingleton<DataService>();
 			services.AddSingleton<EventsService>();
-			services.AddSingleton<ModelContext, ModelContext>();
+			services.AddSingleton<ModelContext>();
 		}
+
 		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 		{
 			app.Map("/notify", builder =>

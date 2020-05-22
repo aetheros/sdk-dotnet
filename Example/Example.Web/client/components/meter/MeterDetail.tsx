@@ -1,4 +1,4 @@
-﻿import { List, ListItem, ListItemText } from "@material-ui/core";
+﻿import { List, ListItem, ListItemText, Card, CardHeader, CardContent } from "@material-ui/core";
 import ListSubheader from '@material-ui/core/ListSubheader';
 import Paper from "@material-ui/core/Paper";
 import { createStyles, Theme, WithStyles, withStyles } from '@material-ui/core/styles';
@@ -23,7 +23,7 @@ type State = {
 	openValve: boolean;
 };
 
-export default withStyles(styles)(class MeterDetailComponent extends React.Component<Props, State> {
+class MeterDetailComponent extends React.Component<Props, State> {
 
 	constructor(props: Props) {
 		super(props);
@@ -35,16 +35,16 @@ export default withStyles(styles)(class MeterDetailComponent extends React.Compo
 	render() {
 
 		return (
-			<Paper>
-				<ListSubheader className={this.props.classes.subheader}>Meter Details</ListSubheader>
-				<List>
-					<ListItem>
-						<ListItemText primary={"Meter ID: " + this.props.meterId} />
-						<ListItemText primary={"Water Main Valve: " + this.props.meterState} />
-					</ListItem>
-				</List>
-			</Paper>
-
+			<List dense={true} subheader={<ListSubheader>Meter Details</ListSubheader>}>
+				<ListItem>
+					<ListItemText primary={`Meter ID: ${this.props.meterId}`} />
+				</ListItem>
+				<ListItem>
+					<ListItemText primary={`Water Main Valve: ${this.props.meterState}`} />
+				</ListItem>
+			</List>
 		);
 	}
-});
+};
+
+export default Object.assign(withStyles(styles)(MeterDetailComponent), { name: '' });

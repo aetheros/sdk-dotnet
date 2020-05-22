@@ -24,10 +24,11 @@ const styles = (theme: Theme) => createStyles({
 		color: 'white',
 		lineHeight: `64px`,
 		fontWeight: 'lighter',
-		backgroundImage: 'url(https://dotnetify.net/content/images/dotnetify-logo-small.png)',
+		backgroundImage: 'url(https://aetheros.com/wp-content/uploads/2020/04/AOS-No-Text-300x280.png)',
 		backgroundRepeat: 'no-repeat',
-		backgroundPositionX: 18,
-		backgroundPositionY: 7,
+		backgroundPositionX: 8,
+		backgroundPositionY: 2,
+		backgroundSize: '52px 52px',
 		backgroundColor: blue[800],
 		paddingLeft: 70,
 		height: 56,
@@ -42,9 +43,8 @@ const styles = (theme: Theme) => createStyles({
 		color: grey[400]
 	},
 	avatarBox: {
-		padding: '15px 0 20px 15px',
-		backgroundImage: 'url(' + require('../images/material_bg.png') + ')',
-		height: 45
+		padding: '15px 0 15px 15px',
+		backgroundColor: grey[300]
 	},
 	avatarIcon: {
 		float: 'left',
@@ -53,7 +53,7 @@ const styles = (theme: Theme) => createStyles({
 		boxShadow: '0px 0px 0px 8px rgba(0,0,0,0.2)'
 	},
 	avatarName: {
-		paddingTop: 10,
+		paddingTop: 8,
 		display: 'block',
 		color: 'black',
 		fontSize: '24px',
@@ -76,7 +76,7 @@ interface Props extends WithStyles<typeof styles> {
 	username: string;
 };
 
-export const Sidebar = withStyles(styles)(class SidebarComponent extends React.Component<Props> {
+class SidebarComponent extends React.Component<Props> {
 
 	constructor(props: Props) {
 		super(props);
@@ -114,5 +114,6 @@ export const Sidebar = withStyles(styles)(class SidebarComponent extends React.C
 			</Drawer>
 		);
 	}
-});
+}
+export const Sidebar = Object.assign(withStyles(styles)(SidebarComponent), { name: '' });
 

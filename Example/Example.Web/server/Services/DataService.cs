@@ -8,7 +8,7 @@ namespace Example.Web.Server.Services
 	{
 		readonly ModelContext _modelContext;
 
-		public Meter GetMeter(string meterId) => _modelContext.Meters[meterId];
+		public async Task<Meter> GetMeter(string meterId) => await _modelContext.GetMeterAsync(meterId);
 
 		public DataService(ModelContext modelContext)
 		{

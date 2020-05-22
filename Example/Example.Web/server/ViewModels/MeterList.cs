@@ -9,6 +9,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reactive.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Example.Web.Server.ViewModels
 {
@@ -35,29 +37,36 @@ namespace Example.Web.Server.ViewModels
 
 		public ReactiveProperty<MeterListRow[]> Meters = new ReactiveProperty<MeterListRow[]>();
 
+
 		public MeterList(ModelContext modelContext, MeterService meterService, DataService dataService)
 		{
-			Meters.SubscribeTo(meterService.Meters.Select(value =>
+			async Task<MeterListRow[]> GetRows(Meter meter)
 			{
-				var meters = new Queue<MeterListRow>(Get<MeterListRow[]>("Meters")?.Reverse() ?? new MeterListRow[] { });
-
-				var latestState = meterService.GetLatestContentInstance<State>(modelContext.App.StateContainer).Result;
+				var latestState = await meterService.GetLatestContentInstanceAsync<State>(meter.MeterUrl + modelContext.App.StateContainer);
 				var stateStr = latestState != null ? latestState.Valve.Description() : "N/A";
-				meters.Enqueue(new MeterListRow(value.MeterId, stateStr));
+
+				var meters = new Queue<MeterListRow>(Get<MeterListRow[]>("Meters")?.Reverse() ?? new MeterListRow[] { });
+				meters.Enqueue(new MeterListRow(meter.MeterId, stateStr));
 
 				//Subscribe to State to update a row and push updates to views
-				value.State.Subscribe(newState =>
+				meter.State.Subscribe(newState =>
 				{
-					this.UpdateList("Meters", new MeterListRow(value.MeterId, newState));
+					this.UpdateList("Meters", new MeterListRow(meter.MeterId, newState));
 					PushUpdates();
 				});
 
 				return meters.ToArray();
-			})).SubscribedBy(AddInternalProperty<bool>("Update"), _ =>
-			{
-				PushUpdates();
-				return true;
-			});
+			}
+
+			var meterListRows = meterService.Meters.Select(GetRows);
+
+			AddProperty<MeterListRow[]>("Meters")
+				.SubscribeTo(Observable.Concat(meterListRows))
+				.SubscribedBy(AddInternalProperty<bool>("Update"), _ =>
+				{
+					PushUpdates();
+					return true;
+				});
 		}
 	}
 }

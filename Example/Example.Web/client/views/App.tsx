@@ -19,11 +19,16 @@ export default class App extends React.Component<Props, State> {
 		};
 	}
 
+	handleAuthenticated() {
+		this.setState({ authenticated: true });
+	}
+
 	render(): JSX.Element {
 		if (this.state.authenticated)
 			return <AppLayout />;
 
-		const handleAuthenticated = () => this.setState({ authenticated: true });
-		return <LoginPage onAuthenticated={handleAuthenticated} />;
+		return <LoginPage onAuthenticated={this.handleAuthenticated.bind(this)} />;
 	}
 }
+
+

@@ -122,4 +122,4 @@ class LoginPage extends React.Component<Props, State> {
 		);
 	}
 }
-export default withStyles(styles)(LoginPage);
+export default Object.assign(withStyles(styles)(LoginPage), { name: '' });

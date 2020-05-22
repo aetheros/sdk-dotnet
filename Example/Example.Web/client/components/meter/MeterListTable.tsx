@@ -22,14 +22,14 @@ type Meter = {
 	MeterState: string;
 };
 
-export default withStyles(styles)(class MeterListTableComponent extends React.Component<Props, any> {
+class MeterListTableComponent extends React.Component<Props, any> {
 
 	constructor(props) {
 		super(props);
 	}
 
 	openDetail(meterId) {
-		window.open("/MeterDashboard/" + meterId, "_blank");
+		window.open(`/MeterDashboard/${meterId}`);
 	};
 
 	render() {
@@ -45,7 +45,7 @@ export default withStyles(styles)(class MeterListTableComponent extends React.Co
 					</TableRow>
 				</TableHead>
 				<TableBody>
-					{meters.map(meter => (
+					{meters && meters.map(meter => (
 						<TableRow key={meter.MeterId}>
 							<TableCell>{meter.MeterId}</TableCell>
 							<TableCell component="th" scope="row">
@@ -70,4 +70,5 @@ export default withStyles(styles)(class MeterListTableComponent extends React.Co
 			</Table >
 		);
 	}
-});
+};
+export default Object.assign(withStyles(styles)(MeterListTableComponent), { name: '' });

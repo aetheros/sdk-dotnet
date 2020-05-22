@@ -16,9 +16,6 @@ namespace Example.Web.Server.Services
 		public string ConfigContainer { get; set; } = "config-cnt";
 		public string CommandContainer { get; set; } = "command-cnt";
 
-		public string InCse { get; set; } = "/PN_CSE";
-		//public string MnCse { get; set; }
-
 		public ConnectionConfig M2M { get; set; }
 		public AppConfig AE { get; set; }
 
@@ -39,6 +36,7 @@ namespace Example.Web.Server.Services
 			public string CredentialId { get; set; }
 			public Uri PoaUrl { get; set; }
 			public Uri PrivatePoaUrl { get; set; }
+			public string UrlPrefix { get; set; }
 		}
 	}
 }

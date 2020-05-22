@@ -177,14 +177,12 @@ namespace Aetheros.OneM2M.Api
 
 				if (discoverSubscriptions?.URIList != null)
 				{
-					subscriptionReference = discoverSubscriptions.URIList
-						.AsParallel()
-						.WithDegreeOfParallelism(4)
-						.FirstOrDefault(sUrl =>
+					subscriptionReference = await discoverSubscriptions.URIList
+						//.AsParallel().WithDegreeOfParallelism(4)
+						.ToAsyncEnumerable()
+						.FirstOrDefaultAwaitAsync(async sUrl =>
 						{
-							var subscription = GetPrimitiveAsync(sUrl)
-								.Result
-								.Subscription;
+							var subscription = (await GetPrimitiveAsync(sUrl)).Subscription;
 
 							return subscription.NotificationURI != null
 								&& subscription.NotificationURI.Any(n => poaUrl.Equals(n, StringComparison.OrdinalIgnoreCase));
@@ -240,6 +238,17 @@ namespace Aetheros.OneM2M.Api
 					.RefCount();
 			});
 		}
+
+		public async Task<IObservable<TContent>> ObserveContentInstanceCreationAsync<TContent>(string containerName)
+			where TContent : class
+		{
+			var container = await this.EnsureContainerAsync(containerName);
+			return (await this.ObserveAsync(containerName))
+				.Where(evt => evt.NotificationEventType.Contains(NotificationEventType.CreateChild))
+				.Select(evt => evt.PrimitiveRepresentation.PrimitiveContent?.ContentInstance?.GetContent<TContent>())
+				.Where(content => content != null);
+		}
+
 
 		// TODO: find a proper place for this
 		public static async Task<Application> RegisterAsync(Connection.IConfig m2mConfig, IConfig appConfig, string inCse, Uri caUri)

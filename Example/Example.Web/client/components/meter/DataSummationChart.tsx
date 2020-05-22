@@ -5,6 +5,7 @@ import { Bar } from 'react-chartjs-2';
 export type DataSummaryPoint = {
 	x: string;	// time
 	y: number;	// value
+	key: any;
 }
 
 type Props = {
@@ -38,6 +39,7 @@ export const DataSummationChart = (class DataSummationChartComponent extends Rea
 		};
 
 		const options = {
+
 			title: {
 				display: true,
 			},

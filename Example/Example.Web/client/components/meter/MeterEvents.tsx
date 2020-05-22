@@ -26,57 +26,38 @@ export type MeterEvent = {
 	EventType: string;
 };
 
-export const MeterEvents = withStyles(styles)(class MeterEventsComponent extends React.Component<Props> {
+class MeterEventsComponent extends React.Component<Props> {
 
 	constructor(props: Props) {
 		super(props);
 	}
 
-	RowContent = (index) => {
+	Row = ({ index, style }) => {
+		const data = this.props.data[index];
 		return (
-			<ListItem>
+			<ListItem key={index} style={style}>
 				<ListItemText
-					primary={this.props.data[index].EventType}
-					secondary={this.props.data[index].EventTime}
+					primary={data.EventType}
+					secondary={data.EventTime}
 				/>
 			</ListItem>
 		);
 	};
 
-	Row = ({ index, style }) => {
-		return (
-			<div key={index} style={style}>
-				{this.RowContent(index)}
-			</div>
-		);
-	};
-
-	content() {
-		if (this.props.data && this.props.data.length > 0) {
-			return (
-				<FixedSizeList
-					height={340}
-					itemCount={this.props.data.length}
-					itemSize={50}
-					width="100%"
-				>
-					{this.Row}
-				</FixedSizeList>
-			);
-		}
-		else {
-			return (
-				<span>No events found</span>
-			);
-		}
-	}
-
 	render() {
 		return (
-			<Paper>
-				<ListSubheader>Events</ListSubheader>
-				{this.content()}
-			</Paper>
+			<FixedSizeList
+				dense={true}
+				subheader={<ListSubheader>Events</ListSubheader>}
+				height={100}
+				itemCount={this.props.data.length}
+				itemSize={50}
+				width="100%"
+			>
+				{this.Row}
+			</FixedSizeList>
 		);
 	}
-});
+};
+
+export const MeterEvents = Object.assign(withStyles(styles)(MeterEventsComponent), { name: '' });

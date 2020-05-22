@@ -95,7 +95,7 @@ export default class PolicyConfigDialog extends React.Component<Props, State> {
 							<div>
 								<TextField
 									id="readInterval"
-									label="How often are Usage Reads Collected"
+									label="Meter Read Interval"
 									defaultValue={defaultReadInterval}
 									onChange={this.handlePolicyIntervalChange.bind(this)}
 									margin="normal"

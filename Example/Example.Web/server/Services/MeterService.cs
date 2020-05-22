@@ -2,6 +2,8 @@
 
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Reactive.Linq;
 using System.Threading.Tasks;
@@ -12,35 +14,34 @@ namespace Example.Web.Server.Services
 	{
 		readonly ModelContext _modelContext;
 
-		public Meter GetMeter(string meterId) => _modelContext.Meters[meterId];
+		public async Task<Meter> GetMeterAsync(string meterId) => await _modelContext.GetMeterAsync(meterId);
 		public IObservable<Meter> Meters { get; }
+		public MyApplication App => _modelContext.App;
 
 		public MeterService(ModelContext modelContext)
 		{
 			_modelContext = modelContext;
 
-			Meters = _modelContext.Meters.Select(m => m.Value).ToObservable();
+			Meters = Observable.Defer(async () => (await _modelContext.GetMeters()).Select(m => m.Value).ToObservable());
 		}
 
-		public ModelContext GetContext() => _modelContext;
-
-		public async Task<IEnumerable<Data.Summation>> GetOldSummations(string meterId, int dataSummationWindow)
+		public async Task<IEnumerable<Data.Summation>> GetOldSummationsAsync(string meterId, int dataSummationWindow)
 		{
 			var windowTimeSpan = new TimeSpan(0, 0, dataSummationWindow, 0);
-			return await _modelContext.GetOldSummations(meterId, windowTimeSpan);
+			return await _modelContext.GetOldSummationsAsync(meterId, windowTimeSpan);
 		}
 
-		public async Task<IEnumerable<Events.MeterEvent>> GetOldEvents(string meterId) => await _modelContext.GetOldEvents(meterId);
+		public async Task<IEnumerable<Events.MeterEvent>> GetOldEventsAsync(string meterId) => await _modelContext.GetOldEvents(meterId);
 
-		public async Task<T> GetLatestContentInstance<T>(string containerKey)
+		public async Task<T> GetLatestContentInstanceAsync<T>(string containerKey)
 			where T : class => await _modelContext.App.Application.GetLatestContentInstanceAsync<T>(containerKey);
 
-		public async Task AddInfo(Info record) => await _modelContext.App.Application.AddContentInstanceAsync(_modelContext.App.InfoContainer, record);
+		public async Task AddInfoAsync(Info record) => await _modelContext.App.Application.AddContentInstanceAsync(_modelContext.App.InfoContainer, record);
 
-		public async Task AddState(State record) => await _modelContext.App.Application.AddContentInstanceAsync(_modelContext.App.StateContainer, record);
+		public async Task AddStateAsync(State record) => await _modelContext.App.Application.AddContentInstanceAsync(_modelContext.App.StateContainer, record);
 
-		public async Task AddCommand(Command record) => await _modelContext.App.Application.AddContentInstanceAsync(_modelContext.App.CommandContainer, record);
+		public async Task AddCommandAsync(Command record) => await _modelContext.App.Application.AddContentInstanceAsync(_modelContext.App.CommandContainer, record);
 
-		public async Task AddMeterReadPolicy(Config.MeterReadPolicy record) => await _modelContext.App.Application.AddContentInstanceAsync(_modelContext.App.ConfigContainer, record);
+		public async Task AddMeterReadPolicyAsync(Config.MeterReadPolicy record) => await _modelContext.App.Application.AddContentInstanceAsync(_modelContext.App.ConfigContainer, record);
 	}
 }

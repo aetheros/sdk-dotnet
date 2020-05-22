@@ -34,7 +34,7 @@ type State = {
 	openValve: boolean;
 };
 
-export const MeterCommand = withStyles(styles)(class MeterCommandComponent extends React.Component<Props, State> {
+class MeterCommandComponent extends React.Component<Props, State> {
 
 	constructor(props: Props) {
 		super(props);
@@ -43,28 +43,26 @@ export const MeterCommand = withStyles(styles)(class MeterCommandComponent exten
 	render() {
 		const classes = this.props.classes;
 
-		const lastCommand = !this.props.meterCommand ? "No Command Found" : "Last Command: " + this.props.meterCommand.Action;
+		const lastCommand = !this.props.meterCommand ? "No Command Found" : `Last Command: ${this.props.meterCommand.Action}`;
 		const lastWhen = !this.props.meterCommand ? "" : this.props.meterCommand.When;
 
 		return (
-			<Paper>
-				<ListSubheader>Water Main Valve Control</ListSubheader>
-				<List>
-					<ListItem>
-						<ListItemText primary={lastCommand} secondary={lastWhen} />
-					</ListItem>
-					<ListItemSecondaryAction>
-						<Fab
-							/*variant="extended"*/
-							//mini={true}
-							size="small"
-							aria-label="Add"
-							onClick={this.props.handleCommandClick}>
-							<AddIcon />
-						</Fab>
-					</ListItemSecondaryAction>
-				</List>
-			</Paper>
+			<List dense={true} subheader={<ListSubheader>Water Main Valve Control</ListSubheader>}>
+				<ListItem>
+					<ListItemText primary={lastCommand} secondary={lastWhen} />
+				</ListItem>
+				<ListItemSecondaryAction>
+					<Fab
+						/*variant="extended"*/
+						//mini={true}
+						size="small"
+						aria-label="Add"
+						onClick={this.props.handleCommandClick}>
+						<AddIcon />
+					</Fab>
+				</ListItemSecondaryAction>
+			</List>
 		);
 	}
-});
+};
+export const MeterCommand = Object.assign(withStyles(styles)(MeterCommandComponent), { name: '' });

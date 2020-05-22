@@ -9,12 +9,17 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reactive.Linq;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
+
+using TaskTupleAwaiter;
 
 namespace Example.Web.Server.ViewModels
 {
 	public class MeterDashboard : BaseVM, IRoutable
 	{
+		const string DateTimeFormat = "MM/dd/yyyy HH:mm:ss";
+
 		readonly MeterService _meterService;
 
 		public class SummationVM
@@ -60,6 +65,7 @@ namespace Example.Web.Server.ViewModels
 			get => Get<Actions>();
 			set => Set(value);
 		}
+
 		public string MeterId { get; private set; }
 		public int SummationWindow { get; set; }
 
@@ -69,16 +75,6 @@ namespace Example.Web.Server.ViewModels
 
 		public IEnumerable<MeterEventVM> OldEvents { get; set; }
 
-		async Task LoadInitialData(string meterId)
-		{
-			OldData = await _meterService.GetOldSummations(MeterId, SummationWindow);
-			OldEvents = (await _meterService.GetOldEvents(MeterId)).Select(s => new MeterEventVM
-			{
-				EventTime = s.EventTime.ToLocalTime().ToString("MM/dd/yyyy HH:mm:ss"),
-				EventType = s.Event.Description()
-			}).ToArray();
-		}
-
 		public MeterDashboard(MeterService meterService, EventsService eventsService)
 		{
 			_meterService = meterService;
@@ -87,96 +83,127 @@ namespace Example.Web.Server.ViewModels
 			(this).OnRouted((sender, e) =>
 			{
 				MeterId = e?.From?.Replace($"{AppLayout.MeterDashboardPath}/", "");
-				var meter = _meterService.GetMeter(MeterId);
+				var app = _meterService.App;
 
-				var context = _meterService.GetContext();
+				var loadTask = Task.Run(async () =>
+				{
+					var (meter, oldData, oldEvents) = await (
+						_meterService.GetMeterAsync(MeterId),
+						_meterService.GetOldSummationsAsync(MeterId, SummationWindow),
+						_meterService.GetOldEventsAsync(MeterId)
+					);
+					if (meter.MeterId != this.MeterId)
+						return null;
 
-				LoadInitialData(MeterId).Wait();
+					this.OldData = oldData;
+					this.OldEvents = oldEvents
+						.Select(s => new MeterEventVM
+						{
+							EventTime = s.EventTime.ToLocalTime().ToString(DateTimeFormat),
+							EventType = s.Event.Description()
+						})
+						.ToArray();
 
-				var latestInfo = _meterService.GetLatestContentInstance<Info>(context.App.InfoContainer).Result;
-				var connInfo = meter.Info
-					.Publish(latestInfo ?? new Info { MeterId = MeterId });
-				connInfo.Connect();
+					Changed(nameof(OldData));
+					Changed(nameof(OldEvents));
+
+					return meter;
+				});
+
+				Func<object, bool> PushPropertyUpdates = _ =>
+				{
+					base.PushUpdates();
+					return true;
+				};
 
 				AddProperty<Info>("Info")
-					.SubscribeTo(connInfo)
-					.SubscribedBy(AddInternalProperty<bool>("UpdateI"), _ =>
+					.SubscribeTo(Observable.Defer<Info>(async () =>
 					{
-						base.PushUpdates();
-						return true;
-					});
+						var meter = await loadTask;
+						var latest = await _meterService.GetLatestContentInstanceAsync<Info>(meter.MeterUrl + app.InfoContainer);
+						var connInfo = meter.Info
+							.Publish(latest ?? new Info { MeterId = latest.MeterId });
+						connInfo.Connect();
+						return connInfo;
+					}))
+					.SubscribedBy(AddInternalProperty<bool>("UpdateI"), PushPropertyUpdates);
 
-				var latestState = _meterService.GetLatestContentInstance<State>(context.App.StateContainer).Result;
-				var connState = meter.State
-					.Publish(latestState != null ? latestState.Valve.Description() : "N/A");
-				connState.Connect();
 
 				AddProperty<string>("MeterState")
-					.SubscribeTo(connState)
-					.SubscribedBy(AddInternalProperty<bool>("UpdateS"), _ =>
+					.SubscribeTo(Observable.Defer<string>(async () =>
 					{
-						base.PushUpdates();
-						return true;
-					});
+						var meter = await loadTask;
+						var latest = await _meterService.GetLatestContentInstanceAsync<State>(meter.MeterUrl + app.StateContainer);
+						var latestValue = latest != null ? latest.Valve.Description() : "N/A";
+						var connState = meter.State
+							.Publish(latestValue);
+						connState.Connect();
+						return connState;
+					}))
+					.SubscribedBy(AddInternalProperty<bool>("UpdateS"), PushPropertyUpdates);
 
-				var latestCommand = _meterService.GetLatestContentInstance<Types.Command>(context.App.CommandContainer).Result;
-				var connCmd = meter.Command
-					.Select(s => new CommandVModel
-					{
-						Action = s.Action.Description(),
-						When = s.When.ToLocalTime().ToString("MM/dd/yyyy HH:mm:ss")
-					})
-					.Publish(new CommandVModel
-					{
-						Action = latestCommand?.Action.Description(),
-						When = latestCommand?.When.ToLocalTime().ToString("MM/dd/yyyy HH:mm:ss")
-					});
-				connCmd.Connect();
 
 				AddProperty<CommandVModel>("MeterCommand")
-					.SubscribeTo(connCmd)
-					.SubscribedBy(AddInternalProperty<bool>("UpdateC"), _ =>
+					.SubscribeTo(Observable.Defer<CommandVModel>(async () =>
 					{
-						base.PushUpdates();
-						return true;
-					});
+						var meter = await loadTask;
+						var latest = await _meterService.GetLatestContentInstanceAsync<Types.Command>(meter.MeterUrl + app.CommandContainer);
+						var connCmd = meter.Command
+							.Select(s => new CommandVModel
+							{
+								Action = s.Action.Description(),
+								When = s.When.ToLocalTime().ToString(DateTimeFormat)
+							})
+							.Publish(new CommandVModel
+							{
+								Action = latest?.Action.Description(),
+								When = latest?.When.ToLocalTime().ToString(DateTimeFormat)
+							});
+						connCmd.Connect();
+						return connCmd;
+					}))
+					.SubscribedBy(AddInternalProperty<bool>("UpdateC"), PushPropertyUpdates);
 
-				var latestPolicy = _meterService.GetLatestContentInstance<Config.MeterReadPolicy>(context.App.ConfigContainer).Result;
-				var connPolicy = meter.MeterReadPolicy
-					.Publish(latestPolicy);
-				connPolicy.Connect();
 
 				AddProperty<Config.MeterReadPolicy>("MeterReadPolicy")
-					.SubscribeTo(connPolicy)
-					.SubscribedBy(AddInternalProperty<bool>("UpdateP"), _ =>
+					.SubscribeTo(Observable.Defer<Config.MeterReadPolicy>(async () =>
 					{
-						base.PushUpdates();
-						return true;
-					});
+						var meter = await loadTask;
+						var latest = await _meterService.GetLatestContentInstanceAsync<Config.MeterReadPolicy>(meter.MeterUrl + app.ConfigContainer);
+						var connPolicy = meter.MeterReadPolicy
+							.Publish(latest);
+						connPolicy.Connect();
+						return connPolicy;
+					}))
+					.SubscribedBy(AddInternalProperty<bool>("UpdateP"), PushPropertyUpdates);
 
-				Summations = AddProperty<Data>("Summations")
-					.SubscribeTo(meter.Summations)
-					.SubscribedBy(AddInternalProperty<bool>("Update"), _ =>
+
+				this.Summations = AddProperty<Data>("Summations")
+					.SubscribeTo(Observable.Defer(async () =>
 					{
-						base.PushUpdates();
-						return true;
-					});
+						var meter = await loadTask;
+						return meter.Summations;
+					}))
+					.SubscribedBy(AddInternalProperty<bool>("Update"), PushPropertyUpdates);
+
 
 				AddProperty<EventsVM>("MeterEvents")
-					.SubscribeTo(meter.Events.Select(s =>
-					new EventsVM
+					.SubscribeTo(Observable.Defer<EventsVM>(async () =>
 					{
-						MeterEvents = s.MeterEvents.Select(m => new MeterEventVM
-						{
-							EventTime = m.EventTime.ToLocalTime().ToString("MM/dd/yyyy HH:mm:ss"),
-							EventType = m.Event.Description()
-						}).ToArray()
+						var meter = await loadTask;
+						return meter.Events
+							.Select(s =>
+								new EventsVM
+								{
+									MeterEvents = s.MeterEvents.Select(m => new MeterEventVM
+									{
+										EventTime = m.EventTime.ToLocalTime().ToString(DateTimeFormat),
+										EventType = m.Event.Description()
+									}).ToArray()
+								}
+							);
 					}))
-					.SubscribedBy(AddInternalProperty<bool>("UpdateE"), _ =>
-					{
-						base.PushUpdates();
-						return true;
-					});
+					.SubscribedBy(AddInternalProperty<bool>("UpdateE"), PushPropertyUpdates);
 			});
 		}
 
@@ -184,30 +211,56 @@ namespace Example.Web.Server.ViewModels
 
 		public Action<int> UpdateSummationWindow => summationWindow =>
 		{
-			this.OldData = _meterService.GetOldSummations(MeterId, summationWindow).Result;
-			_meterService.GetOldSummations(MeterId, summationWindow).Wait();
-
-			Changed(nameof(OldData));
+			Task.Run(async () =>
+			{
+				this.OldData = await _meterService.GetOldSummationsAsync(MeterId, summationWindow);
+				Changed(nameof(OldData));
+			});
 		};
 
 		public Action<SavedSendCommand> SendCommand => sendCommand =>
 		{
-			_meterService.AddCommand(new Types.Command
+			Task.Run(async () => await _meterService.AddCommandAsync(new Types.Command
 			{
 				Action = sendCommand.Action == "openValve" ? Actions.OpenValve : Actions.CloseValve,
 				When = sendCommand.When
-			}).Wait();
+			}));
 		};
 
 		public Action<SavedSendConfigPolicy> SendMeterReadPolicy => sendPolicy =>
 		{
-			_meterService.AddMeterReadPolicy(new Config.MeterReadPolicy
+			Task.Run(async () => await _meterService.AddMeterReadPolicyAsync(new Config.MeterReadPolicy
 			{
 				Name = $"{sendPolicy.ReadInterval} Read",
 				Start = sendPolicy.Start,
 				End = sendPolicy.End,
 				ReadInterval = sendPolicy.ReadInterval
-			}).Wait();
+			}));
+		};
+
+		Random _random = new Random();
+
+		public Action<bool> AddData => _ =>
+		{
+			Task.Run(async () =>
+			{
+				var app = _meterService.App;
+				await app.Application.AddContentInstanceAsync(
+					app.DataContainer,
+					new Data
+					{
+						MeterId = this.MeterId,
+						UOM = Data.Units.USGal,
+						Summations = new[] {
+							new Data.Summation {
+								ReadTime = DateTimeOffset.UtcNow,
+								Value = _random.NextDouble(),
+							}
+						}
+					}
+				);
+			});
 		};
 	}
 }
+

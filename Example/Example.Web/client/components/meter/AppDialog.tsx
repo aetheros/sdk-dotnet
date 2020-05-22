@@ -45,4 +45,4 @@ export default class AppDialog extends React.Component<Props, State> {
 			</Dialog>
 		);
 	}
-};
+}

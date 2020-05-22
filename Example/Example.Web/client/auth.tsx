@@ -1,20 +1,23 @@
 class Auth {
 	url = "/token";
 
-	signIn(username, password) {
-		return fetch(this.url, {
+	async signIn(username, password) {
+		const response = await fetch(this.url, {
 			method: 'post',
 			mode: 'no-cors',
-			body: "username=" + username + "&password=" + password + "&grant_type=password&client_id=dotnetifydemo",
-			headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' }
-		})
-			.then(response => {
-				if (!response.ok) throw new Error(response.status.toString());
-				return response.json();
-			})
-			.then(token => {
-				window.localStorage.setItem("access_token", token.access_token);
-			});
+			body: new URLSearchParams({
+				username: username,
+				password: password,
+				grant_type: "password",
+				client_id: "dotnetifydemo",
+			}),
+		});
+
+		if (!response.ok)
+			throw new Error(response.status.toString());
+
+		const token = await response.json();
+		window.localStorage.setItem("access_token", token.access_token);
 	}
 
 	signOut() {

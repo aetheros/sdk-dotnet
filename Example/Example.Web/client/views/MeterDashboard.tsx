@@ -1,4 +1,4 @@
-﻿import { Grid } from "@material-ui/core";
+﻿import { Grid, Paper } from "@material-ui/core";
 import { createStyles, Theme, ThemeProvider, WithStyles, withStyles } from '@material-ui/core/styles';
 import dotnetify, { dotnetifyVM } from "dotnetify";
 import * as React from "react";
@@ -19,18 +19,14 @@ const styles = (theme: Theme) => createStyles({
 	grow: {
 		flexGrow: 1,
 	},
+	gridRowItem: {
+		height: '100%',
+	}
 });
 
 interface Props extends WithStyles<typeof styles> {
 };
 
-type Summation = {
-	readTime: string;
-	value: number;
-};
-type Data = {
-	Summations: Summation[];
-};
 type Info = {
 	meterId: string;
 };
@@ -42,9 +38,21 @@ type SavedSendCommand = {
 type Events = {
 	MeterEvents: MeterEvent[];
 };
+enum Units {
+	USGal = 1,
+};
+type Summation = {
+	readTime: string;
+	value: number;
+};
+type Data = {
+	meterId: string;
+	uom: Units;
+	summations: Summation[];
+};
 
 type State = {
-	//MeterEvents: Events;
+	MeterEvents: Events;
 	//ActionType: any;
 	//LatestDataValue: any;
 	Summations: Data;
@@ -53,8 +61,8 @@ type State = {
 	MeterReadPolicy: MeterReadPolicy;
 	MeterCommand: MeterCommandModel;
 	SummationWindow: number;
-	//OldData: Array<any>;
-	//OldEvents: Array<any>;
+	OldData: Summation[];
+	OldEvents: MeterEvent[];
 	ConfigDialogOpen: boolean;
 	CommandDialogOpen: boolean;
 	MeterId: string;
@@ -68,7 +76,6 @@ type State = {
 
 class MeterDashboard extends React.Component<Props, State> {
 	vm: dotnetifyVM;
-	dispatch: (state: any) => any;
 
 	chartData: DataSummaryPoint[] = [];
 	events: MeterEvent[] = [];
@@ -112,56 +119,59 @@ class MeterDashboard extends React.Component<Props, State> {
 			}
 		});
 
-		this.dispatch = state => this.vm.$dispatch(state);
-
 		this.state = {
-			//MeterEvents: null,
-			//ActionType: null,
-			//LatestDataValue: 0,
-			//Info: null,
 			SummationWindow: 1 * 24 * 60,
-			//OldData: [],
-			//OldEvents: [],
+			OldData: [],
+			OldEvents: [],
+
 			ConfigDialogOpen: false,
 			CommandDialogOpen: false,
-			MeterState: null,
-			MeterCommand: null,
-			OpenValve: null,
-			CommandWhen: null,
 		} as State;
 	}
 
-	shouldComponentUpdate(nextProps, nextState) {
-		const oldData = nextState.OldData;
-		if (oldData) {
-			this.chartData = oldData.map(d => { return { x: new Date(d.readTime).toLocaleString(), y: d.value } });
+	dispatch(state) {
+		this.vm && this.vm.$dispatch(state);
+	}
+
+	componentWillUnmount() {
+		this.vm && this.vm.$destroy();
+	}
+
+	shouldComponentUpdate(nextProps: Props, nextState: State, nextContent: any): boolean {
+
+
+		const addSummations = (rg: Summation[]) => {
+			for (let s of rg) {
+				if (!this.chartData.some(old => old.key === s.readTime))
+					//this.chartData.push({ x: new Date(s.readTime).toLocaleString(), y: s.value, key: s.readTime });
+					this.chartData.push({ x: s.readTime, y: s.value, key: s.readTime });
+			}
 		}
 
-		const currentData = this.state.Summations;
-		if (currentData) {
-			currentData.Summations.map(d => {
-				var foundCurrentData = this.chartData.find(function (e) {
-					return e.x === new Date(d.readTime).toLocaleString();
-				});
-				if (!foundCurrentData) {
-					this.chartData.push({ x: d.readTime, y: d.value });
-				}
-			})
+		//addSummations(nextState.OldData);
+		if (nextState.OldData) {
+			for (let s of nextState.OldData)
+				console.log('nextState.OldData : ' + s.readTime);
 		}
 
-		const data = nextState.Summations;
-		if (data) {
-			console.log(data);
-
-			data.Summations.map(d => {
-				var foundData = this.chartData.find(function (e) {
-					return e.x === new Date(d.readTime).toLocaleString();
-				});
-				if (!foundData) {
-					this.chartData.push({ x: d.readTime, y: d.value });
-				}
-			})
+		if (this.state.Summations) {
+			for (let s of this.state.Summations.summations)
+				console.log('this.state : ' + s.readTime);
+			addSummations(this.state.Summations.summations);
 		}
+		if (nextState.Summations) {
+			for (let s of nextState.Summations.summations)
+				console.log('nextState.Summations : ' + s.readTime);
+			addSummations(nextState.Summations.summations);
+		}
+
+		//data.sort((v1: Summation, v2: Summation) => v1.readTime.localeCompare(v2.readTime));
+		//this.chartData = data.filter((v, i, rg) => i == 0 || rg[i].readTime != rg[i - 1].readTime);
+
+		for (let s of this.chartData)
+			console.log('this.chartData : ' + s.x);
+
+		console.log(this.chartData.length);
 
 		const oldEvents = nextState.OldEvents;
 		if (oldEvents) {
@@ -170,20 +180,15 @@ class MeterDashboard extends React.Component<Props, State> {
 		const newEvent = nextState.MeterEvents;
 		if (newEvent) {
 			newEvent.MeterEvents.map(m => {
-				var foundEvent = this.events.find(function (e) {
+				if (!this.events.some(function (e) {
 					return e.EventTime === m.EventTime;
-				});
-				if (!foundEvent) {
+				})) {
 					this.events.unshift(m);
 				}
 			});
 		}
 
 		return true;
-	}
-
-	componentWillUnmount() {
-		this.vm.$destroy();
 	}
 
 	handleChangeWindow(event, idx, value) {
@@ -258,68 +263,79 @@ class MeterDashboard extends React.Component<Props, State> {
 	}
 
 	render() {
-
-		const dispatchState = state => {
-			this.setState(state);
-			this.vm.$dispatch(state);
-		};
+		const classes = this.props.classes;
 
 		return (
 			<ThemeProvider theme={defaultTheme}>
 
 				<BasePage title="Meter Dashboard" navigation="">
-					<div className={this.props.classes.grow}>
-						<Grid container spacing={1}>
-							<Grid item xs={6}>
-								<MeterDetail meterState={this.state.MeterState} meterId={this.state.MeterId} />
+					<Grid container className={classes.grow} direction="column" spacing={1}>
+						<Grid item container className={classes.grow} direction="row" alignItems="stretch" spacing={1}>
+							<Grid item xs>
+								<Paper className={classes.gridRowItem}>
+									<MeterDetail meterState={this.state.MeterState} meterId={this.state.MeterId} />
+								</Paper>
 							</Grid>
-							<Grid item xs={6}>
-								<MeterCommand
-									meterCommand={this.state.MeterCommand}
-									handleCommandClick={this.handleClickCommandOpen.bind(this)} />
-							</Grid>
-
-							<Grid item xs={6}>
-								<MeterConfig
-									meterReadPolicy={this.state.MeterReadPolicy}
-									handlePolicyConfigClick={this.handleClickConfigOpen.bind(this)} />
-							</Grid>
-							<Grid item xs={6}>
-								<MeterEvents data={this.events} vm={this.vm} />
-							</Grid>
-
-							<Grid item xs={12}>
+							<Grid item xs>
+								<Paper className={classes.gridRowItem}>
+									<MeterCommand
+										meterCommand={this.state.MeterCommand}
+										handleCommandClick={this.handleClickCommandOpen.bind(this)} />
+								</Paper>
 							</Grid>
 						</Grid>
-					</div>
 
-					<DataSummation data={this.chartData} summationWindow={this.state.SummationWindow} meterId={this.state.MeterId} onWindowChange={this.handleChangeWindow.bind(this)} />
+						<Grid item container className={classes.grow} direction="row" alignItems="stretch" spacing={1}>
+							<Grid item xs>
+								<Paper className={classes.gridRowItem}>
+									<MeterConfig
+										meterReadPolicy={this.state.MeterReadPolicy}
+										handlePolicyConfigClick={this.handleClickConfigOpen.bind(this)} />
+								</Paper>
+							</Grid>
+							<Grid item xs>
+								<Paper className={classes.gridRowItem}>
+									<MeterEvents data={this.events} vm={this.vm} />
+								</Paper>
+							</Grid>
+						</Grid>
 
-					<PolicyConfigDialog
-						open={this.state.ConfigDialogOpen}
-						onClose={this.handleConfigClose.bind(this)}
-						onSave={this.handleConfigSave.bind(this)}
-						onNameChange={this.handleConfigNameChange.bind(this)}
-						onStartChange={this.handleConfigStartChange.bind(this)}
-						onEndChange={this.handleConfigEndChange.bind(this)}
-						onPolicyIntervalChange={this.handleConfigPolicyIntervalChange.bind(this)}
-						meterReadPolicy={this.state.MeterReadPolicy}
-						policyStart={this.state.ConfigPolicyStart}
-						policyEnd={this.state.ConfigPolicyEnd}
-					/>
-					<CommandDialog
-						open={this.state.CommandDialogOpen}
-						onClose={this.handleCommandClose.bind(this)}
-						onSave={this.handleCommandSave.bind(this)}
-						valveState={this.state.MeterState}
-						openValve={this.state.OpenValve}
-						commandWhen={this.state.CommandWhen}
-						onValveChange={this.handleCommandValveChange.bind(this)}
-						onWhenChange={this.handleCommandWhenChange.bind(this)} />
+						<DataSummation
+							data={this.chartData}
+							summationWindow={this.state.SummationWindow}
+							meterId={this.state.MeterId}
+							onWindowChange={this.handleChangeWindow.bind(this)}
+							onAddData={() => this.dispatch({ AddData: true })}
+						/>
+
+						<PolicyConfigDialog
+							open={this.state.ConfigDialogOpen}
+							onClose={this.handleConfigClose.bind(this)}
+							onSave={this.handleConfigSave.bind(this)}
+							onNameChange={this.handleConfigNameChange.bind(this)}
+							onStartChange={this.handleConfigStartChange.bind(this)}
+							onEndChange={this.handleConfigEndChange.bind(this)}
+							onPolicyIntervalChange={this.handleConfigPolicyIntervalChange.bind(this)}
+							meterReadPolicy={this.state.MeterReadPolicy}
+							policyStart={this.state.ConfigPolicyStart}
+							policyEnd={this.state.ConfigPolicyEnd}
+						/>
+						<CommandDialog
+							open={this.state.CommandDialogOpen}
+							onClose={this.handleCommandClose.bind(this)}
+							onSave={this.handleCommandSave.bind(this)}
+							valveState={this.state.MeterState}
+							openValve={this.state.OpenValve}
+							commandWhen={this.state.CommandWhen}
+							onValveChange={this.handleCommandValveChange.bind(this)}
+							onWhenChange={this.handleCommandWhenChange.bind(this)} />
+
+					</Grid>
 				</BasePage>
 			</ThemeProvider>
 		);
 	}
 }
 
-export default withStyles(styles)(MeterDashboard);
+//export default withStyles(styles)(MeterDashboard);
+export default Object.assign(withStyles(styles)(MeterDashboard), { name: '' });

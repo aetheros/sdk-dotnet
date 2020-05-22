@@ -34,13 +34,14 @@ const styles = (theme: Theme) => createStyles({
 
 interface Props extends WithStyles<typeof styles> {
 	onSidebarToggle: (evt: any) => void;
+	title?: string;
 };
 
 type State = {
 	anchorEl: Element;
 };
 
-export default withStyles(styles)(class HeaderComponent extends React.Component<Props, State> {
+class HeaderComponent extends React.Component<Props, State> {
 
 	constructor(props: Props) {
 		super(props);
@@ -49,12 +50,18 @@ export default withStyles(styles)(class HeaderComponent extends React.Component<
 		};
 	}
 
+	handleIconClick(event) {
+		this.setState({ anchorEl: event.currentTarget });
+	}
+	handleMenuClose() {
+		this.setState({ anchorEl: null });
+	}
+	handleMenuClick() {
+		auth.signOut();
+	}
+
 	render() {
 		const { classes, onSidebarToggle } = this.props;
-
-		const handleIconClick = event => this.setState({ anchorEl: event.currentTarget });
-		const handleMenuClose = () => this.setState({ anchorEl: null });
-		const handleMenuClick = () => auth.signOut();
 
 		return (
 			<div className={classes.root}>
@@ -63,13 +70,13 @@ export default withStyles(styles)(class HeaderComponent extends React.Component<
 						<IconButton edge="start" className={classes.menuButton} color="inherit" onClick={onSidebarToggle}>
 							<MenuIcon />
 						</IconButton>
-						<h5 className={classes.title} />
+						<h5 className={classes.title}>{this.props.title}</h5>
 						<div>
-							<IconButton onClick={handleIconClick} color="inherit">
+							<IconButton onClick={this.handleIconClick.bind(this)} color="inherit">
 								<MoreVertIcon />
 							</IconButton>
-							<Menu anchorEl={this.state.anchorEl} open={!!this.state.anchorEl} onClose={handleMenuClose}>
-								<MenuItem onClick={handleMenuClick}>Logout</MenuItem>
+							<Menu anchorEl={this.state.anchorEl} open={!!this.state.anchorEl} onClose={this.handleMenuClose.bind(this)}>
+								<MenuItem onClick={this.handleMenuClick.bind(this)}>Logout</MenuItem>
 							</Menu>
 						</div>
 					</Toolbar>
@@ -77,5 +84,5 @@ export default withStyles(styles)(class HeaderComponent extends React.Component<
 			</div>
 		);
 	}
-});
-
+}
+export default Object.assign(withStyles(styles)(HeaderComponent), { name: '' });

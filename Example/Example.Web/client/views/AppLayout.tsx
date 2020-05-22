@@ -6,17 +6,24 @@ import auth from '../auth';
 import Header from '../components/Header';
 import { Sidebar, SidebarMenu } from '../components/Sidebar';
 import defaultTheme from '../styles/theme-default';
+import { Button } from '@material-ui/core';
 
 const shouldSidebarOpen = width => width !== 'sm';
 const paddingLeftSidebar = 236;
 
 const styles = (theme: Theme) => createStyles({
 	header: {
-		paddingLeft: 0,//sidebarOpen ? paddingLeftSidebar : 0
+		paddingLeft: paddingLeftSidebar,
+	},
+	header_showSidebar: {
+		paddingLeft: 0,
 	},
 	container: {
 		margin: '80px 20px 20px 15px',
-		paddingLeft: paddingLeftSidebar,//sidebarOpen && this.props.width !== 'sm' ? paddingLeftSidebar : 0
+		paddingLeft: 0,
+	},
+	container_showSidebar: {
+		paddingLeft: paddingLeftSidebar,
 	}
 });
 
@@ -39,7 +46,7 @@ class AppLayout extends React.Component<Props, State> {
 		super(props);
 
 		this.vm = dotnetify.react.connect('AppLayout', this, {
-			headers: { Authorization: 'Bearer ' + auth.getAccessToken() },
+			headers: { Authorization: `Bearer ${auth.getAccessToken()}` },
 			exceptionHandler: _ => auth.signOut()
 		});
 		this.vm.onRouteEnter = (path, template) => (template.Target = 'Content');
@@ -66,19 +73,35 @@ class AppLayout extends React.Component<Props, State> {
 		let { sidebarOpen, Menus, UserAvatar, UserName } = this.state;
 		let userAvatarUrl = UserAvatar ? UserAvatar : null;
 
+		let showSidebar = sidebarOpen && this.props.width !== 'sm';
+
 		return (
 			<ThemeProvider theme={defaultTheme}>
 				<div>
-					<Header onSidebarToggle={this.handleSidebarToggle.bind(this)} />
-					<Sidebar vm={this.vm} logoTitle="dotNetify" open={sidebarOpen} userAvatarUrl={userAvatarUrl} menus={Menus} username={UserName} />
-					<div className={this.props.classes.container} id="Content" />
+					<Header
+						onSidebarToggle={this.handleSidebarToggle.bind(this)}
+						classes={{
+							root: sidebarOpen ? this.props.classes.header : this.props.classes.header_showSidebar
+						}}
+						title=""
+					/>
+					<Sidebar
+						vm={this.vm}
+						logoTitle="Aetheros"
+						open={sidebarOpen}
+						userAvatarUrl={userAvatarUrl}
+						menus={Menus}
+						username={UserName} />
+					<div
+						id="Content"
+						ref={(dd) => {
+							console.log(dd);
+						}}
+						className={`${this.props.classes.container} ${showSidebar && this.props.classes.container_showSidebar}`}
+					/>
 				</div>
 			</ThemeProvider>
 		);
 	}
 }
-// className={this.props.classes.header}
-// className={this.props.classes.container} 
-
-//export default withWidth()(withStyles(styles)(AppLayout));
-export default withStyles(styles)(withWidth()(AppLayout));
+export default Object.assign(withStyles(styles)(AppLayout), { name: '' });

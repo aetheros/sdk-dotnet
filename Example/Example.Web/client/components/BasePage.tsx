@@ -30,7 +30,7 @@ interface Props extends WithStyles<typeof globalStylesRecord> {
 	navigation: string;
 }
 
-export default withStyles(globalStylesRecord)(class BasePageComponent extends React.Component<Props> {
+class BasePageComponent extends React.Component<Props> {
 
 	constructor(props: Props) {
 		super(props);
@@ -50,4 +50,5 @@ export default withStyles(globalStylesRecord)(class BasePageComponent extends Re
 			</div>
 		);
 	}
-});
+}
+export default Object.assign(withStyles(globalStylesRecord)(BasePageComponent), { name: '' });

@@ -8,7 +8,7 @@ const MeterEvents = props => {
 		<Paper>
 			<ListSubheader>Info</ListSubheader>
 			<List>
-				<ListItem>{"ID: " + props.meterId}</ListItem>
+				<ListItem>{`ID: ${props.meterId}`}</ListItem>
 			</List>
 		</Paper>
 	);

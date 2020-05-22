@@ -29,10 +29,11 @@ interface Props extends WithStyles<typeof styles> {
 	data: DataSummaryPoint[];
 	summationWindow: number;
 	onWindowChange: any;
+	onAddData: () => void;
 	meterId: string;
 };
 
-export default withStyles(styles)(class DataSummationComponent extends React.Component<Props, any> {
+class DataSummationComponent extends React.Component<Props, any> {
 
 	constructor(props: Props) {
 		super(props);
@@ -84,6 +85,14 @@ export default withStyles(styles)(class DataSummationComponent extends React.Com
 						{/*
 						<SelectField value={this.props.summationWindow} onChange={this.props.onWindowChange} floatingLabelText="Show Water Use for the" floatingLabelStyle={styles.selectLabel}></SelectField>
 						*/}
+
+						<button
+							type="button"
+							className="btn btn-secondary"
+							onClick={this.props.onAddData}
+						>
+							Add Data
+						</button>
 					</form>
 					<div className={this.props.classes.chart}>
 						<DataSummationChart data={this.props.data} summationWindow={this.props.summationWindow} meterId={this.props.meterId} />
@@ -92,4 +101,6 @@ export default withStyles(styles)(class DataSummationComponent extends React.Com
 			</Paper>
 		);
 	}
-});
+};
+export default Object.assign(withStyles(styles)(DataSummationComponent), { name: '' });
+

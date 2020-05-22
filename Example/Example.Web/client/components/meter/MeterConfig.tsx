@@ -39,7 +39,7 @@ export type MeterReadPolicy = {
 };
 
 
-export const MeterConfig = withStyles(styles)(class MeterConfigComponent extends React.Component<Props, State> {
+class MeterConfigComponent extends React.Component<Props, State> {
 
 	constructor(props: Props) {
 		super(props);
@@ -50,21 +50,20 @@ export const MeterConfig = withStyles(styles)(class MeterConfigComponent extends
 
 	render() {
 
-		const currentPolicy = !this.props.meterReadPolicy ? "No policy found" : "Collect Usage Reads every " + this.props.meterReadPolicy.readInterval;
+		const currentPolicy = !this.props.meterReadPolicy ? "No policy found" : `Collect Usage Reads every ${this.props.meterReadPolicy.readInterval}`;
 		return (
-			<Paper>
-				<ListSubheader>Policy</ListSubheader>
-				<List>
-					<ListItem>
-						<ListItemText primary={currentPolicy} />
-					</ListItem>
-					<ListItemSecondaryAction>
-						<IconButton onClick={this.props.handlePolicyConfigClick}>
-							<SettingsIcon />
-						</IconButton>
-					</ListItemSecondaryAction>
-				</List>
-			</Paper>
+			<List dense={true} subheader={<ListSubheader>Policy</ListSubheader>}>
+				<ListItem>
+					<ListItemText primary={currentPolicy} />
+				</ListItem>
+				<ListItemSecondaryAction>
+					<IconButton onClick={this.props.handlePolicyConfigClick}>
+						<SettingsIcon />
+					</IconButton>
+				</ListItemSecondaryAction>
+			</List>
 		);
 	}
-});
+};
+
+export const MeterConfig = Object.assign(withStyles(styles)(MeterConfigComponent), { name: '' });

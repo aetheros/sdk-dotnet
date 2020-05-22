@@ -19,11 +19,12 @@
     <Folder Include="wwwroot\" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="DotNetify.SignalR" Version="3.6.2" />
-    <PackageReference Include="Microsoft.AspNetCore.SpaServices" Version="3.1.3" />
+    <PackageReference Include="DotNetify.SignalR" Version="3.7.0" />
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices" Version="3.1.4" />
     <PackageReference Include="System.Reactive" Version="4.4.1" />
     <PackageReference Include="AspNet.Security.OpenIdConnect.Server" Version="2.0.0" />
-    <PackageReference Include="System.Reactive.Compatibility" Version="4.4.1" />    
+    <PackageReference Include="System.Reactive.Compatibility" Version="4.4.1" />
+    <PackageReference Include="TaskTupleAwaiter" Version="1.2.0" />    
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="server\Services\employees.json" />
@@ -46,10 +47,7 @@
     <!-- File with mtime of last successful npm install -->
     <NpmInstallStampFile>node_modules/.install-stamp</NpmInstallStampFile>
   </PropertyGroup>
-  <Target Name="NpmInstall"
-    BeforeTargets="BeforeBuild"
-    Inputs="package.json"
-    Outputs="$(NpmInstallStampFile)">
+  <Target Name="NpmInstall" BeforeTargets="BeforeBuild" Inputs="package.json" Outputs="$(NpmInstallStampFile)">
     <Exec Command="node --version" ContinueOnError="true">
       <Output TaskParameter="ExitCode" PropertyName="ErrorCode" />
     </Exec>

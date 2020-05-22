@@ -1,0 +1,13 @@
+diff --git a/node_modules/chartjs-plugin-streaming/dist/chartjs-plugin-streaming.js b/node_modules/chartjs-plugin-streaming/dist/chartjs-plugin-streaming.js
+index a4a6b52..4f4fbc8 100644
+--- a/node_modules/chartjs-plugin-streaming/dist/chartjs-plugin-streaming.js
++++ b/node_modules/chartjs-plugin-streaming/dist/chartjs-plugin-streaming.js
+@@ -359,7 +359,7 @@ var defaultConfig = {
+ 	adapters: {},
+ 	time: {
+ 		parser: false, // false == a pattern string from http://momentjs.com/docs/#/parsing/string-format/ or a custom callback that converts its argument to a moment
+-		format: false, // DEPRECATED false == date objects, moment object, callback or a pattern string from http://momentjs.com/docs/#/parsing/string-format/
++		//format: false, // DEPRECATED false == date objects, moment object, callback or a pattern string from http://momentjs.com/docs/#/parsing/string-format/
+ 		unit: false, // false == automatic or override with week, month, year, etc.
+ 		round: false, // none, or override with week, month, year, etc.
+ 		displayFormat: false, // DEPRECATED

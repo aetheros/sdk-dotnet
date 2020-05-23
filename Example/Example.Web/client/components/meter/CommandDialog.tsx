@@ -10,11 +10,11 @@ import AppDialog from "../meter/AppDialog";
 
 type Props = {
 	open: boolean;
-	onClose: any;
-	onSave: any;
+	onClose: React.ReactEventHandler;
+	onSave: React.ReactEventHandler;
 	valveState: string;
-	onValveChange: any;
-	onWhenChange: any;
+	onValveChange: React.ReactEventHandler;
+	onWhenChange: React.ReactEventHandler;
 	openValve: string;
 	commandWhen: any;
 };

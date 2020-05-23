@@ -22,7 +22,7 @@ const styles = (theme: Theme) => createStyles({
 
 interface Props extends WithStyles<typeof styles> {
 	meterReadPolicy: MeterReadPolicy;
-	handlePolicyConfigClick: any;
+	handlePolicyConfigClick: React.ReactEventHandler;
 };
 
 type State = {

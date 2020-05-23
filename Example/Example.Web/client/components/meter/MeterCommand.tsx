@@ -27,7 +27,7 @@ export type MeterCommandModel = {
 
 interface Props extends WithStyles<typeof styles> {
 	meterCommand: MeterCommandModel;
-	handleCommandClick: any;
+	handleCommandClick: React.ReactEventHandler;
 };
 
 type State = {

@@ -139,7 +139,6 @@ class MeterDashboard extends React.Component<Props, State> {
 
 	shouldComponentUpdate(nextProps: Props, nextState: State, nextContent: any): boolean {
 
-
 		const addSummations = (rg: Summation[]) => {
 			for (let s of rg) {
 				if (!this.chartData.some(old => old.key === s.readTime))
@@ -191,7 +190,7 @@ class MeterDashboard extends React.Component<Props, State> {
 		return true;
 	}
 
-	handleChangeWindow(event, idx, value) {
+	handleChangeWindow(value) {
 		this.setState({
 			SummationWindow: value,
 			//Summations: []
@@ -300,13 +299,19 @@ class MeterDashboard extends React.Component<Props, State> {
 							</Grid>
 						</Grid>
 
-						<DataSummation
-							data={this.chartData}
-							summationWindow={this.state.SummationWindow}
-							meterId={this.state.MeterId}
-							onWindowChange={this.handleChangeWindow.bind(this)}
-							onAddData={() => this.dispatch({ AddData: true })}
-						/>
+						<Grid item container className={classes.grow} direction="row" alignItems="stretch" spacing={1}>
+							<Grid item xs>
+								<Paper className={classes.gridRowItem}>
+									<DataSummation
+										data={this.chartData}
+										summationWindow={this.state.SummationWindow}
+										meterId={this.state.MeterId}
+										onWindowChange={this.handleChangeWindow.bind(this)}
+										onAddData={() => this.dispatch({ AddData: true })}
+									/>
+								</Paper>
+							</Grid>
+						</Grid>
 
 						<PolicyConfigDialog
 							open={this.state.ConfigDialogOpen}
@@ -337,5 +342,4 @@ class MeterDashboard extends React.Component<Props, State> {
 	}
 }
 
-//export default withStyles(styles)(MeterDashboard);
 export default Object.assign(withStyles(styles)(MeterDashboard), { name: '' });

@@ -10,7 +10,7 @@ type Props = {
 	open: boolean;
 	onClose: React.ReactEventHandler;
 	onSave: React.ReactEventHandler;
-	content: any;
+	content: JSX.Element;
 };
 
 type State = {
@@ -28,17 +28,20 @@ export default class AppDialog extends React.Component<Props, State> {
 
 	render() {
 		return (
-			<Dialog open={this.props.open} onClose={this.props.onClose}
-				aria-labelledby="form-dialog-title">
+			<Dialog
+				open={this.props.open}
+				onClose={this.props.onClose.bind(this)}
+				aria-labelledby="form-dialog-title"
+			>
 				<DialogTitle>{this.props.title}</DialogTitle>
 				<DialogContent>
 					{this.props.content}
 				</DialogContent>
 				<DialogActions>
-					<Button onClick={this.props.onClose}>
+					<Button onClick={this.props.onClose.bind(this)}>
 						Cancel
 					</Button>
-					<Button onClick={this.props.onSave} color="primary" variant="contained">
+					<Button onClick={this.props.onSave.bind(this)} color="primary" variant="contained">
 						Save
 					</Button>
 				</DialogActions>

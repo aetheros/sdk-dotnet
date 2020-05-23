@@ -8,12 +8,12 @@ import { MeterReadPolicy } from "./MeterConfig";
 
 type Props = {
 	open: boolean;
-	onClose: any;
-	onSave: any;
-	onStartChange: any;
-	onEndChange: any;
-	onNameChange: any;
-	onPolicyIntervalChange: any;
+	onClose: React.ReactEventHandler;
+	onSave: React.ReactEventHandler;
+	onStartChange: React.ReactEventHandler;
+	onEndChange: React.ReactEventHandler;
+	onNameChange: React.ReactEventHandler;
+	onPolicyIntervalChange: React.ReactEventHandler;
 	meterReadPolicy: MeterReadPolicy;
 	policyStart: string;
 	policyEnd: string;

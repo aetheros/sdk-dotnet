@@ -8,6 +8,11 @@ import AddIcon from "@material-ui/icons/Add";
 import * as React from "react";
 
 const styles = (theme: Theme) => createStyles({
+	panelButton: {
+		position: 'absolute',
+		top: theme.spacing(1),
+		right: theme.spacing(1),
+	},
 	subheader: {
 		fontSize: 24,
 		fontWeight: 'lighter',
@@ -47,20 +52,22 @@ class MeterCommandComponent extends React.Component<Props, State> {
 		const lastWhen = !this.props.meterCommand ? "" : this.props.meterCommand.When;
 
 		return (
-			<List dense={true} subheader={<ListSubheader>Water Main Valve Control</ListSubheader>}>
+			<List dense={true} subheader={
+				<ListSubheader>
+					Water Main Valve Control
+						<Fab
+						size="small"
+						aria-label="Add"
+						onClick={this.props.handleCommandClick}
+						className={this.props.classes.panelButton}
+					>
+						<AddIcon />
+					</Fab>
+				</ListSubheader>
+			}>
 				<ListItem>
 					<ListItemText primary={lastCommand} secondary={lastWhen} />
 				</ListItem>
-				<ListItemSecondaryAction>
-					<Fab
-						/*variant="extended"*/
-						//mini={true}
-						size="small"
-						aria-label="Add"
-						onClick={this.props.handleCommandClick}>
-						<AddIcon />
-					</Fab>
-				</ListItemSecondaryAction>
 			</List>
 		);
 	}

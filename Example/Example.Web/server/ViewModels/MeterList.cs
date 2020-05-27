@@ -1,4 +1,5 @@
 ﻿using DotNetify;
+using DotNetify.Routing;
 using DotNetify.Security;
 
 using Example.Types;
@@ -15,7 +16,7 @@ using System.Threading.Tasks;
 namespace Example.Web.Server.ViewModels
 {
 	[Authorize]
-	public class MeterList : BaseVM
+	public class MeterList : BaseVM, DotNetify.Routing.IRoutable
 	{
 		public string Meters_itemKey => nameof(Meter.MeterId);
 
@@ -35,6 +36,8 @@ namespace Example.Web.Server.ViewModels
 			}
 		}
 
+		public RoutingState RoutingState { get; set; }
+
 		public ReactiveProperty<MeterListRow[]> Meters = new ReactiveProperty<MeterListRow[]>();
 
 
@@ -46,12 +49,13 @@ namespace Example.Web.Server.ViewModels
 				var stateStr = latestState != null ? latestState.Valve.Description() : "N/A";
 
 				var meters = new Queue<MeterListRow>(Get<MeterListRow[]>("Meters")?.Reverse() ?? new MeterListRow[] { });
-				meters.Enqueue(new MeterListRow(meter.MeterId, stateStr));
+				var route = this.GetRoute(nameof(MeterDashboard), $"{nameof(MeterDashboard)}/{meter.MeterId}");
+				meters.Enqueue(new MeterListRow(meter.MeterId, stateStr, route));
 
 				//Subscribe to State to update a row and push updates to views
 				meter.State.Subscribe(newState =>
 				{
-					this.UpdateList("Meters", new MeterListRow(meter.MeterId, newState));
+					this.UpdateList("Meters", new MeterListRow(meter.MeterId, newState, this.GetRoute(nameof(MeterDashboard), $"{nameof(MeterDashboard)}/{meter.MeterId}")));
 					PushUpdates();
 				});
 
@@ -67,6 +71,17 @@ namespace Example.Web.Server.ViewModels
 					PushUpdates();
 					return true;
 				});
+
+			this.OnRouted((sender, e) =>
+			{
+				System.Diagnostics.Debug.WriteLine(e.From);
+			});
+
+
+			this.RegisterRoutes(nameof(MeterList), new List<RouteTemplate>
+			{
+				new RouteTemplate(nameof(MeterDashboard)) { UrlPattern = $"{nameof(MeterDashboard)}(/:id)" },
+			});
 		}
 	}
 }

@@ -3,6 +3,7 @@ using Aetheros.OneM2M.Binding;
 
 using Example.Types;
 using Example.Web.Server.Utils;
+
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.Extensions.Options;
 
@@ -182,18 +183,21 @@ namespace Example.Web.Server.Services
 			var cutoffTime = utcNow - summationWindow;
 
 			//get content instances created in the specified summation window + 7 days
-			var dataRefs = (await App.Application.GetPrimitiveAsync(App.DataContainer, new FilterCriteria
-			{
-				FilterUsage = FilterUsage.Discovery,
-				ResourceType = new[] { ResourceType.ContentInstance },
-				CreatedAfter = cutoffTime.AddDays(-1)
-			})).URIList;
+			var dataRefs = (await App.Application.GetPrimitiveAsync(
+				App.DataContainer,
+				new FilterCriteria
+				{
+					FilterUsage = FilterUsage.Discovery,
+					ResourceType = new[] { ResourceType.ContentInstance },
+					CreatedAfter = cutoffTime.AddDays(-1)
+				}
+			)).URIList;
 
 			if (dataRefs == null)
 				return Array.Empty<Data.Summation>();
 
-			var oldEvents =
-				await dataRefs
+			var oldEvents = await
+				dataRefs
 				.Reverse()
 				.ToAsyncEnumerable()
 				.SelectAwait(async url => await App.Application.GetPrimitiveAsync(url))

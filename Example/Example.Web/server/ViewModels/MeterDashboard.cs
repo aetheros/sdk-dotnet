@@ -82,7 +82,7 @@ namespace Example.Web.Server.ViewModels
 
 			(this).OnRouted((sender, e) =>
 			{
-				MeterId = e?.From?.Replace($"{AppLayout.MeterDashboardPath}/", "");
+				MeterId = e?.From?.Replace($"{nameof(MeterDashboard)}/", "");
 				var app = _meterService.App;
 
 				var loadTask = Task.Run(async () =>

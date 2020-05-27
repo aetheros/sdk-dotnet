@@ -37,7 +37,7 @@ namespace Example.Web.Server
 				{
 					Id = i.Id,
 					Name = i.FullName,
-					Route = this.Redirect(AppLayout.FormPagePath, i.Id.ToString())
+					Route = this.Redirect(nameof(Form), i.Id.ToString())
 				});
 
 		public int Id
@@ -78,7 +78,7 @@ namespace Example.Web.Server
 
 			this.OnRouted((sender, e) =>
 			{
-				if (int.TryParse(e?.From?.Replace($"{AppLayout.FormPagePath}/", ""), out int id))
+				if (int.TryParse(e?.From?.Replace($"{nameof(Form)}/", ""), out int id))
 					LoadEmployee(id);
 			});
 		}

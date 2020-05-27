@@ -142,15 +142,14 @@ class MeterDashboard extends React.Component<Props, State> {
 		const addSummations = (rg: Summation[]) => {
 			for (let s of rg) {
 				if (!this.chartData.some(old => old.key === s.readTime))
-					//this.chartData.push({ x: new Date(s.readTime).toLocaleString(), y: s.value, key: s.readTime });
 					this.chartData.push({ x: s.readTime, y: s.value, key: s.readTime });
 			}
 		}
 
-		//addSummations(nextState.OldData);
 		if (nextState.OldData) {
 			for (let s of nextState.OldData)
 				console.log('nextState.OldData : ' + s.readTime);
+			addSummations(nextState.OldData);
 		}
 
 		if (this.state.Summations) {
@@ -164,8 +163,6 @@ class MeterDashboard extends React.Component<Props, State> {
 			addSummations(nextState.Summations.summations);
 		}
 
-		//data.sort((v1: Summation, v2: Summation) => v1.readTime.localeCompare(v2.readTime));
-		//this.chartData = data.filter((v, i, rg) => i == 0 || rg[i].readTime != rg[i - 1].readTime);
 
 		for (let s of this.chartData)
 			console.log('this.chartData : ' + s.x);

@@ -43,7 +43,7 @@ namespace Example.Web.Server
 				{
 					PersonName = value.PersonName,
 					Status = value.Status,
-					Route = this.Redirect(AppLayout.FormPagePath, value.Id.ToString())
+					Route = this.Redirect(nameof(Form), value.Id.ToString())
 				});
 
 				if (activities.Count > 4)

@@ -18,18 +18,15 @@ namespace Example.Web.Server
 			FormPage,
 			TablePage,
 			MeterList,
-			MeterDashboard,
+			//MeterDashboard,
 		};
-
-		public static string FormPagePath => "Form";
-		public static string MeterDashboardPath => "MeterDashboard";
 
 		public RoutingState RoutingState { get; set; }
 
 		public object Menus => new List<object>()
 		{
 			new { Title = "Dashboard",    Icon = "assessment", Route = this.GetRoute(nameof(Route.Dashboard)) },
-			new { Title = "Form Page",    Icon = "web",        Route = this.GetRoute(nameof(Route.FormPage), $"{FormPagePath}/1") },
+			new { Title = "Form Page",    Icon = "web",        Route = this.GetRoute(nameof(Route.FormPage), $"{nameof(Form)}/1") },
 			new { Title = "Table Page",   Icon = "grid_on",    Route = this.GetRoute(nameof(Route.TablePage)) },
 			new { Title = "Meters",       Icon = "grid_on",    Route = this.GetRoute(nameof(Route.MeterList)) },
 		};
@@ -48,10 +45,10 @@ namespace Example.Web.Server
 			{
 				new RouteTemplate(nameof(Route.Home)) { UrlPattern = "", ViewUrl = nameof(Route.Dashboard) },
 				new RouteTemplate(nameof(Route.Dashboard)),
-				new RouteTemplate(nameof(Route.FormPage)) { UrlPattern = $"{FormPagePath}(/:id)" },
+				new RouteTemplate(nameof(Route.FormPage)) { UrlPattern = $"{nameof(Form)}(/:id)" },
 				new RouteTemplate(nameof(Route.TablePage)),
 				new RouteTemplate(nameof(Route.MeterList)),
-				new RouteTemplate(nameof(Route.MeterDashboard)) { UrlPattern = $"{MeterDashboardPath}(/:id)" },
+				//new RouteTemplate(nameof(Route.MeterDashboard)) { UrlPattern = $"{MeterDashboardPath}(/:id)" },
 			});
 		}
 	}

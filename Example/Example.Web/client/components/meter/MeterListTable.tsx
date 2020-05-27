@@ -1,5 +1,4 @@
-﻿import { grey } from "@material-ui/core/colors";
-import FloatingActionButton from "@material-ui/core/Fab";
+﻿import Fab from "@material-ui/core/Fab";
 import { createStyles, Theme, WithStyles, withStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -7,19 +6,23 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import IconLink from "@material-ui/icons/Link";
-import * as React from "react";
+import { dotnetifyVM, IRouter } from "dotnetify";
+import { RouteLink } from 'dotnetify/react';
+import * as React from 'react';
+
 
 const styles = (theme: Theme) => createStyles({
-	detailIcon: { fill: grey[500] },
 });
 
 interface Props extends WithStyles<typeof styles> {
-	data: Meter[];
+	vm: dotnetifyVM;
+	data: MeterListRow[];
 };
 
-type Meter = {
+type MeterListRow = {
 	MeterId: string;
 	MeterState: string;
+	Route: string;
 };
 
 class MeterListTableComponent extends React.Component<Props, any> {
@@ -27,10 +30,6 @@ class MeterListTableComponent extends React.Component<Props, any> {
 	constructor(props) {
 		super(props);
 	}
-
-	openDetail(meterId) {
-		window.open(`/MeterDashboard/${meterId}`);
-	};
 
 	render() {
 		const meters = this.props.data;
@@ -52,17 +51,13 @@ class MeterListTableComponent extends React.Component<Props, any> {
 								{!meter ? "N/A" : meter.MeterState}
 							</TableCell>
 							<TableCell>
-								<FloatingActionButton
-									onClick={() => this.openDetail(meter.MeterId)}
-								//zDepth={0}
-								//size="small"
-								//mini={true}
-								//backgroundColor={grey[200]}
-								//className={this.props.classes.floatingButton}
-								//iconStyle={styles.detailIcon}
-								>
-									<IconLink className={this.props.classes.detailIcon} />
-								</FloatingActionButton>
+								<RouteLink vm={this.props.vm} route={meter.Route}>
+									<Fab
+										size="small"
+									>
+										<IconLink />
+									</Fab>
+								</RouteLink>
 							</TableCell>
 						</TableRow>
 					))}

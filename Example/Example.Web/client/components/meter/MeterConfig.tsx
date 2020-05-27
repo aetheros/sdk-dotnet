@@ -8,6 +8,11 @@ import SettingsIcon from "@material-ui/icons/Settings";
 import * as React from "react";
 
 const styles = (theme: Theme) => createStyles({
+	panelButton: {
+		position: 'absolute',
+		top: theme.spacing(1),
+		right: theme.spacing(1),
+	},
 	subheader: {
 		fontSize: 24,
 		fontWeight: 'lighter',
@@ -52,15 +57,22 @@ class MeterConfigComponent extends React.Component<Props, State> {
 
 		const currentPolicy = !this.props.meterReadPolicy ? "No policy found" : `Collect Usage Reads every ${this.props.meterReadPolicy.readInterval}`;
 		return (
-			<List dense={true} subheader={<ListSubheader>Policy</ListSubheader>}>
+			<List dense={true} subheader={
+				<ListSubheader>
+					Policy
+					<IconButton
+						size="small"
+						aria-label="Add"
+						onClick={this.props.handlePolicyConfigClick}
+						className={this.props.classes.panelButton}
+					>
+						<SettingsIcon />
+					</IconButton>
+				</ListSubheader>
+			}>
 				<ListItem>
 					<ListItemText primary={currentPolicy} />
 				</ListItem>
-				<ListItemSecondaryAction>
-					<IconButton onClick={this.props.handlePolicyConfigClick}>
-						<SettingsIcon />
-					</IconButton>
-				</ListItemSecondaryAction>
 			</List>
 		);
 	}

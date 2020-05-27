@@ -33,7 +33,7 @@ const styles = (theme: Theme) => createStyles({
 });
 
 interface Props extends WithStyles<typeof styles> {
-	onSidebarToggle: (evt: any) => void;
+	onSidebarToggle: React.ReactEventHandler;
 	title?: string;
 };
 

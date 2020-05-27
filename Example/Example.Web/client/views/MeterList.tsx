@@ -1,7 +1,7 @@
-﻿import Snackbar from "@material-ui/core/Snackbar";
+import Snackbar from "@material-ui/core/Snackbar";
 //import MuiThemeProvider from "@material-ui/core/styles/MuiThemeProvider";
 import { ThemeProvider } from '@material-ui/core/styles';
-import dotnetify, { dotnetifyVM } from "dotnetify";
+import dotnetify, { dotnetifyVM, IConnectOptions } from "dotnetify";
 import * as React from "react";
 import BasePage from "../components/BasePage";
 import MeterListTable from "../components/meter/MeterListTable";
@@ -18,6 +18,7 @@ export default class MeterList extends React.Component<Props> {
 	constructor(props) {
 		super(props);
 		this.vm = dotnetify.react.connect("MeterList", this);
+		this.vm.onRouteEnter = (path, template) => (template.Target = 'Content');
 	}
 
 	vm: dotnetifyVM;
@@ -32,7 +33,7 @@ export default class MeterList extends React.Component<Props> {
 			<ThemeProvider theme={defaultTheme}>
 				<BasePage title="Meter List" navigation="">
 					<div>
-						<MeterListTable data={this.state.Meters} />
+						<MeterListTable data={this.state.Meters} vm={this.vm} />
 						<Snackbar open={this.state.ShowNotification} message="Changes saved" autoHideDuration={1000} onClose={() => this.setState({ ShowNotification: false })} />
 					</div>
 				</BasePage>

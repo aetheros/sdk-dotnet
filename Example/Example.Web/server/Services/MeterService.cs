@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
+using System.Diagnostics;
 using System.Linq;
 using System.Reactive.Linq;
 using System.Threading.Tasks;
@@ -27,8 +28,11 @@ namespace Example.Web.Server.Services
 
 		public async Task<IEnumerable<Data.Summation>> GetOldSummationsAsync(string meterId, int dataSummationWindow)
 		{
-			var windowTimeSpan = new TimeSpan(0, 0, dataSummationWindow, 0);
-			return await _modelContext.GetOldSummationsAsync(meterId, windowTimeSpan);
+			Debug.WriteLine($"GetOldSummationsAsync({dataSummationWindow} minutes)...");
+			var windowTimeSpan = TimeSpan.FromMinutes(dataSummationWindow);
+			var summations = await _modelContext.GetOldSummationsAsync(meterId, windowTimeSpan);
+			Debug.WriteLine($"GetOldSummationsAsync({dataSummationWindow} minutes)... returned {summations.Count()} summations");
+			return summations;
 		}
 
 		public async Task<IEnumerable<Events.MeterEvent>> GetOldEventsAsync(string meterId) => await _modelContext.GetOldEvents(meterId);

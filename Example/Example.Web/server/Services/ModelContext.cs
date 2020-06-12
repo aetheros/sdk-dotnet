@@ -179,7 +179,6 @@ namespace Example.Web.Server.Services
 			var utcNow = DateTimeOffset.UtcNow;
 			var cutoffTime = utcNow - summationWindow;
 
-#if true
 			//get content instances created in the specified summation window + 7 days
 			var childResources = (await App.Application.GetChildResourcesAsync(
 				App.DataContainer,
@@ -187,43 +186,15 @@ namespace Example.Web.Server.Services
 				{
 					FilterUsage = FilterUsage.Discovery,
 					ResourceType = new[] { ResourceType.ContentInstance },
-					CreatedAfter = cutoffTime.AddDays(-1)
+					CreatedAfter = cutoffTime,
 				}
 			)).ContentInstance;
 
-			var oldEvents = childResources
+			return childResources
 				.Select(ci => ci.GetContent<Data>())
 				.Where(d => d.MeterId == meterId
 					&& d.Summations.Count > 0
-					&& d.Summations.First().ReadTime > cutoffTime);
-#else
-			var dataRefs = (await App.Application.GetPrimitiveAsync(
-				App.DataContainer,
-				new FilterCriteria
-				{
-					FilterUsage = FilterUsage.Discovery,
-					ResourceType = new[] { ResourceType.ContentInstance },
-					CreatedAfter = cutoffTime.AddDays(-1)
-				}
-			)).URIList;
-
-			if (dataRefs == null)
-				return Array.Empty<Data.Summation>();
-
-			var oldEvents = await
-				dataRefs
-				.Reverse()
-				.ToAsyncEnumerable()
-				.SelectAwait(async url => await App.Application.GetPrimitiveAsync(url))
-				.Select(rc => rc.ContentInstance?.GetContent<Data>())
-				.Where(d => d.MeterId == meterId
-					&& d.Summations.Count > 0
 					&& d.Summations.First().ReadTime > cutoffTime)
-				.Reverse()
-				.ToListAsync();
-#endif
-
-			return oldEvents
 				.SelectMany(d => d.Summations)
 				.OrderBy(s => s.ReadTime)
 				.ToList();
@@ -231,29 +202,21 @@ namespace Example.Web.Server.Services
 
 		public async Task<IEnumerable<Events.MeterEvent>> GetOldEvents(string meterId)
 		{
-			//get content instances created in the past 30 days
-			var eventRefs = (await App.Application.GetPrimitiveAsync(App.EventsContainer, new FilterCriteria
-			{
-				FilterUsage = FilterUsage.Discovery,
-				ResourceType = new[] { ResourceType.ContentInstance },
-				CreatedAfter = DateTimeOffset.UtcNow.AddDays(-30)
-			})).URIList;
+			//get content instances created in the specified summation window + 7 days
+			var childResources = (await App.Application.GetChildResourcesAsync(
+				App.EventsContainer,
+				new FilterCriteria
+				{
+					FilterUsage = FilterUsage.Discovery,
+					ResourceType = new[] { ResourceType.ContentInstance },
+					CreatedAfter = DateTimeOffset.UtcNow.AddDays(-30),
+				}
+			)).ContentInstance;
 
-			if (eventRefs == null)
-				return Array.Empty<Events.MeterEvent>();
-
-			var oldEvents =
-				await eventRefs
-				.Reverse()
-				.ToAsyncEnumerable()
-				.SelectAwait(async url => await App.Application.GetPrimitiveAsync(url))
-				.Select(rc => rc.ContentInstance?.GetContent<Events>())
-				.Where(d => d.MeterEvents.Count > 0
-					&& d.MeterId == meterId)
-				.Reverse()
-				.ToListAsync();
-
-			return oldEvents
+			return
+				childResources
+				.Select(ci => ci.GetContent<Events>())
+				.Where(d => d.MeterEvents.Count > 0 && d.MeterId == meterId)
 				.SelectMany(d => d.MeterEvents)
 				.OrderByDescending(s => s.EventTime)
 				.ToList();

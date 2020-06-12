@@ -62,9 +62,9 @@ namespace Aetheros.OneM2M.Api
 		public static T? DeserializeObject<T>(this JsonSerializer @this, string value)
 			where T : class
 		{
-			using (var stringReader = new StringReader(value))
-			using (var jsonReader = new JsonTextReader(stringReader))
-				return @this.Deserialize<T>(jsonReader);
+			using var stringReader = new StringReader(value);
+			using var jsonReader = new JsonTextReader(stringReader);
+			return @this.Deserialize<T>(jsonReader);
 		}
 
 		public static string ToPemString(this CertificateRequest request, X509SignatureGenerator? generator = null)

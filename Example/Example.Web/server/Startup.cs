@@ -97,8 +97,8 @@ namespace Example.Web.Server
 				else if (uri.EndsWith("_hmr"))  // Fix HMR for deep links.
 					context.Response.Redirect("/dist/__webpack_hmr");
 
-				using (var reader = new StreamReader(File.OpenRead("wwwroot/index.html")))
-					await context.Response.WriteAsync(reader.ReadToEnd());
+				using var reader = new StreamReader(File.OpenRead("wwwroot/index.html"));
+				await context.Response.WriteAsync(reader.ReadToEnd());
 			});
 		}
 	}

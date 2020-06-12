@@ -20,7 +20,7 @@ namespace Aetheros.OneM2M.Api
 
 		public X509Certificate? ClientCertificate { get; }
 
-		public HttpConnection(IConfig config)
+		public HttpConnection(IConnectionConfiguration config)
 			: this(config.M2MUrl, config.CertificateFilename) { }
 
 		public HttpConnection(Uri m2mUrl, string certificateFilename)
@@ -55,31 +55,37 @@ namespace Aetheros.OneM2M.Api
 			_pnClient = new HttpClient(handler);
 #endif
 
+			_pnClient.Timeout = TimeSpan.FromSeconds(300);
 			_pnClient.DefaultRequestHeaders.Add("Accept", OneM2MResponseContentTYpe);
-		}
-
-		public override async Task<ResponseContent> GetResponseAsync(RequestPrimitive body)
-		{
-			using (var request = GetRequest(body))
-				return await GetResponseAsync(request);
 		}
 
 		public async Task<ResponseContent> GetResponseAsync(HttpRequestMessage request)
 		{
-			using (var response = await _pnClient.SendAsync(request))
+			using var response = await _pnClient.SendAsync(request);
+			var responseContent = await response.DeserializeAsync<ResponseContent>() ??
+				throw new InvalidDataException("The returned response did not match type 'ResponseContent'");
+
+			if (response.Headers.TryGetValues("X-M2M-RSC", out IEnumerable<string> statusCodeHeaders))
 			{
-				var responseContent = await response.DeserializeAsync<ResponseContent>() ??
-					throw new InvalidDataException("The returned response did not match type 'ResponseContent'");
-
-				if (response.Headers.TryGetValues("X-M2M-RSC", out IEnumerable<string> statusCodeHeaders))
-				{
-					var statusCodeHeader = statusCodeHeaders.FirstOrDefault();
-					if (statusCodeHeader == null && Enum.TryParse<ResponseStatusCode>(statusCodeHeader, out ResponseStatusCode statusCode))
-						responseContent.ResponseStatusCode = statusCode;
-				}
-
-				return responseContent;
+				var statusCodeHeader = statusCodeHeaders.FirstOrDefault();
+				if (statusCodeHeader == null && Enum.TryParse<ResponseStatusCode>(statusCodeHeader, out ResponseStatusCode statusCode))
+					responseContent.ResponseStatusCode = statusCode;
 			}
+			return responseContent;
+		}
+
+		public override async Task<T> GetResponseAsync<T>(RequestPrimitive body)
+		{
+			using var request = GetRequest(body);
+			return await GetResponseAsync<T>(request);
+		}
+
+		public async Task<T> GetResponseAsync<T>(HttpRequestMessage request)
+			where T : class, new()
+		{
+			using var response = await _pnClient.SendAsync(request);
+			return await response.DeserializeAsync<T>() ??
+				throw new InvalidDataException("The returned response did not match type 'ResponseContent'");
 		}
 
 		internal HttpRequestMessage GetRequest(RequestPrimitive body)

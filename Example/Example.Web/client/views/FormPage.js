@@ -29,8 +29,6 @@ class FormPage extends React.Component {
   constructor(props) {
     super(props);
     this.vm = dotnetify.react.connect('Form', this);
-    this.dispatch = state => this.vm.$dispatch(state);
-    this.routeTo = route => this.vm.$routeTo(route);
 
     this.state = {
       dirty: false,
@@ -42,6 +40,13 @@ class FormPage extends React.Component {
 
   componentWillUnmount() {
     this.vm.$destroy();
+  }
+
+  dispatch(state) {
+    this.vm.$dispatch(state);
+  }
+  routeTo(route) {
+    this.vm.$routeTo(route);
   }
 
   render() {

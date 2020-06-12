@@ -22,14 +22,14 @@ namespace Example.Web.Server.Services
 		public Uri CAUrl { get; set; }
 
 		[Serializable]
-		public class ConnectionConfig : Aetheros.OneM2M.Api.Connection.IConfig
+		public class ConnectionConfig : Aetheros.OneM2M.Api.Connection.IConnectionConfiguration
 		{
 			public Uri M2MUrl { get; set; }
 			public string CertificateFilename { get; set; } = "cert.pfx";
 		}
 
 		[Serializable]
-		public class AppConfig : Aetheros.OneM2M.Api.Application.IConfig
+		public class AppConfig : Aetheros.OneM2M.Api.Application.IApplicationConfiguration
 		{
 			public string AppId { get; set; }
 			public string AppName { get; set; }

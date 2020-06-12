@@ -28,7 +28,7 @@ namespace GridNet.IoT.Client
 		{
 			message = verbose ? verboseMessage ?? message : message;
 			if (verbose || showNonVerbose)
-				Trace.WriteLine(message);
+				Console.Error.WriteLine(message);
 		}
 
 		protected void ShowError(string errorMessage, bool exit = true)

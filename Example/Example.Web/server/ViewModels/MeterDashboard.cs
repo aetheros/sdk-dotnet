@@ -87,11 +87,18 @@ namespace Example.Web.Server.ViewModels
 
 				var loadTask = Task.Run(async () =>
 				{
+					/*
 					var (meter, oldData, oldEvents) = await (
 						_meterService.GetMeterAsync(MeterId),
 						_meterService.GetOldSummationsAsync(MeterId, SummationWindow),
 						_meterService.GetOldEventsAsync(MeterId)
 					);
+					*/
+
+					var meter = await _meterService.GetMeterAsync(MeterId);
+					var oldData = await _meterService.GetOldSummationsAsync(MeterId, SummationWindow);
+					var oldEvents = await _meterService.GetOldEventsAsync(MeterId);
+
 					if (meter.MeterId != this.MeterId)
 						return null;
 
@@ -110,11 +117,11 @@ namespace Example.Web.Server.ViewModels
 					return meter;
 				});
 
-				Func<object, bool> PushPropertyUpdates = _ =>
+				bool PushPropertyUpdates(object _)
 				{
 					base.PushUpdates();
 					return true;
-				};
+				}
 
 				AddProperty<Info>("Info")
 					.SubscribeTo(Observable.Defer<Info>(async () =>
@@ -122,7 +129,7 @@ namespace Example.Web.Server.ViewModels
 						var meter = await loadTask;
 						var latest = await _meterService.GetLatestContentInstanceAsync<Info>(meter.MeterUrl + app.InfoContainer);
 						var connInfo = meter.Info
-							.Publish(latest ?? new Info { MeterId = latest.MeterId });
+							.Publish(latest ?? new Info { MeterId = meter.MeterId });
 						connInfo.Connect();
 						return connInfo;
 					}))

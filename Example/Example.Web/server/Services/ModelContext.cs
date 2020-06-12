@@ -68,10 +68,7 @@ namespace Example.Web.Server.Services
 				CommandContainer = options.CommandContainer,
 			};
 
-			_startupTask = Task.Run(async () =>
-			{
-				await LoadObservableDataAsync();
-			});
+			_startupTask = Task.Run(async () => await LoadObservableDataAsync());
 
 			_cts = new System.Threading.CancellationTokenSource();
 #if false
@@ -182,7 +179,24 @@ namespace Example.Web.Server.Services
 			var utcNow = DateTimeOffset.UtcNow;
 			var cutoffTime = utcNow - summationWindow;
 
+#if true
 			//get content instances created in the specified summation window + 7 days
+			var childResources = (await App.Application.GetChildResourcesAsync(
+				App.DataContainer,
+				new FilterCriteria
+				{
+					FilterUsage = FilterUsage.Discovery,
+					ResourceType = new[] { ResourceType.ContentInstance },
+					CreatedAfter = cutoffTime.AddDays(-1)
+				}
+			)).ContentInstance;
+
+			var oldEvents = childResources
+				.Select(ci => ci.GetContent<Data>())
+				.Where(d => d.MeterId == meterId
+					&& d.Summations.Count > 0
+					&& d.Summations.First().ReadTime > cutoffTime);
+#else
 			var dataRefs = (await App.Application.GetPrimitiveAsync(
 				App.DataContainer,
 				new FilterCriteria
@@ -207,6 +221,7 @@ namespace Example.Web.Server.Services
 					&& d.Summations.First().ReadTime > cutoffTime)
 				.Reverse()
 				.ToListAsync();
+#endif
 
 			return oldEvents
 				.SelectMany(d => d.Summations)

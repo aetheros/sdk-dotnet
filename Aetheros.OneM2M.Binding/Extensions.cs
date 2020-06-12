@@ -220,6 +220,208 @@ namespace Aetheros.OneM2M.Binding
 		//public DynamicAuthorizationConsultationAnnc DynamicAuthorizationConsultationAnnc { get; set; }
 	}
 
+
+	public partial class Resources
+	{
+		[JsonProperty("acp")]
+		[XmlElement("acp")]
+		public ICollection<AccessControlPolicy> AccessControlPolicy { get; set; } = Array.Empty<AccessControlPolicy>();
+
+		[JsonProperty("ae")]
+		[XmlElement("ae")]
+		public ICollection<AE> AE { get; set; } = Array.Empty<AE>();
+
+		[JsonProperty("cnt")]
+		[XmlElement("cnt")]
+		public ICollection<Container> Container { get; set; } = Array.Empty<Container>();
+
+		[JsonProperty("cin")]
+		[XmlElement("cin")]
+		public ICollection<ContentInstance> ContentInstance { get; set; } = Array.Empty<ContentInstance>();
+
+		[JsonProperty("cb")]
+		[XmlElement("cb")]
+		public ICollection<CSEBase> CSEBase { get; set; } = Array.Empty<CSEBase>();
+
+		[JsonProperty("dlv")]
+		[XmlElement("dlv")]
+		public ICollection<Delivery> Delivery { get; set; } = Array.Empty<Delivery>();
+
+		[JsonProperty("evcg")]
+		[XmlElement("evcg")]
+		public ICollection<EventConfig> EventConfig { get; set; } = Array.Empty<EventConfig>();
+
+		[JsonProperty("exin")]
+		[XmlElement("exin")]
+		public ICollection<ExecInstance> ExecInstance { get; set; } = Array.Empty<ExecInstance>();
+
+		[JsonProperty("grp")]
+		[XmlElement("grp")]
+		public ICollection<Group> Group { get; set; } = Array.Empty<Group>();
+
+		[JsonProperty("lcp")]
+		[XmlElement("lcp")]
+		public ICollection<LocationPolicy> LocationPolicy { get; set; } = Array.Empty<LocationPolicy>();
+
+		[JsonProperty("mssp")]
+		[XmlElement("mssp")]
+		public ICollection<M2MServiceSubscriptionProfile> M2MServiceSubscriptionProfile { get; set; } = Array.Empty<M2MServiceSubscriptionProfile>();
+
+		[JsonProperty("mgc")]
+		[XmlElement("mgc")]
+		public ICollection<MgmtCmd> MgmtCmd { get; set; } = Array.Empty<MgmtCmd>();
+
+		//[JsonProperty("")]
+		//[XmlElement("")]
+		//public ICollection<MgmtObj> MgmtObj { get; set; } = Array.Empty<MgmtObj>();
+
+		[JsonProperty("nod")]
+		[XmlElement("nod")]
+		public ICollection<Node> Node { get; set; } = Array.Empty<Node>();
+
+		[JsonProperty("pch")]
+		[XmlElement("pch")]
+		public ICollection<PollingChannel> PollingChannel { get; set; } = Array.Empty<PollingChannel>();
+
+		[JsonProperty("csr")]
+		[XmlElement("csr")]
+		public ICollection<RemoteCSE> RemoteCSE { get; set; } = Array.Empty<RemoteCSE>();
+
+		[JsonProperty("req")]
+		[XmlElement("req")]
+		public ICollection<Request> Request { get; set; } = Array.Empty<Request>();
+
+		[JsonProperty("sch")]
+		[XmlElement("sch")]
+		public ICollection<Schedule> Schedule { get; set; } = Array.Empty<Schedule>();
+
+		[JsonProperty("asar")]
+		[XmlElement("asar")]
+		public ICollection<ServiceSubscribedAppRule> ServiceSubscribedAppRule { get; set; } = Array.Empty<ServiceSubscribedAppRule>();
+
+		[JsonProperty("svsn")]
+		[XmlElement("svsn")]
+		public ICollection<ServiceSubscribedNode> ServiceSubscribedNode { get; set; } = Array.Empty<ServiceSubscribedNode>();
+
+		[JsonProperty("stcl")]
+		[XmlElement("stcl")]
+		public ICollection<StatsCollect> StatsCollect { get; set; } = Array.Empty<StatsCollect>();
+
+		[JsonProperty("stcg")]
+		[XmlElement("stcg")]
+		public ICollection<StatsConfig> StatsConfig { get; set; } = Array.Empty<StatsConfig>();
+
+		[JsonProperty("sub")]
+		[XmlElement("sub")]
+		public ICollection<Subscription> Subscription { get; set; } = Array.Empty<Subscription>();
+
+		[JsonProperty("smd")]
+		[XmlElement("smd")]
+		public ICollection<SemanticDescriptor> SemanticDescriptor { get; set; } = Array.Empty<SemanticDescriptor>();
+
+		[JsonProperty("ntpr")]
+		[XmlElement("ntpr")]
+		public ICollection<NotificationTargetMgmtPolicyRef> NotificationTargetMgmtPolicyRef { get; set; } = Array.Empty<NotificationTargetMgmtPolicyRef>();
+
+		[JsonProperty("ntp")]
+		[XmlElement("ntp")]
+		public ICollection<NotificationTargetPolicy> NotificationTargetPolicy { get; set; } = Array.Empty<NotificationTargetPolicy>();
+
+		[JsonProperty("pdr")]
+		[XmlElement("pdr")]
+		public ICollection<PolicyDeletionRules> PolicyDeletionRules { get; set; } = Array.Empty<PolicyDeletionRules>();
+
+		//[JsonProperty("")]
+		//[XmlElement("")]
+		//public ICollection<FlexContainer> FlexContainer { get; set; } = Array.Empty<FlexContainer>();
+
+		[JsonProperty("ts")]
+		[XmlElement("ts")]
+		public ICollection<TimeSeries> TimeSeries { get; set; } = Array.Empty<TimeSeries>();
+
+		[JsonProperty("tsi")]
+		[XmlElement("tsi")]
+		public ICollection<TimeSeriesInstance> TimeSeriesInstance { get; set; } = Array.Empty<TimeSeriesInstance>();
+
+		[JsonProperty("rol")]
+		[XmlElement("rol")]
+		public ICollection<Role> Role { get; set; } = Array.Empty<Role>();
+
+		[JsonProperty("tk")]
+		[XmlElement("tk")]
+		public ICollection<Token> Token { get; set; } = Array.Empty<Token>();
+
+		[JsonProperty("trpt")]
+		[XmlElement("trpt")]
+		public ICollection<TrafficPattern> TrafficPattern { get; set; } = Array.Empty<TrafficPattern>();
+
+		[JsonProperty("dac")]
+		[XmlElement("dac")]
+		public ICollection<DynamicAuthorizationConsultation> DynamicAuthorizationConsultation { get; set; } = Array.Empty<DynamicAuthorizationConsultation>();
+
+		[JsonProperty("acpA")]
+		[XmlElement("acpA")]
+		public ICollection<AccessControlPolicyAnnc> AccessControlPolicyAnnc { get; set; } = Array.Empty<AccessControlPolicyAnnc>();
+
+		[JsonProperty("aeA")]
+		[XmlElement("aeA")]
+		public ICollection<AEAnnc> AEAnnc { get; set; } = Array.Empty<AEAnnc>();
+
+		[JsonProperty("cntA")]
+		[XmlElement("cntA")]
+		public ICollection<ContainerAnnc> ContainerAnnc { get; set; } = Array.Empty<ContainerAnnc>();
+
+		[JsonProperty("cinA")]
+		[XmlElement("cinA")]
+		public ICollection<ContentInstanceAnnc> ContentInstanceAnnc { get; set; } = Array.Empty<ContentInstanceAnnc>();
+
+		[JsonProperty("grpA")]
+		[XmlElement("grpA")]
+		public ICollection<GroupAnnc> GroupAnnc { get; set; } = Array.Empty<GroupAnnc>();
+
+		[JsonProperty("lcpA")]
+		[XmlElement("lcpA")]
+		public ICollection<LocationPolicyAnnc> LocationPolicyAnnc { get; set; } = Array.Empty<LocationPolicyAnnc>();
+
+		//[JsonProperty("")]
+		//[XmlElement("")]
+		//public ICollection<MgmtObjAnnc> MgmtObjAnnc { get; set; } = Array.Empty<MgmtObjAnnc>();
+
+		[JsonProperty("nodA")]
+		[XmlElement("nodA")]
+		public ICollection<NodeAnnc> NodeAnnc { get; set; } = Array.Empty<NodeAnnc>();
+
+		[JsonProperty("csrA")]
+		[XmlElement("csrA")]
+		public ICollection<RemoteCSEAnnc> RemoteCSEAnnc { get; set; } = Array.Empty<RemoteCSEAnnc>();
+
+		[JsonProperty("schA")]
+		[XmlElement("schA")]
+		public ICollection<ScheduleAnnc> ScheduleAnnc { get; set; } = Array.Empty<ScheduleAnnc>();
+
+		[JsonProperty("smdA")]
+		[XmlElement("smdA")]
+		public ICollection<SemanticDescriptorAnnc> SemanticDescriptorAnnc { get; set; } = Array.Empty<SemanticDescriptorAnnc>();
+
+		//[JsonProperty("")]
+		//[XmlElement("")]
+		//public ICollection<FlexContainerAnnc> FlexContainerAnnc { get; set; } = Array.Empty<FlexContainerAnnc>();
+
+		[JsonProperty("tsa")]
+		[XmlElement("tsa")]
+		public ICollection<TimeSeriesAnnc> TimeSeriesAnnc { get; set; } = Array.Empty<TimeSeriesAnnc>();
+
+		[JsonProperty("tsia")]
+		[XmlElement("tsia")]
+		public ICollection<TimeSeriesInstanceAnnc> TimeSeriesInstanceAnnc { get; set; } = Array.Empty<TimeSeriesInstanceAnnc>();
+
+		[JsonProperty("trptA")]
+		[XmlElement("trptA")]
+		public ICollection<TrafficPatternAnnc> TrafficPatternAnnc { get; set; } = Array.Empty<TrafficPatternAnnc>();
+		//[JsonProperty("")]
+		//[XmlElement("")]
+		//public ICollection<DynamicAuthorizationConsultationAnnc> DynamicAuthorizationConsultationAnnc { get; set; } = Array.Empty<DynamicAuthorizationConsultationAnnc>();
+	}
 	public partial class ResponseContent
 	{
 		[JsonIgnore]

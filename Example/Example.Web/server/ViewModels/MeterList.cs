@@ -72,10 +72,7 @@ namespace Example.Web.Server.ViewModels
 					return true;
 				});
 
-			this.OnRouted((sender, e) =>
-			{
-				System.Diagnostics.Debug.WriteLine(e.From);
-			});
+			this.OnRouted((sender, e) => System.Diagnostics.Debug.WriteLine(e.From));
 
 
 			this.RegisterRoutes(nameof(MeterList), new List<RouteTemplate>

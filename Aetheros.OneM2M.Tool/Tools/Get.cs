@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace GridNet.IoT.Client.Tools
 {
-	[Description("Upload files to NetLevel")]
+	[Description("OneM2M retrieve/discovery")]
 	public class Get : UtilityBase
 	{
 		string _rqi;
@@ -21,9 +21,9 @@ namespace GridNet.IoT.Client.Tools
 
 		public override OptionSet Options => new OptionSet
 		{
-			{ "c|cert=", "The filename of the client certificate to use", v => { _cert = v; } },
-			{ "f|from=", "The Originator of the request", v => { _org = v; } },
-			{ "r|requestIdentifier=", "The Request Identifier to use", v => { _rqi = v; } },
+			{ "c|cert=", "The filename of the client certificate to use", v => _cert = v },
+			{ "f|from=", "The Originator of the request", v => _org = v },
+			{ "r|requestIdentifier=", "The Request Identifier to use", v => _rqi = v },
 		};
 
 		protected override string Usage { get; } = "[<options>] <url>";
@@ -64,9 +64,6 @@ namespace GridNet.IoT.Client.Tools
 #if true //DEBUG
 			var loggingHandler = new TraceMessageHandler(handler);
 			client = new HttpClient(loggingHandler);
-
-
-			Trace.Listeners.Add(new ConsoleTraceListener(true));
 #else
 			client = new HttpClient(handler);
 #endif

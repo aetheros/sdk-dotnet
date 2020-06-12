@@ -64,8 +64,8 @@ namespace Example.Web.Server
 			if (string.IsNullOrEmpty(name))
 				throw new FileNotFoundException();
 
-			using (var reader = new StreamReader(assembly.GetManifestResourceStream(name), Encoding.UTF8))
-				return reader.ReadToEnd();
+			using var reader = new StreamReader(assembly.GetManifestResourceStream(name), Encoding.UTF8);
+			return reader.ReadToEnd();
 		}
 	}
 }

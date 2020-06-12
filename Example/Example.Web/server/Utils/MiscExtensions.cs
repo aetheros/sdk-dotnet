@@ -14,7 +14,7 @@ namespace Example.Web.Server.Utils
 			if (field != null)
 			{
 				var descAttributes = (DisplayAttribute[]) field.GetCustomAttributes(typeof(DisplayAttribute), false);
-				if (descAttributes != null && descAttributes.Length > 0)
+				if (descAttributes?.Length > 0)
 					return descAttributes[0].GetName();
 			}
 			return value;

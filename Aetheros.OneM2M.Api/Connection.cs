@@ -23,7 +23,7 @@ namespace Aetheros.OneM2M.Api
 {
 	public abstract class Connection
 	{
-		public interface IConfig
+		public interface IConnectionConfiguration
 		{
 			public Uri M2MUrl { get; }
 			public string CertificateFilename { get; }
@@ -87,7 +87,7 @@ namespace Aetheros.OneM2M.Api
 			return response2.AE;
 		}
 
-		public async Task<AE?> RegisterApplicationAsync(Application.IConfig appConfig)
+		public async Task<AE?> RegisterApplicationAsync(Application.IApplicationConfiguration appConfig)
 		{
 			var response = await GetResponseAsync(new RequestPrimitive
 			{
@@ -110,7 +110,7 @@ namespace Aetheros.OneM2M.Api
 			return response?.AE;
 		}
 
-		public async Task<ResponseContent?> GetPrimitiveAsync(string key, FilterCriteria? filterCriteria = null) =>
+		public async Task<ResponseContent> GetPrimitiveAsync(string key, FilterCriteria? filterCriteria = null) =>
 			await GetResponseAsync(new RequestPrimitive
 			{
 				Operation = Operation.Retrieve,
@@ -118,7 +118,18 @@ namespace Aetheros.OneM2M.Api
 				FilterCriteria = filterCriteria
 			});
 
-		public abstract Task<ResponseContent> GetResponseAsync(RequestPrimitive body);
+		public async Task<Resources> GetChildResourcesAsync(string key, FilterCriteria? filterCriteria = null) =>
+			await GetResponseAsync<Resources>(new RequestPrimitive
+			{
+				Operation = Operation.Retrieve,
+				To = key,
+				ResultContent = ResultContent.ChildResources,
+				FilterCriteria = filterCriteria
+			});
+
+		public async Task<ResponseContent> GetResponseAsync(RequestPrimitive body) => await GetResponseAsync<ResponseContent>(body);
+
+		public abstract Task<T> GetResponseAsync<T>(RequestPrimitive body) where T : class, new();
 
 		public class HttpStatusException : Exception
 		{
@@ -176,11 +187,9 @@ namespace Aetheros.OneM2M.Api
 
 		async Task<Notification?> ParseNotificationAsync(HttpRequest req)
 		{
-			using (var bodyStream = new StreamReader(req.Body, true))
-			{
-				var body = await bodyStream.ReadToEndAsync();
-				return ParseNotification(body, req.Headers, req.Query);
-			}
+			using var bodyStream = new StreamReader(req.Body, true);
+			var body = await bodyStream.ReadToEndAsync();
+			return ParseNotification(body, req.Headers, req.Query);
 		}
 
 		Notification? ParseNotification(string body, IHeaderDictionary headers, IQueryCollection query)
@@ -224,7 +233,7 @@ namespace Aetheros.OneM2M.Api
 				}
 
 				FilterCriteria? fc = null;
-				FilterCriteria FC() => fc ?? (fc = new FilterCriteria());
+				FilterCriteria FC() => fc ??= new FilterCriteria();
 
 				if (DateTimeOffset.TryParse(query["crb"].FirstOrDefault(), out DateTimeOffset crb))
 					FC().CreatedBefore = crb;

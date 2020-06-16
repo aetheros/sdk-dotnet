@@ -1,0 +1,13 @@
+html {
+	overflow-y: scroll;
+}
+.navbar-brand {
+	padding: .2em;
+}
+.navbar-brand img {
+	max-height: 100%;
+}
+
+.hljs {
+	tab-size: 4;
+}

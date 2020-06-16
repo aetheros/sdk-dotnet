@@ -1,0 +1,3014 @@
+{
+  "homepages": [],
+  "source_base_path": "D:/a/sdk-dotnet/sdk-dotnet/Documentation",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Api.ApiExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Api.ApiExtensions.html",
+          "hash": "DO1wBIST7jsm9fuw+8F5Aw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Api.Application.IApplicationConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Api.Application.IApplicationConfiguration.html",
+          "hash": "uMoPYpwoAC7H/ZGoJhhqwQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Api.Application.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Api.Application.html",
+          "hash": "VFsYasiJhxnDUqshAHnA5A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Api.Connection.HttpStatusException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Api.Connection.HttpStatusException.html",
+          "hash": "dN9Iq2eJsw+Z/hsXv1foHg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Api.Connection.IConnectionConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Api.Connection.IConnectionConfiguration.html",
+          "hash": "NaYM9SvtIwhRMMoJ+8pMnw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Api.Connection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Api.Connection.html",
+          "hash": "Od9PhGOBEBYEJMifcoGpeg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Api.HttpConnection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Api.HttpConnection.html",
+          "hash": "w8x4dVBqw0UJNCYfmOWQiA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Api.Registration.Application.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Api.Registration.Application.html",
+          "hash": "/cmMLwo0dwx5+g/qHxnKmg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Api.Registration.CertificateId.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Api.Registration.CertificateId.html",
+          "hash": "gN0A/Ag+h62/OFdy3EXuTQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Api.Registration.CertificateSigningRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Api.Registration.CertificateSigningRequest.html",
+          "hash": "QUQOIiKE6thfXsCZWW9Etg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Api.Registration.CertificateSigningRequestBody.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Api.Registration.CertificateSigningRequestBody.html",
+          "hash": "mL8txgi0HCwPcw8YuEVzNQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Api.Registration.CertificateSigningResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Api.Registration.CertificateSigningResponse.html",
+          "hash": "RmrlH3fTs9T1GYp3qCxp3w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Api.Registration.CertificateSigningResponseBody.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Api.Registration.CertificateSigningResponseBody.html",
+          "hash": "XEHx8A6MsXwbXqyXYCK7Uw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Api.Registration.CertificateSigningStatus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Api.Registration.CertificateSigningStatus.html",
+          "hash": "KRH3ecK9ggAiDjqGH+ADOQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Api.Registration.ConfirmationRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Api.Registration.ConfirmationRequest.html",
+          "hash": "nD7+EgZcRpBq2fFV/Pm7Vg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Api.Registration.ConfirmationRequestBody.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Api.Registration.ConfirmationRequestBody.html",
+          "hash": "0TFcOHIN2gc+YYBfsG/vSA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Api.Registration.ConfirmationResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Api.Registration.ConfirmationResponse.html",
+          "hash": "KWj7MYFleN2hPn93H9P2Cg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Api.Registration.ConfirmationResponseBody.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Api.Registration.ConfirmationResponseBody.html",
+          "hash": "8cvF8sOlYwcDRxGTUrpJkw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Api.Registration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Api.Registration.html",
+          "hash": "oqGMA869OCfwtI6CnHcG2w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Api.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Api.html",
+          "hash": "sMqbAje3eYwdswxtqz6/UQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.AE.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.AE.html",
+          "hash": "lbEdjxAd0gzt5fv+onhqCg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.AEAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.AEAnnc.html",
+          "hash": "Uzx4y96RXrtTJrPOugg6hw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.AccessControlOperations.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.AccessControlOperations.html",
+          "hash": "/73JOZaqIp5ZuIBsz/jTMA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.AccessControlPolicy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.AccessControlPolicy.html",
+          "hash": "52niWh9VH+Bjx4xS43dT5w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.AccessControlPolicyAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.AccessControlPolicyAnnc.html",
+          "hash": "IUYi0JMJtegsQikaIHBwyQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.AccessControlRule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.AccessControlRule.html",
+          "hash": "NIKyb2X5UGgWZG1JVuykqg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.AccessControlRuleAccessControlContexts.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.AccessControlRuleAccessControlContexts.html",
+          "hash": "6kI9miJlUdZcPeXpHuPtfw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.AccessControlRuleAccessControlContextsAccessControlIpAddresses.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.AccessControlRuleAccessControlContextsAccessControlIpAddresses.html",
+          "hash": "fNXh5p/QcTh0aRXLyOEI0A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.ActionStatus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.ActionStatus.html",
+          "hash": "LeGIUwd+/TYGWGPihUoDqg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.ActiveCmdhPolicy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.ActiveCmdhPolicy.html",
+          "hash": "07GvkVWFkYew1Xb4eLAdlA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.AggregatedNotification.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.AggregatedNotification.html",
+          "hash": "AkDjfBlOmf7oDd4PAGjjwQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.AggregatedRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.AggregatedRequest.html",
+          "hash": "2utG1tQJjFDHC72b7FJRRA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.AggregatedRequestRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.AggregatedRequestRequest.html",
+          "hash": "SGufnMVnODb58nsghvYiOQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.AggregatedResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.AggregatedResponse.html",
+          "hash": "BJb4ceKz2NIntCwk+rR6NQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.AllJoynApp.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.AllJoynApp.html",
+          "hash": "jIF/pTXnpt8CI9LPdzDq+A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.AllJoynAppAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.AllJoynAppAnnc.html",
+          "hash": "BPvx7Qzw0iBS68c3WbDQcA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.AllJoynDirection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.AllJoynDirection.html",
+          "hash": "bmgsob25TtB6dHHUQr/6qg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.AllJoynInterface.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.AllJoynInterface.html",
+          "hash": "3sBHStu+OdTQLEBQ2UtPNg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.AllJoynInterfaceAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.AllJoynInterfaceAnnc.html",
+          "hash": "aGbj8WM+nQwzI/o8Gw7NPg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.AllJoynMethod.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.AllJoynMethod.html",
+          "hash": "abbrjoHFsLwrFiUZ5L469w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.AllJoynMethodAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.AllJoynMethodAnnc.html",
+          "hash": "+fbZt8St5QCqMACGvstNIg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.AllJoynMethodCall.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.AllJoynMethodCall.html",
+          "hash": "0gmqb+F+1buM3oBTtJMe3Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.AllJoynMethodCallAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.AllJoynMethodCallAnnc.html",
+          "hash": "gEnHcJWMwW71Od7ik4P/Mg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.AllJoynProperty.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.AllJoynProperty.html",
+          "hash": "kTR/5uOc67n5uCH0U1ptGA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.AllJoynPropertyAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.AllJoynPropertyAnnc.html",
+          "hash": "gr2AkEFMZY3FltwBJRVgKw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.AllJoynSvcObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.AllJoynSvcObject.html",
+          "hash": "5CDAVzhxb0RRJBo0h+FgIg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.AllJoynSvcObjectAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.AllJoynSvcObjectAnnc.html",
+          "hash": "Op9HIceFzJruYE8GYR9yGA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.AnnounceableResource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.AnnounceableResource.html",
+          "hash": "LQZPu56TSqEPM/V3lrFrvw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.AnnounceableSubordinateResource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.AnnounceableSubordinateResource.html",
+          "hash": "Crktd8LH30KbhIpAYyf9Ow=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.AnnouncedFlexContainerResource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.AnnouncedFlexContainerResource.html",
+          "hash": "HmG5m2adGFQ3MUPO6oGpmw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.AnnouncedMgmtResource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.AnnouncedMgmtResource.html",
+          "hash": "DplBUIvk3JTXSG4j55PNqQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.AnnouncedResource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.AnnouncedResource.html",
+          "hash": "+8MUoBHZhZQSZNb1/kvvTQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.AnnouncedSubordinateResource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.AnnouncedSubordinateResource.html",
+          "hash": "Pctk8vMDNBld8sv6U+yr2w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.AnyArgType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.AnyArgType.html",
+          "hash": "4O0rR9Y8v+XMdiya66DAtg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.AreaNwkDeviceInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.AreaNwkDeviceInfo.html",
+          "hash": "a0SlYjrSlijuTekJTjSI7w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.AreaNwkDeviceInfoAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.AreaNwkDeviceInfoAnnc.html",
+          "hash": "eMecWt3lUdqvoI25V26QZw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.AreaNwkInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.AreaNwkInfo.html",
+          "hash": "Ry7BpBhjSTfpw6KQfIeRTQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.AreaNwkInfoAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.AreaNwkInfoAnnc.html",
+          "hash": "Ra82lUK98dIUyX1DixrepA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.Attribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.Attribute.html",
+          "hash": "1bkSchtWpkG1G7HsnTEtiA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.BackOffParameters.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.BackOffParameters.html",
+          "hash": "oPSWDWDoNdf3Cy3N6VpAzg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.BackOffParametersBackOffParametersSet.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.BackOffParametersBackOffParametersSet.html",
+          "hash": "Fjz7bcYe50woGKm0+ZpaLA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.BatchNotify.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.BatchNotify.html",
+          "hash": "2Ba7Y3VZfkFWlW5scMnLKQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.Battery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.Battery.html",
+          "hash": "BDA5PyNMBjTC4fZ+ThqjFg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.BatteryAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.BatteryAnnc.html",
+          "hash": "JOLFUYdU46MT6be86SYDUg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.BatteryStatus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.BatteryStatus.html",
+          "hash": "jsaJSGCvppdHE4yZER0e3A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.CSEBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.CSEBase.html",
+          "hash": "biuRkb5Xdu28iawl++RHbw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.ChildResourceRef.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.ChildResourceRef.html",
+          "hash": "gNWZbYWzw8ytudW1k2qzng=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.CmdType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.CmdType.html",
+          "hash": "3WS8l7Y+PsceaXuhJ6w9Ug=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.CmdhBuffer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.CmdhBuffer.html",
+          "hash": "IJBh2tHbQOcbwADzv3lDbQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.CmdhDefEcValue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.CmdhDefEcValue.html",
+          "hash": "jEmECg+TwguRY1Xtl+ve+g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.CmdhDefaults.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.CmdhDefaults.html",
+          "hash": "4ev4KJ4s2NZOQuEqnAAaxQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.CmdhEcDefParamValues.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.CmdhEcDefParamValues.html",
+          "hash": "1rK9cnAKZm/MXvdcq6YXdA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.CmdhLimits.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.CmdhLimits.html",
+          "hash": "l8XY1ghTcqnGr6mhG2aXWA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.CmdhLimitsLimitsDelAggregation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.CmdhLimitsLimitsDelAggregation.html",
+          "hash": "4V3eGiRVUu5pkQLkr1kXag=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.CmdhNetworkAccessRules.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.CmdhNetworkAccessRules.html",
+          "hash": "oftiisNNC25ME8yZ74Diow=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.CmdhNwAccessRule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.CmdhNwAccessRule.html",
+          "hash": "s86AdlawtAyNIr4LlC2/iw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.CmdhPolicy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.CmdhPolicy.html",
+          "hash": "FUbxS9TRW6DIjRSDmNXH3Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.ConsistencyStrategy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.ConsistencyStrategy.html",
+          "hash": "xuzUhq+4gkdmogY7hbpIsw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.Container.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.Container.html",
+          "hash": "7mYtsJPLvn1ZgwytZHjbLQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.ContainerAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.ContainerAnnc.html",
+          "hash": "sDRtQ/36j+z7jfZ7INeOXw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.ContentFilterSyntax.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.ContentFilterSyntax.html",
+          "hash": "YQtkum0+SWI6+QnxJyeO+w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.ContentInstance.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.ContentInstance.html",
+          "hash": "toIsVEWcmdgKKOxJH7WDGQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.ContentInstanceAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.ContentInstanceAnnc.html",
+          "hash": "tI5yg82N1sWlgR4jBu603g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.ContentRef.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.ContentRef.html",
+          "hash": "D+B/ZD9cO+RlIqy/z1RJTg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.ContentRefURIReference.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.ContentRefURIReference.html",
+          "hash": "+ZZDqGTxReuGHVKmcvWNSA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.ContentSecurity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.ContentSecurity.html",
+          "hash": "MzS0vxjVG05VAMgo9aGIww=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.ContentStatus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.ContentStatus.html",
+          "hash": "aE8WTJaEqdu4DZYmPNyG0g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.CseTypeID.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.CseTypeID.html",
+          "hash": "raOnFyBPd2ECI0KNcPeVKQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.DataLink.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.DataLink.html",
+          "hash": "89S/DqQ5l4tW+1zTV1/KYQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.DeletionContexts.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.DeletionContexts.html",
+          "hash": "jEMV1p7HMexZ5+aaRYwETQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.Delivery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.Delivery.html",
+          "hash": "vyO3q9xHf5nf6kMa9sLbeA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.DeliveryMetaData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.DeliveryMetaData.html",
+          "hash": "x/p7bu6VWFjdtxZhn46Meg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.DeviceCapability.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.DeviceCapability.html",
+          "hash": "TXoz7Oh5cJ0IKZPwiG2eYw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.DeviceCapabilityAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.DeviceCapabilityAnnc.html",
+          "hash": "o5fuUIqYJOWcmFzSJ7N5DA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.DeviceInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.DeviceInfo.html",
+          "hash": "ZknKfNKMuCF7rsCIB1Mmbg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.DeviceInfoAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.DeviceInfoAnnc.html",
+          "hash": "l+yugjfCLD8QLriOIsvYeQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.DiscResType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.DiscResType.html",
+          "hash": "kUHoyV1i2ETHLTsXSiYOmg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.DownloadArgsType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.DownloadArgsType.html",
+          "hash": "/32/bvFlHGH4m7vFR+tdgw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.DynAuthDasRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.DynAuthDasRequest.html",
+          "hash": "s8WgduQj9roY2qfmgR5/iA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.DynAuthDasRequestOriginatorIP.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.DynAuthDasRequestOriginatorIP.html",
+          "hash": "eQAOjZogmdxhxDkHKjvYWQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.DynAuthDasResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.DynAuthDasResponse.html",
+          "hash": "HTwBj+rg5NdKQDHz6XGQ5w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.DynAuthDasResponseDynamicACPInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.DynAuthDasResponseDynamicACPInfo.html",
+          "hash": "v72A2JXmR5YXrjJ6/pvl7g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.DynAuthLocalTokenIdAssignments.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.DynAuthLocalTokenIdAssignments.html",
+          "hash": "Ypri7yId9cn5lIxSJ6YYEw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.DynAuthLocalTokenIdAssignmentsLocalTokenIdAssignment.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.DynAuthLocalTokenIdAssignmentsLocalTokenIdAssignment.html",
+          "hash": "tnR5fDLj1/hi9fNnb8k6/w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.DynAuthTokenReqInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.DynAuthTokenReqInfo.html",
+          "hash": "BEdfEhL4HB7CISLbCpg20g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.DynAuthTokenReqInfoDasInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.DynAuthTokenReqInfoDasInfo.html",
+          "hash": "IhkyQZDDNqJX6ixMfCyYjg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.DynAuthTokenSummary.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.DynAuthTokenSummary.html",
+          "hash": "vFLV2LhMOexNxYUgvxTs1Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.DynamicAuthorizationConsultation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.DynamicAuthorizationConsultation.html",
+          "hash": "f1LA3XZDcQKB6ouC/qEZ/Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.E2ESecInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.E2ESecInfo.html",
+          "hash": "Oqwnxmn12BdKfw4ydc6C0g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.EncodingType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.EncodingType.html",
+          "hash": "f0qvjeM4qPw2Vnke2g+RFw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.EsprimKeyGenAlgID.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.EsprimKeyGenAlgID.html",
+          "hash": "UFik8VRSz/xLzi7To/7aDQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.EsprimProtocolAndAlgID.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.EsprimProtocolAndAlgID.html",
+          "hash": "xCPvPEhUbX4N26JZBmXd9Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.EventConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.EventConfig.html",
+          "hash": "rG8J9lU3TU5KK+3dyVpnsw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.EventLog.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.EventLog.html",
+          "hash": "YsP6jggBa2TQblSQsBx8bA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.EventLogAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.EventLogAnnc.html",
+          "hash": "U3iO9nuqRSqM5McZdB52bA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.EventNotificationCriteria.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.EventNotificationCriteria.html",
+          "hash": "cfmkIyOZK1PwTX0Sc6UAQA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.EventType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.EventType.html",
+          "hash": "YpqY/KL5rrAGaiLuyl8PGQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.ExecInstance.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.ExecInstance.html",
+          "hash": "SgsACs4NyvtMuuQ+POaPNw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.ExecModeType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.ExecModeType.html",
+          "hash": "GSQo8Wpvye0jz4lb1bnk7w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.ExecReqArgsListType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.ExecReqArgsListType.html",
+          "hash": "0egPexzVl2JZsDwvWVl+XQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.ExecResultType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.ExecResultType.html",
+          "hash": "GjKDCNB/KAb4ybE7pU78Ww=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.ExecStatusType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.ExecStatusType.html",
+          "hash": "4QaFejm32/40zpYr+VFRXQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.FilterCriteria.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.FilterCriteria.html",
+          "hash": "JE2i7K2aZ5TiPMS8iceDXA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.FilterUsage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.FilterUsage.html",
+          "hash": "uVoQj+21CR3XWQgUIo5wKw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.Firmware.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.Firmware.html",
+          "hash": "DD9CipESj76G4vbmtLqQ3Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.FirmwareAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.FirmwareAnnc.html",
+          "hash": "lgCjtXGPW/PhOXIp4nQ7tQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.FlexContainerResource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.FlexContainerResource.html",
+          "hash": "5nk81ml1YDSdAPwzyVjU2w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.GenericInterworkingOperationInstance.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.GenericInterworkingOperationInstance.html",
+          "hash": "+RcM5+QbFWB/1i9fhPYwIw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.GenericInterworkingOperationInstanceAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.GenericInterworkingOperationInstanceAnnc.html",
+          "hash": "hS6EpEuGgOQbBSPGPLtLGw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.GenericInterworkingService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.GenericInterworkingService.html",
+          "hash": "zGkLjqsJRL5/djc+vpwyHg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.GenericInterworkingServiceAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.GenericInterworkingServiceAnnc.html",
+          "hash": "k0703sLjuhZhw3/snVSChg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.Group.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.Group.html",
+          "hash": "bdZJporvXxzAsp0OyhXBzg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.GroupAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.GroupAnnc.html",
+          "hash": "8FAPhNea8nEz7jq3ztgCOQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.JsonArrayItem-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.JsonArrayItem-1.html",
+          "hash": "80HhxC9/sqnDkW/h3K2oFw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.ListOfChildResourceRef.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.ListOfChildResourceRef.html",
+          "hash": "CZggvIEgiUda3EcCfzVlKw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.ListOfDataLinks.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.ListOfDataLinks.html",
+          "hash": "egc3voPEgryb586mjvaJlg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.LocationPolicy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.LocationPolicy.html",
+          "hash": "srCNqcJvIPXMbC/NdXYjnQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.LocationPolicyAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.LocationPolicyAnnc.html",
+          "hash": "r5Ta6AmXmm7Cm9YHMDVM7A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.LocationRegion.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.LocationRegion.html",
+          "hash": "6cxLTc+HshcYQb2Q3NK+Ng=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.LocationSource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.LocationSource.html",
+          "hash": "prvm3WOOx9qG8EKIGBwUPg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.LogStatus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.LogStatus.html",
+          "hash": "+1FJ0zTyCRqna6YQJR+nkQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.LogTypeId.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.LogTypeId.html",
+          "hash": "ZjCypczjQxVJD63vg3+pBw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.LogicalOperator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.LogicalOperator.html",
+          "hash": "q1h2slYDuqvriHRK2V2Hsg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.M2MServiceSubscriptionProfile.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.M2MServiceSubscriptionProfile.html",
+          "hash": "Gw+FnK5oRhBUjgWTxiWniQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.MemberType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.MemberType.html",
+          "hash": "HgRhOFN73v71huMvt93h/w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.Memory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.Memory.html",
+          "hash": "/TKOn9Zfu6qb92SX//hiJg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.MemoryAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.MemoryAnnc.html",
+          "hash": "fdEYOllatY1ckHzoQMIZYA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.MetaInformation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.MetaInformation.html",
+          "hash": "l39DzD6FKsOBDiqsP2fHGA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.MgmtCmd.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.MgmtCmd.html",
+          "hash": "ikD58s31bkVkxrvhrnVvHw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.MgmtDefinition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.MgmtDefinition.html",
+          "hash": "pjD7PkAOf8/A7DsoZ+u3Kw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.MgmtLinkRef.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.MgmtLinkRef.html",
+          "hash": "ywBPma/gL1xlCe1ZAZPblQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.MgmtResource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.MgmtResource.html",
+          "hash": "L5cxbxNeAp/8be0Bc6XVQQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.MissingData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.MissingData.html",
+          "hash": "PSHyV1nJjD23BR/LmZDnOQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.NetworkAction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.NetworkAction.html",
+          "hash": "gj9vw4FH2twoeGDrSdgjWw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.Node.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.Node.html",
+          "hash": "GYVA2vPzJk0i3RqtiG2zhA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.NodeAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.NodeAnnc.html",
+          "hash": "XT9UtQHKPhKKEstNltDsCQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.Notification.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.Notification.html",
+          "hash": "n7iwFyH7YUsjptuf756cIg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.NotificationContent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.NotificationContent.html",
+          "hash": "MQlQcW8n+zeo3Mwqa5knCQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.NotificationContentType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.NotificationContentType.html",
+          "hash": "/JNrnp8YeezoYM9DllVYjg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.NotificationEventType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.NotificationEventType.html",
+          "hash": "9zbJMZ3PWd5xR9OXe6evZQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.NotificationIPEDiscoveryRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.NotificationIPEDiscoveryRequest.html",
+          "hash": "fRIUeOwl2rjoP7JQVIZgcg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.NotificationNotificationEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.NotificationNotificationEvent.html",
+          "hash": "Fg1XkYh9nzIjZxz7YdmlWA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.NotificationNotificationEventOperationMonitor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.NotificationNotificationEventOperationMonitor.html",
+          "hash": "DoORoTXCfEF3+RehD3ZluA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.NotificationTargetMgmtPolicyRef.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.NotificationTargetMgmtPolicyRef.html",
+          "hash": "309CO9NpeVseb3K3RFjgsg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.NotificationTargetPolicy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.NotificationTargetPolicy.html",
+          "hash": "C4Z7+B+EJEJ/4keHPXMl7Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.NotificationTargetPolicyAction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.NotificationTargetPolicyAction.html",
+          "hash": "hXCS73foXjRPPVW1oLpelQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.Operation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.Operation.html",
+          "hash": "MSlEP3Xv+fFmNMyW+4wRrg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.OperationResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.OperationResult.html",
+          "hash": "roQh4Y2FLrlBzmJA5EbaOQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.OriginatorESPrimRandObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.OriginatorESPrimRandObject.html",
+          "hash": "2IXQeQ5kXq9/uqglYPHeQA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.PendingNotification.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.PendingNotification.html",
+          "hash": "cdlkjZPk2Uyh3AfH7tzVww=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.PeriodicIndicator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.PeriodicIndicator.html",
+          "hash": "KPWE634zBFoTRxG6IiebYA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.PermittedMediaTypes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.PermittedMediaTypes.html",
+          "hash": "DHxD0uUEXbqTYtSGH5xSTQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.PolicyDeletionRules.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.PolicyDeletionRules.html",
+          "hash": "OEwhLGPfpj4gzuvK1quwnw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.PollingChannel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.PollingChannel.html",
+          "hash": "1XQ4TpQCOvAHMOTO+xFU9Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.PrimitiveContent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.PrimitiveContent.html",
+          "hash": "M/DR/jBJNZQzHGvb9wA+tQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.RateLimit.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.RateLimit.html",
+          "hash": "nKtV4A2v56CF9wHf4Q5RTA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.Reboot.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.Reboot.html",
+          "hash": "9Kqqv90Z+ghiAHQ/tFPJLQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.RebootAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.RebootAnnc.html",
+          "hash": "bruOgq5un8Jk7+mvAD9YZg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.RebootArgsType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.RebootArgsType.html",
+          "hash": "CyNbvUVOhErXxhcq/b6eLw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.ReceiverESPrimRandObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.ReceiverESPrimRandObject.html",
+          "hash": "0KIcQLmMhUsYPaQXVkdQGQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.RegularResource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.RegularResource.html",
+          "hash": "D7qEjF8OpgjFRxi4xxw6uA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.RemoteCSE.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.RemoteCSE.html",
+          "hash": "IcstQBnD7HBpVFwUXlmmrg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.RemoteCSEAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.RemoteCSEAnnc.html",
+          "hash": "ClgTHxp6su+XIybQAYpOOQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.Request.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.Request.html",
+          "hash": "ryYW65DuQNs+1DgC3Du2gw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.RequestPrimitive.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.RequestPrimitive.html",
+          "hash": "7wcTXCimEREDK51FeyXxGA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.RequestStatus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.RequestStatus.html",
+          "hash": "svBr56m+XfIUo82vgqkykg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.ResetArgsType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.ResetArgsType.html",
+          "hash": "p87kfXmFhIbpM5uVhaZbnA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.Resource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.Resource.html",
+          "hash": "qmCAHtRlflHyvVHK7Gey3g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.ResourceType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.ResourceType.html",
+          "hash": "komkckEjouHWqpGsdfwyEA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.ResourceWrapper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.ResourceWrapper.html",
+          "hash": "LcfLIyD663+U9MD5Dpolvg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.Resources.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.Resources.html",
+          "hash": "DH1KjDSDB5h76jC1Vvb63w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.ResponseContent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.ResponseContent.html",
+          "hash": "w8Ve1rMVgttjZxp2KdpVYQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.ResponsePrimitive.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.ResponsePrimitive.html",
+          "hash": "hn9fpnZLbzSiKZ6Km82pAw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.ResponseStatusCode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.ResponseStatusCode.html",
+          "hash": "TgWLzMFH6HFgSxTToNC/gA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.ResponseType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.ResponseType.html",
+          "hash": "8Rx4ntevEC2O/6f6KlXSwQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.ResponseTypeInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.ResponseTypeInfo.html",
+          "hash": "zRDPtZ8f6GYhZQLbpk8cqw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.ResultContent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.ResultContent.html",
+          "hash": "70lAkoxSMUs+MXyxYjoSEQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.Role.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.Role.html",
+          "hash": "inzw48G3VkNuJm5Ij0wNaQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.Schedule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.Schedule.html",
+          "hash": "fEjwI+irG+vvXFION5fRPg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.ScheduleAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.ScheduleAnnc.html",
+          "hash": "qncHWTmciSHliEYg+1W06A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.ScheduleEntries.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.ScheduleEntries.html",
+          "hash": "xSQ2zMV01ePFVP2P0oFkbQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.SecurityInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.SecurityInfo.html",
+          "hash": "m7EY45RZZsLwvJQE8xu98g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.SecurityInfoType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.SecurityInfoType.html",
+          "hash": "AhQ9QBLMzsfgoDkgpwBjTg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.SemanticDescriptor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.SemanticDescriptor.html",
+          "hash": "EqOz++g3Z1GoEHcXvX0jZw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.SemanticDescriptorAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.SemanticDescriptorAnnc.html",
+          "hash": "HY4Ww6ae9fDzh7E47P6SdQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.ServiceSubscribedAppRule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.ServiceSubscribedAppRule.html",
+          "hash": "/VmgnZi/ilo2WvInEq2bhQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.ServiceSubscribedNode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.ServiceSubscribedNode.html",
+          "hash": "E4AuUR8xcAZrud9m77GITw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.SetOfAcrs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.SetOfAcrs.html",
+          "hash": "bxJk2C9Dr6b1R+mFoW5oyQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.SingleOrArrayConverter-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.SingleOrArrayConverter-1.html",
+          "hash": "EP5wz/z4JalyvyftrzN5XQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.Software.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.Software.html",
+          "hash": "oUyFSf+ZZ/6f9Z3ux5fTAg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.SoftwareAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.SoftwareAnnc.html",
+          "hash": "DI0bXdj2qWPDYTZJWuADPw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.SoftwareInstallArgsType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.SoftwareInstallArgsType.html",
+          "hash": "So4X0zWWeLrfbaNSsQv20A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.SoftwareUninstallArgsType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.SoftwareUninstallArgsType.html",
+          "hash": "jrd2Dt2S2nYKFPLZkadw2A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.SoftwareUpdateArgsType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.SoftwareUpdateArgsType.html",
+          "hash": "WsHooyxkc7VLH8ihYFx9Kg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.StatModelType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.StatModelType.html",
+          "hash": "/aO0Fl7IjIfctzfPkH4AVQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.StationaryIndication.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.StationaryIndication.html",
+          "hash": "RCpw86J9WWVPLQKZUvEt3g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.StatsCollect.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.StatsCollect.html",
+          "hash": "F6pjLCl8SIKZ/NpNMdvpCg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.StatsConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.StatsConfig.html",
+          "hash": "ERcnpH95eWJpFoLbmkWTgA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.StatsRuleStatusType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.StatsRuleStatusType.html",
+          "hash": "SMcDAMsioQlFPUxmJ5D/2w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.Status.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.Status.html",
+          "hash": "7Z5Ft7Cdlosu/GKxQb51tA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.StdEventCats.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.StdEventCats.html",
+          "hash": "qNdcK1I2UBgaauq7abqwYw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.SubordinateResource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.SubordinateResource.html",
+          "hash": "bq/cHh9fwdO84Z06fP1Npw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.Subscription.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.Subscription.html",
+          "hash": "SkJXTQG5srlUdPAf1UwAXw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.Suid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.Suid.html",
+          "hash": "Sp6TSsp1Jt5InUPOyWBULQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.SvcFwWrapper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.SvcFwWrapper.html",
+          "hash": "AWfUdomV/lckRM3aEq/gaQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.SvcFwWrapperAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.SvcFwWrapperAnnc.html",
+          "hash": "WeQ0LEVJj8TvUTWYBejY/g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.SvcObjWrapper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.SvcObjWrapper.html",
+          "hash": "pkJk8JLBYiHC+ktc/sZPMw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.SvcObjWrapperAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.SvcObjWrapperAnnc.html",
+          "hash": "yMX89kqdyBj+RffxB2yU+A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.TimeSeries.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.TimeSeries.html",
+          "hash": "9yX6TGe1nhflgb2k2jq2ow=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.TimeSeriesAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.TimeSeriesAnnc.html",
+          "hash": "Bo+pZqVWsvWCU3DGYZEt5A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.TimeSeriesInstance.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.TimeSeriesInstance.html",
+          "hash": "xMhzIeLGUYzy+atkCqL+7g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.TimeSeriesInstanceAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.TimeSeriesInstanceAnnc.html",
+          "hash": "yCOZsCQoh+aFKgclPkR+5A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.Token.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.Token.html",
+          "hash": "7RGSw1udZz8lP9/gPgaKUA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.TokenClaimSet.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.TokenClaimSet.html",
+          "hash": "9ZmUJ7VY0kjUPdU+msHOvQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.TokenPermission.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.TokenPermission.html",
+          "hash": "VVRJvLJegwVxCDj3RYpWOA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.TokenPermissions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.TokenPermissions.html",
+          "hash": "2jvLEVnW+Kpe1cCuTfrFEQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.TokenPermissionsItem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.TokenPermissionsItem.html",
+          "hash": "1FJigCrlhINye6+tXFuj4w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.TrafficPattern.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.TrafficPattern.html",
+          "hash": "bW8CM0GQL9fJlyDFPRTjkQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.TrafficPatternAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.TrafficPatternAnnc.html",
+          "hash": "YwlPGyWaBzO4DEVW5MP3Ag=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.UploadArgsType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.UploadArgsType.html",
+          "hash": "PzLl36mrqGqJYm0DgxvmYw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Binding.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Binding.html",
+          "hash": "iXxdTVtZAukTpIrAL/RY5w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "iZH+Dz2Ab9lAkmazEeuqGw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/index.html",
+          "hash": "fVSqiIp8aODRgg2iBvLCiQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html",
+          "hash": "D277JUj2XiABmrpSXH9lUw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Aetheros.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Aetheros.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "VGt2xjm+6he1uhyxbzvsaw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0,
+        "full_build_reason_code": "NoAvailableBuildCache"
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 4,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 241,
+          "skipped_file_count": 0
+        },
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: last post processor info is null.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

@@ -71,7 +71,7 @@ namespace Example.Web.Server.ViewModels
 
 		public ReactiveProperty<Data> Summations;
 
-		public IEnumerable<Data.Summation> OldData { get; set; }
+		public IEnumerable<Data.Summation> OldSummations { get; set; }
 
 		public IEnumerable<MeterEventVM> OldEvents { get; set; }
 
@@ -87,22 +87,21 @@ namespace Example.Web.Server.ViewModels
 
 				var loadTask = Task.Run(async () =>
 				{
-					/*
-					var (meter, oldData, oldEvents) = await (
-						_meterService.GetMeterAsync(MeterId),
-						_meterService.GetOldSummationsAsync(MeterId, SummationWindow),
-						_meterService.GetOldEventsAsync(MeterId)
-					);
-					*/
-
 					var meter = await _meterService.GetMeterAsync(MeterId);
-					var oldData = await _meterService.GetOldSummationsAsync(MeterId, SummationWindow);
-					var oldEvents = await _meterService.GetOldEventsAsync(MeterId);
-
 					if (meter.MeterId != this.MeterId)
 						return null;
 
-					this.OldData = oldData;
+					var (oldSummations, oldEvents) = await (
+						_meterService.GetOldSummationsAsync(MeterId, SummationWindow),
+						_meterService.GetOldEventsAsync(MeterId)
+					);
+
+					/*
+					var oldSummations = await _meterService.GetOldSummationsAsync(MeterId, SummationWindow);
+					var oldEvents = await _meterService.GetOldEventsAsync(MeterId);
+					*/
+
+					this.OldSummations = oldSummations;
 					this.OldEvents = oldEvents
 						.Select(s => new MeterEventVM
 						{
@@ -111,7 +110,7 @@ namespace Example.Web.Server.ViewModels
 						})
 						.ToArray();
 
-					Changed(nameof(OldData));
+					Changed(nameof(OldSummations));
 					Changed(nameof(OldEvents));
 
 					return meter;
@@ -220,8 +219,8 @@ namespace Example.Web.Server.ViewModels
 		{
 			Task.Run(async () =>
 			{
-				this.OldData = await _meterService.GetOldSummationsAsync(MeterId, summationWindow);
-				Changed(nameof(OldData));
+				this.OldSummations = await _meterService.GetOldSummationsAsync(MeterId, summationWindow);
+				Changed(nameof(OldSummations));
 			});
 		};
 

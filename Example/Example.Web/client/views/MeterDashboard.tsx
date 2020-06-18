@@ -61,7 +61,7 @@ type State = {
 	MeterReadPolicy: MeterReadPolicy;
 	MeterCommand: MeterCommandModel;
 	SummationWindow: number;
-	OldData: Summation[];
+	OldSummations: Summation[];
 	OldEvents: MeterEvent[];
 	ConfigDialogOpen: boolean;
 	CommandDialogOpen: boolean;
@@ -121,7 +121,7 @@ class MeterDashboard extends React.Component<Props, State> {
 
 		this.state = {
 			SummationWindow: 1 * 24 * 60,
-			OldData: [],
+			OldSummations: [],
 			OldEvents: [],
 
 			ConfigDialogOpen: false,
@@ -146,10 +146,10 @@ class MeterDashboard extends React.Component<Props, State> {
 			}
 		}
 
-		if (nextState.OldData) {
-			for (let s of nextState.OldData)
-				console.log('nextState.OldData : ' + s.readTime);
-			addSummations(nextState.OldData);
+		if (nextState.OldSummations) {
+			for (let s of nextState.OldSummations)
+				console.log('nextState.OldSummations : ' + s.readTime);
+			addSummations(nextState.OldSummations);
 		}
 
 		if (this.state.Summations) {

@@ -42,6 +42,9 @@ namespace GridNet.IoT.Client.Tools
 		string _MsPolicyPath = "./metersvc/policies";
 		string _MsReadsPath = "./metersvc/reads";
 
+		const string MeterReadSubscriptionName = "metersvc-sampl-sub-01";
+		private const string MeterReadPolicyName = "metersvc-sampl-pol-01";
+
 		public override OptionSet Options => new OptionSet
 		{
 			{ "c|cse=", "The URL to the CSE", v => _connectionConfiguration.M2MUrl = new Uri(v, UriKind.Absolute) },
@@ -79,6 +82,16 @@ namespace GridNet.IoT.Client.Tools
 			return response.AE;
 		}
 
+		async Task DeRegister(string aeId)
+		{
+			await _application.GetResponseAsync(new RequestPrimitive
+			{
+				To = $"{_RegPath}/{aeId}",
+				Operation = Operation.Delete
+			});
+		}
+
+
 		async Task<string> CreateSubscription()
 		{
 			Trace.TraceInformation("Invoking Create Subscription API");
@@ -93,7 +106,7 @@ namespace GridNet.IoT.Client.Tools
 				{
 					Subscription = new Subscription
 					{
-						ResourceName = "metersvc-sampl-sub-01",
+						ResourceName = MeterReadSubscriptionName,
 						EventNotificationCriteria = new EventNotificationCriteria
 						{
 							NotificationEventType = new[]
@@ -110,13 +123,22 @@ namespace GridNet.IoT.Client.Tools
 			return subscriptionResponse?.URI;
 		}
 
+		private async Task DeleteSubscription()
+		{
+			await _application.GetResponseAsync(new RequestPrimitive
+			{
+				To = $"{MS_READS_PATH}/{MeterReadSubscriptionName}",
+				Operation = Operation.Delete
+			});
+		}
+
 		async Task CreateMeterReadPolicy()
 		{
 			Trace.TraceInformation("Invoking Create Meter Read Policy API");
 
 			await _application.AddContentInstanceAsync(
 				_MsPolicyPath,
-				"metersvc-sampl-pol-01",
+				MeterReadPolicyName,
 				new
 				{
 					read = new
@@ -135,6 +157,16 @@ namespace GridNet.IoT.Client.Tools
 				}
 			);
 		}
+
+		async Task DeleteMeterReadPolicy()
+		{
+			await _application.GetResponseAsync(new RequestPrimitive
+			{
+				To = $"{MS_READS_PATH}/{MeterReadPolicyName}",
+				Operation = Operation.Delete
+			});
+		}
+
 
 		public override async Task Run(IList<string> args)
 		{
@@ -164,13 +196,22 @@ namespace GridNet.IoT.Client.Tools
 				where evt.NotificationEventType.Contains(NotificationEventType.CreateChild)
 				select evt.PrimitiveRepresentation.PrimitiveContent?.ContentInstance?.GetContent<dynamic>();
 
-			subscriptionEventContent.Subscribe(content => Trace.TraceInformation($"new meter read: {Convert.ToString(content)}"));
+			using var eventSubscription = subscriptionEventContent.Subscribe(content => Trace.TraceInformation($"new meter read: {Convert.ToString(content)}"));
 
 			// create a meter read policy content instance
 			await CreateMeterReadPolicy();
 
-			// continue running the POA server
-			await hostTask;
+			try
+			{
+				// continue running the POA server
+				await hostTask;
+			}
+			finally
+			{
+				DeleteSubscription();
+				DeleteMeterReadPolicy();
+				DeRegister(ae.AE_ID);
+			}
 		}
 	}
 }

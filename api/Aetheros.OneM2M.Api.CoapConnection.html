@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class AllJoynApp
+    <title>Class CoapConnection
    | AOS oneM2M SDK </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class AllJoynApp
+    <meta name="title" content="Class CoapConnection
    | AOS oneM2M SDK ">
     <meta name="generator" content="docfx 2.53.1.0">
     
@@ -95,8 +95,8 @@
                           <li class="">
                             <a href="Aetheros.OneM2M.Api.Application.IApplicationConfiguration.html" title="Application.IApplicationConfiguration" class="">Application.IApplicationConfiguration</a>
                           </li>
-                          <li class="">
-                            <a href="Aetheros.OneM2M.Api.CoapConnection.html" title="CoapConnection" class="">CoapConnection</a>
+                          <li class="active">
+                            <a href="Aetheros.OneM2M.Api.CoapConnection.html" title="CoapConnection" class="active">CoapConnection</a>
                           </li>
                           <li class="">
                             <a href="Aetheros.OneM2M.Api.CoapExtensions.html" title="CoapExtensions" class="">CoapExtensions</a>
@@ -206,8 +206,8 @@
                           <li class="">
                             <a href="Aetheros.OneM2M.Binding.AggregatedResponse.html" title="AggregatedResponse" class="">AggregatedResponse</a>
                           </li>
-                          <li class="active">
-                            <a href="Aetheros.OneM2M.Binding.AllJoynApp.html" title="AllJoynApp" class="active">AllJoynApp</a>
+                          <li class="">
+                            <a href="Aetheros.OneM2M.Binding.AllJoynApp.html" title="AllJoynApp" class="">AllJoynApp</a>
                           </li>
                           <li class="">
                             <a href="Aetheros.OneM2M.Binding.AllJoynAppAnnc.html" title="AllJoynAppAnnc" class="">AllJoynAppAnnc</a>
@@ -832,93 +832,188 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Aetheros.OneM2M.Binding.AllJoynApp">
+            <article class="content wrap" id="_content" data-uid="Aetheros.OneM2M.Api.CoapConnection">
   
   
-  <h1 id="Aetheros_OneM2M_Binding_AllJoynApp" data-uid="Aetheros.OneM2M.Binding.AllJoynApp" class="text-break">Class AllJoynApp
+  <h1 id="Aetheros_OneM2M_Api_CoapConnection" data-uid="Aetheros.OneM2M.Api.CoapConnection" class="text-break">Class CoapConnection
   </h1>
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><a class="xref" href="Aetheros.OneM2M.Binding.FlexContainerResource.html">FlexContainerResource</a></div>
-    <div class="level2"><span class="xref">AllJoynApp</span></div>
+    <div class="level1"><a class="xref" href="Aetheros.OneM2M.Api.Connection.html">Connection</a></div>
+    <div class="level2"><span class="xref">CoapConnection</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="Aetheros.OneM2M.Binding.FlexContainerResource.html#Aetheros_OneM2M_Binding_FlexContainerResource_ResourceType">FlexContainerResource.ResourceType</a>
+      <a class="xref" href="Aetheros.OneM2M.Api.Connection.html#Aetheros_OneM2M_Api_Connection_NextRequestId">Connection.NextRequestId</a>
     </div>
     <div>
-      <a class="xref" href="Aetheros.OneM2M.Binding.FlexContainerResource.html#Aetheros_OneM2M_Binding_FlexContainerResource_ResourceID">FlexContainerResource.ResourceID</a>
+      <a class="xref" href="Aetheros.OneM2M.Api.Connection.html#Aetheros_OneM2M_Api_Connection_FindApplicationAsync_System_String_System_String_">Connection.FindApplicationAsync(String, String)</a>
     </div>
     <div>
-      <a class="xref" href="Aetheros.OneM2M.Binding.FlexContainerResource.html#Aetheros_OneM2M_Binding_FlexContainerResource_ParentID">FlexContainerResource.ParentID</a>
+      <a class="xref" href="Aetheros.OneM2M.Api.Connection.html#Aetheros_OneM2M_Api_Connection_RegisterApplicationAsync_Aetheros_OneM2M_Api_Application_IApplicationConfiguration_">Connection.RegisterApplicationAsync(Application.IApplicationConfiguration)</a>
     </div>
     <div>
-      <a class="xref" href="Aetheros.OneM2M.Binding.FlexContainerResource.html#Aetheros_OneM2M_Binding_FlexContainerResource_CreationTime">FlexContainerResource.CreationTime</a>
+      <a class="xref" href="Aetheros.OneM2M.Api.Connection.html#Aetheros_OneM2M_Api_Connection_GetPrimitiveAsync_System_String_Aetheros_OneM2M_Binding_FilterCriteria_">Connection.GetPrimitiveAsync(String, FilterCriteria)</a>
     </div>
     <div>
-      <a class="xref" href="Aetheros.OneM2M.Binding.FlexContainerResource.html#Aetheros_OneM2M_Binding_FlexContainerResource_LastModifiedTime">FlexContainerResource.LastModifiedTime</a>
+      <a class="xref" href="Aetheros.OneM2M.Api.Connection.html#Aetheros_OneM2M_Api_Connection_GetChildResourcesAsync_System_String_Aetheros_OneM2M_Binding_FilterCriteria_">Connection.GetChildResourcesAsync(String, FilterCriteria)</a>
     </div>
     <div>
-      <a class="xref" href="Aetheros.OneM2M.Binding.FlexContainerResource.html#Aetheros_OneM2M_Binding_FlexContainerResource_Labels">FlexContainerResource.Labels</a>
+      <a class="xref" href="Aetheros.OneM2M.Api.Connection.html#Aetheros_OneM2M_Api_Connection_GetResponseAsync_Aetheros_OneM2M_Binding_RequestPrimitive_">Connection.GetResponseAsync(RequestPrimitive)</a>
     </div>
     <div>
-      <a class="xref" href="Aetheros.OneM2M.Binding.FlexContainerResource.html#Aetheros_OneM2M_Binding_FlexContainerResource_AccessControlPolicyIDs">FlexContainerResource.AccessControlPolicyIDs</a>
+      <a class="xref" href="Aetheros.OneM2M.Api.Connection.html#Aetheros_OneM2M_Api_Connection_GetRequestParameters_Aetheros_OneM2M_Binding_RequestPrimitive_">Connection.GetRequestParameters(RequestPrimitive)</a>
     </div>
     <div>
-      <a class="xref" href="Aetheros.OneM2M.Binding.FlexContainerResource.html#Aetheros_OneM2M_Binding_FlexContainerResource_ExpirationTime">FlexContainerResource.ExpirationTime</a>
+      <a class="xref" href="Aetheros.OneM2M.Api.Connection.html#Aetheros_OneM2M_Api_Connection_DeserializeJson__1_System_String_">Connection.DeserializeJson&lt;T&gt;(String)</a>
     </div>
     <div>
-      <a class="xref" href="Aetheros.OneM2M.Binding.FlexContainerResource.html#Aetheros_OneM2M_Binding_FlexContainerResource_DynamicAuthorizationConsultationIDs">FlexContainerResource.DynamicAuthorizationConsultationIDs</a>
+      <a class="xref" href="Aetheros.OneM2M.Api.Connection.html#Aetheros_OneM2M_Api_Connection_GetAttributes__1_System_Linq_Expressions_Expression_System_Func___0_System_Object_____">Connection.GetAttributes&lt;T&gt;(Expression&lt;Func&lt;T, Object&gt;&gt;[])</a>
     </div>
     <div>
-      <a class="xref" href="Aetheros.OneM2M.Binding.FlexContainerResource.html#Aetheros_OneM2M_Binding_FlexContainerResource_AnnounceTo">FlexContainerResource.AnnounceTo</a>
+      <a class="xref" href="Aetheros.OneM2M.Api.Connection.html#Aetheros_OneM2M_Api_Connection_Notifications">Connection.Notifications</a>
     </div>
     <div>
-      <a class="xref" href="Aetheros.OneM2M.Binding.FlexContainerResource.html#Aetheros_OneM2M_Binding_FlexContainerResource_AnnouncedAttribute">FlexContainerResource.AnnouncedAttribute</a>
+      <a class="xref" href="Aetheros.OneM2M.Api.Connection.html#Aetheros_OneM2M_Api_Connection_HandleNotificationAsync_HttpRequest_">Connection.HandleNotificationAsync(HttpRequest)</a>
     </div>
     <div>
-      <a class="xref" href="Aetheros.OneM2M.Binding.FlexContainerResource.html#Aetheros_OneM2M_Binding_FlexContainerResource_StateTag">FlexContainerResource.StateTag</a>
-    </div>
-    <div>
-      <a class="xref" href="Aetheros.OneM2M.Binding.FlexContainerResource.html#Aetheros_OneM2M_Binding_FlexContainerResource_Creator">FlexContainerResource.Creator</a>
-    </div>
-    <div>
-      <a class="xref" href="Aetheros.OneM2M.Binding.FlexContainerResource.html#Aetheros_OneM2M_Binding_FlexContainerResource_ContainerDefinition">FlexContainerResource.ContainerDefinition</a>
-    </div>
-    <div>
-      <a class="xref" href="Aetheros.OneM2M.Binding.FlexContainerResource.html#Aetheros_OneM2M_Binding_FlexContainerResource_OntologyRef">FlexContainerResource.OntologyRef</a>
-    </div>
-    <div>
-      <a class="xref" href="Aetheros.OneM2M.Binding.FlexContainerResource.html#Aetheros_OneM2M_Binding_FlexContainerResource_ResourceName">FlexContainerResource.ResourceName</a>
+      <a class="xref" href="Aetheros.OneM2M.Api.Connection.html#Aetheros_OneM2M_Api_Connection_SerializeJson_System_Object_">Connection.SerializeJson(Object)</a>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="Aetheros.OneM2M.Binding.html">Aetheros.OneM2M.Binding</a></h6>
-  <h6><strong>Assembly</strong>: Aetheros.OneM2M.Binding.dll</h6>
-  <h5 id="Aetheros_OneM2M_Binding_AllJoynApp_syntax">Syntax</h5>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Aetheros.OneM2M.Api.html">Aetheros.OneM2M.Api</a></h6>
+  <h6><strong>Assembly</strong>: Aetheros.OneM2M.Api.dll</h6>
+  <h5 id="Aetheros_OneM2M_Api_CoapConnection_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Serializable]
-public class AllJoynApp : FlexContainerResource</code></pre>
+    <pre><code class="lang-csharp hljs">public class CoapConnection : Connection</code></pre>
   </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aetheros/sdk-dotnet/new/master/apiSpec/new?filename=Aetheros_OneM2M_Api_CoapConnection__ctor_Aetheros_OneM2M_Api_Connection_IConnectionConfiguration_.md&amp;value=---%0Auid%3A%20Aetheros.OneM2M.Api.CoapConnection.%23ctor(Aetheros.OneM2M.Api.Connection.IConnectionConfiguration)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aetheros/sdk-dotnet/blob/master/Aetheros.OneM2M.Api/CoapConnection.cs/#L25">View Source</a>
+  </span>
+  <a id="Aetheros_OneM2M_Api_CoapConnection__ctor_" data-uid="Aetheros.OneM2M.Api.CoapConnection.#ctor*"></a>
+  <h4 id="Aetheros_OneM2M_Api_CoapConnection__ctor_Aetheros_OneM2M_Api_Connection_IConnectionConfiguration_" data-uid="Aetheros.OneM2M.Api.CoapConnection.#ctor(Aetheros.OneM2M.Api.Connection.IConnectionConfiguration)">CoapConnection(Connection.IConnectionConfiguration)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CoapConnection(Connection.IConnectionConfiguration config)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Aetheros.OneM2M.Api.Connection.IConnectionConfiguration.html">Connection.IConnectionConfiguration</a></td>
+        <td><span class="parametername">config</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aetheros/sdk-dotnet/new/master/apiSpec/new?filename=Aetheros_OneM2M_Api_CoapConnection__ctor_System_Uri_System_Security_Cryptography_X509Certificates_X509Certificate_.md&amp;value=---%0Auid%3A%20Aetheros.OneM2M.Api.CoapConnection.%23ctor(System.Uri%2CSystem.Security.Cryptography.X509Certificates.X509Certificate)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aetheros/sdk-dotnet/blob/master/Aetheros.OneM2M.Api/CoapConnection.cs/#L31">View Source</a>
+  </span>
+  <a id="Aetheros_OneM2M_Api_CoapConnection__ctor_" data-uid="Aetheros.OneM2M.Api.CoapConnection.#ctor*"></a>
+  <h4 id="Aetheros_OneM2M_Api_CoapConnection__ctor_System_Uri_System_Security_Cryptography_X509Certificates_X509Certificate_" data-uid="Aetheros.OneM2M.Api.CoapConnection.#ctor(System.Uri,System.Security.Cryptography.X509Certificates.X509Certificate)">CoapConnection(Uri, X509Certificate)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CoapConnection(Uri m2mUrl, X509Certificate certificate = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">m2mUrl</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Security.Cryptography.X509Certificates.X509Certificate</span></td>
+        <td><span class="parametername">certificate</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aetheros/sdk-dotnet/new/master/apiSpec/new?filename=Aetheros_OneM2M_Api_CoapConnection__ctor_System_Uri_System_String_.md&amp;value=---%0Auid%3A%20Aetheros.OneM2M.Api.CoapConnection.%23ctor(System.Uri%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aetheros/sdk-dotnet/blob/master/Aetheros.OneM2M.Api/CoapConnection.cs/#L28">View Source</a>
+  </span>
+  <a id="Aetheros_OneM2M_Api_CoapConnection__ctor_" data-uid="Aetheros.OneM2M.Api.CoapConnection.#ctor*"></a>
+  <h4 id="Aetheros_OneM2M_Api_CoapConnection__ctor_System_Uri_System_String_" data-uid="Aetheros.OneM2M.Api.CoapConnection.#ctor(System.Uri,System.String)">CoapConnection(Uri, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CoapConnection(Uri m2mUrl, string certificateFilename)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Uri</span></td>
+        <td><span class="parametername">m2mUrl</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">certificateFilename</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="properties">Properties
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/aetheros/sdk-dotnet/new/master/apiSpec/new?filename=Aetheros_OneM2M_Binding_AllJoynApp_AllJoynSvcObject.md&amp;value=---%0Auid%3A%20Aetheros.OneM2M.Binding.AllJoynApp.AllJoynSvcObject%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/aetheros/sdk-dotnet/new/master/apiSpec/new?filename=Aetheros_OneM2M_Api_CoapConnection_ClientCertificate.md&amp;value=---%0Auid%3A%20Aetheros.OneM2M.Api.CoapConnection.ClientCertificate%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/aetheros/sdk-dotnet/blob/master/Aetheros.OneM2M.Binding/Aetheros.OneM2M.Binding.cs/#L11779">View Source</a>
+    <a href="https://github.com/aetheros/sdk-dotnet/blob/master/Aetheros.OneM2M.Api/CoapConnection.cs/#L23">View Source</a>
   </span>
-  <a id="Aetheros_OneM2M_Binding_AllJoynApp_AllJoynSvcObject_" data-uid="Aetheros.OneM2M.Binding.AllJoynApp.AllJoynSvcObject*"></a>
-  <h4 id="Aetheros_OneM2M_Binding_AllJoynApp_AllJoynSvcObject" data-uid="Aetheros.OneM2M.Binding.AllJoynApp.AllJoynSvcObject">AllJoynSvcObject</h4>
+  <a id="Aetheros_OneM2M_Api_CoapConnection_ClientCertificate_" data-uid="Aetheros.OneM2M.Api.CoapConnection.ClientCertificate*"></a>
+  <h4 id="Aetheros_OneM2M_Api_CoapConnection_ClientCertificate" data-uid="Aetheros.OneM2M.Api.CoapConnection.ClientCertificate">ClientCertificate</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ICollection&lt;AllJoynSvcObject&gt; AllJoynSvcObject { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public X509Certificate ClientCertificate { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -930,57 +1025,94 @@ public class AllJoynApp : FlexContainerResource</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.ICollection</span>&lt;<a class="xref" href="Aetheros.OneM2M.Binding.AllJoynSvcObject.html">AllJoynSvcObject</a>&gt;</td>
+        <td><span class="xref">System.Security.Cryptography.X509Certificates.X509Certificate</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aetheros/sdk-dotnet/new/master/apiSpec/new?filename=Aetheros_OneM2M_Api_CoapConnection_GetResponseAsync_CoAP_Request_.md&amp;value=---%0Auid%3A%20Aetheros.OneM2M.Api.CoapConnection.GetResponseAsync(CoAP.Request)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aetheros/sdk-dotnet/blob/master/Aetheros.OneM2M.Api/CoapConnection.cs/#L59">View Source</a>
+  </span>
+  <a id="Aetheros_OneM2M_Api_CoapConnection_GetResponseAsync_" data-uid="Aetheros.OneM2M.Api.CoapConnection.GetResponseAsync*"></a>
+  <h4 id="Aetheros_OneM2M_Api_CoapConnection_GetResponseAsync_CoAP_Request_" data-uid="Aetheros.OneM2M.Api.CoapConnection.GetResponseAsync(CoAP.Request)">GetResponseAsync(Request)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;ResponseContent&gt; GetResponseAsync(Request request)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">CoAP.Request</span></td>
+        <td><span class="parametername">request</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="Aetheros.OneM2M.Binding.ResponseContent.html">ResponseContent</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/aetheros/sdk-dotnet/new/master/apiSpec/new?filename=Aetheros_OneM2M_Binding_AllJoynApp_ChildResource.md&amp;value=---%0Auid%3A%20Aetheros.OneM2M.Binding.AllJoynApp.ChildResource%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/aetheros/sdk-dotnet/new/master/apiSpec/new?filename=Aetheros_OneM2M_Api_CoapConnection_GetResponseAsync__1_Aetheros_OneM2M_Binding_RequestPrimitive_.md&amp;value=---%0Auid%3A%20Aetheros.OneM2M.Api.CoapConnection.GetResponseAsync%60%601(Aetheros.OneM2M.Binding.RequestPrimitive)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/aetheros/sdk-dotnet/blob/master/Aetheros.OneM2M.Binding/Aetheros.OneM2M.Binding.cs/#L11734">View Source</a>
+    <a href="https://github.com/aetheros/sdk-dotnet/blob/master/Aetheros.OneM2M.Api/CoapConnection.cs/#L70">View Source</a>
   </span>
-  <a id="Aetheros_OneM2M_Binding_AllJoynApp_ChildResource_" data-uid="Aetheros.OneM2M.Binding.AllJoynApp.ChildResource*"></a>
-  <h4 id="Aetheros_OneM2M_Binding_AllJoynApp_ChildResource" data-uid="Aetheros.OneM2M.Binding.AllJoynApp.ChildResource">ChildResource</h4>
+  <a id="Aetheros_OneM2M_Api_CoapConnection_GetResponseAsync_" data-uid="Aetheros.OneM2M.Api.CoapConnection.GetResponseAsync*"></a>
+  <h4 id="Aetheros_OneM2M_Api_CoapConnection_GetResponseAsync__1_Aetheros_OneM2M_Binding_RequestPrimitive_" data-uid="Aetheros.OneM2M.Api.CoapConnection.GetResponseAsync``1(Aetheros.OneM2M.Binding.RequestPrimitive)">GetResponseAsync&lt;T&gt;(RequestPrimitive)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ICollection&lt;ChildResourceRef&gt; ChildResource { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public override Task&lt;T&gt; GetResponseAsync&lt;T&gt;(RequestPrimitive body)
+    where T : class, new()</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
+  <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
         <th>Type</th>
+        <th>Name</th>
         <th>Description</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.ICollection</span>&lt;<a class="xref" href="Aetheros.OneM2M.Binding.ChildResourceRef.html">ChildResourceRef</a>&gt;</td>
+        <td><a class="xref" href="Aetheros.OneM2M.Binding.RequestPrimitive.html">RequestPrimitive</a></td>
+        <td><span class="parametername">body</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/aetheros/sdk-dotnet/new/master/apiSpec/new?filename=Aetheros_OneM2M_Binding_AllJoynApp_Direction.md&amp;value=---%0Auid%3A%20Aetheros.OneM2M.Binding.AllJoynApp.Direction%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/aetheros/sdk-dotnet/blob/master/Aetheros.OneM2M.Binding/Aetheros.OneM2M.Binding.cs/#L11719">View Source</a>
-  </span>
-  <a id="Aetheros_OneM2M_Binding_AllJoynApp_Direction_" data-uid="Aetheros.OneM2M.Binding.AllJoynApp.Direction*"></a>
-  <h4 id="Aetheros_OneM2M_Binding_AllJoynApp_Direction" data-uid="Aetheros.OneM2M.Binding.AllJoynApp.Direction">Direction</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public AllJoynDirection? Direction { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
+  <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -990,57 +1122,62 @@ public class AllJoynApp : FlexContainerResource</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Nullable</span>&lt;<a class="xref" href="Aetheros.OneM2M.Binding.AllJoynDirection.html">AllJoynDirection</a>&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;T&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/aetheros/sdk-dotnet/new/master/apiSpec/new?filename=Aetheros_OneM2M_Binding_AllJoynApp_SemanticDescriptor.md&amp;value=---%0Auid%3A%20Aetheros.OneM2M.Binding.AllJoynApp.SemanticDescriptor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/aetheros/sdk-dotnet/blob/master/Aetheros.OneM2M.Binding/Aetheros.OneM2M.Binding.cs/#L11749">View Source</a>
-  </span>
-  <a id="Aetheros_OneM2M_Binding_AllJoynApp_SemanticDescriptor_" data-uid="Aetheros.OneM2M.Binding.AllJoynApp.SemanticDescriptor*"></a>
-  <h4 id="Aetheros_OneM2M_Binding_AllJoynApp_SemanticDescriptor" data-uid="Aetheros.OneM2M.Binding.AllJoynApp.SemanticDescriptor">SemanticDescriptor</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ICollection&lt;SemanticDescriptor&gt; SemanticDescriptor { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
+  <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
-        <th>Type</th>
+        <th>Name</th>
         <th>Description</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.ICollection</span>&lt;<a class="xref" href="Aetheros.OneM2M.Binding.SemanticDescriptor.html">SemanticDescriptor</a>&gt;</td>
+        <td><span class="parametername">T</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Aetheros.OneM2M.Api.Connection.html#Aetheros_OneM2M_Api_Connection_GetResponseAsync__1_Aetheros_OneM2M_Binding_RequestPrimitive_">Connection.GetResponseAsync&lt;T&gt;(RequestPrimitive)</a></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/aetheros/sdk-dotnet/new/master/apiSpec/new?filename=Aetheros_OneM2M_Binding_AllJoynApp_Subscription.md&amp;value=---%0Auid%3A%20Aetheros.OneM2M.Binding.AllJoynApp.Subscription%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/aetheros/sdk-dotnet/new/master/apiSpec/new?filename=Aetheros_OneM2M_Api_CoapConnection_GetResponseAsync__1_CoAP_Request_.md&amp;value=---%0Auid%3A%20Aetheros.OneM2M.Api.CoapConnection.GetResponseAsync%60%601(CoAP.Request)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/aetheros/sdk-dotnet/blob/master/Aetheros.OneM2M.Binding/Aetheros.OneM2M.Binding.cs/#L11764">View Source</a>
+    <a href="https://github.com/aetheros/sdk-dotnet/blob/master/Aetheros.OneM2M.Api/CoapConnection.cs/#L76">View Source</a>
   </span>
-  <a id="Aetheros_OneM2M_Binding_AllJoynApp_Subscription_" data-uid="Aetheros.OneM2M.Binding.AllJoynApp.Subscription*"></a>
-  <h4 id="Aetheros_OneM2M_Binding_AllJoynApp_Subscription" data-uid="Aetheros.OneM2M.Binding.AllJoynApp.Subscription">Subscription</h4>
+  <a id="Aetheros_OneM2M_Api_CoapConnection_GetResponseAsync_" data-uid="Aetheros.OneM2M.Api.CoapConnection.GetResponseAsync*"></a>
+  <h4 id="Aetheros_OneM2M_Api_CoapConnection_GetResponseAsync__1_CoAP_Request_" data-uid="Aetheros.OneM2M.Api.CoapConnection.GetResponseAsync``1(CoAP.Request)">GetResponseAsync&lt;T&gt;(Request)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ICollection&lt;Subscription&gt; Subscription { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public Task&lt;T&gt; GetResponseAsync&lt;T&gt;(Request request)
+    where T : class, new()</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">CoAP.Request</span></td>
+        <td><span class="parametername">request</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -1050,7 +1187,22 @@ public class AllJoynApp : FlexContainerResource</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Collections.Generic.ICollection</span>&lt;<a class="xref" href="Aetheros.OneM2M.Binding.Subscription.html">Subscription</a>&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -1063,10 +1215,10 @@ public class AllJoynApp : FlexContainerResource</code></pre>
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/aetheros/sdk-dotnet/new/master/apiSpec/new?filename=Aetheros_OneM2M_Binding_AllJoynApp.md&amp;value=---%0Auid%3A%20Aetheros.OneM2M.Binding.AllJoynApp%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/aetheros/sdk-dotnet/new/master/apiSpec/new?filename=Aetheros_OneM2M_Api_CoapConnection.md&amp;value=---%0Auid%3A%20Aetheros.OneM2M.Api.CoapConnection%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/aetheros/sdk-dotnet/blob/master/Aetheros.OneM2M.Binding/Aetheros.OneM2M.Binding.cs/#L11692" class="contribution-link">View Source</a>
+                    <a href="https://github.com/aetheros/sdk-dotnet/blob/master/Aetheros.OneM2M.Api/CoapConnection.cs/#L18" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

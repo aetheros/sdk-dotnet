@@ -354,6 +354,148 @@ references:
   isSpec: "True"
   fullName: Aetheros.OneM2M.Api.Application.UrlPrefix
   nameWithType: Application.UrlPrefix
+- uid: Aetheros.OneM2M.Api.CoapConnection
+  name: CoapConnection
+  href: api/Aetheros.OneM2M.Api.CoapConnection.html
+  commentId: T:Aetheros.OneM2M.Api.CoapConnection
+  fullName: Aetheros.OneM2M.Api.CoapConnection
+  nameWithType: CoapConnection
+- uid: Aetheros.OneM2M.Api.CoapConnection.#ctor(Aetheros.OneM2M.Api.Connection.IConnectionConfiguration)
+  name: CoapConnection(Connection.IConnectionConfiguration)
+  href: api/Aetheros.OneM2M.Api.CoapConnection.html#Aetheros_OneM2M_Api_CoapConnection__ctor_Aetheros_OneM2M_Api_Connection_IConnectionConfiguration_
+  commentId: M:Aetheros.OneM2M.Api.CoapConnection.#ctor(Aetheros.OneM2M.Api.Connection.IConnectionConfiguration)
+  fullName: Aetheros.OneM2M.Api.CoapConnection.CoapConnection(Aetheros.OneM2M.Api.Connection.IConnectionConfiguration)
+  nameWithType: CoapConnection.CoapConnection(Connection.IConnectionConfiguration)
+- uid: Aetheros.OneM2M.Api.CoapConnection.#ctor(System.Uri,System.Security.Cryptography.X509Certificates.X509Certificate)
+  name: CoapConnection(Uri, X509Certificate)
+  href: api/Aetheros.OneM2M.Api.CoapConnection.html#Aetheros_OneM2M_Api_CoapConnection__ctor_System_Uri_System_Security_Cryptography_X509Certificates_X509Certificate_
+  commentId: M:Aetheros.OneM2M.Api.CoapConnection.#ctor(System.Uri,System.Security.Cryptography.X509Certificates.X509Certificate)
+  fullName: Aetheros.OneM2M.Api.CoapConnection.CoapConnection(System.Uri, System.Security.Cryptography.X509Certificates.X509Certificate)
+  nameWithType: CoapConnection.CoapConnection(Uri, X509Certificate)
+- uid: Aetheros.OneM2M.Api.CoapConnection.#ctor(System.Uri,System.String)
+  name: CoapConnection(Uri, String)
+  href: api/Aetheros.OneM2M.Api.CoapConnection.html#Aetheros_OneM2M_Api_CoapConnection__ctor_System_Uri_System_String_
+  commentId: M:Aetheros.OneM2M.Api.CoapConnection.#ctor(System.Uri,System.String)
+  fullName: Aetheros.OneM2M.Api.CoapConnection.CoapConnection(System.Uri, System.String)
+  nameWithType: CoapConnection.CoapConnection(Uri, String)
+- uid: Aetheros.OneM2M.Api.CoapConnection.#ctor*
+  name: CoapConnection
+  href: api/Aetheros.OneM2M.Api.CoapConnection.html#Aetheros_OneM2M_Api_CoapConnection__ctor_
+  commentId: Overload:Aetheros.OneM2M.Api.CoapConnection.#ctor
+  isSpec: "True"
+  fullName: Aetheros.OneM2M.Api.CoapConnection.CoapConnection
+  nameWithType: CoapConnection.CoapConnection
+- uid: Aetheros.OneM2M.Api.CoapConnection.ClientCertificate
+  name: ClientCertificate
+  href: api/Aetheros.OneM2M.Api.CoapConnection.html#Aetheros_OneM2M_Api_CoapConnection_ClientCertificate
+  commentId: P:Aetheros.OneM2M.Api.CoapConnection.ClientCertificate
+  fullName: Aetheros.OneM2M.Api.CoapConnection.ClientCertificate
+  nameWithType: CoapConnection.ClientCertificate
+- uid: Aetheros.OneM2M.Api.CoapConnection.ClientCertificate*
+  name: ClientCertificate
+  href: api/Aetheros.OneM2M.Api.CoapConnection.html#Aetheros_OneM2M_Api_CoapConnection_ClientCertificate_
+  commentId: Overload:Aetheros.OneM2M.Api.CoapConnection.ClientCertificate
+  isSpec: "True"
+  fullName: Aetheros.OneM2M.Api.CoapConnection.ClientCertificate
+  nameWithType: CoapConnection.ClientCertificate
+- uid: Aetheros.OneM2M.Api.CoapConnection.GetResponseAsync(CoAP.Request)
+  name: GetResponseAsync(Request)
+  href: api/Aetheros.OneM2M.Api.CoapConnection.html#Aetheros_OneM2M_Api_CoapConnection_GetResponseAsync_CoAP_Request_
+  commentId: M:Aetheros.OneM2M.Api.CoapConnection.GetResponseAsync(CoAP.Request)
+  fullName: Aetheros.OneM2M.Api.CoapConnection.GetResponseAsync(CoAP.Request)
+  nameWithType: CoapConnection.GetResponseAsync(Request)
+- uid: Aetheros.OneM2M.Api.CoapConnection.GetResponseAsync*
+  name: GetResponseAsync
+  href: api/Aetheros.OneM2M.Api.CoapConnection.html#Aetheros_OneM2M_Api_CoapConnection_GetResponseAsync_
+  commentId: Overload:Aetheros.OneM2M.Api.CoapConnection.GetResponseAsync
+  isSpec: "True"
+  fullName: Aetheros.OneM2M.Api.CoapConnection.GetResponseAsync
+  nameWithType: CoapConnection.GetResponseAsync
+- uid: Aetheros.OneM2M.Api.CoapConnection.GetResponseAsync``1(Aetheros.OneM2M.Binding.RequestPrimitive)
+  name: GetResponseAsync<T>(RequestPrimitive)
+  href: api/Aetheros.OneM2M.Api.CoapConnection.html#Aetheros_OneM2M_Api_CoapConnection_GetResponseAsync__1_Aetheros_OneM2M_Binding_RequestPrimitive_
+  commentId: M:Aetheros.OneM2M.Api.CoapConnection.GetResponseAsync``1(Aetheros.OneM2M.Binding.RequestPrimitive)
+  name.vb: GetResponseAsync(Of T)(RequestPrimitive)
+  fullName: Aetheros.OneM2M.Api.CoapConnection.GetResponseAsync<T>(Aetheros.OneM2M.Binding.RequestPrimitive)
+  fullName.vb: Aetheros.OneM2M.Api.CoapConnection.GetResponseAsync(Of T)(Aetheros.OneM2M.Binding.RequestPrimitive)
+  nameWithType: CoapConnection.GetResponseAsync<T>(RequestPrimitive)
+  nameWithType.vb: CoapConnection.GetResponseAsync(Of T)(RequestPrimitive)
+- uid: Aetheros.OneM2M.Api.CoapConnection.GetResponseAsync``1(CoAP.Request)
+  name: GetResponseAsync<T>(Request)
+  href: api/Aetheros.OneM2M.Api.CoapConnection.html#Aetheros_OneM2M_Api_CoapConnection_GetResponseAsync__1_CoAP_Request_
+  commentId: M:Aetheros.OneM2M.Api.CoapConnection.GetResponseAsync``1(CoAP.Request)
+  name.vb: GetResponseAsync(Of T)(Request)
+  fullName: Aetheros.OneM2M.Api.CoapConnection.GetResponseAsync<T>(CoAP.Request)
+  fullName.vb: Aetheros.OneM2M.Api.CoapConnection.GetResponseAsync(Of T)(CoAP.Request)
+  nameWithType: CoapConnection.GetResponseAsync<T>(Request)
+  nameWithType.vb: CoapConnection.GetResponseAsync(Of T)(Request)
+- uid: Aetheros.OneM2M.Api.CoapExtensions
+  name: CoapExtensions
+  href: api/Aetheros.OneM2M.Api.CoapExtensions.html
+  commentId: T:Aetheros.OneM2M.Api.CoapExtensions
+  fullName: Aetheros.OneM2M.Api.CoapExtensions
+  nameWithType: CoapExtensions
+- uid: Aetheros.OneM2M.Api.CoapExtensions.DeserializeAsync*
+  name: DeserializeAsync
+  href: api/Aetheros.OneM2M.Api.CoapExtensions.html#Aetheros_OneM2M_Api_CoapExtensions_DeserializeAsync_
+  commentId: Overload:Aetheros.OneM2M.Api.CoapExtensions.DeserializeAsync
+  isSpec: "True"
+  fullName: Aetheros.OneM2M.Api.CoapExtensions.DeserializeAsync
+  nameWithType: CoapExtensions.DeserializeAsync
+- uid: Aetheros.OneM2M.Api.CoapExtensions.DeserializeAsync``1(CoAP.Response)
+  name: DeserializeAsync<T>(Response)
+  href: api/Aetheros.OneM2M.Api.CoapExtensions.html#Aetheros_OneM2M_Api_CoapExtensions_DeserializeAsync__1_CoAP_Response_
+  commentId: M:Aetheros.OneM2M.Api.CoapExtensions.DeserializeAsync``1(CoAP.Response)
+  name.vb: DeserializeAsync(Of T)(Response)
+  fullName: Aetheros.OneM2M.Api.CoapExtensions.DeserializeAsync<T>(CoAP.Response)
+  fullName.vb: Aetheros.OneM2M.Api.CoapExtensions.DeserializeAsync(Of T)(CoAP.Response)
+  nameWithType: CoapExtensions.DeserializeAsync<T>(Response)
+  nameWithType.vb: CoapExtensions.DeserializeAsync(Of T)(Response)
+- uid: Aetheros.OneM2M.Api.CoapExtensions.SendTaskAsync(CoAP.CoapClient,CoAP.Request)
+  name: SendTaskAsync(CoapClient, Request)
+  href: api/Aetheros.OneM2M.Api.CoapExtensions.html#Aetheros_OneM2M_Api_CoapExtensions_SendTaskAsync_CoAP_CoapClient_CoAP_Request_
+  commentId: M:Aetheros.OneM2M.Api.CoapExtensions.SendTaskAsync(CoAP.CoapClient,CoAP.Request)
+  fullName: Aetheros.OneM2M.Api.CoapExtensions.SendTaskAsync(CoAP.CoapClient, CoAP.Request)
+  nameWithType: CoapExtensions.SendTaskAsync(CoapClient, Request)
+- uid: Aetheros.OneM2M.Api.CoapExtensions.SendTaskAsync*
+  name: SendTaskAsync
+  href: api/Aetheros.OneM2M.Api.CoapExtensions.html#Aetheros_OneM2M_Api_CoapExtensions_SendTaskAsync_
+  commentId: Overload:Aetheros.OneM2M.Api.CoapExtensions.SendTaskAsync
+  isSpec: "True"
+  fullName: Aetheros.OneM2M.Api.CoapExtensions.SendTaskAsync
+  nameWithType: CoapExtensions.SendTaskAsync
+- uid: Aetheros.OneM2M.Api.CoapRequestException
+  name: CoapRequestException
+  href: api/Aetheros.OneM2M.Api.CoapRequestException.html
+  commentId: T:Aetheros.OneM2M.Api.CoapRequestException
+  fullName: Aetheros.OneM2M.Api.CoapRequestException
+  nameWithType: CoapRequestException
+- uid: Aetheros.OneM2M.Api.CoapRequestException.#ctor(CoAP.CoapClient.FailReason)
+  name: CoapRequestException(CoapClient.FailReason)
+  href: api/Aetheros.OneM2M.Api.CoapRequestException.html#Aetheros_OneM2M_Api_CoapRequestException__ctor_CoAP_CoapClient_FailReason_
+  commentId: M:Aetheros.OneM2M.Api.CoapRequestException.#ctor(CoAP.CoapClient.FailReason)
+  fullName: Aetheros.OneM2M.Api.CoapRequestException.CoapRequestException(CoAP.CoapClient.FailReason)
+  nameWithType: CoapRequestException.CoapRequestException(CoapClient.FailReason)
+- uid: Aetheros.OneM2M.Api.CoapRequestException.#ctor*
+  name: CoapRequestException
+  href: api/Aetheros.OneM2M.Api.CoapRequestException.html#Aetheros_OneM2M_Api_CoapRequestException__ctor_
+  commentId: Overload:Aetheros.OneM2M.Api.CoapRequestException.#ctor
+  isSpec: "True"
+  fullName: Aetheros.OneM2M.Api.CoapRequestException.CoapRequestException
+  nameWithType: CoapRequestException.CoapRequestException
+- uid: Aetheros.OneM2M.Api.CoapRequestException.FailReason
+  name: FailReason
+  href: api/Aetheros.OneM2M.Api.CoapRequestException.html#Aetheros_OneM2M_Api_CoapRequestException_FailReason
+  commentId: P:Aetheros.OneM2M.Api.CoapRequestException.FailReason
+  fullName: Aetheros.OneM2M.Api.CoapRequestException.FailReason
+  nameWithType: CoapRequestException.FailReason
+- uid: Aetheros.OneM2M.Api.CoapRequestException.FailReason*
+  name: FailReason
+  href: api/Aetheros.OneM2M.Api.CoapRequestException.html#Aetheros_OneM2M_Api_CoapRequestException_FailReason_
+  commentId: Overload:Aetheros.OneM2M.Api.CoapRequestException.FailReason
+  isSpec: "True"
+  fullName: Aetheros.OneM2M.Api.CoapRequestException.FailReason
+  nameWithType: CoapRequestException.FailReason
 - uid: Aetheros.OneM2M.Api.Connection
   name: Connection
   href: api/Aetheros.OneM2M.Api.Connection.html
@@ -431,6 +573,19 @@ references:
   isSpec: "True"
   fullName: Aetheros.OneM2M.Api.Connection.GetPrimitiveAsync
   nameWithType: Connection.GetPrimitiveAsync
+- uid: Aetheros.OneM2M.Api.Connection.GetRequestParameters(Aetheros.OneM2M.Binding.RequestPrimitive)
+  name: GetRequestParameters(RequestPrimitive)
+  href: api/Aetheros.OneM2M.Api.Connection.html#Aetheros_OneM2M_Api_Connection_GetRequestParameters_Aetheros_OneM2M_Binding_RequestPrimitive_
+  commentId: M:Aetheros.OneM2M.Api.Connection.GetRequestParameters(Aetheros.OneM2M.Binding.RequestPrimitive)
+  fullName: Aetheros.OneM2M.Api.Connection.GetRequestParameters(Aetheros.OneM2M.Binding.RequestPrimitive)
+  nameWithType: Connection.GetRequestParameters(RequestPrimitive)
+- uid: Aetheros.OneM2M.Api.Connection.GetRequestParameters*
+  name: GetRequestParameters
+  href: api/Aetheros.OneM2M.Api.Connection.html#Aetheros_OneM2M_Api_Connection_GetRequestParameters_
+  commentId: Overload:Aetheros.OneM2M.Api.Connection.GetRequestParameters
+  isSpec: "True"
+  fullName: Aetheros.OneM2M.Api.Connection.GetRequestParameters
+  nameWithType: Connection.GetRequestParameters
 - uid: Aetheros.OneM2M.Api.Connection.GetResponseAsync(Aetheros.OneM2M.Binding.RequestPrimitive)
   name: GetResponseAsync(RequestPrimitive)
   href: api/Aetheros.OneM2M.Api.Connection.html#Aetheros_OneM2M_Api_Connection_GetResponseAsync_Aetheros_OneM2M_Binding_RequestPrimitive_
@@ -595,6 +750,28 @@ references:
   isSpec: "True"
   fullName: Aetheros.OneM2M.Api.Connection.SerializeJson
   nameWithType: Connection.SerializeJson
+- uid: Aetheros.OneM2M.Api.HtppConnectionExtensions
+  name: HtppConnectionExtensions
+  href: api/Aetheros.OneM2M.Api.HtppConnectionExtensions.html
+  commentId: T:Aetheros.OneM2M.Api.HtppConnectionExtensions
+  fullName: Aetheros.OneM2M.Api.HtppConnectionExtensions
+  nameWithType: HtppConnectionExtensions
+- uid: Aetheros.OneM2M.Api.HtppConnectionExtensions.DeserializeAsync*
+  name: DeserializeAsync
+  href: api/Aetheros.OneM2M.Api.HtppConnectionExtensions.html#Aetheros_OneM2M_Api_HtppConnectionExtensions_DeserializeAsync_
+  commentId: Overload:Aetheros.OneM2M.Api.HtppConnectionExtensions.DeserializeAsync
+  isSpec: "True"
+  fullName: Aetheros.OneM2M.Api.HtppConnectionExtensions.DeserializeAsync
+  nameWithType: HtppConnectionExtensions.DeserializeAsync
+- uid: Aetheros.OneM2M.Api.HtppConnectionExtensions.DeserializeAsync``1(System.Net.Http.HttpResponseMessage)
+  name: DeserializeAsync<T>(HttpResponseMessage)
+  href: api/Aetheros.OneM2M.Api.HtppConnectionExtensions.html#Aetheros_OneM2M_Api_HtppConnectionExtensions_DeserializeAsync__1_System_Net_Http_HttpResponseMessage_
+  commentId: M:Aetheros.OneM2M.Api.HtppConnectionExtensions.DeserializeAsync``1(System.Net.Http.HttpResponseMessage)
+  name.vb: DeserializeAsync(Of T)(HttpResponseMessage)
+  fullName: Aetheros.OneM2M.Api.HtppConnectionExtensions.DeserializeAsync<T>(System.Net.Http.HttpResponseMessage)
+  fullName.vb: Aetheros.OneM2M.Api.HtppConnectionExtensions.DeserializeAsync(Of T)(System.Net.Http.HttpResponseMessage)
+  nameWithType: HtppConnectionExtensions.DeserializeAsync<T>(HttpResponseMessage)
+  nameWithType.vb: HtppConnectionExtensions.DeserializeAsync(Of T)(HttpResponseMessage)
 - uid: Aetheros.OneM2M.Api.HttpConnection
   name: HttpConnection
   href: api/Aetheros.OneM2M.Api.HttpConnection.html

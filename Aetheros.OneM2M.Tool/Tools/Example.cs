@@ -1,4 +1,4 @@
-﻿using Aetheros.OneM2M.Api;
+using Aetheros.OneM2M.Api;
 using Aetheros.OneM2M.Binding;
 
 using Microsoft.AspNetCore;
@@ -67,6 +67,7 @@ namespace GridNet.IoT.Client.Tools
 			var response = await _connection.GetResponseAsync(new RequestPrimitive
 			{
 				To = _RegPath,
+				From = _AeCredential,
 				Operation = Operation.Create,
 				ResourceType = ResourceType.AE,
 				PrimitiveContent = new PrimitiveContent
@@ -127,7 +128,7 @@ namespace GridNet.IoT.Client.Tools
 		{
 			await _application.GetResponseAsync(new RequestPrimitive
 			{
-				To = $"{MS_READS_PATH}/{MeterReadSubscriptionName}",
+				To = $"{_MsReadsPath}/{MeterReadSubscriptionName}",
 				Operation = Operation.Delete
 			});
 		}
@@ -162,7 +163,7 @@ namespace GridNet.IoT.Client.Tools
 		{
 			await _application.GetResponseAsync(new RequestPrimitive
 			{
-				To = $"{MS_READS_PATH}/{MeterReadPolicyName}",
+				To = $"{_MsPolicyPath}/{MeterReadPolicyName}",
 				Operation = Operation.Delete
 			});
 		}
@@ -170,6 +171,9 @@ namespace GridNet.IoT.Client.Tools
 
 		public override async Task Run(IList<string> args)
 		{
+#if false
+			_connection = new CoapConnection(_connectionConfiguration);
+#else
 			// configure a oneM2M connection
 			_connection = new HttpConnection(_connectionConfiguration);
 
@@ -179,6 +183,7 @@ namespace GridNet.IoT.Client.Tools
 				.Configure(app => app.Map("/notify", builder => builder.Run(context => _connection.HandleNotificationAsync(context.Request))))
 				.Build()
 				.RunAsync();
+#endif
 
 			// register the AE
 			var ae = await Register();

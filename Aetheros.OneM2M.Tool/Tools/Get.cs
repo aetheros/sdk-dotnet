@@ -1,4 +1,4 @@
-﻿using Aetheros.OneM2M.Api;
+using Aetheros.OneM2M.Api;
 using Microsoft.AspNetCore.Http;
 using Mono.Options;
 using System;
@@ -67,7 +67,7 @@ namespace GridNet.IoT.Client.Tools
 #else
 			client = new HttpClient(handler);
 #endif
-			client.DefaultRequestHeaders.Add("Accept", HttpConnection.OneM2MResponseContentTYpe);
+			client.DefaultRequestHeaders.Add("Accept", HttpConnection.OneM2MResponseContentType);
 
 			if (string.IsNullOrWhiteSpace(_rqi))
 				_rqi = Guid.NewGuid().ToString("N");

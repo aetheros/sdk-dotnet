@@ -49,4 +49,10 @@
     <ProjectReference Include="..\Example\Example.Types\Example.Types.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="CoAP.NET">
+      <HintPath>..\Libraries\CoAP.NET.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

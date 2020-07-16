@@ -1,5 +1,7 @@
 ﻿using Aetheros.OneM2M.Binding;
 
+using CoAP;
+
 using Microsoft.AspNetCore.Http;
 
 using Newtonsoft.Json;
@@ -7,6 +9,7 @@ using Newtonsoft.Json.Linq;
 
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -30,7 +33,7 @@ namespace Aetheros.OneM2M.Api
 		}
 
 		[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
-		public const string OneM2MResponseContentTYpe = "application/vnd.onem2m-res+json";
+		public const string OneM2MResponseContentType = "application/vnd.onem2m-res+json";
 		//[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		private protected const string _dateTimeFormat = "yyyyMMddTHHmmss.FFFFF";
 
@@ -53,7 +56,7 @@ namespace Aetheros.OneM2M.Api
 				DateTimeStyles = DateTimeStyles.AssumeUniversal,
 				DateTimeFormat = _dateTimeFormat
 			});
-			JsonSettings.Converters.Add(new Newtonsoft.Json.Converters.StringEnumConverter());
+			//JsonSettings.Converters.Add(new Newtonsoft.Json.Converters.StringEnumConverter());
 
 			Serializer = JsonSerializer.CreateDefault(JsonSettings);
 		}
@@ -131,6 +134,85 @@ namespace Aetheros.OneM2M.Api
 
 		public abstract Task<T> GetResponseAsync<T>(RequestPrimitive body) where T : class, new();
 
+		protected static NameValueCollection GetRequestParameters(RequestPrimitive body)
+		{
+			var args = new NameValueCollection();
+			if (body.ResultContent != null)
+				args["rcn"] = body.ResultContent.Value.ToString("d");
+
+			if (body.ResultPersistence != null)
+				args["rp"] = body.ResultPersistence;
+
+			if (body.DeliveryAggregation != null)
+				args["da"] = body.DeliveryAggregation.Value.ToString();
+
+			if (body.DiscoveryResultType != null)
+				args["drt"] = body.DiscoveryResultType.Value.ToString("d");
+
+			if (body.RoleIDs != null)
+				args.AddRange("rids", body.RoleIDs);
+
+			if (body.TokenIDs != null)
+				args["tids"] = body.TokenIDs;
+
+			if (body.LocalTokenIDs != null)
+				args.AddRange("ltids", body.LocalTokenIDs);
+
+			if (body.TokenReqIndicator != null)
+				args["tqi"] = body.TokenReqIndicator.Value.ToString();
+
+			var rt = body.ResponseType;
+			if (rt?.ResponseTypeValue != null)
+				args["rt"] = rt.ResponseTypeValue.Value.ToString("d");
+
+
+			var fc = body.FilterCriteria;
+			if (fc != null)
+			{
+				if (fc.CreatedBefore != null) args["crb"] = fc.CreatedBefore.Value.ToString(_dateTimeFormat);
+				if (fc.CreatedAfter != null) args["cra"] = fc.CreatedAfter.Value.ToString(_dateTimeFormat);
+				if (fc.ModifiedSince != null) args["ms"] = fc.ModifiedSince.Value.ToString(_dateTimeFormat);
+				if (fc.UnmodifiedSince != null) args["us"] = fc.UnmodifiedSince.Value.ToString(_dateTimeFormat);
+				if (fc.StateTagSmaller != null) args["sts"] = fc.StateTagSmaller.ToString();
+				if (fc.StateTagBigger != null) args["stb"] = fc.StateTagBigger.ToString();
+				if (fc.ExpireBefore != null) args["exb"] = fc.ExpireBefore.Value.ToString(_dateTimeFormat);
+				if (fc.ExpireAfter != null) args["exa"] = fc.ExpireAfter.Value.ToString(_dateTimeFormat);
+				if (fc.SizeAbove != null) args["sza"] = fc.SizeAbove.ToString();
+				if (fc.SizeBelow != null) args["szb"] = fc.SizeBelow.ToString();
+				if (fc.Limit != null) args["lim"] = fc.Limit.ToString();
+				if (fc.FilterUsage != null) args["fu"] = fc.FilterUsage.Value.ToString("d");
+				if (fc.FilterOperation != null) args["fo"] = fc.FilterOperation.Value ? "1" : "0";
+				if (fc.ContentFilterSyntax != null) args["cfs"] = fc.ContentFilterSyntax.Value.ToString("d");
+				if (fc.ContentFilterQuery != null) args["cfq"] = fc.ContentFilterQuery;
+				if (fc.Level != null) args["lvl"] = fc.Level.ToString();
+				if (fc.Offset != null) args["ofst"] = fc.Offset.ToString();
+
+				if (fc.Attribute != null)
+				{
+					foreach (var attr in fc.Attribute)
+					{
+						if (attr.Value != null)
+							args.Add(attr.Name, attr.Value.ToString());
+					}
+				}
+
+				if (fc.ResourceType != null)
+					args.AddRange("ty", fc.ResourceType.Select(ty => ty.ToString("d")));
+
+				if (fc.SemanticsFilter != null)
+					args.AddRange("smf", fc.SemanticsFilter);
+
+				if (fc.Labels != null)
+					args.AddRange("lbl", fc.Labels);
+
+				if (fc.ContentType != null)
+					args.AddRange("cty", fc.ContentType);
+			}
+
+			return args;
+		}
+
+		// TODO: make this connection-type-agnostic
 		public class HttpStatusException : Exception
 		{
 			public HttpStatusCode StatusCode { get; }
@@ -329,22 +411,7 @@ namespace Aetheros.OneM2M.Api
 			return json?.ToObject<T>(Connection.Serializer);
 		}
 
-		internal static async Task<T> DeserializeAsync<T>(this HttpResponseMessage response)
-			where T : class, new()
-		{
-			var body = await response.Content.ReadAsStringAsync();
 
-			if (!response.IsSuccessStatusCode)
-				throw new Connection.HttpStatusException(response.StatusCode, response.ReasonPhrase);
-
-			response.EnsureSuccessStatusCode();
-
-			if (string.IsNullOrWhiteSpace(body))
-				throw new InvalidDataException("An empty response was returned");
-
-			return Connection.DeserializeJson<T>(body)
-				?? throw new InvalidDataException($"The response did not match Type '{typeof(T).Name}'");
-		}
 
 		internal static async Task<HttpResponseMessage> PostJsonAsync<T>(this HttpClient @this, Uri uri, T body)
 			where T : class

@@ -18,4 +18,10 @@
     <ProjectReference Include="..\Aetheros.OneM2M.Binding\Aetheros.OneM2M.Binding.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="CoAP.NET">
+      <HintPath>..\Libraries\CoAP.NET.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

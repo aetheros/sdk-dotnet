@@ -105,20 +105,21 @@ namespace Aetheros.OneM2M.Api
 
 		public async Task AddContentInstanceAsync(string key, object content) => await AddContentInstanceAsync(key, null, content);
 
-		public async Task AddContentInstanceAsync(string key, string? resourceName, object content) => await this.GetResponseAsync(new RequestPrimitive
-		{
-			To = key,
-			Operation = Operation.Create,
-			ResourceType = ResourceType.ContentInstance,
-			PrimitiveContent = new PrimitiveContent
+		public async Task AddContentInstanceAsync(string key, string? resourceName, object content) =>
+			await this.GetResponseAsync(new RequestPrimitive
 			{
-				ContentInstance = new ContentInstance
+				To = key,
+				Operation = Operation.Create,
+				ResourceType = ResourceType.ContentInstance,
+				PrimitiveContent = new PrimitiveContent
 				{
-					ResourceName = resourceName,
-					Content = content
+					ContentInstance = new ContentInstance
+					{
+						ResourceName = resourceName,
+						Content = content
+					}
 				}
-			}
-		});
+			});
 
 		public async Task<Container> EnsureContainerAsync(string name /*, bool clientAppContainer = false*/)
 		{
@@ -265,7 +266,6 @@ namespace Aetheros.OneM2M.Api
 				.Select(evt => evt.PrimitiveRepresentation.PrimitiveContent?.ContentInstance?.GetContent<TContent>())
 				.Where(content => content != null) as IObservable<TContent>;
 		}
-
 
 		// TODO: find a proper place for this
 		public static async Task<Application> RegisterAsync(Connection.IConnectionConfiguration m2mConfig, IApplicationConfiguration appConfig, string inCse, Uri caUri)

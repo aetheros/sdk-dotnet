@@ -13,8 +13,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Reactive.Linq;
-using System.Runtime.InteropServices.ComTypes;
+using System.Threading;
 using System.Threading.Tasks;
+using System.Xml.Schema;
 
 namespace GridNet.IoT.Client.Tools
 {
@@ -66,8 +67,8 @@ namespace GridNet.IoT.Client.Tools
 
 			var response = await _connection.GetResponseAsync(new RequestPrimitive
 			{
-				To = _RegPath,
 				From = _AeCredential,
+				To = _RegPath,
 				Operation = Operation.Create,
 				ResourceType = ResourceType.AE,
 				PrimitiveContent = new PrimitiveContent
@@ -87,18 +88,20 @@ namespace GridNet.IoT.Client.Tools
 		{
 			await _application.GetResponseAsync(new RequestPrimitive
 			{
+				From = _AeCredential,
 				To = $"{_RegPath}/{aeId}",
 				Operation = Operation.Delete
 			});
 		}
 
 
-		async Task<string> CreateSubscription()
+		async Task<string> CreateSubscription(string aeId)
 		{
 			Trace.TraceInformation("Invoking Create Subscription API");
 
 			var subscriptionResponse = await _application.GetResponseAsync(new RequestPrimitive
 			{
+				From = aeId,
 				To = _MsReadsPath,
 				Operation = Operation.Create,
 				ResourceType = ResourceType.Subscription,
@@ -124,10 +127,11 @@ namespace GridNet.IoT.Client.Tools
 			return subscriptionResponse?.URI;
 		}
 
-		private async Task DeleteSubscription()
+		private async Task DeleteSubscription(string aeId)
 		{
 			await _application.GetResponseAsync(new RequestPrimitive
 			{
+				From = aeId,
 				To = $"{_MsReadsPath}/{MeterReadSubscriptionName}",
 				Operation = Operation.Delete
 			});
@@ -159,10 +163,11 @@ namespace GridNet.IoT.Client.Tools
 			);
 		}
 
-		async Task DeleteMeterReadPolicy()
+		async Task DeleteMeterReadPolicy(string aeId)
 		{
 			await _application.GetResponseAsync(new RequestPrimitive
 			{
+				From = aeId,
 				To = $"{_MsPolicyPath}/{MeterReadPolicyName}",
 				Operation = Operation.Delete
 			});
@@ -173,6 +178,11 @@ namespace GridNet.IoT.Client.Tools
 		{
 #if false
 			_connection = new CoapConnection(_connectionConfiguration);
+
+			using var server = new CoAP.Server.CoapServer(_poaUrl.Port);
+			server.Start();
+			var hostTask = Task.Delay(Timeout.Infinite);	// TODO: terminate
+
 #else
 			// configure a oneM2M connection
 			_connection = new HttpConnection(_connectionConfiguration);
@@ -192,7 +202,9 @@ namespace GridNet.IoT.Client.Tools
 			_application = new Application(_connection, ae.App_ID, ae.AE_ID, "./", _poaUrl);
 
 			// create a subscription
-			var subscriptionReference = await CreateSubscription();
+			
+			await _application.EnsureContainerAsync(_MsReadsPath);
+			var subscriptionReference = await CreateSubscription(ae.AE_ID);
 
 			var subscriptionEventContent =
 				from notification in _connection.Notifications
@@ -204,6 +216,7 @@ namespace GridNet.IoT.Client.Tools
 			using var eventSubscription = subscriptionEventContent.Subscribe(content => Trace.TraceInformation($"new meter read: {Convert.ToString(content)}"));
 
 			// create a meter read policy content instance
+			await _application.EnsureContainerAsync(_MsPolicyPath);
 			await CreateMeterReadPolicy();
 
 			try
@@ -213,8 +226,8 @@ namespace GridNet.IoT.Client.Tools
 			}
 			finally
 			{
-				DeleteSubscription();
-				DeleteMeterReadPolicy();
+				DeleteSubscription(ae.AE_ID);
+				DeleteMeterReadPolicy(ae.AE_ID);
 				DeRegister(ae.AE_ID);
 			}
 		}

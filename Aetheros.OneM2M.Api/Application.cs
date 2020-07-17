@@ -63,12 +63,14 @@ namespace Aetheros.OneM2M.Api
 			if (body.To == null)
 				body.To = $"/{UrlPrefix}{AeId}";
 			else if (!body.To.StartsWith("/"))
-				body.To = $"/{UrlPrefix}{AeId}/{body.To}";
+				body.To = $"/{UrlPrefix}{AeId}/{TrimStart(body.To, "./")}";
 
 			if (body.From == null)
 				body.From = AeId;
 			return await Connection.GetResponseAsync<T>(body);
 		}
+
+		static string TrimStart(string str, string prefix) => str.StartsWith(prefix) ? str.Substring(prefix.Length) : str;
 
 		public async Task<ResponseContent> GetResponseAsync(RequestPrimitive body) => await GetResponseAsync<ResponseContent>(body);
 
@@ -123,26 +125,39 @@ namespace Aetheros.OneM2M.Api
 
 		public async Task<Container> EnsureContainerAsync(string name /*, bool clientAppContainer = false*/)
 		{
+			if (name == "." || name == "/")
+				return null;
+
 			try
 			{
 				return (await GetPrimitiveAsync(name)).Container;
 			}
-			catch (Connection.HttpStatusException e) when (e.StatusCode == HttpStatusCode.NotFound)
+			catch (Connection.HttpStatusException e) when (e.StatusCode == HttpStatusCode.NotFound) { }
+			catch (CoapRequestException e) when (e.StatusCode == 132) { }
+
+			string parentName = null;
+
+			int ichLast = name.LastIndexOf('/');
+			if (ichLast > 0)
 			{
-				return (await GetResponseAsync(new RequestPrimitive
-				{
-					Operation = Operation.Create,
-					//To = "~",
-					ResourceType = ResourceType.Container,
-					PrimitiveContent = new PrimitiveContent
-					{
-						Container = new Container
-						{
-							ResourceName = name
-						}
-					}
-				})).Container;
+				parentName = name.Substring(0, ichLast);
+				name = name.Substring(ichLast + 1);
+				var parent = await EnsureContainerAsync(parentName);
 			}
+
+			return (await GetResponseAsync(new RequestPrimitive
+			{
+				Operation = Operation.Create,
+				To = parentName,
+				ResourceType = ResourceType.Container,
+				PrimitiveContent = new PrimitiveContent
+				{
+					Container = new Container
+					{
+						ResourceName = name
+					}
+				}
+			})).Container;
 		}
 
 		public async Task<T?> GetLatestContentInstanceAsync<T>(string containerKey)

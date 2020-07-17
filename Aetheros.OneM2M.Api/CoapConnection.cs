@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using CoAP.Net;
 using CoAP;
 using CoAP.Util;
+using System.Net;
 
 namespace Aetheros.OneM2M.Api
 {
@@ -53,12 +54,13 @@ namespace Aetheros.OneM2M.Api
 #endif
 
 			_pnClient = new CoapClient(m2mUrl);
-			_pnClient.Timeout = TimeSpan.FromSeconds(300);
+			_pnClient.Timeout = 300 * 1000;
 		}
 
 		public async Task<ResponseContent> GetResponseAsync(CoAP.Request request)
 		{
-			var response = await _pnClient.SendTaskAsync(request);
+			//var response = await _pnClient.SendTaskAsync(request);
+			var response = await request.SendAsync(request, _pnClient.EndPoint);
 			var responseContent = await response.DeserializeAsync<ResponseContent>() ??
 				throw new InvalidDataException("The returned response did not match type 'ResponseContent'");
 
@@ -76,7 +78,7 @@ namespace Aetheros.OneM2M.Api
 		public async Task<T> GetResponseAsync<T>(CoAP.Request request)
 			where T : class, new()
 		{
-			var response = await _pnClient.SendTaskAsync(request);
+			var response = await request.SendAsync(request, _pnClient.EndPoint);
 			return await response.DeserializeAsync<T>() ??
 				throw new InvalidDataException("The returned response did not match type 'ResponseContent'");
 		}
@@ -126,17 +128,18 @@ namespace Aetheros.OneM2M.Api
 				_ => CoAP.Method.POST,
 			};
 
-			var urlBuilder = new UriBuilder(_iotApiUrl)
-			{
-				Path = body.To,
-				Query = string.Join("&", args.AllKeys.SelectMany(args.GetValues, (k, v) => $"{k}={Uri.EscapeDataString(v)}")),
-			};
-
 			var request = new CoAP.Request(method);
-			request.URI = urlBuilder.Uri;
+			request.AckTimeout = 10000 * 1000;
+			//request.URI = urlBuilder.Uri;
 
-			request.AddUriPath(body.To);
+			//request.AddUriPath(body.To);
+			request.URI = _pnClient.Uri;
+			foreach (var pathPart in body.To.Split("/", StringSplitOptions.RemoveEmptyEntries))
+				if (pathPart != ".")
+					request.AddUriPath(pathPart);
 
+			foreach (var query in args.AllKeys.SelectMany(args.GetValues, (k, v) => $"{k}={Uri.EscapeDataString(v)}"))
+				request.AddUriQuery(query);
 
 			//if (method == HttpMethod.Post || method == HttpMethod.Put)
 			{
@@ -182,11 +185,11 @@ namespace Aetheros.OneM2M.Api
 
 	public class CoapRequestException : Exception
 	{
-		public CoapClient.FailReason FailReason { get; }
+		public int StatusCode { get; }
 
-		public CoapRequestException(CoapClient.FailReason failReason)
+		public CoapRequestException(int statusCode) : base (CoAP.Code.ToString(statusCode))
 		{
-			this.FailReason = failReason;
+			StatusCode = statusCode;
 		}
 	}
 
@@ -203,9 +206,21 @@ namespace Aetheros.OneM2M.Api
 				},
 				failReason =>
 				{
-					tcs.SetException(new CoapRequestException(failReason));
+					tcs.SetException(new CoapRequestException(failReason == CoapClient.FailReason.Rejected ? 128 : 164));
 				}
 			);
+
+			return tcs.Task;
+		}
+
+		public static Task<CoAP.Response> SendAsync(this CoAP.Request @this, CoAP.Request request, IEndPoint endPoint)
+		{
+			var tcs = new TaskCompletionSource<CoAP.Response>();
+
+			request.Respond += (o, e) => tcs.SetResult(e.Response);
+			request.Rejected += (o, e) => tcs.SetException(new CoapRequestException(128));
+			request.TimedOut += (o, e) => tcs.SetException(new CoapRequestException(164));
+			request.Send(endPoint ?? EndPointManager.Default);
 
 			return tcs.Task;
 		}
@@ -214,7 +229,7 @@ namespace Aetheros.OneM2M.Api
 			where T : class, new()
 		{
 			if (!Code.IsSuccess(response.Code))
-				throw new Connection.HttpStatusException((System.Net.HttpStatusCode) response.Code, response.CodeString);// TODO
+				throw new CoapRequestException(response.Code);
 
 			var body = response.ResponseText;
 			if (string.IsNullOrWhiteSpace(body))

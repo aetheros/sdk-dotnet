@@ -17468,7 +17468,18 @@ namespace Aetheros.OneM2M.Binding
 
 		[JsonPropertyAttribute("srt")]
 		[XmlElementAttribute("srt", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-		public long SupportedResourceType { get; set; }
+		public ICollection<Aetheros.OneM2M.Binding.ResourceType> SupportedResourceType { get; set; } = System.Array.Empty<Aetheros.OneM2M.Binding.ResourceType>();
+		
+		/// <summary>
+		/// <para xml:lang="de">Ruft einen Wert ab, der angibt, ob die SupportedResourceType-Collection leer ist.</para>
+		/// <para xml:lang="en">Gets a value indicating whether the SupportedResourceType collection is empty.</para>
+		/// </summary>
+		[XmlIgnoreAttribute()]
+		[System.Diagnostics.DebuggerHiddenAttribute()]
+		[System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+		[JsonIgnoreAttribute()]
+		public bool SupportedResourceTypeSpecified => (this.SupportedResourceType.Count != 0);
 
 		[JsonPropertyAttribute("poa")]
 		[XmlElementAttribute("poa", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="string")]

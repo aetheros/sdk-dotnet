@@ -12,7 +12,10 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Net;
+using System.Net.Sockets;
 using System.Reactive.Linq;
+using System.Resources;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Xml.Schema;
@@ -22,8 +25,12 @@ namespace GridNet.IoT.Client.Tools
 	[Description("oneM2M demo")]
 	public class Demo : UtilityBase
 	{
-		Uri _listenUrl;
-		Uri _poaUrl = new Uri("http://192.168.225.34:5683");
+#if USE_COAP
+		Uri _poaUrl = new Uri("coap://10.0.2.2:5683");
+#else
+		Uri _poaUrl = new Uri("http://10.0.2.2:5683");
+		Uri _listenUrl = new Uri($"http://0.0.0.0:5683");
+#endif
 
 		class ConnectionConfiguration : Connection.IConnectionConfiguration
 		{
@@ -33,7 +40,11 @@ namespace GridNet.IoT.Client.Tools
 
 		readonly ConnectionConfiguration _connectionConfiguration = new ConnectionConfiguration
 		{
-			M2MUrl = new Uri("http://192.168.225.1:8100"),
+#if USE_COAP
+			M2MUrl = new Uri("coap://192.168.56.1:8100/PN_CSE"),
+#else
+			M2MUrl = new Uri("http://192.168.56.1:21300"),
+#endif
 		};
 
 		string _AeAppId = "Nra1.com.aos.iot";
@@ -50,7 +61,9 @@ namespace GridNet.IoT.Client.Tools
 		{
 			{ "c|cse=", "The URL to the CSE", v => _connectionConfiguration.M2MUrl = new Uri(v, UriKind.Absolute) },
 			{ "p|poa=", "The remote POA (point of access) url", v => _poaUrl = new Uri(v, UriKind.Absolute) },
+#if !USE_COAP
 			{ "l|listen=", "The local POA callback url", v => _listenUrl = new Uri(v, UriKind.Absolute) },
+#endif
 			{ "i|id=", "The App Id", v => _AeAppId = v },
 			{ "n|name=", "The App Name", v => _AeAppName = v },
 			{ "credential=", "The AE registration Credential", v => _AeCredential = v },
@@ -63,6 +76,31 @@ namespace GridNet.IoT.Client.Tools
 
 		async Task<AE> Register()
 		{
+			// find stale AEs
+			var staleAEs = await _connection.GetResponseAsync(new RequestPrimitive
+			{
+				Operation = Operation.Retrieve,
+				From = "PN_CSE",
+				To = "PN_CSE",
+				FilterCriteria = new FilterCriteria
+				{
+					FilterUsage = FilterUsage.Discovery,
+					ResourceType = new[] { ResourceType.AE },
+					Attribute = Connection.GetAttributes<AE>(_ => _.App_ID == _AeAppId),
+				}
+			});
+
+			// delete stale AEs
+			foreach (var url in staleAEs.URIList)
+			{
+				await _connection.GetResponseAsync(new RequestPrimitive
+				{
+					Operation = Operation.Delete,
+					From = "PN_CSE",
+					To = url,
+				});
+			}
+
 			Trace.TraceInformation("Invoking AE Registration API");
 
 			var response = await _connection.GetResponseAsync(new RequestPrimitive
@@ -95,13 +133,14 @@ namespace GridNet.IoT.Client.Tools
 		}
 
 
-		async Task<string> CreateSubscription(string aeId)
+		async Task<string> CreateSubscription()
 		{
+			await _application.EnsureContainerAsync(_MsReadsPath);
+
 			Trace.TraceInformation("Invoking Create Subscription API");
 
 			var subscriptionResponse = await _application.GetResponseAsync(new RequestPrimitive
 			{
-				From = aeId,
 				To = _MsReadsPath,
 				Operation = Operation.Create,
 				ResourceType = ResourceType.Subscription,
@@ -139,6 +178,8 @@ namespace GridNet.IoT.Client.Tools
 
 		async Task CreateMeterReadPolicy()
 		{
+			await _application.EnsureContainerAsync(_MsPolicyPath);
+
 			Trace.TraceInformation("Invoking Create Meter Read Policy API");
 
 			await _application.AddContentInstanceAsync(
@@ -176,13 +217,14 @@ namespace GridNet.IoT.Client.Tools
 
 		public override async Task Run(IList<string> args)
 		{
-#if false
+#if USE_COAP
 			_connection = new CoapConnection(_connectionConfiguration);
 
 			using var server = new CoAP.Server.CoapServer(_poaUrl.Port);
+			var notifyResource = new CoAP.Server.Resources.Resource("notify");
+			server.Add(notifyResource);
 			server.Start();
-			var hostTask = Task.Delay(Timeout.Infinite);	// TODO: terminate
-
+			var hostTask = Task.Delay(Timeout.Infinite);  // TODO: terminate
 #else
 			// configure a oneM2M connection
 			_connection = new HttpConnection(_connectionConfiguration);
@@ -202,9 +244,7 @@ namespace GridNet.IoT.Client.Tools
 			_application = new Application(_connection, ae.App_ID, ae.AE_ID, "./", _poaUrl);
 
 			// create a subscription
-			
-			await _application.EnsureContainerAsync(_MsReadsPath);
-			var subscriptionReference = await CreateSubscription(ae.AE_ID);
+			var subscriptionReference = await CreateSubscription();
 
 			var subscriptionEventContent =
 				from notification in _connection.Notifications
@@ -216,7 +256,6 @@ namespace GridNet.IoT.Client.Tools
 			using var eventSubscription = subscriptionEventContent.Subscribe(content => Trace.TraceInformation($"new meter read: {Convert.ToString(content)}"));
 
 			// create a meter read policy content instance
-			await _application.EnsureContainerAsync(_MsPolicyPath);
 			await CreateMeterReadPolicy();
 
 			try

@@ -1,4 +1,4 @@
-﻿using Example.Types;
+using Example.Types;
 
 using System.Threading.Tasks;
 

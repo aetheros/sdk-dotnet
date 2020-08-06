@@ -1,4 +1,4 @@
-﻿using DotNetify.Routing;
+using DotNetify.Routing;
 
 namespace Example.Web.Server.ViewModels
 {

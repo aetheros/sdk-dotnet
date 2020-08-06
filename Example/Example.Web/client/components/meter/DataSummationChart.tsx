@@ -1,4 +1,4 @@
-﻿import 'chartjs-plugin-streaming';
+import 'chartjs-plugin-streaming';
 import * as React from "react";
 import { Bar } from 'react-chartjs-2';
 

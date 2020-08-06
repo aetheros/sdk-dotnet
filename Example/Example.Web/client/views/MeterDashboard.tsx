@@ -1,4 +1,4 @@
-﻿import { Grid, Paper } from "@material-ui/core";
+import { Grid, Paper } from "@material-ui/core";
 import { createStyles, Theme, ThemeProvider, WithStyles, withStyles } from '@material-ui/core/styles';
 import dotnetify, { dotnetifyVM } from "dotnetify";
 import * as React from "react";

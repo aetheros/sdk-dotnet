@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace Aetheros.OneM2M.Api.Registration
 {

@@ -22,12 +22,12 @@ Key classes include:
 - @Aetheros.OneM2M.Api.Registration.ConfirmationResponseBody
 
 
-## @Aetheros.OneM2M.Binding
+## @Aetheros.Schema.OneM2M
 
-The `Aetheros.OneM2M.Binding` namespace contains a direct mapping of oneM2M schema types to .NET classes.
+The `Aetheros.Schema.OneM2M` namespace contains a direct mapping of oneM2M schema types to .NET classes.
 
 Key classes include:
-- @Aetheros.OneM2M.Binding.RequestPrimitive
-- @Aetheros.OneM2M.Binding.PrimitiveContent
-- @Aetheros.OneM2M.Binding.ResponseContent
-- @Aetheros.OneM2M.Binding.FilterCriteria
+- @Aetheros.Schema.OneM2M.RequestPrimitive
+- @Aetheros.Schema.OneM2M.PrimitiveContent
+- @Aetheros.Schema.OneM2M.ResponseContent
+- @Aetheros.Schema.OneM2M.FilterCriteria

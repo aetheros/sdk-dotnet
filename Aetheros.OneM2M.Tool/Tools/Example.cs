@@ -1,5 +1,7 @@
+#define USE_COAP
+
 using Aetheros.OneM2M.Api;
-using Aetheros.OneM2M.Binding;
+using Aetheros.Schema.OneM2M;
 
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Builder;
@@ -41,15 +43,16 @@ namespace GridNet.IoT.Client.Tools
 		readonly ConnectionConfiguration _connectionConfiguration = new ConnectionConfiguration
 		{
 #if USE_COAP
-			M2MUrl = new Uri("coap://192.168.56.1:8100/PN_CSE"),
+			//M2MUrl = new Uri("coap://192.168.56.1:8110/PN_CSE"),
+			M2MUrl = new Uri("coap://192.168.56.1:8110"),
 #else
 			M2MUrl = new Uri("http://192.168.56.1:21300"),
 #endif
 		};
 
-		string _AeAppId = "Nra1.com.aos.iot";
-		string _AeAppName = "metersvc-smpl";
-		string _AeCredential = "";
+		string _AeAppId = "Nsdk-devAe-0.com.policynetiot.sdk";
+		string _AeAppName = "sdk-devAe-0";
+		string _AeCredential = "8992O4AAEXYWY95O";
 		string _RegPath = ".";
 		string _MsPolicyPath = "./metersvc/policies";
 		string _MsReadsPath = "./metersvc/reads";
@@ -76,6 +79,7 @@ namespace GridNet.IoT.Client.Tools
 
 		async Task<AE> Register()
 		{
+			/*
 			// find stale AEs
 			var staleAEs = await _connection.GetResponseAsync(new RequestPrimitive
 			{
@@ -100,12 +104,13 @@ namespace GridNet.IoT.Client.Tools
 					To = url,
 				});
 			}
+			*/
 
 			Trace.TraceInformation("Invoking AE Registration API");
 
 			var response = await _connection.GetResponseAsync(new RequestPrimitive
 			{
-				From = _AeCredential,
+				//From = _AeCredential,
 				To = _RegPath,
 				Operation = Operation.Create,
 				ResourceType = ResourceType.AE,

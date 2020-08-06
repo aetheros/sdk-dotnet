@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
@@ -31,7 +31,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Aetheros.OneM2M.Api\Aetheros.OneM2M.Api.csproj" />
-    <ProjectReference Include="..\..\Aetheros.OneM2M.Binding\Aetheros.OneM2M.Binding.csproj" />
+    <ProjectReference Include="..\..\Aetheros.Schema.OneM2M\Aetheros.Schema.OneM2M.csproj" />
     <ProjectReference Include="..\Example.Types\Example.Types.csproj" />
   </ItemGroup>
   <ItemGroup>

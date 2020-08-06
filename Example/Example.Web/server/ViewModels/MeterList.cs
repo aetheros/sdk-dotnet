@@ -1,4 +1,4 @@
-﻿using DotNetify;
+using DotNetify;
 using DotNetify.Routing;
 using DotNetify.Security;
 

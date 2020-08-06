@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Aetheros.OneM2M.Binding\Aetheros.OneM2M.Binding.csproj" />
+    <ProjectReference Include="..\Aetheros.Schema.OneM2M\Aetheros.Schema.OneM2M.csproj" />
   </ItemGroup>
 
   <ItemGroup>

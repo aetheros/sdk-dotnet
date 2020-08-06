@@ -1,5 +1,5 @@
-﻿using Aetheros.OneM2M.Api;
-using Aetheros.OneM2M.Binding;
+using Aetheros.OneM2M.Api;
+using Aetheros.Schema.OneM2M;
 
 using Example.Types;
 using Example.Web.Server.Utils;

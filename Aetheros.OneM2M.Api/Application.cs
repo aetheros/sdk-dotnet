@@ -1,5 +1,5 @@
-﻿using Aetheros.OneM2M.Api.Registration;
-using Aetheros.OneM2M.Binding;
+using Aetheros.OneM2M.Api.Registration;
+using Aetheros.Schema.OneM2M;
 
 using System;
 using System.Collections.Concurrent;

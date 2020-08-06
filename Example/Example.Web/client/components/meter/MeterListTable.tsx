@@ -1,4 +1,4 @@
-﻿import Fab from "@material-ui/core/Fab";
+import Fab from "@material-ui/core/Fab";
 import { createStyles, Theme, WithStyles, withStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';

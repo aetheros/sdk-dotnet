@@ -1,4 +1,4 @@
-﻿using Aetheros.OneM2M.Binding;
+using Aetheros.Schema.OneM2M;
 
 using CoAP;
 
@@ -229,7 +229,7 @@ namespace Aetheros.OneM2M.Api
 		public static T? DeserializeJson<T>(string str)
 			where T : class => JsonConvert.DeserializeObject<T>(str, Connection.JsonSettings);
 
-		public static ICollection<Aetheros.OneM2M.Binding.Attribute> GetAttributes<T>(params Expression<Func<T, object>>[] expressions) =>
+		public static ICollection<Aetheros.Schema.OneM2M.Attribute> GetAttributes<T>(params Expression<Func<T, object>>[] expressions) =>
 			expressions.Select(expr =>
 			{
 				var body = expr.Body;
@@ -250,7 +250,7 @@ namespace Aetheros.OneM2M.Api
 				var compiledExpression = rightLambda.Compile();
 				var result = compiledExpression.DynamicInvoke();
 
-				return new Aetheros.OneM2M.Binding.Attribute
+				return new Aetheros.Schema.OneM2M.Attribute
 				{
 					Name = memberName,
 					Value = result,

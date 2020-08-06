@@ -1,4 +1,4 @@
-﻿import MomentUtils from "@date-io/moment";
+import MomentUtils from "@date-io/moment";
 import TextField from '@material-ui/core/TextField';
 import { DateTimePicker, MuiPickersUtilsProvider } from "@material-ui/pickers";
 import * as moment from "moment";

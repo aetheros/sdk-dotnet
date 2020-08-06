@@ -1,4 +1,4 @@
-﻿using Aetheros.OneM2M.Binding;
+using Aetheros.Schema.OneM2M;
 
 using System;
 using System.Collections.Generic;

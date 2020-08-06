@@ -1,4 +1,4 @@
-﻿import MomentUtils from "@date-io/moment";
+import MomentUtils from "@date-io/moment";
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormLabel from '@material-ui/core/FormLabel';
 import Radio from '@material-ui/core/Radio';

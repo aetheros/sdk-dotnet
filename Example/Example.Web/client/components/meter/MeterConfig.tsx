@@ -1,4 +1,4 @@
-﻿import { List, ListItem, ListItemSecondaryAction, ListItemText } from "@material-ui/core";
+import { List, ListItem, ListItemSecondaryAction, ListItemText } from "@material-ui/core";
 import { cyan } from "@material-ui/core/colors";
 import IconButton from "@material-ui/core/IconButton";
 import ListSubheader from '@material-ui/core/ListSubheader';

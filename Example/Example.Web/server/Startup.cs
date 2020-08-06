@@ -1,4 +1,4 @@
-﻿using DotNetify;
+using DotNetify;
 using DotNetify.Security;
 
 using Example.Web.Server.Services;

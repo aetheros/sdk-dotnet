@@ -1,4 +1,4 @@
-﻿import { List, ListItem } from "@material-ui/core";
+import { List, ListItem } from "@material-ui/core";
 import ListSubheader from '@material-ui/core/ListSubheader';
 import Paper from "@material-ui/core/Paper";
 import * as React from "react";

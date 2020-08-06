@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
 
@@ -45,7 +45,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Aetheros.OneM2M.Api\Aetheros.OneM2M.Api.csproj" />
-    <ProjectReference Include="..\Aetheros.OneM2M.Binding\Aetheros.OneM2M.Binding.csproj" />
+    <ProjectReference Include="..\Aetheros.Schema.OneM2M\Aetheros.Schema.OneM2M.csproj" />
     <ProjectReference Include="..\Example\Example.Types\Example.Types.csproj" />
   </ItemGroup>
 

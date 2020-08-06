@@ -1,11 +1,11 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aetheros.OneM2M.Api", "Aetheros.OneM2M.Api\Aetheros.OneM2M.Api.csproj", "{F67C5069-2902-4B19-AC57-BA6E4869FE0E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aetheros.OneM2M.Binding", "Aetheros.OneM2M.Binding\Aetheros.OneM2M.Binding.csproj", "{DC33537F-CC01-4EDE-BC3E-3898EFA1ADD9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aetheros.Schema.OneM2M", "Aetheros.Schema.OneM2M\Aetheros.Schema.OneM2M.csproj", "{DC33537F-CC01-4EDE-BC3E-3898EFA1ADD9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Example.Types", "Example\Example.Types\Example.Types.csproj", "{34BE87E5-291A-491B-A0DD-6794D3B9B054}"
 EndProject
@@ -14,6 +14,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Documentation", "Documentation\Documentation.csproj", "{03C0D552-C313-43CD-8DA3-DE9809634B6A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aetheros.OneM2M.Tool", "Aetheros.OneM2M.Tool\Aetheros.OneM2M.Tool.csproj", "{D338D18B-7B53-4677-A384-F7F18B664913}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aetheros.Schema.AOS", "Aetheros.Schema.AOS\Aetheros.Schema.AOS.csproj", "{2E031258-D399-40B5-BA99-4FB3FB011AA9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +45,10 @@ Global
 		{D338D18B-7B53-4677-A384-F7F18B664913}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D338D18B-7B53-4677-A384-F7F18B664913}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D338D18B-7B53-4677-A384-F7F18B664913}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E031258-D399-40B5-BA99-4FB3FB011AA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E031258-D399-40B5-BA99-4FB3FB011AA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E031258-D399-40B5-BA99-4FB3FB011AA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E031258-D399-40B5-BA99-4FB3FB011AA9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

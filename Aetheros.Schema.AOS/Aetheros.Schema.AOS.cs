@@ -81,22 +81,43 @@ namespace Aetheros.Schema.AOS
 		[JsonPropertyAttribute("dsc")]
 		[XmlElementAttribute("dsc", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="string")]
 		public string PolicyDescription { get; set; }
-		
-		/// <summary>
-		/// <para xml:lang="en">Pattern: \d{4}(0[1-9]|1[0-2])(0[1-9]|[1-2]\d|30|31)T([01]\d|2[0-3])[0-5]\d[0-5]\d.</para>
-		/// </summary>
-		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute("\\d{4}(0[1-9]|1[0-2])(0[1-9]|[1-2]\\d|30|31)T([01]\\d|2[0-3])[0-5]\\d[0-5]\\d")]
+
 		[JsonPropertyAttribute("stt")]
-		[XmlElementAttribute("stt", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="string")]
-		public string StartTime { get; set; }
+		[XmlElementAttribute("stt", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="dateTime")]
+		public System.DateTimeOffset StartTime { get; set; }
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+		[System.Diagnostics.DebuggerHiddenAttribute()]
+		[System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+		[JsonIgnoreAttribute()]
+		[XmlElementAttribute("end", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="dateTime")]
+		public System.DateTimeOffset EndTimeValue { get; set; }
 		
 		/// <summary>
-		/// <para xml:lang="en">Pattern: \d{4}(0[1-9]|1[0-2])(0[1-9]|[1-2]\d|30|31)T([01]\d|2[0-3])[0-5]\d[0-5]\d.</para>
+		/// <para xml:lang="de">Ruft einen Wert ab, der angibt, ob die EndTime-Eigenschaft spezifiziert ist, oder legt diesen fest.</para>
+		/// <para xml:lang="en">Gets or sets a value indicating whether the EndTime property is specified.</para>
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute("\\d{4}(0[1-9]|1[0-2])(0[1-9]|[1-2]\\d|30|31)T([01]\\d|2[0-3])[0-5]\\d[0-5]\\d")]
+		[XmlIgnoreAttribute()]
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+		[System.Diagnostics.DebuggerHiddenAttribute()]
+		[System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+		[JsonIgnoreAttribute()]
+		public bool EndTimeValueSpecified { get; set; }
+
+		[XmlIgnoreAttribute()]
 		[JsonPropertyAttribute("end")]
-		[XmlElementAttribute("end", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="string")]
-		public string EndTime { get; set; }
+		public System.DateTimeOffset? EndTime
+		{
+			get
+			{
+				return this.EndTimeValueSpecified ? this.EndTimeValue : default(System.DateTimeOffset?);
+			}
+			set
+			{
+				this.EndTimeValue = value.GetValueOrDefault();
+				this.EndTimeValueSpecified = value.HasValue;
+			}
+		}
 
 		[JsonPropertyAttribute("frq")]
 		[XmlElementAttribute("frq", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -694,14 +715,39 @@ namespace Aetheros.Schema.AOS
 				this.DayOfMonthValueSpecified = value.HasValue;
 			}
 		}
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+		[System.Diagnostics.DebuggerHiddenAttribute()]
+		[System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+		[JsonIgnoreAttribute()]
+		[XmlElementAttribute("spcdt", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="dateTime")]
+		public System.DateTimeOffset SpecificDateValue { get; set; }
 		
 		/// <summary>
-		/// <para xml:lang="en">Pattern: \d{4}(0[1-9]|1[0-2])(0[1-9]|[1-2]\d|30|31)T([01]\d|2[0-3])[0-5]\d[0-5]\d.</para>
+		/// <para xml:lang="de">Ruft einen Wert ab, der angibt, ob die SpecificDate-Eigenschaft spezifiziert ist, oder legt diesen fest.</para>
+		/// <para xml:lang="en">Gets or sets a value indicating whether the SpecificDate property is specified.</para>
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute("\\d{4}(0[1-9]|1[0-2])(0[1-9]|[1-2]\\d|30|31)T([01]\\d|2[0-3])[0-5]\\d[0-5]\\d")]
+		[XmlIgnoreAttribute()]
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+		[System.Diagnostics.DebuggerHiddenAttribute()]
+		[System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+		[JsonIgnoreAttribute()]
+		public bool SpecificDateValueSpecified { get; set; }
+
+		[XmlIgnoreAttribute()]
 		[JsonPropertyAttribute("spcdt")]
-		[XmlElementAttribute("spcdt", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="string")]
-		public string SpecificDate { get; set; }
+		public System.DateTimeOffset? SpecificDate
+		{
+			get
+			{
+				return this.SpecificDateValueSpecified ? this.SpecificDateValue : default(System.DateTimeOffset?);
+			}
+			set
+			{
+				this.SpecificDateValue = value.GetValueOrDefault();
+				this.SpecificDateValueSpecified = value.HasValue;
+			}
+		}
 	}
 
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
@@ -745,22 +791,72 @@ namespace Aetheros.Schema.AOS
 		[JsonPropertyAttribute("slr")]
 		[XmlElementAttribute("slr", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="boolean")]
 		public bool SinceLastRead { get; set; }
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+		[System.Diagnostics.DebuggerHiddenAttribute()]
+		[System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+		[JsonIgnoreAttribute()]
+		[XmlElementAttribute("stvl", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="dateTime")]
+		public System.DateTimeOffset StartItvlValue { get; set; }
 		
 		/// <summary>
-		/// <para xml:lang="en">Pattern: \d{4}(0[1-9]|1[0-2])(0[1-9]|[1-2]\d|30|31)T([01]\d|2[0-3])[0-5]\d[0-5]\d.</para>
+		/// <para xml:lang="de">Ruft einen Wert ab, der angibt, ob die StartItvl-Eigenschaft spezifiziert ist, oder legt diesen fest.</para>
+		/// <para xml:lang="en">Gets or sets a value indicating whether the StartItvl property is specified.</para>
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute("\\d{4}(0[1-9]|1[0-2])(0[1-9]|[1-2]\\d|30|31)T([01]\\d|2[0-3])[0-5]\\d[0-5]\\d")]
+		[XmlIgnoreAttribute()]
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+		[System.Diagnostics.DebuggerHiddenAttribute()]
+		[System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+		[JsonIgnoreAttribute()]
+		public bool StartItvlValueSpecified { get; set; }
+
+		[XmlIgnoreAttribute()]
 		[JsonPropertyAttribute("stvl")]
-		[XmlElementAttribute("stvl", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="string")]
-		public string StartItvl { get; set; }
+		public System.DateTimeOffset? StartItvl
+		{
+			get
+			{
+				return this.StartItvlValueSpecified ? this.StartItvlValue : default(System.DateTimeOffset?);
+			}
+			set
+			{
+				this.StartItvlValue = value.GetValueOrDefault();
+				this.StartItvlValueSpecified = value.HasValue;
+			}
+		}
+
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+		[System.Diagnostics.DebuggerHiddenAttribute()]
+		[System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+		[JsonIgnoreAttribute()]
+		[XmlElementAttribute("endvl", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="dateTime")]
+		public System.DateTimeOffset EndItvlValue { get; set; }
 		
 		/// <summary>
-		/// <para xml:lang="en">Pattern: \d{4}(0[1-9]|1[0-2])(0[1-9]|[1-2]\d|30|31)T([01]\d|2[0-3])[0-5]\d[0-5]\d.</para>
+		/// <para xml:lang="de">Ruft einen Wert ab, der angibt, ob die EndItvl-Eigenschaft spezifiziert ist, oder legt diesen fest.</para>
+		/// <para xml:lang="en">Gets or sets a value indicating whether the EndItvl property is specified.</para>
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute("\\d{4}(0[1-9]|1[0-2])(0[1-9]|[1-2]\\d|30|31)T([01]\\d|2[0-3])[0-5]\\d[0-5]\\d")]
+		[XmlIgnoreAttribute()]
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+		[System.Diagnostics.DebuggerHiddenAttribute()]
+		[System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+		[JsonIgnoreAttribute()]
+		public bool EndItvlValueSpecified { get; set; }
+
+		[XmlIgnoreAttribute()]
 		[JsonPropertyAttribute("endvl")]
-		[XmlElementAttribute("endvl", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="string")]
-		public string EndItvl { get; set; }
+		public System.DateTimeOffset? EndItvl
+		{
+			get
+			{
+				return this.EndItvlValueSpecified ? this.EndItvlValue : default(System.DateTimeOffset?);
+			}
+			set
+			{
+				this.EndItvlValue = value.GetValueOrDefault();
+				this.EndItvlValueSpecified = value.HasValue;
+			}
+		}
 	}
 
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
@@ -814,13 +910,9 @@ namespace Aetheros.Schema.AOS
 	[XmlRootAttribute("meterPasswordPolicy", Namespace="http://www.aetheros.com/xml/protocols")]
 	public partial class MeterPasswordPolicy : Aetheros.Schema.AOS.Policy
 	{
-		/// <summary>
-		/// <para xml:lang="en">Pattern: \d{4}(0[1-9]|1[0-2])(0[1-9]|[1-2]\d|30|31)T([01]\d|2[0-3])[0-5]\d[0-5]\d.</para>
-		/// </summary>
-		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute("\\d{4}(0[1-9]|1[0-2])(0[1-9]|[1-2]\\d|30|31)T([01]\\d|2[0-3])[0-5]\\d[0-5]\\d")]
 		[JsonPropertyAttribute("ast")]
-		[XmlElementAttribute("ast", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="string")]
-		public string ActionStartTime { get; set; }
+		[XmlElementAttribute("ast", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="dateTime")]
+		public System.DateTimeOffset ActionStartTime { get; set; }
 
 		[JsonPropertyAttribute("psemx")]
 		[XmlElementAttribute("psemx", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="boolean")]
@@ -848,27 +940,31 @@ namespace Aetheros.Schema.AOS
 
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
+	[XmlTypeAttribute("ReadingType", Namespace="http://www.aetheros.com/xml/protocols")]
+	public enum ReadingType
+	{
+		[XmlEnumAttribute("powerQuality")]
+		PowerQuality,
+
+		[XmlEnumAttribute("summations")]
+		Summations,
+	}
+
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
+	[System.SerializableAttribute()]
 	[XmlTypeAttribute("ScheduleInterval", Namespace="http://www.aetheros.com/xml/protocols")]
 	[JsonObjectAttribute("ScheduleInterval")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	public partial class ScheduleInterval
 	{
-		/// <summary>
-		/// <para xml:lang="en">Pattern: \d{4}(0[1-9]|1[0-2])(0[1-9]|[1-2]\d|30|31)T([01]\d|2[0-3])[0-5]\d[0-5]\d.</para>
-		/// </summary>
-		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute("\\d{4}(0[1-9]|1[0-2])(0[1-9]|[1-2]\\d|30|31)T([01]\\d|2[0-3])[0-5]\\d[0-5]\\d")]
 		[JsonPropertyAttribute("end")]
-		[XmlElementAttribute("end", Namespace="http://www.aetheros.com/xml/protocols", DataType="string")]
-		public string End { get; set; }
-		
-		/// <summary>
-		/// <para xml:lang="en">Pattern: \d{4}(0[1-9]|1[0-2])(0[1-9]|[1-2]\d|30|31)T([01]\d|2[0-3])[0-5]\d[0-5]\d.</para>
-		/// </summary>
-		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute("\\d{4}(0[1-9]|1[0-2])(0[1-9]|[1-2]\\d|30|31)T([01]\\d|2[0-3])[0-5]\\d[0-5]\\d")]
+		[XmlElementAttribute("end", Namespace="http://www.aetheros.com/xml/protocols", DataType="dateTime")]
+		public System.DateTimeOffset End { get; set; }
+
 		[JsonPropertyAttribute("start")]
-		[XmlElementAttribute("start", Namespace="http://www.aetheros.com/xml/protocols", DataType="string")]
-		public string Start { get; set; }
+		[XmlElementAttribute("start", Namespace="http://www.aetheros.com/xml/protocols", DataType="dateTime")]
+		public System.DateTimeOffset Start { get; set; }
 	}
 
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
@@ -913,13 +1009,38 @@ namespace Aetheros.Schema.AOS
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	public partial class MeterReadSchedule
 	{
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+		[System.Diagnostics.DebuggerHiddenAttribute()]
+		[System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+		[JsonIgnoreAttribute()]
+		[XmlElementAttribute("rtype", Namespace="http://www.aetheros.com/xml/protocols")]
+		public ReadingType ReadingTypeValue { get; set; }
+		
 		/// <summary>
-		/// <para xml:lang="en">Pattern: \b(powerQuality)\b|\b(summations)\b.</para>
+		/// <para xml:lang="de">Ruft einen Wert ab, der angibt, ob die ReadingType-Eigenschaft spezifiziert ist, oder legt diesen fest.</para>
+		/// <para xml:lang="en">Gets or sets a value indicating whether the ReadingType property is specified.</para>
 		/// </summary>
-		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute("\\b(powerQuality)\\b|\\b(summations)\\b")]
+		[XmlIgnoreAttribute()]
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+		[System.Diagnostics.DebuggerHiddenAttribute()]
+		[System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+		[JsonIgnoreAttribute()]
+		public bool ReadingTypeValueSpecified { get; set; }
+
+		[XmlIgnoreAttribute()]
 		[JsonPropertyAttribute("rtype")]
-		[XmlElementAttribute("rtype", Namespace="http://www.aetheros.com/xml/protocols", DataType="string")]
-		public string ReadingType { get; set; }
+		public ReadingType? ReadingType
+		{
+			get
+			{
+				return this.ReadingTypeValueSpecified ? this.ReadingTypeValue : default(ReadingType?);
+			}
+			set
+			{
+				this.ReadingTypeValue = value.GetValueOrDefault();
+				this.ReadingTypeValueSpecified = value.HasValue;
+			}
+		}
 
 		[JsonPropertyAttribute("tsched")]
 		[XmlElementAttribute("tsched", Namespace="http://www.aetheros.com/xml/protocols")]
@@ -2992,13 +3113,9 @@ namespace Aetheros.Schema.AOS
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	public partial class MeterSvcData
 	{
-		/// <summary>
-		/// <para xml:lang="en">Pattern: \d{4}(0[1-9]|1[0-2])(0[1-9]|[1-2]\d|30|31)T([01]\d|2[0-3])[0-5]\d[0-5]\d.</para>
-		/// </summary>
-		[System.ComponentModel.DataAnnotations.RegularExpressionAttribute("\\d{4}(0[1-9]|1[0-2])(0[1-9]|[1-2]\\d|30|31)T([01]\\d|2[0-3])[0-5]\\d[0-5]\\d")]
 		[JsonPropertyAttribute("rtl")]
-		[XmlElementAttribute("rtl", Namespace="http://www.aetheros.com/xml/protocols", DataType="string")]
-		public string ReadTimeLocal { get; set; }
+		[XmlElementAttribute("rtl", Namespace="http://www.aetheros.com/xml/protocols", DataType="dateTime")]
+		public System.DateTimeOffset ReadTimeLocal { get; set; }
 
 		[JsonPropertyAttribute("pq")]
 		[XmlElementAttribute("pq", Namespace="http://www.aetheros.com/xml/protocols")]

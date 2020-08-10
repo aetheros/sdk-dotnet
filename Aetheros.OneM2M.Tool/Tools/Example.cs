@@ -1,6 +1,7 @@
 #define USE_COAP
 
 using Aetheros.OneM2M.Api;
+using Aetheros.Schema.AOS;
 using Aetheros.Schema.OneM2M;
 
 using Microsoft.AspNetCore;
@@ -190,18 +191,18 @@ namespace GridNet.IoT.Client.Tools
 			await _application.AddContentInstanceAsync(
 				_MsPolicyPath,
 				MeterReadPolicyName,
-				new
+				new MeterServicePolicy
 				{
-					read = new
+					MeterReadSchedule = new MeterReadSchedule
 					{
-						rtype = "powerQuality",
-						tsched = new
+						ReadingType = ReadingType.PowerQuality,
+						TimeSchedule = new TimeSchedule
 						{
-							recper = 120,
-							sched = new
+							RecurrencePeriod = 120,
+							ScheduleInterval = new ScheduleInterval
 							{
-								end = default(DateTimeOffset?),
-								start = new DateTimeOffset(2020, 1, 27, 0, 0, 0, TimeSpan.Zero)
+								Start = DateTimeOffset.UtcNow,
+								End = DateTimeOffset.UtcNow.AddDays(1),
 							}
 						}
 					}
@@ -251,14 +252,14 @@ namespace GridNet.IoT.Client.Tools
 			// create a subscription
 			var subscriptionReference = await CreateSubscription();
 
-			var subscriptionEventContent =
+			var policyObservable =
 				from notification in _connection.Notifications
 				where notification.SubscriptionReference == subscriptionReference
 				let evt = notification.NotificationEvent
 				where evt.NotificationEventType.Contains(NotificationEventType.CreateChild)
-				select evt.PrimitiveRepresentation.PrimitiveContent?.ContentInstance?.GetContent<dynamic>();
+				select evt.PrimitiveRepresentation.PrimitiveContent?.ContentInstance?.GetContent<MeterServicePolicy>();
 
-			using var eventSubscription = subscriptionEventContent.Subscribe(content => Trace.TraceInformation($"new meter read: {Convert.ToString(content)}"));
+			using var eventSubscription = policyObservable.Subscribe(policy => Trace.TraceInformation($"new meter read: {policy.MeterReadSchedule.ReadingType} period: {policy.MeterReadSchedule.TimeSchedule.RecurrencePeriod}s"));
 
 			// create a meter read policy content instance
 			await CreateMeterReadPolicy();
@@ -270,9 +271,9 @@ namespace GridNet.IoT.Client.Tools
 			}
 			finally
 			{
-				DeleteSubscription(ae.AE_ID);
-				DeleteMeterReadPolicy(ae.AE_ID);
-				DeRegister(ae.AE_ID);
+				await DeleteSubscription(ae.AE_ID);
+				await DeleteMeterReadPolicy(ae.AE_ID);
+				await DeRegister(ae.AE_ID);
 			}
 		}
 	}

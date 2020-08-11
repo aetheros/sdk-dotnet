@@ -18,7 +18,7 @@ namespace Example.Web.Server
 			FormPage,
 			TablePage,
 			MeterList,
-			//MeterDashboard,
+			MeterDashboard,
 		};
 
 		public RoutingState RoutingState { get; set; }
@@ -48,7 +48,7 @@ namespace Example.Web.Server
 				new RouteTemplate(nameof(Route.FormPage)) { UrlPattern = $"{nameof(Form)}(/:id)" },
 				new RouteTemplate(nameof(Route.TablePage)),
 				new RouteTemplate(nameof(Route.MeterList)),
-				//new RouteTemplate(nameof(Route.MeterDashboard)) { UrlPattern = $"{MeterDashboardPath}(/:id)" },
+				new RouteTemplate(nameof(Route.MeterDashboard)) { UrlPattern = $"{nameof(Route.MeterDashboard)}(/:id)" },
 			});
 		}
 	}

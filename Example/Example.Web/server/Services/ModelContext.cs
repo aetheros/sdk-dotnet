@@ -54,7 +54,6 @@ namespace Example.Web.Server.Services
 		public ModelContext(IOptions<WebOptions> opts)
 		{
 			var options = opts.Value;
-			var con = new HttpConnection(options.M2M);
 			var app = Application.RegisterAsync(options.M2M, options.AE, options.AE.UrlPrefix, options.CAUrl).Result;
 
 			this.App = new MyApplication
@@ -136,7 +135,7 @@ namespace Example.Web.Server.Services
 			var dataSubscription = Observable.Defer(async () => await app.ObserveContentInstanceCreationAsync<Data>(App.DataContainer));
 			var eventSubscription = Observable.Defer(async () => await app.ObserveContentInstanceCreationAsync<Events>(App.EventsContainer));
 
-			foreach (var deviceAE in await DiscoverAEsAsync())
+			var meters = (await DiscoverAEsAsync()).Select(deviceAE =>
 			{
 				var meterId = deviceAE.AE_ID;
 
@@ -154,7 +153,7 @@ namespace Example.Web.Server.Services
 				var configSubscription = Observable.Defer(async () => await app.ObserveContentInstanceCreationAsync<Config.MeterReadPolicy>(meterUrl + App.ConfigContainer));
 				var commandSubscription = Observable.Defer(async () => await app.ObserveContentInstanceCreationAsync<Command>(meterUrl + App.CommandContainer));
 
-				_meters[meterId] = new Meter
+				return new Meter
 				{
 					MeterId = meterId,
 					MeterUrl = meterUrl,
@@ -171,7 +170,10 @@ namespace Example.Web.Server.Services
 					MeterReadPolicy = configSubscription,
 					Command = commandSubscription,
 				};
-			}
+			});
+
+			foreach (var meter in meters)
+				_meters[meter.MeterId] = meter;
 		}
 
 		public async Task<IEnumerable<Data.Summation>> GetOldSummationsAsync(string meterId, TimeSpan summationWindow)

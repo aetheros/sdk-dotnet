@@ -115,6 +115,15 @@ references:
   fullName.vb: Aetheros.OneM2M.Api.Application.DeleteAsync(System.Collections.Generic.IEnumerable(Of System.String))
   nameWithType: Application.DeleteAsync(IEnumerable<String>)
   nameWithType.vb: Application.DeleteAsync(IEnumerable(Of String))
+- uid: Aetheros.OneM2M.Api.Application.DeleteAsync(System.String[])
+  name: DeleteAsync(String[])
+  href: api/Aetheros.OneM2M.Api.Application.html#Aetheros_OneM2M_Api_Application_DeleteAsync_System_String___
+  commentId: M:Aetheros.OneM2M.Api.Application.DeleteAsync(System.String[])
+  name.vb: DeleteAsync(String())
+  fullName: Aetheros.OneM2M.Api.Application.DeleteAsync(System.String[])
+  fullName.vb: Aetheros.OneM2M.Api.Application.DeleteAsync(System.String())
+  nameWithType: Application.DeleteAsync(String[])
+  nameWithType.vb: Application.DeleteAsync(String())
 - uid: Aetheros.OneM2M.Api.Application.DeleteAsync*
   name: DeleteAsync
   href: api/Aetheros.OneM2M.Api.Application.html#Aetheros_OneM2M_Api_Application_DeleteAsync_
@@ -135,12 +144,6 @@ references:
   isSpec: "True"
   fullName: Aetheros.OneM2M.Api.Application.EnsureContainerAsync
   nameWithType: Application.EnsureContainerAsync
-- uid: Aetheros.OneM2M.Api.Application.GetChildResourcesAsync(System.String,Aetheros.Schema.OneM2M.FilterCriteria)
-  name: GetChildResourcesAsync(String, FilterCriteria)
-  href: api/Aetheros.OneM2M.Api.Application.html#Aetheros_OneM2M_Api_Application_GetChildResourcesAsync_System_String_Aetheros_Schema_OneM2M_FilterCriteria_
-  commentId: M:Aetheros.OneM2M.Api.Application.GetChildResourcesAsync(System.String,Aetheros.Schema.OneM2M.FilterCriteria)
-  fullName: Aetheros.OneM2M.Api.Application.GetChildResourcesAsync(System.String, Aetheros.Schema.OneM2M.FilterCriteria)
-  nameWithType: Application.GetChildResourcesAsync(String, FilterCriteria)
 - uid: Aetheros.OneM2M.Api.Application.GetChildResourcesAsync*
   name: GetChildResourcesAsync
   href: api/Aetheros.OneM2M.Api.Application.html#Aetheros_OneM2M_Api_Application_GetChildResourcesAsync_
@@ -148,6 +151,15 @@ references:
   isSpec: "True"
   fullName: Aetheros.OneM2M.Api.Application.GetChildResourcesAsync
   nameWithType: Application.GetChildResourcesAsync
+- uid: Aetheros.OneM2M.Api.Application.GetChildResourcesAsync``1(System.String,Aetheros.Schema.OneM2M.FilterCriteria)
+  name: GetChildResourcesAsync<T>(String, FilterCriteria)
+  href: api/Aetheros.OneM2M.Api.Application.html#Aetheros_OneM2M_Api_Application_GetChildResourcesAsync__1_System_String_Aetheros_Schema_OneM2M_FilterCriteria_
+  commentId: M:Aetheros.OneM2M.Api.Application.GetChildResourcesAsync``1(System.String,Aetheros.Schema.OneM2M.FilterCriteria)
+  name.vb: GetChildResourcesAsync(Of T)(String, FilterCriteria)
+  fullName: Aetheros.OneM2M.Api.Application.GetChildResourcesAsync<T>(System.String, Aetheros.Schema.OneM2M.FilterCriteria)
+  fullName.vb: Aetheros.OneM2M.Api.Application.GetChildResourcesAsync(Of T)(System.String, Aetheros.Schema.OneM2M.FilterCriteria)
+  nameWithType: Application.GetChildResourcesAsync<T>(String, FilterCriteria)
+  nameWithType.vb: Application.GetChildResourcesAsync(Of T)(String, FilterCriteria)
 - uid: Aetheros.OneM2M.Api.Application.GetLatestContentInstanceAsync*
   name: GetLatestContentInstanceAsync
   href: api/Aetheros.OneM2M.Api.Application.html#Aetheros_OneM2M_Api_Application_GetLatestContentInstanceAsync_

@@ -74,8 +74,9 @@ namespace Aetheros.OneM2M.Api
 
 		public async Task<ResponseContent> GetResponseAsync(RequestPrimitive body) => await GetResponseAsync<ResponseContent>(body);
 
-		public async Task<Resources> GetChildResourcesAsync(string key, FilterCriteria? filterCriteria = null) =>
-			await GetResponseAsync<Resources>(new RequestPrimitive
+		public async Task<T> GetChildResourcesAsync<T>(string key, FilterCriteria? filterCriteria = null)
+			where T : class, new() =>
+			await GetResponseAsync<T>(new RequestPrimitive
 			{
 				Operation = Operation.Retrieve,
 				To = key,
@@ -92,6 +93,9 @@ namespace Aetheros.OneM2M.Api
 				Operation = Operation.Retrieve,
 				FilterCriteria = filterCriteria
 			});
+
+
+		public async Task DeleteAsync(params string[] urls) => DeleteAsync((IEnumerable<string>) urls);
 
 		public async Task DeleteAsync(IEnumerable<string> urls)
 		{
@@ -145,7 +149,7 @@ namespace Aetheros.OneM2M.Api
 				var parent = await EnsureContainerAsync(parentName);
 			}
 
-			return (await GetResponseAsync(new RequestPrimitive
+			var container = (await GetResponseAsync(new RequestPrimitive
 			{
 				Operation = Operation.Create,
 				To = parentName,
@@ -158,6 +162,8 @@ namespace Aetheros.OneM2M.Api
 					}
 				}
 			})).Container;
+
+			return container;
 		}
 
 		public async Task<T?> GetLatestContentInstanceAsync<T>(string containerKey)
@@ -165,13 +171,14 @@ namespace Aetheros.OneM2M.Api
 		{
 			try
 			{
-				var ciRefs = (await GetPrimitiveAsync(containerKey, new FilterCriteria
+				var response = (await GetPrimitiveAsync(containerKey, new FilterCriteria
 				{
 					FilterUsage = FilterUsage.Discovery,
 					ResourceType = new[] { ResourceType.ContentInstance },
-				})).URIList;
+				}));
+				var ciRefs = response.URIList;
 
-				if (ciRefs == null)
+				if (ciRefs == null || !ciRefs.Any())
 					return null;
 
 				var rcs = ciRefs
@@ -223,7 +230,7 @@ namespace Aetheros.OneM2M.Api
 
 					//work around for CSE timeout issue - remove subscriptions with different poaUrls
 					if (discoverSubscriptions?.URIList != null)
-						await DeleteAsync(discoverSubscriptions.URIList.Except(new string[] { subscriptionReference }));
+						await DeleteAsync(discoverSubscriptions.URIList.Except(new string[] { subscriptionReference }).ToArray());
 				}
 
 				//create subscription only if can't find subscription with the same notification url

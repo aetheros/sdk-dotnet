@@ -1,4 +1,4 @@
-#define USE_COAP
+//#define USE_COAP
 
 using Aetheros.OneM2M.Api;
 using Aetheros.Schema.AOS;
@@ -15,6 +15,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Reactive.Linq;
@@ -26,7 +27,7 @@ using System.Xml.Schema;
 namespace GridNet.IoT.Client.Tools
 {
 	[Description("oneM2M demo")]
-	public class Demo : UtilityBase
+	public class Example : UtilityBase
 	{
 #if USE_COAP
 		Uri _poaUrl = new Uri("coap://10.0.2.2:5683");
@@ -54,9 +55,16 @@ namespace GridNet.IoT.Client.Tools
 		string _AeAppId = "Nsdk-devAe-0.com.policynetiot.sdk";
 		string _AeAppName = "sdk-devAe-0";
 		string _AeCredential = "8992O4AAEXYWY95O";
-		string _RegPath = ".";
-		string _MsPolicyPath = "./metersvc/policies";
-		string _MsReadsPath = "./metersvc/reads";
+		string _RegPath;
+		string _MsPolicyPath;
+		string _MsReadsPath;
+
+		public Example()
+		{
+			_RegPath = "/PN_CSE";//"."
+			_MsPolicyPath = $"{_RegPath}/metersvc/policies";
+			_MsReadsPath = $"{_RegPath}/metersvc/reads";
+		}
 
 		const string MeterReadSubscriptionName = "metersvc-sampl-sub-01";
 		private const string MeterReadPolicyName = "metersvc-sampl-pol-01";
@@ -80,7 +88,7 @@ namespace GridNet.IoT.Client.Tools
 
 		async Task<AE> Register()
 		{
-			/*
+#if false
 			// find stale AEs
 			var staleAEs = await _connection.GetResponseAsync(new RequestPrimitive
 			{
@@ -105,13 +113,13 @@ namespace GridNet.IoT.Client.Tools
 					To = url,
 				});
 			}
-			*/
+#endif
 
 			Trace.TraceInformation("Invoking AE Registration API");
 
 			var response = await _connection.GetResponseAsync(new RequestPrimitive
 			{
-				//From = _AeCredential,
+				From = _AeCredential,
 				To = _RegPath,
 				Operation = Operation.Create,
 				ResourceType = ResourceType.AE,
@@ -128,20 +136,16 @@ namespace GridNet.IoT.Client.Tools
 			return response.AE;
 		}
 
-		async Task DeRegister(string aeId)
+		async Task DeRegister()
 		{
-			await _application.GetResponseAsync(new RequestPrimitive
-			{
-				From = _AeCredential,
-				To = $"{_RegPath}/{aeId}",
-				Operation = Operation.Delete
-			});
+			await _application.DeleteAsync($"{_RegPath}/{_application.AppId}");
 		}
 
 
 		async Task<string> CreateSubscription()
 		{
 			await _application.EnsureContainerAsync(_MsReadsPath);
+			await DeleteSubscription();
 
 			Trace.TraceInformation("Invoking Create Subscription API");
 
@@ -172,14 +176,9 @@ namespace GridNet.IoT.Client.Tools
 			return subscriptionResponse?.URI;
 		}
 
-		private async Task DeleteSubscription(string aeId)
+		private async Task DeleteSubscription()
 		{
-			await _application.GetResponseAsync(new RequestPrimitive
-			{
-				From = aeId,
-				To = $"{_MsReadsPath}/{MeterReadSubscriptionName}",
-				Operation = Operation.Delete
-			});
+			await _application.DeleteAsync($"{_MsReadsPath}/{MeterReadSubscriptionName}");
 		}
 
 		async Task CreateMeterReadPolicy()
@@ -210,14 +209,9 @@ namespace GridNet.IoT.Client.Tools
 			);
 		}
 
-		async Task DeleteMeterReadPolicy(string aeId)
+		async Task DeleteMeterReadPolicy()
 		{
-			await _application.GetResponseAsync(new RequestPrimitive
-			{
-				From = aeId,
-				To = $"{_MsPolicyPath}/{MeterReadPolicyName}",
-				Operation = Operation.Delete
-			});
+			await _application.DeleteAsync($"{_MsPolicyPath}/{MeterReadPolicyName}");
 		}
 
 
@@ -257,7 +251,9 @@ namespace GridNet.IoT.Client.Tools
 				where notification.SubscriptionReference == subscriptionReference
 				let evt = notification.NotificationEvent
 				where evt.NotificationEventType.Contains(NotificationEventType.CreateChild)
-				select evt.PrimitiveRepresentation.PrimitiveContent?.ContentInstance?.GetContent<MeterServicePolicy>();
+				let contentInstance = evt.PrimitiveRepresentation.PrimitiveContent?.ContentInstance
+				where contentInstance != null
+				select contentInstance.GetContent<MeterServicePolicy>();
 
 			using var eventSubscription = policyObservable.Subscribe(policy => Trace.TraceInformation($"new meter read: {policy.MeterReadSchedule.ReadingType} period: {policy.MeterReadSchedule.TimeSchedule.RecurrencePeriod}s"));
 
@@ -271,9 +267,9 @@ namespace GridNet.IoT.Client.Tools
 			}
 			finally
 			{
-				await DeleteSubscription(ae.AE_ID);
-				await DeleteMeterReadPolicy(ae.AE_ID);
-				await DeRegister(ae.AE_ID);
+				await DeleteSubscription();
+				await DeleteMeterReadPolicy();
+				await DeRegister();
 			}
 		}
 	}

@@ -182,15 +182,14 @@ namespace Example.Web.Server.Services
 			var cutoffTime = utcNow - summationWindow;
 
 			//get content instances created in the specified summation window + 7 days
-			var childResources = (await App.Application.GetChildResourcesAsync(
+			var childResources = (await App.Application.GetChildResourcesAsync<PrimitiveContent>(
 				App.DataContainer,
 				new FilterCriteria
 				{
-					FilterUsage = FilterUsage.Discovery,
 					ResourceType = new[] { ResourceType.ContentInstance },
-					CreatedAfter = cutoffTime,
+					//CreatedAfter = cutoffTime,
 				}
-			)).ContentInstance;
+			)).Container.ContentInstance;
 
 			return childResources
 				.Select(ci => ci.GetContent<Data>())
@@ -205,7 +204,7 @@ namespace Example.Web.Server.Services
 		public async Task<IEnumerable<Events.MeterEvent>> GetOldEvents(string meterId)
 		{
 			//get content instances created in the specified summation window + 7 days
-			var childResources = (await App.Application.GetChildResourcesAsync(
+			var childResources = (await App.Application.GetChildResourcesAsync<PrimitiveContent>(
 				App.EventsContainer,
 				new FilterCriteria
 				{
@@ -213,7 +212,7 @@ namespace Example.Web.Server.Services
 					ResourceType = new[] { ResourceType.ContentInstance },
 					CreatedAfter = DateTimeOffset.UtcNow.AddDays(-30),
 				}
-			)).ContentInstance;
+			)).Container.ContentInstance;
 
 			return
 				childResources

@@ -24,7 +24,7 @@ namespace Aetheros.OneM2M.Api
 
         protected override HttpRequestMessage ProcessRequest(HttpRequestMessage request, CancellationToken cancellationToken)
         {
-            Trace.WriteLine(">>>>>>>>");
+            Trace.WriteLine("\n>>>>>>>>>>>>>>>>");
 
             Trace.WriteLine($"{request.Method} {request.RequestUri} HTTP/{request.Version}");
             DumpHeaders(request.Headers);
@@ -42,7 +42,7 @@ namespace Aetheros.OneM2M.Api
 
         protected override HttpResponseMessage ProcessResponse(HttpResponseMessage response, CancellationToken cancellationToken)
         {
-            Trace.WriteLine("<<<<<<<<");
+            Trace.WriteLine("\n<<<<<<<<<<<<<<<<");
 
             Trace.WriteLine($"{(int) response.StatusCode} {response.ReasonPhrase}");
             DumpHeaders(response.Headers);

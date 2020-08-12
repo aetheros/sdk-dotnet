@@ -10,6 +10,7 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -121,8 +122,8 @@ namespace Aetheros.OneM2M.Api
 				FilterCriteria = filterCriteria
 			});
 
-		public async Task<Resources> GetChildResourcesAsync(string key, FilterCriteria? filterCriteria = null) =>
-			await GetResponseAsync<Resources>(new RequestPrimitive
+		public async Task<PrimitiveContent> GetChildResourcesAsync(string key, FilterCriteria? filterCriteria = null) =>
+			await GetResponseAsync<PrimitiveContent>(new RequestPrimitive
 			{
 				Operation = Operation.Retrieve,
 				To = key,
@@ -260,18 +261,27 @@ namespace Aetheros.OneM2M.Api
 		readonly Subject<Notification> _notifications = new Subject<Notification>();
 		public IObservable<Notification> Notifications => _notifications;
 
-		public async Task HandleNotificationAsync(HttpRequest req)
+		public async Task HandleNotificationAsync(HttpRequest request)
 		{
-			var requestPrimitive = await ParseNotificationAsync(req);
+			using var bodyStream = new StreamReader(request.Body, true);
+			var body = await bodyStream.ReadToEndAsync();
+
+			Trace.WriteLine("\n!!!!!!!!!!!!!!!!");
+			Trace.WriteLine($"{request.Method} {request.PathBase}?{request.QueryString} {request.Protocol}");
+			foreach (var header in request.Headers)
+			{
+				foreach (var value in header.Value)
+					Trace.WriteLine($"{header.Key}: {value}");
+			}
+
+			Trace.WriteLine("");
+			if (body != null)
+				Trace.WriteLine(body);
+
+			var requestPrimitive = ParseNotification(body, request.Headers, request.Query);
+
 			if (requestPrimitive != null)
 				_notifications.OnNext(requestPrimitive);
-		}
-
-		async Task<Notification?> ParseNotificationAsync(HttpRequest req)
-		{
-			using var bodyStream = new StreamReader(req.Body, true);
-			var body = await bodyStream.ReadToEndAsync();
-			return ParseNotification(body, req.Headers, req.Query);
 		}
 
 		Notification? ParseNotification(string body, IHeaderDictionary headers, IQueryCollection query)

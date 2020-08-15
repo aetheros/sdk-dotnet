@@ -6554,20 +6554,38 @@ namespace Aetheros.Schema.OneM2M
 		[XmlElementAttribute("om", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public NotificationNotificationEventOperationMonitor OperationMonitor { get; set; }
 
-		[JsonPropertyAttribute("net")]
-		[XmlElementAttribute("net", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-		public ICollection<Aetheros.Schema.OneM2M.NotificationEventType> NotificationEventType { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.NotificationEventType>();
-		
-		/// <summary>
-		/// <para xml:lang="de">Ruft einen Wert ab, der angibt, ob die NotificationEventType-Collection leer ist.</para>
-		/// <para xml:lang="en">Gets a value indicating whether the NotificationEventType collection is empty.</para>
-		/// </summary>
-		[XmlIgnoreAttribute()]
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
 		[System.Diagnostics.DebuggerHiddenAttribute()]
 		[System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
-		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
 		[JsonIgnoreAttribute()]
-		public bool NotificationEventTypeSpecified => (this.NotificationEventType.Count != 0);
+		[XmlElementAttribute("net", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+		public Aetheros.Schema.OneM2M.NotificationEventType NotificationEventTypeValue { get; set; }
+		
+		/// <summary>
+		/// <para xml:lang="de">Ruft einen Wert ab, der angibt, ob die NotificationEventType-Eigenschaft spezifiziert ist, oder legt diesen fest.</para>
+		/// <para xml:lang="en">Gets or sets a value indicating whether the NotificationEventType property is specified.</para>
+		/// </summary>
+		[XmlIgnoreAttribute()]
+		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
+		[System.Diagnostics.DebuggerHiddenAttribute()]
+		[System.Diagnostics.DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState.Never)]
+		[JsonIgnoreAttribute()]
+		public bool NotificationEventTypeValueSpecified { get; set; }
+
+		[XmlIgnoreAttribute()]
+		[JsonPropertyAttribute("net")]
+		public Aetheros.Schema.OneM2M.NotificationEventType? NotificationEventType
+		{
+			get
+			{
+				return this.NotificationEventTypeValueSpecified ? this.NotificationEventTypeValue : default(Aetheros.Schema.OneM2M.NotificationEventType?);
+			}
+			set
+			{
+				this.NotificationEventTypeValue = value.GetValueOrDefault();
+				this.NotificationEventTypeValueSpecified = value.HasValue;
+			}
+		}
 	}
 
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]

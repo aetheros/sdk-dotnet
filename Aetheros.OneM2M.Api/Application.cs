@@ -284,7 +284,7 @@ namespace Aetheros.OneM2M.Api
 		{
 			var container = await this.EnsureContainerAsync(containerName);
 			return (await this.ObserveAsync(containerName))
-				.Where(evt => evt.NotificationEventType.Contains(NotificationEventType.CreateChild))
+				.Where(evt => evt.NotificationEventType == NotificationEventType.CreateChild)
 				.Select(evt => evt.PrimitiveRepresentation.PrimitiveContent?.ContentInstance?.GetContent<TContent>())
 				.Where(content => content != null) as IObservable<TContent>;
 		}

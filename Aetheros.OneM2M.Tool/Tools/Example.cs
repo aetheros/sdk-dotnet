@@ -250,7 +250,7 @@ namespace GridNet.IoT.Client.Tools
 				from notification in _connection.Notifications
 				where notification.SubscriptionReference == subscriptionReference
 				let evt = notification.NotificationEvent
-				where evt.NotificationEventType.Contains(NotificationEventType.CreateChild)
+				where evt.NotificationEventType == NotificationEventType.CreateChild
 				let contentInstance = evt.PrimitiveRepresentation.PrimitiveContent?.ContentInstance
 				where contentInstance != null
 				select contentInstance.GetContent<MeterServicePolicy>();

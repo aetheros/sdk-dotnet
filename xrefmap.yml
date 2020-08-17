@@ -285,12 +285,12 @@ references:
   isSpec: "True"
   fullName: Aetheros.OneM2M.Api.Application.IApplicationConfiguration.UrlPrefix
   nameWithType: Application.IApplicationConfiguration.UrlPrefix
-- uid: Aetheros.OneM2M.Api.Application.ObserveAsync(System.String)
-  name: ObserveAsync(String)
-  href: api/Aetheros.OneM2M.Api.Application.html#Aetheros_OneM2M_Api_Application_ObserveAsync_System_String_
-  commentId: M:Aetheros.OneM2M.Api.Application.ObserveAsync(System.String)
-  fullName: Aetheros.OneM2M.Api.Application.ObserveAsync(System.String)
-  nameWithType: Application.ObserveAsync(String)
+- uid: Aetheros.OneM2M.Api.Application.ObserveAsync(System.String,System.String,Aetheros.Schema.OneM2M.EventNotificationCriteria)
+  name: ObserveAsync(String, String, EventNotificationCriteria)
+  href: api/Aetheros.OneM2M.Api.Application.html#Aetheros_OneM2M_Api_Application_ObserveAsync_System_String_System_String_Aetheros_Schema_OneM2M_EventNotificationCriteria_
+  commentId: M:Aetheros.OneM2M.Api.Application.ObserveAsync(System.String,System.String,Aetheros.Schema.OneM2M.EventNotificationCriteria)
+  fullName: Aetheros.OneM2M.Api.Application.ObserveAsync(System.String, System.String, Aetheros.Schema.OneM2M.EventNotificationCriteria)
+  nameWithType: Application.ObserveAsync(String, String, EventNotificationCriteria)
 - uid: Aetheros.OneM2M.Api.Application.ObserveAsync*
   name: ObserveAsync
   href: api/Aetheros.OneM2M.Api.Application.html#Aetheros_OneM2M_Api_Application_ObserveAsync_
@@ -410,6 +410,19 @@ references:
   isSpec: "True"
   fullName: Aetheros.OneM2M.Api.CoapConnection.ClientCertificate
   nameWithType: CoapConnection.ClientCertificate
+- uid: Aetheros.OneM2M.Api.CoapConnection.CreateNotificationResource(System.String)
+  name: CreateNotificationResource(String)
+  href: api/Aetheros.OneM2M.Api.CoapConnection.html#Aetheros_OneM2M_Api_CoapConnection_CreateNotificationResource_System_String_
+  commentId: M:Aetheros.OneM2M.Api.CoapConnection.CreateNotificationResource(System.String)
+  fullName: Aetheros.OneM2M.Api.CoapConnection.CreateNotificationResource(System.String)
+  nameWithType: CoapConnection.CreateNotificationResource(String)
+- uid: Aetheros.OneM2M.Api.CoapConnection.CreateNotificationResource*
+  name: CreateNotificationResource
+  href: api/Aetheros.OneM2M.Api.CoapConnection.html#Aetheros_OneM2M_Api_CoapConnection_CreateNotificationResource_
+  commentId: Overload:Aetheros.OneM2M.Api.CoapConnection.CreateNotificationResource
+  isSpec: "True"
+  fullName: Aetheros.OneM2M.Api.CoapConnection.CreateNotificationResource
+  nameWithType: CoapConnection.CreateNotificationResource
 - uid: Aetheros.OneM2M.Api.CoapConnection.GetResponseAsync(CoAP.Request)
   name: GetResponseAsync(Request)
   href: api/Aetheros.OneM2M.Api.CoapConnection.html#Aetheros_OneM2M_Api_CoapConnection_GetResponseAsync_CoAP_Request_
@@ -441,6 +454,19 @@ references:
   fullName.vb: Aetheros.OneM2M.Api.CoapConnection.GetResponseAsync(Of T)(CoAP.Request)
   nameWithType: CoapConnection.GetResponseAsync<T>(Request)
   nameWithType.vb: CoapConnection.GetResponseAsync(Of T)(Request)
+- uid: Aetheros.OneM2M.Api.CoapConnection.HandleNotificationAsync(CoAP.Server.Resources.CoapExchange)
+  name: HandleNotificationAsync(CoapExchange)
+  href: api/Aetheros.OneM2M.Api.CoapConnection.html#Aetheros_OneM2M_Api_CoapConnection_HandleNotificationAsync_CoAP_Server_Resources_CoapExchange_
+  commentId: M:Aetheros.OneM2M.Api.CoapConnection.HandleNotificationAsync(CoAP.Server.Resources.CoapExchange)
+  fullName: Aetheros.OneM2M.Api.CoapConnection.HandleNotificationAsync(CoAP.Server.Resources.CoapExchange)
+  nameWithType: CoapConnection.HandleNotificationAsync(CoapExchange)
+- uid: Aetheros.OneM2M.Api.CoapConnection.HandleNotificationAsync*
+  name: HandleNotificationAsync
+  href: api/Aetheros.OneM2M.Api.CoapConnection.html#Aetheros_OneM2M_Api_CoapConnection_HandleNotificationAsync_
+  commentId: Overload:Aetheros.OneM2M.Api.CoapConnection.HandleNotificationAsync
+  isSpec: "True"
+  fullName: Aetheros.OneM2M.Api.CoapConnection.HandleNotificationAsync
+  nameWithType: CoapConnection.HandleNotificationAsync
 - uid: Aetheros.OneM2M.Api.CoapExtensions
   name: CoapExtensions
   href: api/Aetheros.OneM2M.Api.CoapExtensions.html
@@ -527,6 +553,12 @@ references:
   commentId: T:Aetheros.OneM2M.Api.Connection
   fullName: Aetheros.OneM2M.Api.Connection
   nameWithType: Connection
+- uid: Aetheros.OneM2M.Api.Connection._notifications
+  name: _notifications
+  href: api/Aetheros.OneM2M.Api.Connection.html#Aetheros_OneM2M_Api_Connection__notifications
+  commentId: F:Aetheros.OneM2M.Api.Connection._notifications
+  fullName: Aetheros.OneM2M.Api.Connection._notifications
+  nameWithType: Connection._notifications
 - uid: Aetheros.OneM2M.Api.Connection.DeserializeJson*
   name: DeserializeJson
   href: api/Aetheros.OneM2M.Api.Connection.html#Aetheros_OneM2M_Api_Connection_DeserializeJson_
@@ -633,19 +665,6 @@ references:
   fullName.vb: Aetheros.OneM2M.Api.Connection.GetResponseAsync(Of T)(Aetheros.Schema.OneM2M.RequestPrimitive)
   nameWithType: Connection.GetResponseAsync<T>(RequestPrimitive)
   nameWithType.vb: Connection.GetResponseAsync(Of T)(RequestPrimitive)
-- uid: Aetheros.OneM2M.Api.Connection.HandleNotificationAsync(HttpRequest)
-  name: HandleNotificationAsync(HttpRequest)
-  href: api/Aetheros.OneM2M.Api.Connection.html#Aetheros_OneM2M_Api_Connection_HandleNotificationAsync_HttpRequest_
-  commentId: M:Aetheros.OneM2M.Api.Connection.HandleNotificationAsync(HttpRequest)
-  fullName: Aetheros.OneM2M.Api.Connection.HandleNotificationAsync(HttpRequest)
-  nameWithType: Connection.HandleNotificationAsync(HttpRequest)
-- uid: Aetheros.OneM2M.Api.Connection.HandleNotificationAsync*
-  name: HandleNotificationAsync
-  href: api/Aetheros.OneM2M.Api.Connection.html#Aetheros_OneM2M_Api_Connection_HandleNotificationAsync_
-  commentId: Overload:Aetheros.OneM2M.Api.Connection.HandleNotificationAsync
-  isSpec: "True"
-  fullName: Aetheros.OneM2M.Api.Connection.HandleNotificationAsync
-  nameWithType: Connection.HandleNotificationAsync
 - uid: Aetheros.OneM2M.Api.Connection.HttpStatusException
   name: Connection.HttpStatusException
   href: api/Aetheros.OneM2M.Api.Connection.HttpStatusException.html
@@ -723,6 +742,19 @@ references:
   isSpec: "True"
   fullName: Aetheros.OneM2M.Api.Connection.IConnectionConfiguration.M2MUrl
   nameWithType: Connection.IConnectionConfiguration.M2MUrl
+- uid: Aetheros.OneM2M.Api.Connection.JsonSettings
+  name: JsonSettings
+  href: api/Aetheros.OneM2M.Api.Connection.html#Aetheros_OneM2M_Api_Connection_JsonSettings
+  commentId: P:Aetheros.OneM2M.Api.Connection.JsonSettings
+  fullName: Aetheros.OneM2M.Api.Connection.JsonSettings
+  nameWithType: Connection.JsonSettings
+- uid: Aetheros.OneM2M.Api.Connection.JsonSettings*
+  name: JsonSettings
+  href: api/Aetheros.OneM2M.Api.Connection.html#Aetheros_OneM2M_Api_Connection_JsonSettings_
+  commentId: Overload:Aetheros.OneM2M.Api.Connection.JsonSettings
+  isSpec: "True"
+  fullName: Aetheros.OneM2M.Api.Connection.JsonSettings
+  nameWithType: Connection.JsonSettings
 - uid: Aetheros.OneM2M.Api.Connection.NextRequestId
   name: NextRequestId
   href: api/Aetheros.OneM2M.Api.Connection.html#Aetheros_OneM2M_Api_Connection_NextRequestId
@@ -872,6 +904,19 @@ references:
   fullName.vb: Aetheros.OneM2M.Api.HttpConnection.GetResponseAsync(Of T)(System.Net.Http.HttpRequestMessage)
   nameWithType: HttpConnection.GetResponseAsync<T>(HttpRequestMessage)
   nameWithType.vb: HttpConnection.GetResponseAsync(Of T)(HttpRequestMessage)
+- uid: Aetheros.OneM2M.Api.HttpConnection.HandleNotificationAsync(HttpContext)
+  name: HandleNotificationAsync(HttpContext)
+  href: api/Aetheros.OneM2M.Api.HttpConnection.html#Aetheros_OneM2M_Api_HttpConnection_HandleNotificationAsync_HttpContext_
+  commentId: M:Aetheros.OneM2M.Api.HttpConnection.HandleNotificationAsync(HttpContext)
+  fullName: Aetheros.OneM2M.Api.HttpConnection.HandleNotificationAsync(HttpContext)
+  nameWithType: HttpConnection.HandleNotificationAsync(HttpContext)
+- uid: Aetheros.OneM2M.Api.HttpConnection.HandleNotificationAsync*
+  name: HandleNotificationAsync
+  href: api/Aetheros.OneM2M.Api.HttpConnection.html#Aetheros_OneM2M_Api_HttpConnection_HandleNotificationAsync_
+  commentId: Overload:Aetheros.OneM2M.Api.HttpConnection.HandleNotificationAsync
+  isSpec: "True"
+  fullName: Aetheros.OneM2M.Api.HttpConnection.HandleNotificationAsync
+  nameWithType: HttpConnection.HandleNotificationAsync
 - uid: Aetheros.OneM2M.Api.Registration
   name: Aetheros.OneM2M.Api.Registration
   href: api/Aetheros.OneM2M.Api.Registration.html

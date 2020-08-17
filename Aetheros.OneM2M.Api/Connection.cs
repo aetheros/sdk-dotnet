@@ -42,7 +42,7 @@ namespace Aetheros.OneM2M.Api
 		readonly string _requestGuid = Guid.NewGuid().ToString("N");
 		public string NextRequestId => $"{_requestGuid}/{Interlocked.Increment(ref _nextRequestId)}";
 
-		static JsonSerializerSettings JsonSettings { get; } = new JsonSerializerSettings
+		protected static JsonSerializerSettings JsonSettings { get; } = new JsonSerializerSettings
 		{
 			NullValueHandling = NullValueHandling.Ignore,
 			DefaultValueHandling = DefaultValueHandling.Ignore,
@@ -258,150 +258,9 @@ namespace Aetheros.OneM2M.Api
 				};
 			}).ToList();
 
-		readonly Subject<Notification> _notifications = new Subject<Notification>();
+		protected readonly Subject<Notification> _notifications = new Subject<Notification>();
 		public IObservable<Notification> Notifications => _notifications;
 
-		public async Task HandleNotificationAsync(HttpRequest request)
-		{
-			using var bodyStream = new StreamReader(request.Body, true);
-			var body = await bodyStream.ReadToEndAsync();
-
-			Trace.WriteLine("\n!!!!!!!!!!!!!!!!");
-			Trace.WriteLine($"{request.Method} {request.PathBase}?{request.QueryString} {request.Protocol}");
-			foreach (var header in request.Headers)
-			{
-				foreach (var value in header.Value)
-					Trace.WriteLine($"{header.Key}: {value}");
-			}
-
-			Trace.WriteLine("");
-			if (body != null)
-				Trace.WriteLine(body);
-
-			var requestPrimitive = ParseNotification(body, request.Headers, request.Query);
-
-			if (requestPrimitive != null)
-				_notifications.OnNext(requestPrimitive);
-		}
-
-		Notification? ParseNotification(string body, IHeaderDictionary headers, IQueryCollection query)
-		{
-			var notificationContent = DeserializeJson<NotificationContent>(body);
-			if (notificationContent == null)
-				return null;
-
-			var notification = notificationContent.Notification;
-			if (notification == null)
-				return null;
-
-			var serializer = JsonSerializer.CreateDefault(Connection.JsonSettings);
-			var representation = ((Newtonsoft.Json.Linq.JObject) notification.NotificationEvent.Representation).ToObject<PrimitiveContent>(serializer);
-
-			var request = notification.NotificationEvent.PrimitiveRepresentation = new RequestPrimitive
-			{
-				From = headers["X-M2M-Origin"].FirstOrDefault(),
-				RequestIdentifier = headers["X-M2M-RI"].FirstOrDefault(),
-				GroupRequestIdentifier = headers["X-M2M-GID"].FirstOrDefault(),
-				OriginatingTimestamp = headers["X-M2M-OT"].FirstOrDefault()?.ParseNullableDateTimeOffset(),
-				ResultExpirationTimestamp = headers["X-M2M-RST"].FirstOrDefault(),
-				RequestExpirationTimestamp = headers["X-M2M-RET"].FirstOrDefault(),
-				OperationExecutionTime = headers["X-M2M-OET"].FirstOrDefault(),
-				EventCategory = headers["X-M2M-EC"].FirstOrDefault(),
-
-				PrimitiveContent = representation
-			};
-
-			if (query.Any())
-			{
-				var notificationURI = headers["X-M2M-RTU"];
-				var responseType = query["rt"];
-				if (notificationURI.Count > 0 || responseType.Count > 0)
-				{
-					request.ResponseType = new ResponseTypeInfo
-					{
-						ResponseTypeValue = responseType.FirstOrDefault()?.ParseNullableEnum<ResponseType>(),
-						NotificationURI = notificationURI.Join("&")?.Split('&')?.ToArray(),
-					};
-				}
-
-				FilterCriteria? fc = null;
-				FilterCriteria FC() => fc ??= new FilterCriteria();
-
-				if (DateTimeOffset.TryParse(query["crb"].FirstOrDefault(), out DateTimeOffset crb))
-					FC().CreatedBefore = crb;
-
-				if (DateTimeOffset.TryParse(query["cra"].FirstOrDefault(), out DateTimeOffset cra))
-					FC().CreatedAfter = cra;
-
-				if (DateTimeOffset.TryParse(query["ms"].FirstOrDefault(), out DateTimeOffset ms))
-					FC().ModifiedSince = ms;
-
-				if (long.TryParse(query["sts"].FirstOrDefault(), out long sts))
-					FC().StateTagSmaller = sts;
-
-				if (long.TryParse(query["stb"].FirstOrDefault(), out long stb))
-					FC().StateTagBigger = stb;
-
-				if (DateTimeOffset.TryParse(query["exb"].FirstOrDefault(), out DateTimeOffset exb))
-					FC().ExpireBefore = exb;
-
-				if (DateTimeOffset.TryParse(query["exa"].FirstOrDefault(), out DateTimeOffset exa))
-					FC().ExpireAfter = exa;
-
-				var resourceTypes = query["ty"].SelectMany(str => str.Split(",")).Select(str => Enum.Parse<ResourceType>(str)).ToList();
-				if (resourceTypes.Count > 0)
-					FC().ResourceType = resourceTypes;
-
-				if (long.TryParse(query["sza"].FirstOrDefault(), out long sza))
-					FC().SizeAbove = sza;
-
-				if (long.TryParse(query["szb"].FirstOrDefault(), out long szb))
-					FC().SizeBelow = szb;
-
-				if (long.TryParse(query["lim"].FirstOrDefault(), out long lim))
-					FC().Limit = lim;
-
-				if (Enum.TryParse<FilterUsage>(query["fu"].FirstOrDefault(), out FilterUsage fu))
-					FC().FilterUsage = fu;
-
-				var fo = query["fo"].FirstOrDefault();
-				if (fo == "1" || "true".Equals(fo, StringComparison.InvariantCultureIgnoreCase))
-					FC().FilterOperation = true;
-				else if (fo == "0" || "false".Equals(fo, StringComparison.InvariantCultureIgnoreCase))
-					FC().FilterOperation = false;
-
-				if (Enum.TryParse<ContentFilterSyntax>(query["cfs"].FirstOrDefault(), out ContentFilterSyntax cfs))
-					FC().ContentFilterSyntax = cfs;
-
-				if (query["cfq"].Count > 0)
-					FC().ContentFilterQuery = query["cfq"].FirstOrDefault();
-
-				if (long.TryParse(query["lvl"].FirstOrDefault(), out long lvl))
-					FC().Level = lvl;
-
-				if (long.TryParse(query["ofst"].FirstOrDefault(), out long ofst))
-					FC().Offset = ofst;
-
-				/* TODO:
-				if (fc.Attribute != null)
-					foreach (var attr in fc.Attribute)
-						args.Add(attr.Name, attr.Value.ToString());
-
-				if (fc.SemanticsFilter != null)
-					args.AddRange("smf", fc.SemanticsFilter);
-
-				if (fc.Labels != null)
-					args.AddRange("lbl", fc.Labels);
-
-				if (fc.ContentType != null)
-					args.AddRange("cty", fc.ContentType);
-				*/
-
-				request.FilterCriteria = fc;
-			}
-
-			return notification;
-		}
 
 		public static string SerializeJson(object obj) => JsonConvert.SerializeObject(obj, Newtonsoft.Json.Formatting.Indented, JsonSettings);
 	}

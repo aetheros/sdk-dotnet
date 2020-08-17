@@ -60,7 +60,7 @@ namespace Aetheros.OneM2M.Api
 		public async Task<T> GetResponseAsync<T>(RequestPrimitive body)
 			where T : class, new()
 		{
-			if (body.To == null)
+			if (body.To == null || body.To == ".")
 				body.To = $"/{UrlPrefix}{AeId}";
 			else if (!body.To.StartsWith("/"))
 				body.To = $"/{UrlPrefix}{AeId}/{TrimStart(body.To, "./")}";
@@ -146,7 +146,8 @@ namespace Aetheros.OneM2M.Api
 			{
 				parentName = name.Substring(0, ichLast);
 				name = name.Substring(ichLast + 1);
-				var parent = await EnsureContainerAsync(parentName);
+				if (!string.IsNullOrWhiteSpace(parentName) && parentName != ".")
+					await EnsureContainerAsync(parentName);
 			}
 
 			var container = (await GetResponseAsync(new RequestPrimitive
@@ -198,7 +199,7 @@ namespace Aetheros.OneM2M.Api
 
 		readonly ConcurrentDictionary<string, Task<IObservable<NotificationNotificationEvent>>> _eventSubscriptions = new ConcurrentDictionary<string, Task<IObservable<NotificationNotificationEvent>>>();
 
-		public async Task<IObservable<NotificationNotificationEvent>> ObserveAsync(string url)
+		public async Task<IObservable<NotificationNotificationEvent>> ObserveAsync(string url, string? subscriptionName = null, EventNotificationCriteria criteria = null)
 		{
 			if (this.PoaUrl == null)
 				throw new InvalidOperationException("Cannot Observe without valid PoaUrl");
@@ -246,6 +247,9 @@ namespace Aetheros.OneM2M.Api
 						{
 							Subscription = new Subscription
 							{
+								ResourceName = subscriptionName,
+								EventNotificationCriteria = criteria,
+								NotificationContentType = NotificationContentType.AllAttributes,
 								NotificationURI = new[] { poaUrl },
 							}
 						}

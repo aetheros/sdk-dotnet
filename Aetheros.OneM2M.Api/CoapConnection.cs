@@ -13,6 +13,8 @@ using CoAP.Net;
 using CoAP;
 using CoAP.Util;
 using System.Net;
+using Newtonsoft.Json;
+using System.Diagnostics;
 
 namespace Aetheros.OneM2M.Api
 {
@@ -33,25 +35,7 @@ namespace Aetheros.OneM2M.Api
 		{
 			_iotApiUrl = m2mUrl;
 
-#if false
-			var handler = new HttpClientHandler
-			{
-#if false
-				//enable this code if using proxy	
-				Proxy = new System.Net.WebProxy("http://localhost.:8888")
-					{
-						BypassProxyOnLocal = false,
-					},
-#endif
-				ServerCertificateCustomValidationCallback = (message, cert, chain, errors) => true
-			};
-
-			if (certificate != null)
-			{
-				this.ClientCertificate = certificate;
-				handler.ClientCertificates.Add(certificate);
-			}
-#endif
+			// TODO: certificate
 
 			_pnClient = new CoapClient(m2mUrl);
 			_pnClient.Timeout = 300 * 1000;
@@ -130,27 +114,21 @@ namespace Aetheros.OneM2M.Api
 
 			var request = new CoAP.Request(method);
 			request.AckTimeout = 10000 * 1000;
-			//request.URI = urlBuilder.Uri;
 
-			//request.AddUriPath(body.To);
 			request.URI = _pnClient.Uri;
 			foreach (var pathPart in body.To.Split("/", StringSplitOptions.RemoveEmptyEntries))
-				if (pathPart != ".")
-					request.AddUriPath(pathPart);
+				request.AddUriPath(pathPart);
 
 			foreach (var query in args.AllKeys.SelectMany(args.GetValues, (k, v) => $"{k}={Uri.EscapeDataString(v)}"))
 				request.AddUriQuery(query);
 
-			//if (method == HttpMethod.Post || method == HttpMethod.Put)
-			{
-				if (body.ResourceType != null)
-					request.AddOption(Option.Create((CoAP.OptionType) OneM2mRequestOptions.TY, (int) body.ResourceType));
+			if (body.ResourceType != null)
+				request.AddOption(Option.Create((CoAP.OptionType) OneM2mRequestOptions.TY, (int) body.ResourceType));
 
-				if (body.PrimitiveContent != null)
-				{
-					var bodyJson = SerializeJson(body.PrimitiveContent);
-					request.SetPayload(bodyJson, (int) ContentFormats.Json);
-				}
+			if (body.PrimitiveContent != null)
+			{
+				var bodyJson = SerializeJson(body.PrimitiveContent);
+				request.SetPayload(bodyJson, (int) ContentFormats.Json);
 			}
 
 			if (body.From != null)
@@ -180,6 +158,88 @@ namespace Aetheros.OneM2M.Api
 				request.SetOption(Option.Create((CoAP.OptionType) OneM2mRequestOptions.RTURI, string.Join("&", body.ResponseType.NotificationURI)));
 
 			return request;
+		}
+
+
+		class NotifyResource : CoAP.Server.Resources.Resource
+		{
+			Func<CoAP.Server.Resources.CoapExchange, Task> _postHandler;
+			
+			public NotifyResource(string name, Func<CoAP.Server.Resources.CoapExchange, Task> postHandler) : base(name) 
+			{
+				_postHandler = postHandler;
+			}
+
+			protected override void DoPost(CoAP.Server.Resources.CoapExchange exchange)
+			{
+				_postHandler(exchange).Wait();
+			}
+		}
+
+		public CoAP.Server.Resources.Resource CreateNotificationResource(string name = "notify") =>
+			new NotifyResource(name, this.HandleNotificationAsync);
+
+
+		public async Task HandleNotificationAsync(CoAP.Server.Resources.CoapExchange exchange)
+		{
+			var request = exchange.Request;
+			var body = request.PayloadString;
+
+			Trace.WriteLine("\n!!!!!!!!!!!!!!!!");
+			foreach (var option in request.GetOptions())
+			{
+				Trace.WriteLine($"{option.Name}: ({option.Type}) {option.Value}");
+			}
+
+			Trace.WriteLine("");
+			if (body != null)
+				Trace.WriteLine(body);
+
+			var requestPrimitive = ParseNotification(request);
+			if (requestPrimitive != null)
+				_notifications.OnNext(requestPrimitive);
+
+			exchange.Respond(StatusCode.Valid);
+		}
+
+		Notification? ParseNotification(CoAP.Request request)
+		{
+			var body = request.PayloadString;
+
+			var notification = DeserializeJson<NotificationContent>(body)?.Notification;
+			if (notification == null)
+				return null;
+
+			var serializer = JsonSerializer.CreateDefault(Connection.JsonSettings);
+			var representation = ((Newtonsoft.Json.Linq.JObject) notification.NotificationEvent.Representation).ToObject<PrimitiveContent>(serializer);
+
+			var requestPrimitive = notification.NotificationEvent.PrimitiveRepresentation = new RequestPrimitive
+			{
+				From = request.GetFirstOption((CoAP.OptionType) OneM2mRequestOptions.FR)?.StringValue,
+				RequestIdentifier = request.GetFirstOption((CoAP.OptionType) OneM2mRequestOptions.RQI)?.StringValue,
+				GroupRequestIdentifier = request.GetFirstOption((CoAP.OptionType) OneM2mRequestOptions.GID)?.StringValue,
+				OriginatingTimestamp = request.GetFirstOption((CoAP.OptionType) OneM2mRequestOptions.OT)?.Value as DateTimeOffset?,
+				ResultExpirationTimestamp = request.GetFirstOption((CoAP.OptionType) OneM2mRequestOptions.RSET)?.StringValue,
+				RequestExpirationTimestamp = request.GetFirstOption((CoAP.OptionType) OneM2mRequestOptions.RQET)?.StringValue,
+				OperationExecutionTime = request.GetFirstOption((CoAP.OptionType) OneM2mRequestOptions.OET)?.StringValue,
+				EventCategory = request.GetFirstOption((CoAP.OptionType) OneM2mRequestOptions.EC)?.StringValue,
+		
+				PrimitiveContent = representation
+			};
+
+			var optionNotificationUrl = request.GetFirstOption((CoAP.OptionType) OneM2mRequestOptions.RTURI)?.StringValue;
+			if (!string.IsNullOrEmpty(optionNotificationUrl))
+			{
+				requestPrimitive.ResponseType = new ResponseTypeInfo
+				{
+					NotificationURI = optionNotificationUrl.Split('&'),
+					//ResponseTypeValue = 
+				};
+			}
+
+			//request.SetOption(Option.Create((CoAP.OptionType) OneM2mRequestOptions.RTURI, string.Join("&", body.ResponseType.NotificationURI)));
+
+			return notification;
 		}
 	}
 

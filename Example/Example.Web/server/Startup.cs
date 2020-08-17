@@ -53,7 +53,8 @@ namespace Example.Web.Server
 			app.Map("/notify", builder =>
 			{
 				var modelContext = builder.ApplicationServices.GetService<ModelContext>();
-				builder.Run(context => modelContext.App.Api.HandleNotificationAsync(context.Request));
+				var api = ((Aetheros.OneM2M.Api.HttpConnection) modelContext.App.Api);
+				builder.Run(api.HandleNotificationAsync);
 			});
 
 			app.UseAuthentication();

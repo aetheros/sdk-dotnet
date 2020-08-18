@@ -604,12 +604,12 @@ references:
   fullName.vb: Aetheros.OneM2M.Api.Connection.GetAttributes(Of T)(System.Linq.Expressions.Expression(Of System.Func(Of T, System.Object))())
   nameWithType: Connection.GetAttributes<T>(Expression<Func<T, Object>>[])
   nameWithType.vb: Connection.GetAttributes(Of T)(Expression(Of Func(Of T, Object))())
-- uid: Aetheros.OneM2M.Api.Connection.GetChildResourcesAsync(System.String,Aetheros.Schema.OneM2M.FilterCriteria)
-  name: GetChildResourcesAsync(String, FilterCriteria)
-  href: api/Aetheros.OneM2M.Api.Connection.html#Aetheros_OneM2M_Api_Connection_GetChildResourcesAsync_System_String_Aetheros_Schema_OneM2M_FilterCriteria_
-  commentId: M:Aetheros.OneM2M.Api.Connection.GetChildResourcesAsync(System.String,Aetheros.Schema.OneM2M.FilterCriteria)
-  fullName: Aetheros.OneM2M.Api.Connection.GetChildResourcesAsync(System.String, Aetheros.Schema.OneM2M.FilterCriteria)
-  nameWithType: Connection.GetChildResourcesAsync(String, FilterCriteria)
+- uid: Aetheros.OneM2M.Api.Connection.GetChildResourcesAsync(System.String,System.String,Aetheros.Schema.OneM2M.FilterCriteria)
+  name: GetChildResourcesAsync(String, String, FilterCriteria)
+  href: api/Aetheros.OneM2M.Api.Connection.html#Aetheros_OneM2M_Api_Connection_GetChildResourcesAsync_System_String_System_String_Aetheros_Schema_OneM2M_FilterCriteria_
+  commentId: M:Aetheros.OneM2M.Api.Connection.GetChildResourcesAsync(System.String,System.String,Aetheros.Schema.OneM2M.FilterCriteria)
+  fullName: Aetheros.OneM2M.Api.Connection.GetChildResourcesAsync(System.String, System.String, Aetheros.Schema.OneM2M.FilterCriteria)
+  nameWithType: Connection.GetChildResourcesAsync(String, String, FilterCriteria)
 - uid: Aetheros.OneM2M.Api.Connection.GetChildResourcesAsync*
   name: GetChildResourcesAsync
   href: api/Aetheros.OneM2M.Api.Connection.html#Aetheros_OneM2M_Api_Connection_GetChildResourcesAsync_
@@ -617,12 +617,12 @@ references:
   isSpec: "True"
   fullName: Aetheros.OneM2M.Api.Connection.GetChildResourcesAsync
   nameWithType: Connection.GetChildResourcesAsync
-- uid: Aetheros.OneM2M.Api.Connection.GetPrimitiveAsync(System.String,Aetheros.Schema.OneM2M.FilterCriteria)
-  name: GetPrimitiveAsync(String, FilterCriteria)
-  href: api/Aetheros.OneM2M.Api.Connection.html#Aetheros_OneM2M_Api_Connection_GetPrimitiveAsync_System_String_Aetheros_Schema_OneM2M_FilterCriteria_
-  commentId: M:Aetheros.OneM2M.Api.Connection.GetPrimitiveAsync(System.String,Aetheros.Schema.OneM2M.FilterCriteria)
-  fullName: Aetheros.OneM2M.Api.Connection.GetPrimitiveAsync(System.String, Aetheros.Schema.OneM2M.FilterCriteria)
-  nameWithType: Connection.GetPrimitiveAsync(String, FilterCriteria)
+- uid: Aetheros.OneM2M.Api.Connection.GetPrimitiveAsync(System.String,System.String,Aetheros.Schema.OneM2M.FilterCriteria)
+  name: GetPrimitiveAsync(String, String, FilterCriteria)
+  href: api/Aetheros.OneM2M.Api.Connection.html#Aetheros_OneM2M_Api_Connection_GetPrimitiveAsync_System_String_System_String_Aetheros_Schema_OneM2M_FilterCriteria_
+  commentId: M:Aetheros.OneM2M.Api.Connection.GetPrimitiveAsync(System.String,System.String,Aetheros.Schema.OneM2M.FilterCriteria)
+  fullName: Aetheros.OneM2M.Api.Connection.GetPrimitiveAsync(System.String, System.String, Aetheros.Schema.OneM2M.FilterCriteria)
+  nameWithType: Connection.GetPrimitiveAsync(String, String, FilterCriteria)
 - uid: Aetheros.OneM2M.Api.Connection.GetPrimitiveAsync*
   name: GetPrimitiveAsync
   href: api/Aetheros.OneM2M.Api.Connection.html#Aetheros_OneM2M_Api_Connection_GetPrimitiveAsync_
@@ -807,28 +807,6 @@ references:
   isSpec: "True"
   fullName: Aetheros.OneM2M.Api.Connection.SerializeJson
   nameWithType: Connection.SerializeJson
-- uid: Aetheros.OneM2M.Api.HtppConnectionExtensions
-  name: HtppConnectionExtensions
-  href: api/Aetheros.OneM2M.Api.HtppConnectionExtensions.html
-  commentId: T:Aetheros.OneM2M.Api.HtppConnectionExtensions
-  fullName: Aetheros.OneM2M.Api.HtppConnectionExtensions
-  nameWithType: HtppConnectionExtensions
-- uid: Aetheros.OneM2M.Api.HtppConnectionExtensions.DeserializeAsync*
-  name: DeserializeAsync
-  href: api/Aetheros.OneM2M.Api.HtppConnectionExtensions.html#Aetheros_OneM2M_Api_HtppConnectionExtensions_DeserializeAsync_
-  commentId: Overload:Aetheros.OneM2M.Api.HtppConnectionExtensions.DeserializeAsync
-  isSpec: "True"
-  fullName: Aetheros.OneM2M.Api.HtppConnectionExtensions.DeserializeAsync
-  nameWithType: HtppConnectionExtensions.DeserializeAsync
-- uid: Aetheros.OneM2M.Api.HtppConnectionExtensions.DeserializeAsync``1(System.Net.Http.HttpResponseMessage)
-  name: DeserializeAsync<T>(HttpResponseMessage)
-  href: api/Aetheros.OneM2M.Api.HtppConnectionExtensions.html#Aetheros_OneM2M_Api_HtppConnectionExtensions_DeserializeAsync__1_System_Net_Http_HttpResponseMessage_
-  commentId: M:Aetheros.OneM2M.Api.HtppConnectionExtensions.DeserializeAsync``1(System.Net.Http.HttpResponseMessage)
-  name.vb: DeserializeAsync(Of T)(HttpResponseMessage)
-  fullName: Aetheros.OneM2M.Api.HtppConnectionExtensions.DeserializeAsync<T>(System.Net.Http.HttpResponseMessage)
-  fullName.vb: Aetheros.OneM2M.Api.HtppConnectionExtensions.DeserializeAsync(Of T)(System.Net.Http.HttpResponseMessage)
-  nameWithType: HtppConnectionExtensions.DeserializeAsync<T>(HttpResponseMessage)
-  nameWithType.vb: HtppConnectionExtensions.DeserializeAsync(Of T)(HttpResponseMessage)
 - uid: Aetheros.OneM2M.Api.HttpConnection
   name: HttpConnection
   href: api/Aetheros.OneM2M.Api.HttpConnection.html
@@ -917,6 +895,28 @@ references:
   isSpec: "True"
   fullName: Aetheros.OneM2M.Api.HttpConnection.HandleNotificationAsync
   nameWithType: HttpConnection.HandleNotificationAsync
+- uid: Aetheros.OneM2M.Api.HttpConnectionExtensions
+  name: HttpConnectionExtensions
+  href: api/Aetheros.OneM2M.Api.HttpConnectionExtensions.html
+  commentId: T:Aetheros.OneM2M.Api.HttpConnectionExtensions
+  fullName: Aetheros.OneM2M.Api.HttpConnectionExtensions
+  nameWithType: HttpConnectionExtensions
+- uid: Aetheros.OneM2M.Api.HttpConnectionExtensions.DeserializeAsync*
+  name: DeserializeAsync
+  href: api/Aetheros.OneM2M.Api.HttpConnectionExtensions.html#Aetheros_OneM2M_Api_HttpConnectionExtensions_DeserializeAsync_
+  commentId: Overload:Aetheros.OneM2M.Api.HttpConnectionExtensions.DeserializeAsync
+  isSpec: "True"
+  fullName: Aetheros.OneM2M.Api.HttpConnectionExtensions.DeserializeAsync
+  nameWithType: HttpConnectionExtensions.DeserializeAsync
+- uid: Aetheros.OneM2M.Api.HttpConnectionExtensions.DeserializeAsync``1(System.Net.Http.HttpResponseMessage)
+  name: DeserializeAsync<T>(HttpResponseMessage)
+  href: api/Aetheros.OneM2M.Api.HttpConnectionExtensions.html#Aetheros_OneM2M_Api_HttpConnectionExtensions_DeserializeAsync__1_System_Net_Http_HttpResponseMessage_
+  commentId: M:Aetheros.OneM2M.Api.HttpConnectionExtensions.DeserializeAsync``1(System.Net.Http.HttpResponseMessage)
+  name.vb: DeserializeAsync(Of T)(HttpResponseMessage)
+  fullName: Aetheros.OneM2M.Api.HttpConnectionExtensions.DeserializeAsync<T>(System.Net.Http.HttpResponseMessage)
+  fullName.vb: Aetheros.OneM2M.Api.HttpConnectionExtensions.DeserializeAsync(Of T)(System.Net.Http.HttpResponseMessage)
+  nameWithType: HttpConnectionExtensions.DeserializeAsync<T>(HttpResponseMessage)
+  nameWithType.vb: HttpConnectionExtensions.DeserializeAsync(Of T)(HttpResponseMessage)
 - uid: Aetheros.OneM2M.Api.Registration
   name: Aetheros.OneM2M.Api.Registration
   href: api/Aetheros.OneM2M.Api.Registration.html

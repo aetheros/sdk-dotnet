@@ -31,9 +31,10 @@ namespace GridNet.IoT.Client.Tools
 	{
 #if USE_COAP
 		Uri _poaUrl = new Uri("coap://127.0.0.1:15683/notify");
+		Uri _listenUrl = null;
 #else
-		Uri _poaUrl = new Uri("http://10.0.2.15:5683");
-		Uri _listenUrl = new Uri($"http://0.0.0.0:5683");
+		Uri _poaUrl = new Uri("http://10.0.2.2:44346/notify");
+		Uri _listenUrl = new Uri($"http://0.0.0.0:44346");
 #endif
 
 		class ConnectionConfiguration : Connection.IConnectionConfiguration
@@ -48,10 +49,11 @@ namespace GridNet.IoT.Client.Tools
 			//M2MUrl = new Uri("coap://192.168.56.1:8110/PN_CSE"),
 			M2MUrl = new Uri("coap://127.0.0.1:8110"),
 #else
-			M2MUrl = new Uri("http://192.168.56.1:21300"),
+			M2MUrl = new Uri("https://api.piersh-m2m.corp.grid-net.com/"),
 #endif
 		};
 
+		string _AeId = "";
 		string _AeAppId = "Nsdk-devAe-0.com.policynetiot.sdk";
 		string _AeAppName = "sdk-devAe-0";
 		string _AeCredential = "8992O4AAEXYWY95O";
@@ -78,48 +80,53 @@ namespace GridNet.IoT.Client.Tools
 #endif
 			{ "i|id=", "The App Id", v => _AeAppId = v },
 			{ "n|name=", "The App Name", v => _AeAppName = v },
-			{ "credential=", "The AE registration Credential", v => _AeCredential = v },
+			{ "a|ae=", "The existing AE Id", v => _AeId = v },
+			//{ "credential=", "The AE registration Credential", v => _AeCredential = v },
 		};
 
 		protected override string Usage { get; } = "[<options>]";
 
-		Connection _connection;
 		Application _application;
 
-		async Task<AE> Register()
+		async Task<AE> Register(Connection connection)
 		{
 #if false
-			// find stale AEs
-			var staleAEs = await _connection.GetResponseAsync(new RequestPrimitive
+			// find existing AE
+			var existingAeUrls = (await connection.GetResponseAsync(new RequestPrimitive
 			{
 				Operation = Operation.Retrieve,
-				From = "PN_CSE",
-				To = "PN_CSE",
+				From = _RegPath,
+				To = _RegPath,
 				FilterCriteria = new FilterCriteria
 				{
 					FilterUsage = FilterUsage.Discovery,
 					ResourceType = new[] { ResourceType.AE },
 					Attribute = Connection.GetAttributes<AE>(_ => _.App_ID == _AeAppId),
 				}
-			});
+			})).URIList;
 
-			// delete stale AEs
-			foreach (var url in staleAEs.URIList)
+			if (existingAeUrls.Any())
 			{
-				await _connection.GetResponseAsync(new RequestPrimitive
+				var ae = await connection.GetPrimitiveAsync(existingAeUrls.First());
+				if (ae != null)
 				{
-					Operation = Operation.Delete,
-					From = "PN_CSE",
-					To = url,
-				});
+					// TODO: fix POA
+					return ae.AE;
+				}
 			}
 #endif
 
+			if (!string.IsNullOrEmpty(_AeId))
+			{
+				var ae = (await connection.GetPrimitiveAsync(_AeId, _AeId)).AE;
+				if (ae != null)
+					return ae;
+			}
+
 			Trace.TraceInformation("Invoking AE Registration API");
 
-			var response = await _connection.GetResponseAsync(new RequestPrimitive
+			var response = await connection.GetResponseAsync(new RequestPrimitive
 			{
-				From = _AeCredential,
 				To = _RegPath,
 				Operation = Operation.Create,
 				ResourceType = ResourceType.AE,
@@ -166,6 +173,7 @@ namespace GridNet.IoT.Client.Tools
 		async Task CreateMeterReadPolicy()
 		{
 			await _application.EnsureContainerAsync(_MsPolicyPath);
+			await DeleteMeterReadPolicy();
 
 			Trace.TraceInformation("Invoking Create Meter Read Policy API");
 
@@ -222,38 +230,48 @@ namespace GridNet.IoT.Client.Tools
 			await _application.DeleteAsync($"{_MsPolicyPath}/{MeterReadPolicyName}");
 		}
 
-
 		public override async Task Run(IList<string> args)
 		{
-#if USE_COAP
-			// configure a oneM2M CoAP connection
-			var connection = new CoapConnection(_connectionConfiguration);
+			Task hostTask;
+			object server;
 
-			// start the POA CoAP server
-			using var server = new CoAP.Server.CoapServer();
-			server.AddEndPoint(new IPEndPoint(IPAddress.Any, _poaUrl.Port));
-			server.Add(connection.CreateNotificationResource());
-			server.Start();
+			Connection connection;
+			if (_connectionConfiguration.M2MUrl.Scheme.StartsWith("coap"))
+			{
+				// configure a oneM2M CoAP connection
+				var coapConnection = new CoapConnection(_connectionConfiguration);
+				connection = coapConnection;
 
-			var hostTask = Task.Delay(Timeout.Infinite);  // TODO: terminate
-#else
-			// configure a oneM2M HTTP connection
-			var connection = new HttpConnection(_connectionConfiguration);
+				// start the POA CoAP server
+				var coapServer = new CoAP.Server.CoapServer();
+				coapServer.AddEndPoint(new IPEndPoint(IPAddress.Any, _poaUrl.Port));
+				coapServer.Add(coapConnection.CreateNotificationResource());
+				coapServer.Start();
+				server = coapServer;
 
-			// start the POA web server
-			var hostTask = WebHost.CreateDefaultBuilder()
-				.UseUrls((_listenUrl ?? _poaUrl).ToString())
-				.Configure(app => app.Map("/notify", builder => builder.Run(connection.HandleNotificationAsync)))
-				.Build()
-				.RunAsync();
-#endif
-			_connection = connection;
+				hostTask = Task.Delay(Timeout.Infinite);  // TODO: terminate
+			}
+			else
+			{
+				// configure a oneM2M HTTP connection
+				var httpConnection = new HttpConnection(_connectionConfiguration);
+				connection = httpConnection;
+
+				// start the POA web server
+				hostTask = WebHost.CreateDefaultBuilder()
+					.UseUrls((_listenUrl ?? _poaUrl).ToString())
+					.Configure(app => app.Map("/notify", builder => builder.Run(httpConnection.HandleNotificationAsync)))
+					.Build()
+					.RunAsync();
+			}
 
 			// register the AE
-			var ae = await Register();
+			var ae = await Register(connection);
+
+			Trace.WriteLine($"Using AE, Id = {ae.AE_ID}");
 
 			// configure the oneM2M applicaiton api
-			_application = new Application(_connection, ae.App_ID, ae.AE_ID, "./", _poaUrl);
+			_application = new Application(connection, ae.App_ID, ae.AE_ID, "./", _poaUrl);
 
 			// create a subscription
 			var policyObservable =

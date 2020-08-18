@@ -114,19 +114,21 @@ namespace Aetheros.OneM2M.Api
 			return response?.AE;
 		}
 
-		public async Task<ResponseContent> GetPrimitiveAsync(string key, FilterCriteria? filterCriteria = null) =>
+		public async Task<ResponseContent> GetPrimitiveAsync(string from, string to, FilterCriteria? filterCriteria = null) =>
 			await GetResponseAsync(new RequestPrimitive
 			{
 				Operation = Operation.Retrieve,
-				To = key,
+				From = from,
+				To = to,
 				FilterCriteria = filterCriteria
 			});
 
-		public async Task<PrimitiveContent> GetChildResourcesAsync(string key, FilterCriteria? filterCriteria = null) =>
+		public async Task<PrimitiveContent> GetChildResourcesAsync(string from, string to, FilterCriteria? filterCriteria = null) =>
 			await GetResponseAsync<PrimitiveContent>(new RequestPrimitive
 			{
 				Operation = Operation.Retrieve,
-				To = key,
+				From = from,
+				To = to,
 				ResultContent = ResultContent.ChildResources,
 				FilterCriteria = filterCriteria
 			});
@@ -187,15 +189,6 @@ namespace Aetheros.OneM2M.Api
 				if (fc.ContentFilterQuery != null) args["cfq"] = fc.ContentFilterQuery;
 				if (fc.Level != null) args["lvl"] = fc.Level.ToString();
 				if (fc.Offset != null) args["ofst"] = fc.Offset.ToString();
-
-				if (fc.Attribute != null)
-				{
-					foreach (var attr in fc.Attribute)
-					{
-						if (attr.Value != null)
-							args.Add(attr.Name, attr.Value.ToString());
-					}
-				}
 
 				if (fc.ResourceType != null)
 					args.AddRange("ty", fc.ResourceType.Select(ty => ty.ToString("d")));

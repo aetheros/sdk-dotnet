@@ -95,7 +95,7 @@ namespace Aetheros.OneM2M.Api
 			});
 
 
-		public async Task DeleteAsync(params string[] urls) => DeleteAsync((IEnumerable<string>) urls);
+		public async Task DeleteAsync(params string[] urls) => await DeleteAsync((IEnumerable<string>) urls);
 
 		public async Task DeleteAsync(IEnumerable<string> urls)
 		{
@@ -127,7 +127,7 @@ namespace Aetheros.OneM2M.Api
 				}
 			});
 
-		public async Task<Container> EnsureContainerAsync(string name /*, bool clientAppContainer = false*/)
+		public async Task<Container?> EnsureContainerAsync(string name /*, bool clientAppContainer = false*/)
 		{
 			if (name == "." || name == "/")
 				return null;
@@ -139,7 +139,7 @@ namespace Aetheros.OneM2M.Api
 			catch (Connection.HttpStatusException e) when (e.StatusCode == HttpStatusCode.NotFound) { }
 			catch (CoapRequestException e) when (e.StatusCode == 132) { }
 
-			string parentName = null;
+			string? parentName = null;
 
 			int ichLast = name.LastIndexOf('/');
 			if (ichLast > 0)
@@ -199,7 +199,7 @@ namespace Aetheros.OneM2M.Api
 
 		readonly ConcurrentDictionary<string, Task<IObservable<NotificationNotificationEvent>>> _eventSubscriptions = new ConcurrentDictionary<string, Task<IObservable<NotificationNotificationEvent>>>();
 
-		public async Task<IObservable<NotificationNotificationEvent>> ObserveAsync(string url, string? subscriptionName = null, EventNotificationCriteria criteria = null)
+		public async Task<IObservable<NotificationNotificationEvent>> ObserveAsync(string url, string? subscriptionName = null, EventNotificationCriteria? criteria = null)
 		{
 			if (this.PoaUrl == null)
 				throw new InvalidOperationException("Cannot Observe without valid PoaUrl");

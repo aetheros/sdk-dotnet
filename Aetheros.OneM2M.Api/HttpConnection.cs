@@ -95,6 +95,16 @@ namespace Aetheros.OneM2M.Api
 		{
 			var args = GetRequestParameters(body);
 
+			var fc = body.FilterCriteria;
+			if (fc != null)
+			{
+				foreach (var attr in fc.Attribute)
+				{
+					if (attr.Value != null)
+						args.Add(attr.Name, attr.Value.ToString());
+				}
+			}
+
 			var method = body.Operation switch
 			{
 				Operation.Retrieve => HttpMethod.Get,
@@ -157,7 +167,7 @@ namespace Aetheros.OneM2M.Api
 		{
 			var request = context.Request;
 			using var bodyStream = new StreamReader(request.Body, true);
-			var body = await bodyStream.ReadToEndAsync();
+			var body = (await bodyStream.ReadToEndAsync())!;
 
 			Trace.WriteLine("\n!!!!!!!!!!!!!!!!");
 			Trace.WriteLine($"{request.Method} {request.PathBase}?{request.QueryString} {request.Protocol}");
@@ -296,7 +306,7 @@ namespace Aetheros.OneM2M.Api
 		}		
 	}
 
-	public static class HtppConnectionExtensions
+	public static class HttpConnectionExtensions
 	{
 		public static async Task<T> DeserializeAsync<T>(this HttpResponseMessage response)
 			where T : class, new()

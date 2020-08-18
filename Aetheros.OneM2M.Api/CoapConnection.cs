@@ -104,6 +104,19 @@ namespace Aetheros.OneM2M.Api
 		{
 			var args = GetRequestParameters(body);
 
+			var fc = body.FilterCriteria;
+			if (fc != null)
+			{
+				if (fc.Attribute != null)
+				{
+					foreach (var attr in fc.Attribute)
+					{
+						if (attr.Value != null)
+							args.Add("atr", $"{attr.Name},{attr.Value.ToString()}");
+					}
+				}
+			}
+
 			var method = body.Operation switch
 			{
 				Operation.Retrieve => CoAP.Method.GET,
@@ -195,11 +208,20 @@ namespace Aetheros.OneM2M.Api
 			if (body != null)
 				Trace.WriteLine(body);
 
-			var requestPrimitive = ParseNotification(request);
-			if (requestPrimitive != null)
-				_notifications.OnNext(requestPrimitive);
+			var notification = ParseNotification(request);
+			if (notification != null)
+			{
+				_notifications.OnNext(notification);
 
-			exchange.Respond(StatusCode.Valid);
+				var response = Response.CreateResponse(request, StatusCode.Content);
+				/*
+				foreach(var uri in notification.NotificationEvent.PrimitiveRepresentation.ResponseType?.NotificationURI ?? Array.Empty<string>())
+					response.SetOption(Option.Create((CoAP.OptionType) OneM2mRequestOptions.RTURI, uri));
+
+				*/
+				response.SetOption(Option.Create((CoAP.OptionType) OneM2mRequestOptions.RQI, notification.NotificationEvent.PrimitiveRepresentation.RequestIdentifier));
+				exchange.Respond(response);
+			}
 		}
 
 		Notification? ParseNotification(CoAP.Request request)

@@ -5,6 +5,7 @@
 				{
 					"files": [
 						"Aetheros.Schema.OneM2M/*.csproj",
+						"Aetheros.Schema.AOS/*.csproj",
 						"Aetheros.OneM2M.Api/*.csproj"
 					],
 					"src": ".."

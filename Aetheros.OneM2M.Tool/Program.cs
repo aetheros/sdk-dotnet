@@ -54,6 +54,7 @@ namespace GridNet.IoT.Client
 
 		public static async Task Main(string[] args)
 		{
+			Trace.Listeners.Clear();
 			Trace.Listeners.Add(new TextWriterTraceListener(Console.Out));
 
 			if (args.Length == 0)

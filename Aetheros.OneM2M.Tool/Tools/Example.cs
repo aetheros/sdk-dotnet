@@ -118,9 +118,11 @@ namespace GridNet.IoT.Client.Tools
 
 			if (!string.IsNullOrEmpty(_AeId))
 			{
-				var ae = (await connection.GetPrimitiveAsync(_AeId, _AeId)).AE;
-				if (ae != null)
-					return ae;
+				try
+				{
+					return (await connection.GetPrimitiveAsync(_AeId, _AeId)).AE;
+				}
+				catch {}
 			}
 
 			Trace.TraceInformation("Invoking AE Registration API");

@@ -101,11 +101,16 @@ namespace Aetheros.OneM2M.Api
 		{
 			foreach (var url in urls)
 			{
-				await GetResponseAsync(new RequestPrimitive
+				try
 				{
-					Operation = Operation.Delete,
-					To = url,
-				});
+					await GetResponseAsync(new RequestPrimitive
+					{
+						Operation = Operation.Delete,
+						To = url,
+					});
+				}
+				catch (Connection.HttpStatusException e) when (e.StatusCode == HttpStatusCode.NotFound) { }
+				catch (CoapRequestException e) when (e.StatusCode == 132) { }
 			}
 		}
 

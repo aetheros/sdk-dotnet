@@ -60,10 +60,8 @@ namespace Aetheros.OneM2M.Api
 		public async Task<T> GetResponseAsync<T>(RequestPrimitive body)
 			where T : class, new()
 		{
-			if (body.To == null || body.To == ".")
-				body.To = $"/{UrlPrefix}{AeId}";
-			else if (!body.To.StartsWith("/"))
-				body.To = $"/{UrlPrefix}{AeId}/{TrimStart(body.To, "./")}";
+			if (body.To.StartsWith("~"))
+				body.To = AeId + TrimStart(body.To, "~");
 
 			if (body.From == null)
 				body.From = AeId;
@@ -235,12 +233,15 @@ namespace Aetheros.OneM2M.Api
 						});
 
 					//work around for CSE timeout issue - remove subscriptions with different poaUrls
-					if (discoverSubscriptions?.URIList != null)
-						await DeleteAsync(discoverSubscriptions.URIList.Except(new string[] { subscriptionReference }).ToArray());
+					await DeleteAsync(discoverSubscriptions.URIList.Except(new string[] { subscriptionReference }).ToArray());
 				}
 
 				//create subscription only if can't find subscription with the same notification url
-				if (subscriptionReference == null)
+				if (subscriptionReference != null)
+				{
+					Debug.WriteLine($"Using existing subscription {key} : {subscriptionReference}");
+				}
+				else
 				{
 					var subscriptionResponse = await GetResponseAsync(new RequestPrimitive
 					{
@@ -261,9 +262,9 @@ namespace Aetheros.OneM2M.Api
 					});
 
 					subscriptionReference = subscriptionResponse?.URI;
+					Debug.WriteLine($"Created Subscription {key} : {subscriptionReference}");
 				}
 
-				Debug.WriteLine($"Created Subscription {subscriptionReference} = {key}");
 
 				return Connection.Notifications
 					.Where(n => n.SubscriptionReference == subscriptionReference)
@@ -287,6 +288,13 @@ namespace Aetheros.OneM2M.Api
 					.RefCount();
 			});
 		}
+
+
+		public async Task<IObservable<T>> ObserveAsync<T>(string url, string? subscriptionName = null)
+			where T : class, new() =>
+				(await ObserveAsync(url, subscriptionName))
+				.Select(evt => evt.PrimitiveRepresentation.PrimitiveContent?.ContentInstance?.GetContent<T>())
+				.WhereNotNull();
 
 		public async Task<IObservable<TContent>> ObserveContentInstanceCreationAsync<TContent>(string containerName)
 			where TContent : class

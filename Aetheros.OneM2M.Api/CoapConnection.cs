@@ -129,8 +129,17 @@ namespace Aetheros.OneM2M.Api
 			request.AckTimeout = 10000 * 1000;
 
 			request.URI = _pnClient.Uri;
-			foreach (var pathPart in body.To.Split("/", StringSplitOptions.RemoveEmptyEntries))
-				request.AddUriPath(pathPart);
+			var to = body.To;
+			var pathParts = to.Split("/", StringSplitOptions.RemoveEmptyEntries);
+			
+			if (to.StartsWith("//"))
+				request.AddUriPath("_");
+			else if (to.StartsWith("/"))
+				request.AddUriPath("~");
+
+			foreach (var pathPart in pathParts)
+				if (pathPart != ".")
+					request.AddUriPath(pathPart);
 
 			foreach (var query in args.AllKeys.SelectMany(args.GetValues, (k, v) => $"{k}={Uri.EscapeDataString(v)}"))
 				request.AddUriQuery(query);
@@ -200,13 +209,20 @@ namespace Aetheros.OneM2M.Api
 
 			Trace.WriteLine("\n!!!!!!!!!!!!!!!!");
 			foreach (var option in request.GetOptions())
-			{
 				Trace.WriteLine($"{option.Name}: ({option.Type}) {option.Value}");
-			}
 
 			Trace.WriteLine("");
 			if (body != null)
-				Trace.WriteLine(body);
+			{
+				try
+				{
+					Trace.WriteLine(JsonConvert.SerializeObject(JsonConvert.DeserializeObject(body), Formatting.Indented));
+				}
+				catch
+				{
+					Trace.WriteLine(body);
+				}
+			}
 
 			var notification = ParseNotification(request);
 			if (notification != null)

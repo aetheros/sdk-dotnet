@@ -17,6 +17,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Net;
 using System.Net.Http;
+using System.Reactive.Linq;
 using System.Reactive.Subjects;
 using System.Security.Cryptography;
 using System.Text;
@@ -290,5 +291,16 @@ namespace Aetheros.OneM2M.Api
 			var rgbHash = @this.ComputeHash(rgbClear);
 			return Convert.ToBase64String(rgbHash);
 		}
+
+
+		public static IEnumerable<T> WhereNotNull<T>(this IEnumerable<T?> enumerable) where T : class
+		{
+				return enumerable.Where(e => e != null).Select(e => e!);
+		}
+		public static IObservable<T> WhereNotNull<T>(this IObservable<T?> enumerable) where T : class
+		{
+				return enumerable.Where(e => e != null).Select(e => e!);
+		}
+
 	}
 }

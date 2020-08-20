@@ -1,4 +1,4 @@
-//#define USE_COAP
+#define USE_COAP
 
 using Aetheros.OneM2M.Api;
 using Aetheros.Schema.AOS;
@@ -54,22 +54,27 @@ namespace GridNet.IoT.Client.Tools
 		};
 
 		string _AeId = "";
+#if false
 		string _AeAppId = "Nsdk-devAe-0.com.policynetiot.sdk";
 		string _AeAppName = "sdk-devAe-0";
-		string _AeCredential = "8992O4AAEXYWY95O";
+#else
+		string _AeAppId = "Nra1.com.aos.iot";
+		string _AeAppName = "metersvc-smpl";
+#endif
+		string _AeCredential = "";//"8992O4AAEXYWY95O";
 		string _RegPath;
 		string _MsPolicyPath;
 		string _MsReadsPath;
 
 		public Example()
 		{
-			_RegPath = "/PN_CSE";//"."
-			_MsPolicyPath = $"{_RegPath}/metersvc/policies";
-			_MsReadsPath = $"{_RegPath}/metersvc/reads";
+			_RegPath = ".";//"/PN_CSE"
+			_MsPolicyPath = $"~/policies";	// "~" is AE-relative
+			_MsReadsPath = $"~/reads";
 		}
 
-		const string MeterReadSubscriptionName = "metersvc-sampl-sub-01";
-		const string MeterReadPolicyName = "metersvc-sampl-pol-01";
+		const string MeterReadSubscriptionName = "sdk-sampl-sub-01";
+		const string MeterReadPolicyName = "sdk-sampl-pol-01";
 
 		public override OptionSet Options => new OptionSet
 		{
@@ -120,7 +125,9 @@ namespace GridNet.IoT.Client.Tools
 			{
 				try
 				{
-					return (await connection.GetPrimitiveAsync(_AeId, _AeId)).AE;
+					var ae = (await connection.GetPrimitiveAsync(_AeId, _AeId)).AE;
+					Trace.TraceInformation($"Using existing AE {ae.AE_ID}");
+					return ae;
 				}
 				catch {}
 			}
@@ -148,23 +155,6 @@ namespace GridNet.IoT.Client.Tools
 		async Task DeRegister()
 		{
 			await _application.DeleteAsync($"{_RegPath}/{_application.AppId}");
-		}
-
-		async Task<IObservable<NotificationNotificationEvent>> CreateSubscription()
-		{
-			await _application.EnsureContainerAsync(_MsReadsPath);
-			await DeleteSubscription();
-
-			Trace.TraceInformation("Invoking Create Subscription API");
-
-			return await _application.ObserveAsync(
-				_MsReadsPath,
-				MeterReadSubscriptionName,
-				new EventNotificationCriteria
-				{
-					NotificationEventType = new[] { NotificationEventType.CreateChild, },
-				} 
-			);
 		}
 
 		private async Task DeleteSubscription()
@@ -205,7 +195,7 @@ namespace GridNet.IoT.Client.Tools
 		{
 			await _application.EnsureContainerAsync(_MsReadsPath);
 
-			Trace.TraceInformation("Invoking Create Meter Read Policy API");
+			Trace.TraceInformation("Invoking Create Meter Read API");
 
 			await _application.AddContentInstanceAsync(
 				_MsReadsPath,
@@ -240,12 +230,13 @@ namespace GridNet.IoT.Client.Tools
 			Connection connection;
 			if (_connectionConfiguration.M2MUrl.Scheme.StartsWith("coap"))
 			{
+				CoAP.Log.LogManager.Level = CoAP.Log.LogLevel.Warning;
 				// configure a oneM2M CoAP connection
 				var coapConnection = new CoapConnection(_connectionConfiguration);
 				connection = coapConnection;
 
 				// start the POA CoAP server
-				var coapServer = new CoAP.Server.CoapServer();
+				var coapServer = new CoAP.Server.CoapServer()	;
 				coapServer.AddEndPoint(new IPEndPoint(IPAddress.Any, _poaUrl.Port));
 				coapServer.Add(coapConnection.CreateNotificationResource());
 				coapServer.Start();
@@ -267,31 +258,45 @@ namespace GridNet.IoT.Client.Tools
 					.RunAsync();
 			}
 
+
+			//////
 			// register the AE
+
 			var ae = await Register(connection);
+			Trace.TraceInformation($"Using AE, Id = {ae.AE_ID}");
 
-			Trace.WriteLine($"Using AE, Id = {ae.AE_ID}");
 
+			//////
 			// configure the oneM2M applicaiton api
 			_application = new Application(connection, ae.App_ID, ae.AE_ID, "./", _poaUrl);
 
+
+			//////
 			// create a subscription
-			var policyObservable =
-				(await CreateSubscription())
-				.Select(evt => evt.PrimitiveRepresentation.PrimitiveContent?.ContentInstance?.GetContent<MeterRead>())
-				.Where(meterRead => meterRead != null);
+
+			await _application.EnsureContainerAsync(_MsReadsPath);
+
+			Trace.TraceInformation("Invoking Create Subscription API");
+			var policyObservable = await _application.ObserveAsync<MeterRead>(_MsReadsPath, MeterReadSubscriptionName);
 
 			using var eventSubscription = policyObservable.Subscribe(policy =>
 			{
 				var data = policy.MeterSvcData;
-				Trace.TraceInformation($"new meter read: powerQuality: {data.PowerQuality.VoltageA}, readTimeLocal: {data.ReadTimeLocal}");
+				Trace.TraceInformation($"new meter read:");
+				Trace.TraceInformation($"\tpowerQuality: {data.PowerQuality.VoltageA}");
+				Trace.TraceInformation($"\treadTimeLocal: {data.ReadTimeLocal}");
 			});
 
+
+			//////
 			// create a meter read policy content instance
 			await CreateMeterReadPolicy();
 
+
+			//////
 			// create a (fake) meter read content instance, triggering a notification
 			await CreateMeterRead();
+
 
 			try
 			{

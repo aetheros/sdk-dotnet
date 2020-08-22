@@ -29,6 +29,31 @@ references:
   fullName.vb: Aetheros.OneM2M.Api.ApiExtensions.GetContent(Of T)(Aetheros.Schema.OneM2M.ContentInstance)
   nameWithType: ApiExtensions.GetContent<T>(ContentInstance)
   nameWithType.vb: ApiExtensions.GetContent(Of T)(ContentInstance)
+- uid: Aetheros.OneM2M.Api.ApiExtensions.WhereNotNull*
+  name: WhereNotNull
+  href: api/Aetheros.OneM2M.Api.ApiExtensions.html#Aetheros_OneM2M_Api_ApiExtensions_WhereNotNull_
+  commentId: Overload:Aetheros.OneM2M.Api.ApiExtensions.WhereNotNull
+  isSpec: "True"
+  fullName: Aetheros.OneM2M.Api.ApiExtensions.WhereNotNull
+  nameWithType: ApiExtensions.WhereNotNull
+- uid: Aetheros.OneM2M.Api.ApiExtensions.WhereNotNull``1(System.Collections.Generic.IEnumerable{``0})
+  name: WhereNotNull<T>(IEnumerable<T>)
+  href: api/Aetheros.OneM2M.Api.ApiExtensions.html#Aetheros_OneM2M_Api_ApiExtensions_WhereNotNull__1_System_Collections_Generic_IEnumerable___0__
+  commentId: M:Aetheros.OneM2M.Api.ApiExtensions.WhereNotNull``1(System.Collections.Generic.IEnumerable{``0})
+  name.vb: WhereNotNull(Of T)(IEnumerable(Of T))
+  fullName: Aetheros.OneM2M.Api.ApiExtensions.WhereNotNull<T>(System.Collections.Generic.IEnumerable<T>)
+  fullName.vb: Aetheros.OneM2M.Api.ApiExtensions.WhereNotNull(Of T)(System.Collections.Generic.IEnumerable(Of T))
+  nameWithType: ApiExtensions.WhereNotNull<T>(IEnumerable<T>)
+  nameWithType.vb: ApiExtensions.WhereNotNull(Of T)(IEnumerable(Of T))
+- uid: Aetheros.OneM2M.Api.ApiExtensions.WhereNotNull``1(System.IObservable{``0})
+  name: WhereNotNull<T>(IObservable<T>)
+  href: api/Aetheros.OneM2M.Api.ApiExtensions.html#Aetheros_OneM2M_Api_ApiExtensions_WhereNotNull__1_System_IObservable___0__
+  commentId: M:Aetheros.OneM2M.Api.ApiExtensions.WhereNotNull``1(System.IObservable{``0})
+  name.vb: WhereNotNull(Of T)(IObservable(Of T))
+  fullName: Aetheros.OneM2M.Api.ApiExtensions.WhereNotNull<T>(System.IObservable<T>)
+  fullName.vb: Aetheros.OneM2M.Api.ApiExtensions.WhereNotNull(Of T)(System.IObservable(Of T))
+  nameWithType: ApiExtensions.WhereNotNull<T>(IObservable<T>)
+  nameWithType.vb: ApiExtensions.WhereNotNull(Of T)(IObservable(Of T))
 - uid: Aetheros.OneM2M.Api.Application
   name: Application
   href: api/Aetheros.OneM2M.Api.Application.html
@@ -298,6 +323,15 @@ references:
   isSpec: "True"
   fullName: Aetheros.OneM2M.Api.Application.ObserveAsync
   nameWithType: Application.ObserveAsync
+- uid: Aetheros.OneM2M.Api.Application.ObserveAsync``1(System.String,System.String)
+  name: ObserveAsync<T>(String, String)
+  href: api/Aetheros.OneM2M.Api.Application.html#Aetheros_OneM2M_Api_Application_ObserveAsync__1_System_String_System_String_
+  commentId: M:Aetheros.OneM2M.Api.Application.ObserveAsync``1(System.String,System.String)
+  name.vb: ObserveAsync(Of T)(String, String)
+  fullName: Aetheros.OneM2M.Api.Application.ObserveAsync<T>(System.String, System.String)
+  fullName.vb: Aetheros.OneM2M.Api.Application.ObserveAsync(Of T)(System.String, System.String)
+  nameWithType: Application.ObserveAsync<T>(String, String)
+  nameWithType.vb: Application.ObserveAsync(Of T)(String, String)
 - uid: Aetheros.OneM2M.Api.Application.ObserveContentInstanceCreationAsync*
   name: ObserveContentInstanceCreationAsync
   href: api/Aetheros.OneM2M.Api.Application.html#Aetheros_OneM2M_Api_Application_ObserveContentInstanceCreationAsync_

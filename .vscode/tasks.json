@@ -11,7 +11,11 @@
                 "--nologo",
                 "--verbosity:m"
             ],
-            "problemMatcher": "$msCompile"
+            "problemMatcher": "$msCompile",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         }
     ]
 }

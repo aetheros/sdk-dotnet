@@ -30,8 +30,14 @@ namespace Aetheros.OneM2M.Api
 	{
 		public interface IConnectionConfiguration
 		{
-			public Uri M2MUrl { get; }
-			public string CertificateFilename { get; }
+			Uri? M2MUrl { get; }
+			string? CertificateFilename { get; }
+		}
+
+		public class ConnectionConfiguration : IConnectionConfiguration
+		{
+			public Uri? M2MUrl { get; set; }
+			public string? CertificateFilename { get; set; }
 		}
 
 		[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]

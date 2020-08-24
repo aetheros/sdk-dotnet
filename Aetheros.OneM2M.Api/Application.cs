@@ -20,11 +20,24 @@ namespace Aetheros.OneM2M.Api
 	{
 		public interface IApplicationConfiguration
 		{
-			public string AppId { get; }
-			public string AppName { get; }
-			public string CredentialId { get; }
-			public Uri PoaUrl { get; }
-			public string UrlPrefix { get; }
+			string? AppId { get; }
+			string? AppName { get; }
+			string? CredentialId { get; }
+			Uri? PoaUrl { get; }
+			string? UrlPrefix { get; }
+		}
+
+		public class ApplicationConfiguration : IApplicationConfiguration
+		{
+			public string? AppId { get; set; }
+
+			public string? AppName { get; set; }
+
+			public string? CredentialId { get; set; }
+
+			public Uri? PoaUrl { get; set; }
+
+			public string? UrlPrefix { get; set; }
 		}
 
 		public Connection Connection { get; }
@@ -320,7 +333,7 @@ namespace Aetheros.OneM2M.Api
 		}
 
 		// TODO: find a proper place for this
-		public static async Task<Application> RegisterAsync(Connection.IConnectionConfiguration m2mConfig, IApplicationConfiguration appConfig, string inCse, Uri caUri)
+		public static async Task<Application> RegisterAsync(Connection.IConnectionConfiguration m2mConfig, IApplicationConfiguration appConfig, string inCse, Uri? caUri = null)
 		{
 			var con = new HttpConnection(m2mConfig);
 
@@ -328,7 +341,7 @@ namespace Aetheros.OneM2M.Api
 			if (ae == null)
 				throw new InvalidOperationException("Unable to register application");
 
-			if (con.ClientCertificate == null)
+			if (con.ClientCertificate == null && caUri != null)
 			{
 				var csrUri = new Uri(caUri, "CertificateSigning");
 				var ccrUri = new Uri(caUri, "CertificateConfirm");

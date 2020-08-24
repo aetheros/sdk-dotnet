@@ -5,7 +5,7 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"name": ".NET Core Launch (web)",
+			"name": "Example.Web",
 			"type": "coreclr",
 			"request": "launch",
 			"preLaunchTask": "build",
@@ -23,6 +23,38 @@
 			"sourceFileMap": {
 				"/Views": "${workspaceFolder}/Views"
 			},
+			"logging": {
+				"engineLogging": false,
+				"moduleLoad": false,
+			},
+		},
+		{
+			"name": "Demo",
+			"type": "coreclr",
+			"request": "launch",
+			"preLaunchTask": "build",
+			"program": "bin/Debug/netcoreapp3.1/aostool.dll",
+			"args": [
+				"example",
+				"--ae=C000001"
+			],
+			"cwd": "${workspaceFolder}/Aetheros.OneM2M.Tool",
+			"logging": {
+				"engineLogging": false,
+				"moduleLoad": false,
+			},
+		},
+		{
+			"name": "TestDev",
+			"type": "coreclr",
+			"request": "launch",
+			"preLaunchTask": "build",
+			"program": "bin/Debug/netcoreapp3.1/aostool.dll",
+			"args": [
+				"testdev",
+				"--ae=C000001"
+			],
+			"cwd": "${workspaceFolder}/Aetheros.OneM2M.Tool",
 			"logging": {
 				"engineLogging": false,
 				"moduleLoad": false,

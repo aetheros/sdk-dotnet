@@ -41,17 +41,7 @@ namespace Aetheros.OneM2M.Api
 			_pnClient.Timeout = 300 * 1000;
 		}
 
-		public async Task<ResponseContent> GetResponseAsync(CoAP.Request request)
-		{
-			//var response = await _pnClient.SendTaskAsync(request);
-			var response = await request.SendAsync(request, _pnClient.EndPoint);
-			var responseContent = await response.DeserializeAsync<ResponseContent>() ??
-				throw new InvalidDataException("The returned response did not match type 'ResponseContent'");
-
-			// TODO:
-			//responseContent.ResponseStatusCode = response.StatusCode;
-			return responseContent;
-		}
+		public async Task<ResponseContent> GetResponseAsync(CoAP.Request request) => await GetResponseAsync<ResponseContent>(request);
 
 		public override async Task<T> GetResponseAsync<T>(RequestPrimitive body)
 		{
@@ -62,6 +52,14 @@ namespace Aetheros.OneM2M.Api
 		public async Task<T> GetResponseAsync<T>(CoAP.Request request)
 			where T : class, new()
 		{
+      Trace.WriteLine("\n>>>>>>>>>>>>>>>>");
+			Trace.WriteLine($"{request.CodeString} {request.URI}");
+			foreach (var option in request.GetOptions())
+				Trace.WriteLine($"{option.Name}: ({option.Type}) {option.Value ?? option.StringValue}");
+			if (request.PayloadSize > 0)
+				Trace.WriteLine(request.PayloadString);
+			Trace.WriteLine("");
+
 			var response = await request.SendAsync(request, _pnClient.EndPoint);
 			return await response.DeserializeAsync<T>() ??
 				throw new InvalidDataException("The returned response did not match type 'ResponseContent'");
@@ -141,7 +139,7 @@ namespace Aetheros.OneM2M.Api
 				if (pathPart != ".")
 					request.AddUriPath(pathPart);
 
-			foreach (var query in args.AllKeys.SelectMany(args.GetValues, (k, v) => $"{k}={Uri.EscapeDataString(v)}"))
+			foreach (var query in args.AllKeys.SelectMany(args.GetValues, (k, v) => $"{k}={/*Uri.EscapeDataString*/(v)}"))
 				request.AddUriQuery(query);
 
 			if (body.ResourceType != null)

@@ -252,8 +252,6 @@ namespace Aetheros.OneM2M.Api
 								&& subscription.NotificationURI.Any(n => poaUrl.Equals(n, StringComparison.OrdinalIgnoreCase));
 						});
 
-					subscriptionReference = null;
-
 					//work around for CSE timeout issue - remove subscriptions with different poaUrls
 					await DeleteAsync(discoverSubscriptions.URIList.Except(new string[] { subscriptionReference }).ToArray());
 				}

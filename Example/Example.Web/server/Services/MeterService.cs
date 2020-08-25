@@ -57,12 +57,16 @@ namespace Example.Web.Server.Services
 		public async Task<T> GetLatestContentInstanceAsync<T>(string containerKey)
 			where T : class => await _modelContext.App.Application.GetLatestContentInstanceAsync<T>(containerKey);
 
-		public async Task AddInfoAsync(Info record) => await _modelContext.App.Application.AddContentInstanceAsync(_modelContext.App.InfoContainer, record);
+		public async Task AddInfoAsync(Info record) =>
+			await _modelContext.App.Application.AddContentInstanceAsync(_modelContext.App.InfoContainer, record);
 
-		public async Task AddStateAsync(State record) => await _modelContext.App.Application.AddContentInstanceAsync(_modelContext.App.StateContainer, record);
+		public async Task AddStateAsync(State record) =>
+			await _modelContext.App.Application.AddContentInstanceAsync(_modelContext.App.StateContainer, record);
 
-		public async Task AddCommandAsync(Command record) => await _modelContext.App.Application.AddContentInstanceAsync(_modelContext.App.CommandContainer, record);
+		public async Task AddCommandAsync(Meter meter, Command record) =>
+			await _modelContext.App.Application.AddContentInstanceAsync(meter.MeterUrl + _modelContext.App.CommandContainer, record);
 
-		public async Task AddMeterReadPolicyAsync(Config.MeterReadPolicy record) => await _modelContext.App.Application.AddContentInstanceAsync(_modelContext.App.ConfigContainer, record);
+		public async Task AddMeterReadPolicyAsync(Meter meter, Config.MeterReadPolicy record) =>
+			await _modelContext.App.Application.AddContentInstanceAsync(meter.MeterUrl + _modelContext.App.ConfigContainer, record);
 	}
 }

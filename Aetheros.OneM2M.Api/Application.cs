@@ -61,7 +61,7 @@ namespace Aetheros.OneM2M.Api
 			where T : class, new()
 		{
 			if (body.To.StartsWith("~"))
-				body.To = AeId + TrimStart(body.To, "~");
+				body.To = $"{UrlPrefix}/{AeId}{TrimStart(body.To, "~")}";
 
 			if (body.From == null)
 				body.From = AeId;
@@ -82,8 +82,8 @@ namespace Aetheros.OneM2M.Api
 				FilterCriteria = filterCriteria
 			});
 
-		public Task<ResponseContent> GetPrimitiveAsync(string key, FilterCriteria? filterCriteria = null, ResultContent? resultContent = null) =>
-			GetResponseAsync(new RequestPrimitive
+		public async Task<ResponseContent> GetPrimitiveAsync(string key, FilterCriteria? filterCriteria = null, ResultContent? resultContent = null) =>
+			await GetResponseAsync(new RequestPrimitive
 			{
 				From = this.AeId,
 				To = key,
@@ -91,6 +91,8 @@ namespace Aetheros.OneM2M.Api
 				Operation = Operation.Retrieve,
 				FilterCriteria = filterCriteria
 			});
+
+		public async Task<T> GetPrimitiveAsync<T>(string key, Func<PrimitiveContent, T> selector, FilterCriteria? filterCriteria = null) => selector(await GetPrimitiveAsync(key, filterCriteria));
 
 
 		public async Task DeleteAsync(params string[] urls) => await DeleteAsync((IEnumerable<string>) urls);
@@ -202,11 +204,17 @@ namespace Aetheros.OneM2M.Api
 
 		readonly ConcurrentDictionary<string, Task<IObservable<NotificationNotificationEvent>>> _eventSubscriptions = new ConcurrentDictionary<string, Task<IObservable<NotificationNotificationEvent>>>();
 
-		public async Task<IObservable<NotificationNotificationEvent>> ObserveAsync(string url, string? subscriptionName = null, EventNotificationCriteria? criteria = null)
+		public async Task<IObservable<NotificationNotificationEvent>> ObserveAsync(string url, string? subscriptionName = null, EventNotificationCriteria? criteria = null, string? poaUrl = null)
 		{
-			if (this.PoaUrl == null)
-				throw new InvalidOperationException("Cannot Observe without valid PoaUrl");
+			if (poaUrl == null)
+			{
+				poaUrl = this.PoaUrl?.ToString();
 
+				if (poaUrl == null)
+					throw new InvalidOperationException("Cannot Observe without valid PoaUrl");
+			}
+
+			// TODO: differentiate criteria
 			return await _eventSubscriptions.GetOrAdd(url, async key =>
 			{
 				var discoverSubscriptions = await GetPrimitiveAsync(url, new FilterCriteria
@@ -216,7 +224,6 @@ namespace Aetheros.OneM2M.Api
 				});
 
 				string? subscriptionReference = null;
-				var poaUrl = PoaUrl.ToString();
 
 				if (discoverSubscriptions?.URIList != null)
 				{
@@ -231,6 +238,8 @@ namespace Aetheros.OneM2M.Api
 							return subscription.NotificationURI != null
 								&& subscription.NotificationURI.Any(n => poaUrl.Equals(n, StringComparison.OrdinalIgnoreCase));
 						});
+
+					subscriptionReference = null;
 
 					//work around for CSE timeout issue - remove subscriptions with different poaUrls
 					await DeleteAsync(discoverSubscriptions.URIList.Except(new string[] { subscriptionReference }).ToArray());
@@ -254,7 +263,7 @@ namespace Aetheros.OneM2M.Api
 							Subscription = new Subscription
 							{
 								ResourceName = subscriptionName,
-								EventNotificationCriteria = criteria,
+								EventNotificationCriteria = criteria ?? _defaultEventNotificationCriteria,
 								NotificationContentType = NotificationContentType.AllAttributes,
 								NotificationURI = new[] { poaUrl },
 							}
@@ -264,7 +273,6 @@ namespace Aetheros.OneM2M.Api
 					subscriptionReference = subscriptionResponse?.URI;
 					Debug.WriteLine($"Created Subscription {key} : {subscriptionReference}");
 				}
-
 
 				return Connection.Notifications
 					.Where(n => n.SubscriptionReference == subscriptionReference)
@@ -290,17 +298,22 @@ namespace Aetheros.OneM2M.Api
 		}
 
 
-		public async Task<IObservable<T>> ObserveAsync<T>(string url, string? subscriptionName = null)
+		public async Task<IObservable<T>> ObserveAsync<T>(string url, string? subscriptionName = null, string? poaUrl = null)
 			where T : class, new() =>
-				(await ObserveAsync(url, subscriptionName))
+				(await ObserveAsync(url, subscriptionName, poaUrl: poaUrl))
 				.Select(evt => evt.PrimitiveRepresentation.PrimitiveContent?.ContentInstance?.GetContent<T>())
 				.WhereNotNull();
 
-		public async Task<IObservable<TContent>> ObserveContentInstanceCreationAsync<TContent>(string containerName)
+		static readonly EventNotificationCriteria _defaultEventNotificationCriteria = new EventNotificationCriteria
+		{
+			NotificationEventType = new[] { NotificationEventType.CreateChild },
+		};
+
+		public async Task<IObservable<TContent>> ObserveContentInstanceCreationAsync<TContent>(string containerName, string? poaUrl = null)
 			where TContent : class
 		{
 			var container = await this.EnsureContainerAsync(containerName);
-			return (await this.ObserveAsync(containerName))
+			return (await this.ObserveAsync(containerName, poaUrl: poaUrl))
 				.Where(evt => evt.NotificationEventType == NotificationEventType.CreateChild)
 				.Select(evt => evt.PrimitiveRepresentation.PrimitiveContent?.ContentInstance?.GetContent<TContent>())
 				.Where(content => content != null) as IObservable<TContent>;

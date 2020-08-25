@@ -226,22 +226,28 @@ namespace Example.Web.Server.ViewModels
 
 		public Action<SavedSendCommand> SendCommand => sendCommand =>
 		{
-			Task.Run(async () => await _meterService.AddCommandAsync(new Types.Command
-			{
-				Action = sendCommand.Action == "openValve" ? Actions.OpenValve : Actions.CloseValve,
-				When = sendCommand.When
-			}));
+			Task.Run(async () => await _meterService.AddCommandAsync(
+				await _meterService.GetMeterAsync(this.MeterId),
+				new Types.Command
+				{
+					Action = sendCommand.Action == "openValve" ? Actions.OpenValve : Actions.CloseValve,
+					When = sendCommand.When
+				}
+			));
 		};
 
 		public Action<SavedSendConfigPolicy> SendMeterReadPolicy => sendPolicy =>
 		{
-			Task.Run(async () => await _meterService.AddMeterReadPolicyAsync(new Config.MeterReadPolicy
-			{
-				Name = $"{sendPolicy.ReadInterval} Read",
-				Start = sendPolicy.Start,
-				End = sendPolicy.End,
-				ReadInterval = sendPolicy.ReadInterval
-			}));
+			Task.Run(async () => await _meterService.AddMeterReadPolicyAsync(
+				await _meterService.GetMeterAsync(this.MeterId),
+				new Config.MeterReadPolicy
+				{
+					Name = $"{sendPolicy.ReadInterval} Read",
+					Start = sendPolicy.Start,
+					End = sendPolicy.End,
+					ReadInterval = sendPolicy.ReadInterval
+				}
+			));
 		};
 
 		Random _random = new Random();
@@ -252,7 +258,7 @@ namespace Example.Web.Server.ViewModels
 			{
 				var app = _meterService.App;
 				await app.Application.AddContentInstanceAsync(
-					app.DataContainer,
+					$"~/{app.DataContainer}",
 					new Data
 					{
 						MeterId = this.MeterId,

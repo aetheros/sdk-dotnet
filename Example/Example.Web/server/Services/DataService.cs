@@ -15,6 +15,6 @@ namespace Example.Web.Server.Services
 			_modelContext = modelContext;
 		}
 
-		public async Task Add(Data record) => await _modelContext.App.Application.AddContentInstanceAsync(_modelContext.App.DataContainer, record);
+		public async Task Add(Data record) => await _modelContext.App.Application.AddContentInstanceAsync(_modelContext.DataContainer, record);
 	}
 }

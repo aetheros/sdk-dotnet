@@ -54,7 +54,7 @@ namespace Example.Web.Server.Services
 		public ModelContext(IOptions<WebOptions> opts)
 		{
 			var options = opts.Value;
-			var app = Application.RegisterAsync(options.M2M, options.AE, options.AE.UrlPrefix, options.CAUrl).Result;
+			 var app = Application.RegisterAsync(options.M2M, options.AE, options.AE.UrlPrefix, options.CAUrl).Result;
 
 			this.App = new MyApplication
 			{
@@ -103,7 +103,7 @@ namespace Example.Web.Server.Services
 			_cts.Cancel();
 		}
 
-		async Task<IEnumerable<AE>> DiscoverAEsAsync()
+		async Task<IEnumerable<AEAnnc>> DiscoverAEsAsync()
 		{
 			Debug.WriteLine("===========================ModelContext.DiscoverAEs()");
 
@@ -112,16 +112,19 @@ namespace Example.Web.Server.Services
 			var responseFilterContainers = await App.Application.GetPrimitiveAsync("/PN_CSE", new FilterCriteria
 			{
 				FilterUsage = FilterUsage.Discovery,
-				ResourceType = new[] { ResourceType.AE },
+				ResourceType = new[] { ResourceType.AEAnnc },
 				Attribute = Connection.GetAttributes<AE>(_ => _.App_ID == App.Application.AppId),
 			});
 
 			return await responseFilterContainers.URIList
 				.ToAsyncEnumerable()
 				.SelectAwait(async url => await App.Application.GetPrimitiveAsync(url))
-				.Select(rc => rc.AE)
+				.Select(rc => rc.AEAnnc)
 				.ToListAsync();
 		}
+
+		public string DataContainer => $"~/{App.DataContainer}";
+		public string EventsContainer => $"~/{App.EventsContainer}";
 
 		async Task LoadObservableDataAsync()
 		{
@@ -132,8 +135,8 @@ namespace Example.Web.Server.Services
 			//server app container subscriptions
 
 			// device -> app
-			var dataSubscription = Observable.Defer(async () => await app.ObserveContentInstanceCreationAsync<Data>(App.DataContainer));
-			var eventSubscription = Observable.Defer(async () => await app.ObserveContentInstanceCreationAsync<Events>(App.EventsContainer));
+			var dataSubscription = Observable.Defer(async () => await app.ObserveContentInstanceCreationAsync<Data>(this.DataContainer));
+			var eventSubscription = Observable.Defer(async () => await app.ObserveContentInstanceCreationAsync<Events>(this.EventsContainer));
 
 			var meters = (await DiscoverAEsAsync()).Select(deviceAE =>
 			{
@@ -143,15 +146,17 @@ namespace Example.Web.Server.Services
 				//no announced AEcan be found in dev8 and the below containers cannot be created as client app containers
 				//workaround: created as server app containers
 				//var meterUrl = $"{deviceAE.ResourceID}/";
-				var meterUrl = "";
+				var meterUrl = $"{deviceAE.Link}/";
+
+				var poaUrl = $"{app.UrlPrefix}/{app.AeId}";
 
 				// device
-				var infoSubscription = Observable.Defer(async () => await app.ObserveContentInstanceCreationAsync<Info>(meterUrl + App.InfoContainer));
-				var stateSubscription = Observable.Defer(async () => await app.ObserveContentInstanceCreationAsync<State>(meterUrl + App.StateContainer));
+				var infoSubscription = Observable.Defer(async () => await app.ObserveContentInstanceCreationAsync<Info>(meterUrl + App.InfoContainer, poaUrl));
+				var stateSubscription = Observable.Defer(async () => await app.ObserveContentInstanceCreationAsync<State>(meterUrl + App.StateContainer, poaUrl));
 
 				// app -> device
-				var configSubscription = Observable.Defer(async () => await app.ObserveContentInstanceCreationAsync<Config.MeterReadPolicy>(meterUrl + App.ConfigContainer));
-				var commandSubscription = Observable.Defer(async () => await app.ObserveContentInstanceCreationAsync<Command>(meterUrl + App.CommandContainer));
+				var configSubscription = Observable.Defer(async () => await app.ObserveContentInstanceCreationAsync<Config.MeterReadPolicy>(meterUrl + App.ConfigContainer, poaUrl));
+				var commandSubscription = Observable.Defer(async () => await app.ObserveContentInstanceCreationAsync<Command>(meterUrl + App.CommandContainer, poaUrl));
 
 				return new Meter
 				{
@@ -181,9 +186,11 @@ namespace Example.Web.Server.Services
 			var utcNow = DateTimeOffset.UtcNow;
 			var cutoffTime = utcNow - summationWindow;
 
+			// TODO: filter by creator
+
 			//get content instances created in the specified summation window + 7 days
 			var childResources = (await App.Application.GetChildResourcesAsync<PrimitiveContent>(
-				App.DataContainer,
+				this.DataContainer,
 				new FilterCriteria
 				{
 					ResourceType = new[] { ResourceType.ContentInstance },
@@ -205,10 +212,10 @@ namespace Example.Web.Server.Services
 		{
 			//get content instances created in the specified summation window + 7 days
 			var childResources = (await App.Application.GetChildResourcesAsync<PrimitiveContent>(
-				App.EventsContainer,
+				this.EventsContainer,
 				new FilterCriteria
 				{
-					FilterUsage = FilterUsage.Discovery,
+					//FilterUsage = FilterUsage.Discovery,
 					ResourceType = new[] { ResourceType.ContentInstance },
 					CreatedAfter = DateTimeOffset.UtcNow.AddDays(-30),
 				}

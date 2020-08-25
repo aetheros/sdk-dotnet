@@ -133,7 +133,13 @@ namespace GridNet.IoT.Client.Tools
 
 		async Task CreateMeterRead(string readsContainer)
 		{
-			Trace.TraceInformation("Invoking Create Meter Read API");
+			var summation = new global::Example.Types.Data.Summation
+			{
+				ReadTime = DateTimeOffset.UtcNow,
+				Value = new Random().NextDouble() * 100,
+			};
+
+			Console.WriteLine($"Create Read: @ {summation.ReadTime} = {summation.Value}");
 
 			await _application.AddContentInstanceAsync(
 				readsContainer,
@@ -141,14 +147,7 @@ namespace GridNet.IoT.Client.Tools
 				{
 					MeterId = _application.AeId,
 					UOM = global::Example.Types.Data.Units.USGal,
-					Summations = new[]
-					{
-						new global::Example.Types.Data.Summation
-						{
-							ReadTime = DateTimeOffset.UtcNow,
-							Value = new Random().NextDouble() * 100,
-						}
-					}
+					Summations = new[] { summation }
 				}
 			);
 		}
@@ -193,9 +192,9 @@ namespace GridNet.IoT.Client.Tools
 			var updatePolicySource = new CancellationTokenSource();
 			var lockPolicyUpdate = new object();
 
-			//var policy = await _application.GetLatestContentInstanceAsync<global::Example.Types.Config.MeterReadPolicy>(_MsPolicyPath);
-			//if (policy != null)
-			//	tsReadInterval = TimeSpan.Parse(policy.ReadInterval);
+			var policy = await _application.GetLatestContentInstanceAsync<global::Example.Types.Config.MeterReadPolicy>(_MsPolicyPath);
+			if (policy != null)
+				tsReadInterval = TimeSpan.Parse(policy.ReadInterval);
 
 			var policyObservable = await _application.ObserveAsync<global::Example.Types.Config.MeterReadPolicy>(_MsPolicyPath, MeterReadSubscriptionName);
 			using var eventSubscription = policyObservable.Subscribe(policy =>
@@ -203,6 +202,8 @@ namespace GridNet.IoT.Client.Tools
 				lock (lockPolicyUpdate)
 				{
 					tsReadInterval = TimeSpan.Parse(policy.ReadInterval);
+
+					Console.WriteLine($"New Read Interval: {tsReadInterval}");
 
 					var oldTokenSource = updatePolicySource;
 					updatePolicySource = new CancellationTokenSource();
@@ -217,6 +218,7 @@ namespace GridNet.IoT.Client.Tools
 				while (true)
 				{
 					var timeStart = DateTimeOffset.UtcNow;
+
 					await CreateMeterRead($"{inAeUrl}/{_ReadsContainerName}");
 
 					try

@@ -230,14 +230,17 @@ namespace Aetheros.OneM2M.Api
 			// TODO: differentiate criteria
 			return await _eventSubscriptions.GetOrAdd(url, async key =>
 			{
-				var discoverSubscriptions = await GetPrimitiveAsync(url, new FilterCriteria
+				var filterDiscoveryCriteria = new FilterCriteria
 				{
 					FilterUsage = FilterUsage.Discovery,
 					ResourceType = new[] { ResourceType.Subscription }
-				});
+				};
+				if (subscriptionName != null)
+					filterDiscoveryCriteria.Attribute = Connection.GetAttributes<Subscription>(_ => _.ResourceName == subscriptionName);
 
 				string? subscriptionReference = null;
 
+				var discoverSubscriptions = await GetPrimitiveAsync(url, filterDiscoveryCriteria);
 				if (discoverSubscriptions?.URIList != null)
 				{
 					subscriptionReference = await discoverSubscriptions.URIList
@@ -320,11 +323,11 @@ namespace Aetheros.OneM2M.Api
 			NotificationEventType = new[] { NotificationEventType.CreateChild },
 		};
 
-		public async Task<IObservable<TContent>> ObserveContentInstanceCreationAsync<TContent>(string containerName, string? poaUrl = null)
+		public async Task<IObservable<TContent>> ObserveContentInstanceCreationAsync<TContent>(string containerName, string? subscriptionName = null, string? poaUrl = null)
 			where TContent : class
 		{
 			var container = await this.EnsureContainerAsync(containerName);
-			return (await this.ObserveAsync(containerName, poaUrl: poaUrl))
+			return (await this.ObserveAsync(containerName, subscriptionName, poaUrl: poaUrl))
 				.Where(evt => evt.NotificationEventType == NotificationEventType.CreateChild)
 				.Select(evt => evt.PrimitiveRepresentation.PrimitiveContent?.ContentInstance?.GetContent<TContent>())
 				.Where(content => content != null) as IObservable<TContent>;

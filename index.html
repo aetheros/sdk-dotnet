@@ -76,10 +76,8 @@
 using var app = await con.FindApplicationAsync(&quot;IN_CSE&quot;, &quot;my.app.id&quot;);
 var container = await app.EnsureContainerAsync(&quot;my_container&quot;);
 
-using var subscription = await container.ObserveAsync(&quot;https://localhost/notify&quot;)
-	.Where(evt =&gt; evt.NotificationEventType.Contains(NotificationEventType.CreateChild))
-	.Select(evt =&gt; evt.PrimitiveRepresentation.PrimitiveContent?.ContentInstance?.GetContent&lt;ContentInstanceType&gt;())
-	.Where(ci =&gt; ci != null)
+using var subscription = 
+  (await container.ObserveAsync&lt;ContentInstanceType&gt;(&quot;https://localhost/notify&quot;))
 	.Subscribe(ci =&gt; {
 		Console.WriteLine($&quot;New content instance: {ci.Data}&quot;);
 	});

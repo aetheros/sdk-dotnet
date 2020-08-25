@@ -151,12 +151,12 @@ namespace Example.Web.Server.Services
 				var poaUrl = $"{app.UrlPrefix}/{app.AeId}";
 
 				// device
-				var infoSubscription = Observable.Defer(async () => await app.ObserveContentInstanceCreationAsync<Info>(meterUrl + App.InfoContainer, poaUrl));
-				var stateSubscription = Observable.Defer(async () => await app.ObserveContentInstanceCreationAsync<State>(meterUrl + App.StateContainer, poaUrl));
+				var infoSubscription = Observable.Defer(async () => await app.ObserveContentInstanceCreationAsync<Info>(meterUrl + App.InfoContainer, poaUrl: poaUrl));
+				var stateSubscription = Observable.Defer(async () => await app.ObserveContentInstanceCreationAsync<State>(meterUrl + App.StateContainer, poaUrl: poaUrl));
 
 				// app -> device
-				var configSubscription = Observable.Defer(async () => await app.ObserveContentInstanceCreationAsync<Config.MeterReadPolicy>(meterUrl + App.ConfigContainer, poaUrl));
-				var commandSubscription = Observable.Defer(async () => await app.ObserveContentInstanceCreationAsync<Command>(meterUrl + App.CommandContainer, poaUrl));
+				var configSubscription = Observable.Defer(async () => await app.ObserveContentInstanceCreationAsync<Config.MeterReadPolicy>(meterUrl + App.ConfigContainer, "in-ae subscription", poaUrl));
+				var commandSubscription = Observable.Defer(async () => await app.ObserveContentInstanceCreationAsync<Command>(meterUrl + App.CommandContainer, "in-ae subscription", poaUrl));
 
 				return new Meter
 				{

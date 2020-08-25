@@ -40,7 +40,7 @@ namespace GridNet.IoT.Client.Tools
 		string _AeAppId = "Nra1.com.aos.iot";
 		string _AeAppName = "metersvc-smpl";
 
-		string _AeCredential = "";//"8992O4AAEXYWY95O";
+		//string _AeCredential = "";//"8992O4AAEXYWY95O";
 		string _RegPath = ".";
 		string _MsPolicyPath = $"~/config-cnt";
 		string _MsCommandsPath = $"~/command-cnt";
@@ -74,36 +74,11 @@ namespace GridNet.IoT.Client.Tools
 
 		async Task<AE> Register(Connection connection)
 		{
-#if false
-			// find existing AE
-			var existingAeUrls = (await connection.GetResponseAsync(new RequestPrimitive
-			{
-				Operation = Operation.Retrieve,
-				From = _RegPath,
-				To = _RegPath,
-				FilterCriteria = new FilterCriteria
-				{
-					FilterUsage = FilterUsage.Discovery,
-					ResourceType = new[] { ResourceType.AE },
-					Attribute = Connection.GetAttributes<AE>(_ => _.App_ID == _AeAppId),
-				}
-			})).URIList;
-
-			if (existingAeUrls.Any())
-			{
-				var ae = await connection.GetPrimitiveAsync(existingAeUrls.First());
-				if (ae != null)
-				{
-					// TODO: fix POA
-					return ae.AE;
-				}
-			}
-#endif
-
 			if (!string.IsNullOrEmpty(_AeId))
 			{
 				try
 				{
+					// look for existing AE
 					var ae = (await connection.GetPrimitiveAsync(_AeId, _AeId)).AE;
 					Trace.TraceInformation($"Using existing AE {ae.AE_ID}");
 					return ae;
@@ -111,9 +86,9 @@ namespace GridNet.IoT.Client.Tools
 				catch { }
 			}
 
+			// register a new AE
 			Trace.TraceInformation("Invoking AE Registration API");
-
-			var response = await connection.GetResponseAsync(new RequestPrimitive
+			return (await connection.GetResponseAsync(new RequestPrimitive
 			{
 				To = _RegPath,
 				Operation = Operation.Create,
@@ -127,8 +102,7 @@ namespace GridNet.IoT.Client.Tools
 						PointOfAccess = new[] { _poaUrl.ToString() },
 					}
 				}
-			});
-			return response.AE;
+			}))?.AE;
 		}
 
 		async Task CreateMeterRead(string readsContainer)
@@ -155,6 +129,7 @@ namespace GridNet.IoT.Client.Tools
 		public override async Task Run(IList<string> args)
 		{
 			CoAP.Log.LogManager.Level = CoAP.Log.LogLevel.Warning;
+
 			// configure a oneM2M CoAP connection
 			var connection = new CoapConnection(_connectionConfiguration);
 
@@ -164,13 +139,18 @@ namespace GridNet.IoT.Client.Tools
 			coapServer.Add(connection.CreateNotificationResource());
 			coapServer.Start();
 
+
+			// initialize the connection
 			var ae = await Register(connection);
 			_application = new Application(connection, ae.App_ID, ae.AE_ID, "./", _poaUrl);
 
-			//await _application.EnsureContainerAsync(_MsPolicyPath);
-			//await _application.EnsureContainerAsync(_MsCommandsPath);
+
+			// create our containers
+			await _application.EnsureContainerAsync(_MsPolicyPath);
+			await _application.EnsureContainerAsync(_MsCommandsPath);
 
 
+			// discover the in-ae
 			var inAeUrl = (await _application.GetResponseAsync(new RequestPrimitive
 			{
 				Operation = Operation.Retrieve,
@@ -186,16 +166,19 @@ namespace GridNet.IoT.Client.Tools
 			if (inAeUrl == null)
 				this.ShowError($"Unable to find in-AE {_AeAppName}");
 
-			var inAe = (await _application.GetPrimitiveAsync(inAeUrl)).AE;
 
 			var tsReadInterval = TimeSpan.FromDays(15);
 			var updatePolicySource = new CancellationTokenSource();
 			var lockPolicyUpdate = new object();
 
+
+			// fetch the most recent policy, initialize the read interval
 			var policy = await _application.GetLatestContentInstanceAsync<global::Example.Types.Config.MeterReadPolicy>(_MsPolicyPath);
 			if (policy != null)
 				tsReadInterval = TimeSpan.Parse(policy.ReadInterval);
 
+
+			// subscribe to the policy container
 			var policyObservable = await _application.ObserveAsync<global::Example.Types.Config.MeterReadPolicy>(_MsPolicyPath, MeterReadSubscriptionName);
 			using var eventSubscription = policyObservable.Subscribe(policy =>
 			{
@@ -205,6 +188,7 @@ namespace GridNet.IoT.Client.Tools
 
 					Console.WriteLine($"New Read Interval: {tsReadInterval}");
 
+					// 
 					var oldTokenSource = updatePolicySource;
 					updatePolicySource = new CancellationTokenSource();
 					oldTokenSource.Cancel();
@@ -212,27 +196,17 @@ namespace GridNet.IoT.Client.Tools
 			});
 
 
-
-			try
+			while (true)
 			{
-				while (true)
+				var timeStart = DateTimeOffset.UtcNow;
+
+				await CreateMeterRead($"{inAeUrl}/{_ReadsContainerName}");
+
+				try
 				{
-					var timeStart = DateTimeOffset.UtcNow;
-
-					await CreateMeterRead($"{inAeUrl}/{_ReadsContainerName}");
-
-					try
-					{
-						await Task.Delay(DateTimeOffset.UtcNow + tsReadInterval - timeStart, updatePolicySource.Token);
-					}
-					catch (TaskCanceledException) {}
+					await Task.Delay(DateTimeOffset.UtcNow + tsReadInterval - timeStart, updatePolicySource.Token);
 				}
-			}
-			finally
-			{
-				//await DeleteSubscription();
-				//await DeleteMeterReadPolicy();
-				//await DeRegister();
+				catch (TaskCanceledException) {}	// ignore the wake-up exception
 			}
 		}
 	}

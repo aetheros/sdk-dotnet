@@ -61,7 +61,7 @@ namespace GridNet.IoT.Client.Tools
 		string _AeAppId = "Nra1.com.aos.iot";
 		string _AeAppName = "metersvc-smpl";
 #endif
-		string _AeCredential = "";//"8992O4AAEXYWY95O";
+		//string _AeCredential = "";//"8992O4AAEXYWY95O";
 		string _RegPath;
 		string _MsPolicyPath;
 		string _MsReadsPath;

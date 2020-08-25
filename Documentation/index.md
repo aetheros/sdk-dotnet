@@ -9,10 +9,8 @@ using var con = new HttpConnection("https://cse.local/");
 using var app = await con.FindApplicationAsync("IN_CSE", "my.app.id");
 var container = await app.EnsureContainerAsync("my_container");
 
-using var subscription = await container.ObserveAsync("https://localhost/notify")
-	.Where(evt => evt.NotificationEventType.Contains(NotificationEventType.CreateChild))
-	.Select(evt => evt.PrimitiveRepresentation.PrimitiveContent?.ContentInstance?.GetContent<ContentInstanceType>())
-	.Where(ci => ci != null)
+using var subscription = 
+  (await container.ObserveAsync<ContentInstanceType>("https://localhost/notify"))
 	.Subscribe(ci => {
 		Console.WriteLine($"New content instance: {ci.Data}");
 	});

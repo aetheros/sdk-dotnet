@@ -6,11 +6,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-// get -c C:\work\gridnet\m2msdk\AetherosOneM2MSDK\Aetheros.OneM2M.Tool\cert.pfx --from C4bb2f056000001 "https://api.piersh-m2m.corp.grid-net.com/PN_CSE/C4bb2f056000001/data-cnt?cra=20210526T014643.98874&fu=1&ty=4&rcn=5&lvl=2"
+// get -c C:\work\gridnet\m2msdk\AetherosOneM2MSDK\Aetheros.OneM2M.Tool\cert.pfx --from C5eb5c0c2000006 "https://api.piersh-m2m.corp.grid-net.com/PN_CSE/C4bb2f056000001/data-cnt?cra=20210526T014643.98874&fu=1&ty=4&rcn=5&lvl=2"
 
 namespace GridNet.IoT.Client.Tools
 {
@@ -20,11 +21,13 @@ namespace GridNet.IoT.Client.Tools
 		string _rqi;
 		string _org;
 		string _cert;
+		int _parallel = 1;
 
 		public override OptionSet Options => new OptionSet
 		{
 			{ "c|cert=", "The filename of the client certificate to use", v => _cert = v },
 			{ "f|from=", "The Originator of the request", v => _org = v },
+			{ "p|parallel=", "Number of parallel duplicate requests", v => _parallel = int.Parse(v) },
 			{ "r|requestIdentifier=", "The Request Identifier to use", v => _rqi = v },
 		};
 
@@ -71,18 +74,24 @@ namespace GridNet.IoT.Client.Tools
 #endif
 			client.DefaultRequestHeaders.Add("Accept", HttpConnection.OneM2MResponseContentType);
 
-			if (string.IsNullOrWhiteSpace(_rqi))
-				_rqi = Guid.NewGuid().ToString("N");
+			var tasks = Enumerable.Range(0, _parallel).Select(i => {
+				var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, uri);
+				httpRequestMessage.Headers.Add("X-M2M-RI", _rqi ?? Guid.NewGuid().ToString("N"));
+				httpRequestMessage.Headers.Add("X-M2M-Origin", _org);
+				return client.SendAsync(httpRequestMessage);
+			});
 
-			var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, uri);
-			httpRequestMessage.Headers.Add("X-M2M-RI", _rqi);
-			httpRequestMessage.Headers.Add("X-M2M-Origin", _org);
-
-			var response = await client.SendAsync(httpRequestMessage);
+			//var responses = await tasks.WhenAll();
+			//var response = await client.SendAsync(httpRequestMessage);
 			//response.EnsureSuccessStatusCode();
 
-			var responseBody = await response.Content.ReadAsStringAsync();
-			Console.WriteLine(responseBody);
+			foreach (var task in tasks)
+			{
+				var response = await task;
+				Console.WriteLine("===========");
+				var responseBody = await response.Content.ReadAsStringAsync();
+				Console.WriteLine(responseBody);
+			}
 		}
 	}
 }

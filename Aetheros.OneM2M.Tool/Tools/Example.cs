@@ -93,7 +93,7 @@ namespace GridNet.IoT.Client.Tools
 
 		Application _application;
 
-		async Task<AE> Register(Connection connection)
+		async Task<AE> Register(Connection<PrimitiveContent> connection)
 		{
 #if false
 			// find existing AE
@@ -106,7 +106,7 @@ namespace GridNet.IoT.Client.Tools
 				{
 					FilterUsage = FilterUsage.Discovery,
 					ResourceType = new[] { ResourceType.AE },
-					Attribute = Connection.GetAttributes<AE>(_ => _.App_ID == _AeAppId),
+					Attribute = Connection<PrimitiveContent>.GetAttributes<AE>(_ => _.App_ID == _AeAppId),
 				}
 			})).URIList;
 
@@ -227,7 +227,7 @@ namespace GridNet.IoT.Client.Tools
 			Task hostTask;
 			object server;
 
-			Connection connection;
+			Connection<PrimitiveContent> connection;
 			if (_connectionConfiguration.M2MUrl.Scheme.StartsWith("coap"))
 			{
 				CoAP.Log.LogManager.Level = CoAP.Log.LogLevel.Warning;
@@ -277,7 +277,7 @@ namespace GridNet.IoT.Client.Tools
 			await _application.EnsureContainerAsync(_MsReadsPath);
 
 			Trace.TraceInformation("Invoking Create Subscription API");
-			var policyObservable = await _application.ObserveAsync<MeterRead>(_MsReadsPath, MeterReadSubscriptionName);
+			var policyObservable = await _application.ObserveContentInstanceAsync<MeterRead>(_MsReadsPath, MeterReadSubscriptionName);
 
 			using var eventSubscription = policyObservable.Subscribe(policy =>
 			{

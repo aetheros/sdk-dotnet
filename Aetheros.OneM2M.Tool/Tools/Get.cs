@@ -72,7 +72,7 @@ namespace GridNet.IoT.Client.Tools
 #else
 			client = new HttpClient(handler);
 #endif
-			client.DefaultRequestHeaders.Add("Accept", HttpConnection.OneM2MResponseContentType);
+			client.DefaultRequestHeaders.Add("Accept", Connection<Aetheros.Schema.OneM2M.PrimitiveContent>.OneM2MResponseContentType);
 
 			var tasks = Enumerable.Range(0, _parallel).Select(i => {
 				var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, uri);

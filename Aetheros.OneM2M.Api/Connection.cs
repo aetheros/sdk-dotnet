@@ -24,10 +24,29 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
+/*
+cp Aetheros.Schema.OneM2M.cs Aetheros.Schema.OneM2M.cs.new
+for i in AggregatedRequest AggregatedRequestRequest AggregatedResponse CSEBase Delivery OperationResult PrimitiveContent Request RequestPrimitive<TPrimitiveContent> ResponseContent ResponsePrimitive
+do
+
+	sed -i -E -e 's#(\spublic [A-Za-z0-9_.]*$i)\b#\1<TPrimitiveContent>#' Aetheros.Schema.OneM2M.cs.new
+	sed -i -E -e 's#( : [A-Za-z0-9_.]*$i)#<TPrimitiveContent> : TPrimitiveContent where TPrimitiveContent : PrimitiveContent#' Aetheros.Schema.OneM2M.cs.new
+
+done
+
+*/
 namespace Aetheros.OneM2M.Api
 {
 	public abstract class Connection
 	{
+		[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
+		public const string OneM2MResponseContentType = "application/vnd.onem2m-res+json";
+
+		//[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
+
+		private protected const string _dateTimeFormat = "yyyyMMddTHHmmss.FFFFF";
+
+
 		public interface IConnectionConfiguration
 		{
 			Uri? M2MUrl { get; }
@@ -40,14 +59,7 @@ namespace Aetheros.OneM2M.Api
 			public string? CertificateFilename { get; set; }
 		}
 
-		[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
-		public const string OneM2MResponseContentType = "application/vnd.onem2m-res+json";
-		//[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
-		private protected const string _dateTimeFormat = "yyyyMMddTHHmmss.FFFFF";
 
-		static int _nextRequestId;
-		readonly string _requestGuid = Guid.NewGuid().ToString("N");
-		public string NextRequestId => $"{_requestGuid}/{Interlocked.Increment(ref _nextRequestId)}";
 
 		protected static JsonSerializerSettings JsonSettings { get; } = new JsonSerializerSettings
 		{
@@ -69,9 +81,65 @@ namespace Aetheros.OneM2M.Api
 			Serializer = JsonSerializer.CreateDefault(JsonSettings);
 		}
 
+
+		
+		public static T? DeserializeJson<T>(string str)
+			where T : class => JsonConvert.DeserializeObject<T>(str, Connection.JsonSettings);
+
+		public static ICollection<Aetheros.Schema.OneM2M.Attribute> GetAttributes<T>(params Expression<Func<T, object>>[] expressions) =>
+			expressions.Select(expr =>
+			{
+				var body = expr.Body;
+				if (body.NodeType == ExpressionType.Convert)
+					body = ((UnaryExpression) body).Operand;  // throws
+
+				var equalityExpr = (BinaryExpression) body;
+				var left = (MemberExpression) equalityExpr.Left;
+
+				var member = left.Member;
+				var memberName = member.Name;
+				var jsonPropertyAttribute = member.GetCustomAttributes(typeof(JsonPropertyAttribute), true).FirstOrDefault() as JsonPropertyAttribute;
+				if (jsonPropertyAttribute?.PropertyName != null)
+					memberName = jsonPropertyAttribute.PropertyName;
+
+				var right = equalityExpr.Right;
+				var rightLambda = Expression.Lambda(right);
+				var compiledExpression = rightLambda.Compile();
+				var result = compiledExpression.DynamicInvoke();
+
+				return new Aetheros.Schema.OneM2M.Attribute
+				{
+					Name = memberName,
+					Value = result,
+				};
+			}).ToList();
+
+		public static string SerializeJson(object obj) => JsonConvert.SerializeObject(obj, Newtonsoft.Json.Formatting.Indented, JsonSettings);
+
+		public class HttpStatusException : Exception
+		{
+			public HttpStatusCode StatusCode { get; }
+			public string ReasonPhrase { get; }
+
+			public HttpStatusException(HttpStatusCode statusCode, string reasonPhrase)
+				: base($"Http Status {statusCode}: {reasonPhrase}")
+			{
+				this.StatusCode = statusCode;
+				this.ReasonPhrase = reasonPhrase;
+			}
+		}
+	}
+
+	public abstract class Connection<TPrimitiveContent> : Connection
+		where TPrimitiveContent : PrimitiveContent, new()
+	{
+		static int _nextRequestId;
+		readonly string _requestGuid = Guid.NewGuid().ToString("N");
+		public string NextRequestId => $"{_requestGuid}/{Interlocked.Increment(ref _nextRequestId)}";
+
 		public async Task<AE?> FindApplicationAsync(string inCse, string appId)
 		{
-			var response = await GetResponseAsync(new RequestPrimitive
+			var response = await GetResponseAsync(new RequestPrimitive<TPrimitiveContent>
 			{
 				Operation = Operation.Retrieve,
 				From = inCse,
@@ -88,7 +156,7 @@ namespace Aetheros.OneM2M.Api
 			if (aeUrl == null)
 				return null;
 
-			var response2 = await GetResponseAsync(new RequestPrimitive
+			var response2 = await GetResponseAsync(new RequestPrimitive<TPrimitiveContent>
 			{
 				Operation = Operation.Retrieve,
 				From = inCse,
@@ -100,14 +168,14 @@ namespace Aetheros.OneM2M.Api
 
 		public async Task<AE?> RegisterApplicationAsync(Application.IApplicationConfiguration appConfig)
 		{
-			var response = await GetResponseAsync(new RequestPrimitive
+			var response = await GetResponseAsync(new RequestPrimitive<TPrimitiveContent>
 			{
 				From = appConfig.CredentialId,
 				To = appConfig.UrlPrefix,
 				Operation = Operation.Create,
 				ResourceType = ResourceType.AE,
 				ResultContent = ResultContent.Attributes,
-				PrimitiveContent = new PrimitiveContent
+				PrimitiveContent = new TPrimitiveContent
 				{
 					AE = new AE
 					{
@@ -121,8 +189,8 @@ namespace Aetheros.OneM2M.Api
 			return response?.AE;
 		}
 
-		public async Task<ResponseContent> GetPrimitiveAsync(string from, string to, FilterCriteria? filterCriteria = null) =>
-			await GetResponseAsync(new RequestPrimitive
+		public async Task<ResponseContent<TPrimitiveContent>> GetPrimitiveAsync(string from, string to, FilterCriteria? filterCriteria = null) =>
+			await GetResponseAsync(new RequestPrimitive<TPrimitiveContent>
 			{
 				Operation = Operation.Retrieve,
 				From = from,
@@ -130,8 +198,8 @@ namespace Aetheros.OneM2M.Api
 				FilterCriteria = filterCriteria
 			});
 
-		public async Task<PrimitiveContent> GetChildResourcesAsync(string from, string to, FilterCriteria? filterCriteria = null) =>
-			await GetResponseAsync<PrimitiveContent>(new RequestPrimitive
+		public async Task<ResponseContent<TPrimitiveContent>> GetChildResourcesAsync(string from, string to, FilterCriteria? filterCriteria = null) =>
+			await GetResponseAsync(new RequestPrimitive<TPrimitiveContent>
 			{
 				Operation = Operation.Retrieve,
 				From = from,
@@ -140,11 +208,11 @@ namespace Aetheros.OneM2M.Api
 				FilterCriteria = filterCriteria
 			});
 
-		public async Task<ResponseContent> GetResponseAsync(RequestPrimitive body) => await GetResponseAsync<ResponseContent>(body);
+		public async Task<ResponseContent<TPrimitiveContent>> GetResponseAsync(RequestPrimitive<TPrimitiveContent> body) => await GetResponseAsync<ResponseContent<TPrimitiveContent>>(body);
 
-		public abstract Task<T> GetResponseAsync<T>(RequestPrimitive body) where T : class, new();
+		public abstract Task<T> GetResponseAsync<T>(RequestPrimitive<TPrimitiveContent> body) where T : class, new();
 
-		protected static NameValueCollection GetRequestParameters(RequestPrimitive body)
+		protected static NameValueCollection GetRequestParameters(RequestPrimitive<TPrimitiveContent> body)
 		{
 			var args = new NameValueCollection();
 			if (body.ResultContent != null)
@@ -214,55 +282,8 @@ namespace Aetheros.OneM2M.Api
 		}
 
 		// TODO: make this connection-type-agnostic
-		public class HttpStatusException : Exception
-		{
-			public HttpStatusCode StatusCode { get; }
-			public string ReasonPhrase { get; }
-
-			public HttpStatusException(HttpStatusCode statusCode, string reasonPhrase)
-				: base($"Http Status {statusCode}: {reasonPhrase}")
-			{
-				this.StatusCode = statusCode;
-				this.ReasonPhrase = reasonPhrase;
-			}
-		}
-
-		public static T? DeserializeJson<T>(string str)
-			where T : class => JsonConvert.DeserializeObject<T>(str, Connection.JsonSettings);
-
-		public static ICollection<Aetheros.Schema.OneM2M.Attribute> GetAttributes<T>(params Expression<Func<T, object>>[] expressions) =>
-			expressions.Select(expr =>
-			{
-				var body = expr.Body;
-				if (body.NodeType == ExpressionType.Convert)
-					body = ((UnaryExpression) body).Operand;  // throws
-
-				var equalityExpr = (BinaryExpression) body;
-				var left = (MemberExpression) equalityExpr.Left;
-
-				var member = left.Member;
-				var memberName = member.Name;
-				var jsonPropertyAttribute = member.GetCustomAttributes(typeof(JsonPropertyAttribute), true).FirstOrDefault() as JsonPropertyAttribute;
-				if (jsonPropertyAttribute?.PropertyName != null)
-					memberName = jsonPropertyAttribute.PropertyName;
-
-				var right = equalityExpr.Right;
-				var rightLambda = Expression.Lambda(right);
-				var compiledExpression = rightLambda.Compile();
-				var result = compiledExpression.DynamicInvoke();
-
-				return new Aetheros.Schema.OneM2M.Attribute
-				{
-					Name = memberName,
-					Value = result,
-				};
-			}).ToList();
-
-		protected readonly Subject<Notification> _notifications = new Subject<Notification>();
-		public IObservable<Notification> Notifications => _notifications;
-
-
-		public static string SerializeJson(object obj) => JsonConvert.SerializeObject(obj, Newtonsoft.Json.Formatting.Indented, JsonSettings);
+		protected readonly Subject<Notification<TPrimitiveContent>> _notifications = new Subject<Notification<TPrimitiveContent>>();
+		public IObservable<Notification<TPrimitiveContent>> Notifications => _notifications;
 	}
 
 	public static class ApiExtensions
@@ -298,7 +319,6 @@ namespace Aetheros.OneM2M.Api
 			return Convert.ToBase64String(rgbHash);
 		}
 
-
 		public static IEnumerable<T> WhereNotNull<T>(this IEnumerable<T?> enumerable) where T : class
 		{
 				return enumerable.Where(e => e != null).Select(e => e!);
@@ -307,6 +327,5 @@ namespace Aetheros.OneM2M.Api
 		{
 				return enumerable.Where(e => e != null).Select(e => e!);
 		}
-
 	}
 }

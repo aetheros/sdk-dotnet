@@ -18,14 +18,15 @@ using System.Diagnostics;
 
 namespace Aetheros.OneM2M.Api
 {
-	public class CoapConnection : Connection
+	public class CoapConnection<TPrimitiveContent> : Connection<TPrimitiveContent>
+		where TPrimitiveContent : PrimitiveContent, new()
 	{
 		readonly Uri _iotApiUrl;
 		CoAP.CoapClient _pnClient;
 
 		public X509Certificate? ClientCertificate { get; }
 
-		public CoapConnection(IConnectionConfiguration config)
+		public CoapConnection(Connection.IConnectionConfiguration config)
 			: this(config.M2MUrl, config.CertificateFilename) { }
 
 		public CoapConnection(Uri m2mUrl, string certificateFilename)
@@ -41,9 +42,9 @@ namespace Aetheros.OneM2M.Api
 			_pnClient.Timeout = 300 * 1000;
 		}
 
-		public async Task<ResponseContent> GetResponseAsync(CoAP.Request request) => await GetResponseAsync<ResponseContent>(request);
+		public async Task<ResponseContent<TPrimitiveContent>> GetResponseAsync(CoAP.Request request) => await GetResponseAsync<ResponseContent<TPrimitiveContent>>(request);
 
-		public override async Task<T> GetResponseAsync<T>(RequestPrimitive body)
+		public override async Task<T> GetResponseAsync<T>(RequestPrimitive<TPrimitiveContent> body)
 		{
 			var request = GetRequest(body);
 			return await GetResponseAsync<T>(request);
@@ -98,7 +99,7 @@ namespace Aetheros.OneM2M.Api
 		}
 
 
-		internal CoAP.Request GetRequest(RequestPrimitive body)
+		internal CoAP.Request GetRequest(RequestPrimitive<TPrimitiveContent> body)
 		{
 			var args = GetRequestParameters(body);
 
@@ -238,18 +239,18 @@ namespace Aetheros.OneM2M.Api
 			}
 		}
 
-		Notification? ParseNotification(CoAP.Request request)
+		Notification<TPrimitiveContent>? ParseNotification(CoAP.Request request)
 		{
 			var body = request.PayloadString;
 
-			var notification = DeserializeJson<NotificationContent>(body)?.Notification;
+			var notification = DeserializeJson<NotificationContent<TPrimitiveContent>>(body)?.Notification;
 			if (notification == null)
 				return null;
 
 			var serializer = JsonSerializer.CreateDefault(Connection.JsonSettings);
-			var representation = ((Newtonsoft.Json.Linq.JObject) notification.NotificationEvent.Representation).ToObject<PrimitiveContent>(serializer);
+			var representation = ((Newtonsoft.Json.Linq.JObject) notification.NotificationEvent.Representation).ToObject<TPrimitiveContent>(serializer);
 
-			var requestPrimitive = notification.NotificationEvent.PrimitiveRepresentation = new RequestPrimitive
+			var requestPrimitive = notification.NotificationEvent.PrimitiveRepresentation = new RequestPrimitive<TPrimitiveContent>
 			{
 				From = request.GetFirstOption((CoAP.OptionType) OneM2mRequestOptions.FR)?.StringValue,
 				RequestIdentifier = request.GetFirstOption((CoAP.OptionType) OneM2mRequestOptions.RQI)?.StringValue,
@@ -334,5 +335,12 @@ namespace Aetheros.OneM2M.Api
 			return Connection.DeserializeJson<T>(body)
 				?? throw new InvalidDataException($"The response did not match Type '{typeof(T).Name}'");
 		}
+	}
+
+	public class CoapConnection : CoapConnection<PrimitiveContent>
+	{
+		public CoapConnection(Connection.IConnectionConfiguration config) : base(config) {}
+		public CoapConnection(Uri m2mUrl, string certificateFilename) : base(m2mUrl, certificateFilename) {}
+		public CoapConnection(Uri m2mUrl, X509Certificate? certificate = null) : base(m2mUrl, certificate) {}
 	}
 }

@@ -15,14 +15,15 @@ using System.Threading.Tasks;
 
 namespace Aetheros.OneM2M.Api
 {
-	public class HttpConnection : Connection
+	public class HttpConnection<TPrimitiveContent> : Connection<TPrimitiveContent>
+		where TPrimitiveContent : PrimitiveContent, new()
 	{
 		readonly Uri _iotApiUrl;
 		readonly HttpClient _pnClient;
 
 		public X509Certificate? ClientCertificate { get; }
 
-		public HttpConnection(IConnectionConfiguration config)
+		public HttpConnection(Connection.IConnectionConfiguration config)
 			: this(config.M2MUrl, config.CertificateFilename) { }
 
 		public HttpConnection(Uri m2mUrl, string certificateFilename)
@@ -61,10 +62,10 @@ namespace Aetheros.OneM2M.Api
 			_pnClient.DefaultRequestHeaders.Add("Accept", OneM2MResponseContentType);
 		}
 
-		public async Task<ResponseContent> GetResponseAsync(HttpRequestMessage request)
+		public async Task<ResponseContent<TPrimitiveContent>> GetResponseAsync(HttpRequestMessage request)
 		{
 			using var response = await _pnClient.SendAsync(request);
-			var responseContent = await response.DeserializeAsync<ResponseContent>() ??
+			var responseContent = await response.DeserializeAsync<ResponseContent<TPrimitiveContent>>() ??
 				throw new InvalidDataException("The returned response did not match type 'ResponseContent'");
 
 			if (response.Headers.TryGetValues("X-M2M-RSC", out IEnumerable<string> statusCodeHeaders))
@@ -84,14 +85,14 @@ namespace Aetheros.OneM2M.Api
 				throw new InvalidDataException("The returned response did not match type 'ResponseContent'");
 		}
 
-		public override async Task<T> GetResponseAsync<T>(RequestPrimitive body)
+		public override async Task<T> GetResponseAsync<T>(RequestPrimitive<TPrimitiveContent> body)
 		{
 			using var request = GetRequest(body);
 			return await GetResponseAsync<T>(request);
 		}
 
 
-		internal HttpRequestMessage GetRequest(RequestPrimitive body)
+		internal HttpRequestMessage GetRequest(RequestPrimitive<TPrimitiveContent> body)
 		{
 			var args = GetRequestParameters(body);
 
@@ -186,9 +187,9 @@ namespace Aetheros.OneM2M.Api
 				_notifications.OnNext(requestPrimitive);
 		}
 
-		Notification? ParseNotification(string body, IHeaderDictionary headers, IQueryCollection query)
+		Notification<TPrimitiveContent>? ParseNotification(string body, IHeaderDictionary headers, IQueryCollection query)
 		{
-			var notificationContent = DeserializeJson<NotificationContent>(body);
+			var notificationContent = Connection.DeserializeJson<NotificationContent<TPrimitiveContent>>(body);
 			if (notificationContent == null)
 				return null;
 
@@ -197,9 +198,9 @@ namespace Aetheros.OneM2M.Api
 				return null;
 
 			var serializer = JsonSerializer.CreateDefault(Connection.JsonSettings);
-			var representation = ((Newtonsoft.Json.Linq.JObject) notification.NotificationEvent.Representation).ToObject<PrimitiveContent>(serializer);
+			var representation = ((Newtonsoft.Json.Linq.JObject) notification.NotificationEvent.Representation).ToObject<TPrimitiveContent>(serializer);
 
-			var requestPrimitive = notification.NotificationEvent.PrimitiveRepresentation = new RequestPrimitive
+			var requestPrimitive = notification.NotificationEvent.PrimitiveRepresentation = new RequestPrimitive<TPrimitiveContent>
 			{
 				From = headers["X-M2M-Origin"].FirstOrDefault(),
 				RequestIdentifier = headers["X-M2M-RI"].FirstOrDefault(),
@@ -324,5 +325,12 @@ namespace Aetheros.OneM2M.Api
 			return Connection.DeserializeJson<T>(body)
 				?? throw new InvalidDataException($"The response did not match Type '{typeof(T).Name}'");
 		}
+	}
+
+	public class HttpConnection : HttpConnection<PrimitiveContent>
+	{
+		public HttpConnection(Connection.IConnectionConfiguration config) : base(config) {}
+		public HttpConnection(Uri m2mUrl, string certificateFilename) : base(m2mUrl, certificateFilename) {}
+		public HttpConnection(Uri m2mUrl, X509Certificate? certificate = null) : base(m2mUrl, certificate) {}
 	}
 }

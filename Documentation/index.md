@@ -10,7 +10,7 @@ using var app = await con.FindApplicationAsync("IN_CSE", "my.app.id");
 var container = await app.EnsureContainerAsync("my_container");
 
 using var subscription = 
-  (await container.ObserveAsync<ContentInstanceType>("https://localhost/notify"))
+  (await container.ObserveContentInstanceAsync<ContentInstanceType>("https://localhost/notify"))
 	.Subscribe(ci => {
 		Console.WriteLine($"New content instance: {ci.Data}");
 	});

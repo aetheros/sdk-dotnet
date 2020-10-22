@@ -72,7 +72,7 @@ namespace GridNet.IoT.Client.Tools
 		Application _application;
 
 
-		async Task<AE> Register(Connection connection)
+		async Task<AE> Register(Connection<PrimitiveContent> connection)
 		{
 			if (!string.IsNullOrEmpty(_AeId))
 			{
@@ -159,7 +159,7 @@ namespace GridNet.IoT.Client.Tools
 				{
 					FilterUsage = FilterUsage.Discovery,
 					ResourceType = new[] { ResourceType.AE },
-					Attribute = Connection.GetAttributes<AE>(_ => _.AppName == _AeAppName),
+					Attribute = Connection<PrimitiveContent>.GetAttributes<AE>(_ => _.AppName == _AeAppName),
 				}
 			})).URIList.SingleOrDefault();
 
@@ -179,7 +179,7 @@ namespace GridNet.IoT.Client.Tools
 
 
 			// subscribe to the policy container
-			var policyObservable = await _application.ObserveAsync<global::Example.Types.Config.MeterReadPolicy>(_MsPolicyPath, MeterReadSubscriptionName);
+			var policyObservable = await _application.ObserveContentInstanceAsync<global::Example.Types.Config.MeterReadPolicy>(_MsPolicyPath, MeterReadSubscriptionName);
 			using var eventSubscription = policyObservable.Subscribe(policy =>
 			{
 				lock (lockPolicyUpdate)

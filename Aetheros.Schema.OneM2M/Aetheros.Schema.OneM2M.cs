@@ -1690,11 +1690,11 @@ namespace Aetheros.Schema.OneM2M
 	[JsonObjectAttribute("arq")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
-	public partial class AggregatedRequest
+	public partial class AggregatedRequest<TPrimitiveContent> where TPrimitiveContent : PrimitiveContent
 	{
 		[JsonPropertyAttribute("req")]
 		[XmlElementAttribute("req", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-		public ICollection<AggregatedRequestRequest> Request { get; set; }
+		public ICollection<AggregatedRequestRequest<TPrimitiveContent>> Request { get; set; }
 	}
 
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
@@ -1703,7 +1703,7 @@ namespace Aetheros.Schema.OneM2M
 	[JsonObjectAttribute("AggregatedRequestRequest")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
-	public partial class AggregatedRequestRequest
+	public partial class AggregatedRequestRequest<TPrimitiveContent> where TPrimitiveContent : PrimitiveContent
 	{
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
 		[System.Diagnostics.DebuggerHiddenAttribute()]
@@ -1752,7 +1752,7 @@ namespace Aetheros.Schema.OneM2M
 
 		[JsonPropertyAttribute("pc")]
 		[XmlElementAttribute("pc", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-		public PrimitiveContent PrimitiveContent { get; set; }
+	public TPrimitiveContent PrimitiveContent { get; set; }
 
 		[JsonPropertyAttribute("mi")]
 		[XmlElementAttribute("mi", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -3520,7 +3520,7 @@ namespace Aetheros.Schema.OneM2M
 	[JsonObjectAttribute("ors")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
-	public partial class OperationResult
+	public partial class OperationResult<TPrimitiveContent> where TPrimitiveContent : PrimitiveContent
 	{
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
 		[System.Diagnostics.DebuggerHiddenAttribute()]
@@ -3561,7 +3561,7 @@ namespace Aetheros.Schema.OneM2M
 
 		[JsonPropertyAttribute("pc")]
 		[XmlElementAttribute("pc", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-		public PrimitiveContent PrimitiveContent { get; set; }
+	public TPrimitiveContent PrimitiveContent { get; set; }
 
 		[JsonPropertyAttribute("to")]
 		[XmlElementAttribute("to", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="anyURI")]
@@ -6170,7 +6170,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("aggregatedResponse", Namespace="http://www.onem2m.org/xml/protocols")]
-	public partial class AggregatedResponse
+	public partial class AggregatedResponse<TPrimitiveContent> where TPrimitiveContent : PrimitiveContent
 	{
 		[JsonPropertyAttribute("ri")]
 		[XmlElementAttribute("ri", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="anyURI")]
@@ -6178,7 +6178,7 @@ namespace Aetheros.Schema.OneM2M
 
 		[JsonPropertyAttribute("rsp")]
 		[XmlElementAttribute("rsp", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-		public ICollection<ResponsePrimitive> ResponsePrimitive { get; set; } = System.Array.Empty<ResponsePrimitive>();
+		public ICollection<ResponsePrimitive<TPrimitiveContent>> ResponsePrimitive { get; set; } = System.Array.Empty<ResponsePrimitive<TPrimitiveContent>>();
 		
 		/// <summary>
 		/// <para xml:lang="de">Ruft einen Wert ab, der angibt, ob die ResponsePrimitive-Collection leer ist.</para>
@@ -6199,7 +6199,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("responsePrimitive", Namespace="http://www.onem2m.org/xml/protocols")]
-	public partial class ResponsePrimitive
+	public partial class ResponsePrimitive<TPrimitiveContent> where TPrimitiveContent : PrimitiveContent
 	{
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
 		[System.Diagnostics.DebuggerHiddenAttribute()]
@@ -6240,7 +6240,7 @@ namespace Aetheros.Schema.OneM2M
 
 		[JsonPropertyAttribute("pc")]
 		[XmlElementAttribute("pc", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-		public Aetheros.Schema.OneM2M.PrimitiveContent PrimitiveContent { get; set; }
+	public TPrimitiveContent PrimitiveContent { get; set; }
 
 		[JsonPropertyAttribute("to")]
 		[XmlElementAttribute("to", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="anyURI")]
@@ -6424,11 +6424,11 @@ namespace Aetheros.Schema.OneM2M
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("aggregatedNotification", Namespace="http://www.onem2m.org/xml/protocols")]
-	public partial class AggregatedNotification
+	public partial class AggregatedNotification<TPrimitiveContent> where TPrimitiveContent : PrimitiveContent
 	{
 		[JsonPropertyAttribute("sgn")]
 		[XmlElementAttribute("sgn", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-		public ICollection<Notification> Notification { get; set; } = System.Array.Empty<Notification>();
+		public ICollection<Notification<TPrimitiveContent>> Notification { get; set; } = System.Array.Empty<Notification<TPrimitiveContent>>();
 		
 		/// <summary>
 		/// <para xml:lang="de">Ruft einen Wert ab, der angibt, ob die Notification-Collection leer ist.</para>
@@ -6449,11 +6449,11 @@ namespace Aetheros.Schema.OneM2M
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("notification", Namespace="http://www.onem2m.org/xml/protocols")]
-	public partial class Notification
+	public partial class Notification<TPrimitiveContent> where TPrimitiveContent : PrimitiveContent
 	{
 		[JsonPropertyAttribute("nev")]
 		[XmlElementAttribute("nev", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-		public NotificationNotificationEvent NotificationEvent { get; set; }
+		public NotificationNotificationEvent<TPrimitiveContent> NotificationEvent { get; set; }
 
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
 		[System.Diagnostics.DebuggerHiddenAttribute()]
@@ -6544,7 +6544,7 @@ namespace Aetheros.Schema.OneM2M
 	[JsonObjectAttribute("NotificationNotificationEvent")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
-	public partial class NotificationNotificationEvent
+	public partial class NotificationNotificationEvent<TPrimitiveContent> where TPrimitiveContent : PrimitiveContent
 	{
 		[JsonPropertyAttribute("rep")]
 		[XmlElementAttribute("rep", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -6807,7 +6807,7 @@ namespace Aetheros.Schema.OneM2M
 	[JsonObjectAttribute("responseContent")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
-	public partial class ResponseContent : Aetheros.Schema.OneM2M.PrimitiveContent
+	public partial class ResponseContent<TPrimitiveContent> : Aetheros.Schema.OneM2M.PrimitiveContent where TPrimitiveContent : PrimitiveContent
 	{
 		[JsonPropertyAttribute("rce")]
 		[XmlElementAttribute("rce", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -6834,7 +6834,7 @@ namespace Aetheros.Schema.OneM2M
 
 		[JsonPropertyAttribute("agr")]
 		[XmlElementAttribute("agr", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-		public Aetheros.Schema.OneM2M.AggregatedResponse AggregatedResponse { get; set; }
+		public Aetheros.Schema.OneM2M.AggregatedResponse<TPrimitiveContent> AggregatedResponse { get; set; }
 
 		[JsonPropertyAttribute("rrl")]
 		[JsonConverter(typeof(JsonArrayItem<ChildResourceRef>), "ch")]
@@ -16806,7 +16806,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("request", Namespace="http://www.onem2m.org/xml/protocols")]
-	public partial class Request : Aetheros.Schema.OneM2M.RegularResource
+	public partial class Request<TPrimitiveContent> : Aetheros.Schema.OneM2M.RegularResource where TPrimitiveContent : PrimitiveContent
 	{
 		[JsonPropertyAttribute("st")]
 		[XmlElementAttribute("st", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -16863,7 +16863,7 @@ namespace Aetheros.Schema.OneM2M
 
 		[JsonPropertyAttribute("pc")]
 		[XmlElementAttribute("pc", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-		public Aetheros.Schema.OneM2M.PrimitiveContent PrimitiveContent { get; set; }
+	public TPrimitiveContent PrimitiveContent { get; set; }
 
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
 		[System.Diagnostics.DebuggerHiddenAttribute()]
@@ -16900,7 +16900,7 @@ namespace Aetheros.Schema.OneM2M
 
 		[JsonPropertyAttribute("ors")]
 		[XmlElementAttribute("ors", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-		public Aetheros.Schema.OneM2M.OperationResult OperationResult { get; set; }
+		public Aetheros.Schema.OneM2M.OperationResult<TPrimitiveContent> OperationResult { get; set; }
 
 		[JsonPropertyAttribute("ch")]
 		[XmlElementAttribute("ch", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -16940,7 +16940,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("delivery", Namespace="http://www.onem2m.org/xml/protocols")]
-	public partial class Delivery : Aetheros.Schema.OneM2M.RegularResource
+	public partial class Delivery<TPrimitiveContent> : Aetheros.Schema.OneM2M.RegularResource where TPrimitiveContent : PrimitiveContent
 	{
 		[JsonPropertyAttribute("st")]
 		[XmlElementAttribute("st", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -16970,7 +16970,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonConverter(typeof(JsonArrayItem<AggregatedRequestRequest>), "req")]
 		[XmlArrayAttribute("arq", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		[XmlArrayItemAttribute("req", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-		public ICollection<Aetheros.Schema.OneM2M.AggregatedRequestRequest> AggregatedRequest { get; set; }
+		public ICollection<Aetheros.Schema.OneM2M.AggregatedRequestRequest<TPrimitiveContent>> AggregatedRequest { get; set; }
 
 		[JsonPropertyAttribute("ch")]
 		[XmlElementAttribute("ch", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -17430,7 +17430,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("CSEBase", Namespace="http://www.onem2m.org/xml/protocols")]
-	public partial class CSEBase : Aetheros.Schema.OneM2M.Resource
+	public partial class CSEBase<TPrimitiveContent> : Aetheros.Schema.OneM2M.Resource where TPrimitiveContent : PrimitiveContent
 	{
 		[JsonPropertyAttribute("acpi")]
 		[XmlElementAttribute("acpi", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="anyURI")]
@@ -17708,7 +17708,7 @@ namespace Aetheros.Schema.OneM2M
 
 		[JsonPropertyAttribute("req")]
 		[XmlElementAttribute("req", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-		public ICollection<Aetheros.Schema.OneM2M.Request> Request { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Request>();
+		public ICollection<Aetheros.Schema.OneM2M.Request<TPrimitiveContent>> Request { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Request<TPrimitiveContent>>();
 		
 		/// <summary>
 		/// <para xml:lang="de">Ruft einen Wert ab, der angibt, ob die Request-Collection leer ist.</para>
@@ -17723,7 +17723,7 @@ namespace Aetheros.Schema.OneM2M
 
 		[JsonPropertyAttribute("dlv")]
 		[XmlElementAttribute("dlv", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-		public ICollection<Aetheros.Schema.OneM2M.Delivery> Delivery { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Delivery>();
+		public ICollection<Aetheros.Schema.OneM2M.Delivery<TPrimitiveContent>> Delivery { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Delivery<TPrimitiveContent>>();
 		
 		/// <summary>
 		/// <para xml:lang="de">Ruft einen Wert ab, der angibt, ob die Delivery-Collection leer ist.</para>
@@ -18408,7 +18408,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("requestPrimitive", Namespace="http://www.onem2m.org/xml/protocols")]
-	public partial class RequestPrimitive
+	public partial class RequestPrimitive<TPrimitiveContent> where TPrimitiveContent : PrimitiveContent
 	{
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
 		[System.Diagnostics.DebuggerHiddenAttribute()]
@@ -18490,7 +18490,7 @@ namespace Aetheros.Schema.OneM2M
 
 		[JsonPropertyAttribute("pc")]
 		[XmlElementAttribute("pc", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-		public Aetheros.Schema.OneM2M.PrimitiveContent PrimitiveContent { get; set; }
+	public TPrimitiveContent PrimitiveContent { get; set; }
 		
 		/// <summary>
 		/// <para xml:lang="en">Pattern: ([a-zA-Z0-9\.\-,_]*)@([A-Za-z0-9\-_]*)(\.([A-Za-z0-9\-_])*)*.</para>

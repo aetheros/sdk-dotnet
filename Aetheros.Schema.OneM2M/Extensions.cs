@@ -411,25 +411,25 @@ namespace Aetheros.Schema.OneM2M
 		//[XmlElement("")]
 		//public ICollection<DynamicAuthorizationConsultationAnnc> DynamicAuthorizationConsultationAnnc { get; set; } = Array.Empty<DynamicAuthorizationConsultationAnnc>();
 	}
-	public partial class ResponseContent
+	public partial class ResponseContent<TPrimitiveContent>
 	{
 		[JsonIgnore]
 		[XmlIgnore]
 		public ResponseStatusCode ResponseStatusCode { get; set; }
 	}
 
-	public class NotificationContent
+	public class NotificationContent<TPrimitiveContent> where TPrimitiveContent : PrimitiveContent
 	{
 		[JsonProperty("sgn")]
 		[XmlElement("sgn")]
-		public Notification Notification { get; set; }
+		public Notification<TPrimitiveContent> Notification { get; set; }
 	}
 
-	public partial class NotificationNotificationEvent
+	public partial class NotificationNotificationEvent<TPrimitiveContent> where TPrimitiveContent : PrimitiveContent
 	{
 		[JsonIgnore]
 		[XmlIgnore]
-		public RequestPrimitive PrimitiveRepresentation { get; set; }
+		public RequestPrimitive<TPrimitiveContent> PrimitiveRepresentation { get; set; }
 	}
 
 

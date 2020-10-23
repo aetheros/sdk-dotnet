@@ -4485,7 +4485,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("rce", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("rce")]
+	[JsonObjectAttribute("m2m:rce")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("sg_resource", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -4645,7 +4645,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("regularResource", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("regularResource")]
+	[JsonObjectAttribute("m2m:regularResource")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("sg_regularResource", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -4736,7 +4736,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("announceableResource", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("announceableResource")]
+	[JsonObjectAttribute("m2m:announceableResource")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("sg_announceableResource", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -4805,7 +4805,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("announcedResource", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("announcedResource")]
+	[JsonObjectAttribute("m2m:announcedResource")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("sg_announcedResource", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -4862,7 +4862,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("announceableSubordinateResource", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("announceableSubordinateResource")]
+	[JsonObjectAttribute("m2m:announceableSubordinateResource")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("sg_announceableSubordinateResource", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -4910,7 +4910,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("subordinateResource", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("subordinateResource")]
+	[JsonObjectAttribute("m2m:subordinateResource")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("sg_subordinateResource", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -4925,7 +4925,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("announcedSubordinateResource", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("announcedSubordinateResource")]
+	[JsonObjectAttribute("m2m:announcedSubordinateResource")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("sg_announcedSubordinateResource", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -4947,7 +4947,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("mgRsc", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("mgRsc")]
+	[JsonObjectAttribute("m2m:mgRsc")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("sg_mgmtResource", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -5043,7 +5043,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("mgoA", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("mgoA")]
+	[JsonObjectAttribute("m2m:mgoA")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("sg_announcedMgmtResource", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -6114,39 +6114,39 @@ namespace Aetheros.Schema.OneM2M
 	[XmlRootAttribute("resource", Namespace="http://www.onem2m.org/xml/protocols")]
 	public partial class ResourceWrapper
 	{
-		[JsonPropertyAttribute("sg_resource")]
+		[JsonPropertyAttribute("m2m:sg_resource")]
 		[XmlElementAttribute("sg_resource", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public Aetheros.Schema.OneM2M.Resource Sg_Resource { get; set; }
 
-		[JsonPropertyAttribute("sg_regularResource")]
+		[JsonPropertyAttribute("m2m:sg_regularResource")]
 		[XmlElementAttribute("sg_regularResource", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public Aetheros.Schema.OneM2M.RegularResource Sg_RegularResource { get; set; }
 
-		[JsonPropertyAttribute("sg_announcedResource")]
+		[JsonPropertyAttribute("m2m:sg_announcedResource")]
 		[XmlElementAttribute("sg_announcedResource", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public Aetheros.Schema.OneM2M.AnnouncedResource Sg_AnnouncedResource { get; set; }
 
-		[JsonPropertyAttribute("sg_announceableResource")]
+		[JsonPropertyAttribute("m2m:sg_announceableResource")]
 		[XmlElementAttribute("sg_announceableResource", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public Aetheros.Schema.OneM2M.AnnounceableResource Sg_AnnounceableResource { get; set; }
 
-		[JsonPropertyAttribute("sg_subordinateResource")]
+		[JsonPropertyAttribute("m2m:sg_subordinateResource")]
 		[XmlElementAttribute("sg_subordinateResource", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public Aetheros.Schema.OneM2M.SubordinateResource Sg_SubordinateResource { get; set; }
 
-		[JsonPropertyAttribute("sg_announcedSubordinateResource")]
+		[JsonPropertyAttribute("m2m:sg_announcedSubordinateResource")]
 		[XmlElementAttribute("sg_announcedSubordinateResource", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public Aetheros.Schema.OneM2M.AnnouncedSubordinateResource Sg_AnnouncedSubordinateResource { get; set; }
 
-		[JsonPropertyAttribute("sg_announceableSubordinateResource")]
+		[JsonPropertyAttribute("m2m:sg_announceableSubordinateResource")]
 		[XmlElementAttribute("sg_announceableSubordinateResource", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public Aetheros.Schema.OneM2M.AnnounceableSubordinateResource Sg_AnnounceableSubordinateResource { get; set; }
 
-		[JsonPropertyAttribute("sg_mgmtResource")]
+		[JsonPropertyAttribute("m2m:sg_mgmtResource")]
 		[XmlElementAttribute("sg_mgmtResource", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public Aetheros.Schema.OneM2M.MgmtResource Sg_MgmtResource { get; set; }
 
-		[JsonPropertyAttribute("sg_announcedMgmtResource")]
+		[JsonPropertyAttribute("m2m:sg_announcedMgmtResource")]
 		[XmlElementAttribute("sg_announcedMgmtResource", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public Aetheros.Schema.OneM2M.AnnouncedMgmtResource Sg_AnnouncedMgmtResource { get; set; }
 
@@ -6861,7 +6861,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("sch", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("sch")]
+	[JsonObjectAttribute("m2m:sch")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("schedule", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -6891,7 +6891,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Subscription> Subscription { get; set; } = System.Array.Empty<Subscription>();
 		
@@ -6910,7 +6910,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("sub", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("sub")]
+	[JsonObjectAttribute("m2m:sub")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("subscription", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -7165,7 +7165,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("sch")]
+		[JsonPropertyAttribute("m2m:sch")]
 		[XmlElementAttribute("sch", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Schedule> Schedule { get; set; } = System.Array.Empty<Schedule>();
 		
@@ -7180,7 +7180,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ScheduleSpecified => (this.Schedule.Count != 0);
 
-		[JsonPropertyAttribute("ntpr")]
+		[JsonPropertyAttribute("m2m:ntpr")]
 		[XmlElementAttribute("ntpr", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<NotificationTargetMgmtPolicyRef> NotificationTargetMgmtPolicyRef { get; set; } = System.Array.Empty<NotificationTargetMgmtPolicyRef>();
 		
@@ -7199,7 +7199,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("ntpr", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("ntpr")]
+	[JsonObjectAttribute("m2m:ntpr")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("notificationTargetMgmtPolicyRef", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -7239,7 +7239,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Subscription> Subscription { get; set; } = System.Array.Empty<Subscription>();
 		
@@ -7258,7 +7258,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("schA", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("schA")]
+	[JsonObjectAttribute("m2m:schA")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("scheduleAnnc", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -7288,7 +7288,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("acp", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("acp")]
+	[JsonObjectAttribute("m2m:acp")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("accessControlPolicy", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -7321,7 +7321,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -7340,7 +7340,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("acpA", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("acpA")]
+	[JsonObjectAttribute("m2m:acpA")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("accessControlPolicyAnnc", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -7373,7 +7373,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -7392,7 +7392,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("acmp", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("acmp")]
+	[JsonObjectAttribute("m2m:acmp")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("activeCmdhPolicy", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -7406,7 +7406,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("smd", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("smd")]
+	[JsonObjectAttribute("m2m:smd")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("semanticDescriptor", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -7466,7 +7466,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -7485,7 +7485,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("smdA", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("smdA")]
+	[JsonObjectAttribute("m2m:smdA")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("semanticDescriptorAnnc", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -7541,7 +7541,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -7560,7 +7560,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("cin", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("cin")]
+	[JsonObjectAttribute("m2m:cin")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("contentInstance", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -7626,7 +7626,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("smd")]
+		[JsonPropertyAttribute("m2m:smd")]
 		[XmlElementAttribute("smd", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.SemanticDescriptor> SemanticDescriptor { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.SemanticDescriptor>();
 		
@@ -7645,7 +7645,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("cinA", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("cinA")]
+	[JsonObjectAttribute("m2m:cinA")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("contentInstanceAnnc", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -7719,7 +7719,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("smd")]
+		[JsonPropertyAttribute("m2m:smd")]
 		[XmlElementAttribute("smd", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.SemanticDescriptor> SemanticDescriptor { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.SemanticDescriptor>();
 		
@@ -7738,7 +7738,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("cnt", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("cnt")]
+	[JsonObjectAttribute("m2m:cnt")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("container", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -7915,7 +7915,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("cin")]
+		[JsonPropertyAttribute("m2m:cin")]
 		[XmlElementAttribute("cin", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.ContentInstance> ContentInstance { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.ContentInstance>();
 		
@@ -7930,7 +7930,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ContentInstanceSpecified => (this.ContentInstance.Count != 0);
 
-		[JsonPropertyAttribute("cnt")]
+		[JsonPropertyAttribute("m2m:cnt")]
 		[XmlElementAttribute("cnt", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Container> ContainerProperty { get; set; } = System.Array.Empty<Container>();
 		
@@ -7945,7 +7945,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ContainerPropertySpecified => (this.ContainerProperty.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -7960,7 +7960,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool SubscriptionSpecified => (this.Subscription.Count != 0);
 
-		[JsonPropertyAttribute("smd")]
+		[JsonPropertyAttribute("m2m:smd")]
 		[XmlElementAttribute("smd", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.SemanticDescriptor> SemanticDescriptor { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.SemanticDescriptor>();
 		
@@ -7994,7 +7994,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("cntA", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("cntA")]
+	[JsonObjectAttribute("m2m:cntA")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("containerAnnc", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -8225,7 +8225,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("cin")]
+		[JsonPropertyAttribute("m2m:cin")]
 		[XmlElementAttribute("cin", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.ContentInstance> ContentInstance { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.ContentInstance>();
 		
@@ -8240,7 +8240,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ContentInstanceSpecified => (this.ContentInstance.Count != 0);
 
-		[JsonPropertyAttribute("cinA")]
+		[JsonPropertyAttribute("m2m:cinA")]
 		[XmlElementAttribute("cinA", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.ContentInstanceAnnc> ContentInstanceAnnc { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.ContentInstanceAnnc>();
 		
@@ -8255,7 +8255,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ContentInstanceAnncSpecified => (this.ContentInstanceAnnc.Count != 0);
 
-		[JsonPropertyAttribute("cnt")]
+		[JsonPropertyAttribute("m2m:cnt")]
 		[XmlElementAttribute("cnt", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Container> Container { get; set; } = System.Array.Empty<Container>();
 		
@@ -8270,7 +8270,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ContainerSpecified => (this.Container.Count != 0);
 
-		[JsonPropertyAttribute("cntA")]
+		[JsonPropertyAttribute("m2m:cntA")]
 		[XmlElementAttribute("cntA", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<ContainerAnnc> ContainerAnncProperty { get; set; } = System.Array.Empty<ContainerAnnc>();
 		
@@ -8285,7 +8285,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ContainerAnncPropertySpecified => (this.ContainerAnncProperty.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -8300,7 +8300,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool SubscriptionSpecified => (this.Subscription.Count != 0);
 
-		[JsonPropertyAttribute("smd")]
+		[JsonPropertyAttribute("m2m:smd")]
 		[XmlElementAttribute("smd", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.SemanticDescriptor> SemanticDescriptor { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.SemanticDescriptor>();
 		
@@ -8315,7 +8315,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
 
-		[JsonPropertyAttribute("smdA")]
+		[JsonPropertyAttribute("m2m:smdA")]
 		[XmlElementAttribute("smdA", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.SemanticDescriptorAnnc> SemanticDescriptorAnnc { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.SemanticDescriptorAnnc>();
 		
@@ -8364,7 +8364,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("grp", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("grp")]
+	[JsonObjectAttribute("m2m:grp")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("group", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -8490,7 +8490,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -8505,7 +8505,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool SubscriptionSpecified => (this.Subscription.Count != 0);
 
-		[JsonPropertyAttribute("smd")]
+		[JsonPropertyAttribute("m2m:smd")]
 		[XmlElementAttribute("smd", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.SemanticDescriptor> SemanticDescriptor { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.SemanticDescriptor>();
 		
@@ -8524,7 +8524,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("grpA", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("grpA")]
+	[JsonObjectAttribute("m2m:grpA")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("groupAnnc", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -8733,7 +8733,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -8748,7 +8748,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool SubscriptionSpecified => (this.Subscription.Count != 0);
 
-		[JsonPropertyAttribute("smd")]
+		[JsonPropertyAttribute("m2m:smd")]
 		[XmlElementAttribute("smd", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.SemanticDescriptor> SemanticDescriptor { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.SemanticDescriptor>();
 		
@@ -8763,7 +8763,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
 
-		[JsonPropertyAttribute("smdA")]
+		[JsonPropertyAttribute("m2m:smdA")]
 		[XmlElementAttribute("smdA", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.SemanticDescriptorAnnc> SemanticDescriptorAnnc { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.SemanticDescriptorAnnc>();
 		
@@ -8782,7 +8782,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("pch", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("pch")]
+	[JsonObjectAttribute("m2m:pch")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("pollingChannel", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -8793,7 +8793,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("tsi", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("tsi")]
+	[JsonObjectAttribute("m2m:tsi")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("timeSeriesInstance", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -8844,7 +8844,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("tsia", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("tsia")]
+	[JsonObjectAttribute("m2m:tsia")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("timeSeriesInstanceAnnc", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -8895,7 +8895,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("ts", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("ts")]
+	[JsonObjectAttribute("m2m:ts")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("timeSeries", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -9212,7 +9212,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("tsi")]
+		[JsonPropertyAttribute("m2m:tsi")]
 		[XmlElementAttribute("tsi", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.TimeSeriesInstance> TimeSeriesInstance { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.TimeSeriesInstance>();
 		
@@ -9227,7 +9227,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool TimeSeriesInstanceSpecified => (this.TimeSeriesInstance.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -9242,7 +9242,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool SubscriptionSpecified => (this.Subscription.Count != 0);
 
-		[JsonPropertyAttribute("smd")]
+		[JsonPropertyAttribute("m2m:smd")]
 		[XmlElementAttribute("smd", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.SemanticDescriptor> SemanticDescriptor { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.SemanticDescriptor>();
 		
@@ -9261,7 +9261,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("tsa", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("tsa")]
+	[JsonObjectAttribute("m2m:tsa")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("timeSeriesAnnc", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -9562,7 +9562,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("tsi")]
+		[JsonPropertyAttribute("m2m:tsi")]
 		[XmlElementAttribute("tsi", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.TimeSeriesInstance> TimeSeriesInstance { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.TimeSeriesInstance>();
 		
@@ -9577,7 +9577,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool TimeSeriesInstanceSpecified => (this.TimeSeriesInstance.Count != 0);
 
-		[JsonPropertyAttribute("tsia")]
+		[JsonPropertyAttribute("m2m:tsia")]
 		[XmlElementAttribute("tsia", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.TimeSeriesInstanceAnnc> TimeSeriesInstanceAnnc { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.TimeSeriesInstanceAnnc>();
 		
@@ -9592,7 +9592,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool TimeSeriesInstanceAnncSpecified => (this.TimeSeriesInstanceAnnc.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -9607,7 +9607,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool SubscriptionSpecified => (this.Subscription.Count != 0);
 
-		[JsonPropertyAttribute("smd")]
+		[JsonPropertyAttribute("m2m:smd")]
 		[XmlElementAttribute("smd", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.SemanticDescriptor> SemanticDescriptor { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.SemanticDescriptor>();
 		
@@ -9622,7 +9622,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
 
-		[JsonPropertyAttribute("smdA")]
+		[JsonPropertyAttribute("m2m:smdA")]
 		[XmlElementAttribute("smdA", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.SemanticDescriptorAnnc> SemanticDescriptorAnnc { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.SemanticDescriptorAnnc>();
 		
@@ -9641,7 +9641,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("trpt", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("trpt")]
+	[JsonObjectAttribute("m2m:trpt")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("trafficPattern", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -9897,7 +9897,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -9912,7 +9912,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool SubscriptionSpecified => (this.Subscription.Count != 0);
 
-		[JsonPropertyAttribute("sch")]
+		[JsonPropertyAttribute("m2m:sch")]
 		[XmlElementAttribute("sch", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Schedule> Schedule { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Schedule>();
 		
@@ -9931,7 +9931,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("trptA", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("trptA")]
+	[JsonObjectAttribute("m2m:trptA")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("trafficPatternAnnc", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -10198,7 +10198,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -10213,7 +10213,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool SubscriptionSpecified => (this.Subscription.Count != 0);
 
-		[JsonPropertyAttribute("schA")]
+		[JsonPropertyAttribute("m2m:schA")]
 		[XmlElementAttribute("schA", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.ScheduleAnnc> ScheduleAnnc { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.ScheduleAnnc>();
 		
@@ -10232,7 +10232,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("ae", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("ae")]
+	[JsonObjectAttribute("m2m:ae")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("AE", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -10311,7 +10311,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("cnt")]
+		[JsonPropertyAttribute("m2m:cnt")]
 		[XmlElementAttribute("cnt", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Container> Container { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Container>();
 		
@@ -10326,7 +10326,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ContainerSpecified => (this.Container.Count != 0);
 
-		[JsonPropertyAttribute("grp")]
+		[JsonPropertyAttribute("m2m:grp")]
 		[XmlElementAttribute("grp", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Group> Group { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Group>();
 		
@@ -10341,7 +10341,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool GroupSpecified => (this.Group.Count != 0);
 
-		[JsonPropertyAttribute("acp")]
+		[JsonPropertyAttribute("m2m:acp")]
 		[XmlElementAttribute("acp", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.AccessControlPolicy> AccessControlPolicy { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.AccessControlPolicy>();
 		
@@ -10356,7 +10356,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool AccessControlPolicySpecified => (this.AccessControlPolicy.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -10371,7 +10371,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool SubscriptionSpecified => (this.Subscription.Count != 0);
 
-		[JsonPropertyAttribute("pch")]
+		[JsonPropertyAttribute("m2m:pch")]
 		[XmlElementAttribute("pch", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.PollingChannel> PollingChannel { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.PollingChannel>();
 		
@@ -10386,7 +10386,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool PollingChannelSpecified => (this.PollingChannel.Count != 0);
 
-		[JsonPropertyAttribute("sch")]
+		[JsonPropertyAttribute("m2m:sch")]
 		[XmlElementAttribute("sch", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Schedule> Schedule { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Schedule>();
 		
@@ -10401,7 +10401,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ScheduleSpecified => (this.Schedule.Count != 0);
 
-		[JsonPropertyAttribute("smd")]
+		[JsonPropertyAttribute("m2m:smd")]
 		[XmlElementAttribute("smd", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.SemanticDescriptor> SemanticDescriptor { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.SemanticDescriptor>();
 		
@@ -10416,7 +10416,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
 
-		[JsonPropertyAttribute("ts")]
+		[JsonPropertyAttribute("m2m:ts")]
 		[XmlElementAttribute("ts", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.TimeSeries> TimeSeries { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.TimeSeries>();
 		
@@ -10431,7 +10431,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool TimeSeriesSpecified => (this.TimeSeries.Count != 0);
 
-		[JsonPropertyAttribute("trpt")]
+		[JsonPropertyAttribute("m2m:trpt")]
 		[XmlElementAttribute("trpt", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.TrafficPattern> TrafficPattern { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.TrafficPattern>();
 		
@@ -10465,7 +10465,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("aeA", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("aeA")]
+	[JsonObjectAttribute("m2m:aeA")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("AEAnnc", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -10573,7 +10573,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("cnt")]
+		[JsonPropertyAttribute("m2m:cnt")]
 		[XmlElementAttribute("cnt", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Container> Container { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Container>();
 		
@@ -10588,7 +10588,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ContainerSpecified => (this.Container.Count != 0);
 
-		[JsonPropertyAttribute("cntA")]
+		[JsonPropertyAttribute("m2m:cntA")]
 		[XmlElementAttribute("cntA", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.ContainerAnnc> ContainerAnnc { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.ContainerAnnc>();
 		
@@ -10603,7 +10603,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ContainerAnncSpecified => (this.ContainerAnnc.Count != 0);
 
-		[JsonPropertyAttribute("grp")]
+		[JsonPropertyAttribute("m2m:grp")]
 		[XmlElementAttribute("grp", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Group> Group { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Group>();
 		
@@ -10618,7 +10618,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool GroupSpecified => (this.Group.Count != 0);
 
-		[JsonPropertyAttribute("grpA")]
+		[JsonPropertyAttribute("m2m:grpA")]
 		[XmlElementAttribute("grpA", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.GroupAnnc> GroupAnnc { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.GroupAnnc>();
 		
@@ -10633,7 +10633,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool GroupAnncSpecified => (this.GroupAnnc.Count != 0);
 
-		[JsonPropertyAttribute("acp")]
+		[JsonPropertyAttribute("m2m:acp")]
 		[XmlElementAttribute("acp", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.AccessControlPolicy> AccessControlPolicy { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.AccessControlPolicy>();
 		
@@ -10648,7 +10648,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool AccessControlPolicySpecified => (this.AccessControlPolicy.Count != 0);
 
-		[JsonPropertyAttribute("acpA")]
+		[JsonPropertyAttribute("m2m:acpA")]
 		[XmlElementAttribute("acpA", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.AccessControlPolicyAnnc> AccessControlPolicyAnnc { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.AccessControlPolicyAnnc>();
 		
@@ -10663,7 +10663,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool AccessControlPolicyAnncSpecified => (this.AccessControlPolicyAnnc.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -10678,7 +10678,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool SubscriptionSpecified => (this.Subscription.Count != 0);
 
-		[JsonPropertyAttribute("schA")]
+		[JsonPropertyAttribute("m2m:schA")]
 		[XmlElementAttribute("schA", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.ScheduleAnnc> ScheduleAnnc { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.ScheduleAnnc>();
 		
@@ -10693,7 +10693,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ScheduleAnncSpecified => (this.ScheduleAnnc.Count != 0);
 
-		[JsonPropertyAttribute("smd")]
+		[JsonPropertyAttribute("m2m:smd")]
 		[XmlElementAttribute("smd", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.SemanticDescriptor> SemanticDescriptor { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.SemanticDescriptor>();
 		
@@ -10708,7 +10708,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
 
-		[JsonPropertyAttribute("ts")]
+		[JsonPropertyAttribute("m2m:ts")]
 		[XmlElementAttribute("ts", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.TimeSeries> TimeSeries { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.TimeSeries>();
 		
@@ -10723,7 +10723,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool TimeSeriesSpecified => (this.TimeSeries.Count != 0);
 
-		[JsonPropertyAttribute("tsa")]
+		[JsonPropertyAttribute("m2m:tsa")]
 		[XmlElementAttribute("tsa", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.TimeSeriesAnnc> TimeSeriesAnnc { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.TimeSeriesAnnc>();
 		
@@ -10738,7 +10738,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool TimeSeriesAnncSpecified => (this.TimeSeriesAnnc.Count != 0);
 
-		[JsonPropertyAttribute("trptA")]
+		[JsonPropertyAttribute("m2m:trptA")]
 		[XmlElementAttribute("trptA", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.TrafficPatternAnnc> TrafficPatternAnnc { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.TrafficPatternAnnc>();
 		
@@ -10820,7 +10820,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("smd")]
+		[JsonPropertyAttribute("m2m:smd")]
 		[XmlElementAttribute("smd", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.SemanticDescriptor> SemanticDescriptor { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.SemanticDescriptor>();
 		
@@ -10835,7 +10835,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -10875,7 +10875,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("smd")]
+		[JsonPropertyAttribute("m2m:smd")]
 		[XmlElementAttribute("smd", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.SemanticDescriptor> SemanticDescriptor { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.SemanticDescriptor>();
 		
@@ -10890,7 +10890,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
 
-		[JsonPropertyAttribute("smdA")]
+		[JsonPropertyAttribute("m2m:smdA")]
 		[XmlElementAttribute("smdA", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.SemanticDescriptorAnnc> SemanticDescriptorAnnc { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.SemanticDescriptorAnnc>();
 		
@@ -10905,7 +10905,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool SemanticDescriptorAnncSpecified => (this.SemanticDescriptorAnnc.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -10945,7 +10945,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("smd")]
+		[JsonPropertyAttribute("m2m:smd")]
 		[XmlElementAttribute("smd", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.SemanticDescriptor> SemanticDescriptor { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.SemanticDescriptor>();
 		
@@ -10960,7 +10960,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -11015,7 +11015,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("smd")]
+		[JsonPropertyAttribute("m2m:smd")]
 		[XmlElementAttribute("smd", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.SemanticDescriptor> SemanticDescriptor { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.SemanticDescriptor>();
 		
@@ -11030,7 +11030,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
 
-		[JsonPropertyAttribute("smdA")]
+		[JsonPropertyAttribute("m2m:smdA")]
 		[XmlElementAttribute("smdA", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.SemanticDescriptorAnnc> SemanticDescriptorAnnc { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.SemanticDescriptorAnnc>();
 		
@@ -11045,7 +11045,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool SemanticDescriptorAnncSpecified => (this.SemanticDescriptorAnnc.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -11123,7 +11123,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("smd")]
+		[JsonPropertyAttribute("m2m:smd")]
 		[XmlElementAttribute("smd", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.SemanticDescriptor> SemanticDescriptor { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.SemanticDescriptor>();
 		
@@ -11138,7 +11138,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -11178,7 +11178,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("smd")]
+		[JsonPropertyAttribute("m2m:smd")]
 		[XmlElementAttribute("smd", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.SemanticDescriptor> SemanticDescriptor { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.SemanticDescriptor>();
 		
@@ -11193,7 +11193,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
 
-		[JsonPropertyAttribute("smdA")]
+		[JsonPropertyAttribute("m2m:smdA")]
 		[XmlElementAttribute("smdA", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.SemanticDescriptorAnnc> SemanticDescriptorAnnc { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.SemanticDescriptorAnnc>();
 		
@@ -11208,7 +11208,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool SemanticDescriptorAnncSpecified => (this.SemanticDescriptorAnnc.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -11252,7 +11252,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("smd")]
+		[JsonPropertyAttribute("m2m:smd")]
 		[XmlElementAttribute("smd", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.SemanticDescriptor> SemanticDescriptor { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.SemanticDescriptor>();
 		
@@ -11267,7 +11267,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -11312,7 +11312,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool AllJoynPropertySpecified => (this.AllJoynProperty.Count != 0);
 
-		[JsonPropertyAttribute("cnt")]
+		[JsonPropertyAttribute("m2m:cnt")]
 		[XmlElementAttribute("cnt", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Container> Container { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Container>();
 		
@@ -11356,7 +11356,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("smd")]
+		[JsonPropertyAttribute("m2m:smd")]
 		[XmlElementAttribute("smd", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.SemanticDescriptor> SemanticDescriptor { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.SemanticDescriptor>();
 		
@@ -11371,7 +11371,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
 
-		[JsonPropertyAttribute("smdA")]
+		[JsonPropertyAttribute("m2m:smdA")]
 		[XmlElementAttribute("smdA", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.SemanticDescriptorAnnc> SemanticDescriptorAnnc { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.SemanticDescriptorAnnc>();
 		
@@ -11386,7 +11386,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool SemanticDescriptorAnncSpecified => (this.SemanticDescriptorAnnc.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -11461,7 +11461,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool AllJoynPropertyAnncSpecified => (this.AllJoynPropertyAnnc.Count != 0);
 
-		[JsonPropertyAttribute("cnt")]
+		[JsonPropertyAttribute("m2m:cnt")]
 		[XmlElementAttribute("cnt", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Container> Container { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Container>();
 		
@@ -11476,7 +11476,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ContainerSpecified => (this.Container.Count != 0);
 
-		[JsonPropertyAttribute("cntA")]
+		[JsonPropertyAttribute("m2m:cntA")]
 		[XmlElementAttribute("cntA", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.ContainerAnnc> ContainerAnnc { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.ContainerAnnc>();
 		
@@ -11524,7 +11524,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("smd")]
+		[JsonPropertyAttribute("m2m:smd")]
 		[XmlElementAttribute("smd", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.SemanticDescriptor> SemanticDescriptor { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.SemanticDescriptor>();
 		
@@ -11539,7 +11539,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -11631,7 +11631,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("smd")]
+		[JsonPropertyAttribute("m2m:smd")]
 		[XmlElementAttribute("smd", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.SemanticDescriptor> SemanticDescriptor { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.SemanticDescriptor>();
 		
@@ -11646,7 +11646,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
 
-		[JsonPropertyAttribute("smdA")]
+		[JsonPropertyAttribute("m2m:smdA")]
 		[XmlElementAttribute("smdA", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.SemanticDescriptorAnnc> SemanticDescriptorAnnc { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.SemanticDescriptorAnnc>();
 		
@@ -11661,7 +11661,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool SemanticDescriptorAnncSpecified => (this.SemanticDescriptorAnnc.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -11764,7 +11764,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("smd")]
+		[JsonPropertyAttribute("m2m:smd")]
 		[XmlElementAttribute("smd", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.SemanticDescriptor> SemanticDescriptor { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.SemanticDescriptor>();
 		
@@ -11779,7 +11779,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -11867,7 +11867,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("smd")]
+		[JsonPropertyAttribute("m2m:smd")]
 		[XmlElementAttribute("smd", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.SemanticDescriptor> SemanticDescriptor { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.SemanticDescriptor>();
 		
@@ -11882,7 +11882,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
 
-		[JsonPropertyAttribute("smdA")]
+		[JsonPropertyAttribute("m2m:smdA")]
 		[XmlElementAttribute("smdA", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.SemanticDescriptorAnnc> SemanticDescriptorAnnc { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.SemanticDescriptorAnnc>();
 		
@@ -11897,7 +11897,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool SemanticDescriptorAnncSpecified => (this.SemanticDescriptorAnnc.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -11946,7 +11946,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("andi", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("andi")]
+	[JsonObjectAttribute("m2m:andi")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("areaNwkDeviceInfo", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -12053,7 +12053,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -12072,7 +12072,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("andiA", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("andiA")]
+	[JsonObjectAttribute("m2m:andiA")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("areaNwkDeviceInfoAnnc", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -12190,7 +12190,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -12209,7 +12209,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("ani", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("ani")]
+	[JsonObjectAttribute("m2m:ani")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("areaNwkInfo", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -12238,7 +12238,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -12257,7 +12257,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("aniA", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("aniA")]
+	[JsonObjectAttribute("m2m:aniA")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("areaNwkInfoAnnc", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -12297,7 +12297,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -12316,7 +12316,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("bat", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("bat")]
+	[JsonObjectAttribute("m2m:bat")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("battery", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -12374,7 +12374,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -12393,7 +12393,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("batA", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("batA")]
+	[JsonObjectAttribute("m2m:batA")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("batteryAnnc", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -12480,7 +12480,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -12499,7 +12499,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("cmbf", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("cmbf")]
+	[JsonObjectAttribute("m2m:cmbf")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("cmdhBuffer", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -12524,7 +12524,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("cmdf", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("cmdf")]
+	[JsonObjectAttribute("m2m:cmdf")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("cmdhDefaults", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -12538,7 +12538,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("cmdv", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("cmdv")]
+	[JsonObjectAttribute("m2m:cmdv")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("cmdhDefEcValue", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -12601,7 +12601,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("cmpv", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("cmpv")]
+	[JsonObjectAttribute("m2m:cmpv")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("cmdhEcDefParamValues", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -12635,7 +12635,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("cml", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("cml")]
+	[JsonObjectAttribute("m2m:cml")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("cmdhLimits", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -12774,7 +12774,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("cmnr", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("cmnr")]
+	[JsonObjectAttribute("m2m:cmnr")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("cmdhNetworkAccessRules", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -12803,7 +12803,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("cmwr", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("cmwr")]
+	[JsonObjectAttribute("m2m:cmwr")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("cmdhNwAccessRule", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -12839,7 +12839,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("cmp", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("cmp")]
+	[JsonObjectAttribute("m2m:cmp")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("cmdhPolicy", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -12857,7 +12857,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("mem", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("mem")]
+	[JsonObjectAttribute("m2m:mem")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("memory", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -12886,7 +12886,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -12905,7 +12905,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("memA", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("memA")]
+	[JsonObjectAttribute("m2m:memA")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("memoryAnnc", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -12992,7 +12992,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -13011,7 +13011,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("fwr", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("fwr")]
+	[JsonObjectAttribute("m2m:fwr")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("firmware", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -13052,7 +13052,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -13071,7 +13071,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("fwrA", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("fwrA")]
+	[JsonObjectAttribute("m2m:fwrA")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("firmwareAnnc", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -13141,7 +13141,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -13160,7 +13160,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("swr", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("swr")]
+	[JsonObjectAttribute("m2m:swr")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("software", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -13275,7 +13275,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -13294,7 +13294,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("swrA", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("swrA")]
+	[JsonObjectAttribute("m2m:swrA")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("softwareAnnc", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -13467,7 +13467,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -13486,7 +13486,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("dvi", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("dvi")]
+	[JsonObjectAttribute("m2m:dvi")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("deviceInfo", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -13535,7 +13535,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -13554,7 +13554,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("dviA", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("dviA")]
+	[JsonObjectAttribute("m2m:dviA")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("deviceInfoAnnc", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -13603,7 +13603,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -13622,7 +13622,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("dvc", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("dvc")]
+	[JsonObjectAttribute("m2m:dvc")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("deviceCapability", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -13725,7 +13725,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -13744,7 +13744,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("dvcA", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("dvcA")]
+	[JsonObjectAttribute("m2m:dvcA")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("deviceCapabilityAnnc", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -13905,7 +13905,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -13924,7 +13924,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("rbo", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("rbo")]
+	[JsonObjectAttribute("m2m:rbo")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("reboot", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -13953,7 +13953,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -13972,7 +13972,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("rboA", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("rboA")]
+	[JsonObjectAttribute("m2m:rboA")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("rebootAnnc", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -14059,7 +14059,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -14078,7 +14078,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("evl", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("evl")]
+	[JsonObjectAttribute("m2m:evl")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("eventLog", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -14177,7 +14177,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -14196,7 +14196,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("evlA", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("evlA")]
+	[JsonObjectAttribute("m2m:evlA")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("eventLogAnnc", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -14353,7 +14353,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -14372,7 +14372,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("nod", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("nod")]
+	[JsonObjectAttribute("m2m:nod")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("node", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -14401,7 +14401,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("mem")]
+		[JsonPropertyAttribute("m2m:mem")]
 		[XmlElementAttribute("mem", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Memory> Memory { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Memory>();
 		
@@ -14416,7 +14416,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool MemorySpecified => (this.Memory.Count != 0);
 
-		[JsonPropertyAttribute("bat")]
+		[JsonPropertyAttribute("m2m:bat")]
 		[XmlElementAttribute("bat", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Battery> Battery { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Battery>();
 		
@@ -14431,7 +14431,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool BatterySpecified => (this.Battery.Count != 0);
 
-		[JsonPropertyAttribute("ani")]
+		[JsonPropertyAttribute("m2m:ani")]
 		[XmlElementAttribute("ani", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.AreaNwkInfo> AreaNwkInfo { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.AreaNwkInfo>();
 		
@@ -14446,7 +14446,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool AreaNwkInfoSpecified => (this.AreaNwkInfo.Count != 0);
 
-		[JsonPropertyAttribute("andi")]
+		[JsonPropertyAttribute("m2m:andi")]
 		[XmlElementAttribute("andi", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.AreaNwkDeviceInfo> AreaNwkDeviceInfo { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.AreaNwkDeviceInfo>();
 		
@@ -14461,7 +14461,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool AreaNwkDeviceInfoSpecified => (this.AreaNwkDeviceInfo.Count != 0);
 
-		[JsonPropertyAttribute("fwr")]
+		[JsonPropertyAttribute("m2m:fwr")]
 		[XmlElementAttribute("fwr", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Firmware> Firmware { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Firmware>();
 		
@@ -14476,7 +14476,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool FirmwareSpecified => (this.Firmware.Count != 0);
 
-		[JsonPropertyAttribute("swr")]
+		[JsonPropertyAttribute("m2m:swr")]
 		[XmlElementAttribute("swr", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Software> Software { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Software>();
 		
@@ -14491,7 +14491,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool SoftwareSpecified => (this.Software.Count != 0);
 
-		[JsonPropertyAttribute("dvi")]
+		[JsonPropertyAttribute("m2m:dvi")]
 		[XmlElementAttribute("dvi", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.DeviceInfo> DeviceInfo { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.DeviceInfo>();
 		
@@ -14506,7 +14506,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool DeviceInfoSpecified => (this.DeviceInfo.Count != 0);
 
-		[JsonPropertyAttribute("dvc")]
+		[JsonPropertyAttribute("m2m:dvc")]
 		[XmlElementAttribute("dvc", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.DeviceCapability> DeviceCapability { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.DeviceCapability>();
 		
@@ -14521,7 +14521,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool DeviceCapabilitySpecified => (this.DeviceCapability.Count != 0);
 
-		[JsonPropertyAttribute("rbo")]
+		[JsonPropertyAttribute("m2m:rbo")]
 		[XmlElementAttribute("rbo", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Reboot> Reboot { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Reboot>();
 		
@@ -14536,7 +14536,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool RebootSpecified => (this.Reboot.Count != 0);
 
-		[JsonPropertyAttribute("evl")]
+		[JsonPropertyAttribute("m2m:evl")]
 		[XmlElementAttribute("evl", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.EventLog> EventLog { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.EventLog>();
 		
@@ -14551,7 +14551,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool EventLogSpecified => (this.EventLog.Count != 0);
 
-		[JsonPropertyAttribute("cmp")]
+		[JsonPropertyAttribute("m2m:cmp")]
 		[XmlElementAttribute("cmp", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.CmdhPolicy> CmdhPolicy { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.CmdhPolicy>();
 		
@@ -14566,7 +14566,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool CmdhPolicySpecified => (this.CmdhPolicy.Count != 0);
 
-		[JsonPropertyAttribute("acmp")]
+		[JsonPropertyAttribute("m2m:acmp")]
 		[XmlElementAttribute("acmp", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.ActiveCmdhPolicy> ActiveCmdhPolicy { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.ActiveCmdhPolicy>();
 		
@@ -14581,7 +14581,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ActiveCmdhPolicySpecified => (this.ActiveCmdhPolicy.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -14596,7 +14596,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool SubscriptionSpecified => (this.Subscription.Count != 0);
 
-		[JsonPropertyAttribute("smd")]
+		[JsonPropertyAttribute("m2m:smd")]
 		[XmlElementAttribute("smd", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.SemanticDescriptor> SemanticDescriptor { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.SemanticDescriptor>();
 		
@@ -14611,7 +14611,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
 
-		[JsonPropertyAttribute("trpt")]
+		[JsonPropertyAttribute("m2m:trpt")]
 		[XmlElementAttribute("trpt", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.TrafficPattern> TrafficPattern { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.TrafficPattern>();
 		
@@ -14630,7 +14630,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("nodA", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("nodA")]
+	[JsonObjectAttribute("m2m:nodA")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("nodeAnnc", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -14659,7 +14659,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("memA")]
+		[JsonPropertyAttribute("m2m:memA")]
 		[XmlElementAttribute("memA", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.MemoryAnnc> MemoryAnnc { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.MemoryAnnc>();
 		
@@ -14674,7 +14674,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool MemoryAnncSpecified => (this.MemoryAnnc.Count != 0);
 
-		[JsonPropertyAttribute("batA")]
+		[JsonPropertyAttribute("m2m:batA")]
 		[XmlElementAttribute("batA", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.BatteryAnnc> BatteryAnnc { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.BatteryAnnc>();
 		
@@ -14689,7 +14689,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool BatteryAnncSpecified => (this.BatteryAnnc.Count != 0);
 
-		[JsonPropertyAttribute("aniA")]
+		[JsonPropertyAttribute("m2m:aniA")]
 		[XmlElementAttribute("aniA", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.AreaNwkInfoAnnc> AreaNwkInfoAnnc { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.AreaNwkInfoAnnc>();
 		
@@ -14704,7 +14704,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool AreaNwkInfoAnncSpecified => (this.AreaNwkInfoAnnc.Count != 0);
 
-		[JsonPropertyAttribute("andiA")]
+		[JsonPropertyAttribute("m2m:andiA")]
 		[XmlElementAttribute("andiA", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.AreaNwkDeviceInfoAnnc> AreaNwkDeviceInfoAnnc { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.AreaNwkDeviceInfoAnnc>();
 		
@@ -14719,7 +14719,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool AreaNwkDeviceInfoAnncSpecified => (this.AreaNwkDeviceInfoAnnc.Count != 0);
 
-		[JsonPropertyAttribute("fwrA")]
+		[JsonPropertyAttribute("m2m:fwrA")]
 		[XmlElementAttribute("fwrA", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.FirmwareAnnc> FirmwareAnnc { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.FirmwareAnnc>();
 		
@@ -14734,7 +14734,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool FirmwareAnncSpecified => (this.FirmwareAnnc.Count != 0);
 
-		[JsonPropertyAttribute("swrA")]
+		[JsonPropertyAttribute("m2m:swrA")]
 		[XmlElementAttribute("swrA", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.SoftwareAnnc> SoftwareAnnc { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.SoftwareAnnc>();
 		
@@ -14749,7 +14749,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool SoftwareAnncSpecified => (this.SoftwareAnnc.Count != 0);
 
-		[JsonPropertyAttribute("dviA")]
+		[JsonPropertyAttribute("m2m:dviA")]
 		[XmlElementAttribute("dviA", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.DeviceInfoAnnc> DeviceInfoAnnc { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.DeviceInfoAnnc>();
 		
@@ -14764,7 +14764,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool DeviceInfoAnncSpecified => (this.DeviceInfoAnnc.Count != 0);
 
-		[JsonPropertyAttribute("dvcA")]
+		[JsonPropertyAttribute("m2m:dvcA")]
 		[XmlElementAttribute("dvcA", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.DeviceCapabilityAnnc> DeviceCapabilityAnnc { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.DeviceCapabilityAnnc>();
 		
@@ -14779,7 +14779,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool DeviceCapabilityAnncSpecified => (this.DeviceCapabilityAnnc.Count != 0);
 
-		[JsonPropertyAttribute("rboA")]
+		[JsonPropertyAttribute("m2m:rboA")]
 		[XmlElementAttribute("rboA", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.RebootAnnc> RebootAnnc { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.RebootAnnc>();
 		
@@ -14794,7 +14794,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool RebootAnncSpecified => (this.RebootAnnc.Count != 0);
 
-		[JsonPropertyAttribute("evlA")]
+		[JsonPropertyAttribute("m2m:evlA")]
 		[XmlElementAttribute("evlA", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.EventLogAnnc> EventLogAnnc { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.EventLogAnnc>();
 		
@@ -14809,7 +14809,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool EventLogAnncSpecified => (this.EventLogAnnc.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -14824,7 +14824,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool SubscriptionSpecified => (this.Subscription.Count != 0);
 
-		[JsonPropertyAttribute("smd")]
+		[JsonPropertyAttribute("m2m:smd")]
 		[XmlElementAttribute("smd", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.SemanticDescriptor> SemanticDescriptor { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.SemanticDescriptor>();
 		
@@ -14839,7 +14839,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
 
-		[JsonPropertyAttribute("smdA")]
+		[JsonPropertyAttribute("m2m:smdA")]
 		[XmlElementAttribute("smdA", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.SemanticDescriptorAnnc> SemanticDescriptorAnnc { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.SemanticDescriptorAnnc>();
 		
@@ -14854,7 +14854,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool SemanticDescriptorAnncSpecified => (this.SemanticDescriptorAnnc.Count != 0);
 
-		[JsonPropertyAttribute("trptA")]
+		[JsonPropertyAttribute("m2m:trptA")]
 		[XmlElementAttribute("trptA", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.TrafficPatternAnnc> TrafficPatternAnnc { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.TrafficPatternAnnc>();
 		
@@ -14873,7 +14873,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("lcp", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("lcp")]
+	[JsonObjectAttribute("m2m:lcp")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("locationPolicy", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -14980,7 +14980,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -14999,7 +14999,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("lcpA", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("lcpA")]
+	[JsonObjectAttribute("m2m:lcpA")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("locationPolicyAnnc", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -15095,7 +15095,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("csr", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("csr")]
+	[JsonObjectAttribute("m2m:csr")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("remoteCSE", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -15263,7 +15263,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("nodA")]
+		[JsonPropertyAttribute("m2m:nodA")]
 		[XmlElementAttribute("nodA", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.NodeAnnc> NodeAnnc { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.NodeAnnc>();
 		
@@ -15278,7 +15278,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool NodeAnncSpecified => (this.NodeAnnc.Count != 0);
 
-		[JsonPropertyAttribute("cnt")]
+		[JsonPropertyAttribute("m2m:cnt")]
 		[XmlElementAttribute("cnt", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Container> Container { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Container>();
 		
@@ -15293,7 +15293,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ContainerSpecified => (this.Container.Count != 0);
 
-		[JsonPropertyAttribute("cntA")]
+		[JsonPropertyAttribute("m2m:cntA")]
 		[XmlElementAttribute("cntA", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.ContainerAnnc> ContainerAnnc { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.ContainerAnnc>();
 		
@@ -15308,7 +15308,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ContainerAnncSpecified => (this.ContainerAnnc.Count != 0);
 
-		[JsonPropertyAttribute("grp")]
+		[JsonPropertyAttribute("m2m:grp")]
 		[XmlElementAttribute("grp", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Group> Group { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Group>();
 		
@@ -15323,7 +15323,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool GroupSpecified => (this.Group.Count != 0);
 
-		[JsonPropertyAttribute("grpA")]
+		[JsonPropertyAttribute("m2m:grpA")]
 		[XmlElementAttribute("grpA", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.GroupAnnc> GroupAnnc { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.GroupAnnc>();
 		
@@ -15338,7 +15338,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool GroupAnncSpecified => (this.GroupAnnc.Count != 0);
 
-		[JsonPropertyAttribute("acp")]
+		[JsonPropertyAttribute("m2m:acp")]
 		[XmlElementAttribute("acp", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.AccessControlPolicy> AccessControlPolicy { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.AccessControlPolicy>();
 		
@@ -15353,7 +15353,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool AccessControlPolicySpecified => (this.AccessControlPolicy.Count != 0);
 
-		[JsonPropertyAttribute("acpA")]
+		[JsonPropertyAttribute("m2m:acpA")]
 		[XmlElementAttribute("acpA", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.AccessControlPolicyAnnc> AccessControlPolicyAnnc { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.AccessControlPolicyAnnc>();
 		
@@ -15368,7 +15368,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool AccessControlPolicyAnncSpecified => (this.AccessControlPolicyAnnc.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -15383,7 +15383,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool SubscriptionSpecified => (this.Subscription.Count != 0);
 
-		[JsonPropertyAttribute("pch")]
+		[JsonPropertyAttribute("m2m:pch")]
 		[XmlElementAttribute("pch", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.PollingChannel> PollingChannel { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.PollingChannel>();
 		
@@ -15398,7 +15398,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool PollingChannelSpecified => (this.PollingChannel.Count != 0);
 
-		[JsonPropertyAttribute("sch")]
+		[JsonPropertyAttribute("m2m:sch")]
 		[XmlElementAttribute("sch", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Schedule> Schedule { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Schedule>();
 		
@@ -15413,7 +15413,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ScheduleSpecified => (this.Schedule.Count != 0);
 
-		[JsonPropertyAttribute("ts")]
+		[JsonPropertyAttribute("m2m:ts")]
 		[XmlElementAttribute("ts", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.TimeSeries> TimeSeries { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.TimeSeries>();
 		
@@ -15428,7 +15428,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool TimeSeriesSpecified => (this.TimeSeries.Count != 0);
 
-		[JsonPropertyAttribute("tsa")]
+		[JsonPropertyAttribute("m2m:tsa")]
 		[XmlElementAttribute("tsa", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.TimeSeriesAnnc> TimeSeriesAnnc { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.TimeSeriesAnnc>();
 		
@@ -15443,7 +15443,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool TimeSeriesAnncSpecified => (this.TimeSeriesAnnc.Count != 0);
 
-		[JsonPropertyAttribute("lcpA")]
+		[JsonPropertyAttribute("m2m:lcpA")]
 		[XmlElementAttribute("lcpA", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.LocationPolicyAnnc> LocationPolicyAnnc { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.LocationPolicyAnnc>();
 		
@@ -15458,7 +15458,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool LocationPolicyAnncSpecified => (this.LocationPolicyAnnc.Count != 0);
 
-		[JsonPropertyAttribute("aeA")]
+		[JsonPropertyAttribute("m2m:aeA")]
 		[XmlElementAttribute("aeA", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.AEAnnc> AEAnnc { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.AEAnnc>();
 		
@@ -15507,7 +15507,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("csrA", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("csrA")]
+	[JsonObjectAttribute("m2m:csrA")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("remoteCSEAnnc", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -15625,7 +15625,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("nodA")]
+		[JsonPropertyAttribute("m2m:nodA")]
 		[XmlElementAttribute("nodA", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.NodeAnnc> NodeAnnc { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.NodeAnnc>();
 		
@@ -15640,7 +15640,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool NodeAnncSpecified => (this.NodeAnnc.Count != 0);
 
-		[JsonPropertyAttribute("cnt")]
+		[JsonPropertyAttribute("m2m:cnt")]
 		[XmlElementAttribute("cnt", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Container> Container { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Container>();
 		
@@ -15655,7 +15655,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ContainerSpecified => (this.Container.Count != 0);
 
-		[JsonPropertyAttribute("cntA")]
+		[JsonPropertyAttribute("m2m:cntA")]
 		[XmlElementAttribute("cntA", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.ContainerAnnc> ContainerAnnc { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.ContainerAnnc>();
 		
@@ -15670,7 +15670,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ContainerAnncSpecified => (this.ContainerAnnc.Count != 0);
 
-		[JsonPropertyAttribute("grp")]
+		[JsonPropertyAttribute("m2m:grp")]
 		[XmlElementAttribute("grp", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Group> Group { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Group>();
 		
@@ -15685,7 +15685,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool GroupSpecified => (this.Group.Count != 0);
 
-		[JsonPropertyAttribute("grpA")]
+		[JsonPropertyAttribute("m2m:grpA")]
 		[XmlElementAttribute("grpA", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.GroupAnnc> GroupAnnc { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.GroupAnnc>();
 		
@@ -15700,7 +15700,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool GroupAnncSpecified => (this.GroupAnnc.Count != 0);
 
-		[JsonPropertyAttribute("acp")]
+		[JsonPropertyAttribute("m2m:acp")]
 		[XmlElementAttribute("acp", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.AccessControlPolicy> AccessControlPolicy { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.AccessControlPolicy>();
 		
@@ -15715,7 +15715,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool AccessControlPolicySpecified => (this.AccessControlPolicy.Count != 0);
 
-		[JsonPropertyAttribute("acpA")]
+		[JsonPropertyAttribute("m2m:acpA")]
 		[XmlElementAttribute("acpA", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.AccessControlPolicyAnnc> AccessControlPolicyAnnc { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.AccessControlPolicyAnnc>();
 		
@@ -15730,7 +15730,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool AccessControlPolicyAnncSpecified => (this.AccessControlPolicyAnnc.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -15745,7 +15745,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool SubscriptionSpecified => (this.Subscription.Count != 0);
 
-		[JsonPropertyAttribute("pch")]
+		[JsonPropertyAttribute("m2m:pch")]
 		[XmlElementAttribute("pch", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.PollingChannel> PollingChannel { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.PollingChannel>();
 		
@@ -15760,7 +15760,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool PollingChannelSpecified => (this.PollingChannel.Count != 0);
 
-		[JsonPropertyAttribute("schA")]
+		[JsonPropertyAttribute("m2m:schA")]
 		[XmlElementAttribute("schA", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.ScheduleAnnc> ScheduleAnnc { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.ScheduleAnnc>();
 		
@@ -15775,7 +15775,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ScheduleAnncSpecified => (this.ScheduleAnnc.Count != 0);
 
-		[JsonPropertyAttribute("lcpA")]
+		[JsonPropertyAttribute("m2m:lcpA")]
 		[XmlElementAttribute("lcpA", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.LocationPolicyAnnc> LocationPolicyAnnc { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.LocationPolicyAnnc>();
 		
@@ -15790,7 +15790,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool LocationPolicyAnncSpecified => (this.LocationPolicyAnnc.Count != 0);
 
-		[JsonPropertyAttribute("ts")]
+		[JsonPropertyAttribute("m2m:ts")]
 		[XmlElementAttribute("ts", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.TimeSeries> TimeSeries { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.TimeSeries>();
 		
@@ -15805,7 +15805,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool TimeSeriesSpecified => (this.TimeSeries.Count != 0);
 
-		[JsonPropertyAttribute("tsa")]
+		[JsonPropertyAttribute("m2m:tsa")]
 		[XmlElementAttribute("tsa", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.TimeSeriesAnnc> TimeSeriesAnnc { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.TimeSeriesAnnc>();
 		
@@ -15820,7 +15820,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool TimeSeriesAnncSpecified => (this.TimeSeriesAnnc.Count != 0);
 
-		[JsonPropertyAttribute("aeA")]
+		[JsonPropertyAttribute("m2m:aeA")]
 		[XmlElementAttribute("aeA", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.AEAnnc> AEAnnc { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.AEAnnc>();
 		
@@ -15869,7 +15869,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("exin", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("exin")]
+	[JsonObjectAttribute("m2m:exin")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("execInstance", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -16129,7 +16129,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -16148,7 +16148,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("mgc", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("mgc")]
+	[JsonObjectAttribute("m2m:mgc")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("mgmtCmd", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -16350,7 +16350,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("exin")]
+		[JsonPropertyAttribute("m2m:exin")]
 		[XmlElementAttribute("exin", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.ExecInstance> ExecInstance { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.ExecInstance>();
 		
@@ -16365,7 +16365,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ExecInstanceSpecified => (this.ExecInstance.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -16384,7 +16384,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("evcg", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("evcg")]
+	[JsonObjectAttribute("m2m:evcg")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("eventConfig", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -16578,7 +16578,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -16597,7 +16597,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("stcg", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("stcg")]
+	[JsonObjectAttribute("m2m:stcg")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("statsConfig", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -16622,7 +16622,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("evcg")]
+		[JsonPropertyAttribute("m2m:evcg")]
 		[XmlElementAttribute("evcg", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.EventConfig> EventConfig { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.EventConfig>();
 		
@@ -16637,7 +16637,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool EventConfigSpecified => (this.EventConfig.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -16656,7 +16656,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("stcl", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("stcl")]
+	[JsonObjectAttribute("m2m:stcl")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("statsCollect", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -16783,7 +16783,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -16802,7 +16802,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("req", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("req")]
+	[JsonObjectAttribute("m2m:req")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("request", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -16917,7 +16917,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -16936,7 +16936,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("dlv", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("dlv")]
+	[JsonObjectAttribute("m2m:dlv")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("delivery", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -16987,7 +16987,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -17006,7 +17006,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("svsn", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("svsn")]
+	[JsonObjectAttribute("m2m:svsn")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("serviceSubscribedNode", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -17054,7 +17054,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -17073,7 +17073,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("mssp", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("mssp")]
+	[JsonObjectAttribute("m2m:mssp")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("m2mServiceSubscriptionProfile", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -17094,7 +17094,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("svsn")]
+		[JsonPropertyAttribute("m2m:svsn")]
 		[XmlElementAttribute("svsn", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.ServiceSubscribedNode> ServiceSubscribedNode { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.ServiceSubscribedNode>();
 		
@@ -17109,7 +17109,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ServiceSubscribedNodeSpecified => (this.ServiceSubscribedNode.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -17128,7 +17128,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("asar", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("asar")]
+	[JsonObjectAttribute("m2m:asar")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("serviceSubscribedAppRule", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -17194,7 +17194,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -17213,7 +17213,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("rol", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("rol")]
+	[JsonObjectAttribute("m2m:rol")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("role", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -17266,7 +17266,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -17285,7 +17285,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("tk", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("tk")]
+	[JsonObjectAttribute("m2m:tk")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("token", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -17394,7 +17394,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -17426,7 +17426,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("cb", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("cb")]
+	[JsonObjectAttribute("m2m:cb")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("CSEBase", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -17526,7 +17526,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("csr")]
+		[JsonPropertyAttribute("m2m:csr")]
 		[XmlElementAttribute("csr", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.RemoteCSE> RemoteCSE { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.RemoteCSE>();
 		
@@ -17541,7 +17541,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool RemoteCSESpecified => (this.RemoteCSE.Count != 0);
 
-		[JsonPropertyAttribute("csrA")]
+		[JsonPropertyAttribute("m2m:csrA")]
 		[XmlElementAttribute("csrA", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.RemoteCSEAnnc> RemoteCSEAnnc { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.RemoteCSEAnnc>();
 		
@@ -17556,7 +17556,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool RemoteCSEAnncSpecified => (this.RemoteCSEAnnc.Count != 0);
 
-		[JsonPropertyAttribute("nod")]
+		[JsonPropertyAttribute("m2m:nod")]
 		[XmlElementAttribute("nod", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Node> Node { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Node>();
 		
@@ -17571,7 +17571,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool NodeSpecified => (this.Node.Count != 0);
 
-		[JsonPropertyAttribute("ae")]
+		[JsonPropertyAttribute("m2m:ae")]
 		[XmlElementAttribute("ae", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.AE> AE { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.AE>();
 		
@@ -17586,7 +17586,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool AESpecified => (this.AE.Count != 0);
 
-		[JsonPropertyAttribute("cnt")]
+		[JsonPropertyAttribute("m2m:cnt")]
 		[XmlElementAttribute("cnt", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Container> Container { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Container>();
 		
@@ -17601,7 +17601,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ContainerSpecified => (this.Container.Count != 0);
 
-		[JsonPropertyAttribute("grp")]
+		[JsonPropertyAttribute("m2m:grp")]
 		[XmlElementAttribute("grp", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Group> Group { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Group>();
 		
@@ -17616,7 +17616,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool GroupSpecified => (this.Group.Count != 0);
 
-		[JsonPropertyAttribute("acp")]
+		[JsonPropertyAttribute("m2m:acp")]
 		[XmlElementAttribute("acp", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.AccessControlPolicy> AccessControlPolicy { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.AccessControlPolicy>();
 		
@@ -17631,7 +17631,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool AccessControlPolicySpecified => (this.AccessControlPolicy.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -17646,7 +17646,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool SubscriptionSpecified => (this.Subscription.Count != 0);
 
-		[JsonPropertyAttribute("mgc")]
+		[JsonPropertyAttribute("m2m:mgc")]
 		[XmlElementAttribute("mgc", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.MgmtCmd> MgmtCmd { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.MgmtCmd>();
 		
@@ -17661,7 +17661,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool MgmtCmdSpecified => (this.MgmtCmd.Count != 0);
 
-		[JsonPropertyAttribute("lcp")]
+		[JsonPropertyAttribute("m2m:lcp")]
 		[XmlElementAttribute("lcp", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.LocationPolicy> LocationPolicy { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.LocationPolicy>();
 		
@@ -17676,7 +17676,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool LocationPolicySpecified => (this.LocationPolicy.Count != 0);
 
-		[JsonPropertyAttribute("stcg")]
+		[JsonPropertyAttribute("m2m:stcg")]
 		[XmlElementAttribute("stcg", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.StatsConfig> StatsConfig { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.StatsConfig>();
 		
@@ -17691,7 +17691,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool StatsConfigSpecified => (this.StatsConfig.Count != 0);
 
-		[JsonPropertyAttribute("stcl")]
+		[JsonPropertyAttribute("m2m:stcl")]
 		[XmlElementAttribute("stcl", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.StatsCollect> StatsCollect { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.StatsCollect>();
 		
@@ -17706,7 +17706,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool StatsCollectSpecified => (this.StatsCollect.Count != 0);
 
-		[JsonPropertyAttribute("req")]
+		[JsonPropertyAttribute("m2m:req")]
 		[XmlElementAttribute("req", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Request<TPrimitiveContent>> Request { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Request<TPrimitiveContent>>();
 		
@@ -17721,7 +17721,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool RequestSpecified => (this.Request.Count != 0);
 
-		[JsonPropertyAttribute("dlv")]
+		[JsonPropertyAttribute("m2m:dlv")]
 		[XmlElementAttribute("dlv", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Delivery<TPrimitiveContent>> Delivery { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Delivery<TPrimitiveContent>>();
 		
@@ -17736,7 +17736,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool DeliverySpecified => (this.Delivery.Count != 0);
 
-		[JsonPropertyAttribute("sch")]
+		[JsonPropertyAttribute("m2m:sch")]
 		[XmlElementAttribute("sch", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Schedule> Schedule { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Schedule>();
 		
@@ -17751,7 +17751,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ScheduleSpecified => (this.Schedule.Count != 0);
 
-		[JsonPropertyAttribute("mssp")]
+		[JsonPropertyAttribute("m2m:mssp")]
 		[XmlElementAttribute("mssp", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.M2MServiceSubscriptionProfile> M2MServiceSubscriptionProfile { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.M2MServiceSubscriptionProfile>();
 		
@@ -17766,7 +17766,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool M2MServiceSubscriptionProfileSpecified => (this.M2MServiceSubscriptionProfile.Count != 0);
 
-		[JsonPropertyAttribute("asar")]
+		[JsonPropertyAttribute("m2m:asar")]
 		[XmlElementAttribute("asar", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.ServiceSubscribedAppRule> ServiceSubscribedAppRule { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.ServiceSubscribedAppRule>();
 		
@@ -17781,7 +17781,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ServiceSubscribedAppRuleSpecified => (this.ServiceSubscribedAppRule.Count != 0);
 
-		[JsonPropertyAttribute("rol")]
+		[JsonPropertyAttribute("m2m:rol")]
 		[XmlElementAttribute("rol", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Role> Role { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Role>();
 		
@@ -17796,7 +17796,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool RoleSpecified => (this.Role.Count != 0);
 
-		[JsonPropertyAttribute("tk")]
+		[JsonPropertyAttribute("m2m:tk")]
 		[XmlElementAttribute("tk", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Token> Token { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Token>();
 		
@@ -17830,7 +17830,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("dac", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("dac")]
+	[JsonObjectAttribute("m2m:dac")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("dynamicAuthorizationConsultation", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -17978,7 +17978,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("smd")]
+		[JsonPropertyAttribute("m2m:smd")]
 		[XmlElementAttribute("smd", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.SemanticDescriptor> SemanticDescriptor { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.SemanticDescriptor>();
 		
@@ -17993,7 +17993,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -18109,7 +18109,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("smd")]
+		[JsonPropertyAttribute("m2m:smd")]
 		[XmlElementAttribute("smd", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.SemanticDescriptor> SemanticDescriptor { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.SemanticDescriptor>();
 		
@@ -18124,7 +18124,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
 
-		[JsonPropertyAttribute("smdA")]
+		[JsonPropertyAttribute("m2m:smdA")]
 		[XmlElementAttribute("smdA", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.SemanticDescriptorAnnc> SemanticDescriptorAnnc { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.SemanticDescriptorAnnc>();
 		
@@ -18139,7 +18139,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool SemanticDescriptorAnncSpecified => (this.SemanticDescriptorAnnc.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -18232,7 +18232,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool GenericInterworkingOperationInstanceSpecified => (this.GenericInterworkingOperationInstance.Count != 0);
 
-		[JsonPropertyAttribute("smd")]
+		[JsonPropertyAttribute("m2m:smd")]
 		[XmlElementAttribute("smd", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.SemanticDescriptor> SemanticDescriptor { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.SemanticDescriptor>();
 		
@@ -18247,7 +18247,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -18355,7 +18355,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool GenericInterworkingOperationInstanceAnncSpecified => (this.GenericInterworkingOperationInstanceAnnc.Count != 0);
 
-		[JsonPropertyAttribute("smd")]
+		[JsonPropertyAttribute("m2m:smd")]
 		[XmlElementAttribute("smd", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.SemanticDescriptor> SemanticDescriptor { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.SemanticDescriptor>();
 		
@@ -18370,7 +18370,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
 
-		[JsonPropertyAttribute("smdA")]
+		[JsonPropertyAttribute("m2m:smdA")]
 		[XmlElementAttribute("smdA", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.SemanticDescriptorAnnc> SemanticDescriptorAnnc { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.SemanticDescriptorAnnc>();
 		
@@ -18385,7 +18385,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool SemanticDescriptorAnncSpecified => (this.SemanticDescriptorAnnc.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -18739,7 +18739,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("pdr", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("pdr")]
+	[JsonObjectAttribute("m2m:pdr")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("policyDeletionRules", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -18797,7 +18797,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -18816,7 +18816,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("ntp", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("ntp")]
+	[JsonObjectAttribute("m2m:ntp")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("notificationTargetPolicy", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -18911,7 +18911,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("pdr")]
+		[JsonPropertyAttribute("m2m:pdr")]
 		[XmlElementAttribute("pdr", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.PolicyDeletionRules> PolicyDeletionRules { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.PolicyDeletionRules>();
 		
@@ -18926,7 +18926,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool PolicyDeletionRulesSpecified => (this.PolicyDeletionRules.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -18966,7 +18966,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("smd")]
+		[JsonPropertyAttribute("m2m:smd")]
 		[XmlElementAttribute("smd", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.SemanticDescriptor> SemanticDescriptor { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.SemanticDescriptor>();
 		
@@ -18981,7 +18981,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -19021,7 +19021,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("smd")]
+		[JsonPropertyAttribute("m2m:smd")]
 		[XmlElementAttribute("smd", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.SemanticDescriptor> SemanticDescriptor { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.SemanticDescriptor>();
 		
@@ -19036,7 +19036,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
 
-		[JsonPropertyAttribute("smdA")]
+		[JsonPropertyAttribute("m2m:smdA")]
 		[XmlElementAttribute("smdA", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.SemanticDescriptorAnnc> SemanticDescriptorAnnc { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.SemanticDescriptorAnnc>();
 		
@@ -19051,7 +19051,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool SemanticDescriptorAnncSpecified => (this.SemanticDescriptorAnnc.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -19091,7 +19091,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("smd")]
+		[JsonPropertyAttribute("m2m:smd")]
 		[XmlElementAttribute("smd", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.SemanticDescriptor> SemanticDescriptor { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.SemanticDescriptor>();
 		
@@ -19106,7 +19106,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		
@@ -19161,7 +19161,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ChildResourceSpecified => (this.ChildResource.Count != 0);
 
-		[JsonPropertyAttribute("smd")]
+		[JsonPropertyAttribute("m2m:smd")]
 		[XmlElementAttribute("smd", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.SemanticDescriptor> SemanticDescriptor { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.SemanticDescriptor>();
 		
@@ -19176,7 +19176,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool SemanticDescriptorSpecified => (this.SemanticDescriptor.Count != 0);
 
-		[JsonPropertyAttribute("smdA")]
+		[JsonPropertyAttribute("m2m:smdA")]
 		[XmlElementAttribute("smdA", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.SemanticDescriptorAnnc> SemanticDescriptorAnnc { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.SemanticDescriptorAnnc>();
 		
@@ -19191,7 +19191,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool SemanticDescriptorAnncSpecified => (this.SemanticDescriptorAnnc.Count != 0);
 
-		[JsonPropertyAttribute("sub")]
+		[JsonPropertyAttribute("m2m:sub")]
 		[XmlElementAttribute("sub", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.Subscription> Subscription { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.Subscription>();
 		

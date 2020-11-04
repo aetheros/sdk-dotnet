@@ -171,7 +171,7 @@ namespace Aetheros.OneM2M.Api
 			var body = (await bodyStream.ReadToEndAsync())!;
 
 			Trace.WriteLine("\n!!!!!!!!!!!!!!!!");
-			Trace.WriteLine($"{request.Method} {request.PathBase}?{request.QueryString} {request.Protocol}");
+			Trace.WriteLine($"{request.Method} {request.Path}?{request.QueryString} {request.Protocol}");
 			foreach (var header in request.Headers)
 			{
 				foreach (var value in header.Value)
@@ -181,6 +181,8 @@ namespace Aetheros.OneM2M.Api
 			Trace.WriteLine("");
 			if (body != null)
 				Trace.WriteLine(body);
+
+			Trace.Flush();
 
 			var requestPrimitive = ParseNotification(body, request.Headers, request.Query);
 			if (requestPrimitive != null)

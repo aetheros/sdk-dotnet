@@ -417,6 +417,9 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnore]
 		[XmlIgnore]
 		public ResponseStatusCode ResponseStatusCode { get; set; }
+
+		[JsonExtensionData]
+    public IDictionary<string, JToken> AllJSON { get; set; } = new Dictionary<string, JToken>();
 	}
 
 	public class NotificationContent<TPrimitiveContent> where TPrimitiveContent : PrimitiveContent

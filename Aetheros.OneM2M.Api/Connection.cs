@@ -86,6 +86,12 @@ namespace Aetheros.OneM2M.Api
 		public static T? DeserializeJson<T>(string str)
 			where T : class => JsonConvert.DeserializeObject<T>(str, Connection.JsonSettings);
 
+		public static T? DeserializeJson<T>(JToken token)
+			where T : class => token.ToObject<T>(Serializer);
+
+		public static string SerializeJson(object obj) => JsonConvert.SerializeObject(obj, Newtonsoft.Json.Formatting.Indented, JsonSettings);
+
+
 		public static ICollection<Aetheros.Schema.OneM2M.Attribute> GetAttributes<T>(params Expression<Func<T, object>>[] expressions) =>
 			expressions.Select(expr =>
 			{
@@ -113,8 +119,6 @@ namespace Aetheros.OneM2M.Api
 					Value = result,
 				};
 			}).ToList();
-
-		public static string SerializeJson(object obj) => JsonConvert.SerializeObject(obj, Newtonsoft.Json.Formatting.Indented, JsonSettings);
 
 		public class HttpStatusException : Exception
 		{

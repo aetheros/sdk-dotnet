@@ -26,7 +26,8 @@ namespace Aetheros.OneM2M.Api
         {
             Trace.WriteLine("\n>>>>>>>>>>>>>>>>");
 
-            Trace.WriteLine($"{request.Method} {request.RequestUri} HTTP/{request.Version}");
+            Trace.WriteLine($"{request.Method} {request.RequestUri.PathAndQuery} HTTP/{request.Version}");
+            Trace.WriteLine($"Host: {request.RequestUri.Authority}");
             DumpHeaders(request.Headers);
 
             var content = request.Content;

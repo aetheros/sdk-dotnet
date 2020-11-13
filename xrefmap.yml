@@ -579,6 +579,24 @@ references:
   fullName.vb: Aetheros.OneM2M.Api.Application(Of TPrimitiveContent).ResourceKey
   nameWithType: Application<TPrimitiveContent>.ResourceKey
   nameWithType.vb: Application(Of TPrimitiveContent).ResourceKey
+- uid: Aetheros.OneM2M.Api.Application`1.UpdateResourceAsync(System.String,System.Func{`0,`0})
+  name: UpdateResourceAsync(String, Func<TPrimitiveContent, TPrimitiveContent>)
+  href: api/Aetheros.OneM2M.Api.Application-1.html#Aetheros_OneM2M_Api_Application_1_UpdateResourceAsync_System_String_System_Func__0__0__
+  commentId: M:Aetheros.OneM2M.Api.Application`1.UpdateResourceAsync(System.String,System.Func{`0,`0})
+  name.vb: UpdateResourceAsync(String, Func(Of TPrimitiveContent, TPrimitiveContent))
+  fullName: Aetheros.OneM2M.Api.Application<TPrimitiveContent>.UpdateResourceAsync(System.String, System.Func<TPrimitiveContent, TPrimitiveContent>)
+  fullName.vb: Aetheros.OneM2M.Api.Application(Of TPrimitiveContent).UpdateResourceAsync(System.String, System.Func(Of TPrimitiveContent, TPrimitiveContent))
+  nameWithType: Application<TPrimitiveContent>.UpdateResourceAsync(String, Func<TPrimitiveContent, TPrimitiveContent>)
+  nameWithType.vb: Application(Of TPrimitiveContent).UpdateResourceAsync(String, Func(Of TPrimitiveContent, TPrimitiveContent))
+- uid: Aetheros.OneM2M.Api.Application`1.UpdateResourceAsync*
+  name: UpdateResourceAsync
+  href: api/Aetheros.OneM2M.Api.Application-1.html#Aetheros_OneM2M_Api_Application_1_UpdateResourceAsync_
+  commentId: Overload:Aetheros.OneM2M.Api.Application`1.UpdateResourceAsync
+  isSpec: "True"
+  fullName: Aetheros.OneM2M.Api.Application<TPrimitiveContent>.UpdateResourceAsync
+  fullName.vb: Aetheros.OneM2M.Api.Application(Of TPrimitiveContent).UpdateResourceAsync
+  nameWithType: Application<TPrimitiveContent>.UpdateResourceAsync
+  nameWithType.vb: Application(Of TPrimitiveContent).UpdateResourceAsync
 - uid: Aetheros.OneM2M.Api.Application`1.UrlPrefix
   name: UrlPrefix
   href: api/Aetheros.OneM2M.Api.Application-1.html#Aetheros_OneM2M_Api_Application_1_UrlPrefix

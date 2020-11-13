@@ -106,6 +106,15 @@ namespace Aetheros.OneM2M.Api
 				FilterCriteria = filterCriteria
 			});
 
+		public async Task<ResponseContent<TPrimitiveContent>> UpdateResourceAsync(string url, Func<TPrimitiveContent, TPrimitiveContent> setter) =>
+			await GetResponseAsync(new RequestPrimitive<TPrimitiveContent>
+			{
+				From = this.AeId,
+				To = url,
+				Operation = Operation.Update,
+				PrimitiveContent = setter(new TPrimitiveContent())
+			});
+
 		/*
 		public async Task<T> GetPrimitiveAsync<T>(string key, Func<TPrimitiveContent, T> selector, FilterCriteria? filterCriteria = null)
 			=> selector(await GetPrimitiveAsync(key, filterCriteria));

@@ -6176,7 +6176,7 @@ namespace Aetheros.Schema.OneM2M
 		[XmlElementAttribute("ri", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="anyURI")]
 		public string ResourceID { get; set; }
 
-		[JsonPropertyAttribute("rsp")]
+		[JsonPropertyAttribute("m2m:rsp")]
 		[XmlElementAttribute("rsp", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<ResponsePrimitive<TPrimitiveContent>> ResponsePrimitive { get; set; } = System.Array.Empty<ResponsePrimitive<TPrimitiveContent>>();
 		
@@ -6195,7 +6195,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("rsp", Namespace="http://www.onem2m.org/xml/protocols", AnonymousType=true)]
-	[JsonObjectAttribute("rsp")]
+	[JsonObjectAttribute("m2m:rsp")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("responsePrimitive", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -6240,7 +6240,7 @@ namespace Aetheros.Schema.OneM2M
 
 		[JsonPropertyAttribute("pc")]
 		[XmlElementAttribute("pc", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-	public TPrimitiveContent PrimitiveContent { get; set; }
+		public TPrimitiveContent PrimitiveContent { get; set; }
 
 		[JsonPropertyAttribute("to")]
 		[XmlElementAttribute("to", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="anyURI")]
@@ -6420,13 +6420,13 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("agn", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("agn")]
+	[JsonObjectAttribute("m2m:agn")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("aggregatedNotification", Namespace="http://www.onem2m.org/xml/protocols")]
 	public partial class AggregatedNotification<TPrimitiveContent> where TPrimitiveContent : PrimitiveContent
 	{
-		[JsonPropertyAttribute("sgn")]
+		[JsonPropertyAttribute("m2m:sgn")]
 		[XmlElementAttribute("sgn", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Notification<TPrimitiveContent>> Notification { get; set; } = System.Array.Empty<Notification<TPrimitiveContent>>();
 		
@@ -6445,7 +6445,7 @@ namespace Aetheros.Schema.OneM2M
 	[System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "1.0.0.0")]
 	[System.SerializableAttribute()]
 	[XmlTypeAttribute("sgn", Namespace="http://www.onem2m.org/xml/protocols")]
-	[JsonObjectAttribute("sgn")]
+	[JsonObjectAttribute("m2m:sgn")]
 	[System.Diagnostics.DebuggerStepThroughAttribute()]
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	[XmlRootAttribute("notification", Namespace="http://www.onem2m.org/xml/protocols")]
@@ -6809,11 +6809,11 @@ namespace Aetheros.Schema.OneM2M
 	[System.ComponentModel.DesignerCategoryAttribute("code")]
 	public partial class ResponseContent<TPrimitiveContent> : Aetheros.Schema.OneM2M.PrimitiveContent where TPrimitiveContent : PrimitiveContent
 	{
-		[JsonPropertyAttribute("rce")]
+		[JsonPropertyAttribute("m2m:rce")]
 		[XmlElementAttribute("rce", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public Aetheros.Schema.OneM2M.ResourceWrapper Resource { get; set; }
 
-		[JsonPropertyAttribute("uril")]
+		[JsonPropertyAttribute("m2m:uril")]
 		[XmlElementAttribute("uril", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="anyURI")]
 		public ICollection<string> URIList { get; set; } = System.Array.Empty<System.String>();
 		
@@ -6828,15 +6828,15 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool URIListSpecified => (this.URIList.Count != 0);
 
-		[JsonPropertyAttribute("uri")]
+		[JsonPropertyAttribute("m2m:uri")]
 		[XmlElementAttribute("uri", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="anyURI")]
 		public string URI { get; set; }
 
-		[JsonPropertyAttribute("agr")]
+		[JsonPropertyAttribute("m2m:agr")]
 		[XmlElementAttribute("agr", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public Aetheros.Schema.OneM2M.AggregatedResponse<TPrimitiveContent> AggregatedResponse { get; set; }
 
-		[JsonPropertyAttribute("rrl")]
+		[JsonPropertyAttribute("m2m:rrl")]
 		[JsonConverter(typeof(JsonArrayItem<ChildResourceRef>), "ch")]
 		[XmlArrayAttribute("rrl", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		[XmlArrayItemAttribute("ch", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -6853,7 +6853,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ResourceRefListSpecified => (this.ResourceRefList.Count != 0);
 
-		[JsonPropertyAttribute("dbg")]
+		[JsonPropertyAttribute("m2m:dbg")]
 		[XmlElementAttribute("dbg", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="string")]
 		public string DebugInfo { get; set; }
 	}

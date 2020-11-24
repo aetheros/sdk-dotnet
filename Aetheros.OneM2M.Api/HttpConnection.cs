@@ -200,17 +200,17 @@ namespace Aetheros.OneM2M.Api
 				return null;
 
 			var serializer = JsonSerializer.CreateDefault(Connection.JsonSettings);
-			var representation = ((Newtonsoft.Json.Linq.JObject) notification.NotificationEvent.Representation).ToObject<TPrimitiveContent>(serializer);
+			var representation = ((Newtonsoft.Json.Linq.JObject) notification.NotificationEvent.Representation).ToObject<ResponseContent<TPrimitiveContent>>(serializer);
 
-			var requestPrimitive = notification.NotificationEvent.PrimitiveRepresentation = new RequestPrimitive<TPrimitiveContent>
+			var notificationPrimitive = notification.NotificationEvent.PrimitiveRepresentation = new ResponsePrimitive<ResponseContent<TPrimitiveContent>>//new RequestPrimitive<TPrimitiveContent>
 			{
 				From = headers["X-M2M-Origin"].FirstOrDefault(),
 				RequestIdentifier = headers["X-M2M-RI"].FirstOrDefault(),
-				GroupRequestIdentifier = headers["X-M2M-GID"].FirstOrDefault(),
+				//GroupRequestIdentifier = headers["X-M2M-GID"].FirstOrDefault(),
 				OriginatingTimestamp = headers["X-M2M-OT"].FirstOrDefault()?.ParseNullableDateTimeOffset(),
 				ResultExpirationTimestamp = headers["X-M2M-RST"].FirstOrDefault(),
-				RequestExpirationTimestamp = headers["X-M2M-RET"].FirstOrDefault(),
-				OperationExecutionTime = headers["X-M2M-OET"].FirstOrDefault(),
+				//RequestExpirationTimestamp = headers["X-M2M-RET"].FirstOrDefault(),
+				//OperationExecutionTime = headers["X-M2M-OET"].FirstOrDefault(),
 				EventCategory = headers["X-M2M-EC"].FirstOrDefault(),
 
 				PrimitiveContent = representation
@@ -219,6 +219,7 @@ namespace Aetheros.OneM2M.Api
 			if (query.Any())
 			{
 				var notificationURI = headers["X-M2M-RTU"];
+#if false
 				var responseType = query["rt"];
 				if (notificationURI.Count > 0 || responseType.Count > 0)
 				{
@@ -228,7 +229,9 @@ namespace Aetheros.OneM2M.Api
 						NotificationURI = notificationURI.Join("&")?.Split('&')?.ToArray(),
 					};
 				}
+#endif
 
+#if false
 				FilterCriteria? fc = null;
 				FilterCriteria FC() => fc ??= new FilterCriteria();
 
@@ -302,7 +305,8 @@ namespace Aetheros.OneM2M.Api
 					args.AddRange("cty", fc.ContentType);
 				*/
 
-				requestPrimitive.FilterCriteria = fc;
+				notificationPrimitive.FilterCriteria = fc;
+#endif
 			}
 
 			return notification;

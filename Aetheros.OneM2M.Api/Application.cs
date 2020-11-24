@@ -230,7 +230,7 @@ namespace Aetheros.OneM2M.Api
 
 		readonly ConcurrentDictionary<string, Task<IObservable<NotificationNotificationEvent<TPrimitiveContent>>>> _eventSubscriptions = new ConcurrentDictionary<string, Task<IObservable<NotificationNotificationEvent<TPrimitiveContent>>>>();
 
-		async Task<IObservable<NotificationNotificationEvent<TPrimitiveContent>>> ObserveNotificationAsync(string url, string? subscriptionName = null, EventNotificationCriteria? criteria = null, string? poaUrl = null)
+		public async Task<IObservable<NotificationNotificationEvent<TPrimitiveContent>>> ObserveNotificationAsync(string url, string? subscriptionName = null, EventNotificationCriteria? criteria = null, string? poaUrl = null)
 		{
 			if (poaUrl == null)
 			{

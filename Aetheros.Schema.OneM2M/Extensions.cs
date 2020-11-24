@@ -433,7 +433,7 @@ namespace Aetheros.Schema.OneM2M
 	{
 		[JsonIgnore]
 		[XmlIgnore]
-		public RequestPrimitive<TPrimitiveContent> PrimitiveRepresentation { get; set; }
+		public ResponsePrimitive<ResponseContent<TPrimitiveContent>> PrimitiveRepresentation { get; set; }
 	}
 
 

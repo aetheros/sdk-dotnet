@@ -18490,7 +18490,7 @@ namespace Aetheros.Schema.OneM2M
 
 		[JsonPropertyAttribute("pc")]
 		[XmlElementAttribute("pc", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-	public TPrimitiveContent PrimitiveContent { get; set; }
+		public TPrimitiveContent PrimitiveContent { get; set; }
 		
 		/// <summary>
 		/// <para xml:lang="en">Pattern: ([a-zA-Z0-9\.\-,_]*)@([A-Za-z0-9\-_]*)(\.([A-Za-z0-9\-_])*)*.</para>

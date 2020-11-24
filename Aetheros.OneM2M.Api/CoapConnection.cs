@@ -248,22 +248,23 @@ namespace Aetheros.OneM2M.Api
 				return null;
 
 			var serializer = JsonSerializer.CreateDefault(Connection.JsonSettings);
-			var representation = ((Newtonsoft.Json.Linq.JObject) notification.NotificationEvent.Representation).ToObject<TPrimitiveContent>(serializer);
+			var representation = ((Newtonsoft.Json.Linq.JObject) notification.NotificationEvent.Representation).ToObject<ResponseContent<TPrimitiveContent>>(serializer);
 
-			var requestPrimitive = notification.NotificationEvent.PrimitiveRepresentation = new RequestPrimitive<TPrimitiveContent>
+			var notificationPrimitive = notification.NotificationEvent.PrimitiveRepresentation = new ResponsePrimitive<ResponseContent<TPrimitiveContent>>//new RequestPrimitive<TPrimitiveContent>
 			{
 				From = request.GetFirstOption((CoAP.OptionType) OneM2mRequestOptions.FR)?.StringValue,
 				RequestIdentifier = request.GetFirstOption((CoAP.OptionType) OneM2mRequestOptions.RQI)?.StringValue,
-				GroupRequestIdentifier = request.GetFirstOption((CoAP.OptionType) OneM2mRequestOptions.GID)?.StringValue,
+				//GroupRequestIdentifier = request.GetFirstOption((CoAP.OptionType) OneM2mRequestOptions.GID)?.StringValue,
 				OriginatingTimestamp = request.GetFirstOption((CoAP.OptionType) OneM2mRequestOptions.OT)?.Value as DateTimeOffset?,
 				ResultExpirationTimestamp = request.GetFirstOption((CoAP.OptionType) OneM2mRequestOptions.RSET)?.StringValue,
-				RequestExpirationTimestamp = request.GetFirstOption((CoAP.OptionType) OneM2mRequestOptions.RQET)?.StringValue,
-				OperationExecutionTime = request.GetFirstOption((CoAP.OptionType) OneM2mRequestOptions.OET)?.StringValue,
+				//RequestExpirationTimestamp = request.GetFirstOption((CoAP.OptionType) OneM2mRequestOptions.RQET)?.StringValue,
+				//OperationExecutionTime = request.GetFirstOption((CoAP.OptionType) OneM2mRequestOptions.OET)?.StringValue,
 				EventCategory = request.GetFirstOption((CoAP.OptionType) OneM2mRequestOptions.EC)?.StringValue,
 		
 				PrimitiveContent = representation
 			};
 
+#if false
 			var optionNotificationUrl = request.GetFirstOption((CoAP.OptionType) OneM2mRequestOptions.RTURI)?.StringValue;
 			if (!string.IsNullOrEmpty(optionNotificationUrl))
 			{
@@ -273,6 +274,7 @@ namespace Aetheros.OneM2M.Api
 					//ResponseTypeValue = 
 				};
 			}
+#endif
 
 			//request.SetOption(Option.Create((CoAP.OptionType) OneM2mRequestOptions.RTURI, string.Join("&", body.ResponseType.NotificationURI)));
 

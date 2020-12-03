@@ -527,6 +527,23 @@ references:
   fullName.vb: Aetheros.OneM2M.Api.Application(Of TPrimitiveContent).ObserveContentInstanceAsync(Of TContent)(System.String, System.String, System.String)
   nameWithType: Application<TPrimitiveContent>.ObserveContentInstanceAsync<TContent>(String, String, String)
   nameWithType.vb: Application(Of TPrimitiveContent).ObserveContentInstanceAsync(Of TContent)(String, String, String)
+- uid: Aetheros.OneM2M.Api.Application`1.ObserveNotificationAsync(System.String,System.String,Aetheros.Schema.OneM2M.EventNotificationCriteria,System.String)
+  name: ObserveNotificationAsync(String, String, EventNotificationCriteria, String)
+  href: api/Aetheros.OneM2M.Api.Application-1.html#Aetheros_OneM2M_Api_Application_1_ObserveNotificationAsync_System_String_System_String_Aetheros_Schema_OneM2M_EventNotificationCriteria_System_String_
+  commentId: M:Aetheros.OneM2M.Api.Application`1.ObserveNotificationAsync(System.String,System.String,Aetheros.Schema.OneM2M.EventNotificationCriteria,System.String)
+  fullName: Aetheros.OneM2M.Api.Application<TPrimitiveContent>.ObserveNotificationAsync(System.String, System.String, Aetheros.Schema.OneM2M.EventNotificationCriteria, System.String)
+  fullName.vb: Aetheros.OneM2M.Api.Application(Of TPrimitiveContent).ObserveNotificationAsync(System.String, System.String, Aetheros.Schema.OneM2M.EventNotificationCriteria, System.String)
+  nameWithType: Application<TPrimitiveContent>.ObserveNotificationAsync(String, String, EventNotificationCriteria, String)
+  nameWithType.vb: Application(Of TPrimitiveContent).ObserveNotificationAsync(String, String, EventNotificationCriteria, String)
+- uid: Aetheros.OneM2M.Api.Application`1.ObserveNotificationAsync*
+  name: ObserveNotificationAsync
+  href: api/Aetheros.OneM2M.Api.Application-1.html#Aetheros_OneM2M_Api_Application_1_ObserveNotificationAsync_
+  commentId: Overload:Aetheros.OneM2M.Api.Application`1.ObserveNotificationAsync
+  isSpec: "True"
+  fullName: Aetheros.OneM2M.Api.Application<TPrimitiveContent>.ObserveNotificationAsync
+  fullName.vb: Aetheros.OneM2M.Api.Application(Of TPrimitiveContent).ObserveNotificationAsync
+  nameWithType: Application<TPrimitiveContent>.ObserveNotificationAsync
+  nameWithType.vb: Application(Of TPrimitiveContent).ObserveNotificationAsync
 - uid: Aetheros.OneM2M.Api.Application`1.PoaUrl
   name: PoaUrl
   href: api/Aetheros.OneM2M.Api.Application-1.html#Aetheros_OneM2M_Api_Application_1_PoaUrl

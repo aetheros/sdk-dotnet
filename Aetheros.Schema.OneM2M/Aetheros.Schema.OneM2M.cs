@@ -1752,7 +1752,7 @@ namespace Aetheros.Schema.OneM2M
 
 		[JsonPropertyAttribute("pc")]
 		[XmlElementAttribute("pc", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-	public TPrimitiveContent PrimitiveContent { get; set; }
+		public TPrimitiveContent PrimitiveContent { get; set; }
 
 		[JsonPropertyAttribute("mi")]
 		[XmlElementAttribute("mi", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -3561,7 +3561,7 @@ namespace Aetheros.Schema.OneM2M
 
 		[JsonPropertyAttribute("pc")]
 		[XmlElementAttribute("pc", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-	public TPrimitiveContent PrimitiveContent { get; set; }
+		public TPrimitiveContent PrimitiveContent { get; set; }
 
 		[JsonPropertyAttribute("to")]
 		[XmlElementAttribute("to", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="anyURI")]
@@ -6837,9 +6837,9 @@ namespace Aetheros.Schema.OneM2M
 		public Aetheros.Schema.OneM2M.AggregatedResponse<TPrimitiveContent> AggregatedResponse { get; set; }
 
 		[JsonPropertyAttribute("m2m:rrl")]
-		[JsonConverter(typeof(JsonArrayItem<ChildResourceRef>), "ch")]
+		//[JsonConverter(typeof(JsonArrayItem<ChildResourceRef>), "ch")]
 		[XmlArrayAttribute("rrl", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-		[XmlArrayItemAttribute("ch", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+		//[XmlArrayItemAttribute("ch", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public ICollection<Aetheros.Schema.OneM2M.ChildResourceRef> ResourceRefList { get; set; } = System.Array.Empty<Aetheros.Schema.OneM2M.ChildResourceRef>();
 		
 		/// <summary>
@@ -16863,7 +16863,7 @@ namespace Aetheros.Schema.OneM2M
 
 		[JsonPropertyAttribute("pc")]
 		[XmlElementAttribute("pc", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-	public TPrimitiveContent PrimitiveContent { get; set; }
+		public TPrimitiveContent PrimitiveContent { get; set; }
 
 		[System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Never)]
 		[System.Diagnostics.DebuggerHiddenAttribute()]

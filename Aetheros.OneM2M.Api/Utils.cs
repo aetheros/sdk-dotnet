@@ -59,6 +59,12 @@ namespace Aetheros.OneM2M.Api
 				})
 				.Dematerialize();
 
+		public static IDisposable SubscribeAsync<T>(this IObservable<T> source, Func<T, Task> onNextAsync) =>
+			source
+				.Select(value => Observable.FromAsync(() => onNextAsync(value)))
+				.Concat()
+				.Subscribe();
+
 		public static T? DeserializeObject<T>(this JsonSerializer @this, string value)
 			where T : class
 		{

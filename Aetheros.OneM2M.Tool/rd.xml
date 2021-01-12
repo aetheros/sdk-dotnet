@@ -1,5 +1,9 @@
-<Directives>
+<Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">
     <Application>
         <!--<Assembly Name="mscorlib" />-->
+        <Assembly Name="aostool">
+            <Type Name="GridNet.IoT.Client.Tools.Get" Dynamic="Required All" />
+            <Type Name="GridNet.IoT.Client.Tools.Demo" Dynamic="Required All" />
+        </Assembly>
     </Application>
 </Directives>

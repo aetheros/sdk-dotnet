@@ -137,8 +137,7 @@ namespace Aetheros.OneM2M.Api
 				request.AddUriPath("~");
 
 			foreach (var pathPart in pathParts)
-				if (pathPart != ".")
-					request.AddUriPath(pathPart);
+				request.AddUriPath(pathPart);
 
 			foreach (var query in args.AllKeys.SelectMany(args.GetValues, (k, v) => $"{k}={/*Uri.EscapeDataString*/(v)}"))
 				request.AddUriQuery(query);
@@ -234,7 +233,7 @@ namespace Aetheros.OneM2M.Api
 					response.SetOption(Option.Create((CoAP.OptionType) OneM2mRequestOptions.RTURI, uri));
 
 				*/
-				response.SetOption(Option.Create((CoAP.OptionType) OneM2mRequestOptions.RQI, notification.NotificationEvent.PrimitiveRepresentation.RequestIdentifier));
+				//response.SetOption(Option.Create((CoAP.OptionType) OneM2mRequestOptions.RQI, notification.RequestIdentifier));
 				exchange.Respond(response);
 			}
 		}
@@ -248,9 +247,11 @@ namespace Aetheros.OneM2M.Api
 				return null;
 
 			var serializer = JsonSerializer.CreateDefault(Connection.JsonSettings);
-			var representation = ((Newtonsoft.Json.Linq.JObject) notification.NotificationEvent.Representation).ToObject<ResponseContent<TPrimitiveContent>>(serializer);
+			var representation = ((Newtonsoft.Json.Linq.JObject) notification.NotificationEvent.Representation).ToObject<TPrimitiveContent>(serializer);
+			notification.NotificationEvent.PrimitiveRepresentation = representation;
 
-			var notificationPrimitive = notification.NotificationEvent.PrimitiveRepresentation = new ResponsePrimitive<ResponseContent<TPrimitiveContent>>//new RequestPrimitive<TPrimitiveContent>
+			/*
+			var notificationPrimitive = notification.NotificationEvent.PrimitiveRepresentation = new TPrimitiveContent//new RequestPrimitive<TPrimitiveContent>
 			{
 				From = request.GetFirstOption((CoAP.OptionType) OneM2mRequestOptions.FR)?.StringValue,
 				RequestIdentifier = request.GetFirstOption((CoAP.OptionType) OneM2mRequestOptions.RQI)?.StringValue,
@@ -263,6 +264,7 @@ namespace Aetheros.OneM2M.Api
 		
 				PrimitiveContent = representation
 			};
+			*/
 
 #if false
 			var optionNotificationUrl = request.GetFirstOption((CoAP.OptionType) OneM2mRequestOptions.RTURI)?.StringValue;

@@ -2,6 +2,9 @@
 
   <PropertyGroup>
 
+    <RootAllApplicationAssemblies>false</RootAllApplicationAssemblies>
+    <IlcInvariantGlobalization>true</IlcInvariantGlobalization>
+    
 	  <IlcGenerateCompleteTypeMetadata>false</IlcGenerateCompleteTypeMetadata>
 	  <IlcGenerateStackTraceData>false</IlcGenerateStackTraceData>
 	  <IlcOptimizationPreference>Size</IlcOptimizationPreference>
@@ -9,7 +12,7 @@
    	<PublishWithAspNetCoreTargetManifest>false</PublishWithAspNetCoreTargetManifest>
 
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
     <LangVersion>latest</LangVersion>
 	  <GenerateFullPaths>true</GenerateFullPaths>
 	  <AssemblyName>aostool</AssemblyName>
@@ -27,6 +30,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Server.IISIntegration" Version="2.2.1" />
     <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel.Core" Version="2.2.0" />
+    <PackageReference Include="Microsoft.DotNet.ILCompiler" Version="1.0.0-alpha-*" />
     <PackageReference Include="Microsoft.Extensions.Configuration.CommandLine" Version="3.1.4" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.4" />
     <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="3.1.4" />

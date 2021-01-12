@@ -114,9 +114,17 @@ namespace Aetheros.OneM2M.Api
 				_ => HttpMethod.Post,
 			};
 
+			var url = body.To;
+			if (url.StartsWith("//"))
+				url = "/_/" + url.Substring(2);
+			else if (url.StartsWith("/"))
+				url = "/~/" + url.Substring(1);
+			else
+				url = "/" + url;
+
 			var urlBuilder = new UriBuilder(_iotApiUrl)
 			{
-				Path = body.To,
+				Path = url,
 				Query = string.Join("&", args.AllKeys.SelectMany(args.GetValues, (k, v) => $"{k}={Uri.EscapeDataString(v)}")),
 			};
 
@@ -200,8 +208,10 @@ namespace Aetheros.OneM2M.Api
 				return null;
 
 			var serializer = JsonSerializer.CreateDefault(Connection.JsonSettings);
-			var representation = ((Newtonsoft.Json.Linq.JObject) notification.NotificationEvent.Representation).ToObject<ResponseContent<TPrimitiveContent>>(serializer);
+			var representation = ((Newtonsoft.Json.Linq.JObject) notification.NotificationEvent.Representation).ToObject<TPrimitiveContent>(serializer);
+			notification.NotificationEvent.PrimitiveRepresentation = representation;
 
+			/*
 			var notificationPrimitive = notification.NotificationEvent.PrimitiveRepresentation = new ResponsePrimitive<ResponseContent<TPrimitiveContent>>//new RequestPrimitive<TPrimitiveContent>
 			{
 				From = headers["X-M2M-Origin"].FirstOrDefault(),
@@ -215,6 +225,7 @@ namespace Aetheros.OneM2M.Api
 
 				PrimitiveContent = representation
 			};
+			*/
 
 			if (query.Any())
 			{

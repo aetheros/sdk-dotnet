@@ -16,66 +16,56 @@ using System.Threading.Tasks;
 
 namespace Aetheros.OneM2M.Api
 {
+	public interface IApplicationConfiguration
+	{
+		string? AppId { get; }
+		string? AppName { get; }
+		string? CredentialId { get; }
+		Uri? PoaUrl { get; }
+		string? UrlPrefix { get; }
+	}
+
 	public class Application<TPrimitiveContent>
 		where TPrimitiveContent : PrimitiveContent, new()
 	{
 		public Connection<TPrimitiveContent> Connection { get; }
 		public string AppId { get; }
 		public string AeId { get; }
-		//public string AeAppName { get; }
 		public Uri? PoaUrl { get; set; }
-		//public string AeUrl { get; }
-		//public string MNCse { get; set; }
-		//public string AeMnUrl { get; set; }
 		public string UrlPrefix { get; set; }
-
-		public interface IApplicationConfiguration
-		{
-			string? AppId { get; }
-			string? AppName { get; }
-			string? CredentialId { get; }
-			Uri? PoaUrl { get; }
-			string? UrlPrefix { get; }
-		}
-
-		public class ApplicationConfiguration : IApplicationConfiguration
-		{
-			public string? AppId { get; set; }
-
-			public string? AppName { get; set; }
-
-			public string? CredentialId { get; set; }
-
-			public Uri? PoaUrl { get; set; }
-
-			public string? UrlPrefix { get; set; }
-		}
 
 		public Application(Connection<TPrimitiveContent> con, string appId, string aeId, string urlPrefix, Uri? poaUrl = null)
 		{
 			Connection = con;
 			AppId = appId;
 			AeId = aeId;
-			//AeUrl = aeUrl;
-
 			PoaUrl = poaUrl;
 			UrlPrefix = urlPrefix;
-			//AeAppName = aeAppName;
-			//MNCse = mnCse;
-
-			//AeMnUrl = $"{mnCse}/{AeId}";
 		}
 
-		//public string ResourceKey(string key) => $"{AeUrl}/{key}";
+		
+		public Application(Connection<TPrimitiveContent> con, string aeId, IApplicationConfiguration config)
+		{
+			Connection = con;
+			AppId = config.AppId;
+			AeId = aeId;
+			PoaUrl = config.PoaUrl;
+			UrlPrefix = config.UrlPrefix;
+		}
+
+		
+		
+
 		public string ResourceKey(string key) => $"{AeId}/{key}";
 
-		//public string MNResourceKey(string key) => $"{mnCse}/{AeId}/{key}";
 
 		public async Task<T> GetResponseAsync<T>(RequestPrimitive<TPrimitiveContent> body)
 			where T : class, new()
 		{
-			if (body.To.StartsWith("~"))
-				body.To = $"{UrlPrefix}/{AeId}{TrimStart(body.To, "~")}";
+			if (body.To == null)
+				body.To = AeId;
+			else if (!body.To.StartsWith("/"))
+				body.To = $"{AeId}/{body.To}";
 
 			if (body.From == null)
 				body.From = AeId;
@@ -96,14 +86,31 @@ namespace Aetheros.OneM2M.Api
 				FilterCriteria = filterCriteria
 			});
 
-		public async Task<ResponseContent<TPrimitiveContent>> GetPrimitiveAsync(string key, FilterCriteria? filterCriteria = null, ResultContent? resultContent = null) =>
+		public async Task<ResponseContent<TPrimitiveContent>> GetPrimitiveAsync(
+			string key,
+			FilterCriteria? filterCriteria = null,
+			ResultContent? resultContent = null,
+			DiscResType? discoveryResultType = null
+		) =>
 			await GetResponseAsync(new RequestPrimitive<TPrimitiveContent>
 			{
 				From = this.AeId,
 				To = key,
 				ResultContent = resultContent,
 				Operation = Operation.Retrieve,
-				FilterCriteria = filterCriteria
+				FilterCriteria = filterCriteria,
+				DiscoveryResultType = discoveryResultType,
+			});
+
+		public async Task<ResponseContent<TPrimitiveContent>> CreateResourceAsync(string url, ResourceType resourceType, Func<TPrimitiveContent, TPrimitiveContent> setter, ResultContent? resultContent = null) =>
+			await GetResponseAsync(new RequestPrimitive<TPrimitiveContent>
+			{
+				From = this.AeId,
+				To = url,
+				Operation = Operation.Create,
+				ResourceType = resourceType,
+				ResultContent = resultContent,
+				PrimitiveContent = setter(new TPrimitiveContent())
 			});
 
 		public async Task<ResponseContent<TPrimitiveContent>> UpdateResourceAsync(string url, Func<TPrimitiveContent, TPrimitiveContent> setter) =>
@@ -140,10 +147,10 @@ namespace Aetheros.OneM2M.Api
 			}
 		}
 
-		public async Task AddContentInstanceAsync(string key, object content) => await AddContentInstanceAsync(key, null, content);
+		public async Task<ContentInstance> AddContentInstanceAsync(string key, object content) => await AddContentInstanceAsync(key, null, content);
 
-		public async Task AddContentInstanceAsync(string key, string? resourceName, object content) =>
-			await this.GetResponseAsync(new RequestPrimitive<TPrimitiveContent>
+		public async Task<ContentInstance> AddContentInstanceAsync(string key, string? resourceName, object content) =>
+			(await this.GetResponseAsync(new RequestPrimitive<TPrimitiveContent>
 			{
 				To = key,
 				Operation = Operation.Create,
@@ -156,7 +163,7 @@ namespace Aetheros.OneM2M.Api
 						Content = content
 					}
 				}
-			});
+			})).ContentInstance;
 
 		public async Task<Container?> EnsureContainerAsync(string name /*, bool clientAppContainer = false*/)
 		{
@@ -230,7 +237,12 @@ namespace Aetheros.OneM2M.Api
 
 		readonly ConcurrentDictionary<string, Task<IObservable<NotificationNotificationEvent<TPrimitiveContent>>>> _eventSubscriptions = new ConcurrentDictionary<string, Task<IObservable<NotificationNotificationEvent<TPrimitiveContent>>>>();
 
-		public async Task<IObservable<NotificationNotificationEvent<TPrimitiveContent>>> ObserveNotificationAsync(string url, string? subscriptionName = null, EventNotificationCriteria? criteria = null, string? poaUrl = null)
+		public async Task<IObservable<NotificationNotificationEvent<TPrimitiveContent>>> ObserveNotificationAsync(
+			string url,
+			string? subscriptionName = null,
+			EventNotificationCriteria? criteria = null,
+			string? poaUrl = null,
+			bool deleteAfterFinalClose = false)
 		{
 			if (poaUrl == null)
 			{
@@ -279,23 +291,21 @@ namespace Aetheros.OneM2M.Api
 				}
 				else
 				{
-					var subscriptionResponse = await GetResponseAsync(new RequestPrimitive<TPrimitiveContent>
-					{
-						Operation = Operation.Create,
-						To = url,
-						ResourceType = ResourceType.Subscription,
-						ResultContent = ResultContent.HierarchicalAddress,
-						PrimitiveContent = new TPrimitiveContent
-						{
-							Subscription = new Subscription
+					var subscriptionResponse = await CreateResourceAsync(
+						url,
+						ResourceType.Subscription,
+						pc => {
+							pc.Subscription = new Subscription
 							{
 								ResourceName = subscriptionName,
 								EventNotificationCriteria = criteria ?? _defaultEventNotificationCriteria,
 								NotificationContentType = NotificationContentType.AllAttributes,
 								NotificationURI = new[] { poaUrl },
-							}
-						}
-					});
+							};
+							return pc;
+						},
+						resultContent: ResultContent.HierarchicalAddress
+					);
 
 					subscriptionReference = subscriptionResponse?.URI;
 					Debug.WriteLine($"Created Subscription {key} : {subscriptionReference}");
@@ -306,18 +316,8 @@ namespace Aetheros.OneM2M.Api
 					.Select(n => n.NotificationEvent)
 					.Finally(() =>
 					{
-						//Debug.WriteLine($"Removing Subscription {subscriptionReference} = {key}");
-
-						//if (!_eventSubscriptions.TryRemove(key, out var old))
-						//{
-						//	Debug.WriteLine($"Subscription {key} missing");
-						//}
-
-						//GetResponseAsync(new RequestPrimitive<TPrimitiveContent>
-						//{
-						//	Operation = Operation.Delete,
-						//	To = subscriptionReference,
-						//}).Wait();
+						if (deleteAfterFinalClose)
+							DeleteAsync(subscriptionReference).Wait();
 					})
 					.Publish()
 					.RefCount();
@@ -325,9 +325,15 @@ namespace Aetheros.OneM2M.Api
 		}
 
 
-		public async Task<IObservable<TPrimitiveContent>> ObserveAsync(string url, string? subscriptionName = null, EventNotificationCriteria criteria = null, string? poaUrl = null) =>
-				(await ObserveNotificationAsync(url, subscriptionName, criteria: criteria, poaUrl: poaUrl))
-				.Select(evt => evt.PrimitiveRepresentation.PrimitiveContent as TPrimitiveContent)
+		public async Task<IObservable<TPrimitiveContent>> ObserveAsync(
+			string url,
+			string? subscriptionName = null,
+			EventNotificationCriteria criteria = null,
+			string? poaUrl = null,
+			bool deleteAfterFinalClose = false
+			) =>
+				(await ObserveNotificationAsync(url, subscriptionName, criteria: criteria, poaUrl: poaUrl, deleteAfterFinalClose: deleteAfterFinalClose))
+				.Select(evt => evt.PrimitiveRepresentation)
 				.WhereNotNull();
 
 		static readonly EventNotificationCriteria _defaultEventNotificationCriteria = new EventNotificationCriteria
@@ -335,11 +341,16 @@ namespace Aetheros.OneM2M.Api
 			NotificationEventType = new[] { NotificationEventType.CreateChild },
 		};
 
-		public async Task<IObservable<TContent>> ObserveContentInstanceAsync<TContent>(string containerName, string? subscriptionName = null, string? poaUrl = null)
+		public async Task<IObservable<TContent>> ObserveContentInstanceAsync<TContent>(
+			string containerName,
+			string? subscriptionName = null,
+			string? poaUrl = null,
+			bool deleteAfterFinalClose = false
+			)
 			where TContent : class
 		{
 			var container = await this.EnsureContainerAsync(containerName);
-			return (await this.ObserveAsync(containerName, subscriptionName, poaUrl: poaUrl))
+			return (await this.ObserveAsync(containerName, subscriptionName, poaUrl: poaUrl, deleteAfterFinalClose: deleteAfterFinalClose))
 				//.Where(evt => evt.NotificationEventType == NotificationEventType.CreateChild)
 				.Select(pc => pc.ContentInstance?.GetContent<TContent>())
 				.WhereNotNull();
@@ -350,7 +361,7 @@ namespace Aetheros.OneM2M.Api
 
 
 		// TODO: find a proper place for this
-		public static async Task<Application<TPrimitiveContent>> RegisterAsync(Connection.IConnectionConfiguration m2mConfig, Application.IApplicationConfiguration appConfig, string inCse, Uri? caUri = null)
+		public static async Task<Application<TPrimitiveContent>> RegisterAsync(Connection.IConnectionConfiguration m2mConfig, IApplicationConfiguration appConfig, string inCse, Uri? caUri = null)
 		{
 			var con = new HttpConnection<TPrimitiveContent>(m2mConfig);
 
@@ -443,6 +454,21 @@ namespace Aetheros.OneM2M.Api
 
 	public class Application : Application<PrimitiveContent>
 	{
+
+		public class Configuration : IApplicationConfiguration
+		{
+			public string? AppId { get; set; }
+
+			public string? AppName { get; set; }
+
+			public string? CredentialId { get; set; }
+
+			public Uri? PoaUrl { get; set; }
+
+			public string? UrlPrefix { get; set; }
+		}
+
 		public Application(Connection<PrimitiveContent> con, string appId, string aeId, string urlPrefix, Uri? poaUrl = null) : base(con, appId, aeId, urlPrefix, poaUrl) {}
+		public Application(Connection<PrimitiveContent> con, string aeId, IApplicationConfiguration config) : base (con, aeId, config) {}
 	}
 }

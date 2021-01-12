@@ -29,7 +29,7 @@ namespace Example.Web.Server.Services
 		}
 
 		[Serializable]
-		public class AppConfig : Aetheros.OneM2M.Api.Application.IApplicationConfiguration
+		public class AppConfig : Aetheros.OneM2M.Api.IApplicationConfiguration
 		{
 			public string AppId { get; set; }
 			public string AppName { get; set; }

@@ -410,6 +410,10 @@ namespace Aetheros.Schema.OneM2M
 		//[JsonProperty("m2m:")]
 		//[XmlElement("")]
 		//public ICollection<DynamicAuthorizationConsultationAnnc> DynamicAuthorizationConsultationAnnc { get; set; } = Array.Empty<DynamicAuthorizationConsultationAnnc>();
+
+		[JsonPropertyAttribute("m2m:uri")]
+		[XmlElementAttribute("uri", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="anyURI")]
+		public string URI { get; set; }
 	}
 	
 	public partial class ResponseContent<TPrimitiveContent>
@@ -433,7 +437,7 @@ namespace Aetheros.Schema.OneM2M
 	{
 		[JsonIgnore]
 		[XmlIgnore]
-		public ResponsePrimitive<ResponseContent<TPrimitiveContent>> PrimitiveRepresentation { get; set; }
+		public TPrimitiveContent PrimitiveRepresentation { get; set; }
 	}
 
 

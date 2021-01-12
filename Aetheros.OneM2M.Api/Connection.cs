@@ -170,7 +170,7 @@ namespace Aetheros.OneM2M.Api
 			return response2.AE;
 		}
 
-		public async Task<AE?> RegisterApplicationAsync(Application.IApplicationConfiguration appConfig)
+		public async Task<AE?> RegisterApplicationAsync(IApplicationConfiguration appConfig)
 		{
 			var response = await GetResponseAsync(new RequestPrimitive<TPrimitiveContent>
 			{
@@ -185,6 +185,7 @@ namespace Aetheros.OneM2M.Api
 					{
 						App_ID = appConfig.AppId,
 						AppName = appConfig.AppName,
+						ResourceName = appConfig.AppName,
 						PointOfAccess = appConfig.PoaUrl == null ? null : new[] { appConfig.PoaUrl.ToString() }
 					}
 				}

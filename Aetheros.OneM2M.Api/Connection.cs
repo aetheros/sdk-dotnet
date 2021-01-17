@@ -302,7 +302,7 @@ namespace Aetheros.OneM2M.Api
 		public static T? GetContent<T>(this ContentInstance @this)
 			where T : class
 		{
-			var json = @this.Content as JObject;
+			var json = @this.Content as JToken;
 			return json?.ToObject<T>(Connection.Serializer);
 		}
 

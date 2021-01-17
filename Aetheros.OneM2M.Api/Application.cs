@@ -466,6 +466,7 @@ namespace Aetheros.OneM2M.Api
 			public Uri? PoaUrl { get; set; }
 
 			public string? UrlPrefix { get; set; }
+			public string? AEId { get; set; }
 		}
 
 		public Application(Connection<PrimitiveContent> con, string appId, string aeId, string urlPrefix, Uri? poaUrl = null) : base(con, appId, aeId, urlPrefix, poaUrl) {}

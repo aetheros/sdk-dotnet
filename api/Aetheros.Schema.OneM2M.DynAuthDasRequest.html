@@ -93,13 +93,10 @@
                             <a href="Aetheros.OneM2M.Api.Application.html" title="Application" class="">Application</a>
                           </li>
                           <li class="">
+                            <a href="Aetheros.OneM2M.Api.Application.Configuration.html" title="Application.Configuration" class="">Application.Configuration</a>
+                          </li>
+                          <li class="">
                             <a href="Aetheros.OneM2M.Api.Application-1.html" title="Application&lt;TPrimitiveContent&gt;" class="">Application&lt;TPrimitiveContent&gt;</a>
-                          </li>
-                          <li class="">
-                            <a href="Aetheros.OneM2M.Api.Application-1.ApplicationConfiguration.html" title="Application&lt;TPrimitiveContent&gt;.ApplicationConfiguration" class="">Application&lt;TPrimitiveContent&gt;.ApplicationConfiguration</a>
-                          </li>
-                          <li class="">
-                            <a href="Aetheros.OneM2M.Api.Application-1.IApplicationConfiguration.html" title="Application&lt;TPrimitiveContent&gt;.IApplicationConfiguration" class="">Application&lt;TPrimitiveContent&gt;.IApplicationConfiguration</a>
                           </li>
                           <li class="">
                             <a href="Aetheros.OneM2M.Api.CoapConnection.html" title="CoapConnection" class="">CoapConnection</a>
@@ -136,6 +133,9 @@
                           </li>
                           <li class="">
                             <a href="Aetheros.OneM2M.Api.HttpConnectionExtensions.html" title="HttpConnectionExtensions" class="">HttpConnectionExtensions</a>
+                          </li>
+                          <li class="">
+                            <a href="Aetheros.OneM2M.Api.IApplicationConfiguration.html" title="IApplicationConfiguration" class="">IApplicationConfiguration</a>
                           </li>
                         </ul>  </li>
                     <li class="">
@@ -1077,7 +1077,8 @@ public class DynAuthDasRequest</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ICollection&lt;string&gt; OriginatorRoleIDs { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[RegularExpression(&quot;([a-zA-Z0-9\\.\\-,_]*)@([A-Za-z0-9\\-_]*)(\\.([A-Za-z0-9\\-_])*)*&quot;)]
+public ICollection&lt;string&gt; OriginatorRoleIDs { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1168,7 +1169,8 @@ public class DynAuthDasRequest</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ICollection&lt;string&gt; RoleIDsFromACPs { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[RegularExpression(&quot;([a-zA-Z0-9\\.\\-,_]*)@([A-Za-z0-9\\-_]*)(\\.([A-Za-z0-9\\-_])*)*&quot;)]
+public ICollection&lt;string&gt; RoleIDsFromACPs { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1259,7 +1261,8 @@ public class DynAuthDasRequest</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ICollection&lt;string&gt; TokenIDs { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[RegularExpression(&quot;([a-zA-Z0-9\\.\\-,_]*)@([A-Za-z0-9\\-_]*)(\\.([A-Za-z0-9\\-_])*)*&quot;)]
+public ICollection&lt;string&gt; TokenIDs { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">

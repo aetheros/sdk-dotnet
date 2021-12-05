@@ -10,7 +10,7 @@ Installation
 
 ```
 sudo rpm -Uvh https://packages.microsoft.com/config/centos/7/packages-microsoft-prod.rpm
-sudo yum install -y dotnet-sdk-5.0
+sudo yum install -y dotnet-sdk-6.0
 eval `echo export DOTNET_CLI_TELEMETRY_OPTOUT=1 | tee -a ~/.bashrc`
 dotnet --list-sdks
 ```

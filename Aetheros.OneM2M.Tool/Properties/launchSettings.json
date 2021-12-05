@@ -2,7 +2,7 @@
   "profiles": {
     "GridNet.IoT.Client": {
       "commandName": "Project",
-      "commandLineArgs": "Example",
+      "commandLineArgs": "Get -v -f C5eb5c0c2000006 \"http://api.piersh-m2m.corp.grid-net.com:21300/PN_CSE/nod-urn_imei_015322009906000/lcottn\"",
       "workingDirectory": "."
     }
   }

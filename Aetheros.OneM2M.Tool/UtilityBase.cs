@@ -1,9 +1,6 @@
 using Mono.Options;
 using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Diagnostics;
-using System.Diagnostics.Contracts;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -11,11 +8,12 @@ using System.Threading.Tasks;
 
 namespace GridNet.IoT.Client
 {
-	public abstract class UtilityBase
+    public abstract class UtilityBase
 	{
 		readonly OptionSet EmptyOptions = new OptionSet();
 
 		public virtual OptionSet Options => EmptyOptions;
+		OptionSet _options;
 
 		protected bool verbose;
 		protected bool help;
@@ -31,7 +29,7 @@ namespace GridNet.IoT.Client
 				Console.Error.WriteLine(message);
 		}
 
-		protected void ShowError(string errorMessage, bool exit = true)
+		protected static void ShowError(string errorMessage, bool exit = true)
 		{
 			Console.Error.WriteLine($"error: {errorMessage}");
 			if (exit)
@@ -43,15 +41,16 @@ namespace GridNet.IoT.Client
 			if (errorMessage != null)
 				Console.Error.WriteLine($"error: {errorMessage}");
 			Console.Error.WriteLine($"usage: {Path.GetFileNameWithoutExtension(Assembly.GetEntryAssembly().Location)} {this.GetType().Name} {this.Usage}");
-			this.Options.WriteOptionDescriptions(Console.Error);
+			_options.WriteOptionDescriptions(Console.Error);
 		}
 
 		internal async Task Main(IEnumerable<string> args)
 		{
-			var rgExtra = this.Options.Parse(args.Skip(1));
+			_options = this.Options;
+			_options.Add("v|verbose", "Turn on verbose logging", v => verbose = true);
+			_options.Add("h|?|help", "Display the help message", v => help = v != null);
 
-			this.Options.Add("v|verbose", "Turn on verbose logging", v => verbose = true);
-			this.Options.Add("h|?|help", "Display the help message", v => help = v != null);
+			var rgExtra = _options.Parse(args.Skip(1));
 
 			if (this.help)
 				ShowUsage(exit: true);

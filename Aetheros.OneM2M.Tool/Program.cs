@@ -2,14 +2,13 @@ using Mono.Options;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 
 namespace GridNet.IoT.Client
 {
-	public static class Program
+    public static class Program
 	{
 		public class UtilityInfo
 		{

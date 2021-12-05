@@ -38,7 +38,7 @@ namespace Example.Web.Server
 
 			AddProperty<Activity[]>("RecentActivities").SubscribeTo(liveDataService.RecentActivity.Select(value =>
 			{
-				var activities = new Queue<Activity>(Get<Activity[]>("RecentActivities")?.Reverse() ?? new Activity[] { });
+				var activities = new Queue<Activity>(Get<Activity[]>("RecentActivities")?.Reverse() ?? Array.Empty<Activity>());
 				activities.Enqueue(new Activity
 				{
 					PersonName = value.PersonName,

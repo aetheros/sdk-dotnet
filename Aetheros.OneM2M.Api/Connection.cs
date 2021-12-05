@@ -1,18 +1,12 @@
 using Aetheros.Schema.OneM2M;
 
-using CoAP;
-
-using Microsoft.AspNetCore.Http;
-
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
-using System.Diagnostics;
 using System.Globalization;
-using System.IO;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Net;
@@ -37,7 +31,7 @@ done
 */
 namespace Aetheros.OneM2M.Api
 {
-	public abstract class Connection
+    public abstract class Connection
 	{
 		[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		public const string OneM2MResponseContentType = "application/vnd.onem2m-res+json";
@@ -49,13 +43,18 @@ namespace Aetheros.OneM2M.Api
 
 		public interface IConnectionConfiguration
 		{
-			Uri? M2MUrl { get; }
+			Uri M2MUrl { get; }
 			string? CertificateFilename { get; }
 		}
 
 		public class ConnectionConfiguration : IConnectionConfiguration
 		{
-			public Uri? M2MUrl { get; set; }
+            public ConnectionConfiguration(Uri m2MUrl)
+            {
+                M2MUrl = m2MUrl;
+            }
+
+            public Uri M2MUrl { get; set; }
 			public string? CertificateFilename { get; set; }
 		}
 

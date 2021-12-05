@@ -3,11 +3,6 @@
 using Aetheros.OneM2M.Api;
 using Aetheros.Schema.OneM2M;
 
-using Microsoft.AspNetCore;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Hosting;
-
 using Mono.Options;
 
 using System;
@@ -16,36 +11,29 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Net;
-using System.Net.Sockets;
 using System.Reactive.Linq;
-using System.Resources;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Xml.Schema;
 
 
 namespace GridNet.IoT.Client.Tools
 {
-	[Description("oneM2M demo")]
+    [Description("oneM2M demo")]
 	public class TestDev : UtilityBase
 	{
 		Uri _poaUrl = new Uri("coap://127.0.0.1:15683/notify");
 
-		readonly Connection.ConnectionConfiguration _connectionConfiguration = new Connection.ConnectionConfiguration
-		{
-			M2MUrl = new Uri("coap://127.0.0.1:8110"),
-		};
+		readonly Connection.ConnectionConfiguration _connectionConfiguration = new Connection.ConnectionConfiguration(new Uri("coap://127.0.0.1:8110"));
 
 		string _AeId = "";
 		string _AeAppId = "Nra1.com.aos.iot";
 		string _AeAppName = "metersvc-smpl";
 
-		//string _AeCredential = "";//"8992O4AAEXYWY95O";
-		string _RegPath = ".";
-		string _MsPolicyPath = $"~/config-cnt";
-		string _MsCommandsPath = $"~/command-cnt";
-
-		string _ReadsContainerName = "data-cnt";
+        //string _AeCredential = "";//"8992O4AAEXYWY95O";
+        readonly string _RegPath = ".";
+        readonly string _MsPolicyPath = $"~/config-cnt";
+        readonly string _MsCommandsPath = $"~/command-cnt";
+        readonly string _ReadsContainerName = "data-cnt";
 
 		public TestDev()
 		{
@@ -164,7 +152,7 @@ namespace GridNet.IoT.Client.Tools
 			})).URIList.SingleOrDefault();
 
 			if (inAeUrl == null)
-				this.ShowError($"Unable to find in-AE {_AeAppName}");
+                ShowError($"Unable to find in-AE {_AeAppName}");
 
 
 			var tsReadInterval = TimeSpan.FromDays(15);

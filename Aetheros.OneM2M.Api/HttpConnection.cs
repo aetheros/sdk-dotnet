@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -15,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace Aetheros.OneM2M.Api
 {
-	public class HttpConnection<TPrimitiveContent> : Connection<TPrimitiveContent>
+    public class HttpConnection<TPrimitiveContent> : Connection<TPrimitiveContent>
 		where TPrimitiveContent : PrimitiveContent, new()
 	{
 		readonly Uri _iotApiUrl;
@@ -60,6 +59,7 @@ namespace Aetheros.OneM2M.Api
 
 			_pnClient.Timeout = TimeSpan.FromSeconds(300);
 			_pnClient.DefaultRequestHeaders.Add("Accept", OneM2MResponseContentType);
+			//_pnClient.DefaultRequestHeaders.Connection.ParseAdd("keep-alive");
 		}
 
 		public async Task<ResponseContent<TPrimitiveContent>> GetResponseAsync(HttpRequestMessage request)
@@ -68,7 +68,7 @@ namespace Aetheros.OneM2M.Api
 			var responseContent = await response.DeserializeAsync<ResponseContent<TPrimitiveContent>>() ??
 				throw new InvalidDataException("The returned response did not match type 'ResponseContent'");
 
-			if (response.Headers.TryGetValues("X-M2M-RSC", out IEnumerable<string> statusCodeHeaders))
+			if (response.Headers.TryGetValues("X-M2M-RSC", out IEnumerable<string>? statusCodeHeaders))
 			{
 				var statusCodeHeader = statusCodeHeaders.FirstOrDefault();
 				if (statusCodeHeader == null && Enum.TryParse<ResponseStatusCode>(statusCodeHeader, out ResponseStatusCode statusCode))
@@ -187,9 +187,13 @@ namespace Aetheros.OneM2M.Api
 			}
 
 			Trace.WriteLine("");
-			if (body != null)
-				Trace.WriteLine(body);
+			if (body == null)
+			{
+				Debug.WriteLine($"{nameof(HandleNotificationAsync)}: empty body");
+				return;
+			}
 
+			Trace.WriteLine(body);
 			Trace.Flush();
 
 			var requestPrimitive = ParseNotification(body, request.Headers, request.Query);
@@ -201,15 +205,22 @@ namespace Aetheros.OneM2M.Api
 		{
 			var notificationContent = Connection.DeserializeJson<NotificationContent<TPrimitiveContent>>(body);
 			if (notificationContent == null)
+            {
+				Debug.WriteLine($"{nameof(ParseNotification)}: invalid json");
 				return null;
+			}
 
 			var notification = notificationContent.Notification;
 			if (notification == null)
+			{
+				Debug.WriteLine($"{nameof(ParseNotification)}: missing notification");
 				return null;
+			}
 
 			var serializer = JsonSerializer.CreateDefault(Connection.JsonSettings);
 			var representation = ((Newtonsoft.Json.Linq.JObject) notification.NotificationEvent.Representation).ToObject<TPrimitiveContent>(serializer);
-			notification.NotificationEvent.PrimitiveRepresentation = representation;
+			if (representation != null)
+				notification.NotificationEvent.PrimitiveRepresentation = representation;
 
 			/*
 			var notificationPrimitive = notification.NotificationEvent.PrimitiveRepresentation = new ResponsePrimitive<ResponseContent<TPrimitiveContent>>//new RequestPrimitive<TPrimitiveContent>
@@ -332,7 +343,7 @@ namespace Aetheros.OneM2M.Api
 			var body = await response.Content.ReadAsStringAsync();
 
 			if (!response.IsSuccessStatusCode)
-				throw new Connection.HttpStatusException(response.StatusCode, response.ReasonPhrase);
+				throw new Connection.HttpStatusException(response.StatusCode, response.ReasonPhrase ?? "Unknown Error");
 
 			response.EnsureSuccessStatusCode();
 

@@ -1,35 +1,30 @@
 using Aetheros.Schema.OneM2M;
 
 using System;
-using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
-using System.Text;
 using System.Threading.Tasks;
 
 using CoAP.Net;
 using CoAP;
-using CoAP.Util;
-using System.Net;
 using Newtonsoft.Json;
 using System.Diagnostics;
 
 namespace Aetheros.OneM2M.Api
 {
-	public class CoapConnection<TPrimitiveContent> : Connection<TPrimitiveContent>
+    public class CoapConnection<TPrimitiveContent> : Connection<TPrimitiveContent>
 		where TPrimitiveContent : PrimitiveContent, new()
 	{
 		readonly Uri _iotApiUrl;
-		CoAP.CoapClient _pnClient;
+        readonly CoAP.CoapClient _pnClient;
 
 		public X509Certificate? ClientCertificate { get; }
 
 		public CoapConnection(Connection.IConnectionConfiguration config)
 			: this(config.M2MUrl, config.CertificateFilename) { }
 
-		public CoapConnection(Uri m2mUrl, string certificateFilename)
+		public CoapConnection(Uri m2mUrl, string? certificateFilename)
 			: this(m2mUrl, AosUtils.LoadCertificate(certificateFilename)) { }
 
 		public CoapConnection(Uri m2mUrl, X509Certificate? certificate = null)
@@ -183,7 +178,7 @@ namespace Aetheros.OneM2M.Api
 
 		class NotifyResource : CoAP.Server.Resources.Resource
 		{
-			Func<CoAP.Server.Resources.CoapExchange, Task> _postHandler;
+            readonly Func<CoAP.Server.Resources.CoapExchange, Task> _postHandler;
 			
 			public NotifyResource(string name, Func<CoAP.Server.Resources.CoapExchange, Task> postHandler) : base(name) 
 			{
@@ -244,10 +239,18 @@ namespace Aetheros.OneM2M.Api
 
 			var notification = DeserializeJson<NotificationContent<TPrimitiveContent>>(body)?.Notification;
 			if (notification == null)
+			{
+				Debug.WriteLine($"{nameof(ParseNotification)}: Invalid JSON");
 				return null;
+			}
 
 			var serializer = JsonSerializer.CreateDefault(Connection.JsonSettings);
 			var representation = ((Newtonsoft.Json.Linq.JObject) notification.NotificationEvent.Representation).ToObject<TPrimitiveContent>(serializer);
+			if (representation == null)
+			{
+				Debug.WriteLine($"{nameof(ParseNotification)}: Invalid representation");
+				return null;
+			}
 			notification.NotificationEvent.PrimitiveRepresentation = representation;
 
 			/*

@@ -1,33 +1,36 @@
 using Aetheros.OneM2M.Api;
-using Microsoft.AspNetCore.Http;
+
 using Mono.Options;
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 
-// get -c C:\work\gridnet\m2msdk\AetherosOneM2MSDK\Aetheros.OneM2M.Tool\cert.pfx --from C5eb5c0c2000006 "https://api.piersh-m2m.corp.grid-net.com/PN_CSE/C4bb2f056000001/data-cnt?cra=20210526T014643.98874&fu=1&ty=4&rcn=5&lvl=2"
+// get -c C:\work\gridnet\m2msdk\AetherosOneM2MSDK\Aetheros.OneM2M.Tool\cert.pfx --from C4bb2f056000001 "https://api.piersh-m2m.corp.grid-net.com/PN_CSE/C4bb2f056000001/data-cnt?cra=20210526T014643.98874&fu=1&ty=4&rcn=5&lvl=2"
+// Get -f C5eb5c0c2000006 "http://api.piersh-m2m.corp.grid-net.com:21300/PN_CSE/C5eb5c0c2000006/a/b/c?rcn=8&ty=4"
+// Get --parallel=10000 -f C5eb5c0c2000006 "http://api.piersh-m2m.corp.grid-net.com:21300/testdev-piersh/foo/bar?rcn=8&ty=4"
+// /PN_CSE/testdev-piersh/aeA5eb35b7600000f
 
 namespace GridNet.IoT.Client.Tools
 {
-	[Description("OneM2M retrieve/discovery")]
+    [Description("OneM2M retrieve/discovery")]
 	public class Get : UtilityBase
 	{
 		string _rqi;
 		string _org;
 		string _cert;
 		int _parallel = 1;
+		long _count = 1;
 
 		public override OptionSet Options => new OptionSet
 		{
 			{ "c|cert=", "The filename of the client certificate to use", v => _cert = v },
 			{ "f|from=", "The Originator of the request", v => _org = v },
-			{ "p|parallel=", "Number of parallel duplicate requests", v => _parallel = int.Parse(v) },
+			{ "n|number=", "Number of duplicate requests", v => _count = long.Parse(v) },
 			{ "r|requestIdentifier=", "The Request Identifier to use", v => _rqi = v },
 		};
 
@@ -44,8 +47,8 @@ namespace GridNet.IoT.Client.Tools
 			if (uri.Scheme.Equals("https", StringComparison.OrdinalIgnoreCase))
 			{
 				if (string.IsNullOrWhiteSpace(_cert))
-					ShowError($"Client Certificate (--cert) is required when using https");
-				if (!File.Exists(_cert))
+					;//ShowError($"Client Certificate (--cert) is required when using https");
+				else if (!File.Exists(_cert))
 					ShowError($"Not Found: {_cert}");
 			}
 
@@ -72,6 +75,7 @@ namespace GridNet.IoT.Client.Tools
 #else
 			client = new HttpClient(handler);
 #endif
+			client.Timeout = TimeSpan.FromMinutes(5);
 			client.DefaultRequestHeaders.Add("Accept", Connection<Aetheros.Schema.OneM2M.PrimitiveContent>.OneM2MResponseContentType);
 
 			var tasks = Enumerable.Range(0, _parallel).Select(i => {

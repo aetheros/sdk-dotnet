@@ -33,7 +33,7 @@ namespace Aetheros.OneM2M.Api
 		public static TEnum? ParseNullableEnum<TEnum>(this string @this) where TEnum : struct =>
 			Enum.TryParse(@this, out TEnum value) ? (TEnum?) value : null;
 
-		public static X509Certificate2? LoadCertificate(string certificateFilename)
+		public static X509Certificate2? LoadCertificate(string? certificateFilename)
 		{
 			if (!File.Exists(certificateFilename))
 				return null;

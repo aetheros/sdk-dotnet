@@ -9,10 +9,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reactive.Linq;
-using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 
-using TaskTupleAwaiter;
 
 namespace Example.Web.Server.ViewModels
 {
@@ -250,7 +248,7 @@ namespace Example.Web.Server.ViewModels
 			));
 		};
 
-		Random _random = new Random();
+        readonly Random _random = new Random();
 
 		public Action<bool> AddData => _ =>
 		{

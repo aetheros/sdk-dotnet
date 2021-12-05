@@ -2,8 +2,6 @@ using Example.Types;
 
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Collections.Specialized;
 using System.Diagnostics;
 using System.Linq;
 using System.Reactive.Linq;
@@ -11,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Example.Web.Server.Services
 {
-	public class MeterService
+    public class MeterService
 	{
 		readonly ModelContext _modelContext;
 

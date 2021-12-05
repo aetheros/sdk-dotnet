@@ -11,12 +11,11 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Reactive.Linq;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace Example.Web.Server.ViewModels
 {
-	[Authorize]
+    [Authorize]
 	public class MeterList : BaseVM, DotNetify.Routing.IRoutable
 	{
 		public string Meters_itemKey => nameof(Meter.MeterId);
@@ -76,9 +75,10 @@ namespace Example.Web.Server.ViewModels
 
 				lock (objLock)
 				{
-					var meters = new List<MeterListRow>(Get<MeterListRow[]>("Meters") ?? new MeterListRow[] { });
-					meters.Add(new MeterListRow(meter.MeterId, stateStr, route));
-					return meters.ToArray();
+                    return new List<MeterListRow>(Get<MeterListRow[]>("Meters") ?? Array.Empty<MeterListRow>())
+                    {
+                        new MeterListRow(meter.MeterId, stateStr, route)
+                    }.ToArray();
 				}
 			}
 

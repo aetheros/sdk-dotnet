@@ -468,7 +468,7 @@ namespace Aetheros.Schema.OneM2M
 
 	public class JsonArrayItem<T> : JsonConverter
 	{
-		string _itemName;
+        readonly string _itemName;
 		public JsonArrayItem(string itemName)
 		{
 			_itemName = itemName;
@@ -491,7 +491,6 @@ namespace Aetheros.Schema.OneM2M
 
 		public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
 		{
-			var list = (List<T>) value;
 			writer.WriteStartObject();
 			writer.WritePropertyName(_itemName);
 			serializer.Serialize(writer, value);

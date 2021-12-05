@@ -3,8 +3,6 @@ using Aetheros.Schema.OneM2M;
 
 using Example.Types;
 using Example.Web.Server.Utils;
-
-using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.Extensions.Options;
 
 using System;
@@ -17,7 +15,7 @@ using System.Threading.Tasks;
 
 namespace Example.Web.Server.Services
 {
-	public class MyApplication
+    public class MyApplication
 	{
 		public Application<PrimitiveContent> Application { get; set; }
 
@@ -35,9 +33,8 @@ namespace Example.Web.Server.Services
 	{
 		public MyApplication App { get; }
 
-		Dictionary<string, Meter> _meters = new Dictionary<string, Meter>();
-
-		Task _startupTask;
+        readonly Dictionary<string, Meter> _meters = new Dictionary<string, Meter>();
+        readonly Task _startupTask;
 
 		public async Task<IReadOnlyDictionary<string, Meter>> GetMeters()
 		{
@@ -96,7 +93,7 @@ namespace Example.Web.Server.Services
 #endif
 		}
 
-		CancellationTokenSource _cts;
+        readonly CancellationTokenSource _cts;
 
 		public void Dispose()
 		{
@@ -108,7 +105,7 @@ namespace Example.Web.Server.Services
 			Debug.WriteLine("===========================ModelContext.DiscoverAEs()");
 
 			//**note**
-			//cannot find announced AE in dev8
+			//
 			var responseFilterContainers = await App.Application.GetPrimitiveAsync("/PN_CSE", new FilterCriteria
 			{
 				FilterUsage = FilterUsage.Discovery,
@@ -137,6 +134,7 @@ namespace Example.Web.Server.Services
 			// device -> app
 			var dataSubscription = Observable.Defer(async () => await app.ObserveContentInstanceAsync<Data>(this.DataContainer));
 			var eventSubscription = Observable.Defer(async () => await app.ObserveContentInstanceAsync<Events>(this.EventsContainer));
+			await app.EnsureContainerAsync(this.DataContainer);
 
 			var meters = (await DiscoverAEsAsync()).Select(deviceAE =>
 			{

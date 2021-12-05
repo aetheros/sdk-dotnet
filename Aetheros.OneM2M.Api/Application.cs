@@ -47,10 +47,10 @@ namespace Aetheros.OneM2M.Api
 		public Application(Connection<TPrimitiveContent> con, string aeId, IApplicationConfiguration config)
 		{
 			Connection = con;
-			AppId = config.AppId;
+			AppId = config.AppId ?? throw new ArgumentNullException("config.AppId");
 			AeId = aeId;
 			PoaUrl = config.PoaUrl;
-			UrlPrefix = config.UrlPrefix;
+			UrlPrefix = config.UrlPrefix ?? throw new ArgumentNullException("config.UrlPrefix");
 		}
 
 		
@@ -71,8 +71,6 @@ namespace Aetheros.OneM2M.Api
 				body.From = AeId;
 			return await Connection.GetResponseAsync<T>(body);
 		}
-
-		static string TrimStart(string str, string prefix) => str.StartsWith(prefix) ? str.Substring(prefix.Length) : str;
 
 		public async Task<ResponseContent<TPrimitiveContent>> GetResponseAsync(RequestPrimitive<TPrimitiveContent> body) => await GetResponseAsync<ResponseContent<TPrimitiveContent>>(body);
 
@@ -281,7 +279,8 @@ namespace Aetheros.OneM2M.Api
 						});
 
 					//work around for CSE timeout issue - remove subscriptions with different poaUrls
-					await DeleteAsync(discoverSubscriptions.URIList.Except(new string[] { subscriptionReference }).ToArray());
+					if (subscriptionReference != null)
+						await DeleteAsync(discoverSubscriptions.URIList.Except(new string[] { subscriptionReference }).ToArray());
 				}
 
 				//create subscription only if can't find subscription with the same notification url
@@ -307,7 +306,7 @@ namespace Aetheros.OneM2M.Api
 						resultContent: ResultContent.HierarchicalAddress
 					);
 
-					subscriptionReference = subscriptionResponse?.URI;
+					subscriptionReference = subscriptionResponse.URI ?? throw new ProtocolViolationException("CreateResourceAsync succeeded but did not return a URI");
 					Debug.WriteLine($"Created Subscription {key} : {subscriptionReference}");
 				}
 
@@ -328,7 +327,7 @@ namespace Aetheros.OneM2M.Api
 		public async Task<IObservable<TPrimitiveContent>> ObserveAsync(
 			string url,
 			string? subscriptionName = null,
-			EventNotificationCriteria criteria = null,
+			EventNotificationCriteria? criteria = null,
 			string? poaUrl = null,
 			bool deleteAfterFinalClose = false
 			) =>
@@ -363,14 +362,20 @@ namespace Aetheros.OneM2M.Api
 		// TODO: find a proper place for this
 		public static async Task<Application<TPrimitiveContent>> RegisterAsync(Connection.IConnectionConfiguration m2mConfig, IApplicationConfiguration appConfig, string inCse, Uri? caUri = null)
 		{
+			var urlPrefix = appConfig.UrlPrefix ?? throw new ArgumentNullException("appConfig.UrlPrefix");
+
 			var con = new HttpConnection<TPrimitiveContent>(m2mConfig);
 
-			var ae = await con.FindApplicationAsync(inCse, appConfig.AppId) ?? await con.RegisterApplicationAsync(appConfig);
+			var appId = appConfig.AppId ?? throw new ArgumentNullException("appConfig.AppId");
+			var ae = await con.FindApplicationAsync(inCse, appId) ?? await con.RegisterApplicationAsync(appConfig);
 			if (ae == null)
 				throw new InvalidOperationException("Unable to register application");
 
 			if (con.ClientCertificate == null && caUri != null)
 			{
+				var certificateFilename = m2mConfig.CertificateFilename ?? throw new ArgumentNullException("m2mConfig.CertificateFilename");
+				var m2mUrl = m2mConfig.M2MUrl ?? throw new ArgumentNullException("m2mConfig.M2MUrl");
+
 				var csrUri = new Uri(caUri, "CertificateSigning");
 				var ccrUri = new Uri(caUri, "CertificateConfirm");
 
@@ -445,10 +450,10 @@ namespace Aetheros.OneM2M.Api
 				using (var pubPrivEphemeral = signedCert.CopyWithPrivateKey(privateKey))
 					await File.WriteAllBytesAsync(m2mConfig.CertificateFilename, pubPrivEphemeral.Export(X509ContentType.Cert));
 
-				con = new HttpConnection<TPrimitiveContent>(m2mConfig.M2MUrl, signedCert);
+				con = new HttpConnection<TPrimitiveContent>(m2mUrl, signedCert);
 			}
 
-			return new Application<TPrimitiveContent>(con, appConfig.AppId, ae.AE_ID, appConfig.UrlPrefix, appConfig.PoaUrl);
+			return new Application<TPrimitiveContent>(con, appConfig.AppId, ae.AE_ID, urlPrefix, appConfig.PoaUrl);
 		}		
 	}
 

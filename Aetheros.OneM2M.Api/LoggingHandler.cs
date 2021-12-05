@@ -13,7 +13,7 @@ namespace Aetheros.OneM2M.Api
         {
         }
 
-        void DumpHeaders(HttpHeaders headers)
+        static void DumpHeaders(HttpHeaders headers)
         {
             foreach (var header in headers)
             {
@@ -26,6 +26,9 @@ namespace Aetheros.OneM2M.Api
         {
             Trace.WriteLine("\n>>>>>>>>>>>>>>>>");
 
+            if (request.RequestUri == null)
+                throw new System.ArgumentNullException("request.RequestUri");
+
             Trace.WriteLine($"{request.Method} {request.RequestUri.PathAndQuery} HTTP/{request.Version}");
             Trace.WriteLine($"Host: {request.RequestUri.Authority}");
             DumpHeaders(request.Headers);
@@ -36,7 +39,7 @@ namespace Aetheros.OneM2M.Api
 
             Trace.WriteLine("");
             if (content != null)
-                Trace.WriteLine(content.ReadAsStringAsync().Result);
+                Trace.WriteLine(content.ReadAsStringAsync(cancellationToken).Result);
 
             return request;
         }
@@ -55,7 +58,7 @@ namespace Aetheros.OneM2M.Api
             Trace.WriteLine("");
 
             if (content != null)
-                Trace.WriteLine(content.ReadAsStringAsync().Result);
+                Trace.WriteLine(content.ReadAsStringAsync(cancellationToken).Result);
 
             return response;
         }

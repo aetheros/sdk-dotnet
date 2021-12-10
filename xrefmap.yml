@@ -60,15 +60,15 @@ references:
   commentId: T:Aetheros.OneM2M.Api.Application
   fullName: Aetheros.OneM2M.Api.Application
   nameWithType: Application
-- uid: Aetheros.OneM2M.Api.Application.#ctor(Aetheros.OneM2M.Api.Connection{Aetheros.Schema.OneM2M.PrimitiveContent},System.String,Aetheros.OneM2M.Api.IApplicationConfiguration)
-  name: Application(Connection<PrimitiveContent>, String, IApplicationConfiguration)
-  href: api/Aetheros.OneM2M.Api.Application.html#Aetheros_OneM2M_Api_Application__ctor_Aetheros_OneM2M_Api_Connection_Aetheros_Schema_OneM2M_PrimitiveContent__System_String_Aetheros_OneM2M_Api_IApplicationConfiguration_
-  commentId: M:Aetheros.OneM2M.Api.Application.#ctor(Aetheros.OneM2M.Api.Connection{Aetheros.Schema.OneM2M.PrimitiveContent},System.String,Aetheros.OneM2M.Api.IApplicationConfiguration)
-  name.vb: Application(Connection(Of PrimitiveContent), String, IApplicationConfiguration)
-  fullName: Aetheros.OneM2M.Api.Application.Application(Aetheros.OneM2M.Api.Connection<Aetheros.Schema.OneM2M.PrimitiveContent>, System.String, Aetheros.OneM2M.Api.IApplicationConfiguration)
-  fullName.vb: Aetheros.OneM2M.Api.Application.Application(Aetheros.OneM2M.Api.Connection(Of Aetheros.Schema.OneM2M.PrimitiveContent), System.String, Aetheros.OneM2M.Api.IApplicationConfiguration)
-  nameWithType: Application.Application(Connection<PrimitiveContent>, String, IApplicationConfiguration)
-  nameWithType.vb: Application.Application(Connection(Of PrimitiveContent), String, IApplicationConfiguration)
+- uid: Aetheros.OneM2M.Api.Application.#ctor(Aetheros.OneM2M.Api.Connection{Aetheros.Schema.OneM2M.PrimitiveContent},System.String,Aetheros.OneM2M.Api.ApplicationConfiguration)
+  name: Application(Connection<PrimitiveContent>, String, ApplicationConfiguration)
+  href: api/Aetheros.OneM2M.Api.Application.html#Aetheros_OneM2M_Api_Application__ctor_Aetheros_OneM2M_Api_Connection_Aetheros_Schema_OneM2M_PrimitiveContent__System_String_Aetheros_OneM2M_Api_ApplicationConfiguration_
+  commentId: M:Aetheros.OneM2M.Api.Application.#ctor(Aetheros.OneM2M.Api.Connection{Aetheros.Schema.OneM2M.PrimitiveContent},System.String,Aetheros.OneM2M.Api.ApplicationConfiguration)
+  name.vb: Application(Connection(Of PrimitiveContent), String, ApplicationConfiguration)
+  fullName: Aetheros.OneM2M.Api.Application.Application(Aetheros.OneM2M.Api.Connection<Aetheros.Schema.OneM2M.PrimitiveContent>, System.String, Aetheros.OneM2M.Api.ApplicationConfiguration)
+  fullName.vb: Aetheros.OneM2M.Api.Application.Application(Aetheros.OneM2M.Api.Connection(Of Aetheros.Schema.OneM2M.PrimitiveContent), System.String, Aetheros.OneM2M.Api.ApplicationConfiguration)
+  nameWithType: Application.Application(Connection<PrimitiveContent>, String, ApplicationConfiguration)
+  nameWithType.vb: Application.Application(Connection(Of PrimitiveContent), String, ApplicationConfiguration)
 - uid: Aetheros.OneM2M.Api.Application.#ctor(Aetheros.OneM2M.Api.Connection{Aetheros.Schema.OneM2M.PrimitiveContent},System.String,System.String,System.String,System.Uri)
   name: Application(Connection<PrimitiveContent>, String, String, String, Uri)
   href: api/Aetheros.OneM2M.Api.Application.html#Aetheros_OneM2M_Api_Application__ctor_Aetheros_OneM2M_Api_Connection_Aetheros_Schema_OneM2M_PrimitiveContent__System_String_System_String_System_String_System_Uri_
@@ -104,71 +104,6 @@ references:
   isSpec: "True"
   fullName: Aetheros.OneM2M.Api.Application.Configuration.AEId
   nameWithType: Application.Configuration.AEId
-- uid: Aetheros.OneM2M.Api.Application.Configuration.AppId
-  name: AppId
-  href: api/Aetheros.OneM2M.Api.Application.Configuration.html#Aetheros_OneM2M_Api_Application_Configuration_AppId
-  commentId: P:Aetheros.OneM2M.Api.Application.Configuration.AppId
-  fullName: Aetheros.OneM2M.Api.Application.Configuration.AppId
-  nameWithType: Application.Configuration.AppId
-- uid: Aetheros.OneM2M.Api.Application.Configuration.AppId*
-  name: AppId
-  href: api/Aetheros.OneM2M.Api.Application.Configuration.html#Aetheros_OneM2M_Api_Application_Configuration_AppId_
-  commentId: Overload:Aetheros.OneM2M.Api.Application.Configuration.AppId
-  isSpec: "True"
-  fullName: Aetheros.OneM2M.Api.Application.Configuration.AppId
-  nameWithType: Application.Configuration.AppId
-- uid: Aetheros.OneM2M.Api.Application.Configuration.AppName
-  name: AppName
-  href: api/Aetheros.OneM2M.Api.Application.Configuration.html#Aetheros_OneM2M_Api_Application_Configuration_AppName
-  commentId: P:Aetheros.OneM2M.Api.Application.Configuration.AppName
-  fullName: Aetheros.OneM2M.Api.Application.Configuration.AppName
-  nameWithType: Application.Configuration.AppName
-- uid: Aetheros.OneM2M.Api.Application.Configuration.AppName*
-  name: AppName
-  href: api/Aetheros.OneM2M.Api.Application.Configuration.html#Aetheros_OneM2M_Api_Application_Configuration_AppName_
-  commentId: Overload:Aetheros.OneM2M.Api.Application.Configuration.AppName
-  isSpec: "True"
-  fullName: Aetheros.OneM2M.Api.Application.Configuration.AppName
-  nameWithType: Application.Configuration.AppName
-- uid: Aetheros.OneM2M.Api.Application.Configuration.CredentialId
-  name: CredentialId
-  href: api/Aetheros.OneM2M.Api.Application.Configuration.html#Aetheros_OneM2M_Api_Application_Configuration_CredentialId
-  commentId: P:Aetheros.OneM2M.Api.Application.Configuration.CredentialId
-  fullName: Aetheros.OneM2M.Api.Application.Configuration.CredentialId
-  nameWithType: Application.Configuration.CredentialId
-- uid: Aetheros.OneM2M.Api.Application.Configuration.CredentialId*
-  name: CredentialId
-  href: api/Aetheros.OneM2M.Api.Application.Configuration.html#Aetheros_OneM2M_Api_Application_Configuration_CredentialId_
-  commentId: Overload:Aetheros.OneM2M.Api.Application.Configuration.CredentialId
-  isSpec: "True"
-  fullName: Aetheros.OneM2M.Api.Application.Configuration.CredentialId
-  nameWithType: Application.Configuration.CredentialId
-- uid: Aetheros.OneM2M.Api.Application.Configuration.PoaUrl
-  name: PoaUrl
-  href: api/Aetheros.OneM2M.Api.Application.Configuration.html#Aetheros_OneM2M_Api_Application_Configuration_PoaUrl
-  commentId: P:Aetheros.OneM2M.Api.Application.Configuration.PoaUrl
-  fullName: Aetheros.OneM2M.Api.Application.Configuration.PoaUrl
-  nameWithType: Application.Configuration.PoaUrl
-- uid: Aetheros.OneM2M.Api.Application.Configuration.PoaUrl*
-  name: PoaUrl
-  href: api/Aetheros.OneM2M.Api.Application.Configuration.html#Aetheros_OneM2M_Api_Application_Configuration_PoaUrl_
-  commentId: Overload:Aetheros.OneM2M.Api.Application.Configuration.PoaUrl
-  isSpec: "True"
-  fullName: Aetheros.OneM2M.Api.Application.Configuration.PoaUrl
-  nameWithType: Application.Configuration.PoaUrl
-- uid: Aetheros.OneM2M.Api.Application.Configuration.UrlPrefix
-  name: UrlPrefix
-  href: api/Aetheros.OneM2M.Api.Application.Configuration.html#Aetheros_OneM2M_Api_Application_Configuration_UrlPrefix
-  commentId: P:Aetheros.OneM2M.Api.Application.Configuration.UrlPrefix
-  fullName: Aetheros.OneM2M.Api.Application.Configuration.UrlPrefix
-  nameWithType: Application.Configuration.UrlPrefix
-- uid: Aetheros.OneM2M.Api.Application.Configuration.UrlPrefix*
-  name: UrlPrefix
-  href: api/Aetheros.OneM2M.Api.Application.Configuration.html#Aetheros_OneM2M_Api_Application_Configuration_UrlPrefix_
-  commentId: Overload:Aetheros.OneM2M.Api.Application.Configuration.UrlPrefix
-  isSpec: "True"
-  fullName: Aetheros.OneM2M.Api.Application.Configuration.UrlPrefix
-  nameWithType: Application.Configuration.UrlPrefix
 - uid: Aetheros.OneM2M.Api.Application`1
   name: Application<TPrimitiveContent>
   href: api/Aetheros.OneM2M.Api.Application-1.html
@@ -178,15 +113,15 @@ references:
   fullName.vb: Aetheros.OneM2M.Api.Application(Of TPrimitiveContent)
   nameWithType: Application<TPrimitiveContent>
   nameWithType.vb: Application(Of TPrimitiveContent)
-- uid: Aetheros.OneM2M.Api.Application`1.#ctor(Aetheros.OneM2M.Api.Connection{`0},System.String,Aetheros.OneM2M.Api.IApplicationConfiguration)
-  name: Application(Connection<TPrimitiveContent>, String, IApplicationConfiguration)
-  href: api/Aetheros.OneM2M.Api.Application-1.html#Aetheros_OneM2M_Api_Application_1__ctor_Aetheros_OneM2M_Api_Connection__0__System_String_Aetheros_OneM2M_Api_IApplicationConfiguration_
-  commentId: M:Aetheros.OneM2M.Api.Application`1.#ctor(Aetheros.OneM2M.Api.Connection{`0},System.String,Aetheros.OneM2M.Api.IApplicationConfiguration)
-  name.vb: Application(Connection(Of TPrimitiveContent), String, IApplicationConfiguration)
-  fullName: Aetheros.OneM2M.Api.Application<TPrimitiveContent>.Application(Aetheros.OneM2M.Api.Connection<TPrimitiveContent>, System.String, Aetheros.OneM2M.Api.IApplicationConfiguration)
-  fullName.vb: Aetheros.OneM2M.Api.Application(Of TPrimitiveContent).Application(Aetheros.OneM2M.Api.Connection(Of TPrimitiveContent), System.String, Aetheros.OneM2M.Api.IApplicationConfiguration)
-  nameWithType: Application<TPrimitiveContent>.Application(Connection<TPrimitiveContent>, String, IApplicationConfiguration)
-  nameWithType.vb: Application(Of TPrimitiveContent).Application(Connection(Of TPrimitiveContent), String, IApplicationConfiguration)
+- uid: Aetheros.OneM2M.Api.Application`1.#ctor(Aetheros.OneM2M.Api.Connection{`0},System.String,Aetheros.OneM2M.Api.ApplicationConfiguration)
+  name: Application(Connection<TPrimitiveContent>, String, ApplicationConfiguration)
+  href: api/Aetheros.OneM2M.Api.Application-1.html#Aetheros_OneM2M_Api_Application_1__ctor_Aetheros_OneM2M_Api_Connection__0__System_String_Aetheros_OneM2M_Api_ApplicationConfiguration_
+  commentId: M:Aetheros.OneM2M.Api.Application`1.#ctor(Aetheros.OneM2M.Api.Connection{`0},System.String,Aetheros.OneM2M.Api.ApplicationConfiguration)
+  name.vb: Application(Connection(Of TPrimitiveContent), String, ApplicationConfiguration)
+  fullName: Aetheros.OneM2M.Api.Application<TPrimitiveContent>.Application(Aetheros.OneM2M.Api.Connection<TPrimitiveContent>, System.String, Aetheros.OneM2M.Api.ApplicationConfiguration)
+  fullName.vb: Aetheros.OneM2M.Api.Application(Of TPrimitiveContent).Application(Aetheros.OneM2M.Api.Connection(Of TPrimitiveContent), System.String, Aetheros.OneM2M.Api.ApplicationConfiguration)
+  nameWithType: Application<TPrimitiveContent>.Application(Connection<TPrimitiveContent>, String, ApplicationConfiguration)
+  nameWithType.vb: Application(Of TPrimitiveContent).Application(Connection(Of TPrimitiveContent), String, ApplicationConfiguration)
 - uid: Aetheros.OneM2M.Api.Application`1.#ctor(Aetheros.OneM2M.Api.Connection{`0},System.String,System.String,System.String,System.Uri)
   name: Application(Connection<TPrimitiveContent>, String, String, String, Uri)
   href: api/Aetheros.OneM2M.Api.Application-1.html#Aetheros_OneM2M_Api_Application_1__ctor_Aetheros_OneM2M_Api_Connection__0__System_String_System_String_System_String_System_Uri_
@@ -343,6 +278,23 @@ references:
   fullName.vb: Aetheros.OneM2M.Api.Application(Of TPrimitiveContent).EnsureContainerAsync
   nameWithType: Application<TPrimitiveContent>.EnsureContainerAsync
   nameWithType.vb: Application(Of TPrimitiveContent).EnsureContainerAsync
+- uid: Aetheros.OneM2M.Api.Application`1.GenerateSigningCertificateAsync(System.Uri,Aetheros.Schema.OneM2M.AE,System.String)
+  name: GenerateSigningCertificateAsync(Uri, AE, String)
+  href: api/Aetheros.OneM2M.Api.Application-1.html#Aetheros_OneM2M_Api_Application_1_GenerateSigningCertificateAsync_System_Uri_Aetheros_Schema_OneM2M_AE_System_String_
+  commentId: M:Aetheros.OneM2M.Api.Application`1.GenerateSigningCertificateAsync(System.Uri,Aetheros.Schema.OneM2M.AE,System.String)
+  fullName: Aetheros.OneM2M.Api.Application<TPrimitiveContent>.GenerateSigningCertificateAsync(System.Uri, Aetheros.Schema.OneM2M.AE, System.String)
+  fullName.vb: Aetheros.OneM2M.Api.Application(Of TPrimitiveContent).GenerateSigningCertificateAsync(System.Uri, Aetheros.Schema.OneM2M.AE, System.String)
+  nameWithType: Application<TPrimitiveContent>.GenerateSigningCertificateAsync(Uri, AE, String)
+  nameWithType.vb: Application(Of TPrimitiveContent).GenerateSigningCertificateAsync(Uri, AE, String)
+- uid: Aetheros.OneM2M.Api.Application`1.GenerateSigningCertificateAsync*
+  name: GenerateSigningCertificateAsync
+  href: api/Aetheros.OneM2M.Api.Application-1.html#Aetheros_OneM2M_Api_Application_1_GenerateSigningCertificateAsync_
+  commentId: Overload:Aetheros.OneM2M.Api.Application`1.GenerateSigningCertificateAsync
+  isSpec: "True"
+  fullName: Aetheros.OneM2M.Api.Application<TPrimitiveContent>.GenerateSigningCertificateAsync
+  fullName.vb: Aetheros.OneM2M.Api.Application(Of TPrimitiveContent).GenerateSigningCertificateAsync
+  nameWithType: Application<TPrimitiveContent>.GenerateSigningCertificateAsync
+  nameWithType.vb: Application(Of TPrimitiveContent).GenerateSigningCertificateAsync
 - uid: Aetheros.OneM2M.Api.Application`1.GetChildResourcesAsync*
   name: GetChildResourcesAsync
   href: api/Aetheros.OneM2M.Api.Application-1.html#Aetheros_OneM2M_Api_Application_1_GetChildResourcesAsync_
@@ -493,14 +445,14 @@ references:
   fullName.vb: Aetheros.OneM2M.Api.Application(Of TPrimitiveContent).PoaUrl
   nameWithType: Application<TPrimitiveContent>.PoaUrl
   nameWithType.vb: Application(Of TPrimitiveContent).PoaUrl
-- uid: Aetheros.OneM2M.Api.Application`1.RegisterAsync(Aetheros.OneM2M.Api.Connection.IConnectionConfiguration,Aetheros.OneM2M.Api.IApplicationConfiguration,System.String,System.Uri)
-  name: RegisterAsync(Connection.IConnectionConfiguration, IApplicationConfiguration, String, Uri)
-  href: api/Aetheros.OneM2M.Api.Application-1.html#Aetheros_OneM2M_Api_Application_1_RegisterAsync_Aetheros_OneM2M_Api_Connection_IConnectionConfiguration_Aetheros_OneM2M_Api_IApplicationConfiguration_System_String_System_Uri_
-  commentId: M:Aetheros.OneM2M.Api.Application`1.RegisterAsync(Aetheros.OneM2M.Api.Connection.IConnectionConfiguration,Aetheros.OneM2M.Api.IApplicationConfiguration,System.String,System.Uri)
-  fullName: Aetheros.OneM2M.Api.Application<TPrimitiveContent>.RegisterAsync(Aetheros.OneM2M.Api.Connection.IConnectionConfiguration, Aetheros.OneM2M.Api.IApplicationConfiguration, System.String, System.Uri)
-  fullName.vb: Aetheros.OneM2M.Api.Application(Of TPrimitiveContent).RegisterAsync(Aetheros.OneM2M.Api.Connection.IConnectionConfiguration, Aetheros.OneM2M.Api.IApplicationConfiguration, System.String, System.Uri)
-  nameWithType: Application<TPrimitiveContent>.RegisterAsync(Connection.IConnectionConfiguration, IApplicationConfiguration, String, Uri)
-  nameWithType.vb: Application(Of TPrimitiveContent).RegisterAsync(Connection.IConnectionConfiguration, IApplicationConfiguration, String, Uri)
+- uid: Aetheros.OneM2M.Api.Application`1.RegisterAsync(Aetheros.OneM2M.Api.Connection.IConnectionConfiguration,Aetheros.OneM2M.Api.ApplicationConfiguration,System.Uri)
+  name: RegisterAsync(Connection.IConnectionConfiguration, ApplicationConfiguration, Uri)
+  href: api/Aetheros.OneM2M.Api.Application-1.html#Aetheros_OneM2M_Api_Application_1_RegisterAsync_Aetheros_OneM2M_Api_Connection_IConnectionConfiguration_Aetheros_OneM2M_Api_ApplicationConfiguration_System_Uri_
+  commentId: M:Aetheros.OneM2M.Api.Application`1.RegisterAsync(Aetheros.OneM2M.Api.Connection.IConnectionConfiguration,Aetheros.OneM2M.Api.ApplicationConfiguration,System.Uri)
+  fullName: Aetheros.OneM2M.Api.Application<TPrimitiveContent>.RegisterAsync(Aetheros.OneM2M.Api.Connection.IConnectionConfiguration, Aetheros.OneM2M.Api.ApplicationConfiguration, System.Uri)
+  fullName.vb: Aetheros.OneM2M.Api.Application(Of TPrimitiveContent).RegisterAsync(Aetheros.OneM2M.Api.Connection.IConnectionConfiguration, Aetheros.OneM2M.Api.ApplicationConfiguration, System.Uri)
+  nameWithType: Application<TPrimitiveContent>.RegisterAsync(Connection.IConnectionConfiguration, ApplicationConfiguration, Uri)
+  nameWithType.vb: Application(Of TPrimitiveContent).RegisterAsync(Connection.IConnectionConfiguration, ApplicationConfiguration, Uri)
 - uid: Aetheros.OneM2M.Api.Application`1.RegisterAsync*
   name: RegisterAsync
   href: api/Aetheros.OneM2M.Api.Application-1.html#Aetheros_OneM2M_Api_Application_1_RegisterAsync_
@@ -562,6 +514,77 @@ references:
   fullName.vb: Aetheros.OneM2M.Api.Application(Of TPrimitiveContent).UrlPrefix
   nameWithType: Application<TPrimitiveContent>.UrlPrefix
   nameWithType.vb: Application(Of TPrimitiveContent).UrlPrefix
+- uid: Aetheros.OneM2M.Api.ApplicationConfiguration
+  name: ApplicationConfiguration
+  href: api/Aetheros.OneM2M.Api.ApplicationConfiguration.html
+  commentId: T:Aetheros.OneM2M.Api.ApplicationConfiguration
+  fullName: Aetheros.OneM2M.Api.ApplicationConfiguration
+  nameWithType: ApplicationConfiguration
+- uid: Aetheros.OneM2M.Api.ApplicationConfiguration.AppId
+  name: AppId
+  href: api/Aetheros.OneM2M.Api.ApplicationConfiguration.html#Aetheros_OneM2M_Api_ApplicationConfiguration_AppId
+  commentId: P:Aetheros.OneM2M.Api.ApplicationConfiguration.AppId
+  fullName: Aetheros.OneM2M.Api.ApplicationConfiguration.AppId
+  nameWithType: ApplicationConfiguration.AppId
+- uid: Aetheros.OneM2M.Api.ApplicationConfiguration.AppId*
+  name: AppId
+  href: api/Aetheros.OneM2M.Api.ApplicationConfiguration.html#Aetheros_OneM2M_Api_ApplicationConfiguration_AppId_
+  commentId: Overload:Aetheros.OneM2M.Api.ApplicationConfiguration.AppId
+  isSpec: "True"
+  fullName: Aetheros.OneM2M.Api.ApplicationConfiguration.AppId
+  nameWithType: ApplicationConfiguration.AppId
+- uid: Aetheros.OneM2M.Api.ApplicationConfiguration.AppName
+  name: AppName
+  href: api/Aetheros.OneM2M.Api.ApplicationConfiguration.html#Aetheros_OneM2M_Api_ApplicationConfiguration_AppName
+  commentId: P:Aetheros.OneM2M.Api.ApplicationConfiguration.AppName
+  fullName: Aetheros.OneM2M.Api.ApplicationConfiguration.AppName
+  nameWithType: ApplicationConfiguration.AppName
+- uid: Aetheros.OneM2M.Api.ApplicationConfiguration.AppName*
+  name: AppName
+  href: api/Aetheros.OneM2M.Api.ApplicationConfiguration.html#Aetheros_OneM2M_Api_ApplicationConfiguration_AppName_
+  commentId: Overload:Aetheros.OneM2M.Api.ApplicationConfiguration.AppName
+  isSpec: "True"
+  fullName: Aetheros.OneM2M.Api.ApplicationConfiguration.AppName
+  nameWithType: ApplicationConfiguration.AppName
+- uid: Aetheros.OneM2M.Api.ApplicationConfiguration.CredentialId
+  name: CredentialId
+  href: api/Aetheros.OneM2M.Api.ApplicationConfiguration.html#Aetheros_OneM2M_Api_ApplicationConfiguration_CredentialId
+  commentId: P:Aetheros.OneM2M.Api.ApplicationConfiguration.CredentialId
+  fullName: Aetheros.OneM2M.Api.ApplicationConfiguration.CredentialId
+  nameWithType: ApplicationConfiguration.CredentialId
+- uid: Aetheros.OneM2M.Api.ApplicationConfiguration.CredentialId*
+  name: CredentialId
+  href: api/Aetheros.OneM2M.Api.ApplicationConfiguration.html#Aetheros_OneM2M_Api_ApplicationConfiguration_CredentialId_
+  commentId: Overload:Aetheros.OneM2M.Api.ApplicationConfiguration.CredentialId
+  isSpec: "True"
+  fullName: Aetheros.OneM2M.Api.ApplicationConfiguration.CredentialId
+  nameWithType: ApplicationConfiguration.CredentialId
+- uid: Aetheros.OneM2M.Api.ApplicationConfiguration.PoaUrl
+  name: PoaUrl
+  href: api/Aetheros.OneM2M.Api.ApplicationConfiguration.html#Aetheros_OneM2M_Api_ApplicationConfiguration_PoaUrl
+  commentId: P:Aetheros.OneM2M.Api.ApplicationConfiguration.PoaUrl
+  fullName: Aetheros.OneM2M.Api.ApplicationConfiguration.PoaUrl
+  nameWithType: ApplicationConfiguration.PoaUrl
+- uid: Aetheros.OneM2M.Api.ApplicationConfiguration.PoaUrl*
+  name: PoaUrl
+  href: api/Aetheros.OneM2M.Api.ApplicationConfiguration.html#Aetheros_OneM2M_Api_ApplicationConfiguration_PoaUrl_
+  commentId: Overload:Aetheros.OneM2M.Api.ApplicationConfiguration.PoaUrl
+  isSpec: "True"
+  fullName: Aetheros.OneM2M.Api.ApplicationConfiguration.PoaUrl
+  nameWithType: ApplicationConfiguration.PoaUrl
+- uid: Aetheros.OneM2M.Api.ApplicationConfiguration.UrlPrefix
+  name: UrlPrefix
+  href: api/Aetheros.OneM2M.Api.ApplicationConfiguration.html#Aetheros_OneM2M_Api_ApplicationConfiguration_UrlPrefix
+  commentId: P:Aetheros.OneM2M.Api.ApplicationConfiguration.UrlPrefix
+  fullName: Aetheros.OneM2M.Api.ApplicationConfiguration.UrlPrefix
+  nameWithType: ApplicationConfiguration.UrlPrefix
+- uid: Aetheros.OneM2M.Api.ApplicationConfiguration.UrlPrefix*
+  name: UrlPrefix
+  href: api/Aetheros.OneM2M.Api.ApplicationConfiguration.html#Aetheros_OneM2M_Api_ApplicationConfiguration_UrlPrefix_
+  commentId: Overload:Aetheros.OneM2M.Api.ApplicationConfiguration.UrlPrefix
+  isSpec: "True"
+  fullName: Aetheros.OneM2M.Api.ApplicationConfiguration.UrlPrefix
+  nameWithType: ApplicationConfiguration.UrlPrefix
 - uid: Aetheros.OneM2M.Api.CoapConnection
   name: CoapConnection
   href: api/Aetheros.OneM2M.Api.CoapConnection.html
@@ -1000,14 +1023,14 @@ references:
   fullName.vb: Aetheros.OneM2M.Api.Connection(Of TPrimitiveContent)._notifications
   nameWithType: Connection<TPrimitiveContent>._notifications
   nameWithType.vb: Connection(Of TPrimitiveContent)._notifications
-- uid: Aetheros.OneM2M.Api.Connection`1.FindApplicationAsync(System.String,System.String)
-  name: FindApplicationAsync(String, String)
-  href: api/Aetheros.OneM2M.Api.Connection-1.html#Aetheros_OneM2M_Api_Connection_1_FindApplicationAsync_System_String_System_String_
-  commentId: M:Aetheros.OneM2M.Api.Connection`1.FindApplicationAsync(System.String,System.String)
-  fullName: Aetheros.OneM2M.Api.Connection<TPrimitiveContent>.FindApplicationAsync(System.String, System.String)
-  fullName.vb: Aetheros.OneM2M.Api.Connection(Of TPrimitiveContent).FindApplicationAsync(System.String, System.String)
-  nameWithType: Connection<TPrimitiveContent>.FindApplicationAsync(String, String)
-  nameWithType.vb: Connection(Of TPrimitiveContent).FindApplicationAsync(String, String)
+- uid: Aetheros.OneM2M.Api.Connection`1.FindApplicationAsync(Aetheros.OneM2M.Api.ApplicationConfiguration)
+  name: FindApplicationAsync(ApplicationConfiguration)
+  href: api/Aetheros.OneM2M.Api.Connection-1.html#Aetheros_OneM2M_Api_Connection_1_FindApplicationAsync_Aetheros_OneM2M_Api_ApplicationConfiguration_
+  commentId: M:Aetheros.OneM2M.Api.Connection`1.FindApplicationAsync(Aetheros.OneM2M.Api.ApplicationConfiguration)
+  fullName: Aetheros.OneM2M.Api.Connection<TPrimitiveContent>.FindApplicationAsync(Aetheros.OneM2M.Api.ApplicationConfiguration)
+  fullName.vb: Aetheros.OneM2M.Api.Connection(Of TPrimitiveContent).FindApplicationAsync(Aetheros.OneM2M.Api.ApplicationConfiguration)
+  nameWithType: Connection<TPrimitiveContent>.FindApplicationAsync(ApplicationConfiguration)
+  nameWithType.vb: Connection(Of TPrimitiveContent).FindApplicationAsync(ApplicationConfiguration)
 - uid: Aetheros.OneM2M.Api.Connection`1.FindApplicationAsync*
   name: FindApplicationAsync
   href: api/Aetheros.OneM2M.Api.Connection-1.html#Aetheros_OneM2M_Api_Connection_1_FindApplicationAsync_
@@ -1130,14 +1153,14 @@ references:
   fullName.vb: Aetheros.OneM2M.Api.Connection(Of TPrimitiveContent).Notifications
   nameWithType: Connection<TPrimitiveContent>.Notifications
   nameWithType.vb: Connection(Of TPrimitiveContent).Notifications
-- uid: Aetheros.OneM2M.Api.Connection`1.RegisterApplicationAsync(Aetheros.OneM2M.Api.IApplicationConfiguration)
-  name: RegisterApplicationAsync(IApplicationConfiguration)
-  href: api/Aetheros.OneM2M.Api.Connection-1.html#Aetheros_OneM2M_Api_Connection_1_RegisterApplicationAsync_Aetheros_OneM2M_Api_IApplicationConfiguration_
-  commentId: M:Aetheros.OneM2M.Api.Connection`1.RegisterApplicationAsync(Aetheros.OneM2M.Api.IApplicationConfiguration)
-  fullName: Aetheros.OneM2M.Api.Connection<TPrimitiveContent>.RegisterApplicationAsync(Aetheros.OneM2M.Api.IApplicationConfiguration)
-  fullName.vb: Aetheros.OneM2M.Api.Connection(Of TPrimitiveContent).RegisterApplicationAsync(Aetheros.OneM2M.Api.IApplicationConfiguration)
-  nameWithType: Connection<TPrimitiveContent>.RegisterApplicationAsync(IApplicationConfiguration)
-  nameWithType.vb: Connection(Of TPrimitiveContent).RegisterApplicationAsync(IApplicationConfiguration)
+- uid: Aetheros.OneM2M.Api.Connection`1.RegisterApplicationAsync(Aetheros.OneM2M.Api.ApplicationConfiguration)
+  name: RegisterApplicationAsync(ApplicationConfiguration)
+  href: api/Aetheros.OneM2M.Api.Connection-1.html#Aetheros_OneM2M_Api_Connection_1_RegisterApplicationAsync_Aetheros_OneM2M_Api_ApplicationConfiguration_
+  commentId: M:Aetheros.OneM2M.Api.Connection`1.RegisterApplicationAsync(Aetheros.OneM2M.Api.ApplicationConfiguration)
+  fullName: Aetheros.OneM2M.Api.Connection<TPrimitiveContent>.RegisterApplicationAsync(Aetheros.OneM2M.Api.ApplicationConfiguration)
+  fullName.vb: Aetheros.OneM2M.Api.Connection(Of TPrimitiveContent).RegisterApplicationAsync(Aetheros.OneM2M.Api.ApplicationConfiguration)
+  nameWithType: Connection<TPrimitiveContent>.RegisterApplicationAsync(ApplicationConfiguration)
+  nameWithType.vb: Connection(Of TPrimitiveContent).RegisterApplicationAsync(ApplicationConfiguration)
 - uid: Aetheros.OneM2M.Api.Connection`1.RegisterApplicationAsync*
   name: RegisterApplicationAsync
   href: api/Aetheros.OneM2M.Api.Connection-1.html#Aetheros_OneM2M_Api_Connection_1_RegisterApplicationAsync_
@@ -1311,77 +1334,6 @@ references:
   fullName.vb: Aetheros.OneM2M.Api.HttpConnectionExtensions.DeserializeAsync(Of T)(System.Net.Http.HttpResponseMessage)
   nameWithType: HttpConnectionExtensions.DeserializeAsync<T>(HttpResponseMessage)
   nameWithType.vb: HttpConnectionExtensions.DeserializeAsync(Of T)(HttpResponseMessage)
-- uid: Aetheros.OneM2M.Api.IApplicationConfiguration
-  name: IApplicationConfiguration
-  href: api/Aetheros.OneM2M.Api.IApplicationConfiguration.html
-  commentId: T:Aetheros.OneM2M.Api.IApplicationConfiguration
-  fullName: Aetheros.OneM2M.Api.IApplicationConfiguration
-  nameWithType: IApplicationConfiguration
-- uid: Aetheros.OneM2M.Api.IApplicationConfiguration.AppId
-  name: AppId
-  href: api/Aetheros.OneM2M.Api.IApplicationConfiguration.html#Aetheros_OneM2M_Api_IApplicationConfiguration_AppId
-  commentId: P:Aetheros.OneM2M.Api.IApplicationConfiguration.AppId
-  fullName: Aetheros.OneM2M.Api.IApplicationConfiguration.AppId
-  nameWithType: IApplicationConfiguration.AppId
-- uid: Aetheros.OneM2M.Api.IApplicationConfiguration.AppId*
-  name: AppId
-  href: api/Aetheros.OneM2M.Api.IApplicationConfiguration.html#Aetheros_OneM2M_Api_IApplicationConfiguration_AppId_
-  commentId: Overload:Aetheros.OneM2M.Api.IApplicationConfiguration.AppId
-  isSpec: "True"
-  fullName: Aetheros.OneM2M.Api.IApplicationConfiguration.AppId
-  nameWithType: IApplicationConfiguration.AppId
-- uid: Aetheros.OneM2M.Api.IApplicationConfiguration.AppName
-  name: AppName
-  href: api/Aetheros.OneM2M.Api.IApplicationConfiguration.html#Aetheros_OneM2M_Api_IApplicationConfiguration_AppName
-  commentId: P:Aetheros.OneM2M.Api.IApplicationConfiguration.AppName
-  fullName: Aetheros.OneM2M.Api.IApplicationConfiguration.AppName
-  nameWithType: IApplicationConfiguration.AppName
-- uid: Aetheros.OneM2M.Api.IApplicationConfiguration.AppName*
-  name: AppName
-  href: api/Aetheros.OneM2M.Api.IApplicationConfiguration.html#Aetheros_OneM2M_Api_IApplicationConfiguration_AppName_
-  commentId: Overload:Aetheros.OneM2M.Api.IApplicationConfiguration.AppName
-  isSpec: "True"
-  fullName: Aetheros.OneM2M.Api.IApplicationConfiguration.AppName
-  nameWithType: IApplicationConfiguration.AppName
-- uid: Aetheros.OneM2M.Api.IApplicationConfiguration.CredentialId
-  name: CredentialId
-  href: api/Aetheros.OneM2M.Api.IApplicationConfiguration.html#Aetheros_OneM2M_Api_IApplicationConfiguration_CredentialId
-  commentId: P:Aetheros.OneM2M.Api.IApplicationConfiguration.CredentialId
-  fullName: Aetheros.OneM2M.Api.IApplicationConfiguration.CredentialId
-  nameWithType: IApplicationConfiguration.CredentialId
-- uid: Aetheros.OneM2M.Api.IApplicationConfiguration.CredentialId*
-  name: CredentialId
-  href: api/Aetheros.OneM2M.Api.IApplicationConfiguration.html#Aetheros_OneM2M_Api_IApplicationConfiguration_CredentialId_
-  commentId: Overload:Aetheros.OneM2M.Api.IApplicationConfiguration.CredentialId
-  isSpec: "True"
-  fullName: Aetheros.OneM2M.Api.IApplicationConfiguration.CredentialId
-  nameWithType: IApplicationConfiguration.CredentialId
-- uid: Aetheros.OneM2M.Api.IApplicationConfiguration.PoaUrl
-  name: PoaUrl
-  href: api/Aetheros.OneM2M.Api.IApplicationConfiguration.html#Aetheros_OneM2M_Api_IApplicationConfiguration_PoaUrl
-  commentId: P:Aetheros.OneM2M.Api.IApplicationConfiguration.PoaUrl
-  fullName: Aetheros.OneM2M.Api.IApplicationConfiguration.PoaUrl
-  nameWithType: IApplicationConfiguration.PoaUrl
-- uid: Aetheros.OneM2M.Api.IApplicationConfiguration.PoaUrl*
-  name: PoaUrl
-  href: api/Aetheros.OneM2M.Api.IApplicationConfiguration.html#Aetheros_OneM2M_Api_IApplicationConfiguration_PoaUrl_
-  commentId: Overload:Aetheros.OneM2M.Api.IApplicationConfiguration.PoaUrl
-  isSpec: "True"
-  fullName: Aetheros.OneM2M.Api.IApplicationConfiguration.PoaUrl
-  nameWithType: IApplicationConfiguration.PoaUrl
-- uid: Aetheros.OneM2M.Api.IApplicationConfiguration.UrlPrefix
-  name: UrlPrefix
-  href: api/Aetheros.OneM2M.Api.IApplicationConfiguration.html#Aetheros_OneM2M_Api_IApplicationConfiguration_UrlPrefix
-  commentId: P:Aetheros.OneM2M.Api.IApplicationConfiguration.UrlPrefix
-  fullName: Aetheros.OneM2M.Api.IApplicationConfiguration.UrlPrefix
-  nameWithType: IApplicationConfiguration.UrlPrefix
-- uid: Aetheros.OneM2M.Api.IApplicationConfiguration.UrlPrefix*
-  name: UrlPrefix
-  href: api/Aetheros.OneM2M.Api.IApplicationConfiguration.html#Aetheros_OneM2M_Api_IApplicationConfiguration_UrlPrefix_
-  commentId: Overload:Aetheros.OneM2M.Api.IApplicationConfiguration.UrlPrefix
-  isSpec: "True"
-  fullName: Aetheros.OneM2M.Api.IApplicationConfiguration.UrlPrefix
-  nameWithType: IApplicationConfiguration.UrlPrefix
 - uid: Aetheros.OneM2M.Api.Registration
   name: Aetheros.OneM2M.Api.Registration
   href: api/Aetheros.OneM2M.Api.Registration.html

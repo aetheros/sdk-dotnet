@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class Application
    | AOS oneM2M SDK ">
-    <meta name="generator" content="docfx 2.53.1.0">
+    <meta name="generator" content="docfx 2.58.9.0">
     
     <link rel="shortcut icon" href="../images/Aetheros.png">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -99,6 +99,9 @@
                             <a href="Aetheros.OneM2M.Api.Application-1.html" title="Application&lt;TPrimitiveContent&gt;" class="">Application&lt;TPrimitiveContent&gt;</a>
                           </li>
                           <li class="">
+                            <a href="Aetheros.OneM2M.Api.ApplicationConfiguration.html" title="ApplicationConfiguration" class="">ApplicationConfiguration</a>
+                          </li>
+                          <li class="">
                             <a href="Aetheros.OneM2M.Api.CoapConnection.html" title="CoapConnection" class="">CoapConnection</a>
                           </li>
                           <li class="">
@@ -133,9 +136,6 @@
                           </li>
                           <li class="">
                             <a href="Aetheros.OneM2M.Api.HttpConnectionExtensions.html" title="HttpConnectionExtensions" class="">HttpConnectionExtensions</a>
-                          </li>
-                          <li class="">
-                            <a href="Aetheros.OneM2M.Api.IApplicationConfiguration.html" title="IApplicationConfiguration" class="">IApplicationConfiguration</a>
                           </li>
                         </ul>  </li>
                     <li class="">
@@ -1001,7 +1001,10 @@
       <a class="xref" href="Aetheros.OneM2M.Api.Application-1.html#Aetheros_OneM2M_Api_Application_1_ObserveContentInstanceAsync__1_System_String_System_String_System_String_System_Boolean_">Application&lt;PrimitiveContent&gt;.ObserveContentInstanceAsync&lt;TContent&gt;(String, String, String, Boolean)</a>
     </div>
     <div>
-      <a class="xref" href="Aetheros.OneM2M.Api.Application-1.html#Aetheros_OneM2M_Api_Application_1_RegisterAsync_Aetheros_OneM2M_Api_Connection_IConnectionConfiguration_Aetheros_OneM2M_Api_IApplicationConfiguration_System_String_System_Uri_">Application&lt;PrimitiveContent&gt;.RegisterAsync(Connection.IConnectionConfiguration, IApplicationConfiguration, String, Uri)</a>
+      <a class="xref" href="Aetheros.OneM2M.Api.Application-1.html#Aetheros_OneM2M_Api_Application_1_GenerateSigningCertificateAsync_System_Uri_Aetheros_Schema_OneM2M_AE_System_String_">Application&lt;PrimitiveContent&gt;.GenerateSigningCertificateAsync(Uri, AE, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="Aetheros.OneM2M.Api.Application-1.html#Aetheros_OneM2M_Api_Application_1_RegisterAsync_Aetheros_OneM2M_Api_Connection_IConnectionConfiguration_Aetheros_OneM2M_Api_ApplicationConfiguration_System_Uri_">Application&lt;PrimitiveContent&gt;.RegisterAsync(Connection.IConnectionConfiguration, ApplicationConfiguration, Uri)</a>
     </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Aetheros.OneM2M.Api.html">Aetheros.OneM2M.Api</a></h6>
@@ -1014,18 +1017,18 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/aetheros/sdk-dotnet/new/master/apiSpec/new?filename=Aetheros_OneM2M_Api_Application__ctor_Aetheros_OneM2M_Api_Connection_Aetheros_Schema_OneM2M_PrimitiveContent__System_String_Aetheros_OneM2M_Api_IApplicationConfiguration_.md&amp;value=---%0Auid%3A%20Aetheros.OneM2M.Api.Application.%23ctor(Aetheros.OneM2M.Api.Connection%7BAetheros.Schema.OneM2M.PrimitiveContent%7D%2CSystem.String%2CAetheros.OneM2M.Api.IApplicationConfiguration)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/aetheros/sdk-dotnet/new/master/apiSpec/new?filename=Aetheros_OneM2M_Api_Application__ctor_Aetheros_OneM2M_Api_Connection_Aetheros_Schema_OneM2M_PrimitiveContent__System_String_Aetheros_OneM2M_Api_ApplicationConfiguration_.md&amp;value=---%0Auid%3A%20Aetheros.OneM2M.Api.Application.%23ctor(Aetheros.OneM2M.Api.Connection%7BAetheros.Schema.OneM2M.PrimitiveContent%7D%2CSystem.String%2CAetheros.OneM2M.Api.ApplicationConfiguration)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/aetheros/sdk-dotnet/blob/master/Aetheros.OneM2M.Api/Application.cs/#L473">View Source</a>
+    <a href="https://github.com/aetheros/sdk-dotnet/blob/master/Aetheros.OneM2M.Api/Application.cs/#L500">View Source</a>
   </span>
   <a id="Aetheros_OneM2M_Api_Application__ctor_" data-uid="Aetheros.OneM2M.Api.Application.#ctor*"></a>
-  <h4 id="Aetheros_OneM2M_Api_Application__ctor_Aetheros_OneM2M_Api_Connection_Aetheros_Schema_OneM2M_PrimitiveContent__System_String_Aetheros_OneM2M_Api_IApplicationConfiguration_" data-uid="Aetheros.OneM2M.Api.Application.#ctor(Aetheros.OneM2M.Api.Connection{Aetheros.Schema.OneM2M.PrimitiveContent},System.String,Aetheros.OneM2M.Api.IApplicationConfiguration)">Application(Connection&lt;PrimitiveContent&gt;, String, IApplicationConfiguration)</h4>
+  <h4 id="Aetheros_OneM2M_Api_Application__ctor_Aetheros_OneM2M_Api_Connection_Aetheros_Schema_OneM2M_PrimitiveContent__System_String_Aetheros_OneM2M_Api_ApplicationConfiguration_" data-uid="Aetheros.OneM2M.Api.Application.#ctor(Aetheros.OneM2M.Api.Connection{Aetheros.Schema.OneM2M.PrimitiveContent},System.String,Aetheros.OneM2M.Api.ApplicationConfiguration)">Application(Connection&lt;PrimitiveContent&gt;, String, ApplicationConfiguration)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Application(Connection&lt;PrimitiveContent&gt; con, string aeId, IApplicationConfiguration config)</code></pre>
+    <pre><code class="lang-csharp hljs">public Application(Connection&lt;PrimitiveContent&gt; con, string aeId, ApplicationConfiguration config)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1048,7 +1051,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><a class="xref" href="Aetheros.OneM2M.Api.IApplicationConfiguration.html">IApplicationConfiguration</a></td>
+        <td><a class="xref" href="Aetheros.OneM2M.Api.ApplicationConfiguration.html">ApplicationConfiguration</a></td>
         <td><span class="parametername">config</span></td>
         <td></td>
       </tr>
@@ -1059,7 +1062,7 @@
     <a href="https://github.com/aetheros/sdk-dotnet/new/master/apiSpec/new?filename=Aetheros_OneM2M_Api_Application__ctor_Aetheros_OneM2M_Api_Connection_Aetheros_Schema_OneM2M_PrimitiveContent__System_String_System_String_System_String_System_Uri_.md&amp;value=---%0Auid%3A%20Aetheros.OneM2M.Api.Application.%23ctor(Aetheros.OneM2M.Api.Connection%7BAetheros.Schema.OneM2M.PrimitiveContent%7D%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.Uri)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/aetheros/sdk-dotnet/blob/master/Aetheros.OneM2M.Api/Application.cs/#L472">View Source</a>
+    <a href="https://github.com/aetheros/sdk-dotnet/blob/master/Aetheros.OneM2M.Api/Application.cs/#L499">View Source</a>
   </span>
   <a id="Aetheros_OneM2M_Api_Application__ctor_" data-uid="Aetheros.OneM2M.Api.Application.#ctor*"></a>
   <h4 id="Aetheros_OneM2M_Api_Application__ctor_Aetheros_OneM2M_Api_Connection_Aetheros_Schema_OneM2M_PrimitiveContent__System_String_System_String_System_String_System_Uri_" data-uid="Aetheros.OneM2M.Api.Application.#ctor(Aetheros.OneM2M.Api.Connection{Aetheros.Schema.OneM2M.PrimitiveContent},System.String,System.String,System.String,System.Uri)">Application(Connection&lt;PrimitiveContent&gt;, String, String, String, Uri)</h4>
@@ -1117,12 +1120,13 @@
                     <a href="https://github.com/aetheros/sdk-dotnet/new/master/apiSpec/new?filename=Aetheros_OneM2M_Api_Application.md&amp;value=---%0Auid%3A%20Aetheros.OneM2M.Api.Application%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/aetheros/sdk-dotnet/blob/master/Aetheros.OneM2M.Api/Application.cs/#L455" class="contribution-link">View Source</a>
+                    <a href="https://github.com/aetheros/sdk-dotnet/blob/master/Aetheros.OneM2M.Api/Application.cs/#L491" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+                <h5>In This Article</h5>
+                <div></div>
               </nav>
             </div>
           </div>

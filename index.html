@@ -8,7 +8,7 @@
     <title>Aetheros oneM2M .NET Api Documentation | AOS oneM2M SDK </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Aetheros oneM2M .NET Api Documentation | AOS oneM2M SDK ">
-    <meta name="generator" content="docfx 2.53.1.0">
+    <meta name="generator" content="docfx 2.58.9.0">
     
     <link rel="shortcut icon" href="images/Aetheros.png">
     <link rel="stylesheet" href="styles/docfx.vendor.css">
@@ -71,17 +71,23 @@
 <h1 id="aetheros-onem2m-net-api-documentation">Aetheros oneM2M .NET Api Documentation</h1>
 
 <h2 id="section"><a class="xref" href="api/index.html">Api Documentation</a></h2>
-<p>Markup test:</p>
-<pre><code class="lang-c#">using var con = new HttpConnection(&quot;https://cse.local/&quot;);
-using var app = await con.FindApplicationAsync(&quot;IN_CSE&quot;, &quot;my.app.id&quot;);
+<pre><code class="lang-c#">// connect to the IN-CSE
+using var con = new HttpConnection(new Uri(&quot;https://cse.local/&quot;));
+
+// find an existing IN-AE
+using var app = await con.FindApplicationAsync(new ApplicationConfiguration { AppId = &quot;my.app.id&quot; });
+
+// create a container under the IN-AE
 var container = await app.EnsureContainerAsync(&quot;my_container&quot;);
 
+// listen for new contentInstance creation
 using var subscription = 
   (await container.ObserveContentInstanceAsync&lt;ContentInstanceType&gt;(&quot;https://localhost/notify&quot;))
 	.Subscribe(ci =&gt; {
 		Console.WriteLine($&quot;New content instance: {ci.Data}&quot;);
 	});
-	
+
+// create a new contentInstance
 var contentInstance = await app.AddContentInstanceAsync(&quot;my_container&quot;, new ContentInstanceType { Data = &quot;hello&quot; });
 
 </code></pre>
@@ -98,7 +104,8 @@ var contentInstance = await app.AddContentInstanceAsync(&quot;my_container&quot;
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+                <h5>In This Article</h5>
+                <div></div>
               </nav>
             </div>
           </div>

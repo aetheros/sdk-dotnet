@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace GridNet.IoT.Client
 {
-    public abstract class UtilityBase
+	public abstract class UtilityBase
 	{
 		readonly OptionSet EmptyOptions = new OptionSet();
 
@@ -31,17 +31,21 @@ namespace GridNet.IoT.Client
 
 		protected static void ShowError(string errorMessage, bool exit = true)
 		{
-			Console.Error.WriteLine($"error: {errorMessage}");
+			Console.Error.WriteLine($"{Path.GetFileNameWithoutExtension(Environment.ProcessPath)}: {errorMessage}");
 			if (exit)
 				Environment.Exit(1);
 		}
 
 		protected void ShowUsage(string errorMessage = null, bool exit = true)
 		{
-			if (errorMessage != null)
-				Console.Error.WriteLine($"error: {errorMessage}");
-			Console.Error.WriteLine($"usage: {Path.GetFileNameWithoutExtension(Assembly.GetEntryAssembly().Location)} {this.GetType().Name} {this.Usage}");
+			if (errorMessage != null) {
+				Console.Error.WriteLine($"{Path.GetFileNameWithoutExtension(Environment.ProcessPath)}: {errorMessage}");
+				Console.Error.WriteLine();
+			}
+			Console.Error.WriteLine($"usage: {Path.GetFileNameWithoutExtension(Environment.ProcessPath)} {this.GetType().Name} {this.Usage}");
 			_options.WriteOptionDescriptions(Console.Error);
+			if (exit)
+				Environment.Exit(1);
 		}
 
 		internal async Task Main(IEnumerable<string> args)

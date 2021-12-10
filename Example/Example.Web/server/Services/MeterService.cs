@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Example.Web.Server.Services
 {
-    public class MeterService
+	public class MeterService
 	{
 		readonly ModelContext _modelContext;
 

@@ -13,11 +13,11 @@ using System.Diagnostics;
 
 namespace Aetheros.OneM2M.Api
 {
-    public class CoapConnection<TPrimitiveContent> : Connection<TPrimitiveContent>
+	public class CoapConnection<TPrimitiveContent> : Connection<TPrimitiveContent>
 		where TPrimitiveContent : PrimitiveContent, new()
 	{
 		readonly Uri _iotApiUrl;
-        readonly CoAP.CoapClient _pnClient;
+		readonly CoAP.CoapClient _pnClient;
 
 		public X509Certificate? ClientCertificate { get; }
 
@@ -48,7 +48,7 @@ namespace Aetheros.OneM2M.Api
 		public async Task<T> GetResponseAsync<T>(CoAP.Request request)
 			where T : class, new()
 		{
-      Trace.WriteLine("\n>>>>>>>>>>>>>>>>");
+			Trace.WriteLine("\n>>>>>>>>>>>>>>>>");
 			Trace.WriteLine($"{request.CodeString} {request.URI}");
 			foreach (var option in request.GetOptions())
 				Trace.WriteLine($"{option.Name}: ({option.Type}) {option.Value ?? option.StringValue}");
@@ -178,7 +178,7 @@ namespace Aetheros.OneM2M.Api
 
 		class NotifyResource : CoAP.Server.Resources.Resource
 		{
-            readonly Func<CoAP.Server.Resources.CoapExchange, Task> _postHandler;
+			readonly Func<CoAP.Server.Resources.CoapExchange, Task> _postHandler;
 			
 			public NotifyResource(string name, Func<CoAP.Server.Resources.CoapExchange, Task> postHandler) : base(name) 
 			{

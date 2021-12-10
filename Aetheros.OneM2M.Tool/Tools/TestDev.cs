@@ -18,22 +18,21 @@ using System.Threading.Tasks;
 
 namespace GridNet.IoT.Client.Tools
 {
-    [Description("oneM2M demo")]
+	[Description("oneM2M demo")]
 	public class TestDev : UtilityBase
 	{
 		Uri _poaUrl = new Uri("coap://127.0.0.1:15683/notify");
 
-		readonly Connection.ConnectionConfiguration _connectionConfiguration = new Connection.ConnectionConfiguration(new Uri("coap://127.0.0.1:8110"));
+		readonly Connection.ConnectionConfiguration _connectionConfiguration = new Connection.ConnectionConfiguration();
 
 		string _AeId = "";
 		string _AeAppId = "Nra1.com.aos.iot";
 		string _AeAppName = "metersvc-smpl";
 
-        //string _AeCredential = "";//"8992O4AAEXYWY95O";
-        readonly string _RegPath = ".";
-        readonly string _MsPolicyPath = $"~/config-cnt";
-        readonly string _MsCommandsPath = $"~/command-cnt";
-        readonly string _ReadsContainerName = "data-cnt";
+		readonly string _RegPath = ".";
+		readonly string _MsPolicyPath = $"~/config-cnt";
+		readonly string _MsCommandsPath = $"~/command-cnt";
+		readonly string _ReadsContainerName = "data-cnt";
 
 		public TestDev()
 		{
@@ -116,6 +115,9 @@ namespace GridNet.IoT.Client.Tools
 
 		public override async Task Run(IList<string> args)
 		{
+			if (_connectionConfiguration.M2MUrl == null)
+				ShowUsage("CSE url is required", true);
+
 			CoAP.Log.LogManager.Level = CoAP.Log.LogLevel.Warning;
 
 			// configure a oneM2M CoAP connection
@@ -152,7 +154,7 @@ namespace GridNet.IoT.Client.Tools
 			})).URIList.SingleOrDefault();
 
 			if (inAeUrl == null)
-                ShowError($"Unable to find in-AE {_AeAppName}");
+				ShowError($"Unable to find in-AE {_AeAppName}");
 
 
 			var tsReadInterval = TimeSpan.FromDays(15);

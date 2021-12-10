@@ -20,10 +20,20 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="DotNetify.SignalR" Version="5.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="6.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Protocols.MessagePack" Version="6.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.SpaServices" Version="3.1.21" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0" />
+    <PackageReference Include="Microsoft.IdentityModel.Protocols.OpenIdConnect" Version="6.15.0" />
+    <PackageReference Include="Nito.AsyncEx" Version="5.1.2" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.15.0" />
     <PackageReference Include="System.Reactive" Version="5.0.0" />
     <PackageReference Include="AspNet.Security.OpenIdConnect.Server" Version="2.0.0" />
     <PackageReference Include="System.Reactive.Compatibility" Version="5.0.0" />
+    <PackageReference Include="System.Text.Encodings.Web" Version="6.0.0" />
+    <PackageReference Include="System.Text.Json" Version="6.0.0" />
     <PackageReference Include="TaskTupleAwaiter" Version="2.0.0" />    
   </ItemGroup>
   <ItemGroup>

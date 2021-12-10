@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 
 namespace Example.Web.Server.Services
 {
-    public class MyApplication
+	public class MyApplication
 	{
 		public Application<PrimitiveContent> Application { get; set; }
 
@@ -33,8 +33,8 @@ namespace Example.Web.Server.Services
 	{
 		public MyApplication App { get; }
 
-        readonly Dictionary<string, Meter> _meters = new Dictionary<string, Meter>();
-        readonly Task _startupTask;
+		readonly Dictionary<string, Meter> _meters = new Dictionary<string, Meter>();
+		readonly Task _startupTask;
 
 		public async Task<IReadOnlyDictionary<string, Meter>> GetMeters()
 		{
@@ -51,7 +51,7 @@ namespace Example.Web.Server.Services
 		public ModelContext(IOptions<WebOptions> opts)
 		{
 			var options = opts.Value;
-			var app = Application.RegisterAsync(options.M2M, options.AE, options.AE.UrlPrefix, options.CAUrl).Result;
+			var app = Application.RegisterAsync(options.M2M, options.AE, options.CAUrl).Result;
 
 			this.App = new MyApplication
 			{
@@ -93,7 +93,7 @@ namespace Example.Web.Server.Services
 #endif
 		}
 
-        readonly CancellationTokenSource _cts;
+		readonly CancellationTokenSource _cts;
 
 		public void Dispose()
 		{

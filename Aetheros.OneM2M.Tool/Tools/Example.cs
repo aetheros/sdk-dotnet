@@ -22,12 +22,12 @@ using System.Threading.Tasks;
 
 namespace GridNet.IoT.Client.Tools
 {
-    [Description("oneM2M demo")]
+	[Description("oneM2M demo")]
 	public class Example : UtilityBase
 	{
 #if USE_COAP
 		Uri _poaUrl = new Uri("coap://127.0.0.1:15683/notify");
-        readonly Uri _listenUrl = null;
+		readonly Uri _listenUrl = null;
 #else
 		Uri _poaUrl = new Uri("http://10.0.2.2:44346/notify");
 		Uri _listenUrl = new Uri($"http://0.0.0.0:44346");
@@ -57,10 +57,10 @@ namespace GridNet.IoT.Client.Tools
 		string _AeAppId = "Nra1.com.aos.iot";
 		string _AeAppName = "metersvc-smpl";
 #endif
-        //string _AeCredential = "";//"8992O4AAEXYWY95O";
-        readonly string _RegPath;
-        readonly string _MsPolicyPath;
-        readonly string _MsReadsPath;
+		//string _AeCredential = "";//"8992O4AAEXYWY95O";
+		readonly string _RegPath;
+		readonly string _MsPolicyPath;
+		readonly string _MsReadsPath;
 
 		public Example()
 		{

@@ -248,7 +248,7 @@ namespace Example.Web.Server.ViewModels
 			));
 		};
 
-        readonly Random _random = new Random();
+		readonly Random _random = new Random();
 
 		public Action<bool> AddData => _ =>
 		{

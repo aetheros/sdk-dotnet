@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace GridNet.IoT.Client
 {
-    public static class Program
+	public static class Program
 	{
 		public class UtilityInfo
 		{

@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace Aetheros.OneM2M.Api
 {
-    public class HttpConnection<TPrimitiveContent> : Connection<TPrimitiveContent>
+	public class HttpConnection<TPrimitiveContent> : Connection<TPrimitiveContent>
 		where TPrimitiveContent : PrimitiveContent, new()
 	{
 		readonly Uri _iotApiUrl;
@@ -205,7 +205,7 @@ namespace Aetheros.OneM2M.Api
 		{
 			var notificationContent = Connection.DeserializeJson<NotificationContent<TPrimitiveContent>>(body);
 			if (notificationContent == null)
-            {
+			{
 				Debug.WriteLine($"{nameof(ParseNotification)}: invalid json");
 				return null;
 			}

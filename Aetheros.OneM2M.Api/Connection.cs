@@ -31,7 +31,7 @@ done
 */
 namespace Aetheros.OneM2M.Api
 {
-    public abstract class Connection
+	public abstract class Connection
 	{
 		[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		public const string OneM2MResponseContentType = "application/vnd.onem2m-res+json";
@@ -49,12 +49,7 @@ namespace Aetheros.OneM2M.Api
 
 		public class ConnectionConfiguration : IConnectionConfiguration
 		{
-            public ConnectionConfiguration(Uri m2MUrl)
-            {
-                M2MUrl = m2MUrl;
-            }
-
-            public Uri M2MUrl { get; set; }
+			public Uri? M2MUrl { get; set; }
 			public string? CertificateFilename { get; set; }
 		}
 
@@ -140,18 +135,18 @@ namespace Aetheros.OneM2M.Api
 		readonly string _requestGuid = Guid.NewGuid().ToString("N");
 		public string NextRequestId => $"{_requestGuid}/{Interlocked.Increment(ref _nextRequestId)}";
 
-		public async Task<AE?> FindApplicationAsync(string inCse, string appId)
+		public async Task<AE?> FindApplicationAsync(ApplicationConfiguration appConfig)
 		{
 			var response = await GetResponseAsync(new RequestPrimitive<TPrimitiveContent>
 			{
 				Operation = Operation.Retrieve,
-				From = inCse,
-				To = inCse,
+				From = appConfig.UrlPrefix,
+				To = appConfig.UrlPrefix,
 				FilterCriteria = new FilterCriteria
 				{
 					FilterUsage = FilterUsage.Discovery,
 					ResourceType = new[] { ResourceType.AE },
-					Attribute = Connection.GetAttributes<AE>(_ => _.App_ID == appId),
+					Attribute = Connection.GetAttributes<AE>(_ => _.App_ID == appConfig.AppId),
 				}
 			});
 
@@ -162,14 +157,14 @@ namespace Aetheros.OneM2M.Api
 			var response2 = await GetResponseAsync(new RequestPrimitive<TPrimitiveContent>
 			{
 				Operation = Operation.Retrieve,
-				From = inCse,
+				From = appConfig.UrlPrefix,
 				To = aeUrl
 			});
 
 			return response2.AE;
 		}
 
-		public async Task<AE?> RegisterApplicationAsync(IApplicationConfiguration appConfig)
+		public async Task<AE?> RegisterApplicationAsync(ApplicationConfiguration appConfig)
 		{
 			var response = await GetResponseAsync(new RequestPrimitive<TPrimitiveContent>
 			{

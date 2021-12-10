@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
+using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -16,7 +17,7 @@ using System.Threading.Tasks;
 
 namespace GridNet.IoT.Client.Tools
 {
-    [Description("OneM2M retrieve/discovery")]
+	[Description("OneM2M retrieve/discovery")]
 	public class Get : UtilityBase
 	{
 		string _rqi;
@@ -41,7 +42,7 @@ namespace GridNet.IoT.Client.Tools
 				ShowUsage(exit: true);
 
 			if (!Uri.TryCreate(args[0], UriKind.Absolute, out Uri uri))
-                ShowError($"Invalid url: {args[0]}");
+				ShowError($"Invalid url: {args[0]}");
 
 			if (uri.Scheme.Equals("https", StringComparison.OrdinalIgnoreCase))
 			{
@@ -52,9 +53,9 @@ namespace GridNet.IoT.Client.Tools
 			}
 
 			if (string.IsNullOrWhiteSpace(_org))
-                ShowError($"Originator is required (--from)");
+				ShowError($"Originator is required (--from)");
 
-			var hostUri = new Uri(uri.GetLeftPart(UriPartial.Authority));
+			var hostUri = new Uri (uri.GetLeftPart(UriPartial.Authority));
 
 			var handler = new HttpClientHandler
 			{
@@ -67,51 +68,33 @@ namespace GridNet.IoT.Client.Tools
 				handler.ClientCertificates.Add(certificate);
 			}
 
-			string rqiPrefix = Guid.NewGuid().ToString("N").Substring(0, 6);
-
-			IEnumerable<Task<HttpResponseMessage>> Tasks()
-			{
-				for (long i = 0; i < _count; i++)
-				{
+			HttpClient client;
 #if true //DEBUG
-					var loggingHandler = new TraceMessageHandler(handler);
-					var client = verbose ? new HttpClient(loggingHandler) : new HttpClient();
+			var loggingHandler = new TraceMessageHandler(handler);
+			client = new HttpClient(loggingHandler);
 #else
-				var client = new HttpClient(handler);
+			client = new HttpClient(handler);
 #endif
-					client.Timeout = TimeSpan.FromMinutes(5);
-					client.DefaultRequestHeaders.Add("Accept", HttpConnection.OneM2MResponseContentType);
+			client.Timeout = TimeSpan.FromMinutes(5);
+			client.DefaultRequestHeaders.Add("Accept", Connection<Aetheros.Schema.OneM2M.PrimitiveContent>.OneM2MResponseContentType);
 
-					var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, uri);
-					var rqi = _rqi ?? $"{rqiPrefix}/{i}";
-					if (!verbose)
-						Console.WriteLine(rqi);
-					httpRequestMessage.Headers.Add("X-M2M-RI", rqi);
-					httpRequestMessage.Headers.Add("X-M2M-Origin", _org);
-					yield return client.SendAsync(httpRequestMessage);
-				}
-			}
+			var tasks = Enumerable.Range(0, _parallel).Select(i => {
+				var httpRequestMessage = new HttpRequestMessage(HttpMethod.Get, uri);
+				httpRequestMessage.Headers.Add("X-M2M-RI", _rqi ?? Guid.NewGuid().ToString("N"));
+				httpRequestMessage.Headers.Add("X-M2M-Origin", _org);
+				return client.SendAsync(httpRequestMessage);
+			});
 
 			//var responses = await tasks.WhenAll();
 			//var response = await client.SendAsync(httpRequestMessage);
 			//response.EnsureSuccessStatusCode();
 
-			foreach (var task in Tasks())
+			foreach (var task in tasks)
 			{
 				var response = await task;
-				if (verbose)
-					Console.WriteLine("===========");
+				Console.WriteLine("===========");
 				var responseBody = await response.Content.ReadAsStringAsync();
-				if (verbose)
-				{
-					Console.WriteLine($"{(int) response.StatusCode} {response.ReasonPhrase}");
-					var headers = response.Headers;
-					foreach (var header in headers)
-						foreach (var value in header.Value)
-							Console.WriteLine($"{header.Key}: {value}");
-					Console.WriteLine("");
-					Console.WriteLine(responseBody);
-				}
+				Console.WriteLine(responseBody);
 			}
 		}
 	}

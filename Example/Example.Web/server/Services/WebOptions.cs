@@ -29,14 +29,9 @@ namespace Example.Web.Server.Services
 		}
 
 		[Serializable]
-		public class AppConfig : Aetheros.OneM2M.Api.IApplicationConfiguration
+		public class AppConfig : Aetheros.OneM2M.Api.ApplicationConfiguration
 		{
-			public string AppId { get; set; }
-			public string AppName { get; set; }
-			public string CredentialId { get; set; }
-			public Uri PoaUrl { get; set; }
 			public Uri PrivatePoaUrl { get; set; }
-			public string UrlPrefix { get; set; }
 		}
 	}
 }

@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 
 namespace Example.Web.Server.ViewModels
 {
-    [Authorize]
+	[Authorize]
 	public class MeterList : BaseVM, DotNetify.Routing.IRoutable
 	{
 		public string Meters_itemKey => nameof(Meter.MeterId);
@@ -75,10 +75,10 @@ namespace Example.Web.Server.ViewModels
 
 				lock (objLock)
 				{
-                    return new List<MeterListRow>(Get<MeterListRow[]>("Meters") ?? Array.Empty<MeterListRow>())
-                    {
-                        new MeterListRow(meter.MeterId, stateStr, route)
-                    }.ToArray();
+					return new List<MeterListRow>(Get<MeterListRow[]>("Meters") ?? Array.Empty<MeterListRow>())
+					{
+						new MeterListRow(meter.MeterId, stateStr, route)
+					}.ToArray();
 				}
 			}
 

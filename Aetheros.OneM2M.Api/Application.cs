@@ -9,6 +9,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Security;
 using System.Reactive.Linq;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
@@ -16,13 +17,13 @@ using System.Threading.Tasks;
 
 namespace Aetheros.OneM2M.Api
 {
-	public interface IApplicationConfiguration
+	public class ApplicationConfiguration
 	{
-		string? AppId { get; }
-		string? AppName { get; }
-		string? CredentialId { get; }
-		Uri? PoaUrl { get; }
-		string? UrlPrefix { get; }
+		public string? AppId { get; set; }
+		public string? AppName { get; set; }
+		public string? CredentialId { get; set; }
+		public Uri? PoaUrl { get; set; }
+		public string? UrlPrefix { get; set; } = "/PN_CSE";
 	}
 
 	public class Application<TPrimitiveContent>
@@ -44,7 +45,7 @@ namespace Aetheros.OneM2M.Api
 		}
 
 		
-		public Application(Connection<TPrimitiveContent> con, string aeId, IApplicationConfiguration config)
+		public Application(Connection<TPrimitiveContent> con, string aeId, ApplicationConfiguration config)
 		{
 			Connection = con;
 			AppId = config.AppId ?? throw new ArgumentNullException("config.AppId");
@@ -357,100 +358,130 @@ namespace Aetheros.OneM2M.Api
 
 
 
+		public static async Task<X509Certificate2> GenerateSigningCertificateAsync(Uri caUri, AE ae, string certificateFilename)
+		{
+			var tokenId = ae.Labels?.FirstOrDefault(l => l.StartsWith("token="))?.Substring("token=".Length);
+			if (string.IsNullOrWhiteSpace(tokenId))
+				throw new InvalidDataException("registered AE is missing 'token' label");
 
+			var csrUri = new Uri(caUri, "CertificateSigning");
+			var ccrUri = new Uri(caUri, "CertificateConfirm");
+
+			using var privateKey = ECDsa.Create();
+			var certificateRequest = new CertificateRequest(
+				new X500DistinguishedName($"CN={ae.App_ID}"),
+				privateKey,
+				HashAlgorithmName.SHA256);
+
+			certificateRequest.CertificateExtensions.Add(
+				new X509KeyUsageExtension(
+					X509KeyUsageFlags.DigitalSignature | X509KeyUsageFlags.KeyEncipherment,
+					false));
+
+			certificateRequest.CertificateExtensions.Add(
+				new X509EnhancedKeyUsageExtension(
+					new OidCollection
+					{
+						new Oid("1.3.6.1.5.5.7.3.1"), // serverAuth : TLS Web server authentication
+						new Oid("1.3.6.1.5.5.7.3.2"), // clientAuth : TLS Web client authentication
+						new Oid("1.3.6.1.5.5.7.3.3"), // codeSigning : Code signing
+					},
+					true));
+
+			var sanBuilder = new SubjectAlternativeNameBuilder();
+			sanBuilder.AddDnsName(ae.App_ID);
+			sanBuilder.AddDnsName(ae.AE_ID);
+			certificateRequest.CertificateExtensions.Add(sanBuilder.Build());
+
+			//Debug.WriteLine(certificateRequest.ToPemString());
+			var signingRequest = new CertificateSigningRequestBody
+			{
+				Request = new CertificateSigningRequest
+				{
+					Application = new Aetheros.OneM2M.Api.Registration.Application
+					{
+						AeId = ae.AE_ID,
+						TokenId = tokenId
+					},
+					X509Request = certificateRequest.ToPemString(X509SignatureGenerator.CreateForECDsa(privateKey)),
+				}
+			};
+
+
+			var sslOptions = new SslClientAuthenticationOptions
+			{
+				RemoteCertificateValidationCallback = delegate { return true; },
+				CipherSuitesPolicy = new CipherSuitesPolicy(Enum.GetValues<TlsCipherSuite>())
+			};
+			var socketsHttpHandler = new SocketsHttpHandler { SslOptions = sslOptions };			
+			var loggingHandler = new TraceMessageHandler(socketsHttpHandler);
+
+			using var client = new HttpClient(loggingHandler);
+
+			CertificateSigningResponseBody signingResponse;
+			using (var httpSigningResponse = await client.PostJsonAsync(csrUri, signingRequest))
+				signingResponse = await httpSigningResponse.DeserializeAsync<CertificateSigningResponseBody>();
+			if (signingResponse.Response == null)
+				throw new InvalidDataException("CertificateSigningResponse does not contain a response");
+			if (signingResponse.Response.X509Certificate == null)
+				throw new InvalidDataException("CertificateSigningResponse does not contain a certificate");
+
+			var signedCert = AosUtils.CreateX509Certificate(signingResponse.Response.X509Certificate);
+
+			var confirmationRequest = new ConfirmationRequestBody
+			{
+				Request = new ConfirmationRequest
+				{
+					CertificateHash = Convert.ToBase64String(signedCert.GetCertHash(HashAlgorithmName.SHA256)),
+					CertificateId = new CertificateId
+					{
+						Issuer = signedCert.Issuer,
+						SerialNumber = int.Parse(signedCert.SerialNumber, System.Globalization.NumberStyles.HexNumber).ToString()
+					},
+					TransactionId = signingResponse.Response.TransactionId,
+				}
+			};
+
+			using (var httpConfirmationResponse = await client.PostJsonAsync(ccrUri, confirmationRequest))
+			{
+				var confirmationResponse = await httpConfirmationResponse.DeserializeAsync<ConfirmationResponseBody>();
+				if (confirmationResponse.Response == null)
+					throw new InvalidDataException("Invalid ConfirmationResponse");
+
+				if (confirmationResponse.Response.Status != CertificateSigningStatus.Accepted)
+					throw new InvalidDataException("the CSR was not accepted");
+
+				//if (string.IsNullOrWhiteSpace(confirmationResponse.Response.Certificate))
+				//	throw new InvalidDataException("no certificate was returned");
+
+				//var caCert = AosUtils.CreateX509Certificate(confirmationResponse.Response.Certificate);
+
+			}
+
+			using (var pubPrivEphemeral = signedCert.CopyWithPrivateKey(privateKey))
+				await File.WriteAllBytesAsync(certificateFilename, pubPrivEphemeral.Export(X509ContentType.Cert));
+
+			return signedCert;
+		}
 
 		// TODO: find a proper place for this
-		public static async Task<Application<TPrimitiveContent>> RegisterAsync(Connection.IConnectionConfiguration m2mConfig, IApplicationConfiguration appConfig, string inCse, Uri? caUri = null)
+		public static async Task<Application<TPrimitiveContent>> RegisterAsync(Connection.IConnectionConfiguration m2mConfig, ApplicationConfiguration appConfig, Uri? caUri = null)
 		{
 			var urlPrefix = appConfig.UrlPrefix ?? throw new ArgumentNullException("appConfig.UrlPrefix");
 
 			var con = new HttpConnection<TPrimitiveContent>(m2mConfig);
 
 			var appId = appConfig.AppId ?? throw new ArgumentNullException("appConfig.AppId");
-			var ae = await con.FindApplicationAsync(inCse, appId) ?? await con.RegisterApplicationAsync(appConfig);
+			var ae = await con.FindApplicationAsync(appConfig) ?? await con.RegisterApplicationAsync(appConfig);
 			if (ae == null)
 				throw new InvalidOperationException("Unable to register application");
 
 			if (con.ClientCertificate == null && caUri != null)
 			{
 				var certificateFilename = m2mConfig.CertificateFilename ?? throw new ArgumentNullException("m2mConfig.CertificateFilename");
-				var m2mUrl = m2mConfig.M2MUrl ?? throw new ArgumentNullException("m2mConfig.M2MUrl");
 
-				var csrUri = new Uri(caUri, "CertificateSigning");
-				var ccrUri = new Uri(caUri, "CertificateConfirm");
-
-				var tokenId = ae.Labels?.FirstOrDefault(l => l.StartsWith("token="))?.Substring("token=".Length);
-				if (string.IsNullOrWhiteSpace(tokenId))
-					throw new InvalidDataException("registered AE is missing 'token' label");
-
-				using var privateKey = RSA.Create(4096);
-				var certificateRequest = new CertificateRequest(
-					$"CN={appConfig.AppId}",
-					privateKey,
-					HashAlgorithmName.SHA256,
-					RSASignaturePadding.Pkcs1);
-
-				var sanBuilder = new SubjectAlternativeNameBuilder();
-				sanBuilder.AddDnsName(appConfig.AppId);
-				sanBuilder.AddDnsName(ae.AE_ID);
-				certificateRequest.CertificateExtensions.Add(sanBuilder.Build());
-
-				//Debug.WriteLine(certificateRequest.ToPemString());
-				var signingRequest = new CertificateSigningRequestBody
-				{
-					Request = new CertificateSigningRequest
-					{
-						Application = new Aetheros.OneM2M.Api.Registration.Application
-						{
-							AeId = ae.AE_ID,
-							TokenId = tokenId
-						},
-						X509Request = certificateRequest.ToPemString(),
-					}
-				};
-
-				using var handler = new HttpClientHandler
-				{
-					ServerCertificateCustomValidationCallback = (message, cert, chain, errors) => true
-				};
-				using var client = new HttpClient(handler);
-
-				CertificateSigningResponseBody signingResponse;
-				using (var httpSigningResponse = await client.PostJsonAsync(csrUri, signingRequest))
-					signingResponse = await httpSigningResponse.DeserializeAsync<CertificateSigningResponseBody>();
-				if (signingResponse.Response == null)
-					throw new InvalidDataException("CertificateSigningResponse does not contain a response");
-				if (signingResponse.Response.X509Certificate == null)
-					throw new InvalidDataException("CertificateSigningResponse does not contain a certificate");
-
-				var signedCert = AosUtils.CreateX509Certificate(signingResponse.Response.X509Certificate);
-
-				var confirmationRequest = new ConfirmationRequestBody
-				{
-					Request = new ConfirmationRequest
-					{
-						CertificateHash = Convert.ToBase64String(signedCert.GetCertHash(HashAlgorithmName.SHA256)),
-						CertificateId = new CertificateId
-						{
-							Issuer = signedCert.Issuer,
-							SerialNumber = int.Parse(signedCert.SerialNumber, System.Globalization.NumberStyles.HexNumber).ToString()
-						},
-						TransactionId = signingResponse.Response.TransactionId,
-					}
-				};
-
-				using (var httpConfirmationResponse = await client.PostJsonAsync(ccrUri, confirmationRequest))
-				{
-					var confirmationResponse = await httpConfirmationResponse.DeserializeAsync<ConfirmationResponseBody>();
-					if (confirmationResponse.Response == null)
-						throw new InvalidDataException("Invalid ConfirmationResponse");
-					Debug.Assert(confirmationResponse.Response.Status == CertificateSigningStatus.Accepted);
-				}
-
-				using (var pubPrivEphemeral = signedCert.CopyWithPrivateKey(privateKey))
-					await File.WriteAllBytesAsync(m2mConfig.CertificateFilename, pubPrivEphemeral.Export(X509ContentType.Cert));
-
-				con = new HttpConnection<TPrimitiveContent>(m2mUrl, signedCert);
+				var signedCert = await GenerateSigningCertificateAsync(caUri, ae, certificateFilename);
+				con = new HttpConnection<TPrimitiveContent>(m2mConfig.M2MUrl, signedCert);
 			}
 
 			return new Application<TPrimitiveContent>(con, appConfig.AppId, ae.AE_ID, urlPrefix, appConfig.PoaUrl);
@@ -460,21 +491,12 @@ namespace Aetheros.OneM2M.Api
 	public class Application : Application<PrimitiveContent>
 	{
 
-		public class Configuration : IApplicationConfiguration
+		public class Configuration : ApplicationConfiguration
 		{
-			public string? AppId { get; set; }
-
-			public string? AppName { get; set; }
-
-			public string? CredentialId { get; set; }
-
-			public Uri? PoaUrl { get; set; }
-
-			public string? UrlPrefix { get; set; }
 			public string? AEId { get; set; }
 		}
 
 		public Application(Connection<PrimitiveContent> con, string appId, string aeId, string urlPrefix, Uri? poaUrl = null) : base(con, appId, aeId, urlPrefix, poaUrl) {}
-		public Application(Connection<PrimitiveContent> con, string aeId, IApplicationConfiguration config) : base (con, aeId, config) {}
+		public Application(Connection<PrimitiveContent> con, string aeId, ApplicationConfiguration config) : base (con, aeId, config) {}
 	}
 }

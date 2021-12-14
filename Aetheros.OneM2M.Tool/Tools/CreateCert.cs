@@ -15,6 +15,10 @@ using System.Reactive.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
+//
+// example:
+//   dotnet run -- CreateCert -c http://policynet-m2m:21300/ -C https://policynet-ra:18090/ -i C123456789x0001 -t 00000000-0000-0000-0000-000000000000 -o cert.pem
+//
 
 namespace GridNet.IoT.Client.Tools
 {

@@ -2,7 +2,7 @@
 
 ## Installation
 
-* Install .NET SDK 5
+* Install .NET SDK 6
 
   **Centos 7**
   ```

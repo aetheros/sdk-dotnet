@@ -7,7 +7,7 @@
   **Centos 7**
   ```
   sudo rpm -Uvh https://packages.microsoft.com/config/centos/7/packages-microsoft-prod.rpm
-  sudo yum install -y dotnet-sdk-5.0
+  sudo yum install -y dotnet-sdk-6.0
   ```
 
   **Ubuntu**

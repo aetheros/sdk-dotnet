@@ -369,7 +369,7 @@ namespace Aetheros.OneM2M.Api
 
 			using var privateKey = ECDsa.Create();
 			var certificateRequest = new CertificateRequest(
-				new X500DistinguishedName($"CN={ae.App_ID}"),
+				new X500DistinguishedName($"CN={ae.AE_ID}"),
 				privateKey,
 				HashAlgorithmName.SHA256);
 
@@ -464,7 +464,7 @@ namespace Aetheros.OneM2M.Api
 					certificateFilename,
 					new String(PemEncoding.Write("PRIVATE KEY", privateKey.ExportPkcs8PrivateKey())) +
 					"\r\n" +
-					new String(PemEncoding.Write("PUBLIC KEY", pubPrivEphemeral.Export(X509ContentType.Cert)))
+					new String(PemEncoding.Write("CERTIFICATE", pubPrivEphemeral.Export(X509ContentType.Cert)))
 				);
 			}
 

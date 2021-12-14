@@ -50,5 +50,5 @@ dotnet run
 ```
 cd Aetheros.OneM2M.Tool
 dotnet run
-dotnet run RegisterAE --help
+dotnet run -- RegisterAE --help
 ```

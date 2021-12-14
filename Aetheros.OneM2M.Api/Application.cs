@@ -376,7 +376,7 @@ namespace Aetheros.OneM2M.Api
 			certificateRequest.CertificateExtensions.Add(
 				new X509KeyUsageExtension(
 					X509KeyUsageFlags.DigitalSignature | X509KeyUsageFlags.KeyEncipherment,
-					false));
+					true));
 
 			certificateRequest.CertificateExtensions.Add(
 				new X509EnhancedKeyUsageExtension(
@@ -386,7 +386,7 @@ namespace Aetheros.OneM2M.Api
 						new Oid("1.3.6.1.5.5.7.3.2"), // clientAuth : TLS Web client authentication
 						new Oid("1.3.6.1.5.5.7.3.3"), // codeSigning : Code signing
 					},
-					true));
+					false));
 
 			var sanBuilder = new SubjectAlternativeNameBuilder();
 			//sanBuilder.AddDnsName(ae.App_ID);

@@ -389,8 +389,10 @@ namespace Aetheros.OneM2M.Api
 					true));
 
 			var sanBuilder = new SubjectAlternativeNameBuilder();
-			sanBuilder.AddDnsName(ae.App_ID);
-			sanBuilder.AddDnsName(ae.AE_ID);
+			//sanBuilder.AddDnsName(ae.App_ID);
+			//sanBuilder.AddDnsName(ae.AE_ID);
+			sanBuilder.AddUri(new Uri($"urn://policynetiot.com/{ae.AE_ID}"));
+			sanBuilder.AddUri(new Uri($"urn:{ae.App_ID}"));
 			certificateRequest.CertificateExtensions.Add(sanBuilder.Build());
 
 			//Debug.WriteLine(certificateRequest.ToPemString());
@@ -451,15 +453,20 @@ namespace Aetheros.OneM2M.Api
 				if (confirmationResponse.Response.Status != CertificateSigningStatus.Accepted)
 					throw new InvalidDataException("the CSR was not accepted");
 
-				//if (string.IsNullOrWhiteSpace(confirmationResponse.Response.Certificate))
-				//	throw new InvalidDataException("no certificate was returned");
-
+				if (string.IsNullOrWhiteSpace(confirmationResponse.Response.Certificate))
+					throw new InvalidDataException("no certificate was returned");
 				//var caCert = AosUtils.CreateX509Certificate(confirmationResponse.Response.Certificate);
-
 			}
 
 			using (var pubPrivEphemeral = signedCert.CopyWithPrivateKey(privateKey))
-				await File.WriteAllBytesAsync(certificateFilename, pubPrivEphemeral.Export(X509ContentType.Cert));
+			{
+				await File.WriteAllTextAsync(
+					certificateFilename,
+					new String(PemEncoding.Write("PRIVATE KEY", privateKey.ExportPkcs8PrivateKey())) +
+					"\r\n" +
+					new String(PemEncoding.Write("PUBLIC KEY", pubPrivEphemeral.Export(X509ContentType.Cert)))
+				);
+			}
 
 			return signedCert;
 		}

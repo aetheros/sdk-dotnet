@@ -19,7 +19,6 @@
 	  <RootNamespace>GridNet.IoT.Client</RootNamespace>
     
     <PublishSingleFile>true</PublishSingleFile>
-    <SelfContained>true</SelfContained>
     <PublishReadyToRun>true</PublishReadyToRun>
     <PublishTrimmed>true</PublishTrimmed>
   </PropertyGroup>
@@ -27,6 +26,7 @@
   <PropertyGroup Condition="'$(Configuration)'=='Release'">
     <DebugSymbols>false</DebugSymbols>
     <DebugType>none</DebugType>
+    <SelfContained>true</SelfContained>
   </PropertyGroup>
 
   <ItemGroup>

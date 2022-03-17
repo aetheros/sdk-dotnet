@@ -12,6 +12,10 @@
 
   **Ubuntu**
   ```
+  source /etc/os-release \
+    wget -O /tmp/packages-microsoft-prod.deb "https://packages.microsoft.com/config/ubuntu/${VERSION_ID}/packages-microsoft-prod.deb" \
+    sudo dpkg -i /tmp/packages-microsoft-prod.deb
+
   sudo apt-get update; \
     sudo apt-get install -y apt-transport-https && \
     sudo apt-get update && \

@@ -46,10 +46,11 @@ namespace GridNet.IoT.Client.Tools
 
 			if (uri.Scheme.Equals("https", StringComparison.OrdinalIgnoreCase))
 			{
-				if (string.IsNullOrWhiteSpace(_cert))
-					;//ShowError($"Client Certificate (--cert) is required when using https");
-				else if (!File.Exists(_cert))
-					ShowError($"Not Found: {_cert}");
+				if (!string.IsNullOrWhiteSpace(_cert))
+				{
+					if (!File.Exists(_cert))
+						ShowError($"Not Found: {_cert}");
+				}
 			}
 
 			if (string.IsNullOrWhiteSpace(_org))

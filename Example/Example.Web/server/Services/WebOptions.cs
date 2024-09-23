@@ -24,7 +24,7 @@ namespace Example.Web.Server.Services
 		[Serializable]
 		public class ConnectionConfig : Aetheros.OneM2M.Api.Connection.IConnectionConfiguration
 		{
-			public Uri M2MUrl { get; set; }
+			public Uri M2MUrl { get; init; }
 			public string CertificateFilename { get; set; } = "cert.pfx";
 		}
 

@@ -49,7 +49,7 @@ namespace Aetheros.OneM2M.Api
 
 		public class ConnectionConfiguration : IConnectionConfiguration
 		{
-			public Uri? M2MUrl { get; set; }
+			public required Uri M2MUrl { get; init; }
 			public string? CertificateFilename { get; set; }
 		}
 

@@ -2,6 +2,8 @@ import 'chartjs-plugin-streaming';
 import * as React from "react";
 import { Bar } from 'react-chartjs-2';
 
+import { InteractionModeMap } from 'react-chartjs-2';
+
 export type DataSummaryPoint = {
 	x: string;	// time
 	y: number;	// value
@@ -47,15 +49,15 @@ export const DataSummationChart = (class DataSummationChartComponent extends Rea
 				barThickness: 15,
 			},
 			scales: {
-				xAxes: [{
-					type: 'realtime',
+				xAxis: {
+					type: 'time',
 					realtime: {
 						duration: this.props.summationWindow * 60 * 1000,
 						delay: 2000,
 					},
 					distribution: 'linear',
-				}],
-				yAxes: [{
+				},
+				yAxis: {
 					scaleLabel: {
 						display: true,
 						labelString: 'US Gal'
@@ -63,14 +65,14 @@ export const DataSummationChart = (class DataSummationChartComponent extends Rea
 					ticks: {
 						beginAtZero: true,
 					},
-				}]
+				}
 			},
 			tooltips: {
-				mode: 'nearest',
+				mode: InteractionModeMap.nearest,
 				intersect: false
 			},
 			hover: {
-				mode: 'nearest',
+				mode: InteractionModeMap.nearest,
 				intersect: false
 			},
 			maintainAspectRatio: false

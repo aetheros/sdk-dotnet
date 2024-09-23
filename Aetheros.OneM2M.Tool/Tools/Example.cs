@@ -26,28 +26,22 @@ namespace GridNet.IoT.Client.Tools
 	public class Example : UtilityBase
 	{
 #if USE_COAP
+		Uri _m2mUrl = new Uri("coap://127.0.0.1:8110");
 		Uri _poaUrl = new Uri("coap://127.0.0.1:15683/notify");
 		readonly Uri _listenUrl = null;
 #else
+		Uri _m2mUrl = new Uri("https://api.piersh-m2m.corp.grid-net.com/");
 		Uri _poaUrl = new Uri("http://10.0.2.2:44346/notify");
 		Uri _listenUrl = new Uri($"http://0.0.0.0:44346");
 #endif
 
 		class ConnectionConfiguration : Connection.IConnectionConfiguration
 		{
-			public Uri M2MUrl { get; set; }
-			public string CertificateFilename { get; set; }
+			public Uri M2MUrl { get; init; }
+		  public string CertificateFilename { get; set; }
 		}
 
-		readonly ConnectionConfiguration _connectionConfiguration = new ConnectionConfiguration
-		{
-#if USE_COAP
-			//M2MUrl = new Uri("coap://192.168.56.1:8110/PN_CSE"),
-			M2MUrl = new Uri("coap://127.0.0.1:8110"),
-#else
-			M2MUrl = new Uri("https://api.piersh-m2m.corp.grid-net.com/"),
-#endif
-		};
+		ConnectionConfiguration _connectionConfiguration;
 
 		string _AeId = "";
 #if false
@@ -74,7 +68,7 @@ namespace GridNet.IoT.Client.Tools
 
 		public override OptionSet Options => new OptionSet
 		{
-			{ "c|cse=", "The URL to the CSE", v => _connectionConfiguration.M2MUrl = new Uri(v, UriKind.Absolute) },
+			{ "c|cse=", "The URL to the CSE", v => _m2mUrl = new Uri(v, UriKind.Absolute) },
 			{ "p|poa=", "The remote POA (point of access) url", v => _poaUrl = new Uri(v, UriKind.Absolute) },
 #if !USE_COAP
 			{ "l|listen=", "The local POA callback url", v => _listenUrl = new Uri(v, UriKind.Absolute) },
@@ -220,6 +214,8 @@ namespace GridNet.IoT.Client.Tools
 
 		public override async Task Run(IList<string> args)
 		{
+			_connectionConfiguration = new ConnectionConfiguration{ M2MUrl = _m2mUrl };
+
 			Task hostTask;
 			object server;
 

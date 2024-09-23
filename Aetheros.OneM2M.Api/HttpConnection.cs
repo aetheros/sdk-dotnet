@@ -25,7 +25,7 @@ namespace Aetheros.OneM2M.Api
 		public HttpConnection(Connection.IConnectionConfiguration config)
 			: this(config.M2MUrl, config.CertificateFilename) { }
 
-		public HttpConnection(Uri m2mUrl, string certificateFilename)
+		public HttpConnection(Uri m2mUrl, string? certificateFilename)
 			: this(m2mUrl, AosUtils.LoadCertificate(certificateFilename)) { }
 
 		public HttpConnection(Uri m2mUrl, X509Certificate? certificate = null)

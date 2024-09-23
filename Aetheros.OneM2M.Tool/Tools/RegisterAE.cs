@@ -21,7 +21,8 @@ namespace GridNet.IoT.Client.Tools
 	[Description("register a new IN-AE resource")]
 	public class RegisterAE : UtilityBase
 	{
-		readonly Connection.ConnectionConfiguration _connectionConfiguration = new Connection.ConnectionConfiguration();
+		Uri _m2mUrl;
+		Connection.ConnectionConfiguration _connectionConfiguration;
 
 		string _AeId;
 		string _AeAppId;
@@ -35,7 +36,7 @@ namespace GridNet.IoT.Client.Tools
 
 		public override OptionSet Options => new OptionSet
 		{
-			{ "c|cse=", "The URL to the CSE", v => _connectionConfiguration.M2MUrl = new Uri(v, UriKind.Absolute) },
+			{ "c|cse=", "The URL to the CSE", v => _m2mUrl = new Uri(v, UriKind.Absolute) },
 			{ "a|appid=", "The App Id", v => _AeAppId = v },
 			{ "n|name=", "The App Name", v => _AeAppName = v },
 			{ "p|poa=", "The remote POA (point of access) url", v => _poaUrl = new Uri(v, UriKind.Absolute) },
@@ -47,7 +48,7 @@ namespace GridNet.IoT.Client.Tools
 
 		public override async Task Run(IList<string> args)
 		{
-			if (_connectionConfiguration.M2MUrl == null)
+			if (_m2mUrl == null)
 				ShowUsage("CSE url is required", true);
 
 			if (string.IsNullOrWhiteSpace(_AeAppId))
@@ -55,6 +56,8 @@ namespace GridNet.IoT.Client.Tools
 
 			if (string.IsNullOrWhiteSpace(_AeAppName))
 				ShowUsage("App Name is required", true);
+
+			_connectionConfiguration = new Connection.ConnectionConfiguration{ M2MUrl = _m2mUrl };
 
 			// configure a oneM2M CoAP connection
 			var connection = new HttpConnection(_connectionConfiguration);

@@ -25,11 +25,10 @@ namespace GridNet.IoT.Client.Tools
 	[Description("create and sign a certificate")]
 	public class CreateCert : UtilityBase
 	{
-		readonly Connection.ConnectionConfiguration _connectionConfiguration = new Connection.ConnectionConfiguration();
+		Uri _m2mUrl;
+		Connection.ConnectionConfiguration _connectionConfiguration;
 
 		string _AeId;
-		string _AeAppId;
-		Uri _poaUrl;
 		Uri _CAUri;
 		string _token;
 		string _certificateFilename;
@@ -41,7 +40,7 @@ namespace GridNet.IoT.Client.Tools
 
 		public override OptionSet Options => new OptionSet
 		{
-			{ "c|cse=", "The URL to the CSE", v => _connectionConfiguration.M2MUrl = new Uri(v, UriKind.Absolute) },
+			{ "c|cse=", "The URL to the CSE", v => _m2mUrl = new Uri(v, UriKind.Absolute) },
 			{ "C|CA=", "The URL to the CA", v => _CAUri = new Uri(v, UriKind.Absolute) },
 			{ "i|aeid=", "The existing AE Id", v => _AeId = v },
 			{ "t|token=", "The AE's security Token", v => _token = v },
@@ -52,7 +51,7 @@ namespace GridNet.IoT.Client.Tools
 
 		public override async Task Run(IList<string> args)
 		{
-			if (_connectionConfiguration.M2MUrl == null)
+			if (_m2mUrl == null)
 				ShowUsage("CSE url is required", true);
 
 			if (_CAUri == null)
@@ -66,6 +65,8 @@ namespace GridNet.IoT.Client.Tools
 
 			if (string.IsNullOrWhiteSpace(_certificateFilename))
 				ShowUsage("Certificate Filename required", true);
+
+			_connectionConfiguration = new Connection.ConnectionConfiguration{ M2MUrl = _m2mUrl };
 
 			// configure a oneM2M CoAP connection
 			var connection = new HttpConnection(_connectionConfiguration);

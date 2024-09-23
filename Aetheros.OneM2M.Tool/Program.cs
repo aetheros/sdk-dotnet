@@ -40,7 +40,7 @@ namespace GridNet.IoT.Client
 
 		static void DumpOptions()
 		{
-			Console.Error.WriteLine($"usage: {System.IO.Path.GetFileNameWithoutExtension(Assembly.GetEntryAssembly().Location)} <command> [<options>]");
+			Console.Error.WriteLine($"usage: {Process.GetCurrentProcess().ProcessName} <command> [<options>]");
 			DumpCommands();
 		}
 

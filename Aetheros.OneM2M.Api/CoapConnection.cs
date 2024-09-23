@@ -195,7 +195,7 @@ namespace Aetheros.OneM2M.Api
 			new NotifyResource(name, this.HandleNotificationAsync);
 
 
-		public async Task HandleNotificationAsync(CoAP.Server.Resources.CoapExchange exchange)
+		public Task HandleNotificationAsync(CoAP.Server.Resources.CoapExchange exchange)
 		{
 			var request = exchange.Request;
 			var body = request.PayloadString;
@@ -231,6 +231,8 @@ namespace Aetheros.OneM2M.Api
 				//response.SetOption(Option.Create((CoAP.OptionType) OneM2mRequestOptions.RQI, notification.RequestIdentifier));
 				exchange.Respond(response);
 			}
+
+			return Task.CompletedTask;
 		}
 
 		Notification<TPrimitiveContent>? ParseNotification(CoAP.Request request)
@@ -329,7 +331,7 @@ namespace Aetheros.OneM2M.Api
 			return tcs.Task;
 		}
 
-		public static async Task<T> DeserializeAsync<T>(this CoAP.Response response)
+		public static Task<T> DeserializeAsync<T>(this CoAP.Response response)
 			where T : class, new()
 		{
 			if (!Code.IsSuccess(response.Code))
@@ -339,8 +341,10 @@ namespace Aetheros.OneM2M.Api
 			if (string.IsNullOrWhiteSpace(body))
 				throw new InvalidDataException("An empty response was returned");
 
-			return Connection.DeserializeJson<T>(body)
+			var result = Connection.DeserializeJson<T>(body)
 				?? throw new InvalidDataException($"The response did not match Type '{typeof(T).Name}'");
+
+			return Task.FromResult(result);
 		}
 	}
 

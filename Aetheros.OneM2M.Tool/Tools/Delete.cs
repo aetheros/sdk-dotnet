@@ -21,7 +21,6 @@ namespace GridNet.IoT.Client.Tools
 		string _rqi;
 		string _org;
 		string _cert;
-		int _parallel = 1;
 
 		public override OptionSet Options => new OptionSet
 		{
@@ -42,10 +41,11 @@ namespace GridNet.IoT.Client.Tools
 
 			if (uri.Scheme.Equals("https", StringComparison.OrdinalIgnoreCase))
 			{
-				if (string.IsNullOrWhiteSpace(_cert))
-					;//ShowError($"Client Certificate (--cert) is required when using https");
-				else if (!File.Exists(_cert))
-					ShowError($"Not Found: {_cert}");
+				if (!string.IsNullOrWhiteSpace(_cert))
+				{
+					if (!File.Exists(_cert))
+						ShowError($"Not Found: {_cert}");
+				}
 			}
 
 			if (string.IsNullOrWhiteSpace(_org))
@@ -61,7 +61,8 @@ namespace GridNet.IoT.Client.Tools
 			if (_cert != null)
 			{
 				var certificate = AosUtils.LoadCertificate(_cert);
-				handler.ClientCertificates.Add(certificate);
+				if (certificate != null)
+					handler.ClientCertificates.Add(certificate);
 			}
 
 			HttpClient client;

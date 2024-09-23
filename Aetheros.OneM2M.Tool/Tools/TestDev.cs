@@ -23,7 +23,8 @@ namespace GridNet.IoT.Client.Tools
 	{
 		Uri _poaUrl = new Uri("coap://127.0.0.1:15683/notify");
 
-		readonly Connection.ConnectionConfiguration _connectionConfiguration = new Connection.ConnectionConfiguration();
+		Uri _m2mUrl;
+		Connection.ConnectionConfiguration _connectionConfiguration;
 
 		string _AeId = "";
 		string _AeAppId = "Nra1.com.aos.iot";
@@ -43,7 +44,7 @@ namespace GridNet.IoT.Client.Tools
 
 		public override OptionSet Options => new OptionSet
 		{
-			{ "c|cse=", "The URL to the CSE", v => _connectionConfiguration.M2MUrl = new Uri(v, UriKind.Absolute) },
+			{ "c|cse=", "The URL to the CSE", v => _m2mUrl = new Uri(v, UriKind.Absolute) },
 			{ "p|poa=", "The remote POA (point of access) url", v => _poaUrl = new Uri(v, UriKind.Absolute) },
 #if !USE_COAP
 			{ "l|listen=", "The local POA callback url", v => _listenUrl = new Uri(v, UriKind.Absolute) },
@@ -115,8 +116,10 @@ namespace GridNet.IoT.Client.Tools
 
 		public override async Task Run(IList<string> args)
 		{
-			if (_connectionConfiguration.M2MUrl == null)
+			if (_m2mUrl == null)
 				ShowUsage("CSE url is required", true);
+
+			_connectionConfiguration = new Connection.ConnectionConfiguration{ M2MUrl = _m2mUrl };
 
 			CoAP.Log.LogManager.Level = CoAP.Log.LogLevel.Warning;
 

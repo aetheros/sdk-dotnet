@@ -2,25 +2,9 @@
 
 ## Installation
 
-* Install .NET SDK 6
+* Install .NET SDK 8
 
-  **Centos 7**
-  ```
-  sudo rpm -Uvh https://packages.microsoft.com/config/centos/7/packages-microsoft-prod.rpm
-  sudo yum install -y dotnet-sdk-6.0
-  ```
-
-  **Ubuntu**
-  ```
-  source /etc/os-release \
-    wget -O /tmp/packages-microsoft-prod.deb "https://packages.microsoft.com/config/ubuntu/${VERSION_ID}/packages-microsoft-prod.deb" \
-    sudo dpkg -i /tmp/packages-microsoft-prod.deb
-
-  sudo apt-get update; \
-    sudo apt-get install -y apt-transport-https && \
-    sudo apt-get update && \
-    sudo apt-get install -y dotnet-sdk-6.0
-  ```
+	https://learn.microsoft.com/en-us/dotnet/core/install/
 
 * Post-install
 

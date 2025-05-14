@@ -2,7 +2,7 @@
 
 ## Installation
 
-* Install .NET SDK 8
+* Install .NET SDK 9
 
 	https://learn.microsoft.com/en-us/dotnet/core/install/
 

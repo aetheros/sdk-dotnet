@@ -74,21 +74,38 @@
 <pre><code class="lang-c#">// connect to the IN-CSE
 using var con = new HttpConnection(new Uri(&quot;https://cse.local/&quot;));
 
-// find an existing IN-AE
-using var app = await con.FindApplicationAsync(new ApplicationConfiguration { AppId = &quot;my.app.id&quot; });
+// find an existing IN-AE (by AE-ID)
+using var app = await con.FindApplicationAsync(&quot;Cmy-ae&quot;);
+
+// or create a new one...
+if (app == null) {
+	var config = new ApplicationConfiguration {
+		AppId = &quot;Nmy-app-id&quot;,
+		AppName = &quot;my-ae&quot;,
+		CredentialId = &quot;...&quot;,
+		PoaUrl = &quot;http://my-server:21300/notify&quot;,
+	};
+	app = await connection.RegisterApplicationAsync(config);
+	Console.WriteLine($&quot;New AE-ID: {app.AE_ID}&quot;);
+}
 
 // create a container under the IN-AE
 var container = await app.EnsureContainerAsync(&quot;my_container&quot;);
 
 // listen for new contentInstance creation
-using var subscription = 
-  (await container.ObserveContentInstanceAsync&lt;ContentInstanceType&gt;(&quot;https://localhost/notify&quot;))
-	.Subscribe(ci =&gt; {
+using var observable = await container.ObserveContentInstanceAsync&lt;ContentInstanceType&gt;(container.ResourceName);
+using var subscription = observable.Subscribe(
+	ci =&gt; {
+		// handle notification...
 		Console.WriteLine($&quot;New content instance: {ci.Data}&quot;);
-	});
+	}
+);
 
 // create a new contentInstance
-var contentInstance = await app.AddContentInstanceAsync(&quot;my_container&quot;, new ContentInstanceType { Data = &quot;hello&quot; });
+var contentInstance = await app.AddContentInstanceAsync(
+	container.ResourceName,
+	new ContentInstanceType { Data = &quot;hello&quot; }
+);
 
 </code></pre>
 </article>

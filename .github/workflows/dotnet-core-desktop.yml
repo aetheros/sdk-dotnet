@@ -15,8 +15,15 @@ jobs:
       with:
         fetch-depth: 0
 
+    - name: Install docfx
+      run: dotnet tool install -g docfx 
+      env:
+        DOTNET_NOLOGO: true
+        DOTNET_CLI_TELEMETRY_OPTOUT: 1
+
     - name: Restore & Build the documentation
-      run: dotnet build Documentation
+#      run: dotnet build Documentation
+      run: docfx build Documentation/docfx.json
       env:
         DOTNET_NOLOGO: true
         DOTNET_CLI_TELEMETRY_OPTOUT: 1

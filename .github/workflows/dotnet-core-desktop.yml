@@ -8,10 +8,6 @@ on:
 jobs:
   build:
     runs-on: windows-2022
-    defaults:
-      env:
-        DOTNET_NOLOGO: true
-        DOTNET_CLI_TELEMETRY_OPTOUT: 1
 
     steps:
     - name: Checkout
@@ -21,12 +17,18 @@ jobs:
 
     - name: Install docfx
       run: dotnet tool install -g docfx 
+      env:
+        DOTNET_NOLOGO: true
+        DOTNET_CLI_TELEMETRY_OPTOUT: 1
 
     - name: Restore & Build the documentation
       working-directory: Documentation
       run: |
         docfx metadata
         docfx build
+      env:
+        DOTNET_NOLOGO: true
+        DOTNET_CLI_TELEMETRY_OPTOUT: 1
 
     - name: Deploy to gh-pages
       uses: peaceiris/actions-gh-pages@v3

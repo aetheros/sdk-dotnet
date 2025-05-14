@@ -3,11 +3,3871 @@
   "xrefmap": "xrefmap.yml",
   "files": [
     {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Api.ApiExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Api.ApiExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.OneM2M.Api.ApiExtensions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Api.Application-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Api.Application-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.OneM2M.Api.Application<TPrimitiveContent>",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Api.Application.Configuration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Api.Application.Configuration.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.OneM2M.Api.Application.Configuration",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Api.Application.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Api.Application.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.OneM2M.Api.Application",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Api.ApplicationConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Api.ApplicationConfiguration.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.OneM2M.Api.ApplicationConfiguration",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Api.CoapConnection-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Api.CoapConnection-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.OneM2M.Api.CoapConnection<TPrimitiveContent>",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Api.CoapConnection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Api.CoapConnection.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.OneM2M.Api.CoapConnection",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Api.CoapExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Api.CoapExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.OneM2M.Api.CoapExtensions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Api.CoapRequestException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Api.CoapRequestException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.OneM2M.Api.CoapRequestException",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Api.Connection-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Api.Connection-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.OneM2M.Api.Connection<TPrimitiveContent>",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Api.Connection.ConnectionConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Api.Connection.ConnectionConfiguration.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.OneM2M.Api.Connection.ConnectionConfiguration",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Api.Connection.HttpStatusException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Api.Connection.HttpStatusException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.OneM2M.Api.Connection.HttpStatusException",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Api.Connection.IConnectionConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Api.Connection.IConnectionConfiguration.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.OneM2M.Api.Connection.IConnectionConfiguration",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Api.Connection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Api.Connection.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.OneM2M.Api.Connection",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Api.HttpConnection-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Api.HttpConnection-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.OneM2M.Api.HttpConnection<TPrimitiveContent>",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Api.HttpConnection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Api.HttpConnection.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.OneM2M.Api.HttpConnection",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Api.HttpConnectionExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Api.HttpConnectionExtensions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.OneM2M.Api.HttpConnectionExtensions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Api.Registration.Application.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Api.Registration.Application.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.OneM2M.Api.Registration.Application",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Api.Registration.CertificateId.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Api.Registration.CertificateId.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.OneM2M.Api.Registration.CertificateId",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Api.Registration.CertificateSigningRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Api.Registration.CertificateSigningRequest.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.OneM2M.Api.Registration.CertificateSigningRequest",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Api.Registration.CertificateSigningRequestBody.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Api.Registration.CertificateSigningRequestBody.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.OneM2M.Api.Registration.CertificateSigningRequestBody",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Api.Registration.CertificateSigningResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Api.Registration.CertificateSigningResponse.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.OneM2M.Api.Registration.CertificateSigningResponse",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Api.Registration.CertificateSigningResponseBody.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Api.Registration.CertificateSigningResponseBody.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.OneM2M.Api.Registration.CertificateSigningResponseBody",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Api.Registration.CertificateSigningStatus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Api.Registration.CertificateSigningStatus.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.OneM2M.Api.Registration.CertificateSigningStatus",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Api.Registration.ConfirmationRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Api.Registration.ConfirmationRequest.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.OneM2M.Api.Registration.ConfirmationRequest",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Api.Registration.ConfirmationRequestBody.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Api.Registration.ConfirmationRequestBody.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.OneM2M.Api.Registration.ConfirmationRequestBody",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Api.Registration.ConfirmationResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Api.Registration.ConfirmationResponse.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.OneM2M.Api.Registration.ConfirmationResponse",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Api.Registration.ConfirmationResponseBody.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Api.Registration.ConfirmationResponseBody.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.OneM2M.Api.Registration.ConfirmationResponseBody",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Api.Registration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Api.Registration.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.OneM2M.Api.Registration",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Api.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Api.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.OneM2M.Api",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.AOS.MeterRead.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.AOS.MeterRead.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.AOS.MeterRead",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.AOS.MeterReadSchedule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.AOS.MeterReadSchedule.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.AOS.MeterReadSchedule",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.AOS.MeterServicePolicy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.AOS.MeterServicePolicy.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.AOS.MeterServicePolicy",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.AOS.MeterSvcData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.AOS.MeterSvcData.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.AOS.MeterSvcData",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.AOS.PowerQualityData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.AOS.PowerQualityData.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.AOS.PowerQualityData",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.AOS.ReadingType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.AOS.ReadingType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.AOS.ReadingType",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.AOS.ScheduleInterval.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.AOS.ScheduleInterval.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.AOS.ScheduleInterval",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.AOS.SummationData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.AOS.SummationData.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.AOS.SummationData",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.AOS.TimeSchedule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.AOS.TimeSchedule.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.AOS.TimeSchedule",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.AOS.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.AOS.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.AOS",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.AE.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.AE.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.AE",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.AEAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.AEAnnc.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.AEAnnc",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.AccessControlOperations.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.AccessControlOperations.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.AccessControlOperations",
+      "Summary": "<p>Shall be considered for access control policy check by the CSE</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.AccessControlPolicy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.AccessControlPolicy.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.AccessControlPolicy",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.AccessControlPolicyAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.AccessControlPolicyAnnc.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.AccessControlPolicyAnnc",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.AccessControlRule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.AccessControlRule.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.AccessControlRule",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.AccessControlRuleAccessControlContexts.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.AccessControlRuleAccessControlContexts.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.AccessControlRuleAccessControlContexts",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.AccessControlRuleAccessControlContextsAccessControlIpAddresses.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.AccessControlRuleAccessControlContextsAccessControlIpAddresses.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.AccessControlRuleAccessControlContextsAccessControlIpAddresses",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.ActionStatus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.ActionStatus.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.ActionStatus",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.ActiveCmdhPolicy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.ActiveCmdhPolicy.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.ActiveCmdhPolicy",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.AggregatedNotification-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.AggregatedNotification-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.AggregatedNotification<TPrimitiveContent>",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.AggregatedNotification.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.AggregatedNotification.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.AggregatedNotification",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.AggregatedNotificationContent-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.AggregatedNotificationContent-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.AggregatedNotificationContent<TPrimitiveContent>",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.AggregatedRequest-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.AggregatedRequest-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.AggregatedRequest<TPrimitiveContent>",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.AggregatedRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.AggregatedRequest.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.AggregatedRequest",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.AggregatedRequestRequest-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.AggregatedRequestRequest-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.AggregatedRequestRequest<TPrimitiveContent>",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.AggregatedRequestRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.AggregatedRequestRequest.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.AggregatedRequestRequest",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.AggregatedResponse-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.AggregatedResponse-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.AggregatedResponse<TPrimitiveContent>",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.AggregatedResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.AggregatedResponse.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.AggregatedResponse",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.AllJoynApp.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.AllJoynApp.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.AllJoynApp",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.AllJoynAppAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.AllJoynAppAnnc.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.AllJoynAppAnnc",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.AllJoynDirection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.AllJoynDirection.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.AllJoynDirection",
+      "Summary": "<p>Used for direction attribute of allJoynApp resource</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.AllJoynInterface.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.AllJoynInterface.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.AllJoynInterface",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.AllJoynInterfaceAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.AllJoynInterfaceAnnc.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.AllJoynInterfaceAnnc",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.AllJoynMethod.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.AllJoynMethod.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.AllJoynMethod",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.AllJoynMethodAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.AllJoynMethodAnnc.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.AllJoynMethodAnnc",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.AllJoynMethodCall.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.AllJoynMethodCall.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.AllJoynMethodCall",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.AllJoynMethodCallAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.AllJoynMethodCallAnnc.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.AllJoynMethodCallAnnc",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.AllJoynProperty.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.AllJoynProperty.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.AllJoynProperty",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.AllJoynPropertyAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.AllJoynPropertyAnnc.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.AllJoynPropertyAnnc",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.AllJoynSvcObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.AllJoynSvcObject.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.AllJoynSvcObject",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.AllJoynSvcObjectAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.AllJoynSvcObjectAnnc.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.AllJoynSvcObjectAnnc",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.AnnounceableResource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.AnnounceableResource.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.AnnounceableResource",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.AnnounceableSubordinateResource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.AnnounceableSubordinateResource.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.AnnounceableSubordinateResource",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.AnnouncedFlexContainerResource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.AnnouncedFlexContainerResource.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.AnnouncedFlexContainerResource",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.AnnouncedMgmtResource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.AnnouncedMgmtResource.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.AnnouncedMgmtResource",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.AnnouncedResource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.AnnouncedResource.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.AnnouncedResource",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.AnnouncedSubordinateResource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.AnnouncedSubordinateResource.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.AnnouncedSubordinateResource",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.AnyArgType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.AnyArgType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.AnyArgType",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.AreaNwkDeviceInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.AreaNwkDeviceInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.AreaNwkDeviceInfo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.AreaNwkDeviceInfoAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.AreaNwkDeviceInfoAnnc.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.AreaNwkDeviceInfoAnnc",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.AreaNwkInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.AreaNwkInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.AreaNwkInfo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.AreaNwkInfoAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.AreaNwkInfoAnnc.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.AreaNwkInfoAnnc",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.Attribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.Attribute.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.Attribute",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.BackOffParameters.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.BackOffParameters.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.BackOffParameters",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.BackOffParametersBackOffParametersSet.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.BackOffParametersBackOffParametersSet.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.BackOffParametersBackOffParametersSet",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.BatchNotify.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.BatchNotify.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.BatchNotify",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.Battery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.Battery.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.Battery",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.BatteryAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.BatteryAnnc.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.BatteryAnnc",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.BatteryStatus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.BatteryStatus.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.BatteryStatus",
+      "Summary": "<p>This is used for [battery] resource.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.CSEBase-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.CSEBase-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.CSEBase<TPrimitiveContent>",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.CSEBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.CSEBase.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.CSEBase",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.ChildResourceRef.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.ChildResourceRef.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.ChildResourceRef",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.CmdType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.CmdType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.CmdType",
+      "Summary": "<p>Used for cmdType attribute in &lt;mgmtCmd&gt; resource.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.CmdhBuffer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.CmdhBuffer.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.CmdhBuffer",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.CmdhDefEcValue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.CmdhDefEcValue.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.CmdhDefEcValue",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.CmdhDefaults.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.CmdhDefaults.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.CmdhDefaults",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.CmdhEcDefParamValues.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.CmdhEcDefParamValues.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.CmdhEcDefParamValues",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.CmdhLimits.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.CmdhLimits.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.CmdhLimits",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.CmdhLimitsLimitsDelAggregation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.CmdhLimitsLimitsDelAggregation.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.CmdhLimitsLimitsDelAggregation",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.CmdhNetworkAccessRules.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.CmdhNetworkAccessRules.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.CmdhNetworkAccessRules",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.CmdhNwAccessRule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.CmdhNwAccessRule.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.CmdhNwAccessRule",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.CmdhPolicy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.CmdhPolicy.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.CmdhPolicy",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.ConsistencyStrategy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.ConsistencyStrategy.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.ConsistencyStrategy",
+      "Summary": "<p>Used for consistencyStrategy attribute in &lt;group&gt; resource.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.Container.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.Container.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.Container",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.ContainerAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.ContainerAnnc.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.ContainerAnnc",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.ContentFilterSyntax.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.ContentFilterSyntax.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.ContentFilterSyntax",
+      "Summary": "<p>Used for contentFilterSyntax element in Filter Criteria primitive parameter</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.ContentInstance.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.ContentInstance.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.ContentInstance",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.ContentInstanceAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.ContentInstanceAnnc.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.ContentInstanceAnnc",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.ContentRef.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.ContentRef.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.ContentRef",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.ContentRefURIReference.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.ContentRefURIReference.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.ContentRefURIReference",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.ContentSecurity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.ContentSecurity.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.ContentSecurity",
+      "Summary": "<p>Used in m2m:contentInfo</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.ContentStatus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.ContentStatus.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.ContentStatus",
+      "Summary": "<p>Used for periodicIndicator attribute of trafficPattern resource</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.CseTypeID.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.CseTypeID.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.CseTypeID",
+      "Summary": "<p>Used for cseType attribute of &lt;CSEBase&gt; resource.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.DataLink.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.DataLink.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.DataLink",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.DeletionContexts.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.DeletionContexts.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.DeletionContexts",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.Delivery-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.Delivery-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.Delivery<TPrimitiveContent>",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.Delivery.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.Delivery.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.Delivery",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.DeliveryMetaData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.DeliveryMetaData.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.DeliveryMetaData",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.DeviceCapability.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.DeviceCapability.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.DeviceCapability",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.DeviceCapabilityAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.DeviceCapabilityAnnc.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.DeviceCapabilityAnnc",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.DeviceInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.DeviceInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.DeviceInfo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.DeviceInfoAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.DeviceInfoAnnc.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.DeviceInfoAnnc",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.DiscResType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.DiscResType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.DiscResType",
+      "Summary": "<p>Used in &lt;request&gt;</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.DownloadArgsType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.DownloadArgsType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.DownloadArgsType",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.DynAuthDasRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.DynAuthDasRequest.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.DynAuthDasRequest",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.DynAuthDasRequestOriginatorIP.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.DynAuthDasRequestOriginatorIP.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.DynAuthDasRequestOriginatorIP",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.DynAuthDasResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.DynAuthDasResponse.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.DynAuthDasResponse",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.DynAuthDasResponseDynamicACPInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.DynAuthDasResponseDynamicACPInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.DynAuthDasResponseDynamicACPInfo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.DynAuthLocalTokenIdAssignments.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.DynAuthLocalTokenIdAssignments.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.DynAuthLocalTokenIdAssignments",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.DynAuthLocalTokenIdAssignmentsLocalTokenIdAssignment.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.DynAuthLocalTokenIdAssignmentsLocalTokenIdAssignment.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.DynAuthLocalTokenIdAssignmentsLocalTokenIdAssignment",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.DynAuthTokenReqInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.DynAuthTokenReqInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.DynAuthTokenReqInfo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.DynAuthTokenReqInfoDasInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.DynAuthTokenReqInfoDasInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.DynAuthTokenReqInfoDasInfo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.DynAuthTokenSummary.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.DynAuthTokenSummary.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.DynAuthTokenSummary",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.DynamicAuthorizationConsultation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.DynamicAuthorizationConsultation.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.DynamicAuthorizationConsultation",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.E2ESecInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.E2ESecInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.E2ESecInfo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.EncodingType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.EncodingType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.EncodingType",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.EsprimKeyGenAlgID.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.EsprimKeyGenAlgID.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.EsprimKeyGenAlgID",
+      "Summary": "<p>Used in m2msec:receiverESPrimRandObject and m2m:originatorESPrimRandObject</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.EsprimProtocolAndAlgID.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.EsprimProtocolAndAlgID.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.EsprimProtocolAndAlgID",
+      "Summary": "<p>Used in m2m:receiveEr2ERandObject and m2msec:originatorESPrimRandObject</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.EventConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.EventConfig.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.EventConfig",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.EventLog.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.EventLog.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.EventLog",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.EventLogAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.EventLogAnnc.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.EventLogAnnc",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.EventNotificationCriteria.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.EventNotificationCriteria.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.EventNotificationCriteria",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.EventType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.EventType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.EventType",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.ExecInstance.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.ExecInstance.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.ExecInstance",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.ExecModeType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.ExecModeType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.ExecModeType",
+      "Summary": "<p>Used for execModeType attribute in &lt;mgmtCmd&gt; and &lt;execInstance&gt; resource.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.ExecReqArgsListType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.ExecReqArgsListType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.ExecReqArgsListType",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.ExecResultType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.ExecResultType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.ExecResultType",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.ExecStatusType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.ExecStatusType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.ExecStatusType",
+      "Summary": "<p>Used for execStatusType attribute in &lt;execInstance&gt; resource.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.FilterCriteria.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.FilterCriteria.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.FilterCriteria",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.FilterUsage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.FilterUsage.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.FilterUsage",
+      "Summary": "<p>Used in filterCriteria</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.Firmware.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.Firmware.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.Firmware",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.FirmwareAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.FirmwareAnnc.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.FirmwareAnnc",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.FlexContainerResource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.FlexContainerResource.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.FlexContainerResource",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.GenericInterworkingOperationInstance.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.GenericInterworkingOperationInstance.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.GenericInterworkingOperationInstance",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.GenericInterworkingOperationInstanceAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.GenericInterworkingOperationInstanceAnnc.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.GenericInterworkingOperationInstanceAnnc",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.GenericInterworkingService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.GenericInterworkingService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.GenericInterworkingService",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.GenericInterworkingServiceAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.GenericInterworkingServiceAnnc.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.GenericInterworkingServiceAnnc",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.Group.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.Group.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.Group",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.GroupAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.GroupAnnc.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.GroupAnnc",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.JsonArrayItem-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.JsonArrayItem-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.JsonArrayItem<T>",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.ListOfChildResourceRef.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.ListOfChildResourceRef.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.ListOfChildResourceRef",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.ListOfDataLinks.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.ListOfDataLinks.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.ListOfDataLinks",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.LocationPolicy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.LocationPolicy.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.LocationPolicy",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.LocationPolicyAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.LocationPolicyAnnc.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.LocationPolicyAnnc",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.LocationRegion.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.LocationRegion.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.LocationRegion",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.LocationSource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.LocationSource.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.LocationSource",
+      "Summary": "<p>Used for locationSource attribute of &lt;locationPolicy&gt; resource.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.LogStatus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.LogStatus.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.LogStatus",
+      "Summary": "<p>Used for the logStatus attribute of [eventLog] Management Resource.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.LogTypeId.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.LogTypeId.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.LogTypeId",
+      "Summary": "<p>Used for the logTypeId attribute of [eventLog] Management Resource.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.LogicalOperator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.LogicalOperator.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.LogicalOperator",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.M2MServiceSubscriptionProfile.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.M2MServiceSubscriptionProfile.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.M2MServiceSubscriptionProfile",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.MemberType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.MemberType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.MemberType",
+      "Summary": "<p>Used for memberType attribute in &lt;group&gt; resource.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.Memory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.Memory.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.Memory",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.MemoryAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.MemoryAnnc.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.MemoryAnnc",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.MetaInformation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.MetaInformation.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.MetaInformation",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.MgmtCmd.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.MgmtCmd.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.MgmtCmd",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.MgmtDefinition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.MgmtDefinition.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.MgmtDefinition",
+      "Summary": "<p>This is used for mgmtObj resource.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.MgmtLinkRef.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.MgmtLinkRef.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.MgmtLinkRef",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.MgmtResource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.MgmtResource.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.MgmtResource",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.MissingData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.MissingData.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.MissingData",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.NetworkAction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.NetworkAction.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.NetworkAction",
+      "Summary": "<p>Used in the networkAction element in the backOffParameters</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.Node.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.Node.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.Node",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.NodeAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.NodeAnnc.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.NodeAnnc",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.Notification-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.Notification-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.Notification<TPrimitiveContent>",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.Notification.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.Notification.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.Notification",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.NotificationContent-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.NotificationContent-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.NotificationContent<TPrimitiveContent>",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.NotificationContentType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.NotificationContentType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.NotificationContentType",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.NotificationEventType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.NotificationEventType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.NotificationEventType",
+      "Summary": "<p>Used in the notificationEventType element of eventNotificationCriteria attribute of subscription resource \n\t\t\tand in the Notification data object</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.NotificationIPEDiscoveryRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.NotificationIPEDiscoveryRequest.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.NotificationIPEDiscoveryRequest",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.NotificationNotificationEvent-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.NotificationNotificationEvent-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.NotificationNotificationEvent<TPrimitiveContent>",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.NotificationNotificationEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.NotificationNotificationEvent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.NotificationNotificationEvent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.NotificationNotificationEventOperationMonitor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.NotificationNotificationEventOperationMonitor.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.NotificationNotificationEventOperationMonitor",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.NotificationTargetMgmtPolicyRef.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.NotificationTargetMgmtPolicyRef.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.NotificationTargetMgmtPolicyRef",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.NotificationTargetPolicy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.NotificationTargetPolicy.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.NotificationTargetPolicy",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.NotificationTargetPolicyAction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.NotificationTargetPolicyAction.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.NotificationTargetPolicyAction",
+      "Summary": "<p>Used in filterCriteria</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.Operation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.Operation.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.Operation",
+      "Summary": "<p>Used for Operation parameter in request and operation attribute in &lt;request&gt; resource as well as resource as well as operationMonitor</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.OperationResult-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.OperationResult-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.OperationResult<TPrimitiveContent>",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.OperationResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.OperationResult.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.OperationResult",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.OriginatorESPrimRandObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.OriginatorESPrimRandObject.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.OriginatorESPrimRandObject",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.PendingNotification.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.PendingNotification.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.PendingNotification",
+      "Summary": "<p>This is used for pendingNotification attribute in &lt;subscription&gt; resource.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.PeriodicIndicator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.PeriodicIndicator.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.PeriodicIndicator",
+      "Summary": "<p>Used for periodicIndicator attribute of trafficPattern resource</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.PermittedMediaTypes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.PermittedMediaTypes.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.PermittedMediaTypes",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.PolicyDeletionRules.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.PolicyDeletionRules.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.PolicyDeletionRules",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.PollingChannel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.PollingChannel.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.PollingChannel",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.PrimitiveContent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.PrimitiveContent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.PrimitiveContent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.RateLimit.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.RateLimit.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.RateLimit",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.Reboot.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.Reboot.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.Reboot",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.RebootAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.RebootAnnc.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.RebootAnnc",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.RebootArgsType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.RebootArgsType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.RebootArgsType",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.ReceiverESPrimRandObject.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.ReceiverESPrimRandObject.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.ReceiverESPrimRandObject",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.RegularResource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.RegularResource.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.RegularResource",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.RemoteCSE.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.RemoteCSE.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.RemoteCSE",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.RemoteCSEAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.RemoteCSEAnnc.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.RemoteCSEAnnc",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.Request-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.Request-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.Request<TPrimitiveContent>",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.Request.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.Request.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.Request",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.RequestPrimitive-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.RequestPrimitive-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.RequestPrimitive<TPrimitiveContent>",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.RequestPrimitive.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.RequestPrimitive.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.RequestPrimitive",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.RequestStatus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.RequestStatus.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.RequestStatus",
+      "Summary": "<p>Used for request Status in the &lt;request&gt; resource</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.ResetArgsType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.ResetArgsType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.ResetArgsType",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.Resource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.Resource.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.Resource",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.ResourceType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.ResourceType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.ResourceType",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.ResourceWrapper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.ResourceWrapper.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.ResourceWrapper",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.Resources.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.Resources.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.Resources",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.ResponseContent-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.ResponseContent-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.ResponseContent<TPrimitiveContent>",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.ResponseContent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.ResponseContent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.ResponseContent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.ResponsePrimitive-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.ResponsePrimitive-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.ResponsePrimitive<TPrimitiveContent>",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.ResponsePrimitive.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.ResponsePrimitive.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.ResponsePrimitive",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.ResponseStatusCode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.ResponseStatusCode.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.ResponseStatusCode",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.ResponseType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.ResponseType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.ResponseType",
+      "Summary": "<p>Used for rt parameter in request and operation attribute in &lt;request&gt; resource</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.ResponseTypeInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.ResponseTypeInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.ResponseTypeInfo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.ResultContent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.ResultContent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.ResultContent",
+      "Summary": "<p>Used for Result Content parameter in request.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.Role.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.Role.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.Role",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.Schedule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.Schedule.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.Schedule",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.ScheduleAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.ScheduleAnnc.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.ScheduleAnnc",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.ScheduleEntries.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.ScheduleEntries.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.ScheduleEntries",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.SecurityInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.SecurityInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.SecurityInfo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.SecurityInfoType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.SecurityInfoType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.SecurityInfoType",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.SemanticDescriptor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.SemanticDescriptor.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.SemanticDescriptor",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.SemanticDescriptorAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.SemanticDescriptorAnnc.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.SemanticDescriptorAnnc",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.ServiceSubscribedAppRule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.ServiceSubscribedAppRule.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.ServiceSubscribedAppRule",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.ServiceSubscribedNode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.ServiceSubscribedNode.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.ServiceSubscribedNode",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.SetOfAcrs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.SetOfAcrs.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.SetOfAcrs",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.SingleOrArrayConverter-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.SingleOrArrayConverter-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.SingleOrArrayConverter<T>",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.Software.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.Software.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.Software",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.SoftwareAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.SoftwareAnnc.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.SoftwareAnnc",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.SoftwareInstallArgsType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.SoftwareInstallArgsType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.SoftwareInstallArgsType",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.SoftwareUninstallArgsType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.SoftwareUninstallArgsType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.SoftwareUninstallArgsType",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.SoftwareUpdateArgsType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.SoftwareUpdateArgsType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.SoftwareUpdateArgsType",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.StatModelType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.StatModelType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.StatModelType",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.StationaryIndication.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.StationaryIndication.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.StationaryIndication",
+      "Summary": "<p>Used for periodicIndicator attribute of trafficPattern resource</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.StatsCollect.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.StatsCollect.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.StatsCollect",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.StatsConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.StatsConfig.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.StatsConfig",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.StatsRuleStatusType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.StatsRuleStatusType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.StatsRuleStatusType",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.Status.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.Status.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.Status",
+      "Summary": "<p>This is used for [software], [firmware] resources.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.StdEventCats.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.StdEventCats.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.StdEventCats",
+      "Summary": "<p>Used for ec parameter in request and eventCat attribute of &lt;delivery&gt; resource and cmdh\n\t\t\tpolicy resource types.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.SubordinateResource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.SubordinateResource.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.SubordinateResource",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.Subscription.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.Subscription.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.Subscription",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.Suid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.Suid.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.Suid",
+      "Summary": "<p>Used for m2m:e2eSecInfo and other security features in TS-0003</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.SvcFwWrapper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.SvcFwWrapper.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.SvcFwWrapper",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.SvcFwWrapperAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.SvcFwWrapperAnnc.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.SvcFwWrapperAnnc",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.SvcObjWrapper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.SvcObjWrapper.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.SvcObjWrapper",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.SvcObjWrapperAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.SvcObjWrapperAnnc.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.SvcObjWrapperAnnc",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.TimeSeries.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.TimeSeries.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.TimeSeries",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.TimeSeriesAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.TimeSeriesAnnc.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.TimeSeriesAnnc",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.TimeSeriesInstance.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.TimeSeriesInstance.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.TimeSeriesInstance",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.TimeSeriesInstanceAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.TimeSeriesInstanceAnnc.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.TimeSeriesInstanceAnnc",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.Token.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.Token.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.Token",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.TokenClaimSet.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.TokenClaimSet.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.TokenClaimSet",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.TokenPermission.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.TokenPermission.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.TokenPermission",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.TokenPermissions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.TokenPermissions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.TokenPermissions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.TokenPermissionsItem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.TokenPermissionsItem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.TokenPermissionsItem",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.TrafficPattern.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.TrafficPattern.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.TrafficPattern",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.TrafficPatternAnnc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.TrafficPatternAnnc.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.TrafficPatternAnnc",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.UploadArgsType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.UploadArgsType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M.UploadArgsType",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.Schema.OneM2M.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.Schema.OneM2M.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.Schema.OneM2M",
+      "Summary": null
+    },
+    {
       "type": "Conceptual",
       "source_relative_path": "api/index.md",
       "output": {
         ".html": {
           "relative_path": "api/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".json": {
+          "relative_path": "api/toc.json"
         }
       },
       "version": ""

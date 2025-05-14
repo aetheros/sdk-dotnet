@@ -256,17 +256,17 @@ namespace Example.Web.Server.ViewModels
 			{
 				var app = _meterService.App;
 				await app.Application.AddContentInstanceAsync(
-					$"~/{app.DataContainer}",
+					app.DataContainer,
 					new Data
 					{
 						MeterId = this.MeterId,
 						UOM = Data.Units.USGal,
-						Summations = new[] {
+						Summations = [
 							new Data.Summation {
 								ReadTime = DateTimeOffset.UtcNow,
 								Value = _random.NextDouble(),
 							}
-						}
+						]
 					}
 				);
 			});

@@ -10,7 +10,7 @@ namespace GridNet.IoT.Client
 {
 	public abstract class UtilityBase
 	{
-		readonly OptionSet EmptyOptions = new OptionSet();
+		readonly OptionSet EmptyOptions = [];
 
 		public virtual OptionSet Options => EmptyOptions;
 		OptionSet _options;

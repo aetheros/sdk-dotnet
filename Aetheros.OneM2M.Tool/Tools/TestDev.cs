@@ -31,8 +31,8 @@ namespace GridNet.IoT.Client.Tools
 		string _AeAppName = "metersvc-smpl";
 
 		readonly string _RegPath = ".";
-		readonly string _MsPolicyPath = $"~/config-cnt";
-		readonly string _MsCommandsPath = $"~/command-cnt";
+		readonly string _MsPolicyPath = $"config-cnt";
+		readonly string _MsCommandsPath = $"command-cnt";
 		readonly string _ReadsContainerName = "data-cnt";
 
 		public TestDev()
@@ -64,33 +64,25 @@ namespace GridNet.IoT.Client.Tools
 		{
 			if (!string.IsNullOrEmpty(_AeId))
 			{
-				try
-				{
-					// look for existing AE
-					var ae = (await connection.GetPrimitiveAsync(_AeId, _AeId)).AE;
-					Trace.TraceInformation($"Using existing AE {ae.AE_ID}");
+				// look for existing AE
+				var ae = (await connection.TryGetPrimitiveAsync(_AeId, _AeId)).AE;
+				if (ae != null) {
+					Trace.WriteLine($"Using existing AE {ae.AE_ID}");
 					return ae;
 				}
-				catch { }
 			}
 
 			// register a new AE
-			Trace.TraceInformation("Invoking AE Registration API");
-			return (await connection.GetResponseAsync(new RequestPrimitive
-			{
-				To = _RegPath,
-				Operation = Operation.Create,
-				ResourceType = ResourceType.AE,
-				PrimitiveContent = new PrimitiveContent
+			Trace.WriteLine("Invoking AE Registration API");
+			return await connection.RegisterApplicationAsync(
+				new ApplicationConfiguration
 				{
-					AE = new AE
-					{
-						App_ID = _AeAppId,
-						AppName = _AeAppName,
-						PointOfAccess = new[] { _poaUrl.ToString() },
-					}
+					AppId = _AeAppId,
+					AppName = _AeAppName,
+					CredentialId = null,
+					PoaUrl = _poaUrl,
 				}
-			}))?.AE;
+			);
 		}
 
 		async Task CreateMeterRead(string readsContainer)
@@ -109,7 +101,7 @@ namespace GridNet.IoT.Client.Tools
 				{
 					MeterId = _application.AeId,
 					UOM = global::Example.Types.Data.Units.USGal,
-					Summations = new[] { summation }
+					Summations = [summation]
 				}
 			);
 		}
@@ -135,7 +127,8 @@ namespace GridNet.IoT.Client.Tools
 
 			// initialize the connection
 			var ae = await Register(connection);
-			_application = new Application(connection, ae.App_ID, ae.AE_ID, "./", _poaUrl);
+			var cseId = "/PN_CSE";
+			_application = new Application(connection, ae, cseId, _poaUrl);
 
 
 			// create our containers
@@ -151,7 +144,7 @@ namespace GridNet.IoT.Client.Tools
 				FilterCriteria = new FilterCriteria
 				{
 					FilterUsage = FilterUsage.Discovery,
-					ResourceType = new[] { ResourceType.AE },
+					ResourceType = [ResourceType.AE],
 					Attribute = Connection<PrimitiveContent>.GetAttributes<AE>(_ => _.AppName == _AeAppName),
 				}
 			})).URIList.SingleOrDefault();

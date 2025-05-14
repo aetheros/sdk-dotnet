@@ -10,9 +10,9 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-// get -c C:\work\gridnet\m2msdk\AetherosOneM2MSDK\Aetheros.OneM2M.Tool\cert.pfx --from C4bb2f056000001 "https://api.piersh-m2m.corp.grid-net.com/PN_CSE/C4bb2f056000001/data-cnt?cra=20210526T014643.98874&fu=1&ty=4&rcn=5&lvl=2"
-// Get -f C5eb5c0c2000006 "http://api.piersh-m2m.corp.grid-net.com:21300/PN_CSE/C5eb5c0c2000006/a/b/c?rcn=8&ty=4"
-// Get --parallel=10000 -f C5eb5c0c2000006 "http://api.piersh-m2m.corp.grid-net.com:21300/testdev-piersh/foo/bar?rcn=8&ty=4"
+// get -c C:\work\gridnet\m2msdk\AetherosOneM2MSDK\Aetheros.OneM2M.Tool\cert.pfx --from C4bb2f056000001 "https://api.piersh-m2m.corp.aetheros.com/PN_CSE/C4bb2f056000001/data-cnt?cra=20210526T014643.98874&fu=1&ty=4&rcn=5&lvl=2"
+// Get -f C5eb5c0c2000006 "http://api.piersh-m2m.corp.aetheros.com:21300/PN_CSE/C5eb5c0c2000006/a/b/c?rcn=8&ty=4"
+// Get --parallel=10000 -f C5eb5c0c2000006 "http://api.piersh-m2m.corp.aetheros.com:21300/testdev-piersh/foo/bar?rcn=8&ty=4"
 // /PN_CSE/testdev-piersh/aeA5eb35b7600000f
 
 namespace GridNet.IoT.Client.Tools
@@ -25,6 +25,7 @@ namespace GridNet.IoT.Client.Tools
 		string _cert;
 		int _parallel = 1;
 		long _count = 1;
+		string _AeCredential;
 
 		public override OptionSet Options => new OptionSet
 		{
@@ -32,6 +33,7 @@ namespace GridNet.IoT.Client.Tools
 			{ "f|from=", "The Originator of the request", v => _org = v },
 			{ "n|number=", "Number of duplicate requests", v => _count = long.Parse(v) },
 			{ "r|requestIdentifier=", "The Request Identifier to use", v => _rqi = v },
+			{ "credential=", "The AE registration Credential", v => _AeCredential = v },
 		};
 
 		protected override string Usage { get; } = "[<options>] <url>";
@@ -57,13 +59,30 @@ namespace GridNet.IoT.Client.Tools
 				ShowError($"Originator is required (--from)");
 
 			var hostUri = new Uri (uri.GetLeftPart(UriPartial.Authority));
+			Console.WriteLine($"Host: {hostUri}");
+
+
+			var connection = new HttpConnection(new Connection.ConnectionConfiguration { M2MUrl = hostUri });
+			var aeId = "Cpolicynet.m2m2";
+			var ae2 = await connection.FindApplicationAsync(aeId);
+
+			if (ae2 == null) {
+				ShowError($"AE not found: {aeId}");
+
+				ae2 = await connection.RegisterApplicationAsync(new ApplicationConfiguration {
+					AppId = "Nra1.com.aetheros.policynet.m2m",
+					AppName = "policynet.m2m",
+					CredentialId = _AeCredential,
+					//PoaUrl = _poaUrl,
+				});
+			}
 
 			var handler = new HttpClientHandler
 			{
 				ServerCertificateCustomValidationCallback = (message, cert, chain, errors) => true
 			};
 
-			if (_cert != null)
+			if (!string.IsNullOrWhiteSpace(_cert))
 			{
 				var certificate = AosUtils.LoadCertificate(_cert);
 				handler.ClientCertificates.Add(certificate);

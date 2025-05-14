@@ -33,7 +33,7 @@ namespace Example.Web.Server.Services
 	{
 		public MyApplication App { get; }
 
-		readonly Dictionary<string, Meter> _meters = new Dictionary<string, Meter>();
+		readonly Dictionary<string, Meter> _meters = [];
 		readonly Task _startupTask;
 
 		public async Task<IReadOnlyDictionary<string, Meter>> GetMeters()
@@ -109,7 +109,7 @@ namespace Example.Web.Server.Services
 			var responseFilterContainers = await App.Application.GetPrimitiveAsync("/PN_CSE", new FilterCriteria
 			{
 				FilterUsage = FilterUsage.Discovery,
-				ResourceType = new[] { ResourceType.AEAnnc },
+				ResourceType = [ResourceType.AEAnnc],
 				Attribute = Connection.GetAttributes<AE>(_ => _.App_ID == App.Application.AppId),
 			});
 
@@ -120,8 +120,8 @@ namespace Example.Web.Server.Services
 				.ToListAsync();
 		}
 
-		public string DataContainer => $"~/{App.DataContainer}";
-		public string EventsContainer => $"~/{App.EventsContainer}";
+		public string DataContainer => $"{App.DataContainer}";
+		public string EventsContainer => $"{App.EventsContainer}";
 
 		async Task LoadObservableDataAsync()
 		{
@@ -191,7 +191,7 @@ namespace Example.Web.Server.Services
 				this.DataContainer,
 				new FilterCriteria
 				{
-					ResourceType = new[] { ResourceType.ContentInstance },
+					ResourceType = [ResourceType.ContentInstance],
 					//CreatedAfter = cutoffTime,
 				}
 			)).Container.ContentInstance;
@@ -214,7 +214,7 @@ namespace Example.Web.Server.Services
 				new FilterCriteria
 				{
 					//FilterUsage = FilterUsage.Discovery,
-					ResourceType = new[] { ResourceType.ContentInstance },
+					ResourceType = [ResourceType.ContentInstance],
 					CreatedAfter = DateTimeOffset.UtcNow.AddDays(-30),
 				}
 			)).Container.ContentInstance;

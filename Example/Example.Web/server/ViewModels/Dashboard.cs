@@ -23,8 +23,8 @@ namespace Example.Web.Server
 
 		public RoutingState RoutingState { get; set; }
 
-		public string[] ServerUsageLabel => new string[] { "dns", "sql", "nethst", "w2k", "ubnt", "uat", "ftp", "smtp", "exch", "demo" };
-		public string[] UtilizationLabel => new string[] { "Memory", "Disk", "Network" };
+		public string[] ServerUsageLabel => ["dns", "sql", "nethst", "w2k", "ubnt", "uat", "ftp", "smtp", "exch", "demo"];
+		public string[] UtilizationLabel => ["Memory", "Disk", "Network"];
 
 		public Dashboard(ILiveDataService liveDataService)
 		{

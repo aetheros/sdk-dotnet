@@ -43,10 +43,10 @@ namespace Example.Web.Server.ViewModels
 
 		public MeterList(ModelContext modelContext, MeterService meterService, DataService dataService)
 		{
-			this.RegisterRoutes(nameof(MeterList), new List<RouteTemplate>
-			{
+			this.RegisterRoutes(nameof(MeterList),
+			[
 				new RouteTemplate(nameof(MeterDashboard)) { UrlPattern = $"{nameof(MeterDashboard)}(/:id)" },
-			});
+			]);
 			this.OnRouted((sender, e) => System.Diagnostics.Debug.WriteLine(e.From));
 
 			var objLock = new object();

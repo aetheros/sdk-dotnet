@@ -6,6 +6,7 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
 using System.Linq.Expressions;
@@ -54,11 +55,27 @@ namespace Aetheros.OneM2M.Api
 		}
 
 
+		class TimeSpanMillisecondsConverter : JsonConverter<TimeSpan>
+		{
+			public override void WriteJson(JsonWriter writer, TimeSpan value, JsonSerializer serializer)
+			{
+				writer.WriteValue((long)value.TotalMilliseconds);
+			}
+
+			public override TimeSpan ReadJson(JsonReader reader, Type objectType, TimeSpan existingValue, bool hasExistingValue, JsonSerializer serializer)
+			{
+				return TimeSpan.FromMilliseconds((long)reader.Value);
+			}
+		}
+
 
 		protected static JsonSerializerSettings JsonSettings { get; } = new JsonSerializerSettings
 		{
 			NullValueHandling = NullValueHandling.Ignore,
+			DateParseHandling = DateParseHandling.DateTimeOffset,
+			DateFormatString = 	"yyyyMMdd'T'HHmmss.FFFFFFFK",
 			DefaultValueHandling = DefaultValueHandling.Ignore,
+			Converters = { new TimeSpanMillisecondsConverter() }
 		};
 
 		internal static JsonSerializer Serializer { get; }
@@ -132,44 +149,17 @@ namespace Aetheros.OneM2M.Api
 		where TPrimitiveContent : PrimitiveContent, new()
 	{
 		static int _nextRequestId;
-		readonly string _requestGuid = Guid.NewGuid().ToString("N");
+		readonly string _requestGuid = Guid.NewGuid().ToString("N").Substring(0, 8);
 		public string NextRequestId => $"{_requestGuid}/{Interlocked.Increment(ref _nextRequestId)}";
 
-		public async Task<AE?> FindApplicationAsync(ApplicationConfiguration appConfig)
-		{
-			var response = await GetResponseAsync(new RequestPrimitive<TPrimitiveContent>
-			{
-				Operation = Operation.Retrieve,
-				From = appConfig.UrlPrefix,
-				To = appConfig.UrlPrefix,
-				FilterCriteria = new FilterCriteria
-				{
-					FilterUsage = FilterUsage.Discovery,
-					ResourceType = new[] { ResourceType.AE },
-					Attribute = Connection.GetAttributes<AE>(_ => _.App_ID == appConfig.AppId),
-				}
-			});
+		public async Task<AE?> FindApplicationAsync(string aeId) => (await GetPrimitiveAsync(aeId, aeId)).AE;
 
-			var aeUrl = response.URIList?.FirstOrDefault();
-			if (aeUrl == null)
-				return null;
-
-			var response2 = await GetResponseAsync(new RequestPrimitive<TPrimitiveContent>
-			{
-				Operation = Operation.Retrieve,
-				From = appConfig.UrlPrefix,
-				To = aeUrl
-			});
-
-			return response2.AE;
-		}
-
-		public async Task<AE?> RegisterApplicationAsync(ApplicationConfiguration appConfig)
+		public async Task<AE> RegisterApplicationAsync(ApplicationConfiguration appConfig)
 		{
 			var response = await GetResponseAsync(new RequestPrimitive<TPrimitiveContent>
 			{
 				From = appConfig.CredentialId,
-				To = appConfig.UrlPrefix,
+				To = appConfig.CseId,
 				Operation = Operation.Create,
 				ResourceType = ResourceType.AE,
 				ResultContent = ResultContent.Attributes,
@@ -185,7 +175,7 @@ namespace Aetheros.OneM2M.Api
 				}
 			});
 
-			return response?.AE;
+			return response.AE;
 		}
 
 		public async Task<ResponseContent<TPrimitiveContent>> GetPrimitiveAsync(string from, string to, FilterCriteria? filterCriteria = null) =>
@@ -196,6 +186,23 @@ namespace Aetheros.OneM2M.Api
 				To = to,
 				FilterCriteria = filterCriteria
 			});
+
+
+		public async Task<ResponseContent<TPrimitiveContent>?> TryGetPrimitiveAsync(string from, string to, FilterCriteria? filterCriteria = null)
+		{
+			try
+			{
+				return await GetPrimitiveAsync(from, to, filterCriteria);
+			}
+			catch (Connection.HttpStatusException e) when (e.StatusCode == HttpStatusCode.NotFound)
+			{
+				return null;
+			}
+			catch (CoapRequestException e) when (e.StatusCode == 132) { }
+			{
+				return null;
+			}
+		}
 
 		public async Task<ResponseContent<TPrimitiveContent>> GetChildResourcesAsync(string from, string to, FilterCriteria? filterCriteria = null) =>
 			await GetResponseAsync(new RequestPrimitive<TPrimitiveContent>
@@ -283,6 +290,46 @@ namespace Aetheros.OneM2M.Api
 		// TODO: make this connection-type-agnostic
 		protected readonly Subject<Notification<TPrimitiveContent>> _notifications = new Subject<Notification<TPrimitiveContent>>();
 		public IObservable<Notification<TPrimitiveContent>> Notifications => _notifications;
+
+
+		public static IEnumerable<Notification<TPrimitiveContent>> ParseNotifications(string body)
+		{
+			var serializer = JsonSerializer.CreateDefault(Connection.JsonSettings);
+			void FixNotification(Notification<TPrimitiveContent> notification)
+			{
+				var representation = ((Newtonsoft.Json.Linq.JObject) notification.NotificationEvent.Representation).ToObject<TPrimitiveContent>(serializer);
+				if (representation != null)
+					notification.NotificationEvent.PrimitiveRepresentation = representation;
+			}
+
+			var aggregatedNotificationContent = Connection.DeserializeJson<AggregatedNotificationContent<TPrimitiveContent>>(body);
+			if (aggregatedNotificationContent != null && aggregatedNotificationContent.AggregatedNotification != null)
+			{
+				foreach (var notification in aggregatedNotificationContent.AggregatedNotification.Notification)
+				{
+					FixNotification(notification);
+					yield return notification;
+				}
+			}
+			else
+			{
+				var notificationContent = Connection.DeserializeJson<NotificationContent<TPrimitiveContent>>(body);
+				if (notificationContent == null)
+				{
+					Debug.WriteLine($"{nameof(ParseNotifications)}: invalid json");
+					yield break;
+				}
+
+				var notification = notificationContent.Notification;
+				if (notification == null)
+				{
+					Debug.WriteLine($"{nameof(ParseNotifications)}: missing notification");
+					yield break;
+				}
+
+				yield return notification;
+			}
+		}
 	}
 
 	public static class ApiExtensions

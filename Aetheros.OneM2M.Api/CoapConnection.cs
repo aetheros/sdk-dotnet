@@ -206,19 +206,9 @@ namespace Aetheros.OneM2M.Api
 
 			Trace.WriteLine("");
 			if (body != null)
-			{
-				try
-				{
-					Trace.WriteLine(JsonConvert.SerializeObject(JsonConvert.DeserializeObject(body), Formatting.Indented));
-				}
-				catch
-				{
-					Trace.WriteLine(body);
-				}
-			}
+				Trace.WriteLine(body);
 
-			var notification = ParseNotification(request);
-			if (notification != null)
+			foreach (var notification in ParseNotifications(body))
 			{
 				_notifications.OnNext(notification);
 
@@ -226,66 +216,12 @@ namespace Aetheros.OneM2M.Api
 				/*
 				foreach(var uri in notification.NotificationEvent.PrimitiveRepresentation.ResponseType?.NotificationURI ?? Array.Empty<string>())
 					response.SetOption(Option.Create((CoAP.OptionType) OneM2mRequestOptions.RTURI, uri));
-
-				*/
 				//response.SetOption(Option.Create((CoAP.OptionType) OneM2mRequestOptions.RQI, notification.RequestIdentifier));
+				*/
 				exchange.Respond(response);
 			}
 
 			return Task.CompletedTask;
-		}
-
-		Notification<TPrimitiveContent>? ParseNotification(CoAP.Request request)
-		{
-			var body = request.PayloadString;
-
-			var notification = DeserializeJson<NotificationContent<TPrimitiveContent>>(body)?.Notification;
-			if (notification == null)
-			{
-				Debug.WriteLine($"{nameof(ParseNotification)}: Invalid JSON");
-				return null;
-			}
-
-			var serializer = JsonSerializer.CreateDefault(Connection.JsonSettings);
-			var representation = ((Newtonsoft.Json.Linq.JObject) notification.NotificationEvent.Representation).ToObject<TPrimitiveContent>(serializer);
-			if (representation == null)
-			{
-				Debug.WriteLine($"{nameof(ParseNotification)}: Invalid representation");
-				return null;
-			}
-			notification.NotificationEvent.PrimitiveRepresentation = representation;
-
-			/*
-			var notificationPrimitive = notification.NotificationEvent.PrimitiveRepresentation = new TPrimitiveContent//new RequestPrimitive<TPrimitiveContent>
-			{
-				From = request.GetFirstOption((CoAP.OptionType) OneM2mRequestOptions.FR)?.StringValue,
-				RequestIdentifier = request.GetFirstOption((CoAP.OptionType) OneM2mRequestOptions.RQI)?.StringValue,
-				//GroupRequestIdentifier = request.GetFirstOption((CoAP.OptionType) OneM2mRequestOptions.GID)?.StringValue,
-				OriginatingTimestamp = request.GetFirstOption((CoAP.OptionType) OneM2mRequestOptions.OT)?.Value as DateTimeOffset?,
-				ResultExpirationTimestamp = request.GetFirstOption((CoAP.OptionType) OneM2mRequestOptions.RSET)?.StringValue,
-				//RequestExpirationTimestamp = request.GetFirstOption((CoAP.OptionType) OneM2mRequestOptions.RQET)?.StringValue,
-				//OperationExecutionTime = request.GetFirstOption((CoAP.OptionType) OneM2mRequestOptions.OET)?.StringValue,
-				EventCategory = request.GetFirstOption((CoAP.OptionType) OneM2mRequestOptions.EC)?.StringValue,
-		
-				PrimitiveContent = representation
-			};
-			*/
-
-#if false
-			var optionNotificationUrl = request.GetFirstOption((CoAP.OptionType) OneM2mRequestOptions.RTURI)?.StringValue;
-			if (!string.IsNullOrEmpty(optionNotificationUrl))
-			{
-				requestPrimitive.ResponseType = new ResponseTypeInfo
-				{
-					NotificationURI = optionNotificationUrl.Split('&'),
-					//ResponseTypeValue = 
-				};
-			}
-#endif
-
-			//request.SetOption(Option.Create((CoAP.OptionType) OneM2mRequestOptions.RTURI, string.Join("&", body.ResponseType.NotificationURI)));
-
-			return notification;
 		}
 	}
 

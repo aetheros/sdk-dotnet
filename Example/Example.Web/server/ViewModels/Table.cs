@@ -36,7 +36,7 @@ namespace Example.Web.Server
 
 		public Action<string> Add => fullName =>
 		{
-			var names = fullName.Split(new char[] { ' ' }, 2);
+			var names = fullName.Split([' '], 2);
 			var newRecord = new EmployeeModel
 			{
 				FirstName = names.Length > 0 ? names[0] : "",

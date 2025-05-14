@@ -27,6 +27,7 @@ namespace GridNet.IoT.Client.Tools
 		string _AeId;
 		string _AeAppId;
 		string _AeAppName;
+		string _AeCredential;
 		Uri _poaUrl;
 		const string _RegPath = "/PN_CSE";
 
@@ -41,7 +42,7 @@ namespace GridNet.IoT.Client.Tools
 			{ "n|name=", "The App Name", v => _AeAppName = v },
 			{ "p|poa=", "The remote POA (point of access) url", v => _poaUrl = new Uri(v, UriKind.Absolute) },
 			{ "i|aeid=", "The existing AE Id", v => _AeId = v },
-			//{ "credential=", "The AE registration Credential", v => _AeCredential = v },
+			{ "credential=", "The AE registration Credential", v => _AeCredential = v },
 		};
 
 		protected override string Usage { get; } = "[<options>]";
@@ -84,20 +85,12 @@ namespace GridNet.IoT.Client.Tools
 
 			// register a new AE
 			Trace.WriteLine("Invoking AE Registration API");
-			await connection.GetResponseAsync(new RequestPrimitive
+			await connection.RegisterApplicationAsync(new ApplicationConfiguration
 			{
-				To = _RegPath,
-				Operation = Operation.Create,
-				ResourceType = ResourceType.AE,
-				PrimitiveContent = new PrimitiveContent
-				{
-					AE = new AE
-					{
-						App_ID = _AeAppId,
-						AppName = _AeAppName,
-						PointOfAccess = new[] { _poaUrl.ToString() },
-					}
-				}
+				AppId = _AeAppId,
+				AppName = _AeAppName,
+				CredentialId = _AeCredential,
+				PoaUrl = _poaUrl,
 			});
 		}
 	}

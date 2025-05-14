@@ -41,15 +41,15 @@ namespace Example.Web.Server
 			UserName = userIdentity.Name;
 			UserAvatar = userIdentity.Claims.FirstOrDefault(i => i.Type == ClaimTypes.Uri)?.Value;
 
-			this.RegisterRoutes("/", new List<RouteTemplate>
-			{
+			this.RegisterRoutes("/",
+			[
 				new RouteTemplate(nameof(Route.Home)) { UrlPattern = "", ViewUrl = nameof(Route.Dashboard) },
 				new RouteTemplate(nameof(Route.Dashboard)),
 				new RouteTemplate(nameof(Route.FormPage)) { UrlPattern = $"{nameof(Form)}(/:id)" },
 				new RouteTemplate(nameof(Route.TablePage)),
 				new RouteTemplate(nameof(Route.MeterList)),
 				new RouteTemplate(nameof(Route.MeterDashboard)) { UrlPattern = $"{nameof(Route.MeterDashboard)}(/:id)" },
-			});
+			]);
 		}
 	}
 }

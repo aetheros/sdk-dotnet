@@ -24,7 +24,7 @@ namespace Aetheros.OneM2M.Api
 
 		protected override HttpRequestMessage ProcessRequest(HttpRequestMessage request, CancellationToken cancellationToken)
 		{
-			Trace.WriteLine("\n>>>>>>>>>>>>>>>>");
+			Trace.WriteLine(">>>>>>>>>>>>>>>>");
 
 			if (request.RequestUri == null)
 				throw new System.ArgumentNullException("request.RequestUri");
@@ -46,7 +46,7 @@ namespace Aetheros.OneM2M.Api
 
 		protected override HttpResponseMessage ProcessResponse(HttpResponseMessage response, CancellationToken cancellationToken)
 		{
-			Trace.WriteLine("\n<<<<<<<<<<<<<<<<");
+			Trace.WriteLine("<<<<<<<<<<<<<<<<");
 
 			Trace.WriteLine($"{(int) response.StatusCode} {response.ReasonPhrase}");
 			DumpHeaders(response.Headers);
@@ -55,10 +55,10 @@ namespace Aetheros.OneM2M.Api
 			if (content != null)
 				DumpHeaders(content.Headers);
 
-			Trace.WriteLine("");
-
 			if (content != null)
 				Trace.WriteLine(content.ReadAsStringAsync(cancellationToken).Result);
+
+			Trace.WriteLine("");
 
 			return response;
 		}

@@ -27,7 +27,7 @@ namespace GridNet.IoT.Client
 			where
 				prop != null &&
 				prop.PropertyType == typeof(OptionSet)
-			let miRun = type.GetMethod("Run", new[] { typeof(IList<string>) })
+			let miRun = type.GetMethod("Run", [typeof(IList<string>)])
 			where
 				miRun != null
 			select new UtilityInfo

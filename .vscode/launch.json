@@ -45,14 +45,15 @@
 			},
 		},
 		{
-			"name": "TestDev",
+			"name": "Example",
 			"type": "coreclr",
 			"request": "launch",
-			"preLaunchTask": "build",
-			"program": "bin/Debug/net6.0/aostool.dll",
+			"preLaunchTask": "build aostool",
+			"program": "./bin/Debug/net9.0/aostool.dll",
 			"args": [
-				"testdev",
-				"--ae=C000001"
+				"Example",
+				"-i", "Cmetersvc-smpl",
+				"-p", "http://172.30.88.90:44346/notify",
 			],
 			"cwd": "${workspaceFolder}/Aetheros.OneM2M.Tool",
 			"logging": {

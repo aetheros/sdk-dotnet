@@ -2,6 +2,7 @@ namespace Aetheros.Schema.OneM2M
 {
 	using System;
 	using System.Collections.Generic;
+	using System.ComponentModel.DataAnnotations;
 	using System.Linq;
 	using System.Xml.Serialization;
 	using Newtonsoft.Json;
@@ -423,14 +424,23 @@ namespace Aetheros.Schema.OneM2M
 		public ResponseStatusCode ResponseStatusCode { get; set; }
 
 		[JsonExtensionData]
-	public IDictionary<string, JToken> AllJSON { get; set; } = new Dictionary<string, JToken>();
+		public IDictionary<string, JToken> AllJSON { get; set; } = new Dictionary<string, JToken>();
 	}
 
 	public class NotificationContent<TPrimitiveContent> where TPrimitiveContent : PrimitiveContent
 	{
 		[JsonProperty("m2m:sgn")]
 		[XmlElement("sgn")]
+		[Required]
 		public Notification<TPrimitiveContent> Notification { get; set; }
+	}
+
+	public class AggregatedNotificationContent<TPrimitiveContent> where TPrimitiveContent : PrimitiveContent
+	{
+		[JsonProperty("m2m:agn")]
+		[XmlElement("agn")]
+		[Required]
+		public AggregatedNotification<TPrimitiveContent> AggregatedNotification { get; set; }
 	}
 
 	public partial class NotificationNotificationEvent<TPrimitiveContent> where TPrimitiveContent : PrimitiveContent

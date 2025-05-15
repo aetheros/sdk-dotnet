@@ -128,7 +128,7 @@ namespace GridNet.IoT.Client.Tools
 			// initialize the connection
 			var ae = await Register(connection);
 			var cseId = "/PN_CSE";
-			_application = new Application(connection, ae, cseId, _poaUrl);
+			_application = new Application(connection, ae, cseId);
 
 
 			// create our containers

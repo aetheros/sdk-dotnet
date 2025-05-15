@@ -8,7 +8,7 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
-
+using Microsoft.Extensions.Logging;
 using Mono.Options;
 
 using System;
@@ -112,8 +112,8 @@ namespace GridNet.IoT.Client.Tools
 					ctx => ctx.Request.Method == "POST"	// listen for POST requests
 						&& ctx.Request.Path == "/notify"	// on the /notify path
 						&& ctx.Request.ContentType == "application/vnd.onem2m-ntfy+json",	// with JSON content
-					builder => builder.Run(connection.HandleNotificationAsync))
-				)
+					builder => builder.Run(connection.HandleNotificationAsync)
+				))
 				.Build()
 				.RunAsync();
 
@@ -203,7 +203,7 @@ namespace GridNet.IoT.Client.Tools
 					{
 						pc.Container = new Container
 						{
-							MaxInstanceAge = 0,
+							MaxInstanceAge = 0,	// 0 = do not persist content instances, only forward to the POA
 						};
 						return pc;
 					}
@@ -244,7 +244,7 @@ namespace GridNet.IoT.Client.Tools
 
 		async Task DeRegister()
 		{
-			await _application.DeleteAsync(_application.AeId);
+			await _application.DeleteAsync("");
 		}
 
 		public override async Task Run(IList<string> args)
@@ -260,7 +260,7 @@ namespace GridNet.IoT.Client.Tools
 			var ae = await EnsureRegistered(connection);
 
 			// configure the oneM2M applicaiton api
-			_application = new Application(connection, ae, _RegPath, _poaUrl);
+			_application = new Application(connection, ae, _RegPath);
 
 			// create an access control policy to allow mn-AE's with the same appId to write to our container
 			var acl = await EnsureMeterReadAcl();
@@ -284,20 +284,25 @@ namespace GridNet.IoT.Client.Tools
 				Trace.WriteLine($"\treadTimeLocal: {data.ReadTimeLocal}");
 			});
 
-			// create some (fake) meter read content instance, triggering notifications
-			await Task.WhenAll(
-				Enumerable.Range(0, 10).Select(_ => CreateMeterRead())
-			);
-
 			try
 			{
+				using var meterReadTask = Task.Run(async () =>
+				{
+					// create some (fake) meter read content instance, triggering notifications
+					while (true)
+					{
+						await Task.Delay(TimeSpan.FromSeconds(1));
+						await CreateMeterRead();
+					}
+				});
+
 				// continue running the POA server
-				await listenerTask;
+				await Task.WhenAny(listenerTask, meterReadTask);
 			}
 			finally
 			{
 				await DeleteReadsSubscription();
-				await DeRegister();
+				//await DeRegister();
 			}
 		}
 

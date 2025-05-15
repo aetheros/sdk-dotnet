@@ -33,15 +33,13 @@ namespace Aetheros.OneM2M.Api
 		public Connection<TPrimitiveContent> Connection { get; }
 		public AE Ae { get; }
 		public string AeId => Ae.AE_ID;
-		public Uri? PoaUrl { get; set; }
 		public string CseId { get; }
 
-		public Application(Connection<TPrimitiveContent> con, AE ae, string urlPrefix, Uri? poaUrl = null)
+		public Application(Connection<TPrimitiveContent> con, AE ae, string urlPrefix)
 		{
 			Connection = con;
 			Ae = ae;
 			CseId = urlPrefix;
-			PoaUrl = poaUrl;
 		}
 
 		public string ToAbsolute(string key)
@@ -234,94 +232,91 @@ namespace Aetheros.OneM2M.Api
 			}
 		}
 
-		readonly ConcurrentDictionary<string, Task<IObservable<NotificationNotificationEvent<TPrimitiveContent>>>> _eventSubscriptions = new ConcurrentDictionary<string, Task<IObservable<NotificationNotificationEvent<TPrimitiveContent>>>>();
-
+		/// <summary>
+		/// Creates a subscription to receive notifications from the server.
+		/// The subscription is created on the resource specified by resourceId.
+		/// The subscription is identified by the subscriptionName.
+		/// </summary>
+		/// <param name="resourceId">the resource (eg. Container) to subscribe to</param>
+		/// <param name="subscriptionName">the unique name of the subscription</param>
+		/// <param name="criteria">allows filtering of notifications</param>
+		/// <param name="poaUrl">overrides the AE's default POA URL</param>
+		/// <param name="deleteAfterFinalClose">if this is true, the subscription will be deleted after the returned observable is disposed</param>
+		/// <param name="batchSize">enables batching of notifications in a single request</param>
+		/// <returns></returns>
+		/// <exception cref="ProtocolViolationException"></exception>
 		public async Task<IObservable<NotificationNotificationEvent<TPrimitiveContent>>> ObserveNotificationAsync(
-			string url,
+			string resourceId,
 			string subscriptionName,
 			EventNotificationCriteria? criteria = null,
 			string? poaUrl = null,
 			bool deleteAfterFinalClose = false,
 			int batchSize = 1)
 		{
-			if (poaUrl == null)
-			{
-				poaUrl = this.PoaUrl?.ToString();
+			var subscriptionReference = $"{ToAbsolute(resourceId)}/{subscriptionName}";
+			var subscription = (await TryGetPrimitiveAsync(subscriptionReference))?.Subscription;
 
-				if (poaUrl == null)
-					throw new InvalidOperationException("Cannot Observe without valid PoaUrl");
+			//create subscription only if can't find subscription with the same notification url
+			if (subscription != null)
+			{
+				Debug.WriteLine($"Using existing subscription {subscriptionReference}");
+			}
+			else
+			{
+				BatchNotify? batchNotify = (batchSize <= 1) ? null : new BatchNotify
+				{
+					Number = batchSize
+				};
+
+				var subscriptionResponse = await CreateResourceAsync(
+					resourceId,
+					ResourceType.Subscription,
+					pc => {
+						pc.Subscription = new Subscription
+						{
+							ResourceName = subscriptionName,
+							EventNotificationCriteria = criteria ?? _defaultEventNotificationCriteria,
+							NotificationContentType = NotificationContentType.AllAttributes,
+							NotificationURI = [poaUrl ?? this.AeId],
+							BatchNotify = batchNotify,
+						};
+						return pc;
+					},
+					resultContent: ResultContent.Attributes
+				);
+
+				subscription = subscriptionResponse.Subscription ?? throw new ProtocolViolationException("CreateResourceAsync succeeded but did not return a URI");
+				Debug.Assert(subscription.ResourceName == subscriptionName);
+				Debug.WriteLine($"Created Subscription {subscriptionReference}");
 			}
 
-			// TODO: differentiate criteria
-			return await _eventSubscriptions.GetOrAdd(url, async key =>
-			{
-				var subscriptionReference = $"{ToAbsolute(url)}/{subscriptionName}";
-				var subscription = (await TryGetPrimitiveAsync(subscriptionReference))?.Subscription;
-
-				//create subscription only if can't find subscription with the same notification url
-				if (subscription != null)
+			return Connection.Notifications
+				.Where(n => n.SubscriptionReference == subscriptionReference)
+				.Select(n => n.NotificationEvent)
+				.Finally(() =>
 				{
-					Debug.WriteLine($"Using existing subscription {key} : {subscriptionReference}");
-				}
-				else
-				{
-					BatchNotify batchNotify = (batchSize <= 1) ? null : new BatchNotify
-					{
-						Number = batchSize
-					};
-
-					var subscriptionResponse = await CreateResourceAsync(
-						url,
-						ResourceType.Subscription,
-						pc => {
-							pc.Subscription = new Subscription
-							{
-								ResourceName = subscriptionName,
-								EventNotificationCriteria = criteria ?? _defaultEventNotificationCriteria,
-								NotificationContentType = NotificationContentType.AllAttributes,
-								NotificationURI = [poaUrl],
-								BatchNotify = batchNotify,
-							};
-							return pc;
-						},
-						resultContent: ResultContent.Attributes
-					);
-
-					subscription = subscriptionResponse.Subscription ?? throw new ProtocolViolationException("CreateResourceAsync succeeded but did not return a URI");
-					Debug.Assert(subscription.ResourceName == subscriptionName);
-					Debug.WriteLine($"Created Subscription {key} : {subscriptionReference}");
-				}
-
-				return Connection.Notifications
-					.Where(n => n.SubscriptionReference == subscriptionReference)
-					.Select(n => n.NotificationEvent)
-					.Finally(() =>
-					{
-						if (deleteAfterFinalClose)
-							DeleteAsync(subscriptionReference).Wait();
-					})
-					.Publish()
-					.RefCount();
-			});
+					if (deleteAfterFinalClose)
+						DeleteAsync(subscriptionReference).Wait();
+				})
+				.Publish()
+				.RefCount();
 		}
 
-
-		public async Task<IObservable<TPrimitiveContent>> ObserveAsync(
-			string url,
-			string subscriptionName,
-			EventNotificationCriteria? criteria = null,
-			string? poaUrl = null,
-			bool deleteAfterFinalClose = false,
-			int batchSize = 1
-			) =>
-				(await ObserveNotificationAsync(url, subscriptionName, criteria: criteria, poaUrl: poaUrl, deleteAfterFinalClose: deleteAfterFinalClose, batchSize))
-				.Select(evt => evt.PrimitiveRepresentation)
-				.WhereNotNull();
 
 		static readonly EventNotificationCriteria _defaultEventNotificationCriteria = new EventNotificationCriteria
 		{
 			NotificationEventType = [NotificationEventType.CreateChild],
 		};
+
+		public IObservable<TContent> FilterContentInstances<TContent>(IObservable<NotificationNotificationEvent<TPrimitiveContent>> observable)
+			where TContent : class
+		{
+			return observable
+				.Select(evt => evt.PrimitiveRepresentation)
+				.WhereNotNull()
+				.Select(pc => pc.ContentInstance?.GetContent<TContent>())
+				.WhereNotNull();
+		}
 
 		public async Task<IObservable<TContent>> ObserveContentInstanceAsync<TContent>(
 			string containerName,
@@ -333,12 +328,9 @@ namespace Aetheros.OneM2M.Api
 			where TContent : class
 		{
 			var container = await this.EnsureContainerAsync(containerName);
-			return (await this.ObserveAsync(containerName, subscriptionName, poaUrl: poaUrl, deleteAfterFinalClose: deleteAfterFinalClose, batchSize: batchSize))
-				//.Where(evt => evt.NotificationEventType == NotificationEventType.CreateChild)
-				.Select(pc => pc.ContentInstance?.GetContent<TContent>())
-				.WhereNotNull();
+			var observable = await this.ObserveNotificationAsync(containerName, subscriptionName, poaUrl: poaUrl, deleteAfterFinalClose: deleteAfterFinalClose, batchSize: batchSize);
+			return FilterContentInstances<TContent>(observable);
 		}
-
 
 
 		public static async Task<X509Certificate2> GenerateSigningCertificateAsync(Uri caUri, AE ae, string certificateFilename)
@@ -471,8 +463,9 @@ namespace Aetheros.OneM2M.Api
 				con = new HttpConnection<TPrimitiveContent>(m2mConfig.M2MUrl, signedCert);
 			}
 
-			return new Application<TPrimitiveContent>(con, ae, appConfig.CseId, appConfig.PoaUrl);
+			return new Application<TPrimitiveContent>(con, ae, appConfig.CseId);
 		}
+
 	}
 
 	public class Application : Application<PrimitiveContent>
@@ -483,7 +476,7 @@ namespace Aetheros.OneM2M.Api
 			public string? AEId { get; set; }
 		}
 
-		public Application(Connection<PrimitiveContent> con, AE ae, string urlPrefix, Uri? poaUrl = null) : base(con, ae, urlPrefix, poaUrl) {}
-
+		public Application(Connection<PrimitiveContent> con, AE ae, string urlPrefix) : base(con, ae, urlPrefix) {}
 	}
+
 }

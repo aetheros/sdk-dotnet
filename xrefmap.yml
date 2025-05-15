@@ -60,15 +60,15 @@ references:
   commentId: T:Aetheros.OneM2M.Api.Application
   fullName: Aetheros.OneM2M.Api.Application
   nameWithType: Application
-- uid: Aetheros.OneM2M.Api.Application.#ctor(Aetheros.OneM2M.Api.Connection{Aetheros.Schema.OneM2M.PrimitiveContent},Aetheros.Schema.OneM2M.AE,System.String,System.Uri)
-  name: Application(Connection<PrimitiveContent>, AE, string, Uri?)
-  href: api/Aetheros.OneM2M.Api.Application.html#Aetheros_OneM2M_Api_Application__ctor_Aetheros_OneM2M_Api_Connection_Aetheros_Schema_OneM2M_PrimitiveContent__Aetheros_Schema_OneM2M_AE_System_String_System_Uri_
-  commentId: M:Aetheros.OneM2M.Api.Application.#ctor(Aetheros.OneM2M.Api.Connection{Aetheros.Schema.OneM2M.PrimitiveContent},Aetheros.Schema.OneM2M.AE,System.String,System.Uri)
-  name.vb: New(Connection(Of PrimitiveContent), AE, String, Uri)
-  fullName: Aetheros.OneM2M.Api.Application.Application(Aetheros.OneM2M.Api.Connection<Aetheros.Schema.OneM2M.PrimitiveContent>, Aetheros.Schema.OneM2M.AE, string, System.Uri?)
-  fullName.vb: Aetheros.OneM2M.Api.Application.New(Aetheros.OneM2M.Api.Connection(Of Aetheros.Schema.OneM2M.PrimitiveContent), Aetheros.Schema.OneM2M.AE, String, System.Uri)
-  nameWithType: Application.Application(Connection<PrimitiveContent>, AE, string, Uri?)
-  nameWithType.vb: Application.New(Connection(Of PrimitiveContent), AE, String, Uri)
+- uid: Aetheros.OneM2M.Api.Application.#ctor(Aetheros.OneM2M.Api.Connection{Aetheros.Schema.OneM2M.PrimitiveContent},Aetheros.Schema.OneM2M.AE,System.String)
+  name: Application(Connection<PrimitiveContent>, AE, string)
+  href: api/Aetheros.OneM2M.Api.Application.html#Aetheros_OneM2M_Api_Application__ctor_Aetheros_OneM2M_Api_Connection_Aetheros_Schema_OneM2M_PrimitiveContent__Aetheros_Schema_OneM2M_AE_System_String_
+  commentId: M:Aetheros.OneM2M.Api.Application.#ctor(Aetheros.OneM2M.Api.Connection{Aetheros.Schema.OneM2M.PrimitiveContent},Aetheros.Schema.OneM2M.AE,System.String)
+  name.vb: New(Connection(Of PrimitiveContent), AE, String)
+  fullName: Aetheros.OneM2M.Api.Application.Application(Aetheros.OneM2M.Api.Connection<Aetheros.Schema.OneM2M.PrimitiveContent>, Aetheros.Schema.OneM2M.AE, string)
+  fullName.vb: Aetheros.OneM2M.Api.Application.New(Aetheros.OneM2M.Api.Connection(Of Aetheros.Schema.OneM2M.PrimitiveContent), Aetheros.Schema.OneM2M.AE, String)
+  nameWithType: Application.Application(Connection<PrimitiveContent>, AE, string)
+  nameWithType.vb: Application.New(Connection(Of PrimitiveContent), AE, String)
 - uid: Aetheros.OneM2M.Api.Application.#ctor*
   name: Application
   href: api/Aetheros.OneM2M.Api.Application.html#Aetheros_OneM2M_Api_Application__ctor_
@@ -178,15 +178,15 @@ references:
   fullName.vb: Aetheros.OneM2M.Api.Application(Of TPrimitiveContent)
   nameWithType: Application<TPrimitiveContent>
   nameWithType.vb: Application(Of TPrimitiveContent)
-- uid: Aetheros.OneM2M.Api.Application`1.#ctor(Aetheros.OneM2M.Api.Connection{`0},Aetheros.Schema.OneM2M.AE,System.String,System.Uri)
-  name: Application(Connection<TPrimitiveContent>, AE, string, Uri?)
-  href: api/Aetheros.OneM2M.Api.Application-1.html#Aetheros_OneM2M_Api_Application_1__ctor_Aetheros_OneM2M_Api_Connection__0__Aetheros_Schema_OneM2M_AE_System_String_System_Uri_
-  commentId: M:Aetheros.OneM2M.Api.Application`1.#ctor(Aetheros.OneM2M.Api.Connection{`0},Aetheros.Schema.OneM2M.AE,System.String,System.Uri)
-  name.vb: New(Connection(Of TPrimitiveContent), AE, String, Uri)
-  fullName: Aetheros.OneM2M.Api.Application<TPrimitiveContent>.Application(Aetheros.OneM2M.Api.Connection<TPrimitiveContent>, Aetheros.Schema.OneM2M.AE, string, System.Uri?)
-  fullName.vb: Aetheros.OneM2M.Api.Application(Of TPrimitiveContent).New(Aetheros.OneM2M.Api.Connection(Of TPrimitiveContent), Aetheros.Schema.OneM2M.AE, String, System.Uri)
-  nameWithType: Application<TPrimitiveContent>.Application(Connection<TPrimitiveContent>, AE, string, Uri?)
-  nameWithType.vb: Application(Of TPrimitiveContent).New(Connection(Of TPrimitiveContent), AE, String, Uri)
+- uid: Aetheros.OneM2M.Api.Application`1.#ctor(Aetheros.OneM2M.Api.Connection{`0},Aetheros.Schema.OneM2M.AE,System.String)
+  name: Application(Connection<TPrimitiveContent>, AE, string)
+  href: api/Aetheros.OneM2M.Api.Application-1.html#Aetheros_OneM2M_Api_Application_1__ctor_Aetheros_OneM2M_Api_Connection__0__Aetheros_Schema_OneM2M_AE_System_String_
+  commentId: M:Aetheros.OneM2M.Api.Application`1.#ctor(Aetheros.OneM2M.Api.Connection{`0},Aetheros.Schema.OneM2M.AE,System.String)
+  name.vb: New(Connection(Of TPrimitiveContent), AE, String)
+  fullName: Aetheros.OneM2M.Api.Application<TPrimitiveContent>.Application(Aetheros.OneM2M.Api.Connection<TPrimitiveContent>, Aetheros.Schema.OneM2M.AE, string)
+  fullName.vb: Aetheros.OneM2M.Api.Application(Of TPrimitiveContent).New(Aetheros.OneM2M.Api.Connection(Of TPrimitiveContent), Aetheros.Schema.OneM2M.AE, String)
+  nameWithType: Application<TPrimitiveContent>.Application(Connection<TPrimitiveContent>, AE, string)
+  nameWithType.vb: Application(Of TPrimitiveContent).New(Connection(Of TPrimitiveContent), AE, String)
 - uid: Aetheros.OneM2M.Api.Application`1.#ctor*
   name: Application
   href: api/Aetheros.OneM2M.Api.Application-1.html#Aetheros_OneM2M_Api_Application_1__ctor_
@@ -355,6 +355,24 @@ references:
   fullName.vb: Aetheros.OneM2M.Api.Application(Of TPrimitiveContent).EnsureContainerAsync
   nameWithType: Application<TPrimitiveContent>.EnsureContainerAsync
   nameWithType.vb: Application(Of TPrimitiveContent).EnsureContainerAsync
+- uid: Aetheros.OneM2M.Api.Application`1.FilterContentInstances*
+  name: FilterContentInstances
+  href: api/Aetheros.OneM2M.Api.Application-1.html#Aetheros_OneM2M_Api_Application_1_FilterContentInstances_
+  commentId: Overload:Aetheros.OneM2M.Api.Application`1.FilterContentInstances
+  isSpec: "True"
+  fullName: Aetheros.OneM2M.Api.Application<TPrimitiveContent>.FilterContentInstances
+  fullName.vb: Aetheros.OneM2M.Api.Application(Of TPrimitiveContent).FilterContentInstances
+  nameWithType: Application<TPrimitiveContent>.FilterContentInstances
+  nameWithType.vb: Application(Of TPrimitiveContent).FilterContentInstances
+- uid: Aetheros.OneM2M.Api.Application`1.FilterContentInstances``1(System.IObservable{Aetheros.Schema.OneM2M.NotificationNotificationEvent{`0}})
+  name: FilterContentInstances<TContent>(IObservable<NotificationNotificationEvent<TPrimitiveContent>>)
+  href: api/Aetheros.OneM2M.Api.Application-1.html#Aetheros_OneM2M_Api_Application_1_FilterContentInstances__1_System_IObservable_Aetheros_Schema_OneM2M_NotificationNotificationEvent__0___
+  commentId: M:Aetheros.OneM2M.Api.Application`1.FilterContentInstances``1(System.IObservable{Aetheros.Schema.OneM2M.NotificationNotificationEvent{`0}})
+  name.vb: FilterContentInstances(Of TContent)(IObservable(Of NotificationNotificationEvent(Of TPrimitiveContent)))
+  fullName: Aetheros.OneM2M.Api.Application<TPrimitiveContent>.FilterContentInstances<TContent>(System.IObservable<Aetheros.Schema.OneM2M.NotificationNotificationEvent<TPrimitiveContent>>)
+  fullName.vb: Aetheros.OneM2M.Api.Application(Of TPrimitiveContent).FilterContentInstances(Of TContent)(System.IObservable(Of Aetheros.Schema.OneM2M.NotificationNotificationEvent(Of TPrimitiveContent)))
+  nameWithType: Application<TPrimitiveContent>.FilterContentInstances<TContent>(IObservable<NotificationNotificationEvent<TPrimitiveContent>>)
+  nameWithType.vb: Application(Of TPrimitiveContent).FilterContentInstances(Of TContent)(IObservable(Of NotificationNotificationEvent(Of TPrimitiveContent)))
 - uid: Aetheros.OneM2M.Api.Application`1.GenerateSigningCertificateAsync(System.Uri,Aetheros.Schema.OneM2M.AE,System.String)
   name: GenerateSigningCertificateAsync(Uri, AE, string)
   href: api/Aetheros.OneM2M.Api.Application-1.html#Aetheros_OneM2M_Api_Application_1_GenerateSigningCertificateAsync_System_Uri_Aetheros_Schema_OneM2M_AE_System_String_
@@ -454,24 +472,6 @@ references:
   fullName.vb: Aetheros.OneM2M.Api.Application(Of TPrimitiveContent).GetResponseAsync(Of T)(Aetheros.Schema.OneM2M.RequestPrimitive(Of TPrimitiveContent))
   nameWithType: Application<TPrimitiveContent>.GetResponseAsync<T>(RequestPrimitive<TPrimitiveContent>)
   nameWithType.vb: Application(Of TPrimitiveContent).GetResponseAsync(Of T)(RequestPrimitive(Of TPrimitiveContent))
-- uid: Aetheros.OneM2M.Api.Application`1.ObserveAsync(System.String,System.String,Aetheros.Schema.OneM2M.EventNotificationCriteria,System.String,System.Boolean,System.Int32)
-  name: ObserveAsync(string, string, EventNotificationCriteria?, string?, bool, int)
-  href: api/Aetheros.OneM2M.Api.Application-1.html#Aetheros_OneM2M_Api_Application_1_ObserveAsync_System_String_System_String_Aetheros_Schema_OneM2M_EventNotificationCriteria_System_String_System_Boolean_System_Int32_
-  commentId: M:Aetheros.OneM2M.Api.Application`1.ObserveAsync(System.String,System.String,Aetheros.Schema.OneM2M.EventNotificationCriteria,System.String,System.Boolean,System.Int32)
-  name.vb: ObserveAsync(String, String, EventNotificationCriteria, String, Boolean, Integer)
-  fullName: Aetheros.OneM2M.Api.Application<TPrimitiveContent>.ObserveAsync(string, string, Aetheros.Schema.OneM2M.EventNotificationCriteria?, string?, bool, int)
-  fullName.vb: Aetheros.OneM2M.Api.Application(Of TPrimitiveContent).ObserveAsync(String, String, Aetheros.Schema.OneM2M.EventNotificationCriteria, String, Boolean, Integer)
-  nameWithType: Application<TPrimitiveContent>.ObserveAsync(string, string, EventNotificationCriteria?, string?, bool, int)
-  nameWithType.vb: Application(Of TPrimitiveContent).ObserveAsync(String, String, EventNotificationCriteria, String, Boolean, Integer)
-- uid: Aetheros.OneM2M.Api.Application`1.ObserveAsync*
-  name: ObserveAsync
-  href: api/Aetheros.OneM2M.Api.Application-1.html#Aetheros_OneM2M_Api_Application_1_ObserveAsync_
-  commentId: Overload:Aetheros.OneM2M.Api.Application`1.ObserveAsync
-  isSpec: "True"
-  fullName: Aetheros.OneM2M.Api.Application<TPrimitiveContent>.ObserveAsync
-  fullName.vb: Aetheros.OneM2M.Api.Application(Of TPrimitiveContent).ObserveAsync
-  nameWithType: Application<TPrimitiveContent>.ObserveAsync
-  nameWithType.vb: Application(Of TPrimitiveContent).ObserveAsync
 - uid: Aetheros.OneM2M.Api.Application`1.ObserveContentInstanceAsync*
   name: ObserveContentInstanceAsync
   href: api/Aetheros.OneM2M.Api.Application-1.html#Aetheros_OneM2M_Api_Application_1_ObserveContentInstanceAsync_
@@ -508,23 +508,6 @@ references:
   fullName.vb: Aetheros.OneM2M.Api.Application(Of TPrimitiveContent).ObserveNotificationAsync
   nameWithType: Application<TPrimitiveContent>.ObserveNotificationAsync
   nameWithType.vb: Application(Of TPrimitiveContent).ObserveNotificationAsync
-- uid: Aetheros.OneM2M.Api.Application`1.PoaUrl
-  name: PoaUrl
-  href: api/Aetheros.OneM2M.Api.Application-1.html#Aetheros_OneM2M_Api_Application_1_PoaUrl
-  commentId: P:Aetheros.OneM2M.Api.Application`1.PoaUrl
-  fullName: Aetheros.OneM2M.Api.Application<TPrimitiveContent>.PoaUrl
-  fullName.vb: Aetheros.OneM2M.Api.Application(Of TPrimitiveContent).PoaUrl
-  nameWithType: Application<TPrimitiveContent>.PoaUrl
-  nameWithType.vb: Application(Of TPrimitiveContent).PoaUrl
-- uid: Aetheros.OneM2M.Api.Application`1.PoaUrl*
-  name: PoaUrl
-  href: api/Aetheros.OneM2M.Api.Application-1.html#Aetheros_OneM2M_Api_Application_1_PoaUrl_
-  commentId: Overload:Aetheros.OneM2M.Api.Application`1.PoaUrl
-  isSpec: "True"
-  fullName: Aetheros.OneM2M.Api.Application<TPrimitiveContent>.PoaUrl
-  fullName.vb: Aetheros.OneM2M.Api.Application(Of TPrimitiveContent).PoaUrl
-  nameWithType: Application<TPrimitiveContent>.PoaUrl
-  nameWithType.vb: Application(Of TPrimitiveContent).PoaUrl
 - uid: Aetheros.OneM2M.Api.Application`1.RegisterAsync(Aetheros.OneM2M.Api.Connection.IConnectionConfiguration,Aetheros.OneM2M.Api.ApplicationConfiguration,System.Uri)
   name: RegisterAsync(IConnectionConfiguration, ApplicationConfiguration, Uri?)
   href: api/Aetheros.OneM2M.Api.Application-1.html#Aetheros_OneM2M_Api_Application_1_RegisterAsync_Aetheros_OneM2M_Api_Connection_IConnectionConfiguration_Aetheros_OneM2M_Api_ApplicationConfiguration_System_Uri_

@@ -7008,7 +7008,7 @@ namespace Aetheros.Schema.OneM2M
 		[XmlElementAttribute("rce", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
 		public Aetheros.Schema.OneM2M.ResourceWrapper Resource { get; set; }
 
-		[JsonPropertyAttribute("uril")]
+		[JsonPropertyAttribute("m2m:uril")]
 		[XmlElementAttribute("uril", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="anyURI")]
 		public ICollection<string> URIList { get; set; } = System.Array.Empty<System.String>();
 		
@@ -7048,7 +7048,7 @@ namespace Aetheros.Schema.OneM2M
 		[JsonIgnoreAttribute()]
 		public bool ResourceRefListSpecified => (this.ResourceRefList.Count != 0);
 
-		[JsonPropertyAttribute("dbg")]
+		[JsonPropertyAttribute("m2m:dbg")]
 		[XmlElementAttribute("dbg", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="string")]
 		public string DebugInfo { get; set; }
 	}

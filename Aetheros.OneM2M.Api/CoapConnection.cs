@@ -13,21 +13,23 @@ using System.Diagnostics;
 
 namespace Aetheros.OneM2M.Api
 {
-	public class CoapConnection<TPrimitiveContent> : Connection<TPrimitiveContent>
+	public abstract class CoapConnection<TPrimitiveContent> : Connection<TPrimitiveContent>
 		where TPrimitiveContent : PrimitiveContent, new()
 	{
 		readonly Uri _iotApiUrl;
 		readonly CoAP.CoapClient _pnClient;
 
-		public X509Certificate? ClientCertificate { get; }
+		public X509Certificate2? ClientCertificate { get; }
+
+		public override bool IsSecure => _iotApiUrl.Scheme == "coaps";
 
 		public CoapConnection(Connection.IConnectionConfiguration config)
 			: this(config.M2MUrl, config.CertificateFilename) { }
 
 		public CoapConnection(Uri m2mUrl, string? certificateFilename)
-			: this(m2mUrl, AosUtils.LoadCertificate(certificateFilename)) { }
+			: this(m2mUrl, AosUtils.LoadCertificateWithKey(certificateFilename)) { }
 
-		public CoapConnection(Uri m2mUrl, X509Certificate? certificate = null)
+		public CoapConnection(Uri m2mUrl, X509Certificate2? certificate = null)
 		{
 			_iotApiUrl = m2mUrl;
 
@@ -125,7 +127,7 @@ namespace Aetheros.OneM2M.Api
 			request.URI = _pnClient.Uri;
 			var to = body.To;
 			var pathParts = to.Split("/", StringSplitOptions.RemoveEmptyEntries);
-			
+
 			if (to.StartsWith("//"))
 				request.AddUriPath("_");
 			else if (to.StartsWith("/"))
@@ -138,39 +140,39 @@ namespace Aetheros.OneM2M.Api
 				request.AddUriQuery(query);
 
 			if (body.ResourceType != null)
-				request.AddOption(Option.Create((CoAP.OptionType) OneM2mRequestOptions.TY, (int) body.ResourceType));
+				request.AddOption(Option.Create((CoAP.OptionType)OneM2mRequestOptions.TY, (int)body.ResourceType));
 
 			if (body.PrimitiveContent != null)
 			{
 				var bodyJson = SerializeJson(body.PrimitiveContent);
-				request.SetPayload(bodyJson, (int) ContentFormats.Json);
+				request.SetPayload(bodyJson, (int)ContentFormats.Json);
 			}
 
 			if (body.From != null)
-				request.SetOption(Option.Create((CoAP.OptionType) OneM2mRequestOptions.FR, body.From));
+				request.SetOption(Option.Create((CoAP.OptionType)OneM2mRequestOptions.FR, body.From));
 
-			request.SetOption(Option.Create((CoAP.OptionType) OneM2mRequestOptions.RQI, body.RequestIdentifier ?? NextRequestId));
+			request.SetOption(Option.Create((CoAP.OptionType)OneM2mRequestOptions.RQI, body.RequestIdentifier ?? NextRequestId));
 
 			if (body.GroupRequestIdentifier != null)
-				request.SetOption(Option.Create((CoAP.OptionType) OneM2mRequestOptions.GID, body.GroupRequestIdentifier));
+				request.SetOption(Option.Create((CoAP.OptionType)OneM2mRequestOptions.GID, body.GroupRequestIdentifier));
 
 			if (body.OriginatingTimestamp != null)
-				request.SetOption(Option.Create((CoAP.OptionType) OneM2mRequestOptions.OT, body.OriginatingTimestamp.Value.ToString(_dateTimeFormat)));
+				request.SetOption(Option.Create((CoAP.OptionType)OneM2mRequestOptions.OT, body.OriginatingTimestamp.Value.ToString(_dateTimeFormat)));
 
 			if (body.ResultExpirationTimestamp != null)
-				request.SetOption(Option.Create((CoAP.OptionType) OneM2mRequestOptions.RSET, body.ResultExpirationTimestamp));
+				request.SetOption(Option.Create((CoAP.OptionType)OneM2mRequestOptions.RSET, body.ResultExpirationTimestamp));
 
 			if (body.RequestExpirationTimestamp != null)
-				request.SetOption(Option.Create((CoAP.OptionType) OneM2mRequestOptions.RQET, body.RequestExpirationTimestamp));
+				request.SetOption(Option.Create((CoAP.OptionType)OneM2mRequestOptions.RQET, body.RequestExpirationTimestamp));
 
 			if (body.OperationExecutionTime != null)
-				request.SetOption(Option.Create((CoAP.OptionType) OneM2mRequestOptions.OET, body.OperationExecutionTime));
+				request.SetOption(Option.Create((CoAP.OptionType)OneM2mRequestOptions.OET, body.OperationExecutionTime));
 
 			if (body.EventCategory != null)
-				request.SetOption(Option.Create((CoAP.OptionType) OneM2mRequestOptions.EC, body.EventCategory));
+				request.SetOption(Option.Create((CoAP.OptionType)OneM2mRequestOptions.EC, body.EventCategory));
 
 			if (body.ResponseType?.NotificationURI != null)
-				request.SetOption(Option.Create((CoAP.OptionType) OneM2mRequestOptions.RTURI, string.Join("&", body.ResponseType.NotificationURI)));
+				request.SetOption(Option.Create((CoAP.OptionType)OneM2mRequestOptions.RTURI, string.Join("&", body.ResponseType.NotificationURI)));
 
 			return request;
 		}
@@ -179,8 +181,8 @@ namespace Aetheros.OneM2M.Api
 		class NotifyResource : CoAP.Server.Resources.Resource
 		{
 			readonly Func<CoAP.Server.Resources.CoapExchange, Task> _postHandler;
-			
-			public NotifyResource(string name, Func<CoAP.Server.Resources.CoapExchange, Task> postHandler) : base(name) 
+
+			public NotifyResource(string name, Func<CoAP.Server.Resources.CoapExchange, Task> postHandler) : base(name)
 			{
 				_postHandler = postHandler;
 			}
@@ -229,7 +231,7 @@ namespace Aetheros.OneM2M.Api
 	{
 		public int StatusCode { get; }
 
-		public CoapRequestException(int statusCode) : base (CoAP.Code.ToString(statusCode))
+		public CoapRequestException(int statusCode) : base(CoAP.Code.ToString(statusCode))
 		{
 			StatusCode = statusCode;
 		}
@@ -284,10 +286,10 @@ namespace Aetheros.OneM2M.Api
 		}
 	}
 
-	public class CoapConnection : CoapConnection<PrimitiveContent>
+	public class CoapConnection : CoapConnection<PrimitiveContent>, IDisposable
 	{
-		public CoapConnection(Connection.IConnectionConfiguration config) : base(config) {}
-		public CoapConnection(Uri m2mUrl, string certificateFilename) : base(m2mUrl, certificateFilename) {}
-		public CoapConnection(Uri m2mUrl, X509Certificate? certificate = null) : base(m2mUrl, certificate) {}
+		public CoapConnection(Connection.IConnectionConfiguration config) : base(config) { }
+		public CoapConnection(Uri m2mUrl, string certificateFilename) : base(m2mUrl, certificateFilename) { }
+		public CoapConnection(Uri m2mUrl, X509Certificate2? certificate = null) : base(m2mUrl, certificate) { }
 	}
 }

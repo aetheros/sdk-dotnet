@@ -14,6 +14,7 @@ using System.Net;
 using System.Net.Http;
 using System.Reactive.Linq;
 using System.Reactive.Subjects;
+using System.Runtime.Serialization;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
@@ -32,8 +33,18 @@ done
 */
 namespace Aetheros.OneM2M.Api
 {
-	public abstract class Connection
+	public abstract class Connection : IDisposable
 	{
+		public virtual void Dispose()
+		{
+			Dispose(true);
+			GC.SuppressFinalize(this);
+		}
+
+		protected virtual void Dispose(bool disposing)
+		{
+		}
+
 		[System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 		public const string OneM2MResponseContentType = "application/vnd.onem2m-res+json";
 
@@ -41,6 +52,7 @@ namespace Aetheros.OneM2M.Api
 
 		private protected const string _dateTimeFormat = "yyyyMMddTHHmmss.FFFFF";
 
+		public abstract bool IsSecure { get; }
 
 		public interface IConnectionConfiguration
 		{
@@ -131,206 +143,213 @@ namespace Aetheros.OneM2M.Api
 				};
 			}).ToList();
 
-		public class HttpStatusException : Exception
-		{
-			public HttpStatusCode StatusCode { get; }
-			public string ReasonPhrase { get; }
 
-			public HttpStatusException(HttpStatusCode statusCode, string reasonPhrase)
-				: base($"Http Status {statusCode}: {reasonPhrase}")
-			{
-				this.StatusCode = statusCode;
-				this.ReasonPhrase = reasonPhrase;
-			}
+	}
+
+	public class OneM2MException : Exception
+	{
+		public OneM2MException(ResponseStatusCode responseStatusCode)
+		: base(responseStatusCode.ToString())
+		{
+			this.StatusCode = responseStatusCode;
 		}
+		public OneM2MException(ResponseStatusCode responseStatusCode, string message)
+		: base(message)
+		{
+			this.StatusCode = responseStatusCode;
+		}
+		public OneM2MException(ResponseStatusCode responseStatusCode, string message, Exception innerException)
+		: base(message, innerException)
+		{
+			this.StatusCode = responseStatusCode;
+		}
+		protected OneM2MException(SerializationInfo info, StreamingContext context) : base(info, context) { }
+
+		public ResponseStatusCode StatusCode { get; set; }
 	}
 
 	public abstract class Connection<TPrimitiveContent> : Connection
 		where TPrimitiveContent : PrimitiveContent, new()
+{
+	static int _nextRequestId;
+	readonly string _requestGuid = Guid.NewGuid().ToString("N").Substring(0, 8);
+	public string NextRequestId => $"{_requestGuid}/{Interlocked.Increment(ref _nextRequestId)}";
+
+	public async Task<AE?> FindApplicationAsync(string aeId) => (await GetPrimitiveAsync(aeId, aeId)).AE;
+
+	public async Task<AE> RegisterApplicationAsync(ApplicationConfiguration appConfig)
 	{
-		static int _nextRequestId;
-		readonly string _requestGuid = Guid.NewGuid().ToString("N").Substring(0, 8);
-		public string NextRequestId => $"{_requestGuid}/{Interlocked.Increment(ref _nextRequestId)}";
-
-		public async Task<AE?> FindApplicationAsync(string aeId) => (await GetPrimitiveAsync(aeId, aeId)).AE;
-
-		public async Task<AE> RegisterApplicationAsync(ApplicationConfiguration appConfig)
+		var response = await GetResponseAsync(new RequestPrimitive<TPrimitiveContent>
 		{
-			var response = await GetResponseAsync(new RequestPrimitive<TPrimitiveContent>
+			From = appConfig.CredentialId,
+			To = appConfig.CseId,
+			Operation = Operation.Create,
+			ResourceType = ResourceType.AE,
+			ResultContent = ResultContent.Attributes,
+			PrimitiveContent = new TPrimitiveContent
 			{
-				From = appConfig.CredentialId,
-				To = appConfig.CseId,
-				Operation = Operation.Create,
-				ResourceType = ResourceType.AE,
-				ResultContent = ResultContent.Attributes,
-				PrimitiveContent = new TPrimitiveContent
+				AE = new AE
 				{
-					AE = new AE
-					{
-						App_ID = appConfig.AppId,
-						AppName = appConfig.AppName,
-						ResourceName = appConfig.AppName,
-						PointOfAccess = appConfig.PoaUrl == null ? null : new[] { appConfig.PoaUrl.ToString() }
-					}
+					App_ID = appConfig.AppId,
+					AppName = appConfig.AppName,
+					ResourceName = appConfig.AppName,
+					PointOfAccess = appConfig.PoaUrl == null ? null : new[] { appConfig.PoaUrl.ToString() }
 				}
-			});
+			}
+		});
 
-			return response.AE;
+		return response.AE;
+	}
+
+	public async Task<ResponseContent<TPrimitiveContent>> GetPrimitiveAsync(string from, string to, FilterCriteria? filterCriteria = null) =>
+		await GetResponseAsync(new RequestPrimitive<TPrimitiveContent>
+		{
+			Operation = Operation.Retrieve,
+			From = from,
+			To = to,
+			FilterCriteria = filterCriteria
+		});
+
+
+	public async Task<ResponseContent<TPrimitiveContent>?> TryGetPrimitiveAsync(string from, string to, FilterCriteria? filterCriteria = null)
+	{
+		try
+		{
+			return await GetPrimitiveAsync(from, to, filterCriteria);
+		}
+		catch (OneM2MException e) when (e.StatusCode == ResponseStatusCode.NotFound)
+		{
+			return null;
+		}
+	}
+
+	public async Task<ResponseContent<TPrimitiveContent>> GetChildResourcesAsync(string from, string to, FilterCriteria? filterCriteria = null) =>
+		await GetResponseAsync(new RequestPrimitive<TPrimitiveContent>
+		{
+			Operation = Operation.Retrieve,
+			From = from,
+			To = to,
+			ResultContent = ResultContent.ChildResources,
+			FilterCriteria = filterCriteria
+		});
+
+	public async Task<ResponseContent<TPrimitiveContent>> GetResponseAsync(RequestPrimitive<TPrimitiveContent> body) => await GetResponseAsync<ResponseContent<TPrimitiveContent>>(body);
+
+	public abstract Task<T> GetResponseAsync<T>(RequestPrimitive<TPrimitiveContent> body) where T : class, new();
+
+	protected static NameValueCollection GetRequestParameters(RequestPrimitive<TPrimitiveContent> body)
+	{
+		var args = new NameValueCollection();
+		if (body.ResultContent != null)
+			args["rcn"] = body.ResultContent.Value.ToString("d");
+
+		if (body.ResultPersistence != null)
+			args["rp"] = body.ResultPersistence;
+
+		if (body.DeliveryAggregation != null)
+			args["da"] = body.DeliveryAggregation.Value.ToString();
+
+		if (body.DiscoveryResultType != null)
+			args["drt"] = body.DiscoveryResultType.Value.ToString("d");
+
+		if (body.RoleIDs != null)
+			args.AddRange("rids", body.RoleIDs);
+
+		if (body.TokenIDs != null)
+			args["tids"] = body.TokenIDs;
+
+		if (body.LocalTokenIDs != null)
+			args.AddRange("ltids", body.LocalTokenIDs);
+
+		if (body.TokenReqIndicator != null)
+			args["tqi"] = body.TokenReqIndicator.Value.ToString();
+
+		var rt = body.ResponseType;
+		if (rt?.ResponseTypeValue != null)
+			args["rt"] = rt.ResponseTypeValue.Value.ToString("d");
+
+
+		var fc = body.FilterCriteria;
+		if (fc != null)
+		{
+			if (fc.CreatedBefore != null) args["crb"] = fc.CreatedBefore.Value.ToString(_dateTimeFormat);
+			if (fc.CreatedAfter != null) args["cra"] = fc.CreatedAfter.Value.ToString(_dateTimeFormat);
+			if (fc.ModifiedSince != null) args["ms"] = fc.ModifiedSince.Value.ToString(_dateTimeFormat);
+			if (fc.UnmodifiedSince != null) args["us"] = fc.UnmodifiedSince.Value.ToString(_dateTimeFormat);
+			if (fc.StateTagSmaller != null) args["sts"] = fc.StateTagSmaller.ToString();
+			if (fc.StateTagBigger != null) args["stb"] = fc.StateTagBigger.ToString();
+			if (fc.ExpireBefore != null) args["exb"] = fc.ExpireBefore.Value.ToString(_dateTimeFormat);
+			if (fc.ExpireAfter != null) args["exa"] = fc.ExpireAfter.Value.ToString(_dateTimeFormat);
+			if (fc.SizeAbove != null) args["sza"] = fc.SizeAbove.ToString();
+			if (fc.SizeBelow != null) args["szb"] = fc.SizeBelow.ToString();
+			if (fc.Limit != null) args["lim"] = fc.Limit.ToString();
+			if (fc.FilterUsage != null) args["fu"] = fc.FilterUsage.Value.ToString("d");
+			if (fc.FilterOperation != null) args["fo"] = fc.FilterOperation.Value ? "1" : "0";
+			if (fc.ContentFilterSyntax != null) args["cfs"] = fc.ContentFilterSyntax.Value.ToString("d");
+			if (fc.ContentFilterQuery != null) args["cfq"] = fc.ContentFilterQuery;
+			if (fc.Level != null) args["lvl"] = fc.Level.ToString();
+			if (fc.Offset != null) args["ofst"] = fc.Offset.ToString();
+
+			if (fc.ResourceType != null)
+				args.AddRange("ty", fc.ResourceType.Select(ty => ty.ToString("d")));
+
+			if (fc.SemanticsFilter != null)
+				args.AddRange("smf", fc.SemanticsFilter);
+
+			if (fc.Labels != null)
+				args.AddRange("lbl", fc.Labels);
+
+			if (fc.ContentType != null)
+				args.AddRange("cty", fc.ContentType);
 		}
 
-		public async Task<ResponseContent<TPrimitiveContent>> GetPrimitiveAsync(string from, string to, FilterCriteria? filterCriteria = null) =>
-			await GetResponseAsync(new RequestPrimitive<TPrimitiveContent>
-			{
-				Operation = Operation.Retrieve,
-				From = from,
-				To = to,
-				FilterCriteria = filterCriteria
-			});
+		return args;
+	}
+
+	// TODO: make this connection-type-agnostic
+	protected readonly Subject<Notification<TPrimitiveContent>> _notifications = new Subject<Notification<TPrimitiveContent>>();
+	public IObservable<Notification<TPrimitiveContent>> Notifications => _notifications;
 
 
-		public async Task<ResponseContent<TPrimitiveContent>?> TryGetPrimitiveAsync(string from, string to, FilterCriteria? filterCriteria = null)
+	public static IEnumerable<Notification<TPrimitiveContent>> ParseNotifications(string body)
+	{
+		var serializer = JsonSerializer.CreateDefault(Connection.JsonSettings);
+		void FixNotification(Notification<TPrimitiveContent> notification)
 		{
-			try
-			{
-				return await GetPrimitiveAsync(from, to, filterCriteria);
-			}
-			catch (Connection.HttpStatusException e) when (e.StatusCode == HttpStatusCode.NotFound)
-			{
-				return null;
-			}
-			catch (CoapRequestException e) when (e.StatusCode == 132) { }
-			{
-				return null;
-			}
+			var representation = ((Newtonsoft.Json.Linq.JObject)notification.NotificationEvent.Representation).ToObject<TPrimitiveContent>(serializer);
+			if (representation != null)
+				notification.NotificationEvent.PrimitiveRepresentation = representation;
 		}
 
-		public async Task<ResponseContent<TPrimitiveContent>> GetChildResourcesAsync(string from, string to, FilterCriteria? filterCriteria = null) =>
-			await GetResponseAsync(new RequestPrimitive<TPrimitiveContent>
-			{
-				Operation = Operation.Retrieve,
-				From = from,
-				To = to,
-				ResultContent = ResultContent.ChildResources,
-				FilterCriteria = filterCriteria
-			});
-
-		public async Task<ResponseContent<TPrimitiveContent>> GetResponseAsync(RequestPrimitive<TPrimitiveContent> body) => await GetResponseAsync<ResponseContent<TPrimitiveContent>>(body);
-
-		public abstract Task<T> GetResponseAsync<T>(RequestPrimitive<TPrimitiveContent> body) where T : class, new();
-
-		protected static NameValueCollection GetRequestParameters(RequestPrimitive<TPrimitiveContent> body)
+		var aggregatedNotificationContent = Connection.DeserializeJson<AggregatedNotificationContent<TPrimitiveContent>>(body);
+		if (aggregatedNotificationContent != null && aggregatedNotificationContent.AggregatedNotification != null)
 		{
-			var args = new NameValueCollection();
-			if (body.ResultContent != null)
-				args["rcn"] = body.ResultContent.Value.ToString("d");
-
-			if (body.ResultPersistence != null)
-				args["rp"] = body.ResultPersistence;
-
-			if (body.DeliveryAggregation != null)
-				args["da"] = body.DeliveryAggregation.Value.ToString();
-
-			if (body.DiscoveryResultType != null)
-				args["drt"] = body.DiscoveryResultType.Value.ToString("d");
-
-			if (body.RoleIDs != null)
-				args.AddRange("rids", body.RoleIDs);
-
-			if (body.TokenIDs != null)
-				args["tids"] = body.TokenIDs;
-
-			if (body.LocalTokenIDs != null)
-				args.AddRange("ltids", body.LocalTokenIDs);
-
-			if (body.TokenReqIndicator != null)
-				args["tqi"] = body.TokenReqIndicator.Value.ToString();
-
-			var rt = body.ResponseType;
-			if (rt?.ResponseTypeValue != null)
-				args["rt"] = rt.ResponseTypeValue.Value.ToString("d");
-
-
-			var fc = body.FilterCriteria;
-			if (fc != null)
+			foreach (var notification in aggregatedNotificationContent.AggregatedNotification.Notification)
 			{
-				if (fc.CreatedBefore != null) args["crb"] = fc.CreatedBefore.Value.ToString(_dateTimeFormat);
-				if (fc.CreatedAfter != null) args["cra"] = fc.CreatedAfter.Value.ToString(_dateTimeFormat);
-				if (fc.ModifiedSince != null) args["ms"] = fc.ModifiedSince.Value.ToString(_dateTimeFormat);
-				if (fc.UnmodifiedSince != null) args["us"] = fc.UnmodifiedSince.Value.ToString(_dateTimeFormat);
-				if (fc.StateTagSmaller != null) args["sts"] = fc.StateTagSmaller.ToString();
-				if (fc.StateTagBigger != null) args["stb"] = fc.StateTagBigger.ToString();
-				if (fc.ExpireBefore != null) args["exb"] = fc.ExpireBefore.Value.ToString(_dateTimeFormat);
-				if (fc.ExpireAfter != null) args["exa"] = fc.ExpireAfter.Value.ToString(_dateTimeFormat);
-				if (fc.SizeAbove != null) args["sza"] = fc.SizeAbove.ToString();
-				if (fc.SizeBelow != null) args["szb"] = fc.SizeBelow.ToString();
-				if (fc.Limit != null) args["lim"] = fc.Limit.ToString();
-				if (fc.FilterUsage != null) args["fu"] = fc.FilterUsage.Value.ToString("d");
-				if (fc.FilterOperation != null) args["fo"] = fc.FilterOperation.Value ? "1" : "0";
-				if (fc.ContentFilterSyntax != null) args["cfs"] = fc.ContentFilterSyntax.Value.ToString("d");
-				if (fc.ContentFilterQuery != null) args["cfq"] = fc.ContentFilterQuery;
-				if (fc.Level != null) args["lvl"] = fc.Level.ToString();
-				if (fc.Offset != null) args["ofst"] = fc.Offset.ToString();
-
-				if (fc.ResourceType != null)
-					args.AddRange("ty", fc.ResourceType.Select(ty => ty.ToString("d")));
-
-				if (fc.SemanticsFilter != null)
-					args.AddRange("smf", fc.SemanticsFilter);
-
-				if (fc.Labels != null)
-					args.AddRange("lbl", fc.Labels);
-
-				if (fc.ContentType != null)
-					args.AddRange("cty", fc.ContentType);
-			}
-
-			return args;
-		}
-
-		// TODO: make this connection-type-agnostic
-		protected readonly Subject<Notification<TPrimitiveContent>> _notifications = new Subject<Notification<TPrimitiveContent>>();
-		public IObservable<Notification<TPrimitiveContent>> Notifications => _notifications;
-
-
-		public static IEnumerable<Notification<TPrimitiveContent>> ParseNotifications(string body)
-		{
-			var serializer = JsonSerializer.CreateDefault(Connection.JsonSettings);
-			void FixNotification(Notification<TPrimitiveContent> notification)
-			{
-				var representation = ((Newtonsoft.Json.Linq.JObject) notification.NotificationEvent.Representation).ToObject<TPrimitiveContent>(serializer);
-				if (representation != null)
-					notification.NotificationEvent.PrimitiveRepresentation = representation;
-			}
-
-			var aggregatedNotificationContent = Connection.DeserializeJson<AggregatedNotificationContent<TPrimitiveContent>>(body);
-			if (aggregatedNotificationContent != null && aggregatedNotificationContent.AggregatedNotification != null)
-			{
-				foreach (var notification in aggregatedNotificationContent.AggregatedNotification.Notification)
-				{
-					FixNotification(notification);
-					yield return notification;
-				}
-			}
-			else
-			{
-				var notificationContent = Connection.DeserializeJson<NotificationContent<TPrimitiveContent>>(body);
-				if (notificationContent == null)
-				{
-					Debug.WriteLine($"{nameof(ParseNotifications)}: invalid json");
-					yield break;
-				}
-
-				var notification = notificationContent.Notification;
-				if (notification == null)
-				{
-					Debug.WriteLine($"{nameof(ParseNotifications)}: missing notification");
-					yield break;
-				}
-
+				FixNotification(notification);
 				yield return notification;
 			}
 		}
+		else
+		{
+			var notificationContent = Connection.DeserializeJson<NotificationContent<TPrimitiveContent>>(body);
+			if (notificationContent == null)
+			{
+				Debug.WriteLine($"{nameof(ParseNotifications)}: invalid json");
+				yield break;
+			}
+
+			var notification = notificationContent.Notification;
+			if (notification == null)
+			{
+				Debug.WriteLine($"{nameof(ParseNotifications)}: missing notification");
+				yield break;
+			}
+
+			yield return notification;
+		}
 	}
+}
 
 	public static class ApiExtensions
 	{

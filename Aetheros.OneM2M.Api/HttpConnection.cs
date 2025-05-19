@@ -6,8 +6,10 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,15 +22,17 @@ namespace Aetheros.OneM2M.Api
 		readonly Uri _iotApiUrl;
 		readonly HttpClient _pnClient;
 
-		public X509Certificate? ClientCertificate { get; }
+		public X509Certificate2? ClientCertificate { get; }
+
+		public override bool IsSecure => _iotApiUrl.Scheme == Uri.UriSchemeHttps;
 
 		public HttpConnection(Connection.IConnectionConfiguration config)
 			: this(config.M2MUrl, config.CertificateFilename) { }
 
 		public HttpConnection(Uri m2mUrl, string? certificateFilename)
-			: this(m2mUrl, AosUtils.LoadCertificate(certificateFilename)) { }
+			: this(m2mUrl, AosUtils.LoadCertificateWithKey(certificateFilename)) { }
 
-		public HttpConnection(Uri m2mUrl, X509Certificate? certificate = null)
+		public HttpConnection(Uri m2mUrl, X509Certificate2? certificate = null)
 		{
 			_iotApiUrl = m2mUrl;
 
@@ -41,11 +45,15 @@ namespace Aetheros.OneM2M.Api
 						BypassProxyOnLocal = false,
 					},
 #endif
-				ServerCertificateCustomValidationCallback = (message, cert, chain, errors) => true
+				ServerCertificateCustomValidationCallback = (message, cert, chain, errors) =>
+				{
+					return true;
+				},
 			};
 
 			if (certificate != null)
 			{
+				Trace.Assert(certificate.HasPrivateKey, "The certificate must have a private key");
 				this.ClientCertificate = certificate;
 				handler.ClientCertificates.Add(certificate);
 			}
@@ -56,6 +64,7 @@ namespace Aetheros.OneM2M.Api
 #else
 			_pnClient = new HttpClient(handler);
 #endif
+			//_pnClient.DefaultRequestVersion = HttpVersion.Version11;
 
 			_pnClient.Timeout = TimeSpan.FromSeconds(300);
 			_pnClient.DefaultRequestHeaders.Add("Accept", OneM2MResponseContentType);
@@ -135,7 +144,7 @@ namespace Aetheros.OneM2M.Api
 			//if (method == HttpMethod.Post || method == HttpMethod.Put)
 			{
 				if (body.ResourceType != null)
-					contentTypeHeader.Parameters.Add(new NameValueHeaderValue("ty", ((int) body.ResourceType).ToString()));
+					contentTypeHeader.Parameters.Add(new NameValueHeaderValue("ty", ((int)body.ResourceType).ToString()));
 
 				if (body.PrimitiveContent != null)
 				{
@@ -201,6 +210,27 @@ namespace Aetheros.OneM2M.Api
 				_notifications.OnNext(notification);
 			}
 		}
+
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing)
+				_pnClient?.Dispose();
+			base.Dispose(disposing);
+		}
+		
+	}
+
+	public class HttpStatusException : Exception
+	{
+		public HttpStatusCode StatusCode { get; }
+		public string ReasonPhrase { get; }
+
+		public HttpStatusException(HttpStatusCode statusCode, string reasonPhrase)
+			: base($"Http Status {statusCode}: {reasonPhrase}")
+		{
+			this.StatusCode = statusCode;
+			this.ReasonPhrase = reasonPhrase;
+		}
 	}
 
 	public static class HttpConnectionExtensions
@@ -210,8 +240,30 @@ namespace Aetheros.OneM2M.Api
 		{
 			var body = await response.Content.ReadAsStringAsync();
 
+			if (response.Headers.TryGetValues("X-M2M-RSC", out IEnumerable<string>? statusCodeHeaders))
+			{
+				var statusCodeHeader = statusCodeHeaders.FirstOrDefault();
+				if (Enum.TryParse<ResponseStatusCode>(statusCodeHeader, out ResponseStatusCode statusCode))
+				{
+					if (statusCode >= ResponseStatusCode.BadRequest)
+					{
+						string msg = null;
+						try
+						{
+							var errorResponse = Connection.DeserializeJson<ResponseContent<PrimitiveContent>>(body);
+							msg = errorResponse?.DebugInfo;
+						}
+						catch (Exception e)
+						{
+							// ignore
+						}
+						throw new OneM2MException(statusCode, msg ?? statusCode.ToString());
+					}
+				}
+			}
+
 			if (!response.IsSuccessStatusCode)
-				throw new Connection.HttpStatusException(response.StatusCode, response.ReasonPhrase ?? "Unknown Error");
+				throw new HttpStatusException(response.StatusCode, response.ReasonPhrase ?? "Unknown Error");
 
 			response.EnsureSuccessStatusCode();
 
@@ -223,10 +275,10 @@ namespace Aetheros.OneM2M.Api
 		}
 	}
 
-	public class HttpConnection : HttpConnection<PrimitiveContent>
+	public class HttpConnection : HttpConnection<PrimitiveContent>, IDisposable
 	{
-		public HttpConnection(Connection.IConnectionConfiguration config) : base(config) {}
-		public HttpConnection(Uri m2mUrl, string certificateFilename) : base(m2mUrl, certificateFilename) {}
-		public HttpConnection(Uri m2mUrl, X509Certificate? certificate = null) : base(m2mUrl, certificate) {}
+		public HttpConnection(Connection.IConnectionConfiguration config) : base(config) { }
+		public HttpConnection(Uri m2mUrl, string certificateFilename) : base(m2mUrl, certificateFilename) { }
+		public HttpConnection(Uri m2mUrl, X509Certificate2? certificate = null) : base(m2mUrl, certificate) { }
 	}
 }

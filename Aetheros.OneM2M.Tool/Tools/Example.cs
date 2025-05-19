@@ -1,4 +1,5 @@
 //#define USE_COAP
+#define USE_SECURE_CONNECTION
 
 using Aetheros.OneM2M.Api;
 using Aetheros.Schema.AOS;
@@ -17,6 +18,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Reactive.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -26,21 +28,33 @@ namespace GridNet.IoT.Client.Tools
 	public class Example : UtilityBase
 	{
 #if USE_COAP
+#if USE_SECURE_CONNECTION
+		Uri _m2mUrl = new Uri("coaps://127.0.0.1:8111");
+#else
 		Uri _m2mUrl = new Uri("coap://127.0.0.1:8110");
+#endif
+		Uri _raUrl = new Uri("coap://127.0.0.1:18090/");
 		Uri _poaUrl = new Uri("coap://127.0.0.1:15683/notify");
 		readonly Uri _listenUrl = null;
 #else
-		Uri _m2mUrl = new Uri("http://policynet-fw:21300/");
-		Uri _poaUrl = new Uri("http://10.0.3.3:44346/notify");
+#if USE_SECURE_CONNECTION
+		Uri _m2mUrl = new Uri("https://policynet-cse:21301/");
+#else
+		Uri _m2mUrl = new Uri("http://policynet-cse:21300/");
+#endif
+		Uri _raUrl = new Uri("https://policynet-fw:18090/");
+		
 		Uri _listenUrl = new Uri($"http://0.0.0.0:44346");
+		Uri _poaUrl = new Uri("http://10.0.3.3:44346/notify");
 #endif
 
 		class ConnectionConfiguration : Connection.IConnectionConfiguration
 		{
-			public Uri M2MUrl { get; init; }
+			public Uri M2MUrl { get; set; }
 		  public string CertificateFilename { get; set; }
 		}
 
+		string _certFilename;
 		ConnectionConfiguration _connectionConfiguration;
 
 		string _AeId = "";
@@ -58,18 +72,19 @@ namespace GridNet.IoT.Client.Tools
 
 		const string meterReadAclName = "meter-read-acl";
 
-
 		public override OptionSet Options => new OptionSet
 		{
-			{ "c|cse=", "The URL to the CSE", v => _m2mUrl = new Uri(v, UriKind.Absolute) },
-			{ "p|poa=", "The remote POA (point of access) url", v => _poaUrl = new Uri(v, UriKind.Absolute) },
+			{ "c|cse=", "The CSE URL", v => _m2mUrl = new Uri(v, UriKind.Absolute) },
+			{ "p|poa=", "The remote POA (point of access) URL", v => _poaUrl = new Uri(v, UriKind.Absolute) },
 #if !USE_COAP
-			{ "l|listen=", "The local POA callback url", v => _listenUrl = new Uri(v, UriKind.Absolute) },
+			{ "l|listen=", "The local POA callback URL", v => _listenUrl = new Uri(v, UriKind.Absolute) },
 #endif
 			{ "a|app=", "The App Id", v => _AeAppId = v },
 			{ "n|name=", "The App Name", v => _AeAppName = v },
 			{ "i|id=", "The existing AE Id", v => _AeId = v },
 			{ "credential=", "The AE registration Credential", v => _AeCredential = v },
+			{ "cert=", "The filename of the client certificate to use", v => _certFilename = v },
+			{ "ra=", "The RA URL", v => _raUrl = new Uri(v, UriKind.Absolute) },
 		};
 
 		protected override string Usage { get; } = "[<options>]";
@@ -77,77 +92,120 @@ namespace GridNet.IoT.Client.Tools
 		Application _application;
 
 
-		(Connection<PrimitiveContent>, Task) startCoapConnection()
+		CoapConnection createCoapConnection()
 		{
 			CoAP.Log.LogManager.Level = CoAP.Log.LogLevel.Warning;
-			// configure a oneM2M CoAP connection
-			var connection = new CoapConnection(_connectionConfiguration);
+			return new CoapConnection(_connectionConfiguration);
+		}
 
-			// start the POA CoAP server
-			var coapServer = new CoAP.Server.CoapServer()	;
+		Task startCoapListener(CoapConnection connection)
+		{
+			var coapServer = new CoAP.Server.CoapServer();
 			coapServer.AddEndPoint(new IPEndPoint(IPAddress.Any, _poaUrl.Port));
 			coapServer.Add(connection.CreateNotificationResource());
 			coapServer.Start();
 
-			var listenerTask = Task.Delay(Timeout.Infinite)
+			return Task.Delay(Timeout.Infinite)
 				.ContinueWith(task =>
 				{
-					// stop the server
 					coapServer.Stop();
 					coapServer.Dispose();
 				});
-
-			return (connection, listenerTask);
 		}
 
-		(Connection<PrimitiveContent>, Task) startHttpConnection()
+		HttpConnection createHttpConnection()
 		{
-			// configure a oneM2M HTTP connection
-			var connection = new HttpConnection(_connectionConfiguration);
+			return new HttpConnection(_connectionConfiguration);
+		}
 
-			// start the POA web server
-			var listenerTask = WebHost.CreateDefaultBuilder()
+		Task startHttpListener(HttpConnection connection)
+		{
+			return WebHost.CreateDefaultBuilder()
 				.UseUrls((_listenUrl ?? _poaUrl).ToString())
 				.Configure(app => app.MapWhen(
-					ctx => ctx.Request.Method == "POST"	// listen for POST requests
-						&& ctx.Request.Path == "/notify"	// on the /notify path
-						&& ctx.Request.ContentType == "application/vnd.onem2m-ntfy+json",	// with JSON content
+					ctx => ctx.Request.Method == "POST"
+						&& ctx.Request.Path == "/notify"
+						&& ctx.Request.ContentType == "application/vnd.onem2m-ntfy+json",
 					builder => builder.Run(connection.HandleNotificationAsync)
 				))
 				.Build()
 				.RunAsync();
-
-			return (connection, listenerTask);
 		}
 
-
-		async Task<AE> EnsureRegistered(Connection<PrimitiveContent> connection)
+		async Task<AE> EnsureRegistered()
 		{
-			if (!string.IsNullOrEmpty(_AeId))
+			X509Certificate2 cert = AosUtils.LoadCertificateWithKey(_connectionConfiguration.CertificateFilename);
+			if (cert != null)
+			{
+				if (!cert.HasPrivateKey)
+					ShowError($"Certificate '{_connectionConfiguration.CertificateFilename}' does not have a private key");
+
+				var certAeId = cert.ExtractedAeId();
+				if (certAeId == null)
+					ShowError($"Failed to extract AE Id from certificate '{_connectionConfiguration.CertificateFilename}'");
+
+				if (!string.IsNullOrEmpty(_AeId))
+					ShowError($"Cannot specify both AE Id '{_AeId}' and certificate '{_connectionConfiguration.CertificateFilename}'");
+
+				_AeId = certAeId;
+			}
+
+			// Always use a separate connection for registration
+			Connection<PrimitiveContent> registrationConnection =
+				_m2mUrl.Scheme.StartsWith("coap")
+				? new CoapConnection(_connectionConfiguration)
+				: new HttpConnection(_connectionConfiguration);
+
+			AE? ae = null;
+			if (!string.IsNullOrEmpty(_AeId) && (!registrationConnection.IsSecure || cert != null))
 			{
 				try
 				{
 					Trace.WriteLine($"Looking for existing AE '{_AeId}'");
-					var ae = await connection.FindApplicationAsync(_AeId);
-					Trace.WriteLine($"Using existing AE '{ae.AE_ID}'");
-					return ae;
+					ae = await registrationConnection.FindApplicationAsync(_AeId);
 				}
 				catch (Exception ex)
 				{
+					if (cert != null)
+						ShowError($"Failed to find AE '{_AeId}' using certificate '{_connectionConfiguration.CertificateFilename}': {ex.Message}");
 					Trace.TraceError($"Failed to find AE '{_AeId}': {ex.Message}");
 				}
 			}
 
-			Trace.WriteLine($"Registering new AE '{_AeAppId}/{_AeAppName}'");
-			return await connection.RegisterApplicationAsync(
-				new ApplicationConfiguration
-				{
-					AppId = _AeAppId,
-					AppName = _AeAppName,
-					CredentialId = _AeCredential,
-					PoaUrl = _poaUrl,
-				}
-			);
+			if (ae == null)
+			{
+				if (string.IsNullOrWhiteSpace(_AeAppName))
+					ShowError($"Missing AE registration App Name");
+				if (string.IsNullOrWhiteSpace(_AeAppId))
+					ShowError($"Missing AE registration App Id");
+				if (string.IsNullOrWhiteSpace(_AeCredential))
+					ShowError($"Missing AE registration credential");
+
+				Trace.WriteLine($"Registering new AE '{_AeAppId}/{_AeAppName}'");
+				ae = await registrationConnection.RegisterApplicationAsync(
+					new ApplicationConfiguration
+					{
+						AppId = _AeAppId,
+						AppName = _AeAppName,
+						CredentialId = _AeCredential,
+						PoaUrl = _poaUrl,
+					}
+				);
+			}
+
+			if (cert == null && registrationConnection.IsSecure)
+			{
+				if (string.IsNullOrWhiteSpace(_connectionConfiguration.CertificateFilename))
+					_connectionConfiguration.CertificateFilename = $"{ae.AE_ID}.pem";
+
+				cert = await Application.GenerateSigningCertificateAsync(_raUrl, ae, _connectionConfiguration.CertificateFilename);
+				if (cert == null)
+					ShowError($"Failed to generate certificate for AE '{_AeId}'");
+				else
+					Trace.WriteLine($"Generated certificate for AE '{_AeId}' and saved to '{_connectionConfiguration.CertificateFilename}'");
+			}
+
+			return ae;
 		}
 
 		private async Task<AccessControlPolicy> EnsureMeterReadAcl()
@@ -249,17 +307,27 @@ namespace GridNet.IoT.Client.Tools
 
 		public override async Task Run(IList<string> args)
 		{
-			_connectionConfiguration = new ConnectionConfiguration { M2MUrl = _m2mUrl };
+			_connectionConfiguration = new ConnectionConfiguration { M2MUrl = _m2mUrl, CertificateFilename = _certFilename };
 
-			// start the onem2m connection and notification listener
-			var (connection, listenerTask) = _m2mUrl.Scheme.StartsWith("coap")
-				? startCoapConnection()
-				: startHttpConnection();
+			var ae = await EnsureRegistered();
 
-			// register the AE
-			var ae = await EnsureRegistered(connection);
+			// Now create the main connection and listener for notifications
+			Connection<PrimitiveContent> connection;
+			Task listenerTask;
+			if (_m2mUrl.Scheme.StartsWith("coap"))
+			{
+				var coapConnection = createCoapConnection();
+				listenerTask = startCoapListener(coapConnection);
+				connection = coapConnection;
+			}
+			else
+			{
+				var httpConnection = createHttpConnection();
+				listenerTask = startHttpListener(httpConnection);
+				connection = httpConnection;
+			}
 
-			// configure the oneM2M applicaiton api
+			// configure the oneM2M application api
 			_application = new Application(connection, ae, _RegPath);
 
 			// create an access control policy to allow mn-AE's with the same appId to write to our container
@@ -302,7 +370,7 @@ namespace GridNet.IoT.Client.Tools
 			finally
 			{
 				await DeleteReadsSubscription();
-				//await DeRegister();
+				await DeRegister();
 			}
 		}
 

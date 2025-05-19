@@ -10,6 +10,7 @@ using System.Reactive.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace Aetheros.OneM2M.Api
 {
@@ -28,17 +29,10 @@ namespace Aetheros.OneM2M.Api
 			string.Join(seprator, @this);
 
 		public static DateTimeOffset? ParseNullableDateTimeOffset(this string @this) =>
-			DateTimeOffset.TryParse(@this, out var offset) ? (DateTimeOffset?) offset : null;
+			DateTimeOffset.TryParse(@this, out var offset) ? (DateTimeOffset?)offset : null;
 
 		public static TEnum? ParseNullableEnum<TEnum>(this string @this) where TEnum : struct =>
-			Enum.TryParse(@this, out TEnum value) ? (TEnum?) value : null;
-
-		public static X509Certificate2? LoadCertificate(string? certificateFilename)
-		{
-			if (!File.Exists(certificateFilename))
-				return null;
-			return new X509Certificate2(X509Certificate.CreateFromCertFile(certificateFilename));
-		}
+			Enum.TryParse(@this, out TEnum value) ? (TEnum?)value : null;
 
 		public static IObservable<T> AsyncFinally<T>(this IObservable<T> source, Func<Task> action) =>
 			source
@@ -94,18 +88,40 @@ namespace Aetheros.OneM2M.Api
 			return builder.ToString();
 		}
 
-		public static X509Certificate2 CreateX509Certificate(string str)
+		// Certificates
+
+		const X509KeyStorageFlags defaultKeyStorageFlags = X509KeyStorageFlags.MachineKeySet | X509KeyStorageFlags.PersistKeySet | X509KeyStorageFlags.Exportable;
+
+		public static X509Certificate2? LoadCertificateWithKey(string? certificateFilename)
 		{
-			var temp = Path.GetTempFileName();
-			File.WriteAllText(temp, str);
-			try
+			if (!File.Exists(certificateFilename))
+				return null;
+			return X509Certificate2.CreateFromPemFile(certificateFilename, certificateFilename);
+		}
+
+		// Try to extract AE-ID from certificate using regex
+		public static string? ExtractedAeId(this X509Certificate2 cert)
+		{
+			// 1. Try from Subject CN
+			var subject = cert.Subject;
+			var cnMatch = Regex.Match(subject, @"CN=([^,]+)");
+			if (cnMatch.Success)
+				return cnMatch.Groups[1].Value.Trim();
+
+			// 2. Try from SAN URI if not found in CN
+			var sanExt = cert.Extensions
+				.FirstOrDefault(ext => ext.Oid?.Value == "2.5.29.17"); // Subject Alternative Name
+			if (sanExt != null)
 			{
-				return new X509Certificate2(X509Certificate.CreateFromCertFile(temp));
+				var san = sanExt.Format(true);
+				var sanMatch = Regex.Match(san, @"URI:urn://policynetiot.com/([^\\s,]+)");
+				if (sanMatch.Success)
+				{
+					return sanMatch.Groups[1].Value.Trim();
+				}
 			}
-			finally
-			{
-				File.Delete(temp);
-			}
+
+			return null;
 		}
 	}
 

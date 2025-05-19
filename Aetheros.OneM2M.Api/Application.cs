@@ -129,8 +129,10 @@ namespace Aetheros.OneM2M.Api
 						To = url,
 					});
 				}
-				catch (Connection.HttpStatusException e) when (e.StatusCode == HttpStatusCode.NotFound) { }
-				catch (CoapRequestException e) when (e.StatusCode == 132) { }
+				catch (OneM2MException e) when (e.StatusCode == ResponseStatusCode.NotFound)
+				{
+					// ignore
+				}
 			}
 		}
 
@@ -226,7 +228,7 @@ namespace Aetheros.OneM2M.Api
 				);
 				return response.ContentInstance?.GetContent<T>();
 			}
-			catch (Connection.HttpStatusException e) when (e.StatusCode == HttpStatusCode.NotFound)
+			catch (OneM2MException e) when (e.StatusCode == ResponseStatusCode.NotFound)
 			{
 				return null;
 			}
@@ -402,7 +404,7 @@ namespace Aetheros.OneM2M.Api
 			if (signingResponse.Response.X509Certificate == null)
 				throw new InvalidDataException("CertificateSigningResponse does not contain a certificate");
 
-			var signedCert = AosUtils.CreateX509Certificate(signingResponse.Response.X509Certificate);
+			var signedCert = X509Certificate2.CreateFromPem(signingResponse.Response.X509Certificate);
 
 			var confirmationRequest = new ConfirmationRequestBody
 			{
@@ -429,7 +431,7 @@ namespace Aetheros.OneM2M.Api
 
 				if (string.IsNullOrWhiteSpace(confirmationResponse.Response.Certificate))
 					throw new InvalidDataException("no certificate was returned");
-				//var caCert = AosUtils.CreateX509Certificate(confirmationResponse.Response.Certificate);
+				//var caCert = X509Certificate2.CreateFromPem(confirmationResponse.Response.Certificate);
 			}
 
 			using (var pubPrivEphemeral = signedCert.CopyWithPrivateKey(privateKey))

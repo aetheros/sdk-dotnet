@@ -61,7 +61,7 @@ namespace GridNet.IoT.Client.Tools
 
 			if (_cert != null)
 			{
-				var certificate = AosUtils.LoadCertificate(_cert);
+				var certificate = AosUtils.LoadCertificateWithKey(_cert);
 				handler.ClientCertificates.Add(certificate);
 			}
 

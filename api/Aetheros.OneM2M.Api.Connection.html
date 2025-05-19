@@ -119,9 +119,6 @@
                             <a href="Aetheros.OneM2M.Api.Connection.ConnectionConfiguration.html" title="Connection.ConnectionConfiguration" class="">Connection.ConnectionConfiguration</a>
                           </li>
                           <li class="">
-                            <a href="Aetheros.OneM2M.Api.Connection.HttpStatusException.html" title="Connection.HttpStatusException" class="">Connection.HttpStatusException</a>
-                          </li>
-                          <li class="">
                             <a href="Aetheros.OneM2M.Api.Connection.IConnectionConfiguration.html" title="Connection.IConnectionConfiguration" class="">Connection.IConnectionConfiguration</a>
                           </li>
                           <li class="">
@@ -135,6 +132,12 @@
                           </li>
                           <li class="">
                             <a href="Aetheros.OneM2M.Api.HttpConnection-1.html" title="HttpConnection&lt;TPrimitiveContent&gt;" class="">HttpConnection&lt;TPrimitiveContent&gt;</a>
+                          </li>
+                          <li class="">
+                            <a href="Aetheros.OneM2M.Api.HttpStatusException.html" title="HttpStatusException" class="">HttpStatusException</a>
+                          </li>
+                          <li class="">
+                            <a href="Aetheros.OneM2M.Api.OneM2MException.html" title="OneM2MException" class="">OneM2MException</a>
                           </li>
                         </ul>
                     </li>
@@ -942,20 +945,54 @@
     <div class="level1"><span class="xref">Connection</span></div>
       <div class="level2"><a class="xref" href="Aetheros.OneM2M.Api.Connection-1.html">Connection&lt;TPrimitiveContent&gt;</a></div>
   </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Aetheros.html">Aetheros</a>.<a class="xref" href="Aetheros.OneM2M.html">OneM2M</a>.<a class="xref" href="Aetheros.OneM2M.Api.html">Api</a></h6>
   <h6><strong>Assembly</strong>: Aetheros.OneM2M.Api.dll</h6>
   <h5 id="Aetheros_OneM2M_Api_Connection_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class Connection</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class Connection : IDisposable</code></pre>
   </div>
   <h3 id="properties">Properties
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/aetheros/sdk-dotnet/new/master/apiSpec/new?filename=Aetheros_OneM2M_Api_Connection_IsSecure.md&amp;value=---%0Auid%3A%20Aetheros.OneM2M.Api.Connection.IsSecure%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aetheros/sdk-dotnet/blob/master/Aetheros.OneM2M.Api/Connection.cs/#L55">View Source</a>
+  </span>
+  <a id="Aetheros_OneM2M_Api_Connection_IsSecure_" data-uid="Aetheros.OneM2M.Api.Connection.IsSecure*"></a>
+  <h4 id="Aetheros_OneM2M_Api_Connection_IsSecure" data-uid="Aetheros.OneM2M.Api.Connection.IsSecure">IsSecure</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract bool IsSecure { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/aetheros/sdk-dotnet/new/master/apiSpec/new?filename=Aetheros_OneM2M_Api_Connection_JsonSettings.md&amp;value=---%0Auid%3A%20Aetheros.OneM2M.Api.Connection.JsonSettings%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/aetheros/sdk-dotnet/blob/master/Aetheros.OneM2M.Api/Connection.cs/#L72">View Source</a>
+    <a href="https://github.com/aetheros/sdk-dotnet/blob/master/Aetheros.OneM2M.Api/Connection.cs/#L84">View Source</a>
   </span>
   <a id="Aetheros_OneM2M_Api_Connection_JsonSettings_" data-uid="Aetheros.OneM2M.Api.Connection.JsonSettings*"></a>
   <h4 id="Aetheros_OneM2M_Api_Connection_JsonSettings" data-uid="Aetheros.OneM2M.Api.Connection.JsonSettings">JsonSettings</h4>
@@ -987,7 +1024,7 @@
     <a href="https://github.com/aetheros/sdk-dotnet/new/master/apiSpec/new?filename=Aetheros_OneM2M_Api_Connection_DeserializeJson__1_Newtonsoft_Json_Linq_JToken_.md&amp;value=---%0Auid%3A%20Aetheros.OneM2M.Api.Connection.DeserializeJson%60%601(Newtonsoft.Json.Linq.JToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/aetheros/sdk-dotnet/blob/master/Aetheros.OneM2M.Api/Connection.cs/#L100">View Source</a>
+    <a href="https://github.com/aetheros/sdk-dotnet/blob/master/Aetheros.OneM2M.Api/Connection.cs/#L112">View Source</a>
   </span>
   <a id="Aetheros_OneM2M_Api_Connection_DeserializeJson_" data-uid="Aetheros.OneM2M.Api.Connection.DeserializeJson*"></a>
   <h4 id="Aetheros_OneM2M_Api_Connection_DeserializeJson__1_Newtonsoft_Json_Linq_JToken_" data-uid="Aetheros.OneM2M.Api.Connection.DeserializeJson``1(Newtonsoft.Json.Linq.JToken)">DeserializeJson&lt;T&gt;(JToken)</h4>
@@ -1049,7 +1086,7 @@
     <a href="https://github.com/aetheros/sdk-dotnet/new/master/apiSpec/new?filename=Aetheros_OneM2M_Api_Connection_DeserializeJson__1_System_String_.md&amp;value=---%0Auid%3A%20Aetheros.OneM2M.Api.Connection.DeserializeJson%60%601(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/aetheros/sdk-dotnet/blob/master/Aetheros.OneM2M.Api/Connection.cs/#L97">View Source</a>
+    <a href="https://github.com/aetheros/sdk-dotnet/blob/master/Aetheros.OneM2M.Api/Connection.cs/#L109">View Source</a>
   </span>
   <a id="Aetheros_OneM2M_Api_Connection_DeserializeJson_" data-uid="Aetheros.OneM2M.Api.Connection.DeserializeJson*"></a>
   <h4 id="Aetheros_OneM2M_Api_Connection_DeserializeJson__1_System_String_" data-uid="Aetheros.OneM2M.Api.Connection.DeserializeJson``1(System.String)">DeserializeJson&lt;T&gt;(string)</h4>
@@ -1108,10 +1145,58 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/aetheros/sdk-dotnet/new/master/apiSpec/new?filename=Aetheros_OneM2M_Api_Connection_Dispose.md&amp;value=---%0Auid%3A%20Aetheros.OneM2M.Api.Connection.Dispose%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aetheros/sdk-dotnet/blob/master/Aetheros.OneM2M.Api/Connection.cs/#L38">View Source</a>
+  </span>
+  <a id="Aetheros_OneM2M_Api_Connection_Dispose_" data-uid="Aetheros.OneM2M.Api.Connection.Dispose*"></a>
+  <h4 id="Aetheros_OneM2M_Api_Connection_Dispose" data-uid="Aetheros.OneM2M.Api.Connection.Dispose">Dispose()</h4>
+  <div class="markdown level1 summary"><p>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Dispose()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/aetheros/sdk-dotnet/new/master/apiSpec/new?filename=Aetheros_OneM2M_Api_Connection_Dispose_System_Boolean_.md&amp;value=---%0Auid%3A%20Aetheros.OneM2M.Api.Connection.Dispose(System.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/aetheros/sdk-dotnet/blob/master/Aetheros.OneM2M.Api/Connection.cs/#L44">View Source</a>
+  </span>
+  <a id="Aetheros_OneM2M_Api_Connection_Dispose_" data-uid="Aetheros.OneM2M.Api.Connection.Dispose*"></a>
+  <h4 id="Aetheros_OneM2M_Api_Connection_Dispose_System_Boolean_" data-uid="Aetheros.OneM2M.Api.Connection.Dispose(System.Boolean)">Dispose(bool)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void Dispose(bool disposing)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">disposing</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/aetheros/sdk-dotnet/new/master/apiSpec/new?filename=Aetheros_OneM2M_Api_Connection_GetAttributes__1_System_Linq_Expressions_Expression_System_Func___0_System_Object_____.md&amp;value=---%0Auid%3A%20Aetheros.OneM2M.Api.Connection.GetAttributes%60%601(System.Linq.Expressions.Expression%7BSystem.Func%7B%60%600%2CSystem.Object%7D%7D%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/aetheros/sdk-dotnet/blob/master/Aetheros.OneM2M.Api/Connection.cs/#L106">View Source</a>
+    <a href="https://github.com/aetheros/sdk-dotnet/blob/master/Aetheros.OneM2M.Api/Connection.cs/#L118">View Source</a>
   </span>
   <a id="Aetheros_OneM2M_Api_Connection_GetAttributes_" data-uid="Aetheros.OneM2M.Api.Connection.GetAttributes*"></a>
   <h4 id="Aetheros_OneM2M_Api_Connection_GetAttributes__1_System_Linq_Expressions_Expression_System_Func___0_System_Object_____" data-uid="Aetheros.OneM2M.Api.Connection.GetAttributes``1(System.Linq.Expressions.Expression{System.Func{``0,System.Object}}[])">GetAttributes&lt;T&gt;(params Expression&lt;Func&lt;T, object&gt;&gt;[])</h4>
@@ -1173,7 +1258,7 @@
     <a href="https://github.com/aetheros/sdk-dotnet/new/master/apiSpec/new?filename=Aetheros_OneM2M_Api_Connection_SerializeJson_System_Object_.md&amp;value=---%0Auid%3A%20Aetheros.OneM2M.Api.Connection.SerializeJson(System.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/aetheros/sdk-dotnet/blob/master/Aetheros.OneM2M.Api/Connection.cs/#L103">View Source</a>
+    <a href="https://github.com/aetheros/sdk-dotnet/blob/master/Aetheros.OneM2M.Api/Connection.cs/#L115">View Source</a>
   </span>
   <a id="Aetheros_OneM2M_Api_Connection_SerializeJson_" data-uid="Aetheros.OneM2M.Api.Connection.SerializeJson*"></a>
   <h4 id="Aetheros_OneM2M_Api_Connection_SerializeJson_System_Object_" data-uid="Aetheros.OneM2M.Api.Connection.SerializeJson(System.Object)">SerializeJson(object)</h4>
@@ -1215,6 +1300,10 @@
       </tr>
     </tbody>
   </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a>
+  </div>
 
 </article>
           </div>
@@ -1227,7 +1316,7 @@
                     <a href="https://github.com/aetheros/sdk-dotnet/new/master/apiSpec/new?filename=Aetheros_OneM2M_Api_Connection.md&amp;value=---%0Auid%3A%20Aetheros.OneM2M.Api.Connection%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
                   </li>
                   <li>
-                    <a href="https://github.com/aetheros/sdk-dotnet/blob/master/Aetheros.OneM2M.Api/Connection.cs/#L35" class="contribution-link">View Source</a>
+                    <a href="https://github.com/aetheros/sdk-dotnet/blob/master/Aetheros.OneM2M.Api/Connection.cs/#L36" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

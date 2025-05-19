@@ -595,15 +595,15 @@ references:
   fullName.vb: Aetheros.OneM2M.Api.CoapConnection.New(Aetheros.OneM2M.Api.Connection.IConnectionConfiguration)
   nameWithType: CoapConnection.CoapConnection(Connection.IConnectionConfiguration)
   nameWithType.vb: CoapConnection.New(Connection.IConnectionConfiguration)
-- uid: Aetheros.OneM2M.Api.CoapConnection.#ctor(System.Uri,System.Security.Cryptography.X509Certificates.X509Certificate)
-  name: CoapConnection(Uri, X509Certificate?)
-  href: api/Aetheros.OneM2M.Api.CoapConnection.html#Aetheros_OneM2M_Api_CoapConnection__ctor_System_Uri_System_Security_Cryptography_X509Certificates_X509Certificate_
-  commentId: M:Aetheros.OneM2M.Api.CoapConnection.#ctor(System.Uri,System.Security.Cryptography.X509Certificates.X509Certificate)
-  name.vb: New(Uri, X509Certificate)
-  fullName: Aetheros.OneM2M.Api.CoapConnection.CoapConnection(System.Uri, System.Security.Cryptography.X509Certificates.X509Certificate?)
-  fullName.vb: Aetheros.OneM2M.Api.CoapConnection.New(System.Uri, System.Security.Cryptography.X509Certificates.X509Certificate)
-  nameWithType: CoapConnection.CoapConnection(Uri, X509Certificate?)
-  nameWithType.vb: CoapConnection.New(Uri, X509Certificate)
+- uid: Aetheros.OneM2M.Api.CoapConnection.#ctor(System.Uri,System.Security.Cryptography.X509Certificates.X509Certificate2)
+  name: CoapConnection(Uri, X509Certificate2?)
+  href: api/Aetheros.OneM2M.Api.CoapConnection.html#Aetheros_OneM2M_Api_CoapConnection__ctor_System_Uri_System_Security_Cryptography_X509Certificates_X509Certificate2_
+  commentId: M:Aetheros.OneM2M.Api.CoapConnection.#ctor(System.Uri,System.Security.Cryptography.X509Certificates.X509Certificate2)
+  name.vb: New(Uri, X509Certificate2)
+  fullName: Aetheros.OneM2M.Api.CoapConnection.CoapConnection(System.Uri, System.Security.Cryptography.X509Certificates.X509Certificate2?)
+  fullName.vb: Aetheros.OneM2M.Api.CoapConnection.New(System.Uri, System.Security.Cryptography.X509Certificates.X509Certificate2)
+  nameWithType: CoapConnection.CoapConnection(Uri, X509Certificate2?)
+  nameWithType.vb: CoapConnection.New(Uri, X509Certificate2)
 - uid: Aetheros.OneM2M.Api.CoapConnection.#ctor(System.Uri,System.String)
   name: CoapConnection(Uri, string)
   href: api/Aetheros.OneM2M.Api.CoapConnection.html#Aetheros_OneM2M_Api_CoapConnection__ctor_System_Uri_System_String_
@@ -641,15 +641,15 @@ references:
   fullName.vb: Aetheros.OneM2M.Api.CoapConnection(Of TPrimitiveContent).New(Aetheros.OneM2M.Api.Connection.IConnectionConfiguration)
   nameWithType: CoapConnection<TPrimitiveContent>.CoapConnection(Connection.IConnectionConfiguration)
   nameWithType.vb: CoapConnection(Of TPrimitiveContent).New(Connection.IConnectionConfiguration)
-- uid: Aetheros.OneM2M.Api.CoapConnection`1.#ctor(System.Uri,System.Security.Cryptography.X509Certificates.X509Certificate)
-  name: CoapConnection(Uri, X509Certificate?)
-  href: api/Aetheros.OneM2M.Api.CoapConnection-1.html#Aetheros_OneM2M_Api_CoapConnection_1__ctor_System_Uri_System_Security_Cryptography_X509Certificates_X509Certificate_
-  commentId: M:Aetheros.OneM2M.Api.CoapConnection`1.#ctor(System.Uri,System.Security.Cryptography.X509Certificates.X509Certificate)
-  name.vb: New(Uri, X509Certificate)
-  fullName: Aetheros.OneM2M.Api.CoapConnection<TPrimitiveContent>.CoapConnection(System.Uri, System.Security.Cryptography.X509Certificates.X509Certificate?)
-  fullName.vb: Aetheros.OneM2M.Api.CoapConnection(Of TPrimitiveContent).New(System.Uri, System.Security.Cryptography.X509Certificates.X509Certificate)
-  nameWithType: CoapConnection<TPrimitiveContent>.CoapConnection(Uri, X509Certificate?)
-  nameWithType.vb: CoapConnection(Of TPrimitiveContent).New(Uri, X509Certificate)
+- uid: Aetheros.OneM2M.Api.CoapConnection`1.#ctor(System.Uri,System.Security.Cryptography.X509Certificates.X509Certificate2)
+  name: CoapConnection(Uri, X509Certificate2?)
+  href: api/Aetheros.OneM2M.Api.CoapConnection-1.html#Aetheros_OneM2M_Api_CoapConnection_1__ctor_System_Uri_System_Security_Cryptography_X509Certificates_X509Certificate2_
+  commentId: M:Aetheros.OneM2M.Api.CoapConnection`1.#ctor(System.Uri,System.Security.Cryptography.X509Certificates.X509Certificate2)
+  name.vb: New(Uri, X509Certificate2)
+  fullName: Aetheros.OneM2M.Api.CoapConnection<TPrimitiveContent>.CoapConnection(System.Uri, System.Security.Cryptography.X509Certificates.X509Certificate2?)
+  fullName.vb: Aetheros.OneM2M.Api.CoapConnection(Of TPrimitiveContent).New(System.Uri, System.Security.Cryptography.X509Certificates.X509Certificate2)
+  nameWithType: CoapConnection<TPrimitiveContent>.CoapConnection(Uri, X509Certificate2?)
+  nameWithType.vb: CoapConnection(Of TPrimitiveContent).New(Uri, X509Certificate2)
 - uid: Aetheros.OneM2M.Api.CoapConnection`1.#ctor(System.Uri,System.String)
   name: CoapConnection(Uri, string?)
   href: api/Aetheros.OneM2M.Api.CoapConnection-1.html#Aetheros_OneM2M_Api_CoapConnection_1__ctor_System_Uri_System_String_
@@ -756,6 +756,23 @@ references:
   fullName.vb: Aetheros.OneM2M.Api.CoapConnection(Of TPrimitiveContent).HandleNotificationAsync
   nameWithType: CoapConnection<TPrimitiveContent>.HandleNotificationAsync
   nameWithType.vb: CoapConnection(Of TPrimitiveContent).HandleNotificationAsync
+- uid: Aetheros.OneM2M.Api.CoapConnection`1.IsSecure
+  name: IsSecure
+  href: api/Aetheros.OneM2M.Api.CoapConnection-1.html#Aetheros_OneM2M_Api_CoapConnection_1_IsSecure
+  commentId: P:Aetheros.OneM2M.Api.CoapConnection`1.IsSecure
+  fullName: Aetheros.OneM2M.Api.CoapConnection<TPrimitiveContent>.IsSecure
+  fullName.vb: Aetheros.OneM2M.Api.CoapConnection(Of TPrimitiveContent).IsSecure
+  nameWithType: CoapConnection<TPrimitiveContent>.IsSecure
+  nameWithType.vb: CoapConnection(Of TPrimitiveContent).IsSecure
+- uid: Aetheros.OneM2M.Api.CoapConnection`1.IsSecure*
+  name: IsSecure
+  href: api/Aetheros.OneM2M.Api.CoapConnection-1.html#Aetheros_OneM2M_Api_CoapConnection_1_IsSecure_
+  commentId: Overload:Aetheros.OneM2M.Api.CoapConnection`1.IsSecure
+  isSpec: "True"
+  fullName: Aetheros.OneM2M.Api.CoapConnection<TPrimitiveContent>.IsSecure
+  fullName.vb: Aetheros.OneM2M.Api.CoapConnection(Of TPrimitiveContent).IsSecure
+  nameWithType: CoapConnection<TPrimitiveContent>.IsSecure
+  nameWithType.vb: CoapConnection(Of TPrimitiveContent).IsSecure
 - uid: Aetheros.OneM2M.Api.CoapExtensions
   name: CoapExtensions
   href: api/Aetheros.OneM2M.Api.CoapExtensions.html
@@ -905,6 +922,28 @@ references:
   fullName.vb: Aetheros.OneM2M.Api.Connection.DeserializeJson(Of T)(String)
   nameWithType: Connection.DeserializeJson<T>(string)
   nameWithType.vb: Connection.DeserializeJson(Of T)(String)
+- uid: Aetheros.OneM2M.Api.Connection.Dispose
+  name: Dispose()
+  href: api/Aetheros.OneM2M.Api.Connection.html#Aetheros_OneM2M_Api_Connection_Dispose
+  commentId: M:Aetheros.OneM2M.Api.Connection.Dispose
+  fullName: Aetheros.OneM2M.Api.Connection.Dispose()
+  nameWithType: Connection.Dispose()
+- uid: Aetheros.OneM2M.Api.Connection.Dispose(System.Boolean)
+  name: Dispose(bool)
+  href: api/Aetheros.OneM2M.Api.Connection.html#Aetheros_OneM2M_Api_Connection_Dispose_System_Boolean_
+  commentId: M:Aetheros.OneM2M.Api.Connection.Dispose(System.Boolean)
+  name.vb: Dispose(Boolean)
+  fullName: Aetheros.OneM2M.Api.Connection.Dispose(bool)
+  fullName.vb: Aetheros.OneM2M.Api.Connection.Dispose(Boolean)
+  nameWithType: Connection.Dispose(bool)
+  nameWithType.vb: Connection.Dispose(Boolean)
+- uid: Aetheros.OneM2M.Api.Connection.Dispose*
+  name: Dispose
+  href: api/Aetheros.OneM2M.Api.Connection.html#Aetheros_OneM2M_Api_Connection_Dispose_
+  commentId: Overload:Aetheros.OneM2M.Api.Connection.Dispose
+  isSpec: "True"
+  fullName: Aetheros.OneM2M.Api.Connection.Dispose
+  nameWithType: Connection.Dispose
 - uid: Aetheros.OneM2M.Api.Connection.GetAttributes*
   name: GetAttributes
   href: api/Aetheros.OneM2M.Api.Connection.html#Aetheros_OneM2M_Api_Connection_GetAttributes_
@@ -921,57 +960,6 @@ references:
   fullName.vb: Aetheros.OneM2M.Api.Connection.GetAttributes(Of T)(ParamArray System.Linq.Expressions.Expression(Of System.Func(Of T, Object))())
   nameWithType: Connection.GetAttributes<T>(params Expression<Func<T, object>>[])
   nameWithType.vb: Connection.GetAttributes(Of T)(ParamArray Expression(Of Func(Of T, Object))())
-- uid: Aetheros.OneM2M.Api.Connection.HttpStatusException
-  name: Connection.HttpStatusException
-  href: api/Aetheros.OneM2M.Api.Connection.HttpStatusException.html
-  commentId: T:Aetheros.OneM2M.Api.Connection.HttpStatusException
-  fullName: Aetheros.OneM2M.Api.Connection.HttpStatusException
-  nameWithType: Connection.HttpStatusException
-- uid: Aetheros.OneM2M.Api.Connection.HttpStatusException.#ctor(System.Net.HttpStatusCode,System.String)
-  name: HttpStatusException(HttpStatusCode, string)
-  href: api/Aetheros.OneM2M.Api.Connection.HttpStatusException.html#Aetheros_OneM2M_Api_Connection_HttpStatusException__ctor_System_Net_HttpStatusCode_System_String_
-  commentId: M:Aetheros.OneM2M.Api.Connection.HttpStatusException.#ctor(System.Net.HttpStatusCode,System.String)
-  name.vb: New(HttpStatusCode, String)
-  fullName: Aetheros.OneM2M.Api.Connection.HttpStatusException.HttpStatusException(System.Net.HttpStatusCode, string)
-  fullName.vb: Aetheros.OneM2M.Api.Connection.HttpStatusException.New(System.Net.HttpStatusCode, String)
-  nameWithType: Connection.HttpStatusException.HttpStatusException(HttpStatusCode, string)
-  nameWithType.vb: Connection.HttpStatusException.New(HttpStatusCode, String)
-- uid: Aetheros.OneM2M.Api.Connection.HttpStatusException.#ctor*
-  name: HttpStatusException
-  href: api/Aetheros.OneM2M.Api.Connection.HttpStatusException.html#Aetheros_OneM2M_Api_Connection_HttpStatusException__ctor_
-  commentId: Overload:Aetheros.OneM2M.Api.Connection.HttpStatusException.#ctor
-  isSpec: "True"
-  name.vb: New
-  fullName: Aetheros.OneM2M.Api.Connection.HttpStatusException.HttpStatusException
-  fullName.vb: Aetheros.OneM2M.Api.Connection.HttpStatusException.New
-  nameWithType: Connection.HttpStatusException.HttpStatusException
-  nameWithType.vb: Connection.HttpStatusException.New
-- uid: Aetheros.OneM2M.Api.Connection.HttpStatusException.ReasonPhrase
-  name: ReasonPhrase
-  href: api/Aetheros.OneM2M.Api.Connection.HttpStatusException.html#Aetheros_OneM2M_Api_Connection_HttpStatusException_ReasonPhrase
-  commentId: P:Aetheros.OneM2M.Api.Connection.HttpStatusException.ReasonPhrase
-  fullName: Aetheros.OneM2M.Api.Connection.HttpStatusException.ReasonPhrase
-  nameWithType: Connection.HttpStatusException.ReasonPhrase
-- uid: Aetheros.OneM2M.Api.Connection.HttpStatusException.ReasonPhrase*
-  name: ReasonPhrase
-  href: api/Aetheros.OneM2M.Api.Connection.HttpStatusException.html#Aetheros_OneM2M_Api_Connection_HttpStatusException_ReasonPhrase_
-  commentId: Overload:Aetheros.OneM2M.Api.Connection.HttpStatusException.ReasonPhrase
-  isSpec: "True"
-  fullName: Aetheros.OneM2M.Api.Connection.HttpStatusException.ReasonPhrase
-  nameWithType: Connection.HttpStatusException.ReasonPhrase
-- uid: Aetheros.OneM2M.Api.Connection.HttpStatusException.StatusCode
-  name: StatusCode
-  href: api/Aetheros.OneM2M.Api.Connection.HttpStatusException.html#Aetheros_OneM2M_Api_Connection_HttpStatusException_StatusCode
-  commentId: P:Aetheros.OneM2M.Api.Connection.HttpStatusException.StatusCode
-  fullName: Aetheros.OneM2M.Api.Connection.HttpStatusException.StatusCode
-  nameWithType: Connection.HttpStatusException.StatusCode
-- uid: Aetheros.OneM2M.Api.Connection.HttpStatusException.StatusCode*
-  name: StatusCode
-  href: api/Aetheros.OneM2M.Api.Connection.HttpStatusException.html#Aetheros_OneM2M_Api_Connection_HttpStatusException_StatusCode_
-  commentId: Overload:Aetheros.OneM2M.Api.Connection.HttpStatusException.StatusCode
-  isSpec: "True"
-  fullName: Aetheros.OneM2M.Api.Connection.HttpStatusException.StatusCode
-  nameWithType: Connection.HttpStatusException.StatusCode
 - uid: Aetheros.OneM2M.Api.Connection.IConnectionConfiguration
   name: Connection.IConnectionConfiguration
   href: api/Aetheros.OneM2M.Api.Connection.IConnectionConfiguration.html
@@ -1004,6 +992,19 @@ references:
   isSpec: "True"
   fullName: Aetheros.OneM2M.Api.Connection.IConnectionConfiguration.M2MUrl
   nameWithType: Connection.IConnectionConfiguration.M2MUrl
+- uid: Aetheros.OneM2M.Api.Connection.IsSecure
+  name: IsSecure
+  href: api/Aetheros.OneM2M.Api.Connection.html#Aetheros_OneM2M_Api_Connection_IsSecure
+  commentId: P:Aetheros.OneM2M.Api.Connection.IsSecure
+  fullName: Aetheros.OneM2M.Api.Connection.IsSecure
+  nameWithType: Connection.IsSecure
+- uid: Aetheros.OneM2M.Api.Connection.IsSecure*
+  name: IsSecure
+  href: api/Aetheros.OneM2M.Api.Connection.html#Aetheros_OneM2M_Api_Connection_IsSecure_
+  commentId: Overload:Aetheros.OneM2M.Api.Connection.IsSecure
+  isSpec: "True"
+  fullName: Aetheros.OneM2M.Api.Connection.IsSecure
+  nameWithType: Connection.IsSecure
 - uid: Aetheros.OneM2M.Api.Connection.JsonSettings
   name: JsonSettings
   href: api/Aetheros.OneM2M.Api.Connection.html#Aetheros_OneM2M_Api_Connection_JsonSettings
@@ -1251,15 +1252,15 @@ references:
   fullName.vb: Aetheros.OneM2M.Api.HttpConnection.New(Aetheros.OneM2M.Api.Connection.IConnectionConfiguration)
   nameWithType: HttpConnection.HttpConnection(Connection.IConnectionConfiguration)
   nameWithType.vb: HttpConnection.New(Connection.IConnectionConfiguration)
-- uid: Aetheros.OneM2M.Api.HttpConnection.#ctor(System.Uri,System.Security.Cryptography.X509Certificates.X509Certificate)
-  name: HttpConnection(Uri, X509Certificate?)
-  href: api/Aetheros.OneM2M.Api.HttpConnection.html#Aetheros_OneM2M_Api_HttpConnection__ctor_System_Uri_System_Security_Cryptography_X509Certificates_X509Certificate_
-  commentId: M:Aetheros.OneM2M.Api.HttpConnection.#ctor(System.Uri,System.Security.Cryptography.X509Certificates.X509Certificate)
-  name.vb: New(Uri, X509Certificate)
-  fullName: Aetheros.OneM2M.Api.HttpConnection.HttpConnection(System.Uri, System.Security.Cryptography.X509Certificates.X509Certificate?)
-  fullName.vb: Aetheros.OneM2M.Api.HttpConnection.New(System.Uri, System.Security.Cryptography.X509Certificates.X509Certificate)
-  nameWithType: HttpConnection.HttpConnection(Uri, X509Certificate?)
-  nameWithType.vb: HttpConnection.New(Uri, X509Certificate)
+- uid: Aetheros.OneM2M.Api.HttpConnection.#ctor(System.Uri,System.Security.Cryptography.X509Certificates.X509Certificate2)
+  name: HttpConnection(Uri, X509Certificate2?)
+  href: api/Aetheros.OneM2M.Api.HttpConnection.html#Aetheros_OneM2M_Api_HttpConnection__ctor_System_Uri_System_Security_Cryptography_X509Certificates_X509Certificate2_
+  commentId: M:Aetheros.OneM2M.Api.HttpConnection.#ctor(System.Uri,System.Security.Cryptography.X509Certificates.X509Certificate2)
+  name.vb: New(Uri, X509Certificate2)
+  fullName: Aetheros.OneM2M.Api.HttpConnection.HttpConnection(System.Uri, System.Security.Cryptography.X509Certificates.X509Certificate2?)
+  fullName.vb: Aetheros.OneM2M.Api.HttpConnection.New(System.Uri, System.Security.Cryptography.X509Certificates.X509Certificate2)
+  nameWithType: HttpConnection.HttpConnection(Uri, X509Certificate2?)
+  nameWithType.vb: HttpConnection.New(Uri, X509Certificate2)
 - uid: Aetheros.OneM2M.Api.HttpConnection.#ctor(System.Uri,System.String)
   name: HttpConnection(Uri, string)
   href: api/Aetheros.OneM2M.Api.HttpConnection.html#Aetheros_OneM2M_Api_HttpConnection__ctor_System_Uri_System_String_
@@ -1319,15 +1320,15 @@ references:
   fullName.vb: Aetheros.OneM2M.Api.HttpConnection(Of TPrimitiveContent).New(Aetheros.OneM2M.Api.Connection.IConnectionConfiguration)
   nameWithType: HttpConnection<TPrimitiveContent>.HttpConnection(Connection.IConnectionConfiguration)
   nameWithType.vb: HttpConnection(Of TPrimitiveContent).New(Connection.IConnectionConfiguration)
-- uid: Aetheros.OneM2M.Api.HttpConnection`1.#ctor(System.Uri,System.Security.Cryptography.X509Certificates.X509Certificate)
-  name: HttpConnection(Uri, X509Certificate?)
-  href: api/Aetheros.OneM2M.Api.HttpConnection-1.html#Aetheros_OneM2M_Api_HttpConnection_1__ctor_System_Uri_System_Security_Cryptography_X509Certificates_X509Certificate_
-  commentId: M:Aetheros.OneM2M.Api.HttpConnection`1.#ctor(System.Uri,System.Security.Cryptography.X509Certificates.X509Certificate)
-  name.vb: New(Uri, X509Certificate)
-  fullName: Aetheros.OneM2M.Api.HttpConnection<TPrimitiveContent>.HttpConnection(System.Uri, System.Security.Cryptography.X509Certificates.X509Certificate?)
-  fullName.vb: Aetheros.OneM2M.Api.HttpConnection(Of TPrimitiveContent).New(System.Uri, System.Security.Cryptography.X509Certificates.X509Certificate)
-  nameWithType: HttpConnection<TPrimitiveContent>.HttpConnection(Uri, X509Certificate?)
-  nameWithType.vb: HttpConnection(Of TPrimitiveContent).New(Uri, X509Certificate)
+- uid: Aetheros.OneM2M.Api.HttpConnection`1.#ctor(System.Uri,System.Security.Cryptography.X509Certificates.X509Certificate2)
+  name: HttpConnection(Uri, X509Certificate2?)
+  href: api/Aetheros.OneM2M.Api.HttpConnection-1.html#Aetheros_OneM2M_Api_HttpConnection_1__ctor_System_Uri_System_Security_Cryptography_X509Certificates_X509Certificate2_
+  commentId: M:Aetheros.OneM2M.Api.HttpConnection`1.#ctor(System.Uri,System.Security.Cryptography.X509Certificates.X509Certificate2)
+  name.vb: New(Uri, X509Certificate2)
+  fullName: Aetheros.OneM2M.Api.HttpConnection<TPrimitiveContent>.HttpConnection(System.Uri, System.Security.Cryptography.X509Certificates.X509Certificate2?)
+  fullName.vb: Aetheros.OneM2M.Api.HttpConnection(Of TPrimitiveContent).New(System.Uri, System.Security.Cryptography.X509Certificates.X509Certificate2)
+  nameWithType: HttpConnection<TPrimitiveContent>.HttpConnection(Uri, X509Certificate2?)
+  nameWithType.vb: HttpConnection(Of TPrimitiveContent).New(Uri, X509Certificate2)
 - uid: Aetheros.OneM2M.Api.HttpConnection`1.#ctor(System.Uri,System.String)
   name: HttpConnection(Uri, string?)
   href: api/Aetheros.OneM2M.Api.HttpConnection-1.html#Aetheros_OneM2M_Api_HttpConnection_1__ctor_System_Uri_System_String_
@@ -1364,6 +1365,24 @@ references:
   fullName.vb: Aetheros.OneM2M.Api.HttpConnection(Of TPrimitiveContent).ClientCertificate
   nameWithType: HttpConnection<TPrimitiveContent>.ClientCertificate
   nameWithType.vb: HttpConnection(Of TPrimitiveContent).ClientCertificate
+- uid: Aetheros.OneM2M.Api.HttpConnection`1.Dispose(System.Boolean)
+  name: Dispose(bool)
+  href: api/Aetheros.OneM2M.Api.HttpConnection-1.html#Aetheros_OneM2M_Api_HttpConnection_1_Dispose_System_Boolean_
+  commentId: M:Aetheros.OneM2M.Api.HttpConnection`1.Dispose(System.Boolean)
+  name.vb: Dispose(Boolean)
+  fullName: Aetheros.OneM2M.Api.HttpConnection<TPrimitiveContent>.Dispose(bool)
+  fullName.vb: Aetheros.OneM2M.Api.HttpConnection(Of TPrimitiveContent).Dispose(Boolean)
+  nameWithType: HttpConnection<TPrimitiveContent>.Dispose(bool)
+  nameWithType.vb: HttpConnection(Of TPrimitiveContent).Dispose(Boolean)
+- uid: Aetheros.OneM2M.Api.HttpConnection`1.Dispose*
+  name: Dispose
+  href: api/Aetheros.OneM2M.Api.HttpConnection-1.html#Aetheros_OneM2M_Api_HttpConnection_1_Dispose_
+  commentId: Overload:Aetheros.OneM2M.Api.HttpConnection`1.Dispose
+  isSpec: "True"
+  fullName: Aetheros.OneM2M.Api.HttpConnection<TPrimitiveContent>.Dispose
+  fullName.vb: Aetheros.OneM2M.Api.HttpConnection(Of TPrimitiveContent).Dispose
+  nameWithType: HttpConnection<TPrimitiveContent>.Dispose
+  nameWithType.vb: HttpConnection(Of TPrimitiveContent).Dispose
 - uid: Aetheros.OneM2M.Api.HttpConnection`1.GetResponseAsync(System.Net.Http.HttpRequestMessage)
   name: GetResponseAsync(HttpRequestMessage)
   href: api/Aetheros.OneM2M.Api.HttpConnection-1.html#Aetheros_OneM2M_Api_HttpConnection_1_GetResponseAsync_System_Net_Http_HttpRequestMessage_
@@ -1416,6 +1435,139 @@ references:
   fullName.vb: Aetheros.OneM2M.Api.HttpConnection(Of TPrimitiveContent).HandleNotificationAsync
   nameWithType: HttpConnection<TPrimitiveContent>.HandleNotificationAsync
   nameWithType.vb: HttpConnection(Of TPrimitiveContent).HandleNotificationAsync
+- uid: Aetheros.OneM2M.Api.HttpConnection`1.IsSecure
+  name: IsSecure
+  href: api/Aetheros.OneM2M.Api.HttpConnection-1.html#Aetheros_OneM2M_Api_HttpConnection_1_IsSecure
+  commentId: P:Aetheros.OneM2M.Api.HttpConnection`1.IsSecure
+  fullName: Aetheros.OneM2M.Api.HttpConnection<TPrimitiveContent>.IsSecure
+  fullName.vb: Aetheros.OneM2M.Api.HttpConnection(Of TPrimitiveContent).IsSecure
+  nameWithType: HttpConnection<TPrimitiveContent>.IsSecure
+  nameWithType.vb: HttpConnection(Of TPrimitiveContent).IsSecure
+- uid: Aetheros.OneM2M.Api.HttpConnection`1.IsSecure*
+  name: IsSecure
+  href: api/Aetheros.OneM2M.Api.HttpConnection-1.html#Aetheros_OneM2M_Api_HttpConnection_1_IsSecure_
+  commentId: Overload:Aetheros.OneM2M.Api.HttpConnection`1.IsSecure
+  isSpec: "True"
+  fullName: Aetheros.OneM2M.Api.HttpConnection<TPrimitiveContent>.IsSecure
+  fullName.vb: Aetheros.OneM2M.Api.HttpConnection(Of TPrimitiveContent).IsSecure
+  nameWithType: HttpConnection<TPrimitiveContent>.IsSecure
+  nameWithType.vb: HttpConnection(Of TPrimitiveContent).IsSecure
+- uid: Aetheros.OneM2M.Api.HttpStatusException
+  name: HttpStatusException
+  href: api/Aetheros.OneM2M.Api.HttpStatusException.html
+  commentId: T:Aetheros.OneM2M.Api.HttpStatusException
+  fullName: Aetheros.OneM2M.Api.HttpStatusException
+  nameWithType: HttpStatusException
+- uid: Aetheros.OneM2M.Api.HttpStatusException.#ctor(System.Net.HttpStatusCode,System.String)
+  name: HttpStatusException(HttpStatusCode, string)
+  href: api/Aetheros.OneM2M.Api.HttpStatusException.html#Aetheros_OneM2M_Api_HttpStatusException__ctor_System_Net_HttpStatusCode_System_String_
+  commentId: M:Aetheros.OneM2M.Api.HttpStatusException.#ctor(System.Net.HttpStatusCode,System.String)
+  name.vb: New(HttpStatusCode, String)
+  fullName: Aetheros.OneM2M.Api.HttpStatusException.HttpStatusException(System.Net.HttpStatusCode, string)
+  fullName.vb: Aetheros.OneM2M.Api.HttpStatusException.New(System.Net.HttpStatusCode, String)
+  nameWithType: HttpStatusException.HttpStatusException(HttpStatusCode, string)
+  nameWithType.vb: HttpStatusException.New(HttpStatusCode, String)
+- uid: Aetheros.OneM2M.Api.HttpStatusException.#ctor*
+  name: HttpStatusException
+  href: api/Aetheros.OneM2M.Api.HttpStatusException.html#Aetheros_OneM2M_Api_HttpStatusException__ctor_
+  commentId: Overload:Aetheros.OneM2M.Api.HttpStatusException.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Aetheros.OneM2M.Api.HttpStatusException.HttpStatusException
+  fullName.vb: Aetheros.OneM2M.Api.HttpStatusException.New
+  nameWithType: HttpStatusException.HttpStatusException
+  nameWithType.vb: HttpStatusException.New
+- uid: Aetheros.OneM2M.Api.HttpStatusException.ReasonPhrase
+  name: ReasonPhrase
+  href: api/Aetheros.OneM2M.Api.HttpStatusException.html#Aetheros_OneM2M_Api_HttpStatusException_ReasonPhrase
+  commentId: P:Aetheros.OneM2M.Api.HttpStatusException.ReasonPhrase
+  fullName: Aetheros.OneM2M.Api.HttpStatusException.ReasonPhrase
+  nameWithType: HttpStatusException.ReasonPhrase
+- uid: Aetheros.OneM2M.Api.HttpStatusException.ReasonPhrase*
+  name: ReasonPhrase
+  href: api/Aetheros.OneM2M.Api.HttpStatusException.html#Aetheros_OneM2M_Api_HttpStatusException_ReasonPhrase_
+  commentId: Overload:Aetheros.OneM2M.Api.HttpStatusException.ReasonPhrase
+  isSpec: "True"
+  fullName: Aetheros.OneM2M.Api.HttpStatusException.ReasonPhrase
+  nameWithType: HttpStatusException.ReasonPhrase
+- uid: Aetheros.OneM2M.Api.HttpStatusException.StatusCode
+  name: StatusCode
+  href: api/Aetheros.OneM2M.Api.HttpStatusException.html#Aetheros_OneM2M_Api_HttpStatusException_StatusCode
+  commentId: P:Aetheros.OneM2M.Api.HttpStatusException.StatusCode
+  fullName: Aetheros.OneM2M.Api.HttpStatusException.StatusCode
+  nameWithType: HttpStatusException.StatusCode
+- uid: Aetheros.OneM2M.Api.HttpStatusException.StatusCode*
+  name: StatusCode
+  href: api/Aetheros.OneM2M.Api.HttpStatusException.html#Aetheros_OneM2M_Api_HttpStatusException_StatusCode_
+  commentId: Overload:Aetheros.OneM2M.Api.HttpStatusException.StatusCode
+  isSpec: "True"
+  fullName: Aetheros.OneM2M.Api.HttpStatusException.StatusCode
+  nameWithType: HttpStatusException.StatusCode
+- uid: Aetheros.OneM2M.Api.OneM2MException
+  name: OneM2MException
+  href: api/Aetheros.OneM2M.Api.OneM2MException.html
+  commentId: T:Aetheros.OneM2M.Api.OneM2MException
+  fullName: Aetheros.OneM2M.Api.OneM2MException
+  nameWithType: OneM2MException
+- uid: Aetheros.OneM2M.Api.OneM2MException.#ctor(Aetheros.Schema.OneM2M.ResponseStatusCode)
+  name: OneM2MException(ResponseStatusCode)
+  href: api/Aetheros.OneM2M.Api.OneM2MException.html#Aetheros_OneM2M_Api_OneM2MException__ctor_Aetheros_Schema_OneM2M_ResponseStatusCode_
+  commentId: M:Aetheros.OneM2M.Api.OneM2MException.#ctor(Aetheros.Schema.OneM2M.ResponseStatusCode)
+  name.vb: New(ResponseStatusCode)
+  fullName: Aetheros.OneM2M.Api.OneM2MException.OneM2MException(Aetheros.Schema.OneM2M.ResponseStatusCode)
+  fullName.vb: Aetheros.OneM2M.Api.OneM2MException.New(Aetheros.Schema.OneM2M.ResponseStatusCode)
+  nameWithType: OneM2MException.OneM2MException(ResponseStatusCode)
+  nameWithType.vb: OneM2MException.New(ResponseStatusCode)
+- uid: Aetheros.OneM2M.Api.OneM2MException.#ctor(Aetheros.Schema.OneM2M.ResponseStatusCode,System.String)
+  name: OneM2MException(ResponseStatusCode, string)
+  href: api/Aetheros.OneM2M.Api.OneM2MException.html#Aetheros_OneM2M_Api_OneM2MException__ctor_Aetheros_Schema_OneM2M_ResponseStatusCode_System_String_
+  commentId: M:Aetheros.OneM2M.Api.OneM2MException.#ctor(Aetheros.Schema.OneM2M.ResponseStatusCode,System.String)
+  name.vb: New(ResponseStatusCode, String)
+  fullName: Aetheros.OneM2M.Api.OneM2MException.OneM2MException(Aetheros.Schema.OneM2M.ResponseStatusCode, string)
+  fullName.vb: Aetheros.OneM2M.Api.OneM2MException.New(Aetheros.Schema.OneM2M.ResponseStatusCode, String)
+  nameWithType: OneM2MException.OneM2MException(ResponseStatusCode, string)
+  nameWithType.vb: OneM2MException.New(ResponseStatusCode, String)
+- uid: Aetheros.OneM2M.Api.OneM2MException.#ctor(Aetheros.Schema.OneM2M.ResponseStatusCode,System.String,System.Exception)
+  name: OneM2MException(ResponseStatusCode, string, Exception)
+  href: api/Aetheros.OneM2M.Api.OneM2MException.html#Aetheros_OneM2M_Api_OneM2MException__ctor_Aetheros_Schema_OneM2M_ResponseStatusCode_System_String_System_Exception_
+  commentId: M:Aetheros.OneM2M.Api.OneM2MException.#ctor(Aetheros.Schema.OneM2M.ResponseStatusCode,System.String,System.Exception)
+  name.vb: New(ResponseStatusCode, String, Exception)
+  fullName: Aetheros.OneM2M.Api.OneM2MException.OneM2MException(Aetheros.Schema.OneM2M.ResponseStatusCode, string, System.Exception)
+  fullName.vb: Aetheros.OneM2M.Api.OneM2MException.New(Aetheros.Schema.OneM2M.ResponseStatusCode, String, System.Exception)
+  nameWithType: OneM2MException.OneM2MException(ResponseStatusCode, string, Exception)
+  nameWithType.vb: OneM2MException.New(ResponseStatusCode, String, Exception)
+- uid: Aetheros.OneM2M.Api.OneM2MException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  name: OneM2MException(SerializationInfo, StreamingContext)
+  href: api/Aetheros.OneM2M.Api.OneM2MException.html#Aetheros_OneM2M_Api_OneM2MException__ctor_System_Runtime_Serialization_SerializationInfo_System_Runtime_Serialization_StreamingContext_
+  commentId: M:Aetheros.OneM2M.Api.OneM2MException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  name.vb: New(SerializationInfo, StreamingContext)
+  fullName: Aetheros.OneM2M.Api.OneM2MException.OneM2MException(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
+  fullName.vb: Aetheros.OneM2M.Api.OneM2MException.New(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
+  nameWithType: OneM2MException.OneM2MException(SerializationInfo, StreamingContext)
+  nameWithType.vb: OneM2MException.New(SerializationInfo, StreamingContext)
+- uid: Aetheros.OneM2M.Api.OneM2MException.#ctor*
+  name: OneM2MException
+  href: api/Aetheros.OneM2M.Api.OneM2MException.html#Aetheros_OneM2M_Api_OneM2MException__ctor_
+  commentId: Overload:Aetheros.OneM2M.Api.OneM2MException.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Aetheros.OneM2M.Api.OneM2MException.OneM2MException
+  fullName.vb: Aetheros.OneM2M.Api.OneM2MException.New
+  nameWithType: OneM2MException.OneM2MException
+  nameWithType.vb: OneM2MException.New
+- uid: Aetheros.OneM2M.Api.OneM2MException.StatusCode
+  name: StatusCode
+  href: api/Aetheros.OneM2M.Api.OneM2MException.html#Aetheros_OneM2M_Api_OneM2MException_StatusCode
+  commentId: P:Aetheros.OneM2M.Api.OneM2MException.StatusCode
+  fullName: Aetheros.OneM2M.Api.OneM2MException.StatusCode
+  nameWithType: OneM2MException.StatusCode
+- uid: Aetheros.OneM2M.Api.OneM2MException.StatusCode*
+  name: StatusCode
+  href: api/Aetheros.OneM2M.Api.OneM2MException.html#Aetheros_OneM2M_Api_OneM2MException_StatusCode_
+  commentId: Overload:Aetheros.OneM2M.Api.OneM2MException.StatusCode
+  isSpec: "True"
+  fullName: Aetheros.OneM2M.Api.OneM2MException.StatusCode
+  nameWithType: OneM2MException.StatusCode
 - uid: Aetheros.OneM2M.Api.Registration
   name: Aetheros.OneM2M.Api.Registration
   href: api/Aetheros.OneM2M.Api.Registration.html

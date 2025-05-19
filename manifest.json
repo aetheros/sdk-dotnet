@@ -158,20 +158,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Aetheros.OneM2M.Api.Connection.HttpStatusException.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Aetheros.OneM2M.Api.Connection.HttpStatusException.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Aetheros.OneM2M.Api.Connection.HttpStatusException",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Aetheros.OneM2M.Api.Connection.IConnectionConfiguration.yml",
       "output": {
         ".html": {
@@ -238,6 +224,34 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Aetheros.OneM2M.Api.HttpConnectionExtensions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Api.HttpStatusException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Api.HttpStatusException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.OneM2M.Api.HttpStatusException",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Aetheros.OneM2M.Api.OneM2MException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Aetheros.OneM2M.Api.OneM2MException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Aetheros.OneM2M.Api.OneM2MException",
       "Summary": null
     },
     {
